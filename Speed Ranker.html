@@ -1856,9 +1856,6 @@ try {
                 <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search questions..." oninput="handleSearch()">
                 <label for="questionsFileInput" class="btn-action" title="Load a questions.json file">📂 Load Questions</label>
                 <input type="file" id="questionsFileInput" accept=".json" onchange="loadQuestionsFile(event)">
-                <button class="btn-action" onclick="exportBackup()" title="Download a JSON backup of your progress and attempts">💾 Export Backup</button>
-                <label for="restoreFileInput" class="btn-action" title="Restore progress and attempts from a JSON backup">📥 Restore Backup</label>
-                <input type="file" id="restoreFileInput" accept=".json" onchange="importBackup(event)">
                 <button class="btn-action" onclick="openSyncPanel()" title="Move marks, notes and comments between iPad and desktop (JSON)">☁️ Sync</button>
                 <button class="btn-action theme-toggle" id="themeBtn" onclick="toggleTheme()" title="Switch to night mode" aria-pressed="false">🌙 Night</button>
                 <div class="cache-badge active" id="cacheBadge" title="Everything is stored locally in your browser">
@@ -3760,76 +3757,6 @@ function restoreDataset() {
     } catch (e) { /* ignore */ }
 }
 
-/* ---------------- backup: one JSON file with everything ---------------- */
-function backupPayload() {
-    return {
-        app: "speed-ranker-qb",
-        version: 2,
-        exportedAt: new Date().toISOString(),
-        progress: progress,              /* statuses, flags, answers seen and review dates */
-        attempts: attempts,              /* timed-test attempts */
-        notes: notes,                    /* sticky-note strokes + pasted images, per question */
-        prefs: {                         /* review ladder, note size/position, last view */
-            mode: state.mode, mock: state.mock, topic: state.topic, sub: state.sub,
-            note: { x: noteGeo.x, y: noteGeo.y, w: noteGeo.w, h: noteGeo.h },
-            sr: { days: srPrefs.days, lapseMin: srPrefs.lapseMin },
-            theme: theme
-        }
-    };
-}
-function applyBackup(obj) {
-    if (!obj || typeof obj !== "object") return false;
-    if (obj.progress && typeof obj.progress === "object") progress = obj.progress;
-    if (obj.attempts && typeof obj.attempts === "object") attempts = obj.attempts;
-    if (obj.notes && typeof obj.notes === "object") notes = obj.notes;
-    if (obj.prefs && typeof obj.prefs === "object") {
-        if (obj.prefs.sr) srPrefs = sanitizeSrPrefs(obj.prefs.sr);
-        if (obj.prefs.note) Object.assign(noteGeo, obj.prefs.note);
-    }
-    saveStore();
-    saveNotes();
-    render();
-    if (noteOpen) {
-        clampNoteGeo();
-        renderNoteTitle();
-        setupNoteCanvas();
-    }
-    renderPasteImgs();
-    const panel = document.getElementById("srPanel");
-    if (panel && panel.classList.contains("show")) fillSrInputs();
-    return true;
-}
-function exportBackup() {
-    const payload = backupPayload();
-    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "speed-ranker-backup-" + new Date().toISOString().slice(0, 10) + ".json";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
-}
-function importBackup(ev) {
-    const file = ev.target.files && ev.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = () => {
-        const st = document.getElementById("status");
-        try {
-            const obj = JSON.parse(reader.result);
-            if (!applyBackup(obj)) throw new Error("not an object");
-            st.innerHTML = "✅ Backup restored — progress, review schedule, notes and settings updated.";
-            st.style.color = "var(--color-mastered)";
-        } catch (e) {
-            st.textContent = "⚠️ Could not read that backup file.";
-            st.style.color = "#b91c1c";
-        }
-        ev.target.value = "";
-    };
-    reader.readAsText(file);
-}
-
 /* ---------------- boot ---------------- */
 function boot() {
     loadStore();
@@ -4041,7 +3968,7 @@ boot();
         return out;
     }
 
-    function applyText(text, mode) {
+    function applyText(text) {
         var payload;
         try { payload = JSON.parse(text); } catch (e) { return 'That is not valid JSON. Copy the whole file, including the outer braces.'; }
         var data = payload && isObj(payload.data) ? payload.data : payload;
@@ -4051,7 +3978,7 @@ boot();
             var key = KEYS[i];
             if (!Object.prototype.hasOwnProperty.call(data, key)) continue;
             var incoming = data[key];
-            var next = (mode === 'merge' && isObj(incoming)) ? mergeInto(readKey(key) || {}, incoming) : incoming;
+            var next = isObj(incoming) ? mergeInto(readKey(key) || {}, incoming) : incoming;
             try { localStorage.setItem(key, JSON.stringify(next)); touched++; } catch (e) {}
         }
         if (!touched) return 'Nothing in that file matched this tracker.';
@@ -4079,15 +4006,14 @@ boot();
             + '<h3><span>&#9729; Sync &mdash; marks, notes &amp; comments</span><button id="syncX" title="Close">&#10005;</button></h3>'
             + '<div class="shelp">This progress is saved in this device&#39;s browser storage, not inside the .html file, which is why a commit never carried it across. '
             + 'Copy the JSON below into the vault (for example <b>_sync/' + APP + '.json</b>), commit and push, pull on the other device, open this panel there, '
-            + 'paste the file over the text and press <b>Merge</b>. Merge keeps whatever is filled in on either side; <b>Replace all</b> makes this file win completely.</div>'
+            + 'paste the file over the text and press <b>Apply pasted</b>. It keeps whatever is filled in on either side and adds anything new from the file.</div>'
             + '<textarea id="syncText" spellcheck="false"></textarea>'
             + '<div class="sstatus" id="syncMsg"></div>'
             + '<div class="srow">'
             + '<button class="primary" id="syncCopy">&#128203; Copy all</button>'
             + '<button id="syncDownload">&#128190; Download file</button>'
             + '<button id="syncPick">&#128193; Load file</button>'
-            + '<button id="syncMerge">&#128256; Merge pasted</button>'
-            + '<button id="syncReplace">&#9851; Replace all</button>'
+            + '<button id="syncApply">&#128229; Apply pasted</button>'
             + '</div>'
             + '<input type="file" id="syncFile" accept=".json,application/json,text/plain" style="display:none">'
             + '</div>';
@@ -4133,19 +4059,18 @@ boot();
             var f = file.files && file.files[0];
             if (!f) return;
             var rd = new FileReader();
-            rd.onload = function () { ta.value = String(rd.result); say('File loaded - now press Merge pasted (or Replace all).', true); };
+            rd.onload = function () { ta.value = String(rd.result); say('File loaded - press Apply pasted.', true); };
             rd.readAsText(f);
             file.value = '';
         };
 
-        function commit(mode) {
-            var err = applyText(ta.value, mode);
+        function commit() {
+            var err = applyText(ta.value);
             if (err) { say(err, false); return; }
             say('Applied. Reloading this tracker...', true);
             setTimeout(function () { try { location.reload(); } catch (e) { say('Reload the file (close and reopen it) to see the merged marks.', false); } }, 350);
         }
-        document.getElementById('syncMerge').onclick = function () { commit('merge'); };
-        document.getElementById('syncReplace').onclick = function () { commit('replace'); };
+        document.getElementById('syncApply').onclick = commit;
     }
 
     window.openSyncPanel = openSyncPanel;

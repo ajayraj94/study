@@ -1082,9 +1082,6 @@ try {
         <span class="save-badge" id="saveBadge">Saved locally</span>
         <button class="tbtn" id="themeBtn" onclick="toggleTheme()" title="Switch between day and night mode">🌙 Night</button>
         <button class="tbtn" id="reviewBtn" onclick="toggleDueReview()" title="Spaced repetition: show only the phrases that are due for review">🔁 Review <span id="reviewCount">(0)</span></button>
-        <button class="tbtn" onclick="exportBackup()" title="Download a JSON backup of your progress and edited boxes">⬇️ Export</button>
-        <button class="tbtn" onclick="document.getElementById('restoreFile').click()" title="Restore progress from a JSON backup">⬆️ Restore</button>
-        <input type="file" id="restoreFile" accept=".json,application/json" style="display:none" onchange="restoreBackup(this)">
         <button class="tbtn" onclick="openSyncPanel()" title="Move marks, notes and comments between iPad and desktop (JSON)">☁️ Sync</button>
     </div>
 </header>
@@ -2755,52 +2752,7 @@ function closeLightbox() {
     lightboxOpen = false;
 }
 
-/* ============ BACKUP / RESET / UNDO ============ */
-function exportBackup() {
-    const payload = {
-        app: 'phrasal-idioms-tracker',
-        version: 1,
-        exported: new Date().toISOString(),
-        progress,
-        prefs: { srDays: srPrefs.days, srLapse: srPrefs.lapseMin }
-    };
-    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'phrasal-idioms-progress.json';
-    a.click();
-    URL.revokeObjectURL(a.href);
-}
-
-function restoreBackup(input) {
-    const file = input.files && input.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = () => {
-        try {
-            const data = JSON.parse(reader.result);
-            const incoming = data && data.progress ? data.progress : data;
-            if (!incoming || typeof incoming !== 'object') throw new Error('bad file');
-            if (!confirm('Replace your current progress with this backup?')) return;
-            progress = incoming;
-            save();
-            if (data && data.prefs) {
-                srPrefs = sanitizeSrPrefs({ days: data.prefs.srDays, lapseMin: data.prefs.srLapse });
-                saveSrPrefs();
-            }
-            render();
-            syncSrBadge();
-            renderNotePanel();
-            alert('✅ Backup restored.');
-        } catch (e) {
-            alert('⚠️ That file could not be read as a tracker backup.');
-        } finally {
-            input.value = '';
-        }
-    };
-    reader.readAsText(file);
-}
-
+/* ============ RESET / UNDO ============ */
 function resetProgress() {
     if (!confirm('Clear all statuses, flags and edited boxes? Your phrase content stays untouched.')) return;
     safeSet(UNDO_KEY, JSON.stringify(progress));
@@ -2900,7 +2852,7 @@ document.addEventListener('keydown', e => {
         return out;
     }
 
-    function applyText(text, mode) {
+    function applyText(text) {
         var payload;
         try { payload = JSON.parse(text); } catch (e) { return 'That is not valid JSON. Copy the whole file, including the outer braces.'; }
         var data = payload && isObj(payload.data) ? payload.data : payload;
@@ -2910,7 +2862,7 @@ document.addEventListener('keydown', e => {
             var key = KEYS[i];
             if (!Object.prototype.hasOwnProperty.call(data, key)) continue;
             var incoming = data[key];
-            var next = (mode === 'merge' && isObj(incoming)) ? mergeInto(readKey(key) || {}, incoming) : incoming;
+            var next = isObj(incoming) ? mergeInto(readKey(key) || {}, incoming) : incoming;
             try { localStorage.setItem(key, JSON.stringify(next)); touched++; } catch (e) {}
         }
         if (!touched) return 'Nothing in that file matched this tracker.';
@@ -2938,15 +2890,14 @@ document.addEventListener('keydown', e => {
             + '<h3><span>&#9729; Sync &mdash; marks, notes &amp; comments</span><button id="syncX" title="Close">&#10005;</button></h3>'
             + '<div class="shelp">This progress is saved in this device&#39;s browser storage, not inside the .html file, which is why a commit never carried it across. '
             + 'Copy the JSON below into the vault (for example <b>_sync/' + APP + '.json</b>), commit and push, pull on the other device, open this panel there, '
-            + 'paste the file over the text and press <b>Merge</b>. Merge keeps whatever is filled in on either side; <b>Replace all</b> makes this file win completely.</div>'
+            + 'paste the file over the text and press <b>Apply pasted</b>. It keeps whatever is filled in on either side and adds anything new from the file.</div>'
             + '<textarea id="syncText" spellcheck="false"></textarea>'
             + '<div class="sstatus" id="syncMsg"></div>'
             + '<div class="srow">'
             + '<button class="primary" id="syncCopy">&#128203; Copy all</button>'
             + '<button id="syncDownload">&#128190; Download file</button>'
             + '<button id="syncPick">&#128193; Load file</button>'
-            + '<button id="syncMerge">&#128256; Merge pasted</button>'
-            + '<button id="syncReplace">&#9851; Replace all</button>'
+            + '<button id="syncApply">&#128229; Apply pasted</button>'
             + '</div>'
             + '<input type="file" id="syncFile" accept=".json,application/json,text/plain" style="display:none">'
             + '</div>';
@@ -2992,19 +2943,18 @@ document.addEventListener('keydown', e => {
             var f = file.files && file.files[0];
             if (!f) return;
             var rd = new FileReader();
-            rd.onload = function () { ta.value = String(rd.result); say('File loaded - now press Merge pasted (or Replace all).', true); };
+            rd.onload = function () { ta.value = String(rd.result); say('File loaded - press Apply pasted.', true); };
             rd.readAsText(f);
             file.value = '';
         };
 
-        function commit(mode) {
-            var err = applyText(ta.value, mode);
+        function commit() {
+            var err = applyText(ta.value);
             if (err) { say(err, false); return; }
             say('Applied. Reloading this tracker...', true);
             setTimeout(function () { try { location.reload(); } catch (e) { say('Reload the file (close and reopen it) to see the merged marks.', false); } }, 350);
         }
-        document.getElementById('syncMerge').onclick = function () { commit('merge'); };
-        document.getElementById('syncReplace').onclick = function () { commit('replace'); };
+        document.getElementById('syncApply').onclick = commit;
     }
 
     window.openSyncPanel = openSyncPanel;

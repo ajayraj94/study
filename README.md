@@ -12,10 +12,10 @@ Git commit of the vault does not carry them. Use the **☁️ Sync** button in e
 2. Paste the JSON into a note in the vault, e.g. `_sync/phrasal-idioms.json`, then commit + push
    with obsidian-git.
 3. On the other device: pull, open the same tracker, **☁️ Sync**, replace the text with the file's
-   content (paste, or *Load file*) and press **Merge**.
+   content (paste, or *Load file*) and press **Apply pasted**.
 
-*Merge* keeps anything filled in on either side and adds items that only exist in the file;
-*Replace all* makes the pasted file win completely. Which storage keys each tracker syncs:
+Applying keeps anything filled in on either side and adds items that only exist in the file.
+Which storage keys each tracker syncs:
 
 | Tracker | Keys |
 | --- | --- |

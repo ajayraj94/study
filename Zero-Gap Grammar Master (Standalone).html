@@ -1058,13 +1058,6 @@
                 <input type="file" id="fileInput" accept=".md,.txt">
 
                 <!-- 🛡️ Data Safety & Cache Controls -->
-                <button class="btn-action" onclick="exportDataBackup()" title="Download a JSON backup of all your notes, doubts, and status">
-                    💾 Export Backup
-                </button>
-                <label for="restoreFileInput" class="btn-action" title="Restore your notes and progress from a previously saved JSON backup">
-                    📥 Restore Backup
-                </label>
-                <input type="file" id="restoreFileInput" accept=".json" onchange="importDataBackup(event)">
                 <button class="btn-action" onclick="openSyncPanel()" title="Move marks, notes and comments between iPad and desktop (JSON)">☁️ Sync</button>
 
                 <div class="cache-badge active" id="cacheBadge" title="Data is safely cached locally in your browser">
@@ -1360,7 +1353,7 @@
         } catch (e) {
             console.error("Storage error:", e);
             if (e.name === 'QuotaExceededError') {
-                alert("⚠️ Local Storage limit reached! Please use 'Export Backup' to save your progress externally.");
+                alert("⚠️ Local Storage limit reached! Please use the ☁️ Sync button to save your progress externally.");
             }
             updateCacheBadge(false);
             return false;
@@ -1413,75 +1406,6 @@
         } else {
             undoBtn.style.display = 'none';
         }
-    }
-
-    /* 💾 EXPORT BACKUP */
-    function exportDataBackup() {
-        const backupPayload = {
-            appName: "ZeroGap_English_Master",
-            version: "5.6",
-            exportDate: new Date().toISOString(),
-            progressData: progressData,
-            statsSummary: {
-                totalMarked: Object.keys(progressData).length
-            }
-        };
-
-        const jsonStr = JSON.stringify(backupPayload, null, 2);
-        const blob = new Blob([jsonStr], { type: "application/json" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        
-        const timestamp = new Date().toISOString().slice(0, 10);
-        a.href = url;
-        a.download = `GrammarMaster_Backup_${timestamp}.json`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-
-        statusDiv.innerHTML = `💾 <b>Backup exported successfully!</b> File downloaded to your device.`;
-        statusDiv.style.color = "var(--color-mastered)";
-    }
-
-    /* 📥 RESTORE BACKUP */
-    function importDataBackup(event) {
-        const file = event.target.files[0];
-        if (!file) return;
-
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            try {
-                const parsed = JSON.parse(e.target.result);
-                const importedData = parsed.progressData || parsed; // Handles both wrapped payload and raw json
-
-                if (!importedData || typeof importedData !== 'object') {
-                    throw new Error("Invalid backup format");
-                }
-
-                const action = confirm(
-                    "📥 Backup file verified!\n\nClick [OK] to MERGE with current progress.\nClick [Cancel] to OVERWRITE current progress completely."
-                );
-
-                if (action) {
-                    // Merge
-                    progressData = { ...progressData, ...importedData };
-                } else {
-                    // Overwrite
-                    progressData = importedData;
-                }
-
-                saveToLocalStorage();
-                alert("✅ Backup successfully restored!");
-                statusDiv.innerHTML = `✅ Backup restored successfully from <b>${escapeHtml(file.name)}</b>!`;
-                statusDiv.style.color = "var(--color-mastered)";
-            } catch (err) {
-                alert("❌ Error: Invalid or corrupt JSON backup file!");
-                console.error(err);
-            }
-        };
-        reader.readAsText(file);
-        event.target.value = ''; // Reset input
     }
 
     /* ↩️ RESTORE ACCIDENTAL RESET SNAPSHOT */
@@ -2558,7 +2482,7 @@
         return out;
     }
 
-    function applyText(text, mode) {
+    function applyText(text) {
         var payload;
         try { payload = JSON.parse(text); } catch (e) { return 'That is not valid JSON. Copy the whole file, including the outer braces.'; }
         var data = payload && isObj(payload.data) ? payload.data : payload;
@@ -2568,7 +2492,7 @@
             var key = KEYS[i];
             if (!Object.prototype.hasOwnProperty.call(data, key)) continue;
             var incoming = data[key];
-            var next = (mode === 'merge' && isObj(incoming)) ? mergeInto(readKey(key) || {}, incoming) : incoming;
+            var next = isObj(incoming) ? mergeInto(readKey(key) || {}, incoming) : incoming;
             try { localStorage.setItem(key, JSON.stringify(next)); touched++; } catch (e) {}
         }
         if (!touched) return 'Nothing in that file matched this tracker.';
@@ -2596,15 +2520,14 @@
             + '<h3><span>&#9729; Sync &mdash; marks, notes &amp; comments</span><button id="syncX" title="Close">&#10005;</button></h3>'
             + '<div class="shelp">This progress is saved in this device&#39;s browser storage, not inside the .html file, which is why a commit never carried it across. '
             + 'Copy the JSON below into the vault (for example <b>_sync/' + APP + '.json</b>), commit and push, pull on the other device, open this panel there, '
-            + 'paste the file over the text and press <b>Merge</b>. Merge keeps whatever is filled in on either side; <b>Replace all</b> makes this file win completely.</div>'
+            + 'paste the file over the text and press <b>Apply pasted</b>. It keeps whatever is filled in on either side and adds anything new from the file.</div>'
             + '<textarea id="syncText" spellcheck="false"></textarea>'
             + '<div class="sstatus" id="syncMsg"></div>'
             + '<div class="srow">'
             + '<button class="primary" id="syncCopy">&#128203; Copy all</button>'
             + '<button id="syncDownload">&#128190; Download file</button>'
             + '<button id="syncPick">&#128193; Load file</button>'
-            + '<button id="syncMerge">&#128256; Merge pasted</button>'
-            + '<button id="syncReplace">&#9851; Replace all</button>'
+            + '<button id="syncApply">&#128229; Apply pasted</button>'
             + '</div>'
             + '<input type="file" id="syncFile" accept=".json,application/json,text/plain" style="display:none">'
             + '</div>';
@@ -2650,19 +2573,18 @@
             var f = file.files && file.files[0];
             if (!f) return;
             var rd = new FileReader();
-            rd.onload = function () { ta.value = String(rd.result); say('File loaded - now press Merge pasted (or Replace all).', true); };
+            rd.onload = function () { ta.value = String(rd.result); say('File loaded - press Apply pasted.', true); };
             rd.readAsText(f);
             file.value = '';
         };
 
-        function commit(mode) {
-            var err = applyText(ta.value, mode);
+        function commit() {
+            var err = applyText(ta.value);
             if (err) { say(err, false); return; }
             say('Applied. Reloading this tracker...', true);
             setTimeout(function () { try { location.reload(); } catch (e) { say('Reload the file (close and reopen it) to see the merged marks.', false); } }, 350);
         }
-        document.getElementById('syncMerge').onclick = function () { commit('merge'); };
-        document.getElementById('syncReplace').onclick = function () { commit('replace'); };
+        document.getElementById('syncApply').onclick = commit;
     }
 
     window.openSyncPanel = openSyncPanel;

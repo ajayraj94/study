@@ -1023,13 +1023,6 @@
                 <button class="btn-action primary" onclick="syncDefaultTagging()" title="Instantly sync difficulty (Easy/Mod/Tough), priority, and exam tags from tagging database">
                     ⚡ Sync Tags
                 </button>
-                <button class="btn-action" onclick="exportDataBackup()" title="Download a JSON backup of all your progress, notes, and tags">
-                    💾 Export Backup
-                </button>
-                <label for="restoreFileInput" class="btn-action" title="Restore your notes and progress from a JSON backup">
-                    📥 Restore Backup
-                </label>
-                <input type="file" id="restoreFileInput" accept=".json" onchange="importDataBackup(event)">
                 <button class="btn-action" onclick="openSyncPanel()" title="Move marks, notes and comments between iPad and desktop (JSON)">☁️ Sync</button>
 
                 <div class="cache-badge active" id="cacheBadge" title="Data is safely cached locally in your browser">
@@ -17470,8 +17463,6 @@ Q1100. [Type B — True Homonym Context Shift]
         undoBtn.style.display = localStorage.getItem(SNAPSHOT_KEY) ? 'inline-block' : 'none';
     }
 
-    /* 💾 EXPORT / RESTORE BACKUP */
-    
     function syncDefaultTagging() {
         const el = document.getElementById('embedded-tags');
         let tagData = null;
@@ -17483,7 +17474,7 @@ Q1100. [Type B — True Homonym Context Shift]
             }
         }
         if (!tagData) {
-            document.getElementById('restoreFileInput').click();
+            alert("No embedded tagging data found in this file.");
             return;
         }
 
@@ -17511,46 +17502,6 @@ Q1100. [Type B — True Homonym Context Shift]
 
         saveToLocalStorage();
         alert("✅ Successfully synced 1,100 question tags (Difficulty, Priority, Exam Notes)!");
-    }
-
-    function exportDataBackup() {
-        const payload = {
-            appName: "Homonyms_Master_Tracker",
-            version: "2.1",
-            exportDate: new Date().toISOString(),
-            progressData: progressData
-        };
-        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `Homonyms_Backup_${new Date().toISOString().slice(0, 10)}.json`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-    }
-
-    function importDataBackup(event) {
-        const file = event.target.files[0];
-        if (!file) return;
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            try {
-                const parsed = JSON.parse(e.target.result);
-                const imported = parsed.progressData || parsed;
-                if (!imported || typeof imported !== 'object') throw new Error("Invalid format");
-                
-                const merge = confirm("Click [OK] to MERGE with current progress.\nClick [Cancel] to OVERWRITE current progress completely.");
-                progressData = merge ? { ...progressData, ...imported } : imported;
-                saveToLocalStorage();
-                alert("✅ Backup successfully restored!");
-            } catch (err) {
-                alert("❌ Error: Invalid JSON backup file!");
-            }
-        };
-        reader.readAsText(file);
-        event.target.value = '';
     }
 
     function restoreSafetySnapshot() {
@@ -18448,7 +18399,7 @@ Q1100. [Type B — True Homonym Context Shift]
         return out;
     }
 
-    function applyText(text, mode) {
+    function applyText(text) {
         var payload;
         try { payload = JSON.parse(text); } catch (e) { return 'That is not valid JSON. Copy the whole file, including the outer braces.'; }
         var data = payload && isObj(payload.data) ? payload.data : payload;
@@ -18458,7 +18409,7 @@ Q1100. [Type B — True Homonym Context Shift]
             var key = KEYS[i];
             if (!Object.prototype.hasOwnProperty.call(data, key)) continue;
             var incoming = data[key];
-            var next = (mode === 'merge' && isObj(incoming)) ? mergeInto(readKey(key) || {}, incoming) : incoming;
+            var next = isObj(incoming) ? mergeInto(readKey(key) || {}, incoming) : incoming;
             try { localStorage.setItem(key, JSON.stringify(next)); touched++; } catch (e) {}
         }
         if (!touched) return 'Nothing in that file matched this tracker.';
@@ -18486,15 +18437,14 @@ Q1100. [Type B — True Homonym Context Shift]
             + '<h3><span>&#9729; Sync &mdash; marks, notes &amp; comments</span><button id="syncX" title="Close">&#10005;</button></h3>'
             + '<div class="shelp">This progress is saved in this device&#39;s browser storage, not inside the .html file, which is why a commit never carried it across. '
             + 'Copy the JSON below into the vault (for example <b>_sync/' + APP + '.json</b>), commit and push, pull on the other device, open this panel there, '
-            + 'paste the file over the text and press <b>Merge</b>. Merge keeps whatever is filled in on either side; <b>Replace all</b> makes this file win completely.</div>'
+            + 'paste the file over the text and press <b>Apply pasted</b>. It keeps whatever is filled in on either side and adds anything new from the file.</div>'
             + '<textarea id="syncText" spellcheck="false"></textarea>'
             + '<div class="sstatus" id="syncMsg"></div>'
             + '<div class="srow">'
             + '<button class="primary" id="syncCopy">&#128203; Copy all</button>'
             + '<button id="syncDownload">&#128190; Download file</button>'
             + '<button id="syncPick">&#128193; Load file</button>'
-            + '<button id="syncMerge">&#128256; Merge pasted</button>'
-            + '<button id="syncReplace">&#9851; Replace all</button>'
+            + '<button id="syncApply">&#128229; Apply pasted</button>'
             + '</div>'
             + '<input type="file" id="syncFile" accept=".json,application/json,text/plain" style="display:none">'
             + '</div>';
@@ -18540,19 +18490,18 @@ Q1100. [Type B — True Homonym Context Shift]
             var f = file.files && file.files[0];
             if (!f) return;
             var rd = new FileReader();
-            rd.onload = function () { ta.value = String(rd.result); say('File loaded - now press Merge pasted (or Replace all).', true); };
+            rd.onload = function () { ta.value = String(rd.result); say('File loaded - press Apply pasted.', true); };
             rd.readAsText(f);
             file.value = '';
         };
 
-        function commit(mode) {
-            var err = applyText(ta.value, mode);
+        function commit() {
+            var err = applyText(ta.value);
             if (err) { say(err, false); return; }
             say('Applied. Reloading this tracker...', true);
             setTimeout(function () { try { location.reload(); } catch (e) { say('Reload the file (close and reopen it) to see the merged marks.', false); } }, 350);
         }
-        document.getElementById('syncMerge').onclick = function () { commit('merge'); };
-        document.getElementById('syncReplace').onclick = function () { commit('replace'); };
+        document.getElementById('syncApply').onclick = commit;
     }
 
     window.openSyncPanel = openSyncPanel;

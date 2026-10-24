@@ -137,10 +137,7 @@
   <button class="mbtn" data-f="done">✅ Mastered <span class="n" id="n-done"></span></button>
   <button id="reset">reset</button>
   <span style="width:10px"></span>
-  <button class="mbtn" onclick="exportEdits()" title="Download all your edits (text + images) as a JSON file">⬇️ Backup edits</button>
-  <button class="mbtn" onclick="document.getElementById('importfile').click()" title="Load edits from a backup JSON file">⬆️ Import</button>
   <button class="mbtn" onclick="downloadMd()" title="Download vocab-master.md with your edits baked in — replace your original and run: node generate-html.js">📝 Edited .md</button>
-  <input type="file" id="importfile" accept=".json,application/json" style="display:none">
   <button class="mbtn" onclick="openSyncPanel()" title="Move marks, notes and comments between iPad and desktop (JSON)">☁️ Sync</button>
 </div>
 <input id="search" type="text" placeholder="Search word… (type & click)" autocomplete="off">
@@ -730,27 +727,7 @@ document.querySelectorAll('.mbtn').forEach(b => b.addEventListener('click', () =
   document.querySelectorAll('.mbtn').forEach(x => x.classList.toggle('active', x === b));
   render();
 }));
-// ---- Backup / import / md export ----
-document.getElementById('importfile').addEventListener('change', ev => {
-  const f = ev.target.files && ev.target.files[0];
-  if (!f) return;
-  const rd = new FileReader();
-  rd.onload = () => {
-    try {
-      const imported = JSON.parse(rd.result);
-      if (imported && typeof imported === 'object') {
-        let n = 0;
-        for (const k of Object.keys(imported)) { edits[k] = imported[k]; n++; }
-        saveEdits();
-        render();
-        if (curWord && openChip) fillPop(DATA.find(x => x.w === curWord));
-        alert('Imported edits for ' + n + ' word(s).');
-      } else alert('Not a valid edits backup file.');
-    } catch (err) { alert('Could not read backup: ' + err.message); }
-  };
-  rd.readAsText(f);
-  ev.target.value = '';
-});
+// ---- md export ----
 function download(name, blob) {
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -758,11 +735,6 @@ function download(name, blob) {
   document.body.appendChild(a);
   a.click();
   setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
-}
-function exportEdits() {
-  const n = Object.keys(edits).length;
-  if (!n) { alert('No edits saved yet.'); return; }
-  download('vocab-edits-backup.json', new Blob([JSON.stringify(edits, null, 2)], { type: 'application/json' }));
 }
 function downloadMd() {
   const out = [];
@@ -827,7 +799,7 @@ render();
         return out;
     }
 
-    function applyText(text, mode) {
+    function applyText(text) {
         var payload;
         try { payload = JSON.parse(text); } catch (e) { return 'That is not valid JSON. Copy the whole file, including the outer braces.'; }
         var data = payload && isObj(payload.data) ? payload.data : payload;
@@ -837,7 +809,7 @@ render();
             var key = KEYS[i];
             if (!Object.prototype.hasOwnProperty.call(data, key)) continue;
             var incoming = data[key];
-            var next = (mode === 'merge' && isObj(incoming)) ? mergeInto(readKey(key) || {}, incoming) : incoming;
+            var next = isObj(incoming) ? mergeInto(readKey(key) || {}, incoming) : incoming;
             try { localStorage.setItem(key, JSON.stringify(next)); touched++; } catch (e) {}
         }
         if (!touched) return 'Nothing in that file matched this tracker.';
@@ -865,15 +837,14 @@ render();
             + '<h3><span>&#9729; Sync &mdash; marks, notes &amp; comments</span><button id="syncX" title="Close">&#10005;</button></h3>'
             + '<div class="shelp">This progress is saved in this device&#39;s browser storage, not inside the .html file, which is why a commit never carried it across. '
             + 'Copy the JSON below into the vault (for example <b>_sync/' + APP + '.json</b>), commit and push, pull on the other device, open this panel there, '
-            + 'paste the file over the text and press <b>Merge</b>. Merge keeps whatever is filled in on either side; <b>Replace all</b> makes this file win completely.</div>'
+            + 'paste the file over the text and press <b>Apply pasted</b>. It keeps whatever is filled in on either side and adds anything new from the file.</div>'
             + '<textarea id="syncText" spellcheck="false"></textarea>'
             + '<div class="sstatus" id="syncMsg"></div>'
             + '<div class="srow">'
             + '<button class="primary" id="syncCopy">&#128203; Copy all</button>'
             + '<button id="syncDownload">&#128190; Download file</button>'
             + '<button id="syncPick">&#128193; Load file</button>'
-            + '<button id="syncMerge">&#128256; Merge pasted</button>'
-            + '<button id="syncReplace">&#9851; Replace all</button>'
+            + '<button id="syncApply">&#128229; Apply pasted</button>'
             + '</div>'
             + '<input type="file" id="syncFile" accept=".json,application/json,text/plain" style="display:none">'
             + '</div>';
@@ -919,19 +890,18 @@ render();
             var f = file.files && file.files[0];
             if (!f) return;
             var rd = new FileReader();
-            rd.onload = function () { ta.value = String(rd.result); say('File loaded - now press Merge pasted (or Replace all).', true); };
+            rd.onload = function () { ta.value = String(rd.result); say('File loaded - press Apply pasted.', true); };
             rd.readAsText(f);
             file.value = '';
         };
 
-        function commit(mode) {
-            var err = applyText(ta.value, mode);
+        function commit() {
+            var err = applyText(ta.value);
             if (err) { say(err, false); return; }
             say('Applied. Reloading this tracker...', true);
             setTimeout(function () { try { location.reload(); } catch (e) { say('Reload the file (close and reopen it) to see the merged marks.', false); } }, 350);
         }
-        document.getElementById('syncMerge').onclick = function () { commit('merge'); };
-        document.getElementById('syncReplace').onclick = function () { commit('replace'); };
+        document.getElementById('syncApply').onclick = commit;
     }
 
     window.openSyncPanel = openSyncPanel;
