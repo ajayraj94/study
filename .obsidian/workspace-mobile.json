@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "dc142f3e77cb1d68",
+        "id": "55ab8094e4dd2ce1",
         "type": "tabs",
         "children": [
           {
-            "id": "2870abcb1ed37a59",
+            "id": "e77ef5d8c4feea4b",
             "type": "leaf",
             "state": {
-              "type": "html-view",
-              "state": {
-                "file": "phrasal-idioms.html"
-              },
-              "icon": "code-glyph",
-              "title": "phrasal-idioms"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -103,8 +101,7 @@
         }
       }
     ],
-    "currentTab": 0,
-    "pinned": true
+    "currentTab": 0
   },
   "right": {
     "id": "05270a5497b6a2d4",
@@ -149,7 +146,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "phrasal-idioms.html",
+            "file": "Zero-Gap Grammar Master (Standalone).html",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -169,8 +166,7 @@
         }
       }
     ],
-    "currentTab": 3,
-    "pinned": true
+    "currentTab": 3
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -184,13 +180,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "897e2292acf47dae",
+  "active": "e77ef5d8c4feea4b",
   "lastOpenFiles": [
-    "README.md",
-    "doubtful vocab.html",
+    "Zero-Gap Grammar Master (Standalone).html",
     "1100_Homonyms_Master_Tracker.html",
-    "phrasal-idioms.html",
+    "doubtful vocab.html",
     "Speed Ranker.html",
-    "Zero-Gap Grammar Master (Standalone).html"
+    "phrasal-idioms.html",
+    "README.md"
   ]
 }
