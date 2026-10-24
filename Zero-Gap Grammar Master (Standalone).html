@@ -1065,6 +1065,7 @@
                     📥 Restore Backup
                 </label>
                 <input type="file" id="restoreFileInput" accept=".json" onchange="importDataBackup(event)">
+                <button class="btn-action" onclick="openSyncPanel()" title="Move marks, notes and comments between iPad and desktop (JSON)">☁️ Sync</button>
 
                 <div class="cache-badge active" id="cacheBadge" title="Data is safely cached locally in your browser">
                     <span class="cache-dot"></span>
@@ -2522,5 +2523,150 @@
     updateGlobalCounters();
 </script>
 
+<!-- ===== Cross-device sync of marks, notes and comments ===== -->
+<script>
+/* The marks and notes made in this tracker are stored in this device's browser
+   storage (localStorage), not inside the .html file, so a Git commit never
+   carried them between iPad and desktop. This panel turns that state into one
+   JSON blob you can move by copy/paste or by a file. */
+(function () {
+    var APP = 'grammar-master';
+    var KEYS = ["grammarMasterProgressV5"];
+
+    function isObj(v) { return !!v && typeof v === 'object' && !Array.isArray(v); }
+    function isEmpty(v) { return v === '' || v === null || v === undefined || v === false || (Array.isArray(v) && v.length === 0); }
+    function readKey(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
+
+    function snapshot() {
+        var data = {};
+        for (var i = 0; i < KEYS.length; i++) {
+            var v = readKey(KEYS[i]);
+            if (v !== null && v !== undefined) data[KEYS[i]] = v;
+        }
+        return { app: APP, version: 1, exportedAt: new Date().toISOString(), data: data };
+    }
+
+    function mergeInto(local, incoming) {
+        if (!isObj(local) || !isObj(incoming)) return isEmpty(incoming) ? local : incoming;
+        var out = {}, k;
+        for (k in local) if (Object.prototype.hasOwnProperty.call(local, k)) out[k] = local[k];
+        for (k in incoming) if (Object.prototype.hasOwnProperty.call(incoming, k)) {
+            if (isObj(out[k]) && isObj(incoming[k])) out[k] = mergeInto(out[k], incoming[k]);
+            else if (isEmpty(incoming[k]) && !isEmpty(out[k])) continue;
+            else out[k] = incoming[k];
+        }
+        return out;
+    }
+
+    function applyText(text, mode) {
+        var payload;
+        try { payload = JSON.parse(text); } catch (e) { return 'That is not valid JSON. Copy the whole file, including the outer braces.'; }
+        var data = payload && isObj(payload.data) ? payload.data : payload;
+        if (!isObj(data)) return 'That does not look like a tracker backup.';
+        var touched = 0;
+        for (var i = 0; i < KEYS.length; i++) {
+            var key = KEYS[i];
+            if (!Object.prototype.hasOwnProperty.call(data, key)) continue;
+            var incoming = data[key];
+            var next = (mode === 'merge' && isObj(incoming)) ? mergeInto(readKey(key) || {}, incoming) : incoming;
+            try { localStorage.setItem(key, JSON.stringify(next)); touched++; } catch (e) {}
+        }
+        if (!touched) return 'Nothing in that file matched this tracker.';
+        return '';
+    }
+
+    var css = '#syncOverlay{position:fixed;inset:0;z-index:99999;background:rgba(15,23,42,.6);display:flex;align-items:center;justify-content:center;padding:14px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}'
+        + '#syncOverlay .sbox{background:#fff;color:#0f172a;width:100%;max-width:780px;max-height:90vh;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px;box-shadow:0 24px 70px rgba(0,0,0,.4)}'
+        + '#syncOverlay h3{margin:0;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:10px}'
+        + '#syncOverlay .shelp{font-size:12px;line-height:1.5;color:#475569}'
+        + '#syncOverlay textarea{width:100%;min-height:210px;flex:1;box-sizing:border-box;font:12px/1.45 ui-monospace,Menlo,Consolas,monospace;border:1px solid #cbd5e1;border-radius:10px;padding:10px;resize:vertical}'
+        + '#syncOverlay .srow{display:flex;flex-wrap:wrap;gap:8px}'
+        + '#syncOverlay button{cursor:pointer;border:1px solid #cbd5e1;background:#f8fafc;border-radius:9px;padding:8px 11px;font-size:12.5px;font-weight:600;color:#0f172a}'
+        + '#syncOverlay button.primary{background:#0f766e;border-color:#0f766e;color:#fff}'
+        + '#syncOverlay .sstatus{font-size:12px;min-height:16px;color:#0f766e}';
+
+    function openSyncPanel() {
+        if (document.getElementById('syncOverlay')) return;
+        var style = document.createElement('style');
+        style.textContent = css;
+        document.head.appendChild(style);
+        var wrap = document.createElement('div');
+        wrap.id = 'syncOverlay';
+        wrap.innerHTML = '<div class="sbox">'
+            + '<h3><span>&#9729; Sync &mdash; marks, notes &amp; comments</span><button id="syncX" title="Close">&#10005;</button></h3>'
+            + '<div class="shelp">This progress is saved in this device&#39;s browser storage, not inside the .html file, which is why a commit never carried it across. '
+            + 'Copy the JSON below into the vault (for example <b>_sync/' + APP + '.json</b>), commit and push, pull on the other device, open this panel there, '
+            + 'paste the file over the text and press <b>Merge</b>. Merge keeps whatever is filled in on either side; <b>Replace all</b> makes this file win completely.</div>'
+            + '<textarea id="syncText" spellcheck="false"></textarea>'
+            + '<div class="sstatus" id="syncMsg"></div>'
+            + '<div class="srow">'
+            + '<button class="primary" id="syncCopy">&#128203; Copy all</button>'
+            + '<button id="syncDownload">&#128190; Download file</button>'
+            + '<button id="syncPick">&#128193; Load file</button>'
+            + '<button id="syncMerge">&#128256; Merge pasted</button>'
+            + '<button id="syncReplace">&#9851; Replace all</button>'
+            + '</div>'
+            + '<input type="file" id="syncFile" accept=".json,application/json,text/plain" style="display:none">'
+            + '</div>';
+        document.body.appendChild(wrap);
+
+        var ta = document.getElementById('syncText');
+        var msg = document.getElementById('syncMsg');
+        var file = document.getElementById('syncFile');
+        ta.value = JSON.stringify(snapshot(), null, 2);
+
+        function close() { wrap.remove(); }
+        function say(t, ok) { msg.textContent = t; msg.style.color = ok === false ? '#b91c1c' : '#0f766e'; }
+
+        document.getElementById('syncX').onclick = close;
+        wrap.onclick = function (e) { if (e.target === wrap) close(); };
+        document.addEventListener('keydown', function esc(e) { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); } });
+
+        document.getElementById('syncCopy').onclick = function () {
+            ta.focus(); ta.select();
+            var done = false;
+            try { done = document.execCommand('copy'); } catch (e) { done = false; }
+            if (done) { say('Copied. Paste it into a note in the vault.', true); return; }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(ta.value).then(function () { say('Copied.', true); },
+                    function () { say('Copy failed - hold the text, Select All, then Copy.', false); });
+            } else say('Copy failed - hold the text, Select All, then Copy.', false);
+        };
+
+        document.getElementById('syncDownload').onclick = function () {
+            try {
+                var blob = new Blob([ta.value], { type: 'application/json' });
+                var a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = APP + '-state.json';
+                document.body.appendChild(a); a.click(); a.remove();
+                setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+                say('Download attempted. If nothing was saved, use Copy all instead.', true);
+            } catch (e) { say('Download is blocked here - use Copy all instead.', false); }
+        };
+
+        document.getElementById('syncPick').onclick = function () { file.click(); };
+        file.onchange = function () {
+            var f = file.files && file.files[0];
+            if (!f) return;
+            var rd = new FileReader();
+            rd.onload = function () { ta.value = String(rd.result); say('File loaded - now press Merge pasted (or Replace all).', true); };
+            rd.readAsText(f);
+            file.value = '';
+        };
+
+        function commit(mode) {
+            var err = applyText(ta.value, mode);
+            if (err) { say(err, false); return; }
+            say('Applied. Reloading this tracker...', true);
+            setTimeout(function () { try { location.reload(); } catch (e) { say('Reload the file (close and reopen it) to see the merged marks.', false); } }, 350);
+        }
+        document.getElementById('syncMerge').onclick = function () { commit('merge'); };
+        document.getElementById('syncReplace').onclick = function () { commit('replace'); };
+    }
+
+    window.openSyncPanel = openSyncPanel;
+})();
+</script>
 </body>
 </html>
