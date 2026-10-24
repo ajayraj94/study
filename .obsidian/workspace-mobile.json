@@ -1,0 +1,196 @@
+{
+  "main": {
+    "id": "b6350af64ebacf7d",
+    "type": "split",
+    "children": [
+      {
+        "id": "dc142f3e77cb1d68",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2870abcb1ed37a59",
+            "type": "leaf",
+            "state": {
+              "type": "html-view",
+              "state": {
+                "file": "phrasal-idioms.html"
+              },
+              "icon": "code-glyph",
+              "title": "phrasal-idioms"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c16cb5c7166e3f3c",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "897e2292acf47dae",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Files"
+        }
+      },
+      {
+        "id": "a3a5aecf90fcfe33",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "Search"
+        }
+      },
+      {
+        "id": "0e3ae52145394eac",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "Tags"
+        }
+      },
+      {
+        "id": "26e425941c4102b9",
+        "type": "leaf",
+        "state": {
+          "type": "all-properties",
+          "state": {
+            "sortOrder": "frequency",
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-archive",
+          "title": "All properties"
+        }
+      },
+      {
+        "id": "5ce55680d10554e1",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-bookmark",
+          "title": "Bookmarks"
+        }
+      }
+    ],
+    "currentTab": 0,
+    "pinned": true
+  },
+  "right": {
+    "id": "05270a5497b6a2d4",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "d6178b9a04c2a103",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "phrasal-idioms.html",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-coming-in",
+          "title": "Backlinks"
+        }
+      },
+      {
+        "id": "5c37c9a5750008b5",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "phrasal-idioms.html",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "Outgoing links"
+        }
+      },
+      {
+        "id": "03b3a6543ab628ff",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "phrasal-idioms.html",
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "Outline"
+        }
+      },
+      {
+        "id": "b78e5422add92197",
+        "type": "leaf",
+        "state": {
+          "type": "git-view",
+          "state": {},
+          "icon": "git-pull-request",
+          "title": "Source Control"
+        }
+      }
+    ],
+    "currentTab": 3,
+    "pinned": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "2870abcb1ed37a59",
+  "lastOpenFiles": [
+    "README.md",
+    "doubtful vocab.html",
+    "1100_Homonyms_Master_Tracker.html",
+    "phrasal-idioms.html",
+    "Speed Ranker.html",
+    "Zero-Gap Grammar Master (Standalone).html"
+  ]
+}
