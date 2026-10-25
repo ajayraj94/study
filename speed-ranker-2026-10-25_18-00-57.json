@@ -1,7 +1,8 @@
 {
   "app": "speed-ranker",
-  "version": 1,
-  "exportedAt": "2026-10-24T15:33:12.637Z",
+  "version": 2,
+  "mode": "ram",
+  "exportedAt": "2026-10-25T12:30:57.201Z",
   "data": {
     "srqb_v1": {
       "progress": {
@@ -624,6 +625,9 @@
           },
           "diff": "tough",
           "s": "weak"
+        },
+        "5-1": {
+          "diff": "easy"
         }
       },
       "attempts": {
@@ -676,7 +680,11 @@
           ],
           "lapseMin": 10
         },
-        "theme": "light"
+        "marks": {
+          "pos": 2,
+          "neg": 0.5
+        },
+        "theme": "dark"
       }
     },
     "srqb_notes_v1": {

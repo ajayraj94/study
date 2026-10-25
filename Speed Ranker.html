@@ -5,15 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Speed Ranker — Mock &amp; Type-wise Question Bank</title>
 <meta name="theme-color" content="#ffffff">
-<script>
-/* apply the saved theme before the first paint so night mode never flashes white */
-try {
-    var __stored = JSON.parse(localStorage.getItem("srqb_v1") || "{}");
-    if (__stored && __stored.prefs && __stored.prefs.theme === "dark") {
-        document.documentElement.setAttribute("data-theme", "dark");
-    }
-} catch (e) { /* first run */ }
-</script>
+<!-- KaTeX is bundled next to this file so formulas render offline (no CDN, no network) -->
+<link rel="stylesheet" href="katex/katex.min.css">
 <style>:root {
             --primary: #0f172a;
             --secondary: #475569;
@@ -155,6 +148,13 @@ try {
             color: #047857;
             border-color: #a7f3d0;
         }
+        /* state has changed since it was last copied out */
+        .cache-badge.active:not(.clean) {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .cache-badge.active:not(.clean) .cache-dot { background: #f59e0b; }
         .cache-dot {
             width: 6px;
             height: 6px;
@@ -1301,6 +1301,145 @@ try {
     .mode-spacer { flex: 1; }
     .mode-hint { font-size: 11.5px; color: #64748b; }
 
+    /* marking scheme: +2 / \u22120.5 by default, editable right in the mode bar */
+    .marks-config {
+        display: inline-flex; align-items: center; gap: 6px;
+        padding: 3px 8px 3px 10px; border: 1px solid #e2e8f0; border-radius: 8px;
+        background: #f8fafc;
+    }
+    .marks-label { font-size: 9px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; color: #94a3b8; }
+    .marks-field {
+        display: inline-flex; align-items: center; gap: 3px;
+        font-size: 12px; font-weight: 800; color: #475569;
+    }
+    .marks-field input {
+        width: 52px; height: 24px; border: 1px solid #dbe3ee; border-radius: 6px;
+        padding: 0 5px; font-family: inherit; font-size: 12px; font-weight: 700;
+        color: #0f172a; background: #fff; text-align: center;
+    }
+    .marks-field input:focus { outline: none; border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(147,197,253,.25); }
+    html[data-theme="dark"] .marks-config { background: #101a2a; border-color: #2b3b52; }
+    html[data-theme="dark"] .marks-field input { background: #0d1626; border-color: #2b3b52; color: #e2e8f0; }
+
+    /* raw-score banner on the result screen */
+    .score-line {
+        display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+        background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+        padding: 11px 14px; margin-bottom: 12px;
+        font-size: 20px; font-weight: 800; color: #0f172a;
+    }
+    .score-line .score-calc { font-size: 11.5px; font-weight: 600; color: #64748b; }
+    html[data-theme="dark"] .score-line { background: #111c2d; border-color: #2b3b52; color: #e2e8f0; }
+
+    /* Anki-style recall ratings, pinned in the modal footer so they never scroll away.
+       Three columns: empty | centred ratings | next date. Equal side columns keep the
+       group centred, and the reserved right column means the date appearing never
+       pushes or resizes the boxes. */
+    .sr-rate-bar {
+        display: none;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        column-gap: 8px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #e6ebf3;
+    }
+    .sr-rate-bar.show { display: grid; }
+    .sr-rate-btns {
+        display: flex; align-items: stretch; justify-content: center; gap: 8px;
+    }
+    /* fixed width and no outer ring: picking a rating must never move or resize
+       anything, and the spare width belongs to the "next" date on the right.
+       Each card carries its own accent colour, so the dot, the hover tint and the
+       selected border stay in step without repeating four colour rules. */
+    .sr-rate-btn {
+        flex: 0 0 auto; min-width: 96px;
+        display: inline-flex; flex-direction: column; align-items: center; gap: 2px;
+        padding: 6px 12px 5px; border-radius: 12px; border: 1px solid #e2e8f0;
+        background: #fff;
+        font-family: inherit; color: #334155; cursor: pointer;
+        --sr-rgb: 100 116 139;
+        --sr-tint: .06;
+        --sr-tint-strong: .13;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, .05), inset 0 1px 0 #fff;
+        transition: background-color .15s ease, border-color .15s ease,
+                    box-shadow .15s ease, color .15s ease;
+    }
+    .sr-rate-btn.again { --sr-rgb: 185 28 28; }
+    .sr-rate-btn.hard  { --sr-rgb: 180 83 9; }
+    .sr-rate-btn.good  { --sr-rgb: 21 128 61; }
+    .sr-rate-btn.easy  { --sr-rgb: 29 78 216; }
+    .sr-rate-name {
+        display: inline-flex; align-items: center; gap: 6px;
+        font-size: 12px; font-weight: 700; letter-spacing: .01em; line-height: 1.25;
+        white-space: nowrap;
+    }
+    .sr-rate-hint {
+        font-size: 9.5px; font-weight: 600; color: #94a3b8; line-height: 1.3;
+        font-variant-numeric: tabular-nums; white-space: nowrap;
+    }
+    .sr-dot {
+        width: 7px; height: 7px; border-radius: 50%; flex: none;
+        background: rgb(var(--sr-rgb));
+        box-shadow: 0 0 0 3px rgb(var(--sr-rgb) / .16);
+    }
+    .sr-rate-btn:hover {
+        border-color: rgb(var(--sr-rgb) / .5);
+        background: rgb(var(--sr-rgb) / var(--sr-tint));
+        box-shadow: 0 4px 12px -6px rgb(var(--sr-rgb) / .55), inset 0 1px 0 #fff;
+    }
+    .sr-rate-btn:active { background: rgb(var(--sr-rgb) / var(--sr-tint-strong)); }
+    /* the rating that was just used — colour and border only, so the box keeps
+       exactly the same footprint and nothing draws outside it */
+    .sr-rate-btn.selected {
+        border-color: rgb(var(--sr-rgb) / .7);
+        background: rgb(var(--sr-rgb) / var(--sr-tint-strong));
+        color: #0f172a;
+        box-shadow: inset 0 0 0 1px rgb(var(--sr-rgb) / .3), 0 2px 8px -6px rgb(var(--sr-rgb));
+    }
+    .sr-rate-btn.selected .sr-rate-hint { color: rgb(var(--sr-rgb)); }
+    /* no hover change on the picked one: a tap on iPad leaves hover applied, and any
+       change there reads as the box flickering after the tap */
+    .sr-rate-btn.selected:hover {
+        background: rgb(var(--sr-rgb) / var(--sr-tint-strong));
+        border-color: rgb(var(--sr-rgb) / .7);
+        box-shadow: inset 0 0 0 1px rgb(var(--sr-rgb) / .3), 0 2px 8px -6px rgb(var(--sr-rgb));
+    }
+    /* its own grid column, so a long date never crowds the buttons */
+    .sr-rate-note {
+        justify-self: end; min-width: 0; max-width: 100%; text-align: right;
+        white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        font-size: 10.5px; font-weight: 700; color: #64748b;
+        font-variant-numeric: tabular-nums;
+    }
+    html[data-theme="dark"] .sr-rate-bar { border-bottom-color: #26344a; }
+    html[data-theme="dark"] .sr-rate-btn {
+        background: #16233a; border-color: #33465f; color: #dbe4f0;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05);
+        --sr-tint: .14; --sr-tint-strong: .26;
+    }
+    html[data-theme="dark"] .sr-rate-btn.again { --sr-rgb: 248 113 113; }
+    html[data-theme="dark"] .sr-rate-btn.hard  { --sr-rgb: 245 158 11; }
+    html[data-theme="dark"] .sr-rate-btn.good  { --sr-rgb: 74 222 128; }
+    html[data-theme="dark"] .sr-rate-btn.easy  { --sr-rgb: 96 165 250; }
+    html[data-theme="dark"] .sr-rate-btn:hover {
+        border-color: rgb(var(--sr-rgb) / .55);
+        background: rgb(var(--sr-rgb) / var(--sr-tint));
+        box-shadow: 0 6px 16px -8px rgb(var(--sr-rgb) / .7), inset 0 1px 0 rgba(255, 255, 255, .07);
+    }
+    html[data-theme="dark"] .sr-rate-btn.selected {
+        background: rgb(var(--sr-rgb) / var(--sr-tint-strong));
+        border-color: rgb(var(--sr-rgb) / .85);
+        color: #f8fafc;
+        box-shadow: inset 0 0 0 1px rgb(var(--sr-rgb) / .35), 0 2px 10px -8px rgb(var(--sr-rgb));
+    }
+    html[data-theme="dark"] .sr-rate-btn.selected:hover {
+        background: rgb(var(--sr-rgb) / var(--sr-tint-strong));
+        border-color: rgb(var(--sr-rgb) / .85);
+        box-shadow: inset 0 0 0 1px rgb(var(--sr-rgb) / .35), 0 2px 10px -8px rgb(var(--sr-rgb));
+    }
+    html[data-theme="dark"] .sr-rate-hint { color: #8fa1b8; }
+    html[data-theme="dark"] .sr-rate-btn.selected .sr-rate-hint { color: rgb(var(--sr-rgb)); }
+    html[data-theme="dark"] .sr-rate-note { color: #94a3b8; }
     .sub-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 10px 0; }
     .chip {
         border: 1px solid #e2e8f0; background: #fff; border-radius: 999px;
@@ -1483,10 +1622,14 @@ try {
     }
     .note-btn:hover { background: #fafaf9; }
     .note-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
-    .note-canvas-wrap { flex: 1; position: relative; min-height: 120px; }
+    .note-canvas-wrap {
+        flex: 1; position: relative; min-height: 120px;
+        touch-action: none; user-select: none; -webkit-user-select: none;
+    }
     #noteCanvas {
         position: absolute; inset: 0; width: 100%; height: 100%; display: block;
         touch-action: none; cursor: crosshair;
+        user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
         background-color: #fffdf5;
         background-image: linear-gradient(transparent 23px, #fde68a 24px);
         background-size: 100% 24px;
@@ -1858,9 +2001,9 @@ try {
                 <input type="file" id="questionsFileInput" accept=".json" onchange="loadQuestionsFile(event)">
                 <button class="btn-action" onclick="openSyncPanel()" title="Move marks, notes and comments between iPad and desktop (JSON)">☁️ Sync</button>
                 <button class="btn-action theme-toggle" id="themeBtn" onclick="toggleTheme()" title="Switch to night mode" aria-pressed="false">🌙 Night</button>
-                <div class="cache-badge active" id="cacheBadge" title="Everything is stored locally in your browser">
+                <div class="cache-badge active" id="cacheBadge" title="Running strictly in RAM. Nothing is saved to this device — use ☁️ Sync to copy your marks out before closing the tab.">
                     <span class="cache-dot"></span>
-                    <span id="cacheText">Saved locally</span>
+                    <span id="cacheText">⚡ RAM storage</span>
                 </div>
             </div>
         </div>
@@ -1882,6 +2025,11 @@ try {
             <span class="mode-sub">by maths topic</span>
         </button>
         <span class="mode-spacer"></span>
+        <div class="marks-config" title="Marking scheme used to score a timed test">
+            <span class="marks-label">Marks</span>
+            <label class="marks-field">+<input id="markPos" type="number" min="0" max="100" step="0.25" value="2" onchange="readScoringInputs()" aria-label="Marks for a correct answer"></label>
+            <label class="marks-field">\u2212<input id="markNeg" type="number" min="0" max="100" step="0.25" value="0.5" onchange="readScoringInputs()" aria-label="Marks deducted for a wrong answer"></label>
+        </div>
         <span class="mode-hint" id="modeHint">Pick a mock, practise questions or start a timed test.</span>
     </div>
 
@@ -1897,7 +2045,7 @@ try {
             </div>
             <div class="ft-actions">
                 <button class="sr-settings-btn" id="sr-settings-btn" onclick="toggleSrPanel()" title="Edit the spaced repetition schedule">⚙</button>
-                <button class="review-due-btn" id="flt-review-btn" onclick="startReview()" title="Practise the questions spaced repetition says are due">🔁 Review due <span class="filter-count" id="cnt-due">0</span></button>
+                <button class="review-due-btn" id="flt-review-btn" onclick="startReview()" title="Start today's review deck: every question spaced repetition says is due, rated Again/Hard/Good/Easy">🔁 Daily review <span class="filter-count" id="cnt-due">0</span></button>
                 <button class="clear-filter-btn is-hidden" id="flt-clear-btn" onclick="clearFilters()" title="Reset all active filters">✕ Reset filters</button>
             </div>
         </div>
@@ -1907,8 +2055,8 @@ try {
                 <span class="cluster-label">Difficulty</span>
                 <div class="filter-pills">
                     <button class="seg-btn" id="flt-diff-easy" onclick="toggleDiff('easy')" title="Filter: Easy questions">🟢 Easy <span class="filter-count" id="cnt-flt-diff-easy">0</span></button>
-                    <button class="seg-btn" id="flt-diff-moderate" onclick="toggleDiff('moderate')" title="Filter: Moderate questions">🟡 Mod <span class="filter-count" id="cnt-flt-diff-moderate">0</span></button>
-                    <button class="seg-btn" id="flt-diff-tough" onclick="toggleDiff('tough')" title="Filter: Tough questions">🔴 Tough <span class="filter-count" id="cnt-flt-diff-tough">0</span></button>
+                    <button class="seg-btn" id="flt-diff-moderate" onclick="toggleDiff('moderate')" title="Filter: Good questions">🟡 Good <span class="filter-count" id="cnt-flt-diff-moderate">0</span></button>
+                    <button class="seg-btn" id="flt-diff-tough" onclick="toggleDiff('tough')" title="Filter: Hard questions">🔴 Hard <span class="filter-count" id="cnt-flt-diff-tough">0</span></button>
                 </div>
             </div>
 
@@ -1991,12 +2139,14 @@ try {
         </div>
         <div class="modal-body" id="modalBody"></div>
         <div class="modal-footer">
+            <!-- pinned above the body's scroll area: always on screen, never scrolled away -->
+            <div class="sr-rate-bar" id="rateBar"></div>
             <div class="features-box-bottom">
                 <div class="deck-controls-left">
                     <div class="segmented-group" title="Difficulty of this question">
                         <button class="seg-btn" id="pill-diff-easy" onclick="setQDiff('easy')" title="Set as Easy">🟢 Easy</button>
-                        <button class="seg-btn" id="pill-diff-moderate" onclick="setQDiff('moderate')" title="Set as Moderate">🟡 Mod</button>
-                        <button class="seg-btn" id="pill-diff-tough" onclick="setQDiff('tough')" title="Set as Tough">🔴 Tough</button>
+                        <button class="seg-btn" id="pill-diff-moderate" onclick="setQDiff('moderate')" title="Set as Good">🟡 Good</button>
+                        <button class="seg-btn" id="pill-diff-tough" onclick="setQDiff('tough')" title="Set as Hard">🔴 Hard</button>
                     </div>
                 </div>
                 <div class="deck-controls-right">
@@ -2072,6 +2222,8 @@ try {
 <!-- EXAM / RESULT SCREEN -->
 <div class="exam-screen" id="examScreen"></div>
 
+<script src="katex/katex.min.js"></script>
+<script src="katex/contrib/auto-render.min.js"></script>
 <script>
 "use strict";
 window.__errors = [];
@@ -2112,12 +2264,16 @@ let test = null;
 let testTimer = null;
 
 /* floating sticky note state */
+let reviewDeck = { active: false };   // set while walking today's due cards
 let notes = {};
 let noteOpen = false;
+let noteStrokePtr = null;   /* pointerId that owns the stroke in progress */
+let noteDevPts = [];        /* device-space copy of the live stroke, for O(1) inking */
 let noteColor = "#111827";
 let noteErase = false;
 let noteGeo = { x: null, y: null, w: 460, h: 300 };
 let noteStroke = null;
+let notePenAt = 0;      // last time a stylus touched the canvas (for palm rejection)
 let noteCtx = null;
 const NOTES_KEY = "srqb_notes_v1";
 
@@ -2139,33 +2295,120 @@ function applyTheme(next, persist) {
 }
 function toggleTheme() { applyTheme(theme === "dark" ? "light" : "dark", true); }
 
-/* ---------------- storage ---------------- */
-function loadStore() {
-    try {
-        const raw = localStorage.getItem(STORE_KEY);
-        if (!raw) return;
-        const obj = JSON.parse(raw);
-        progress = obj.progress || {};
-        attempts = obj.attempts || {};
-        if (obj.prefs && obj.prefs.note) Object.assign(noteGeo, obj.prefs.note);
-        if (obj.prefs && obj.prefs.sr) srPrefs = sanitizeSrPrefs(obj.prefs.sr);
-        if (obj.prefs && obj.prefs.theme) applyTheme(obj.prefs.theme, false);
-    } catch (e) { /* storage unavailable — run in-memory */ }
+/* ---------------- storage: pure RAM ----------------
+   Nothing is written to localStorage. Marks, attempts, notes and settings live in
+   memory for this tab only, so a long iPad session with many screenshots can never
+   hit the ~5 MB browser quota. Nothing survives a reload, so ☁️ Sync is the only
+   way state leaves this tab: copy or download the JSON, then apply it on the other
+   device (or paste the same file back here after a reload). */
+let ramDirty = false;      // anything changed since the state was last copied out
+let stateCopied = false;   // the tab has state AND that state was copied at least once
+
+function updateRamBadge() {
+    const badge = document.getElementById("cacheBadge");
+    const txt = document.getElementById("cacheText");
+    if (badge) badge.classList.toggle("clean", stateCopied && !ramDirty);
+    if (!txt) return;
+    txt.textContent = stateCopied && !ramDirty ? "✅ Copied out" : (ramDirty ? "⚡ In RAM — unsynced" : "⚡ RAM storage");
 }
+function loadStore() { /* RAM mode: a fresh tab always starts empty */ }
 function saveStore() {
-    try {
-        localStorage.setItem(STORE_KEY, JSON.stringify({ progress, attempts, prefs: {
-            mode: state.mode, mock: state.mock, topic: state.topic, sub: state.sub,
-            note: { x: noteGeo.x, y: noteGeo.y, w: noteGeo.w, h: noteGeo.h },
-            sr: { days: srPrefs.days, lapseMin: srPrefs.lapseMin },
-            theme: theme
-        }}));
-        const txt = document.getElementById("cacheText");
-        if (txt) txt.textContent = "Saved locally";
-    } catch (e) { /* ignore quota/private mode */ }
+    ramDirty = true;
+    updateRamBadge();
 }
+/* called after a successful copy/download of the JSON */
+function markStateCopied() {
+    stateCopied = true;
+    ramDirty = false;
+    updateRamBadge();
+}
+function hasUnsavedSessionData() {
+    if (!ramDirty) return false;
+    const hasProgress = Object.keys(progress).length > 0;
+    const hasAttempts = Object.keys(attempts).length > 0;
+    const hasNotes = Object.keys(notes).some(k => {
+        const n = notes[k] || {};
+        return (n.strokes && n.strokes.length) || (n.images && n.images.length);
+    });
+    return hasProgress || hasAttempts || hasNotes;
+}
+/* 🛡️ closing/reloading with unsynced work: write a JSON file out first, then ask */
+function stampNow() {
+    const d = new Date();
+    const p = n => String(n).padStart(2, "0");
+    return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate()) + "_" +
+        p(d.getHours()) + "-" + p(d.getMinutes()) + "-" + p(d.getSeconds());
+}
+let exitSaveAt = 0;
+/* Best effort: the same file the Sync panel's Download button produces, fired by itself
+   when the tab is closed or reloaded. Browsers may suppress a download started this
+   late in the page's life, which is why the confirm dialog still follows. */
+function autoSaveOnExit() {
+    if (!hasUnsavedSessionData()) return false;
+    const now = Date.now();
+    if (now - exitSaveAt < 1500) return false;   /* one file per exit, not two */
+    if (!window.__srSync) return false;
+    exitSaveAt = now;
+    try {
+        const text = JSON.stringify(window.__srSync.snapshot(), null, 2);
+        const blob = new Blob([text], { type: "application/json" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "speed-ranker-" + stampNow() + ".json";
+        a.style.display = "none";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+        return true;
+    } catch (e) { return false; }
+}
+window.addEventListener("beforeunload", e => {
+    const hadUnsaved = hasUnsavedSessionData();
+    autoSaveOnExit();
+    if (!hadUnsaved) return;
+    e.preventDefault();
+    e.returnValue = "";
+    return "";
+});
+/* iPad Safari often skips beforeunload entirely and only fires pagehide */
+window.addEventListener("pagehide", () => { autoSaveOnExit(); });
 function rec(id) { return progress[id] || {}; }
 function statusOf(id) { return rec(id).s || "learning"; }
+
+/* ---------------- exam marks (configurable) ---------------- */
+const MARKS_DEFAULTS = { pos: 2, neg: 0.5 };
+let scoring = { pos: MARKS_DEFAULTS.pos, neg: MARKS_DEFAULTS.neg };
+function sanitizeScoring(raw) {
+    const out = { pos: MARKS_DEFAULTS.pos, neg: MARKS_DEFAULTS.neg };
+    if (!raw) return out;
+    const p = Number(raw.pos), n = Number(raw.neg);
+    if (isFinite(p) && p >= 0 && p <= 100) out.pos = Math.round(p * 100) / 100;
+    if (isFinite(n) && n >= 0 && n <= 100) out.neg = Math.round(n * 100) / 100;
+    return out;
+}
+function applyScoring(raw, touch) {
+    scoring = sanitizeScoring(raw);
+    const p = document.getElementById("markPos"), n = document.getElementById("markNeg");
+    if (p) p.value = scoring.pos;
+    if (n) n.value = scoring.neg;
+    if (touch) saveStore();
+}
+function readScoringInputs() {
+    const p = document.getElementById("markPos"), n = document.getElementById("markNeg");
+    applyScoring({ pos: p ? p.value : scoring.pos, neg: n ? n.value : scoring.neg }, true);
+}
+function rawScore(correct, wrong) {
+    return Math.round((correct * scoring.pos - wrong * scoring.neg) * 100) / 100;
+}
+function fmtMarks(v) {
+    const n = Math.round(Number(v) * 100) / 100;
+    return (n > 0 ? "+" : "") + n;
+}
+function attemptScore(a) {
+    if (a && typeof a.score === "number") return a.score;
+    return a ? (a.correct || 0) : 0;
+}
 
 /* ---------------- spaced repetition ---------------- */
 /* The ladder is editable in the UI (⚙ next to Review due) and remembered in the store. */
@@ -2198,6 +2441,129 @@ function scheduleReview(id, correct) {
     } else {
         r.sr = { n: 0, last: now, due: now + srPrefs.lapseMin * 60000 };
     }
+}
+/* Anki-style feedback: four buttons instead of right/wrong only */
+const SR_RATINGS = [
+    { key: "again", label: "Again" },
+    { key: "hard",  label: "Hard"  },
+    { key: "good",  label: "Good"  },
+    { key: "easy",  label: "Easy"  }
+];
+/* a recall rating also records how the question felt, so the difficulty pills
+   underneath always agree with the rating that was just tapped */
+const SR_DIFF_FROM_RATING = {
+    again: "tough",
+    hard: "tough",
+    good: "moderate",
+    easy: "easy"
+};
+/* the day a card would come back: a clock time if it is today, else the date */
+function fmtDue(ms) {
+    const d = new Date(ms), now = new Date();
+    if (d.toDateString() === now.toDateString())
+        return d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+    if (d.toDateString() === new Date(now.getTime() + 86400000).toDateString()) return "Tomorrow";
+    return d.toLocaleDateString([], { day: "numeric", month: "short" });
+}
+/* compact form for the note beside the ratings; time only when it is today or tomorrow */
+function fmtDueNote(ms) {
+    const d = new Date(ms), now = new Date();
+    const time = d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+    if (d.toDateString() === now.toDateString()) return "today, " + time;
+    if (d.toDateString() === new Date(now.getTime() + 86400000).toDateString()) return "tomorrow, " + time;
+    return d.toLocaleDateString([], { weekday: "short", day: "numeric", month: "short" });
+}
+/* the same day, spelled out for the note beside the ratings */
+function fmtDueLong(ms) {
+    const d = new Date(ms), now = new Date();
+    const time = d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+    if (d.toDateString() === now.toDateString()) return "today at " + time;
+    if (d.toDateString() === new Date(now.getTime() + 86400000).toDateString()) return "tomorrow at " + time;
+    return d.toLocaleDateString([], { weekday: "short", day: "numeric", month: "short" }) + " at " + time;
+}
+function srRatingTitle(key) {
+    if (key === "again") return "Again — show it again in " + srPrefs.lapseMin + " minutes";
+    if (key === "hard") return "Hard — remembered with difficulty, back tomorrow";
+    if (key === "easy") return "Easy — remembered easily, pushed further ahead";
+    return "Good — remembered properly, next date on the ladder";
+}
+/* Again → back in lapse minutes · Hard → tomorrow · Good → next ladder step ·
+   Easy → skip a step. Never touches Weak/Learning/Mastered, same as the auto ladder.
+   srNext answers "when would this come back?" without changing anything, so the
+   buttons can show their real date before you press them. */
+function srNext(id, rating) {
+    const r = rec(id);
+    const now = Date.now();
+    const len = srPrefs.days.length;
+    const prevN = (r.sr && r.sr.n) || 0;
+    let n, due;
+    if (rating === "again") {
+        n = 1;
+        due = now + srPrefs.lapseMin * 60000;
+    } else if (rating === "hard") {
+        n = Math.min(Math.max(1, prevN + 1), len);
+        due = now + DAY_MS;
+    } else if (rating === "easy") {
+        n = Math.min(Math.max(1, prevN + 2), len);
+        due = now + srPrefs.days[n - 1] * DAY_MS;
+    } else {
+        n = Math.min(Math.max(1, prevN + 1), len);
+        due = now + srPrefs.days[n - 1] * DAY_MS;
+    }
+    return { n: n, due: due };
+}
+function srRate(id, rating) {
+    const r = ensureRec(id);
+    const next = srNext(id, rating);
+    r.sr = { n: next.n, last: Date.now(), due: next.due, rated: rating };
+    r.seen = 1;
+    saveStore();
+    return next.n;
+}
+function rateCard(rating) {
+    const q = currentQ();
+    if (!q) return;
+    srRate(q.id, rating);
+    /* the rating drives the difficulty pill, so the two can never disagree */
+    const diffRec = ensureRec(q.id);
+    diffRec.diff = SR_DIFF_FROM_RATING[rating] || diffRec.diff;
+    applyDiffPills(diffRec);
+    saveStore();
+    /* feedback under the header, so a card that leaves the deck still confirms the rating */
+    const st = document.getElementById("status");
+    if (st) {
+        const label = (SR_RATINGS.find(x => x.key === rating) || { label: rating }).label;
+        const due = rec(q.id).sr ? rec(q.id).sr.due : Date.now();
+        st.innerHTML = "🔁 <b>Rated " + label + "</b> — comes back " + fmtDueLong(due) +
+            " · <span style=\"font-weight:500\">" + esc(q.topic) + " / " + esc(q.sub) + "</span>";
+        st.style.color = "var(--secondary)";
+    }
+    if (reviewDeck.active) {
+        /* rated cards leave the deck, so a daily review always ends */
+        modalDeck.splice(modalIdx, 1);
+        if (modalIdx >= modalDeck.length) modalIdx = Math.max(0, modalDeck.length - 1);
+        if (!modalDeck.length) {
+            reviewDeck = { active: false };
+            closeModal();
+            refreshWorkspace(q.id);
+            const st2 = document.getElementById("status");
+            if (st2) {
+                st2.innerHTML = "🎆 <b>Review deck cleared</b> — nothing else is due right now.";
+                st2.style.color = "var(--color-mastered)";
+            }
+            return;
+        }
+        modalChoice = null;
+        modalRevealed = false;
+        renderModal();          /* next card: starting at the top is correct here */
+        refreshWorkspace(q.id);
+        return;
+    }
+    /* Same card: touch only the bar, the meta chip and the counters. Rebuilding the
+       body (and all 1,173 tiles) on every tap is what made it feel laggy. */
+    drawRateBar(q);
+    updateModalMeta(q);
+    refreshWorkspace(q.id);
 }
 function isDue(id) { const sr = srOf(id); return !!sr && sr.due <= Date.now(); }
 function dueQuestions() {
@@ -2333,9 +2699,11 @@ document.addEventListener("pointerdown", e => {
     closeSrMenu();
 });
 
+/* Daily Review: today's due cards become an active deck that empties as you rate */
 function startReview() {
     const due = dueQuestions();
     if (!due.length) return;
+    reviewDeck = { active: true };
     modalDeck = due;
     modalIdx = 0;
     modalChoice = null;
@@ -2395,13 +2763,46 @@ function formatMath(raw) {
     return s;
 }
 
+/* ---------------- maths rendering ----------------
+   KaTeX is bundled in katex/ and renders the LaTeX properly. Text outside the
+   $...$ / $$...$$ delimiters still goes through formatMath, so a missing katex/
+   folder degrades to the old plain-text look instead of leaking backslashes. */
+function katexReady() { return !!(window.katex && window.renderMathInElement); }
+function mathHtml(raw) {
+    if (!raw) return "";
+    if (!katexReady()) return formatMath(raw);
+    const src = String(raw);
+    let out = "", i = 0, m;
+    const re = /\$\$([\s\S]+?)\$\$|\$([^$]+?)\$/g;
+    while ((m = re.exec(src))) {
+        out += formatMath(src.slice(i, m.index));
+        out += m[1] != null ? "$$" + esc(m[1]) + "$$" : "$" + esc(m[2]) + "$";
+        i = re.lastIndex;
+    }
+    out += formatMath(src.slice(i));
+    return out;
+}
+function renderMathInElementSafe(el) {
+    if (!el || !katexReady()) return;
+    try {
+        window.renderMathInElement(el, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false }
+            ],
+            throwOnError: false,
+            strict: false
+        });
+    } catch (e) { /* keep the fallback text already in the DOM */ }
+}
+
 function countTopic(topic) { return QDATA.filter(q => q.topic === topic).length; }
 function mockList() { return [...new Set(QDATA.map(q => q.mock))].sort((a, b) => a - b); }
 function qsOfMock(m) { return QDATA.filter(q => q.mock === m).sort((a, b) => a.qnum - b.qnum); }
 function bestAttempt(m) {
     const arr = attempts[m] || [];
     if (!arr.length) return null;
-    return arr.reduce((best, a) => (!best || a.correct > best.correct) ? a : best, null);
+    return arr.reduce((best, a) => (!best || attemptScore(a) > attemptScore(best)) ? a : best, null);
 }
 function pct(n, d) { return d ? Math.round((n / d) * 100) : 0; }
 
@@ -2596,11 +2997,24 @@ function qTile(q, label) {
     if (r.edited) btn.classList.add("has-edited");
     btn.textContent = label;
     btn.dataset.id = q.id;
+    /* the column this tile was drawn in, so the modal walks that column only.
+       No per-tile listener: a single delegated handler on #modulesGrid opens it,
+       which keeps 1,173 tiles cheap to rebuild on every filter change. */
+    btn.dataset.groupKey = groupKeyOf(q);
     if (hasNote(q.id)) btn.classList.add("has-note");
-    btn.title = "Mock " + q.mock + " · Q" + q.qnum + " — " + q.text.slice(0, 110) +
+    btn.title = "Mock " + q.mock + " · Q" + q.qnum + " — " + formatMath(q.text).slice(0, 110) +
         " [" + q.topic + " / " + q.sub + "]";
-    btn.onclick = () => openModal(q.id, groupKeyOf(q));
     return btn;
+}
+function bindWorkspaceClicks() {
+    const grid = document.getElementById("modulesGrid");
+    if (!grid || grid.dataset.bound) return;
+    grid.dataset.bound = "1";
+    grid.addEventListener("click", e => {
+        const tile = e.target.closest(".rule-btn");
+        if (!tile || !grid.contains(tile) || !tile.dataset.id) return;
+        openModal(tile.dataset.id, tile.dataset.groupKey);
+    });
 }
 function makeColumn(title, subtitle, items, labelFn) {
     const col = document.createElement("div");
@@ -2788,17 +3202,81 @@ function openModal(id, groupKey) {
 }
 function closeModal() {
     document.getElementById("modalOverlay").classList.remove("show");
+    reviewDeck = { active: false };
     closeSrMenu();
     clearPasteImgs();
 }
 function currentQ() { return modalDeck[modalIdx]; }
-function renderModal() {
+/* A change to one question should not rebuild the whole workspace. Only a visible
+   filter needs the full render, because a tile may have to leave (or join) the list. */
+function refreshTile(id) {
+    const tile = document.querySelector('#modulesGrid .rule-btn[data-id="' + id + '"]');
+    if (!tile) return;
+    const r = rec(id);
+    tile.classList.toggle("passed", statusOf(id) === "mastered");
+    tile.classList.toggle("failed", statusOf(id) === "weak");
+    tile.classList.toggle("has-doubt", !!r.doubt);
+    tile.classList.toggle("has-bookmark", !!r.bm);
+    tile.classList.toggle("has-edited", !!r.edited);
+    tile.classList.toggle("has-note", hasNote(id));
+}
+function refreshWorkspace(id) {
+    if (state.status.size || state.diff.size || state.prio.size || state.flags.size) {
+        render();
+        return;
+    }
+    if (id) refreshTile(id);
+    renderCounters();
+}
+
+/* Draws only the recall bar. Kept separate from renderModal so a rating can refresh
+   it without rebuilding the question body (and re-running KaTeX) under your finger. */
+function drawRateBar(q) {
+    const rateBar = document.getElementById("rateBar");
+    if (!rateBar || !q) return;
+    const r = rec(q.id);
+    const showRate = !!(r.sr || reviewDeck.active);
+    if (!showRate) {
+        if (rateBar.innerHTML) rateBar.innerHTML = "";
+        rateBar.classList.remove("show");
+        return;
+    }
+    const rated = r.sr && r.sr.rated;
+    rateBar.innerHTML = '<span></span><span class="sr-rate-btns">' +
+        SR_RATINGS.map(x => {
+            const sel = rated === x.key;
+            /* the hint is the real day this rating books: the date already booked
+               for the selected one, a live preview for the others */
+            const when = sel && r.sr ? r.sr.due : srNext(q.id, x.key).due;
+            return '<button class="sr-rate-btn ' + x.key + (sel ? " selected" : "") + '"' +
+                ' onclick="rateCard(\'' + x.key + '\')"' +
+                ' aria-pressed="' + (sel ? "true" : "false") + '"' +
+                ' title="' + srRatingTitle(x.key) + '">' +
+                '<span class="sr-rate-name"><span class="sr-dot"></span>' + x.label + '</span>' +
+                '<span class="sr-rate-hint">' + fmtDue(when) + '</span></button>';
+        }).join("") + '</span>' +
+        '<span class="sr-rate-note">' + (rated ? "Next: " + fmtDueNote(r.sr.due) : "") + '</span>';
+    rateBar.classList.add("show");
+}
+/* the small "up next" chip in the question meta row */
+function updateModalMeta(q) {
+    const badge = document.querySelector("#modalBody .sr-badge");
+    if (!badge) return;
+    const when = badge.querySelector(".sr-when");
+    if (when) when.textContent = "🔁 " + srLabel(q.id);
+    badge.classList.toggle("due", isDue(q.id));
+}
+function renderModal(keepScroll) {
     const q = currentQ();
     if (!q) return;
     closeSrMenu();
+    const bodyEl = document.getElementById("modalBody");
+    const keepTop = keepScroll && bodyEl ? bodyEl.scrollTop : 0;
     const r = rec(q.id);
     document.getElementById("modalTag").textContent = "Mock " + q.mock + " · Q" + q.qnum;
-    document.getElementById("modalCount").textContent = (modalIdx + 1) + " / " + modalDeck.length;
+    document.getElementById("modalCount").textContent = reviewDeck.active
+        ? "🔁 " + (modalIdx + 1) + " / " + modalDeck.length + " due"
+        : (modalIdx + 1) + " / " + modalDeck.length;
 
     const answered = modalChoice != null || modalRevealed;
     let opts = "";
@@ -2810,12 +3288,17 @@ function renderModal() {
         opts += '<button class="' + cls.join(" ") + '"' + (answered ? " disabled" : "") +
             ' onclick="chooseOption(\'' + L + '\')">' +
             '<span class="opt-key">' + L + '</span>' +
-            '<span class="opt-val">' + formatMath(q.opts[L]) + '</span></button>';
+            '<span class="opt-val">' + mathHtml(q.opts[L]) + '</span></button>';
     });
 
     const answerLine = answered
-        ? '<div class="ans-line">Correct Option: [' + q.ans + '] ' + formatMath(q.opts[q.ans]) + '</div>'
+        ? '<div class="ans-line">Correct Option: [' + q.ans + '] ' + mathHtml(q.opts[q.ans]) + '</div>'
         : "";
+
+    /* Rate recall is drawn into the footer bar, not the scrollable body, so a long
+       question can never push it out of sight. Scheduled questions and every card in a
+       daily review can be rated. */
+    drawRateBar(q);
 
     document.getElementById("modalBody").innerHTML =
         '<div class="q-meta">' +
@@ -2827,8 +3310,10 @@ function renderModal() {
                 '<span class="sr-edit">Change <span class="sr-caret">▾</span></span>' +
             '</button>' +
         '</div>' +
-        '<div class="q-stem">' + formatMath(q.text) + '</div>' +
+        '<div class="q-stem">' + mathHtml(q.text) + '</div>' +
         opts + answerLine;
+
+    renderMathInElementSafe(document.getElementById("modalBody"));
 
     const qStatus = statusOf(q.id);
     ["weak", "learning", "mastered"].forEach(s => {
@@ -2840,11 +3325,7 @@ function renderModal() {
     document.getElementById("m-bm").classList.toggle("active", !!r.bm);
     document.getElementById("m-doubt").classList.toggle("active", !!r.doubt);
     document.getElementById("m-edited").classList.toggle("active", !!r.edited);
-    ["easy", "moderate", "tough"].forEach(d => {
-        const el = document.getElementById("pill-diff-" + d);
-        el.classList.toggle("active", r.diff === d);
-        el.classList.toggle("dim", !!r.diff && r.diff !== d);
-    });
+    applyDiffPills(r);
     ["high", "medium", "low"].forEach(p => {
         const el = document.getElementById("pill-imp-" + p);
         el.classList.toggle("active", r.prio === p);
@@ -2852,6 +3333,7 @@ function renderModal() {
     });
     document.getElementById("revealBtn").style.display = answered ? "none" : "inline-flex";
     renderPasteImgs();
+    if (bodyEl) bodyEl.scrollTop = keepTop;
 }
 function ensureRec(id) {
     if (!progress[id]) progress[id] = {};
@@ -2866,13 +3348,13 @@ function chooseOption(L) {
     /* status stays untouched: Weak / Learning / Mastered are only set by the user */
     scheduleReview(q.id, L === q.ans);
     saveStore();
-    renderModal();
-    render();
+    renderModal(true);      /* keep the reading position while the options recolour */
+    refreshWorkspace(q.id);
 }
 function revealAnswer() {
     if (!currentQ()) return;
     modalRevealed = true;
-    renderModal();
+    renderModal(true);
 }
 function setQStatus(s) {
     const q = currentQ();
@@ -2884,8 +3366,8 @@ function setQStatus(s) {
     if (cur === s) delete r.s; else r.s = s;
     if (!Object.keys(r).length) delete progress[q.id];
     saveStore();
-    renderModal();
-    render();
+    renderModal(true);
+    refreshWorkspace(q.id);
 }
 function toggleQFlag(f) {
     const q = currentQ();
@@ -2893,8 +3375,18 @@ function toggleQFlag(f) {
     const r = ensureRec(q.id);
     r[f] = r[f] ? 0 : 1;
     saveStore();
-    renderModal();
-    render();
+    renderModal(true);
+    refreshWorkspace(q.id);
+}
+/* the three difficulty pills all mirror one record field; kept in one place so a
+   recall rating can refresh just the pills instead of rebuilding the modal */
+function applyDiffPills(r) {
+    ["easy", "moderate", "tough"].forEach(d => {
+        const el = document.getElementById("pill-diff-" + d);
+        if (!el) return;
+        el.classList.toggle("active", r.diff === d);
+        el.classList.toggle("dim", !!r.diff && r.diff !== d);
+    });
 }
 function setQDiff(d) {
     const q = currentQ();
@@ -2902,8 +3394,8 @@ function setQDiff(d) {
     const r = ensureRec(q.id);
     r.diff = (r.diff === d) ? null : d;
     saveStore();
-    renderModal();
-    render();
+    renderModal(true);
+    refreshWorkspace(q.id);
 }
 function setQPrio(p) {
     const q = currentQ();
@@ -2911,8 +3403,8 @@ function setQPrio(p) {
     const r = ensureRec(q.id);
     r.prio = (r.prio === p) ? null : p;
     saveStore();
-    renderModal();
-    render();
+    renderModal(true);
+    refreshWorkspace(q.id);
 }
 function navigateQ(delta) {
     const next = modalIdx + delta;
@@ -3002,7 +3494,7 @@ function renderExam() {
     const opts = ["A", "B", "C", "D"].map(L => {
         const chosen = test.answers[q.qnum] === L;
         return '<button class="opt-btn' + (chosen ? " correct" : "") + '" onclick="selectTestOption(\'' + L + '\')">' +
-            '<span class="opt-key">' + L + '</span><span class="opt-val">' + formatMath(q.opts[L]) + '</span></button>';
+            '<span class="opt-key">' + L + '</span><span class="opt-val">' + mathHtml(q.opts[L]) + '</span></button>';
     }).join("");
 
     document.getElementById("examScreen").innerHTML =
@@ -3021,7 +3513,7 @@ function renderExam() {
                     '<span class="badge muted">' + esc(q.topic) + '</span>' +
                     '<span class="badge muted">' + esc(q.sub) + '</span>' +
                 '</div>' +
-                '<div class="q-stem">' + formatMath(q.text) + '</div>' + opts +
+                '<div class="q-stem">' + mathHtml(q.text) + '</div>' + opts +
                 '<div class="exam-actions">' +
                     '<button class="btn-ghost" onclick="moveTest(-1)">← Prev</button>' +
                     '<button class="btn-ghost" onclick="moveTest(1)">Next →</button>' +
@@ -3043,6 +3535,7 @@ function renderExam() {
                 '</div>' +
             '</div>' +
         '</div>';
+    renderMathInElementSafe(document.getElementById("examScreen"));
     tickExam();
 }
 function selectTestOption(L) {
@@ -3101,9 +3594,14 @@ function submitTest() {
     });
     const skipped = test.items.length - correct - wrong;
     const timeSec = Math.min(test.duration, Math.round((Date.now() - test.startedAt) / 1000));
+    /* raw score with the marking scheme that was set when the test ran */
+    const pos = scoring.pos, neg = scoring.neg;
     const attempt = {
         ts: Date.now(), total: test.items.length, correct: correct, wrong: wrong,
-        skipped: skipped, timeSec: timeSec, answers: Object.assign({}, test.answers)
+        skipped: skipped, timeSec: timeSec, answers: Object.assign({}, test.answers),
+        score: Math.round((correct * pos - wrong * neg) * 100) / 100,
+        max: Math.round(test.items.length * pos * 100) / 100,
+        pos: pos, neg: neg
     };
     attempts[test.mock] = [attempt].concat(attempts[test.mock] || []).slice(0, 10);
     saveStore();
@@ -3120,7 +3618,7 @@ function renderResult(a) {
         const detail = given ? (given + " → " + q.ans) : "—";
         return '<div class="review-row">' +
             '<span class="review-q">Q' + q.qnum + '</span>' +
-            '<span class="review-stem">' + formatMath(q.text) + '</span>' +
+            '<span class="review-stem">' + mathHtml(q.text) + '</span>' +
             '<span style="font-weight:700;color:#475569">' + detail + '</span>' +
             '<span class="' + cls + '">' + label + '</span>' +
         '</div>';
@@ -3130,9 +3628,14 @@ function renderResult(a) {
     document.getElementById("examScreen").innerHTML =
         '<div class="exam-top">' +
             '<div class="exam-title">📊 Result — Mock ' + test.mock + '<span>saved to your attempts</span></div>' +
-            '<div class="exam-timer">' + pctScore + '%</div>' +
+            '<div class="exam-timer" title="Raw score with the current marking scheme">' + fmtMarks(a.score) + ' <span style="font-size:11px;font-weight:600;color:#64748b">marks</span></div>' +
         '</div>' +
         '<div style="max-width:1180px;margin:0 auto;padding:16px;width:100%;">' +
+            '<div class="score-line">' +
+                '<b>' + fmtMarks(a.score) + ' / ' + a.max + '</b>' +
+                '<span class="score-calc">' + a.correct + ' × +' + a.pos + ' \u2212 ' + a.wrong + ' × ' + a.neg +
+                ' · ' + pctScore + '% correct · ' + a.skipped + ' skipped</span>' +
+            '</div>' +
             '<div class="result-grid">' +
                 '<div class="result-stat"><div class="result-num">' + a.correct + '/' + a.total + '</div><div class="result-lbl">Correct</div></div>' +
                 '<div class="result-stat"><div class="result-num" style="color:#b91c1c">' + a.wrong + '</div><div class="result-lbl">Wrong</div></div>' +
@@ -3145,7 +3648,7 @@ function renderResult(a) {
                     '<button class="btn-ghost" onclick="abortTest()">← Back to mocks</button>' +
                     '<span style="flex:1"></span>' +
                     '<span style="font-size:12px;color:#64748b;">Best so far: ' +
-                        (best ? pct(best.correct, best.total) + '%' : "—") + ' · Attempts: ' +
+                        (best ? fmtMarks(best.score) + ' marks (' + pct(best.correct, best.total) + '%)' : "—") + ' · Attempts: ' +
                         (attempts[test.mock] || []).length + '</span>' +
                 '</div>' +
             '</div>' +
@@ -3154,30 +3657,14 @@ function renderResult(a) {
                 rows +
             '</div>' +
         '</div>';
+    renderMathInElementSafe(document.getElementById("examScreen"));
 }
 
 /* ---------------- floating sticky note (iPad / pen) ---------------- */
-function loadNotes() {
-    try { notes = JSON.parse(localStorage.getItem(NOTES_KEY) || "{}") || {}; } catch (e) { notes = {}; }
-    shrinkOldThumbnails();
-}
-/* one-off: thumbnails saved at the old default sizes become the new smaller default */
-function shrinkOldThumbnails() {
-    try {
-        if (localStorage.getItem("srqb_thumb_v2")) return;
-        Object.keys(notes).forEach(id => {
-            const list = notes[id] && notes[id].images;
-            if (!Array.isArray(list)) return;
-            list.forEach(img => {
-                if ((img.w === 110 && img.h === 110) || (img.w === 80 && img.h === 80)) { img.w = 60; img.h = 60; }
-            });
-        });
-        saveNotes();
-        localStorage.setItem("srqb_thumb_v2", "1");
-    } catch (e) { /* quota / private mode */ }
-}
+function loadNotes() { /* RAM mode: strokes and images start empty each session */ }
 function saveNotes() {
-    try { localStorage.setItem(NOTES_KEY, JSON.stringify(notes)); } catch (e) { /* quota */ }
+    ramDirty = true;
+    updateRamBadge();
 }
 function noteFor(id) {
     if (!notes[id]) notes[id] = { strokes: [] };
@@ -3243,30 +3730,72 @@ function setupNoteCanvas() {
     noteCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
     redrawNote();
 }
-function paintStroke(stroke, rect) {
-    if (!noteCtx) return;
-    const ctx = noteCtx;
-    ctx.save();
+/* ---- ink rendering ---------------------------------------------------------
+   A stroke is a list of normalised points plus an optional per-point width
+   factor, so resizing the note re-inks every line at the same relative weight.
+   Live drawing and the redraw after a resize both run through inkSegment, which
+   curves through the midpoints between samples - that is what turns a fast
+   Apple Pencil line into ink instead of a chain of straight segments. */
+function inkMid(a, b) { return [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]; }
+function inkWidth(stroke, i, scale) {
+    const f = (stroke.f && stroke.f.length) ? stroke.f[Math.min(i, stroke.f.length - 1)] : 1;
+    const base = (typeof stroke.w === "number" && stroke.w > 0) ? stroke.w : 0.0075;
+    return Math.max(0.8, base * scale * f);
+}
+function inkSetup(ctx, stroke) {
     ctx.globalCompositeOperation = stroke.t === "erase" ? "destination-out" : "source-over";
-    ctx.strokeStyle = stroke.c;
-    ctx.lineWidth = Math.max(1, stroke.w * rect.width);
+    ctx.strokeStyle = stroke.c || "#0f172a";
+    ctx.fillStyle = stroke.c || "#0f172a";
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
-    ctx.beginPath();
-    const pts = stroke.p;
-    if (pts.length === 1) {
-        const x = pts[0][0] * rect.width, y = pts[0][1] * rect.height;
-        ctx.moveTo(x, y);
-        ctx.lineTo(x + 0.1, y + 0.1);
+}
+/* the segment that ends at pts[i]; pts are device pixels */
+function inkSegment(ctx, stroke, pts, i, scale) {
+    ctx.save();
+    inkSetup(ctx, stroke);
+    ctx.lineWidth = inkWidth(stroke, i, scale);
+    if (i === 0) {
+        /* a tap leaves a round dot the width of the pen */
+        ctx.beginPath();
+        ctx.arc(pts[0][0], pts[0][1], Math.max(0.5, ctx.lineWidth / 2), 0, Math.PI * 2);
+        ctx.fill();
     } else {
-        pts.forEach((pt, i) => {
-            const x = pt[0] * rect.width, y = pt[1] * rect.height;
-            if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-        });
+        ctx.beginPath();
+        if (i === 1) {
+            const m = inkMid(pts[0], pts[1]);
+            ctx.moveTo(pts[0][0], pts[0][1]);
+            ctx.lineTo(m[0], m[1]);
+        } else {
+            const a = inkMid(pts[i - 2], pts[i - 1]);
+            const b = inkMid(pts[i - 1], pts[i]);
+            ctx.moveTo(a[0], a[1]);
+            ctx.quadraticCurveTo(pts[i - 1][0], pts[i - 1][1], b[0], b[1]);
+        }
+        ctx.stroke();
     }
+    ctx.restore();
+}
+/* the last half-sample, so the stroke reaches the point where the pen lifted */
+function inkTail(ctx, stroke, pts, scale) {
+    const n = pts.length - 1;
+    if (n < 1) return;
+    ctx.save();
+    inkSetup(ctx, stroke);
+    ctx.lineWidth = inkWidth(stroke, n, scale);
+    const a = inkMid(pts[n - 1], pts[n]);
+    ctx.beginPath();
+    ctx.moveTo(a[0], a[1]);
+    ctx.lineTo(pts[n][0], pts[n][1]);
     ctx.stroke();
     ctx.restore();
 }
+function paintStroke(stroke, rect) {
+    if (!noteCtx || !stroke || !stroke.p || !stroke.p.length) return;
+    const pts = stroke.p.map(pt => [pt[0] * rect.width, pt[1] * rect.height]);
+    for (let i = 0; i < pts.length; i++) inkSegment(noteCtx, stroke, pts, i, rect.width);
+    inkTail(noteCtx, stroke, pts, rect.width);
+}
+
 function redrawNote() {
     const c = document.getElementById("noteCanvas");
     if (!c || !noteCtx) return;
@@ -3276,11 +3805,17 @@ function redrawNote() {
     if (!q) return;
     (noteFor(q.id).strokes || []).forEach(s => paintStroke(s, rect));
 }
-function notePoint(e) {
-    const rect = document.getElementById("noteCanvas").getBoundingClientRect();
-    const q = v => Math.round(Math.min(1, Math.max(0, v)) * 10000) / 10000;  // keep stored strokes compact
-    return [q((e.clientX - rect.left) / rect.width), q((e.clientY - rect.top) / rect.height)];
+function notePoint(e, rect) {
+    rect = rect || document.getElementById("noteCanvas").getBoundingClientRect();
+    if (!rect.width || !rect.height) return null;
+    /* keep stored strokes compact, and treat the area outside the paper as a
+       pen lift instead of smearing ink along the edge */
+    const x = e.clientX - rect.left, y = e.clientY - rect.top;
+    if (x < -2 || y < -2 || x > rect.width + 2 || y > rect.height + 2) return null;
+    const q = v => Math.round(v * 10000) / 10000;
+    return [q(x / rect.width), q(y / rect.height)];
 }
+
 function setNoteColor(hex, btn) {
     noteColor = hex;
     noteErase = false;
@@ -3322,43 +3857,77 @@ function bindNoteEvents() {
     const c = document.getElementById("noteCanvas");
     if (!c || c.dataset.bound) return;
     c.dataset.bound = "1";
+
+    /* Apple Pencil sends a real pressure per sample; a finger, mouse or synthetic
+       pointer does not, so those keep one steady width */
+    function widthFactor(e) {
+        if (e.pointerType !== "pen") return 1;
+        const p = typeof e.pressure === "number" ? e.pressure : 0;
+        if (!p) return 0.85;
+        return Math.max(0.45, Math.min(1.45, 0.45 + p * 0.9));
+    }
+
+    /* one sample: store it, then ink only the new segment (never the whole line) */
+    function addSample(e, rect) {
+        const pt = notePoint(e, rect);
+        if (!pt) return;
+        const i = noteStroke.p.length;
+        noteStroke.p.push(pt);
+        const f = widthFactor(e);
+        const prevF = noteStroke.f.length ? noteStroke.f[noteStroke.f.length - 1] : f;
+        noteStroke.f.push(Math.round((prevF * 0.6 + f * 0.4) * 100) / 100);
+        noteDevPts.push([pt[0] * rect.width, pt[1] * rect.height]);
+        if (noteCtx) inkSegment(noteCtx, noteStroke, noteDevPts, i, rect.width);
+    }
+
     c.addEventListener("pointerdown", e => {
-        if (!noteOpen || !currentQ()) return;
+        if (!noteOpen || !currentQ() || noteStroke) return;   /* one pointer at a time */
+        if (e.pointerType === "pen") notePenAt = Date.now();
+        /* palm rejection: while the Apple Pencil is in use, finger touches are ignored
+           so a resting palm never paints stray strokes */
+        if (e.pointerType === "touch" && Date.now() - notePenAt < 2000) return;
         e.preventDefault();
         try { c.setPointerCapture(e.pointerId); } catch (err) { /* synthetic pointers */ }
-        const rect = c.getBoundingClientRect();
+        noteStrokePtr = e.pointerId;
         noteStroke = {
             t: noteErase ? "erase" : "pen",
             c: noteColor,
             w: noteErase ? 0.04 : 0.0075,
-            p: [notePoint(e)]
+            p: [],
+            f: []
         };
-        paintStroke(noteStroke, rect);
+        noteDevPts = [];
+        addSample(e, c.getBoundingClientRect());
     });
+
     c.addEventListener("pointermove", e => {
-        if (!noteStroke) return;
+        if (!noteStroke || e.pointerId !== noteStrokePtr) return;
+        if (e.pointerType === "touch" && Date.now() - notePenAt < 2000) return;
         e.preventDefault();
         const rect = c.getBoundingClientRect();
-        const prev = noteStroke.p[noteStroke.p.length - 1];
-        const next = notePoint(e);
-        noteStroke.p.push(next);
-        if (!noteCtx) return;
-        const ctx = noteCtx;
-        ctx.save();
-        ctx.globalCompositeOperation = noteStroke.t === "erase" ? "destination-out" : "source-over";
-        ctx.strokeStyle = noteStroke.c;
-        ctx.lineWidth = Math.max(1, noteStroke.w * rect.width);
-        ctx.lineCap = "round";
-        ctx.lineJoin = "round";
-        ctx.beginPath();
-        ctx.moveTo(prev[0] * rect.width, prev[1] * rect.height);
-        ctx.lineTo(next[0] * rect.width, next[1] * rect.height);
-        ctx.stroke();
-        ctx.restore();
+        /* Safari batches pencil samples between frames. The coalesced list is the
+           full-rate signal, and inking all of it is what keeps a fast stroke
+           continuous instead of a few long straight jumps. */
+        const list = (typeof e.getCoalescedEvents === "function") ? e.getCoalescedEvents() : null;
+        if (list && list.length) list.forEach(s => addSample(s, rect));
+        else addSample(e, rect);
     });
-    const finish = () => {
+
+    /* the pen tip leaving the canvas mid-stroke must not cut the line short */
+    c.addEventListener("pointerleave", e => {
+        if (noteStroke && e.pointerId === noteStrokePtr) e.preventDefault();
+    });
+
+    const finish = e => {
         if (!noteStroke) return;
-        const q = currentQ();
+        if (e && e.pointerId != null && noteStrokePtr != null && e.pointerId !== noteStrokePtr) return;
+        const rect = c.getBoundingClientRect();
+        if (noteCtx && noteDevPts.length > 1) inkTail(noteCtx, noteStroke, noteDevPts, rect.width);
+        /* nothing landed on the paper: drop it rather than save an empty stroke */
+        const empty = !noteStroke.p.length;
+        /* factors of exactly 1 add nothing, so leave them out of the saved stroke */
+        if (noteStroke.f && noteStroke.f.every(v => v === 1)) delete noteStroke.f;
+        const q = empty ? null : currentQ();
         if (q) {
             noteFor(q.id).strokes.push(noteStroke);
             saveNotes();
@@ -3366,11 +3935,18 @@ function bindNoteEvents() {
             syncNoteBadge(q.id);
         }
         noteStroke = null;
+        noteStrokePtr = null;
+        noteDevPts = [];
     };
     c.addEventListener("pointerup", finish);
     c.addEventListener("pointercancel", finish);
+    c.addEventListener("lostpointercapture", finish);
     window.addEventListener("pointerup", finish);
+
+    /* rotating the iPad or resizing the window must not stretch the bitmap */
+    window.addEventListener("resize", () => { if (noteOpen && !noteStroke) setupNoteCanvas(); });
 }
+
 function bindNoteChrome() {
     const panel = document.getElementById("notePanel");
     const head = document.getElementById("noteHead");
@@ -3526,19 +4102,33 @@ function removePastedImage(idx) {
     saveNotes();
     renderPasteImgs();
 }
-/* shrink big screenshots so a few of them still fit in localStorage */
+/* Shrink and compress pasted screenshots. An iPad Retina grab is often 4–8 MB of PNG;
+   at 1280 px on the long edge as WebP (JPEG fallback) it lands around 60–90 KB, so a
+   session can hold plenty of them in RAM and in the synced JSON. */
+const PIC_MAX_DIM = 1280;
+const PIC_QUALITY = 0.75;
 function picToDataUrl(pic) {
-    const scale = Math.min(1, 1200 / Math.max(pic.width, pic.height));
-    const w = Math.max(1, Math.round(pic.width * scale));
-    const h = Math.max(1, Math.round(pic.height * scale));
+    const srcW = pic.naturalWidth || pic.width || 1;
+    const srcH = pic.naturalHeight || pic.height || 1;
+    let w = srcW, h = srcH;
+    if (w > PIC_MAX_DIM || h > PIC_MAX_DIM) {
+        if (w > h) { h = Math.round((h * PIC_MAX_DIM) / w); w = PIC_MAX_DIM; }
+        else { w = Math.round((w * PIC_MAX_DIM) / h); h = PIC_MAX_DIM; }
+    }
+    w = Math.max(1, w);
+    h = Math.max(1, h);
     const cv = document.createElement("canvas");
     cv.width = w; cv.height = h;
     const ctx = cv.getContext("2d");
-    ctx.fillStyle = "#fff";
+    ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, w, h);
     ctx.drawImage(pic, 0, 0, w, h);
     let out = null;
-    try { out = cv.toDataURL("image/jpeg", 0.85); } catch (e) { out = null; }
+    try { out = cv.toDataURL("image/webp", PIC_QUALITY); } catch (e) { out = null; }
+    /* older Safari builds fall back to image/png silently — force JPEG there */
+    if (!out || out.indexOf("data:image/webp") !== 0) {
+        try { out = cv.toDataURL("image/jpeg", PIC_QUALITY); } catch (e) { out = null; }
+    }
     return out;
 }
 function imageFromFile(file, cb) {
@@ -3580,8 +4170,9 @@ function harvestPasteZone() {
     imgs.forEach(im => {
         const src = im.getAttribute("src") || "";
         if (!src) return;
-        if (src.indexOf("data:image/") === 0) addPastedImage(src);
-        else urlToDataUrl(src, out => { if (out) addPastedImage(out); });
+        /* every route goes through the compressor — Safari hands us a raw PNG data URL
+           here, which used to skip picToDataUrl and land at retina size */
+        urlToDataUrl(src, out => { if (out) addPastedImage(out); });
     });
     if (!imgs.length) zone.innerHTML = "";   /* plain text pastes are not images */
 }
@@ -3698,10 +4289,7 @@ function normalizeQuestions(list) {
     return out;
 }
 function loadQuestions(list, persist) {
-    QDATA = list;
-    if (persist) {
-        try { localStorage.setItem(DATASET_KEY, JSON.stringify(list)); } catch (e) { /* quota */ }
-    }
+    QDATA = list;   /* RAM mode: the loader feeds memory only, nothing is cached on disk */
     state.mock = null;
     state.topic = null;
     state.sub = null;
@@ -3715,7 +4303,7 @@ function loadQuestions(list, persist) {
     render();
     const st = document.getElementById("status");
     if (st) {
-        st.innerHTML = "✅ <b>Loaded " + list.length + " questions</b> · " +
+        st.innerHTML = "✅ <b>Loaded " + list.length + " questions into RAM</b> · " +
             new Set(list.map(q => q.mock)).size + " mocks";
         st.style.color = "var(--color-mastered)";
     }
@@ -3741,27 +4329,16 @@ function loadQuestionsFile(ev) {
     };
     reader.readAsText(file);
 }
-function restoreDataset() {
-    if (QDATA.length) return;
-    try {
-        const raw = localStorage.getItem(DATASET_KEY);
-        if (!raw) return;
-        const arr = normalizeQuestions(JSON.parse(raw));
-        if (!arr || !arr.length) return;
-        QDATA = arr;
-        const st = document.getElementById("status");
-        if (st) {
-            st.innerHTML = "📂 <b>Session restored:</b> " + arr.length + " loaded questions.";
-            st.style.color = "var(--color-mastered)";
-        }
-    } catch (e) { /* ignore */ }
-}
+function restoreDataset() { /* RAM mode: questions come from the baked-in list or 📂 Load Questions */ }
 
 /* ---------------- boot ---------------- */
 function boot() {
     loadStore();
     applyTheme(theme, false);
     loadNotes();
+    bindWorkspaceClicks();
+    applyScoring(null, false);
+    updateRamBadge();
     bindNoteEvents();
     bindNoteChrome();
     bindPasteZone();
@@ -3782,7 +4359,8 @@ function boot() {
     render();
     if (params.get("test")) startTest(parseInt(params.get("test"), 10));
     const st = params.get("selftest");
-    if (st) runSelfTest(st);
+    /* on load, so the sync script below this one has registered its hooks */
+    if (st) window.addEventListener("load", () => runSelfTest(st));
 }
 
 /* ---------------- self test (headless verification) ---------------- */
@@ -3792,12 +4370,20 @@ function runSelfTest(mode) {
     const tileCount = () => document.querySelectorAll("#modulesGrid .rule-btn").length;
     const cardCount = () => document.querySelectorAll("#cardsGrid .mod-card").length;
 
+    /* RAM mode has no reload to survive, so this checks the Sync round-trip instead */
     if (mode === "read") {
-        const stored = QDATA.filter(q => progress[q.id] && progress[q.id].seen).length;
-        const q1 = progress[QDATA[0].id] || {};
-        ok(stored >= 1, "progress survived reload (attempted/seen = " + stored + ")");
-        ok(q1.s === "mastered", "answered question kept its mastered status after reload");
-        ok((attempts[12] || []).length >= 1, "mock 12 attempt survived reload");
+        progress = {}; attempts = {}; notes = {};
+        ensureRec("x-1").s = "mastered";
+        notes["x-1"] = { strokes: [{ t: "pen", p: [[0, 0], [1, 1]] }] };
+        const snap = window.__srSync.snapshot();
+        ok(snap && snap.mode === "ram", "snapshot is tagged as RAM state");
+        ok(snap.data.srqb_v1.progress["x-1"].s === "mastered", "snapshot carries RAM progress");
+        ok(snap.data.srqb_notes_v1["x-1"].strokes.length === 1, "snapshot carries RAM notes");
+        progress = {}; attempts = {}; notes = {};
+        ok(window.__srSync.apply(JSON.stringify(snap)) === "", "snapshot applies back cleanly");
+        ok(progress["x-1"] && progress["x-1"].s === "mastered", "apply restores progress in RAM");
+        ok(notes["x-1"] && notes["x-1"].strokes.length === 1, "apply restores notes in RAM");
+        ok(!localStorage.getItem(STORE_KEY) && !localStorage.getItem(NOTES_KEY), "sync never writes to localStorage");
         const box0 = document.getElementById("selftestOut");
         box0.textContent = out.join("\n") + "\nDONE";
         box0.style.display = "block";
@@ -3805,7 +4391,6 @@ function runSelfTest(mode) {
     }
 
     if (mode === "empty") {
-        try { localStorage.removeItem(DATASET_KEY); } catch (e) { /* ignore */ }
         QDATA = [];
         state.mock = null; state.topic = null; state.sub = null; state.search = "";
         state.status.clear(); state.diff.clear(); state.prio.clear(); state.flags.clear();
@@ -3880,7 +4465,159 @@ function runSelfTest(mode) {
     chooseOption(q0.ans);
     ok(rec(q0.id).seen === 1 && statusOf(q0.id) === "learning", "answering records the attempt without changing status");
 
+    // Rate recall must be pinned: it used to sit at the end of the scrolling body
+    const rateBar = document.getElementById("rateBar");
+    ok(!!rateBar && !!rateBar.closest(".modal-footer") && !rateBar.closest(".modal-body"),
+        "rate bar lives in the pinned footer, not the scrolling body");
+    ok(rateBar.classList.contains("show") && rateBar.getBoundingClientRect().height > 0,
+        "rate bar is visible right after answering");
+    const bodyRect = document.getElementById("modalBody").getBoundingClientRect();
+    ok(rateBar.getBoundingClientRect().top >= bodyRect.bottom - 1, "rate bar sits below the scrolling body");
+
+    // the rating you pick must stay visibly selected
+    ok(!document.querySelector("#rateBar .sr-rate-btn.selected"), "no rating is highlighted before you rate");
+    const boxGeom = () => Array.prototype.map.call(document.querySelectorAll("#rateBar .sr-rate-btn"), b => {
+        const r = b.getBoundingClientRect();
+        return Math.round(r.width) + "x" + Math.round(r.height);
+    });
+    const barHeightBefore = Math.round(rateBar.getBoundingClientRect().height);
+    const geomBefore = boxGeom();
+    document.querySelector("#rateBar .sr-rate-btn.good").click();
+    const geomAfter = boxGeom();
+    ok(JSON.stringify(geomAfter) === JSON.stringify(geomBefore),
+        "selecting never resizes the boxes (" + geomBefore[0] + " unchanged)");
+    ok(Math.round(rateBar.getBoundingClientRect().height) === barHeightBefore,
+        "selecting never changes the bar height (" + barHeightBefore + "px)");
+    ok(geomBefore.every(g => parseInt(g, 10) <= 170), "the boxes stay compact (" + geomBefore.join(" ") + ")");
+    const sel1 = document.querySelectorAll("#rateBar .sr-rate-btn.selected");
+    ok(sel1.length === 1 && sel1[0].classList.contains("good"), "the rating just used stays highlighted");
+    ok(sel1[0].getAttribute("aria-pressed") === "true", "highlight is exposed via aria-pressed");
+    ok(!!document.querySelector("#rateBar .sr-rate-note"), "bar says when the card comes back next");
+    ok(!document.querySelector("#rateBar .sr-rate-label"), "the Rate recall label is gone");
+    const groupRect = document.querySelector("#rateBar .sr-rate-btns").getBoundingClientRect();
+    const barRect0 = rateBar.getBoundingClientRect();
+    ok(Math.abs((groupRect.left + groupRect.right) / 2 - (barRect0.left + barRect0.right) / 2) <= 2,
+        "the four ratings are centred in the bar");
+    const noteRect = document.querySelector("#rateBar .sr-rate-note").getBoundingClientRect();
+    ok(noteRect.right <= barRect0.right + 1, "the next date sits at the right edge");
+    const noteEl = document.querySelector("#rateBar .sr-rate-note");
+    ok(noteEl.scrollWidth <= noteEl.clientWidth + 1,
+        "the next date is shown in full (" + Math.round(noteEl.clientWidth) + "px)");
+    const heights = Array.prototype.map.call(document.querySelectorAll("#rateBar .sr-rate-btn"),
+        b => Math.round(b.getBoundingClientRect().height));
+    ok(new Set(heights).size === 1, "all four ratings share one height (" + heights.join("/") + ")");
+    const hintTexts = Array.prototype.map.call(document.querySelectorAll("#rateBar .sr-rate-hint"),
+        h => h.textContent.trim());
+    ok(hintTexts.every(h => h && !/step/i.test(h)), "hints show a day, not ladder steps (" + hintTexts.join(" · ") + ")");
+    ok(hintTexts.every(h => /\d/.test(h) || /^Tomorrow$/i.test(h)), "every hint is a time or a date");
+    const dAgain = srNext(q0.id, "again").due, dHard = srNext(q0.id, "hard").due;
+    const dGood = srNext(q0.id, "good").due, dEasy = srNext(q0.id, "easy").due;
+    ok(dAgain < dHard && dHard <= dGood && dGood <= dEasy,
+        "previews run Again < Hard ≤ Good ≤ Easy");
+    ok(/^Next:?\s.*\d/.test(document.querySelector("#rateBar .sr-rate-note").textContent),
+        "note states the concrete next date ('" + document.querySelector("#rateBar .sr-rate-note").textContent + "')");
+    const selectedHint = document.querySelector("#rateBar .sr-rate-btn.selected .sr-rate-hint").textContent.trim();
+    ok(selectedHint === fmtDue(rec(q0.id).sr.due),
+        "the selected box shows the day it actually booked ('" + selectedHint + "')");
+    ok(getComputedStyle(document.querySelector("#rateBar .sr-rate-btn.again")).backgroundColor !==
+       getComputedStyle(sel1[0]).backgroundColor, "selected rating is visually distinct from the rest");
+    closeModal();
+    openModal(q0.id);
+    ok(document.querySelectorAll("#rateBar .sr-rate-btn.selected").length === 1, "highlight survives reopening the question");
+    document.querySelector("#rateBar .sr-rate-btn.easy").click();
+    const sel2 = document.querySelectorAll("#rateBar .sr-rate-btn.selected");
+    ok(sel2.length === 1 && sel2[0].classList.contains("easy"), "changing the rating moves the highlight");
+    ok(document.querySelectorAll("#rateBar .sr-rate-note").length === 1, "only one next-due note is shown");
+
+    // a rating must not rebuild the grid or the question body (that was the lag)
+    const stemNode = document.querySelector("#modalBody .q-stem");
+    const tileNode = document.querySelector("#modulesGrid .rule-btn");
+    const bodyEl = document.getElementById("modalBody");
+    bodyEl.scrollTop = 40;
+    const scrollBefore = bodyEl.scrollTop;
+    document.querySelector("#rateBar .sr-rate-btn.hard").click();
+    ok(document.querySelector("#modalBody .q-stem") === stemNode, "rating leaves the question body untouched");
+    ok(document.querySelector("#modulesGrid .rule-btn") === tileNode, "rating does not rebuild the 1,173 tiles");
+    ok(bodyEl.scrollTop === scrollBefore, "rating keeps the reading position (" + scrollBefore + "px)");
+    ok(document.querySelector("#rateBar .sr-rate-btn.hard").classList.contains("selected"), "bar refreshed in place");
+    ok(document.querySelector("#rateBar .sr-rate-note").textContent.indexOf("Next:") === 0, "next date updated in place");
+
+    // the longest question is the case that used to hide the bar
+    const longest = QDATA.reduce((a, b) => (b.text.length > a.text.length ? b : a));
+    ensureRec(longest.id).sr = { n: 1, last: Date.now(), due: Date.now() + DAY_MS };
+    openModal(longest.id);
+    const barRect = rateBar.getBoundingClientRect();
+    const modalRect = document.querySelector("#modalOverlay .modal").getBoundingClientRect();
+    ok(barRect.height > 0 && barRect.top >= modalRect.top - 1 && barRect.bottom <= modalRect.bottom + 1,
+        "rate bar stays inside the modal for the longest question (" + longest.id + ")");
+    const scroller = document.getElementById("modalBody");
+    scroller.scrollTop = 60;
+    const keptTop = scroller.scrollTop;
+    document.querySelector("#rateBar .sr-rate-btn.good").click();
+    ok(scroller.scrollTop === keptTop, "rating keeps the scroll position (" + keptTop + "px)");
+    ok(barRect.top >= -1 && barRect.bottom <= window.innerHeight + 1, "rate bar is on screen without scrolling");
+    closeModal();
+
+    const freshQ = QDATA.find(x => !rec(x.id).sr);
+    if (freshQ) {
+        openModal(freshQ.id);
+        ok(!rateBar.classList.contains("show"), "rate bar hides for an unscheduled question");
+        closeModal();
+    }
+
+    // KaTeX: a question with $...$ must render real markup, not leak backslashes
+    const mathQ = QDATA.find(x => /\$[^$]+\$/.test(x.text));
+    ok(!!mathQ, "dataset contains LaTeX questions (" + (mathQ ? mathQ.id : "none") + ")");
+    if (mathQ) {
+        openModal(mathQ.id);
+        ok(document.querySelectorAll("#modalBody .katex").length > 0, "KaTeX renders the stem of " + mathQ.id);
+        ok(document.getElementById("modalBody").textContent.indexOf("\\frac") < 0, "no raw \\frac left in the rendered stem");
+        closeModal();
+    }
+
+    // event delegation: one listener on the grid opens the clicked tile
+    render();
+    const firstTile = document.querySelector("#modulesGrid .rule-btn");
+    ok(!!firstTile && !firstTile.onclick, "tiles carry no per-tile onclick handler");
+    firstTile.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    ok(document.getElementById("modalOverlay").classList.contains("show") && currentQ() && currentQ().id === firstTile.dataset.id,
+        "delegated click opens that tile's question");
+    closeModal();
+
+    // SRS: Again / Hard / Good / Easy ratings
+    const srQ = QDATA[1];
+    delete ensureRec(srQ.id).sr;
+    const nAgain = srRate(srQ.id, "again");
+    const s1 = srOf(srQ.id);
+    ok(nAgain === 1 && s1.due - s1.last >= 9 * 60000, "Again brings the card back in ~" + srPrefs.lapseMin + " min");
+    srRate(srQ.id, "easy");
+    ok(srOf(srQ.id).n === Math.min(3, srPrefs.days.length), "Easy skips a ladder step (n=" + srOf(srQ.id).n + ")");
+    srRate(srQ.id, "hard");
+    const s3 = srOf(srQ.id);
+    ok(Math.abs((s3.due - s3.last) - DAY_MS) < 1000, "Hard schedules tomorrow");
+    const nBeforeGood = srOf(srQ.id).n;
+    srRate(srQ.id, "good");
+    ok(srOf(srQ.id).n === Math.min(nBeforeGood + 1, srPrefs.days.length),
+        "Good advances one ladder step (n=" + nBeforeGood + "→" + srOf(srQ.id).n + ")");
+
+    // daily review deck empties as cards are rated
+    const deckQ = QDATA[2];
+    ensureRec(deckQ.id).sr = { n: 1, last: Date.now() - 5 * 60000, due: Date.now() - 60000 };
+    startReview();
+    const deckLen = modalDeck.length;
+    ok(reviewDeck.active && deckLen >= 1, "daily review opens a due deck (" + deckLen + " card(s))");
+    rateCard("good");
+    ok(modalDeck.length === deckLen - 1, "rating a card removes it from the deck");
+    ok(!reviewDeck.active || modalDeck.length > 0, "deck state stays consistent after a rating");
+    closeModal();
+
+    // RAM mode: nothing is written to the browser
+    ok(!localStorage.getItem(STORE_KEY) && !localStorage.getItem(NOTES_KEY) && !localStorage.getItem(DATASET_KEY),
+        "RAM mode writes nothing to localStorage");
+    ok(hasUnsavedSessionData(), "unsynced RAM work is detected for the exit warning");
+
     // sticky note: open, draw with a pen pointer, persist, resize, reopen
+    openModal(q0.id);
     notes = {};
     saveNotes();
     toggleNote(true);
@@ -3897,7 +4634,21 @@ function runSelfTest(mode) {
     cv.dispatchEvent(pev("pointermove", cr.left + 90, cr.top + 30));
     cv.dispatchEvent(pev("pointerup", cr.left + 90, cr.top + 30));
     ok(noteFor(q0.id).strokes.length === 1, "pen stroke captured");
-    ok(JSON.parse(localStorage.getItem(NOTES_KEY) || "{}")[q0.id].strokes.length === 1, "note persisted to localStorage");
+    ok(notes[q0.id] && notes[q0.id].strokes.length === 1, "note kept in RAM");
+    ok(!localStorage.getItem(NOTES_KEY), "note never written to localStorage");
+    // palm rejection: a finger touch right after the pen must not paint
+    const strokesBeforePalm = noteFor(q0.id).strokes.length;
+    const tev = (type, x, y) => new PointerEvent(type, {
+        bubbles: true, pointerId: 21, pointerType: "touch", clientX: x, clientY: y
+    });
+    cv.dispatchEvent(tev("pointerdown", cr.left + 40, cr.top + 40));
+    cv.dispatchEvent(tev("pointermove", cr.left + 70, cr.top + 60));
+    cv.dispatchEvent(tev("pointerup", cr.left + 70, cr.top + 60));
+    ok(noteFor(q0.id).strokes.length === strokesBeforePalm, "palm touch right after the pen is ignored");
+    cv.dispatchEvent(pev("pointerdown", cr.left + 20, cr.top + 60));
+    cv.dispatchEvent(pev("pointermove", cr.left + 60, cr.top + 70));
+    cv.dispatchEvent(pev("pointerup", cr.left + 60, cr.top + 70));
+    ok(noteFor(q0.id).strokes.length === strokesBeforePalm + 1, "the pen still draws after a palm touch");
     const w0 = noteP.getBoundingClientRect().width;
     const hd = document.getElementById("noteResize").getBoundingClientRect();
     const dev = (type, x, y) => new PointerEvent(type, { bubbles: true, pointerId: 9, clientX: x, clientY: y });
@@ -3923,6 +4674,30 @@ function runSelfTest(mode) {
     submitTest();
     ok(document.querySelectorAll(".review-row").length === qsOfMock(12).length, "result review lists every question");
     ok((attempts[12] || []).length >= 1, "attempt stored");
+    const lastAttempt = attempts[12][0];
+    ok(lastAttempt.score === rawScore(1, 0), "raw score uses +" + scoring.pos + " / \u2212" + scoring.neg + " (got " + lastAttempt.score + ")");
+    ok(lastAttempt.max === Math.round(qsOfMock(12).length * scoring.pos * 100) / 100, "max marks = questions \u00d7 +" + scoring.pos);
+    applyScoring({ pos: 4, neg: 1 }, true);
+    ok(rawScore(2, 3) === 5, "marking scheme is configurable (4/-1 \u2192 2*4 - 3*1 = 5)");
+    ok(document.getElementById("markPos").value === "4", "marking inputs follow the stored scheme");
+    applyScoring(null);
+
+    // closing the tab saves a JSON file by itself and still asks first
+    const origAnchorClick = HTMLAnchorElement.prototype.click;
+    const savedFiles = [];
+    HTMLAnchorElement.prototype.click = function () { savedFiles.push(this.download); };
+    ramDirty = true;
+    const leaveEv = new Event("beforeunload", { cancelable: true });
+    window.dispatchEvent(leaveEv);
+    ok(savedFiles.length === 1 && /^speed-ranker-\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.json$/.test(savedFiles[0]),
+        "closing automatically downloads a timestamped JSON (" + savedFiles[0] + ")");
+    ok(leaveEv.defaultPrevented, "the leave confirmation is still shown");
+    window.dispatchEvent(new Event("beforeunload", { cancelable: true }));
+    ok(savedFiles.length === 1, "no duplicate file for the same close attempt");
+    ramDirty = true; exitSaveAt = 0;
+    window.dispatchEvent(new Event("pagehide"));
+    ok(savedFiles.length === 2, "pagehide saves as well (iPad Safari path)");
+    HTMLAnchorElement.prototype.click = origAnchorClick;
     abortTest();
     ok(window.__errors.length === 0, "no runtime errors (" + window.__errors.join("; ") + ")");
 
@@ -3935,25 +4710,34 @@ boot();
 </script>
 <!-- ===== Cross-device sync of marks, notes and comments ===== -->
 <script>
-/* The marks and notes made in this tracker are stored in this device's browser
-   storage (localStorage), not inside the .html file, so a Git commit never
-   carried them between iPad and desktop. This panel turns that state into one
-   JSON blob you can move by copy/paste or by a file. */
+/* Everything this tracker knows lives in RAM for this tab only, so this panel is
+   the single way state leaves the page: snapshot the in-memory marks and notes to
+   JSON, copy or download it, then Apply the same JSON on the other device (or back
+   here after a reload). Applying merges in place and never reloads the page - a
+   reload would wipe the RAM state it had just restored. */
 (function () {
     var APP = 'speed-ranker';
-    var KEYS = ["srqb_v1", "srqb_notes_v1"];
+    var KEY_STORE = "srqb_v1";        /* same container names as earlier backups */
+    var KEY_NOTES = "srqb_notes_v1";
 
     function isObj(v) { return !!v && typeof v === 'object' && !Array.isArray(v); }
     function isEmpty(v) { return v === '' || v === null || v === undefined || v === false || (Array.isArray(v) && v.length === 0); }
-    function readKey(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
 
     function snapshot() {
         var data = {};
-        for (var i = 0; i < KEYS.length; i++) {
-            var v = readKey(KEYS[i]);
-            if (v !== null && v !== undefined) data[KEYS[i]] = v;
-        }
-        return { app: APP, version: 1, exportedAt: new Date().toISOString(), data: data };
+        data[KEY_STORE] = {
+            progress: progress,
+            attempts: attempts,
+            prefs: {
+                mode: state.mode, mock: state.mock, topic: state.topic, sub: state.sub,
+                note: { x: noteGeo.x, y: noteGeo.y, w: noteGeo.w, h: noteGeo.h },
+                sr: { days: srPrefs.days, lapseMin: srPrefs.lapseMin },
+                marks: { pos: scoring.pos, neg: scoring.neg },
+                theme: theme
+            }
+        };
+        data[KEY_NOTES] = notes;
+        return { app: APP, version: 2, mode: 'ram', exportedAt: new Date().toISOString(), data: data };
     }
 
     function mergeInto(local, incoming) {
@@ -3968,20 +4752,36 @@ boot();
         return out;
     }
 
+    function applyData(data) {
+        var touched = 0;
+        if (isObj(data[KEY_STORE])) {
+            var s = data[KEY_STORE];
+            if (isObj(s.progress)) { progress = mergeInto(progress, s.progress); touched++; }
+            if (isObj(s.attempts)) { attempts = mergeInto(attempts, s.attempts); touched++; }
+            if (isObj(s.prefs)) {
+                if (s.prefs.sr) srPrefs = sanitizeSrPrefs(s.prefs.sr);
+                if (s.prefs.note) Object.assign(noteGeo, s.prefs.note);
+                if (s.prefs.marks) applyScoring(s.prefs.marks, false);
+                if (s.prefs.theme) applyTheme(s.prefs.theme, false);
+                touched++;
+            }
+        }
+        if (isObj(data[KEY_NOTES])) { notes = mergeInto(notes, data[KEY_NOTES]); touched++; }
+        return touched;
+    }
+
     function applyText(text) {
         var payload;
         try { payload = JSON.parse(text); } catch (e) { return 'That is not valid JSON. Copy the whole file, including the outer braces.'; }
         var data = payload && isObj(payload.data) ? payload.data : payload;
         if (!isObj(data)) return 'That does not look like a tracker backup.';
-        var touched = 0;
-        for (var i = 0; i < KEYS.length; i++) {
-            var key = KEYS[i];
-            if (!Object.prototype.hasOwnProperty.call(data, key)) continue;
-            var incoming = data[key];
-            var next = isObj(incoming) ? mergeInto(readKey(key) || {}, incoming) : incoming;
-            try { localStorage.setItem(key, JSON.stringify(next)); touched++; } catch (e) {}
-        }
-        if (!touched) return 'Nothing in that file matched this tracker.';
+        if (!applyData(data)) return 'Nothing in that file matched this tracker.';
+        saveStore();
+        render();
+        if (noteOpen) { clampNoteGeo(); renderNoteTitle(); setupNoteCanvas(); }
+        renderPasteImgs();
+        var panel = document.getElementById('srPanel');
+        if (panel && panel.classList.contains('show')) fillSrInputs();
         return '';
     }
 
@@ -4004,9 +4804,10 @@ boot();
         wrap.id = 'syncOverlay';
         wrap.innerHTML = '<div class="sbox">'
             + '<h3><span>&#9729; Sync &mdash; marks, notes &amp; comments</span><button id="syncX" title="Close">&#10005;</button></h3>'
-            + '<div class="shelp">This progress is saved in this device&#39;s browser storage, not inside the .html file, which is why a commit never carried it across. '
-            + 'Copy the JSON below into the vault (for example <b>_sync/' + APP + '.json</b>), commit and push, pull on the other device, open this panel there, '
-            + 'paste the file over the text and press <b>Apply pasted</b>. It keeps whatever is filled in on either side and adds anything new from the file.</div>'
+            + '<div class="shelp">This session lives in <b>RAM only</b> — no marks, notes or attempts are written to the browser or to the .html file. '
+            + 'To keep them, <b>Copy all</b> or <b>Download file</b> and put the JSON in your vault (for example <b>_sync/' + APP + '.json</b>). On the other device open this panel, '
+            + 'paste or load the file and press <b>Apply pasted</b>: it merges into what is already in RAM there, keeping anything filled in on either side.<br>'
+            + 'As a safety net, closing or reloading the tab also downloads <b>speed-ranker-&lt;timestamp&gt;.json</b> automatically when there is unsynced work.</div>'
             + '<textarea id="syncText" spellcheck="false"></textarea>'
             + '<div class="sstatus" id="syncMsg"></div>'
             + '<div class="srow">'
@@ -4035,9 +4836,9 @@ boot();
             ta.focus(); ta.select();
             var done = false;
             try { done = document.execCommand('copy'); } catch (e) { done = false; }
-            if (done) { say('Copied. Paste it into a note in the vault.', true); return; }
+            if (done) { markStateCopied(); say('Copied. Paste it into a note in the vault.', true); return; }
             if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(ta.value).then(function () { say('Copied.', true); },
+                navigator.clipboard.writeText(ta.value).then(function () { markStateCopied(); say('Copied.', true); },
                     function () { say('Copy failed - hold the text, Select All, then Copy.', false); });
             } else say('Copy failed - hold the text, Select All, then Copy.', false);
         };
@@ -4050,6 +4851,7 @@ boot();
                 a.download = APP + '-state.json';
                 document.body.appendChild(a); a.click(); a.remove();
                 setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+                markStateCopied();
                 say('Download attempted. If nothing was saved, use Copy all instead.', true);
             } catch (e) { say('Download is blocked here - use Copy all instead.', false); }
         };
@@ -4067,13 +4869,15 @@ boot();
         function commit() {
             var err = applyText(ta.value);
             if (err) { say(err, false); return; }
-            say('Applied. Reloading this tracker...', true);
-            setTimeout(function () { try { location.reload(); } catch (e) { say('Reload the file (close and reopen it) to see the merged marks.', false); } }, 350);
+            /* no reload: the merged state is already live in RAM */
+            ta.value = JSON.stringify(snapshot(), null, 2);
+            say('Applied into RAM — copy or download this again before closing the tab.', true);
         }
         document.getElementById('syncApply').onclick = commit;
     }
 
     window.openSyncPanel = openSyncPanel;
+    window.__srSync = { snapshot: snapshot, apply: applyText };
 })();
 </script>
 </body>
