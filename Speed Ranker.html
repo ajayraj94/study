@@ -1596,6 +1596,9 @@
         background: #fefce8; border: 1px solid #fde68a; border-radius: 10px;
         box-shadow: 0 14px 34px rgba(15,23,42,.28); overflow: hidden;
         min-width: 240px; min-height: 200px; max-width: 94vw; max-height: 86vh;
+        /* a long press or a stray gesture over the paper cancels the pen stream */
+        touch-action: none; user-select: none; -webkit-user-select: none;
+        -webkit-touch-callout: none;
     }
     .note-panel.show { display: flex; }
     .note-head {
@@ -3881,7 +3884,14 @@ function bindNoteEvents() {
     }
 
     c.addEventListener("pointerdown", e => {
-        if (!noteOpen || !currentQ() || noteStroke) return;   /* one pointer at a time */
+        if (!noteOpen || !currentQ()) return;
+        if (noteStroke) {
+            /* A second pointer (a resting palm) never takes over a live stroke. The
+               same pointer delivering a fresh down, though, means Safari dropped the
+               up for the old stroke: close it so the pen can write again. */
+            if (e.pointerId !== noteStrokePtr) return;
+            finish();
+        }
         if (e.pointerType === "pen") notePenAt = Date.now();
         /* palm rejection: while the Apple Pencil is in use, finger touches are ignored
            so a resting palm never paints stray strokes */
@@ -3900,18 +3910,21 @@ function bindNoteEvents() {
         addSample(e, c.getBoundingClientRect());
     });
 
-    c.addEventListener("pointermove", e => {
+    /* The move listener sits on the window in the capture phase, not on the canvas:
+       the pen then keeps drawing while its tip crosses the toolbar, a pasted
+       thumbnail or the resize grip, and a pointer capture that Safari drops
+       mid-stroke can no longer cut a line short. Safari batches pencil samples
+       between frames; the coalesced list is the full-rate signal, and inking all
+       of it is what keeps a fast stroke continuous instead of a few long jumps. */
+    window.addEventListener("pointermove", e => {
         if (!noteStroke || e.pointerId !== noteStrokePtr) return;
         if (e.pointerType === "touch" && Date.now() - notePenAt < 2000) return;
         e.preventDefault();
         const rect = c.getBoundingClientRect();
-        /* Safari batches pencil samples between frames. The coalesced list is the
-           full-rate signal, and inking all of it is what keeps a fast stroke
-           continuous instead of a few long straight jumps. */
         const list = (typeof e.getCoalescedEvents === "function") ? e.getCoalescedEvents() : null;
         if (list && list.length) list.forEach(s => addSample(s, rect));
         else addSample(e, rect);
-    });
+    }, true);
 
     /* the pen tip leaving the canvas mid-stroke must not cut the line short */
     c.addEventListener("pointerleave", e => {
@@ -3938,10 +3951,12 @@ function bindNoteEvents() {
         noteStrokePtr = null;
         noteDevPts = [];
     };
+    /* A lift is the only thing that ends a stroke. Safari also fires
+       lostpointercapture while the pencil is still on the glass, and treating
+       that as an end is what cut lines off in the middle of a word. */
     c.addEventListener("pointerup", finish);
-    c.addEventListener("pointercancel", finish);
-    c.addEventListener("lostpointercapture", finish);
-    window.addEventListener("pointerup", finish);
+    window.addEventListener("pointerup", finish, true);
+    window.addEventListener("pointercancel", finish, true);
 
     /* rotating the iPad or resizing the window must not stretch the bitmap */
     window.addEventListener("resize", () => { if (noteOpen && !noteStroke) setupNoteCanvas(); });
@@ -3956,11 +3971,13 @@ function bindNoteChrome() {
     let drag = null;
     head.addEventListener("pointerdown", e => {
         if (e.target.closest("button")) return;
+        if (noteStroke) return;   /* the pen is mid-stroke: never grab the panel */
         drag = { t: "move", sx: e.clientX, sy: e.clientY, ox: noteGeo.x, oy: noteGeo.y };
         try { head.setPointerCapture(e.pointerId); } catch (err) { /* synthetic */ }
         e.preventDefault();
     });
     handle.addEventListener("pointerdown", e => {
+        if (noteStroke) return;   /* writing near the corner must not resize the note */
         drag = { t: "resize", sx: e.clientX, sy: e.clientY, ow: noteGeo.w, oh: noteGeo.h };
         try { handle.setPointerCapture(e.pointerId); } catch (err) { /* synthetic */ }
         e.preventDefault();
@@ -4204,6 +4221,7 @@ function bindPasteImgLayer() {
     if (!layer || layer.dataset.bound) return;
     layer.dataset.bound = "1";
     layer.addEventListener("pointerdown", e => {
+        if (noteStroke) return;   /* never slide a thumbnail under a live stroke */
         const panel = e.target.closest(".paste-img-panel");
         if (!panel) return;
         const q = currentQ();
