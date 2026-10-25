@@ -194,16 +194,16 @@
   },
   "active": "b24c903b7aa16c3c",
   "lastOpenFiles": [
-    "Speed Ranker.html",
-    "speed-ranker-2026-10-25_18-00-57.json",
-    "speed-ranker-state.json",
-    "_chrome_tmp3/ShaderCache/index",
-    "_chrome_tmp3/ShaderCache/data_2",
-    "_chrome_tmp3/ShaderCache/data_3",
-    "_chrome_tmp3/ShaderCache/data_1",
-    "_chrome_tmp3/ShaderCache/data_0",
-    "_chrome_tmp3/ShaderCache",
-    "_chrome_tmp3/GrShaderCache/index",
-    "_chrome_tmp3/GrShaderCache/data_3"
+    "katex/fonts/KaTeX_Typewriter-Regular.woff2",
+    "katex/fonts/KaTeX_Size3-Regular.woff2",
+    "katex/fonts/KaTeX_Size4-Regular.woff2",
+    "katex/fonts/KaTeX_Size2-Regular.woff2",
+    "katex/fonts/KaTeX_Size1-Regular.woff2",
+    "katex/fonts/KaTeX_Script-Regular.woff2",
+    "katex/fonts/KaTeX_SansSerif-Regular.woff2",
+    "katex/fonts/KaTeX_SansSerif-Italic.woff2",
+    "katex/fonts/KaTeX_SansSerif-Bold.woff2",
+    "katex/fonts/KaTeX_Math-Italic.woff2",
+    "katex/fonts/KaTeX_Math-BoldItalic.woff2"
   ]
 }
