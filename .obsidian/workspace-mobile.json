@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e77ef5d8c4feea4b",
+            "id": "0d33823ecd600f57",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -101,7 +101,8 @@
         }
       }
     ],
-    "currentTab": 0
+    "currentTab": 0,
+    "pinned": true
   },
   "right": {
     "id": "05270a5497b6a2d4",
@@ -166,7 +167,8 @@
         }
       }
     ],
-    "currentTab": 3
+    "currentTab": 3,
+    "pinned": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,13 +182,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e77ef5d8c4feea4b",
+  "active": "adaec8596e142854",
   "lastOpenFiles": [
-    "Zero-Gap Grammar Master (Standalone).html",
-    "1100_Homonyms_Master_Tracker.html",
-    "doubtful vocab.html",
+    "Untitled.md",
+    "speed-ranker-2026-10-25_18-00-57.json",
     "Speed Ranker.html",
-    "phrasal-idioms.html",
+    "Homonyms_Backup_2026-10-24.json",
+    "speed-ranker-2026-10-25_21-32-05.json",
+    "katex/fonts/KaTeX_Typewriter-Regular.woff2",
+    "katex/fonts/KaTeX_Size4-Regular.woff2",
+    "katex/fonts/KaTeX_Size3-Regular.woff2",
+    "katex/fonts/KaTeX_Size2-Regular.woff2",
+    "katex/fonts/KaTeX_Size1-Regular.woff2",
+    "katex/fonts/KaTeX_Script-Regular.woff2",
     "README.md"
   ]
 }
