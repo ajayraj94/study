@@ -28,7 +28,7 @@
             --imp-med: #0284c7;
             --imp-low: #65a30d;
 
-            --doubt-color: #f59e0b;
+            --doubt-color: #2563eb;
         }
 
         * {
@@ -185,7 +185,7 @@
         .stat-pill.weak { border-color: var(--color-weak); color: var(--color-weak); }
         .stat-pill.learning { border-color: var(--color-learning); color: var(--color-learning); }
         .stat-pill.mastered { border-color: var(--color-mastered); color: var(--color-mastered); }
-        .stat-pill.doubt { border-color: var(--doubt-color); color: #b45309; }
+        .stat-pill.doubt { border-color: var(--doubt-color); color: #1d4ed8; }
         .stat-num { font-weight: 700; }
 
         .undo-btn {
@@ -705,14 +705,23 @@
             transform: translateY(-1px);
         }
 
-        .rule-btn.passed {
+        /* tile colour mirrors the question's difficulty (Easy / Good / Hard),
+           not Weak / Mastered - those stay as buttons in the question footer */
+        .rule-btn.diff-easy {
             background-color: #dcfce7;
             border-color: #86efac;
             color: #15803d;
             font-weight: 700;
         }
 
-        .rule-btn.failed {
+        .rule-btn.diff-moderate {
+            background-color: #fef3c7;
+            border-color: #fcd34d;
+            color: #b45309;
+            font-weight: 700;
+        }
+
+        .rule-btn.diff-tough {
             background-color: #fee2e2;
             border-color: #fca5a5;
             color: #b91c1c;
@@ -721,7 +730,7 @@
 
         .rule-btn.has-doubt {
             border: 1.5px dashed var(--doubt-color) !important;
-            box-shadow: 0 0 0 1px #fef3c7;
+            box-shadow: 0 0 0 1px #dbeafe;
         }
 
         .rule-btn.has-doubt::after {
@@ -731,18 +740,18 @@
             right: -3px;
             font-size: 9px;
             font-weight: 800;
-            color: #b45309;
-            background: #fef3c7;
+            color: #1d4ed8;
+            background: #dbeafe;
             border-radius: 50%;
             width: 11px;
             height: 11px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 0.5px solid #f59e0b;
+            border: 0.5px solid #3b82f6;
         }
 
-        /* ⭐ bookmarked rule tile gets a star badge (top-left) */
+        /* ⭐ bookmarked rule tile gets a pink star badge (top-left) */
         .rule-btn.has-bookmark::before {
             content: '\2605';
             position: absolute;
@@ -751,21 +760,35 @@
             font-size: 9px;
             line-height: 1;
             font-weight: 800;
-            color: #a16207;
-            background: #fef9c3;
+            color: #be185d;
+            background: #fce7f3;
             border-radius: 50%;
             width: 11px;
             height: 11px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 0.5px solid #facc15;
+            border: 0.5px solid #ec4899;
         }
 
-        /* ✏️ edited rule tile gets a violet left edge (no badge clash with doubt) */
-        .rule-btn.has-edited {
-            border-left: 3px solid #8b5cf6 !important;
+        /* ✏️ edited rule tile gets its own badge (bottom-right), like ⭐ and ? */
+        .rule-btn .tile-edit-badge {
+            display: none;
+            position: absolute;
+            bottom: -5px;
+            right: -3px;
+            font-size: 8px;
+            line-height: 1;
+            color: #6d28d9;
+            background: #ede9fe;
+            border-radius: 50%;
+            width: 11px;
+            height: 11px;
+            align-items: center;
+            justify-content: center;
+            border: 0.5px solid #8b5cf6;
         }
+        .rule-btn.has-edited .tile-edit-badge { display: flex; }
 
         /* --- Document Style Modal Popup --- */
         .modal-overlay {
@@ -1150,16 +1173,16 @@
             transition: all 0.2s cubic-bezier(.4,0,.2,1);
         }
         #flt-bookmark.active {
-            background: #fde68a;
-            color: #78350f;
-            border-color: #f59e0b;
-            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+            background: #fbcfe8;
+            color: #831843;
+            border-color: #db2777;
+            box-shadow: 0 2px 8px rgba(219, 39, 119, 0.28);
         }
         #flt-doubt.active {
-            background: #c4b5fd;
-            color: #4c1d95;
-            border-color: #7c3aed;
-            box-shadow: 0 2px 8px rgba(124, 58, 237, 0.28);
+            background: #bfdbfe;
+            color: #1e3a8a;
+            border-color: #2563eb;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.28);
         }
 
         /* Doubt / Bookmark / Edited Toggle Buttons */
@@ -1185,35 +1208,36 @@
             color: #5b21b6;
         }
 
-        /* ❓ Doubt active — rich violet */
+        /* ❓ Doubt active — blue, kept away from the gold Bookmark star */
         .doubt-toggle-btn.active, #flt-doubt.active {
-            background: #c4b5fd;
-            border: 1.5px solid #7c3aed;
-            color: #4c1d95;
-            box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+            background: #bfdbfe;
+            border: 1.5px solid #2563eb;
+            color: #1e3a8a;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
         }
 
-        /* ⭐ Bookmark flag — bold amber-gold */
+        /* ⭐ Bookmark flag — pink, clearly apart from blue Doubt and violet Edited */
         .doubt-toggle-btn.flag-bookmark.active,
         #flt-bookmark.active {
-            background: #fde68a;
-            border: 1.5px solid #f59e0b;
-            color: #78350f;
-            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.32);
+            background: #fbcfe8;
+            border: 1.5px solid #db2777;
+            color: #831843;
+            box-shadow: 0 2px 8px rgba(219, 39, 119, 0.32);
         }
         .doubt-toggle-btn.flag-bookmark:hover {
-            border-color: #f59e0b;
-            background: #fef3c7;
-            color: #92400e;
+            border-color: #db2777;
+            background: #fdf2f8;
+            color: #9d174d;
         }
 
-        /* ✏️ Edited flag — bold violet */
+        /* ✏️ Edited flag — solid violet so ON is unmistakable (never confused with Doubt) */
         .doubt-toggle-btn.flag-edited.active,
         #flt-edited.active {
-            background: #ddd6fe;
-            border: 1.5px solid #8b5cf6;
-            color: #4c1d95;
-            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+            background: #7c3aed;
+            border: 1.5px solid #5b21b6;
+            color: #ffffff;
+            font-weight: 700;
+            box-shadow: 0 0 0 2px #ede9fe, 0 2px 10px rgba(124, 58, 237, 0.45);
         }
 
         .deck-v-divider {
@@ -1554,6 +1578,103 @@
     .pill-ok { background: #dcfce7; color: #166534; border-radius: 999px; padding: 1px 8px; font-weight: 700; font-size: 11px; }
     .pill-bad { background: #fee2e2; color: #991b1b; border-radius: 999px; padding: 1px 8px; font-weight: 700; font-size: 11px; }
     .pill-skip { background: #f1f5f9; color: #475569; border-radius: 999px; padding: 1px 8px; font-weight: 700; font-size: 11px; }
+    /* ===== result dashboard ===== */
+    .result-wrap { max-width: 1100px; margin: 0 auto; padding: 18px 16px 30px; width: 100%; }
+    .result-hero {
+        background: #fff; border: 1px solid #e2e8f0; border-radius: 14px;
+        padding: 20px 22px 15px; margin-bottom: 14px;
+    }
+    .result-hero-main {
+        display: flex; align-items: flex-end; justify-content: space-between;
+        gap: 24px; flex-wrap: wrap;
+    }
+    .result-score-lbl {
+        font-size: 10px; font-weight: 800; letter-spacing: .8px;
+        text-transform: uppercase; color: #94a3b8;
+    }
+    .result-score-num { display: flex; align-items: baseline; gap: 8px; margin-top: 3px; }
+    .result-score-num b {
+        font-size: 46px; line-height: 1; font-weight: 800; letter-spacing: -1.5px;
+        color: #0f172a; font-variant-numeric: tabular-nums;
+    }
+    .result-score-num span { font-size: 17px; font-weight: 700; color: #94a3b8; font-variant-numeric: tabular-nums; }
+    .result-score-meta { font-size: 12.5px; font-weight: 600; color: #64748b; margin-top: 7px; }
+    .result-kpis { display: grid; grid-template-columns: repeat(4, minmax(62px, 1fr)); gap: 10px; }
+    .result-kpi { padding-left: 14px; border-left: 1px solid #eef2f7; }
+    .result-kpi b {
+        display: block; font-size: 22px; font-weight: 800; line-height: 1.15;
+        color: #0f172a; font-variant-numeric: tabular-nums;
+    }
+    .result-kpi span {
+        font-size: 10px; font-weight: 700; letter-spacing: .5px;
+        text-transform: uppercase; color: #94a3b8;
+    }
+    .result-kpi b.ok { color: #15803d; }
+    .result-kpi b.bad { color: #b91c1c; }
+    .result-kpi b.skip { color: #64748b; }
+    .result-bar {
+        display: flex; height: 8px; border-radius: 999px; overflow: hidden;
+        background: #f1f5f9; margin: 18px 0 9px;
+    }
+    .result-bar i { display: block; height: 100%; }
+    .result-bar i.ok, .result-legend i.ok { background: #22c55e; }
+    .result-bar i.bad, .result-legend i.bad { background: #ef4444; }
+    .result-bar i.skip, .result-legend i.skip { background: #cbd5e1; }
+    .result-legend {
+        display: flex; align-items: center; flex-wrap: wrap; gap: 16px;
+        font-size: 11.5px; font-weight: 600; color: #64748b;
+    }
+    .result-legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .result-legend i { width: 8px; height: 8px; border-radius: 2px; }
+    .result-legend .result-best { margin-left: auto; color: #475569; font-weight: 700; }
+    .result-card {
+        background: #fff; border: 1px solid #e2e8f0; border-radius: 14px;
+        padding: 16px 20px; margin-bottom: 14px;
+    }
+    .result-card-head {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 12px; flex-wrap: wrap; margin-bottom: 8px;
+    }
+    .result-card-title {
+        font-size: 10.5px; font-weight: 800; letter-spacing: .8px;
+        text-transform: uppercase; color: #64748b;
+    }
+    .result-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+    .result-tab {
+        border: 1px solid #e2e8f0; background: #fff; color: #475569;
+        border-radius: 999px; padding: 4px 11px; font-size: 11px; font-weight: 700;
+        cursor: pointer; font-variant-numeric: tabular-nums;
+    }
+    .result-tab b { font-weight: 800; }
+    .result-tab:hover { background: #f8fafc; border-color: #cbd5e1; }
+    .result-tab.active { background: #0f172a; border-color: #0f172a; color: #fff; }
+    .result-topic-row {
+        display: grid; grid-template-columns: minmax(110px, 180px) 1fr 56px;
+        align-items: center; gap: 12px; padding: 7px 0;
+        border-bottom: 1px solid #f1f5f9; font-size: 12.5px;
+    }
+    .result-topic-row:last-child { border-bottom: none; }
+    .result-topic-name { font-weight: 600; color: #334155; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .result-topic-bar { height: 7px; border-radius: 999px; background: #f1f5f9; overflow: hidden; }
+    .result-topic-bar i { display: block; height: 100%; border-radius: 999px; background: #22c55e; }
+    .result-topic-bar i.mid { background: #f59e0b; }
+    .result-topic-bar i.low { background: #ef4444; }
+    .result-topic-bar i.empty { background: #cbd5e1; }
+    .result-topic-val { text-align: right; font-weight: 700; color: #475569; font-variant-numeric: tabular-nums; }
+    .review-ans { font-weight: 700; color: #475569; font-variant-numeric: tabular-nums; white-space: nowrap; min-width: 56px; text-align: right; }
+    .review-ans .miss { color: #94a3b8; font-weight: 600; }
+    .review-empty { padding: 18px 4px; color: #64748b; font-size: 12.5px; }
+    .review-row .pill-ok, .review-row .pill-bad, .review-row .pill-skip { min-width: 62px; text-align: center; }
+
+    @media (max-width: 720px) {
+        .result-hero-main { align-items: flex-start; }
+        .result-kpis { width: 100%; grid-template-columns: repeat(2, 1fr); gap: 12px 10px; }
+        .result-kpi { padding-left: 0; border-left: none; }
+        .result-score-num b { font-size: 38px; }
+        .result-legend .result-best { margin-left: 0; width: 100%; }
+        .result-topic-row { grid-template-columns: 1fr 56px; }
+        .result-topic-bar { display: none; }
+    }
 
     .score-badge {
         font-size: 11px; font-weight: 800; color: #166534; background: #dcfce7;
@@ -1565,8 +1686,8 @@
     #m-weak.active { background: #fecdd3; color: #9f1239; border-color: #f43f5e; box-shadow: 0 2px 6px rgba(244,63,94,0.2); }
     #m-learning.active { background: #cbd5e1; color: #0f172a; border-color: #475569; box-shadow: 0 2px 6px rgba(71,85,105,0.18); }
     #m-mastered.active { background: #a7f3d0; color: #065f46; border-color: #10b981; box-shadow: 0 2px 6px rgba(16,185,129,0.2); }
-    #m-bm.active, #flt-bookmark.active { background: #fde68a; color: #78350f; border-color: #f59e0b; box-shadow: 0 2px 6px rgba(245,158,11,0.25); }
-    #m-doubt.active, #flt-doubt.active { background: #c4b5fd; color: #4c1d95; border-color: #7c3aed; box-shadow: 0 2px 6px rgba(124,58,237,0.22); }
+    #m-bm.active, #flt-bookmark.active { background: #fbcfe8; color: #831843; border-color: #db2777; box-shadow: 0 2px 6px rgba(219,39,119,0.22); }
+    #m-doubt.active, #flt-doubt.active { background: #bfdbfe; color: #1e3a8a; border-color: #2563eb; box-shadow: 0 2px 6px rgba(37,99,235,0.22); }
     .mod-card .start-test-btn {
         margin-top: 8px; width: 100%; padding: 4px 8px; font-size: 11px;
         border-radius: 5px; border: 1px solid #cbd5e1; background: #fff;
@@ -1633,6 +1754,7 @@
         position: absolute; inset: 0; width: 100%; height: 100%; display: block;
         touch-action: none; cursor: crosshair;
         user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: transparent;
         background-color: #fffdf5;
         background-image: linear-gradient(transparent 23px, #fde68a 24px);
         background-size: 100% 24px;
@@ -1918,8 +2040,9 @@
     html[data-theme="dark"] .module-header { border-bottom-color: #33465f; }
     html[data-theme="dark"] .rule-btn { background: #152134; border-color: #3a4d69; color: #cbd5e1; }
     html[data-theme="dark"] .rule-btn:hover { background: #1b2a41; border-color: #55708f; }
-    html[data-theme="dark"] .rule-btn.passed { background: #052e1b; border-color: #166534; color: #86efac; }
-    html[data-theme="dark"] .rule-btn.failed { background: #3b1114; border-color: #7f1d1d; color: #fca5a5; }
+    html[data-theme="dark"] .rule-btn.diff-easy { background: #052e1b; border-color: #166534; color: #86efac; }
+    html[data-theme="dark"] .rule-btn.diff-moderate { background: #3a2a06; border-color: #a16207; color: #fcd34d; }
+    html[data-theme="dark"] .rule-btn.diff-tough { background: #3b1114; border-color: #7f1d1d; color: #fca5a5; }
     html[data-theme="dark"] .mod-card .start-test-btn { background: #1b2a41; border-color: #3a4d69; color: #cbd5e1; }
     html[data-theme="dark"] .mod-card .start-test-btn:hover { background: #22314a; border-color: #55708f; color: #e8eef8; }
     html[data-theme="dark"] .cache-badge { background: #162136; border-color: #33465f; color: #94a3b8; }
@@ -1967,6 +2090,10 @@
     html[data-theme="dark"] .badge.muted { background: #1b2941; color: #94a3b8; }
     html[data-theme="dark"] .modal-footer .seg-btn,
     html[data-theme="dark"] .modal-footer .doubt-toggle-btn { background: #162136; border-color: #33465f; color: #cbd5e1; }
+    /* the rule above outranks .doubt-toggle-btn.active, so a selected flag lost all of its colour */
+    html[data-theme="dark"] .modal-footer .doubt-toggle-btn.active { background: #bfdbfe; border-color: #60a5fa; color: #1e3a8a; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35); }
+    html[data-theme="dark"] .modal-footer .doubt-toggle-btn.flag-bookmark.active { background: #fbcfe8; border-color: #ec4899; color: #831843; box-shadow: 0 2px 8px rgba(219, 39, 119, 0.4); }
+    html[data-theme="dark"] .modal-footer .doubt-toggle-btn.flag-edited.active { background: #7c3aed; border-color: #c4b5fd; color: #ffffff; box-shadow: 0 0 0 2px #4c1d95, 0 2px 10px rgba(139, 92, 246, 0.55); }
     html[data-theme="dark"] .q-meta button.badge.sr-badge { background: #162136; border-color: #4338ca; color: #cbd5e1; }
     html[data-theme="dark"] .q-meta button.badge.sr-badge .sr-edit { background: #252257; color: #c7d2fe; border-left-color: #4338ca; }
     html[data-theme="dark"] .q-meta button.badge.sr-badge.due { border-color: #b45309; }
@@ -1984,6 +2111,30 @@
     html[data-theme="dark"] .review-row { border-bottom-color: #22314a; color: #cbd5e1; }
     html[data-theme="dark"] .pill-skip { background: #22314a; color: #cbd5e1; }
     html[data-theme="dark"] .btn-solid { background: #1d4ed8; border-color: #1d4ed8; }
+    html[data-theme="dark"] .result-hero,
+    html[data-theme="dark"] .result-card { background: #101a2a; border-color: #26344a; }
+    html[data-theme="dark"] .result-score-num b { color: #e8eef8; }
+    html[data-theme="dark"] .result-kpi b { color: #e8eef8; }
+    html[data-theme="dark"] .result-kpi b.ok { color: #4ade80; }
+    html[data-theme="dark"] .result-kpi b.bad { color: #f87171; }
+    html[data-theme="dark"] .result-kpi b.skip { color: #cbd5e1; }
+    html[data-theme="dark"] .result-score-meta,
+    html[data-theme="dark"] .result-legend { color: #94a3b8; }
+    html[data-theme="dark"] .result-kpi { border-left-color: #22314a; }
+    html[data-theme="dark"] .result-bar { background: #162136; }
+    html[data-theme="dark"] .result-legend .result-best { color: #cbd5e1; }
+    html[data-theme="dark"] .result-card-title { color: #94a3b8; }
+    html[data-theme="dark"] .result-tab { background: #162136; border-color: #33465f; color: #cbd5e1; }
+    html[data-theme="dark"] .result-tab:hover { background: #1b2a41; border-color: #3f5373; }
+    html[data-theme="dark"] .result-tab.active { background: #e2e8f0; border-color: #e2e8f0; color: #0f172a; }
+    html[data-theme="dark"] .result-topic-name,
+    html[data-theme="dark"] .result-topic-val,
+    html[data-theme="dark"] .review-ans { color: #cbd5e1; }
+    html[data-theme="dark"] .review-ans .miss { color: #64748b; }
+    html[data-theme="dark"] .result-topic-bar { background: #162136; }
+    html[data-theme="dark"] .result-topic-row { border-bottom-color: #22314a; }
+    html[data-theme="dark"] .result-back { background: #162136; border-color: #33465f; color: #cbd5e1; }
+    html[data-theme="dark"] .result-back:hover { background: #1b2a41; border-color: #3f5373; color: #e8eef8; }
 
     /* --- floating note stays paper-light; pasted images go dark --- */
     html[data-theme="dark"] .paste-img-panel { background: #101a2a; border-color: #2b3b52; }
@@ -2031,7 +2182,7 @@
         <div class="marks-config" title="Marking scheme used to score a timed test">
             <span class="marks-label">Marks</span>
             <label class="marks-field">+<input id="markPos" type="number" min="0" max="100" step="0.25" value="2" onchange="readScoringInputs()" aria-label="Marks for a correct answer"></label>
-            <label class="marks-field">\u2212<input id="markNeg" type="number" min="0" max="100" step="0.25" value="0.5" onchange="readScoringInputs()" aria-label="Marks deducted for a wrong answer"></label>
+            <label class="marks-field">−<input id="markNeg" type="number" min="0" max="100" step="0.25" value="0.5" onchange="readScoringInputs()" aria-label="Marks deducted for a wrong answer"></label>
         </div>
         <span class="mode-hint" id="modeHint">Pick a mock, practise questions or start a timed test.</span>
     </div>
@@ -2278,6 +2429,9 @@ let noteGeo = { x: null, y: null, w: 460, h: 300 };
 let noteStroke = null;
 let notePenAt = 0;      // last time a stylus touched the canvas (for palm rejection)
 let noteCtx = null;
+let activeNoteRect = null;
+let notePendingSyncQ = null;
+let noteSyncTimer = null;
 const NOTES_KEY = "srqb_notes_v1";
 
 /* ---------------- day / night ---------------- */
@@ -2993,12 +3147,19 @@ function qTile(q, label) {
     const r = rec(q.id);
     const btn = document.createElement("button");
     btn.className = "rule-btn";
-    if (statusOf(q.id) === "mastered") btn.classList.add("passed");
-    if (statusOf(q.id) === "weak") btn.classList.add("failed");
+    /* tile colour = difficulty recorded by the recall rating / difficulty pills */
+    if (r.diff) btn.classList.add("diff-" + r.diff);
     if (r.doubt) btn.classList.add("has-doubt");
     if (r.bm) btn.classList.add("has-bookmark");
     if (r.edited) btn.classList.add("has-edited");
     btn.textContent = label;
+    /* the ✏ badge is always in the DOM; .has-edited reveals it, so refreshTile
+       only has to toggle that class */
+    const editBadge = document.createElement("span");
+    editBadge.className = "tile-edit-badge";
+    editBadge.setAttribute("aria-hidden", "true");
+    editBadge.textContent = "✏";
+    btn.appendChild(editBadge);
     btn.dataset.id = q.id;
     /* the column this tile was drawn in, so the modal walks that column only.
        No per-tile listener: a single delegated handler on #modulesGrid opens it,
@@ -3216,8 +3377,7 @@ function refreshTile(id) {
     const tile = document.querySelector('#modulesGrid .rule-btn[data-id="' + id + '"]');
     if (!tile) return;
     const r = rec(id);
-    tile.classList.toggle("passed", statusOf(id) === "mastered");
-    tile.classList.toggle("failed", statusOf(id) === "weak");
+    ["easy", "moderate", "tough"].forEach(d => tile.classList.toggle("diff-" + d, r.diff === d));
     tile.classList.toggle("has-doubt", !!r.doubt);
     tile.classList.toggle("has-bookmark", !!r.bm);
     tile.classList.toggle("has-edited", !!r.edited);
@@ -3608,57 +3768,125 @@ function submitTest() {
     };
     attempts[test.mock] = [attempt].concat(attempts[test.mock] || []).slice(0, 10);
     saveStore();
+    resultFilter = "all";
     renderResult(attempt);
     render();
 }
+let resultAttempt = null;
+let resultFilter = "all";
+
+function resultStatusOf(a, q) {
+    const given = a.answers[q.qnum];
+    if (!given) return "skipped";
+    return given === q.ans ? "correct" : "wrong";
+}
+/* Filters repaint the review list without touching the stored attempt. */
+function setResultFilter(f) {
+    resultFilter = f;
+    if (resultAttempt) renderResult(resultAttempt);
+}
 function renderResult(a) {
+    resultAttempt = a;
     const qs = qsOfMock(test.mock);
-    const pctScore = pct(a.correct, a.total);
-    const rows = qs.map(q => {
+    const total = a.total;
+    const scorePct = a.max > 0 ? Math.round((a.score / a.max) * 100) : 0;
+    const best = bestAttempt(test.mock);
+    const tryNo = (attempts[test.mock] || []).length;
+    const when = a.ts ? new Date(a.ts).toLocaleDateString([], { day: "numeric", month: "short", year: "numeric" }) : "";
+    const seg = n => (total ? (n / total) * 100 : 0).toFixed(2) + "%";
+
+    const tabs = [
+        { key: "all", label: "All", n: total },
+        { key: "correct", label: "Correct", n: a.correct },
+        { key: "wrong", label: "Wrong", n: a.wrong },
+        { key: "skipped", label: "Skipped", n: a.skipped }
+    ].map(t => '<button type="button" class="result-tab' + (resultFilter === t.key ? " active" : "") +
+        '" onclick="setResultFilter(\'' + t.key + '\')" aria-pressed="' + (resultFilter === t.key) + '">' +
+        t.label + ' <b>' + t.n + '</b></button>').join("");
+
+    const shown = qs.filter(q => resultFilter === "all" || resultStatusOf(a, q) === resultFilter);
+    const rows = shown.map(q => {
         const given = a.answers[q.qnum];
-        const cls = !given ? "pill-skip" : (given === q.ans ? "pill-ok" : "pill-bad");
-        const label = !given ? "SKIPPED" : (given === q.ans ? "CORRECT" : "WRONG");
-        const detail = given ? (given + " → " + q.ans) : "—";
+        const st = resultStatusOf(a, q);
+        const cls = st === "correct" ? "pill-ok" : (st === "wrong" ? "pill-bad" : "pill-skip");
+        const label = st === "correct" ? "Correct" : (st === "wrong" ? "Wrong" : "Skipped");
+        /* right answer alone when it was found; your answer -> key when it was not */
+        const ans = st === "correct" ? q.ans : (given ? given + " \u2192 " + q.ans : "\u2014 \u2192 " + q.ans);
         return '<div class="review-row">' +
             '<span class="review-q">Q' + q.qnum + '</span>' +
             '<span class="review-stem">' + mathHtml(q.text) + '</span>' +
-            '<span style="font-weight:700;color:#475569">' + detail + '</span>' +
+            '<span class="review-ans">' + ans + '</span>' +
             '<span class="' + cls + '">' + label + '</span>' +
-        '</div>';
+            '</div>';
+    }).join("") || '<div class="review-empty">Nothing in this filter.</div>';
+
+    /* per-topic score, weakest first: the diagnosis the answer list cannot give */
+    const byTopic = {};
+    qs.forEach(q => {
+        const t = byTopic[q.topic] || (byTopic[q.topic] = { n: 0, ok: 0, tried: 0 });
+        t.n += 1;
+        const st = resultStatusOf(a, q);
+        if (st === "correct") t.ok += 1;
+        if (st !== "skipped") t.tried += 1;
+    });
+    const topicRows = Object.keys(byTopic).map(name => {
+        const t = byTopic[name];
+        return { name: name, n: t.n, ok: t.ok, tried: t.tried, pct: t.n ? Math.round((t.ok / t.n) * 100) : 0 };
+    }).sort((x, y) => (x.pct - y.pct) || (y.n - x.n)).map(t => {
+        const tone = !t.tried ? "empty" : (t.pct >= 70 ? "" : (t.pct >= 40 ? "mid" : "low"));
+        return '<div class="result-topic-row">' +
+            '<span class="result-topic-name" title="' + esc(t.name) + '">' + esc(t.name) + '</span>' +
+            '<span class="result-topic-bar"><i class="' + tone + '" style="width:' + t.pct + '%"></i></span>' +
+            '<span class="result-topic-val">' + t.ok + '/' + t.n + '</span>' +
+            '</div>';
     }).join("");
 
-    const best = bestAttempt(test.mock);
     document.getElementById("examScreen").innerHTML =
         '<div class="exam-top">' +
-            '<div class="exam-title">📊 Result — Mock ' + test.mock + '<span>saved to your attempts</span></div>' +
-            '<div class="exam-timer" title="Raw score with the current marking scheme">' + fmtMarks(a.score) + ' <span style="font-size:11px;font-weight:600;color:#64748b">marks</span></div>' +
+            '<div class="exam-title">\ud83d\udcca Mock ' + test.mock + ' \u00b7 Result<span>' +
+                total + ' questions' + (when ? ' \u00b7 ' + when : '') + '</span></div>' +
+            '<div class="exam-top-right">' +
+                '<button class="btn-ghost result-back" onclick="abortTest()">\u2190 Back to mocks</button>' +
+                '<button class="btn-solid" onclick="startTest(' + test.mock + ')">\ud83d\udd01 Retake</button>' +
+            '</div>' +
         '</div>' +
-        '<div style="max-width:1180px;margin:0 auto;padding:16px;width:100%;">' +
-            '<div class="score-line">' +
-                '<b>' + fmtMarks(a.score) + ' / ' + a.max + '</b>' +
-                '<span class="score-calc">' + a.correct + ' × +' + a.pos + ' \u2212 ' + a.wrong + ' × ' + a.neg +
-                ' · ' + pctScore + '% correct · ' + a.skipped + ' skipped</span>' +
-            '</div>' +
-            '<div class="result-grid">' +
-                '<div class="result-stat"><div class="result-num">' + a.correct + '/' + a.total + '</div><div class="result-lbl">Correct</div></div>' +
-                '<div class="result-stat"><div class="result-num" style="color:#b91c1c">' + a.wrong + '</div><div class="result-lbl">Wrong</div></div>' +
-                '<div class="result-stat"><div class="result-num" style="color:#64748b">' + a.skipped + '</div><div class="result-lbl">Skipped</div></div>' +
-                '<div class="result-stat"><div class="result-num">' + fmtClock(a.timeSec) + '</div><div class="result-lbl">Time taken</div></div>' +
-            '</div>' +
-            '<div class="exam-card" style="margin-bottom:14px;">' +
-                '<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">' +
-                    '<button class="btn-solid" onclick="startTest(' + test.mock + ')">🔁 Retake</button>' +
-                    '<button class="btn-ghost" onclick="abortTest()">← Back to mocks</button>' +
-                    '<span style="flex:1"></span>' +
-                    '<span style="font-size:12px;color:#64748b;">Best so far: ' +
-                        (best ? fmtMarks(best.score) + ' marks (' + pct(best.correct, best.total) + '%)' : "—") + ' · Attempts: ' +
-                        (attempts[test.mock] || []).length + '</span>' +
+        '<div class="result-wrap">' +
+            '<section class="result-hero">' +
+                '<div class="result-hero-main">' +
+                    '<div>' +
+                        '<div class="result-score-lbl">Score</div>' +
+                        '<div class="result-score-num"><b>' + a.score + '</b><span>/ ' + a.max + '</span></div>' +
+                        '<div class="result-score-meta">' + scorePct + '% \u00b7 ' + a.correct + ' of ' + total + ' correct</div>' +
+                    '</div>' +
+                    '<div class="result-kpis">' +
+                        '<div class="result-kpi"><b class="ok">' + a.correct + '</b><span>Correct</span></div>' +
+                        '<div class="result-kpi"><b class="bad">' + a.wrong + '</b><span>Wrong</span></div>' +
+                        '<div class="result-kpi"><b class="skip">' + a.skipped + '</b><span>Skipped</span></div>' +
+                        '<div class="result-kpi"><b>' + fmtClock(a.timeSec) + '</b><span>Time</span></div>' +
+                    '</div>' +
                 '</div>' +
-            '</div>' +
-            '<div class="exam-card">' +
-                '<div style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px;">Answer review</div>' +
+                '<div class="result-bar" aria-hidden="true">' +
+                    '<i class="ok" style="width:' + seg(a.correct) + '"></i>' +
+                    '<i class="bad" style="width:' + seg(a.wrong) + '"></i>' +
+                    '<i class="skip" style="width:' + seg(a.skipped) + '"></i>' +
+                '</div>' +
+                '<div class="result-legend">' +
+                    '<span><i class="ok"></i>Correct ' + a.correct + '</span>' +
+                    '<span><i class="bad"></i>Wrong ' + a.wrong + '</span>' +
+                    '<span><i class="skip"></i>Skipped ' + a.skipped + '</span>' +
+                    '<span class="result-best">Best ' + (best ? best.score + ' / ' + best.max : "\u2014") +
+                        ' \u00b7 Attempt ' + tryNo + '</span>' +
+                '</div>' +
+            '</section>' +
+            '<section class="result-card">' +
+                '<div class="result-card-head"><span class="result-card-title">Topic performance</span></div>' +
+                topicRows +
+            '</section>' +
+            '<section class="result-card">' +
+                '<div class="result-card-head"><span class="result-card-title">Answer review</span>' +
+                    '<div class="result-tabs">' + tabs + '</div></div>' +
                 rows +
-            '</div>' +
+            '</section>' +
         '</div>';
     renderMathInElementSafe(document.getElementById("examScreen"));
 }
@@ -3709,6 +3937,7 @@ function toggleNote(force) {
         renderNoteTitle();
         setupNoteCanvas();
     } else {
+        flushNoteSync();
         const grip = document.getElementById("noteResize");
         if (grip) grip.classList.remove("show");
     }
@@ -3718,14 +3947,21 @@ function renderNoteTitle() {
     const q = currentQ();
     const el = document.getElementById("noteTitle");
     if (!el) return;
-    if (!q) { el.textContent = "📝 Sticky note"; return; }
-    el.textContent = "📝 Mock " + q.mock + " · Q" + q.qnum + (hasNote(q.id) ? " · saved" : "");
+    if (!q) {
+        if (el.textContent !== "📝 Sticky note") el.textContent = "📝 Sticky note";
+        return;
+    }
+    const target = "📝 Mock " + q.mock + " · Q" + q.qnum + (hasNote(q.id) ? " · saved" : "");
+    if (el.textContent !== target) el.textContent = target;
 }
 function setupNoteCanvas() {
     const c = document.getElementById("noteCanvas");
     if (!c) return;
     const rect = c.getBoundingClientRect();
     if (!rect.width || !rect.height) return;
+    activeNoteRect = rect;
+    const q = currentQ();
+    if (notePendingSyncQ && q && notePendingSyncQ !== q.id) flushNoteSync();
     const dpr = window.devicePixelRatio || 1;
     c.width = Math.max(1, Math.round(rect.width * dpr));
     c.height = Math.max(1, Math.round(rect.height * dpr));
@@ -3831,6 +4067,7 @@ function toggleNoteEraser() {
     document.getElementById("noteEraser").classList.toggle("active", noteErase);
 }
 function undoNote() {
+    flushNoteSync();
     const q = currentQ();
     if (!q) return;
     const strokes = noteFor(q.id).strokes;
@@ -3842,6 +4079,7 @@ function undoNote() {
     syncNoteBadge(q.id);
 }
 function clearNote() {
+    flushNoteSync();
     const q = currentQ();
     if (!q) return;
     if (!window.confirm("Clear this note?")) return;
@@ -3854,12 +4092,63 @@ function clearNote() {
 }
 function syncNoteBadge(id) {
     const tile = document.querySelector('.rule-btn[data-id="' + id + '"]');
-    if (tile) tile.classList.toggle("has-note", hasNote(id));
+    if (!tile) return;
+    const has = hasNote(id);
+    if (tile.classList.contains("has-note") !== has) {
+        tile.classList.toggle("has-note", has);
+    }
+}
+function flushNoteSync() {
+    if (noteSyncTimer) {
+        clearTimeout(noteSyncTimer);
+        noteSyncTimer = null;
+    }
+    if (notePendingSyncQ) {
+        const id = notePendingSyncQ;
+        notePendingSyncQ = null;
+        syncNoteBadge(id);
+        refreshWorkspace(id);
+    }
+}
+function scheduleNoteMetaSync(id) {
+    notePendingSyncQ = id;
+    ramDirty = true;
+    updateRamBadge();
+    renderNoteTitle();
+    syncNoteBadge(id);
+    const r = ensureRec(id);
+    if (!r.edited) {
+        r.edited = 1;
+        saveStore();
+        const btn = document.getElementById("m-edited");
+        if (btn && currentQ() && currentQ().id === id) btn.classList.add("active");
+    }
+    if (noteSyncTimer) clearTimeout(noteSyncTimer);
+    noteSyncTimer = setTimeout(() => {
+        flushNoteSync();
+    }, 600);
+}
+/* Writing, sketching or pasting anything into the sticky note marks the question
+   as edited automatically: the ✏ Edited button lights up and the tile badge appears. */
+function markNoteEdited(id) {
+    if (!id) return;
+    const r = ensureRec(id);
+    if (r.edited) return;
+    r.edited = 1;
+    saveStore();
+    const btn = document.getElementById("m-edited");
+    if (btn && currentQ() && currentQ().id === id) btn.classList.add("active");
+    scheduleNoteMetaSync(id);
 }
 function bindNoteEvents() {
     const c = document.getElementById("noteCanvas");
     if (!c || c.dataset.bound) return;
     c.dataset.bound = "1";
+
+    /* Suppress default iOS gesture recognizers and touch delays on the drawing canvas */
+    c.addEventListener("touchstart", e => {
+        if (e.target === c) e.preventDefault();
+    }, { passive: false });
 
     /* Apple Pencil sends a real pressure per sample; a finger, mouse or synthetic
        pointer does not, so those keep one steady width */
@@ -3872,6 +4161,7 @@ function bindNoteEvents() {
 
     /* one sample: store it, then ink only the new segment (never the whole line) */
     function addSample(e, rect) {
+        if (!noteStroke) return;
         const pt = notePoint(e, rect);
         if (!pt) return;
         const i = noteStroke.p.length;
@@ -3883,20 +4173,23 @@ function bindNoteEvents() {
         if (noteCtx) inkSegment(noteCtx, noteStroke, noteDevPts, i, rect.width);
     }
 
-    c.addEventListener("pointerdown", e => {
-        if (!noteOpen || !currentQ()) return;
-        if (noteStroke) {
-            /* A second pointer (a resting palm) never takes over a live stroke. The
-               same pointer delivering a fresh down, though, means Safari dropped the
-               up for the old stroke: close it so the pen can write again. */
-            if (e.pointerId !== noteStrokePtr) return;
-            finish();
-        }
-        if (e.pointerType === "pen") notePenAt = Date.now();
+    function beginStroke(e, rect) {
+        if (!noteOpen || !currentQ()) return false;
+
         /* palm rejection: while the Apple Pencil is in use, finger touches are ignored
            so a resting palm never paints stray strokes */
-        if (e.pointerType === "touch" && Date.now() - notePenAt < 2000) return;
-        e.preventDefault();
+        if (e.pointerType === "touch" && Date.now() - notePenAt < 1000) return false;
+        if (e.pointerType === "pen") notePenAt = Date.now();
+
+        /* If a stroke was somehow still active (e.g. rapid re-contact before Safari
+           delivered pointerup), commit it immediately so no stroke is ever dropped */
+        if (noteStroke) {
+            finishStroke();
+        }
+
+        rect = rect || activeNoteRect || c.getBoundingClientRect();
+        activeNoteRect = rect;
+
         try { c.setPointerCapture(e.pointerId); } catch (err) { /* synthetic pointers */ }
         noteStrokePtr = e.pointerId;
         noteStroke = {
@@ -3907,7 +4200,44 @@ function bindNoteEvents() {
             f: []
         };
         noteDevPts = [];
-        addSample(e, c.getBoundingClientRect());
+        addSample(e, rect);
+        return true;
+    }
+
+    const finishStroke = e => {
+        if (!noteStroke) return;
+        if (e && e.pointerId != null && noteStrokePtr != null && e.pointerId !== noteStrokePtr) return;
+        const rect = activeNoteRect || c.getBoundingClientRect();
+        if (noteCtx && noteDevPts.length > 1) inkTail(noteCtx, noteStroke, noteDevPts, rect.width);
+        try {
+            if (noteStrokePtr != null) c.releasePointerCapture(noteStrokePtr);
+        } catch (err) {}
+
+        /* nothing landed on the paper: drop it rather than save an empty stroke */
+        const empty = !noteStroke.p.length;
+        const strokeToSave = noteStroke;
+        /* factors of exactly 1 add nothing, so leave them out of the saved stroke */
+        if (strokeToSave.f && strokeToSave.f.every(v => v === 1)) delete strokeToSave.f;
+
+        /* Reset stroke pointers synchronously so the very next millisecond stroke can start */
+        noteStroke = null;
+        noteStrokePtr = null;
+        noteDevPts = [];
+        activeNoteRect = null;
+
+        const q = empty ? null : currentQ();
+        if (q) {
+            noteFor(q.id).strokes.push(strokeToSave);
+            scheduleNoteMetaSync(q.id);
+        }
+    };
+
+    c.addEventListener("pointerdown", e => {
+        if (!noteOpen || !currentQ()) return;
+        e.preventDefault();
+        const rect = c.getBoundingClientRect();
+        activeNoteRect = rect;
+        beginStroke(e, rect);
     });
 
     /* The move listener sits on the window in the capture phase, not on the canvas:
@@ -3915,15 +4245,53 @@ function bindNoteEvents() {
        thumbnail or the resize grip, and a pointer capture that Safari drops
        mid-stroke can no longer cut a line short. Safari batches pencil samples
        between frames; the coalesced list is the full-rate signal, and inking all
-       of it is what keeps a fast stroke continuous instead of a few long jumps. */
+       of it is what keeps a fast stroke continuous instead of a few long jumps.
+
+       CRITICAL IPAD HOVER-TRAP RECOVERY:
+       On iPad with Apple Pencil, when the pen is lifted and rapidly placed down again
+       (< 50ms), Safari frequently drops/skips pointerdown and goes directly to pointermove
+       with buttons: 1 and pressure > 0.
+       If noteStroke is null, we detect active stylus contact and immediately begin the stroke! */
     window.addEventListener("pointermove", e => {
-        if (!noteStroke || e.pointerId !== noteStrokePtr) return;
-        if (e.pointerType === "touch" && Date.now() - notePenAt < 2000) return;
+        if (!noteOpen || !currentQ()) return;
+        if (e.pointerType === "touch" && Date.now() - notePenAt < 1000) return;
+
+        if (!noteStroke) {
+            const isPenContact = (e.pointerType === "pen") && (e.buttons === 1 || (typeof e.pressure === "number" && e.pressure > 0.01));
+            const isMouseContact = (!e.pointerType || e.pointerType === "mouse") && (e.buttons === 1);
+            if (isPenContact || isMouseContact) {
+                const rect = activeNoteRect || c.getBoundingClientRect();
+                const pt = notePoint(e, rect);
+                if (pt) {
+                    e.preventDefault();
+                    if (beginStroke(e, rect)) {
+                        const list = (typeof e.getCoalescedEvents === "function") ? e.getCoalescedEvents() : null;
+                        if (list && list.length) {
+                            for (let j = 0; j < list.length; j++) addSample(list[j], rect);
+                        }
+                    }
+                    return;
+                }
+            }
+            return;
+        }
+
+        if (e.pointerId !== noteStrokePtr) {
+            if (e.pointerType === "pen" && (e.buttons === 1 || (typeof e.pressure === "number" && e.pressure > 0.01))) {
+                finishStroke();
+                beginStroke(e);
+            }
+            return;
+        }
+
         e.preventDefault();
-        const rect = c.getBoundingClientRect();
+        const rect = activeNoteRect || c.getBoundingClientRect();
         const list = (typeof e.getCoalescedEvents === "function") ? e.getCoalescedEvents() : null;
-        if (list && list.length) list.forEach(s => addSample(s, rect));
-        else addSample(e, rect);
+        if (list && list.length) {
+            for (let j = 0; j < list.length; j++) addSample(list[j], rect);
+        } else {
+            addSample(e, rect);
+        }
     }, true);
 
     /* the pen tip leaving the canvas mid-stroke must not cut the line short */
@@ -3931,35 +4299,16 @@ function bindNoteEvents() {
         if (noteStroke && e.pointerId === noteStrokePtr) e.preventDefault();
     });
 
-    const finish = e => {
-        if (!noteStroke) return;
-        if (e && e.pointerId != null && noteStrokePtr != null && e.pointerId !== noteStrokePtr) return;
-        const rect = c.getBoundingClientRect();
-        if (noteCtx && noteDevPts.length > 1) inkTail(noteCtx, noteStroke, noteDevPts, rect.width);
-        /* nothing landed on the paper: drop it rather than save an empty stroke */
-        const empty = !noteStroke.p.length;
-        /* factors of exactly 1 add nothing, so leave them out of the saved stroke */
-        if (noteStroke.f && noteStroke.f.every(v => v === 1)) delete noteStroke.f;
-        const q = empty ? null : currentQ();
-        if (q) {
-            noteFor(q.id).strokes.push(noteStroke);
-            saveNotes();
-            renderNoteTitle();
-            syncNoteBadge(q.id);
-        }
-        noteStroke = null;
-        noteStrokePtr = null;
-        noteDevPts = [];
-    };
-    /* A lift is the only thing that ends a stroke. Safari also fires
-       lostpointercapture while the pencil is still on the glass, and treating
-       that as an end is what cut lines off in the middle of a word. */
-    c.addEventListener("pointerup", finish);
-    window.addEventListener("pointerup", finish, true);
-    window.addEventListener("pointercancel", finish, true);
+    /* A lift is the only thing that ends a stroke. */
+    c.addEventListener("pointerup", finishStroke);
+    window.addEventListener("pointerup", finishStroke, true);
+    window.addEventListener("pointercancel", finishStroke, true);
 
     /* rotating the iPad or resizing the window must not stretch the bitmap */
-    window.addEventListener("resize", () => { if (noteOpen && !noteStroke) setupNoteCanvas(); });
+    window.addEventListener("resize", () => {
+        activeNoteRect = null;
+        if (noteOpen && !noteStroke) setupNoteCanvas();
+    });
 }
 
 function bindNoteChrome() {
@@ -3998,6 +4347,7 @@ function bindNoteChrome() {
     window.addEventListener("pointerup", () => {
         if (!drag) return;
         drag = null;
+        activeNoteRect = null;
         saveStore();
         setupNoteCanvas();
     });
@@ -4109,6 +4459,7 @@ function addPastedImage(src) {
     list.push({ src: src, x: g.x, y: g.y, w: g.w, h: g.h, pin: true });
     saveNotes();
     renderPasteImgs();
+    markNoteEdited(q.id);
 }
 function removePastedImage(idx) {
     const q = currentQ();

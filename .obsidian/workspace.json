@@ -11,10 +11,12 @@
             "id": "39ee887476fa54d5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "html-view",
+              "state": {
+                "file": "1100_Homonyms_Master_Tracker.html"
+              },
+              "icon": "code-glyph",
+              "title": "1100_Homonyms_Master_Tracker"
             }
           }
         ]
@@ -192,7 +194,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b24c903b7aa16c3c",
+  "active": "39ee887476fa54d5",
   "lastOpenFiles": [
     "speed-ranker-2026-10-25_21-32-05.json",
     "katex/fonts/KaTeX_Typewriter-Regular.woff2",
