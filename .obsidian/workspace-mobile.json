@@ -16,8 +16,19 @@
               "icon": "lucide-file",
               "title": "New tab"
             }
+          },
+          {
+            "id": "fbf458fb9e818527",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -101,8 +112,7 @@
         }
       }
     ],
-    "currentTab": 0,
-    "pinned": true
+    "currentTab": 0
   },
   "right": {
     "id": "05270a5497b6a2d4",
@@ -182,7 +192,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "adaec8596e142854",
+  "active": "fbf458fb9e818527",
   "lastOpenFiles": [
     "Untitled.md",
     "speed-ranker-2026-10-25_18-00-57.json",
