@@ -11,12 +11,14 @@
             "id": "39ee887476fa54d5",
             "type": "leaf",
             "state": {
-              "type": "html-view",
+              "type": "markdown",
               "state": {
-                "file": "1100_Homonyms_Master_Tracker.html"
+                "file": "README.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "code-glyph",
-              "title": "1100_Homonyms_Master_Tracker"
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
         ]
@@ -196,6 +198,9 @@
   },
   "active": "39ee887476fa54d5",
   "lastOpenFiles": [
+    "doubtful vocab.html",
+    "1100_Homonyms_Master_Tracker.html",
+    "Zero-Gap Grammar Master (Standalone).html",
     "speed-ranker-2026-10-25_21-32-05.json",
     "katex/fonts/KaTeX_Typewriter-Regular.woff2",
     "katex/fonts/KaTeX_Size3-Regular.woff2",
@@ -203,9 +208,6 @@
     "katex/fonts/KaTeX_Size2-Regular.woff2",
     "katex/fonts/KaTeX_Size1-Regular.woff2",
     "katex/fonts/KaTeX_Script-Regular.woff2",
-    "katex/fonts/KaTeX_SansSerif-Regular.woff2",
-    "katex/fonts/KaTeX_SansSerif-Italic.woff2",
-    "katex/fonts/KaTeX_SansSerif-Bold.woff2",
-    "katex/fonts/KaTeX_Math-Italic.woff2"
+    "katex/fonts/KaTeX_SansSerif-Regular.woff2"
   ]
 }
