@@ -2356,9 +2356,9 @@
             <button class="note-close" onclick="toggleNote(false)" title="Close note">&times;</button>
         </div>
         <div class="note-tools">
-            <button class="sw active" style="background:#111827" onclick="setNoteColor('#111827', this)" title="Black ink"></button>
-            <button class="sw" style="background:#2563eb" onclick="setNoteColor('#2563eb', this)" title="Blue ink"></button>
-            <button class="sw" style="background:#dc2626" onclick="setNoteColor('#dc2626', this)" title="Red ink"></button>
+            <button class="sw active" data-ink="#111827" style="background:#111827" onclick="setNoteColor('#111827', this)" title="Black ink"></button>
+            <button class="sw" data-ink="#2563eb" style="background:#2563eb" onclick="setNoteColor('#2563eb', this)" title="Blue ink"></button>
+            <button class="sw" data-ink="#dc2626" style="background:#dc2626" onclick="setNoteColor('#dc2626', this)" title="Red ink"></button>
             <button class="note-btn" id="noteEraser" onclick="toggleNoteEraser()" title="Eraser">🧽 Eraser</button>
             <button class="note-btn" onclick="undoNote()" title="Undo last stroke">↶ Undo</button>
             <button class="note-btn" onclick="clearNote()" title="Clear this note">Clear</button>
@@ -3576,6 +3576,12 @@ function navigateQ(delta) {
     modalChoice = null;
     modalRevealed = false;
     renderModal();
+    /* the sticky note belongs to the question on screen: swap its title and ink
+       when Prev/Next moves to another question while the note is open */
+    if (noteOpen) {
+        renderNoteTitle();
+        setupNoteCanvas();
+    }
 }
 
 /* keyboard shortcuts */
@@ -4042,7 +4048,10 @@ function redrawNote() {
     noteCtx.clearRect(0, 0, rect.width, rect.height);
     const q = currentQ();
     if (!q) return;
-    (noteFor(q.id).strokes || []).forEach(s => paintStroke(s, rect));
+    /* read-only: opening the note must not create an empty record for the question */
+    const n = notes[q.id];
+    if (!n || !n.strokes) return;
+    n.strokes.forEach(s => paintStroke(s, rect));
 }
 function notePoint(e, rect) {
     rect = rect || document.getElementById("noteCanvas").getBoundingClientRect();
@@ -4065,6 +4074,11 @@ function setNoteColor(hex, btn) {
 function toggleNoteEraser() {
     noteErase = !noteErase;
     document.getElementById("noteEraser").classList.toggle("active", noteErase);
+    /* pen and eraser are one choice: the eraser unlights the ink swatch, and
+       leaving the eraser restores the swatch of the colour still in use */
+    document.querySelectorAll(".note-tools .sw").forEach(b => {
+        b.classList.toggle("active", !noteErase && b.dataset.ink === noteColor);
+    });
 }
 function undoNote() {
     flushNoteSync();
@@ -5105,7 +5119,14 @@ boot();
                 theme: theme
             }
         };
-        data[KEY_NOTES] = notes;
+        /* only notes that carry ink or a pasted image belong in the export: opening
+           the note popup, or clearing it, must never add an empty record */
+        data[KEY_NOTES] = {};
+        for (var nid in notes) {
+            if (!Object.prototype.hasOwnProperty.call(notes, nid)) continue;
+            var nn = notes[nid];
+            if (nn && ((nn.strokes && nn.strokes.length) || (nn.images && nn.images.length))) data[KEY_NOTES][nid] = nn;
+        }
         return { app: APP, version: 2, mode: 'ram', exportedAt: new Date().toISOString(), data: data };
     }
 

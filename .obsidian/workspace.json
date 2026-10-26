@@ -196,8 +196,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "39ee887476fa54d5",
+  "active": "b24c903b7aa16c3c",
   "lastOpenFiles": [
+    "speed-ranker-state.json",
     "doubtful vocab.html",
     "1100_Homonyms_Master_Tracker.html",
     "Zero-Gap Grammar Master (Standalone).html",
@@ -207,7 +208,6 @@
     "katex/fonts/KaTeX_Size4-Regular.woff2",
     "katex/fonts/KaTeX_Size2-Regular.woff2",
     "katex/fonts/KaTeX_Size1-Regular.woff2",
-    "katex/fonts/KaTeX_Script-Regular.woff2",
-    "katex/fonts/KaTeX_SansSerif-Regular.woff2"
+    "katex/fonts/KaTeX_Script-Regular.woff2"
   ]
 }
