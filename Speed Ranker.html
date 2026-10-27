@@ -1759,6 +1759,24 @@
         background-image: linear-gradient(transparent 23px, #fde68a 24px);
         background-size: 100% 24px;
     }
+    /* Draw / Type switch: Type replaces the paper (and the pen tools) with a text box */
+    .note-mode-btn {
+        flex: 0 0 auto; font-size: 10.5px; font-weight: 700; border: 1px solid #e7e5e4;
+        background: #fff; border-radius: 5px; padding: 2px 6px; cursor: pointer; color: #44403c;
+    }
+    .note-mode-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+    .note-type-wrap { display: none; flex: 1; min-height: 120px; }
+    .note-panel.mode-type .note-type-wrap { display: flex; }
+    .note-panel.mode-type .note-tools,
+    .note-panel.mode-type .note-canvas-wrap { display: none; }
+    #noteText {
+        flex: 1; width: 100%; box-sizing: border-box; border: 0; outline: none; resize: none;
+        padding: 8px 12px; color: #1f2937; background-color: #fffdf5;
+        background-image: linear-gradient(transparent 23px, #fde68a 24px);
+        background-size: 100% 24px; background-attachment: local;
+        font: 14px/24px system-ui, -apple-system, "Segoe UI", sans-serif;
+        touch-action: auto; user-select: text; -webkit-user-select: text;
+    }
     /* kept above the pasted thumbnails (which sit in the note's corner) so the note stays resizable */
     .note-resize {
         position: fixed; z-index: 1340; display: none; width: 18px; height: 18px;
@@ -2329,6 +2347,7 @@
                     </div>
                 </div>
                 <div class="deck-controls-right">
+                    <button class="btn-ghost" id="captureBtn" onclick="captureQuestionPopup()" title="Copy this question popup as an image — one click, no screen-share prompt">📷 Capture</button>
                     <button class="btn-ghost" onclick="toggleNote()" id="noteToggleBtn" title="Floating sticky note — write with iPad / stylus">📝 Note</button>
                     <button class="btn-ghost" onclick="revealAnswer()" id="revealBtn">👁 Reveal</button>
                     <button class="btn-ghost" onclick="navigateQ(-1)">← Prev</button>
@@ -2353,6 +2372,8 @@
     <div class="note-panel" id="notePanel">
         <div class="note-head" id="noteHead">
             <span class="note-title" id="noteTitle">📝 Sticky note</span>
+            <button class="note-mode-btn active" id="noteModeDraw" onclick="setNoteMode('draw', true)" title="Draw with the pen">✏️ Draw</button>
+            <button class="note-mode-btn" id="noteModeType" onclick="setNoteMode('type', true)" title="Type a note">🖋 Type</button>
             <button class="note-close" onclick="toggleNote(false)" title="Close note">&times;</button>
         </div>
         <div class="note-tools">
@@ -2369,6 +2390,9 @@
         <div class="note-canvas-wrap">
             <canvas id="noteCanvas"></canvas>
         </div>
+        <div class="note-type-wrap">
+            <textarea id="noteText" spellcheck="false" placeholder="Write a note for this question…"></textarea>
+        </div>
     </div>
     <div class="note-resize" id="noteResize" title="Drag to resize"></div>
 </div>
@@ -2376,6 +2400,7 @@
 <!-- EXAM / RESULT SCREEN -->
 <div class="exam-screen" id="examScreen"></div>
 
+<script src="html2canvas.min.js"></script>
 <script src="katex/katex.min.js"></script>
 <script src="katex/contrib/auto-render.min.js"></script>
 <script>
@@ -2427,6 +2452,8 @@ let noteColor = "#111827";
 let noteErase = false;
 let noteGeo = { x: null, y: null, w: 460, h: 300 };
 let noteStroke = null;
+let noteMode = "draw";      // draw = paper + pen, type = text box for the same question
+let noteChromeBusy = false; // the note is being dragged or resized: that gesture is not ink
 let notePenAt = 0;      // last time a stylus touched the canvas (for palm rejection)
 let noteCtx = null;
 let activeNoteRect = null;
@@ -3586,6 +3613,9 @@ function navigateQ(delta) {
 
 /* keyboard shortcuts */
 document.addEventListener("keydown", (e) => {
+    /* typing in the Type box (or any other field) is text, not a deck shortcut */
+    const field = e.target;
+    if (field && (field.tagName === "TEXTAREA" || field.tagName === "INPUT" || field.isContentEditable) && e.key !== "Escape") return;
     if (test && !test.submitted) {
         if (e.key === "ArrowRight") { moveTest(1); e.preventDefault(); }
         if (e.key === "ArrowLeft") { moveTest(-1); e.preventDefault(); }
@@ -3908,7 +3938,11 @@ function noteFor(id) {
     if (!notes[id].strokes) notes[id].strokes = [];
     return notes[id];
 }
-function hasNote(id) { return !!(notes[id] && notes[id].strokes && notes[id].strokes.length); }
+function hasNote(id) {
+    const n = notes[id];
+    if (!n) return false;
+    return !!((n.strokes && n.strokes.length) || (typeof n.text === "string" && n.text.trim()));
+}
 
 function clampNoteGeo() {
     const panel = document.getElementById("notePanel");
@@ -3942,8 +3976,11 @@ function toggleNote(force) {
         clampNoteGeo();
         renderNoteTitle();
         setupNoteCanvas();
+        setNoteMode(noteMode, false);
     } else {
         flushNoteSync();
+        const ta = document.getElementById("noteText");
+        if (ta) ta.blur();
         const grip = document.getElementById("noteResize");
         if (grip) grip.classList.remove("show");
     }
@@ -3964,7 +4001,9 @@ function setupNoteCanvas() {
     const c = document.getElementById("noteCanvas");
     if (!c) return;
     const rect = c.getBoundingClientRect();
-    if (!rect.width || !rect.height) return;
+    /* Type mode hides the paper: nothing to re-ink, but the text box still has
+       to follow Prev/Next to the question now on screen */
+    if (!rect.width || !rect.height) { renderNoteText(); return; }
     activeNoteRect = rect;
     const q = currentQ();
     if (notePendingSyncQ && q && notePendingSyncQ !== q.id) flushNoteSync();
@@ -3974,6 +4013,51 @@ function setupNoteCanvas() {
     noteCtx = c.getContext("2d");
     noteCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
     redrawNote();
+    renderNoteText();
+}
+/* ---- Draw / Type switch ----------------------------------------------------
+   Ink and typed text belong to the same question record (.strokes and .text),
+   so switching between the two views never loses either one. */
+function renderNoteText() {
+    const ta = document.getElementById("noteText");
+    if (!ta) return;
+    const q = currentQ();
+    const n = q ? notes[q.id] : null;
+    const text = (n && typeof n.text === "string") ? n.text : "";
+    if (ta.value !== text) ta.value = text;
+}
+function setNoteMode(mode, focus) {
+    const next = mode === "type" ? "type" : "draw";
+    const changed = next !== noteMode;
+    noteMode = next;
+    const panel = document.getElementById("notePanel");
+    if (panel) panel.classList.toggle("mode-type", noteMode === "type");
+    const drawBtn = document.getElementById("noteModeDraw");
+    const typeBtn = document.getElementById("noteModeType");
+    if (drawBtn) drawBtn.classList.toggle("active", noteMode === "draw");
+    if (typeBtn) typeBtn.classList.toggle("active", noteMode === "type");
+    const ta = document.getElementById("noteText");
+    if (noteMode === "type") {
+        renderNoteText();
+        if (focus && ta) ta.focus();
+    } else {
+        if (ta) ta.blur();
+        if (changed && noteOpen) setupNoteCanvas();
+    }
+}
+function bindNoteType() {
+    const ta = document.getElementById("noteText");
+    if (!ta || ta.dataset.bound) return;
+    ta.dataset.bound = "1";
+    ta.addEventListener("input", () => {
+        const q = currentQ();
+        if (!q) return;
+        noteFor(q.id).text = ta.value;
+        saveNotes();
+        scheduleNoteMetaSync(q.id);
+        renderNoteTitle();
+        syncNoteBadge(q.id);
+    });
 }
 /* ---- ink rendering ---------------------------------------------------------
    A stroke is a list of normalised points plus an optional per-point width
@@ -4096,7 +4180,7 @@ function clearNote() {
     flushNoteSync();
     const q = currentQ();
     if (!q) return;
-    if (!window.confirm("Clear this note?")) return;
+    if (!window.confirm("Clear this note? Ink and typed text are both removed.")) return;
     notes[q.id] = { strokes: [] };
     saveNotes();
     redrawNote();
@@ -4268,9 +4352,15 @@ function bindNoteEvents() {
        If noteStroke is null, we detect active stylus contact and immediately begin the stroke! */
     window.addEventListener("pointermove", e => {
         if (!noteOpen || !currentQ()) return;
+        /* dragging the note, its resize grip or a thumbnail is a chrome gesture,
+           never a pen stroke — this is what used to paint a line into the corner */
+        if (noteChromeBusy || imgDrag) return;
         if (e.pointerType === "touch" && Date.now() - notePenAt < 1000) return;
 
         if (!noteStroke) {
+            /* the toolbar and the Type box are controls, not paper */
+            const t = e.target;
+            if (t && t.closest && t.closest("#notePanel") && t.id !== "noteCanvas") return;
             const isPenContact = (e.pointerType === "pen") && (e.buttons === 1 || (typeof e.pressure === "number" && e.pressure > 0.01));
             const isMouseContact = (!e.pointerType || e.pointerType === "mouse") && (e.buttons === 1);
             if (isPenContact || isMouseContact) {
@@ -4336,12 +4426,14 @@ function bindNoteChrome() {
         if (e.target.closest("button")) return;
         if (noteStroke) return;   /* the pen is mid-stroke: never grab the panel */
         drag = { t: "move", sx: e.clientX, sy: e.clientY, ox: noteGeo.x, oy: noteGeo.y };
+        noteChromeBusy = true;
         try { head.setPointerCapture(e.pointerId); } catch (err) { /* synthetic */ }
         e.preventDefault();
     });
     handle.addEventListener("pointerdown", e => {
         if (noteStroke) return;   /* writing near the corner must not resize the note */
         drag = { t: "resize", sx: e.clientX, sy: e.clientY, ow: noteGeo.w, oh: noteGeo.h };
+        noteChromeBusy = true;
         try { handle.setPointerCapture(e.pointerId); } catch (err) { /* synthetic */ }
         e.preventDefault();
         e.stopPropagation();
@@ -4358,13 +4450,17 @@ function bindNoteChrome() {
         clampNoteGeo();
         syncPinnedImgs();
     });
-    window.addEventListener("pointerup", () => {
+    /* the chrome flag always clears, even when the gesture was cancelled */
+    const endChromeDrag = () => {
+        noteChromeBusy = false;
         if (!drag) return;
         drag = null;
         activeNoteRect = null;
         saveStore();
         setupNoteCanvas();
-    });
+    };
+    window.addEventListener("pointerup", endChromeDrag);
+    window.addEventListener("pointercancel", endChromeDrag);
 }
 
 /* ---------------- pasted images floating over the note ---------------- */
@@ -4401,6 +4497,83 @@ function closeImagePopup() {
     if (!box) return;
     box.classList.remove("show");
     if (pic) pic.removeAttribute("src");
+}
+/* ---- 📷 capture the whole question popup as an image ----------------------
+   One click, no screen-share prompt and no permission dialog: html2canvas
+   (bundled next to this file) re-renders the popup from its own DOM into a
+   canvas, offline, and the PNG goes straight to the clipboard so it can be
+   pasted anywhere. Nothing is written into the note. Because nothing leaves the
+   page it also works on iPad. */
+function prunePopupClone(doc) {
+    /* html2canvas clones the whole document, and the question bank behind the
+       popup is thousands of nodes. Dropping everything but the popup from the
+       clone is what keeps a capture quick instead of a couple of seconds. */
+    ["srMenu", "pasteImgLayer", "notePanel", "imgLightbox", "noteResize"].forEach(id => {
+        const el = doc.getElementById(id);
+        if (el) el.remove();
+    });
+    const overlay = doc.getElementById("modalOverlay");
+    if (overlay) {
+        overlay.style.background = "transparent";
+        overlay.style.backdropFilter = "none";
+        overlay.style.webkitBackdropFilter = "none";
+    }
+    /* the popup's drop shadow is drawn by html2canvas inside the popup, which
+       shows as a grey band over the transparent parts of the body */
+    const box = doc.querySelector("#modalOverlay .modal");
+    if (box) box.style.boxShadow = "none";
+    /* the footer is the control strip — Easy/Good/Hard, flags, Note/Reveal/Prev/
+       Next. A capture is of the question, so that strip stays out of the frame. */
+    doc.querySelectorAll("#modalOverlay .modal-footer").forEach(el => el.remove());
+    Array.from(doc.body.children).forEach(el => {
+        if (el.id !== "modalOverlay") el.remove();
+    });
+}
+async function copyImageBlob(blob) {
+    if (!navigator.clipboard || typeof navigator.clipboard.write !== "function" ||
+        typeof window.ClipboardItem !== "function") {
+        throw new Error("clipboard unavailable");
+    }
+    await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+}
+async function captureQuestionPopup() {
+    const modal = document.querySelector("#modalOverlay .modal");
+    if (!modal || !currentQ()) return;
+    if (typeof html2canvas !== "function") {
+        window.alert("Capture needs html2canvas.min.js in the same folder as this file.");
+        return;
+    }
+    const btn = document.getElementById("captureBtn");
+    if (btn) btn.disabled = true;   /* one capture at a time */
+    let shot = null;
+    try {
+        shot = await html2canvas(modal, {
+            backgroundColor: "#ffffff",
+            scale: 1,               /* the popup is ~900px wide: sharp, and quick */
+            logging: false,
+            useCORS: true,
+            onclone: prunePopupClone
+        });
+        const blob = await new Promise(done => shot.toBlob(done, "image/png"));
+        if (!blob) throw new Error("empty image");
+        await copyImageBlob(blob);
+        if (btn) {
+            btn.textContent = "✓ Copied";
+            setTimeout(() => { btn.textContent = "📷 Capture"; }, 1200);
+        }
+    } catch (err) {
+        /* clipboard blocked: show the frame so it can be copied by hand */
+        try {
+            const url = shot ? shot.toDataURL("image/png") : "";
+            if (url) openImagePopup(url);
+        } catch (e) { /* nothing else to offer */ }
+        if (btn) {
+            btn.textContent = "⚠ Copy failed";
+            setTimeout(() => { btn.textContent = "📷 Capture"; }, 1600);
+        }
+    } finally {
+        if (btn) btn.disabled = false;
+    }
 }
 function clearPasteImgs() {
     const layer = document.getElementById("pasteImgLayer");
@@ -4465,6 +4638,7 @@ function addPastedImage(src) {
     const q = currentQ();
     if (!q || !src) return;
     if (!noteOpen) toggleNote(true);
+    if (noteMode === "type") setNoteMode("draw", false);   /* pictures live on the paper */
     const list = ensureNoteImages(q.id);
     /* small thumbnail tucked into the note's left corner, just under its toolbar */
     const size = 60;
@@ -4724,6 +4898,7 @@ function boot() {
     updateRamBadge();
     bindNoteEvents();
     bindNoteChrome();
+    bindNoteType();
     bindPasteZone();
     bindPasteImgLayer();
     restoreDataset();
@@ -4747,7 +4922,7 @@ function boot() {
 }
 
 /* ---------------- self test (headless verification) ---------------- */
-function runSelfTest(mode) {
+async function runSelfTest(mode) {
     const out = [];
     const ok = (cond, msg) => out.push((cond ? "PASS " : "FAIL ") + msg);
     const tileCount = () => document.querySelectorAll("#modulesGrid .rule-btn").length;
@@ -5034,14 +5209,78 @@ function runSelfTest(mode) {
     ok(noteFor(q0.id).strokes.length === strokesBeforePalm + 1, "the pen still draws after a palm touch");
     const w0 = noteP.getBoundingClientRect().width;
     const hd = document.getElementById("noteResize").getBoundingClientRect();
-    const dev = (type, x, y) => new PointerEvent(type, { bubbles: true, pointerId: 9, clientX: x, clientY: y });
+    /* a real pointer drag: buttons=1 is what used to be mistaken for a pen stroke */
+    const dev = (type, x, y) => new PointerEvent(type, {
+        bubbles: true, pointerId: 9, pointerType: "mouse", buttons: 1, clientX: x, clientY: y
+    });
+    const strokesBeforeResize = noteFor(q0.id).strokes.length;
     document.getElementById("noteResize").dispatchEvent(dev("pointerdown", hd.left + 4, hd.top + 4));
     window.dispatchEvent(dev("pointermove", hd.left + 90, hd.top + 70));
     window.dispatchEvent(dev("pointerup", hd.left + 90, hd.top + 70));
     ok(noteP.getBoundingClientRect().width > w0, "note resizes by dragging its corner (" + Math.round(w0) + "→" + Math.round(noteP.getBoundingClientRect().width) + ")");
+    ok(noteFor(q0.id).strokes.length === strokesBeforeResize, "resizing the note paints no ink");
+
+    // Type mode: ink and typed text share the same per-question record
+    setNoteMode("type", false);
+    ok(noteP.classList.contains("mode-type"), "Type mode swaps the paper for a text box");
+    const noteTa = document.getElementById("noteText");
+    noteTa.value = "Use the 30-60-90 triangle here";
+    noteTa.dispatchEvent(new Event("input", { bubbles: true }));
+    ok(notes[q0.id] && notes[q0.id].text === "Use the 30-60-90 triangle here", "typed note kept in RAM");
+    ok(hasNote(q0.id), "typed note counts as a saved note");
+    const choiceBeforeTyping = modalChoice;
+    noteTa.dispatchEvent(new KeyboardEvent("keydown", { key: "a", bubbles: true, cancelable: true }));
+    ok(modalChoice === choiceBeforeTyping, "typing A in the note does not pick an answer option");
+    const noteTextAtQ0 = noteTa.value;
+    navigateQ(1);
+    ok(noteTa.value === "", "Type box follows Prev/Next to the next question");
+    navigateQ(-1);
+    ok(noteTa.value === noteTextAtQ0, "Type box brings the typed note back");
+    setNoteMode("draw", false);
     closeModal();
     openModal(q0.id);
     ok(hasNote(q0.id), "note follows the question when reopened");
+    ok(document.getElementById("noteText").value === "Use the 30-60-90 triangle here", "typed note follows the question");
+    ok(!!document.getElementById("captureBtn") && typeof captureQuestionPopup === "function",
+        "📷 Capture button is in the popup footer");
+    /* one click copies the popup as a PNG — nothing is written into the note */
+    const ciBackup = window.ClipboardItem;
+    let copied = 0, copiedItem = null;
+    try {
+        Object.defineProperty(navigator, "clipboard", {
+            configurable: true,
+            value: { write: items => { copied = items.length; copiedItem = items[0]; return Promise.resolve(); } }
+        });
+        if (typeof window.ClipboardItem !== "function") {
+            window.ClipboardItem = function (data) { this.data = data; };
+        }
+        const probeDoc = document.implementation.createHTMLDocument("capture-probe");
+        probeDoc.body.innerHTML = '<div id="modalOverlay"><div class="modal">' +
+            '<div class="modal-body">q</div><div class="modal-footer">controls</div></div></div>';
+        prunePopupClone(probeDoc);
+        ok(!probeDoc.querySelector(".modal-footer") && !!probeDoc.querySelector(".modal-body"),
+            "capture clone keeps the question and drops the footer strip");
+        const picsBeforeCapture = noteImages(q0.id).length;
+        const popupH = Math.round(document.querySelector("#modalOverlay .modal").getBoundingClientRect().height);
+        await captureQuestionPopup();
+        ok(copied === 1, "one click copies the popup image to the clipboard");
+        ok(noteImages(q0.id).length === picsBeforeCapture, "capture no longer writes into the note");
+        ok(!document.getElementById("imgLightbox").classList.contains("show"),
+            "capture only shows the preview when the copy fails");
+        const shotBlob = copiedItem ? await copiedItem.getType("image/png") : null;
+        const shotH = await new Promise(res => {
+            if (!shotBlob) return res(0);
+            const url = URL.createObjectURL(shotBlob);
+            const im = new Image();
+            im.onload = () => { res(im.naturalHeight); URL.revokeObjectURL(url); };
+            im.onerror = () => { res(0); URL.revokeObjectURL(url); };
+            im.src = url;
+        });
+        ok(shotH > 0 && shotH < popupH, "captured image leaves the footer controls out (" + shotH + " < " + popupH + ")");
+    } finally {
+        delete navigator.clipboard;
+        window.ClipboardItem = ciBackup;
+    }
     toggleNote(false);
     closeModal();
 
