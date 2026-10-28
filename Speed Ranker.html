@@ -2616,14 +2616,21 @@ function sanitizeSrPrefs(raw) {
 
 function srOf(id) { return rec(id).sr || null; }
 function scheduleReview(id, correct) {
+    if (statusOf(id) === "mastered") return;
     const r = ensureRec(id);
     const now = Date.now();
-    const prev = r.sr || { n: 0 };
+    const prev = r.sr || { n: 0, lapses: 0 };
+    const curLapses = (prev.lapses || 0) + (correct ? 0 : 1);
     if (correct) {
-        const n = Math.min((prev.n || 0) + 1, srPrefs.days.length);
-        r.sr = { n: n, last: now, due: now + srPrefs.days[n - 1] * DAY_MS };
+        const minGoodIdx = srPrefs.days.findIndex(d => d >= 7);
+        const minGoodStep = (minGoodIdx >= 0) ? (minGoodIdx + 1) : 1;
+        const n = (prev.n || 0) < minGoodStep
+            ? minGoodStep
+            : Math.min((prev.n || 0) + 1, srPrefs.days.length);
+        r.sr = { n: n, last: now, due: now + srPrefs.days[n - 1] * DAY_MS, lapses: curLapses };
     } else {
-        r.sr = { n: 0, last: now, due: now + srPrefs.lapseMin * 60000 };
+        r.sr = { n: 1, last: now, due: now + srPrefs.lapseMin * 60000, lapses: curLapses };
+        if (curLapses >= 4) r.s = "weak";
     }
 }
 /* Anki-style feedback: four buttons instead of right/wrong only */
@@ -2680,18 +2687,30 @@ function srNext(id, rating) {
     const now = Date.now();
     const len = srPrefs.days.length;
     const prevN = (r.sr && r.sr.n) || 0;
+
+    // Find step index where interval is >= 7 days (step 3 in default [1, 3, 7, 16, 35, 75])
+    const minGoodIdx = srPrefs.days.findIndex(d => d >= 7);
+    const minGoodStep = (minGoodIdx >= 0) ? (minGoodIdx + 1) : 1;
+
     let n, due;
     if (rating === "again") {
         n = 1;
         due = now + srPrefs.lapseMin * 60000;
     } else if (rating === "hard") {
-        n = Math.min(Math.max(1, prevN + 1), len);
+        // Freeze step n so answering Good tomorrow does not skip ladder intervals
+        n = Math.max(1, prevN);
         due = now + DAY_MS;
     } else if (rating === "easy") {
-        n = Math.min(Math.max(1, prevN + 2), len);
+        // Easy skips beyond Good: minimum step 4 (16 days in defaults) for early cards
+        n = prevN < minGoodStep
+            ? Math.min(minGoodStep + 1, len)
+            : Math.min(prevN + 2, len);
         due = now + srPrefs.days[n - 1] * DAY_MS;
-    } else {
-        n = Math.min(Math.max(1, prevN + 1), len);
+    } else { // "good"
+        // Minimum 7 days! Never schedule below 7 days on Good
+        n = prevN < minGoodStep
+            ? minGoodStep
+            : Math.min(prevN + 1, len);
         due = now + srPrefs.days[n - 1] * DAY_MS;
     }
     return { n: n, due: due };
@@ -2699,7 +2718,9 @@ function srNext(id, rating) {
 function srRate(id, rating) {
     const r = ensureRec(id);
     const next = srNext(id, rating);
-    r.sr = { n: next.n, last: Date.now(), due: next.due, rated: rating };
+    const curLapses = ((r.sr && r.sr.lapses) || 0) + (rating === "again" ? 1 : 0);
+    r.sr = { n: next.n, last: Date.now(), due: next.due, rated: rating, lapses: curLapses };
+    if (curLapses >= 4) r.s = "weak";
     r.seen = 1;
     saveStore();
     return next.n;
@@ -2707,6 +2728,7 @@ function srRate(id, rating) {
 function rateCard(rating) {
     const q = currentQ();
     if (!q) return;
+    const curN = (rec(q.id).sr && rec(q.id).sr.n) || 0;
     srRate(q.id, rating);
     /* the rating drives the difficulty pill, so the two can never disagree */
     const diffRec = ensureRec(q.id);
@@ -2723,16 +2745,30 @@ function rateCard(rating) {
         st.style.color = "var(--secondary)";
     }
     if (reviewDeck.active) {
-        /* rated cards leave the deck, so a daily review always ends */
+        const shouldRequeue = rating === "again" || (rating === "hard" && curN <= 1);
+        if (shouldRequeue) {
+            const card = modalDeck.splice(modalIdx, 1)[0];
+            modalDeck.push(card);
+            if (modalIdx >= modalDeck.length) modalIdx = 0;
+            modalChoice = null;
+            modalRevealed = false;
+            renderModal();
+            refreshWorkspace(q.id);
+            return;
+        }
+        /* card graduates from today's deck */
         modalDeck.splice(modalIdx, 1);
         if (modalIdx >= modalDeck.length) modalIdx = Math.max(0, modalDeck.length - 1);
         if (!modalDeck.length) {
+            const deckTopic = reviewDeck.topic;
             reviewDeck = { active: false };
             closeModal();
             refreshWorkspace(q.id);
             const st2 = document.getElementById("status");
             if (st2) {
-                st2.innerHTML = "🎆 <b>Review deck cleared</b> — nothing else is due right now.";
+                st2.innerHTML = deckTopic
+                    ? "🎆 <b>" + esc(deckTopic) + " review cleared</b> — nothing else is due right now."
+                    : "🎆 <b>Review deck cleared</b> — nothing else is due right now.";
                 st2.style.color = "var(--color-mastered)";
             }
             return;
@@ -2749,13 +2785,21 @@ function rateCard(rating) {
     updateModalMeta(q);
     refreshWorkspace(q.id);
 }
-function isDue(id) { const sr = srOf(id); return !!sr && sr.due <= Date.now(); }
+function isDue(id) {
+    if (statusOf(id) === "mastered") return false;
+    const sr = srOf(id);
+    return !!sr && sr.due <= Date.now();
+}
 function dueQuestions() {
     const now = Date.now();
-    return QDATA.filter(q => { const sr = srOf(q.id); return sr && sr.due <= now; })
-        .sort((a, b) => srOf(a.id).due - srOf(b.id).due);
+    return QDATA.filter(q => {
+        if (statusOf(q.id) === "mastered") return false;
+        const sr = srOf(q.id);
+        return sr && sr.due <= now;
+    }).sort((a, b) => srOf(a.id).due - srOf(b.id).due);
 }
 function srLabel(id) {
+    if (statusOf(id) === "mastered") return "mastered";
     const sr = srOf(id);
     if (!sr) return "new";
     const left = sr.due - Date.now();
@@ -2861,14 +2905,17 @@ function rescheduleQuestion(step) {
     if (step === null) {
         delete r.sr;
         if (!Object.keys(r).length) delete progress[q.id];
-    } else if (step === -1) {
-        const prev = r.sr || { n: 0 };
-        r.sr = { n: prev.n || 0, last: now, due: now - 1 };
-    } else if (step === 0) {
-        r.sr = { n: 0, last: now, due: now + srPrefs.lapseMin * 60000 };
     } else {
-        const n = Math.min(step, srPrefs.days.length);
-        r.sr = { n: n, last: now, due: now + srPrefs.days[n - 1] * DAY_MS };
+        if (r.s === "mastered") delete r.s;
+        if (step === -1) {
+            const prev = r.sr || { n: 0 };
+            r.sr = { n: prev.n || 0, last: now, due: now - 1 };
+        } else if (step === 0) {
+            r.sr = { n: 0, last: now, due: now + srPrefs.lapseMin * 60000 };
+        } else {
+            const n = Math.min(step, srPrefs.days.length);
+            r.sr = { n: n, last: now, due: now + srPrefs.days[n - 1] * DAY_MS };
+        }
     }
     saveStore();
     closeSrMenu();
@@ -2885,9 +2932,13 @@ document.addEventListener("pointerdown", e => {
 
 /* Daily Review: today's due cards become an active deck that empties as you rate */
 function startReview() {
-    const due = dueQuestions();
+    let due = dueQuestions();
+    const activeTopic = state.topic;
+    if (activeTopic) {
+        due = due.filter(q => q.topic === activeTopic);
+    }
     if (!due.length) return;
-    reviewDeck = { active: true };
+    reviewDeck = { active: true, topic: activeTopic || null };
     modalDeck = due;
     modalIdx = 0;
     modalChoice = null;
@@ -3047,9 +3098,13 @@ function renderCounters() {
     set("cnt-flt-due", due);
     const reviewBtn = document.getElementById("flt-review-btn");
     if (reviewBtn) {
-        reviewBtn.disabled = !due;
-        reviewBtn.title = due
-            ? due + " question" + (due === 1 ? "" : "s") + " due for review — click to start"
+        const topicDue = state.topic ? QDATA.filter(q => q.topic === state.topic && isDue(q.id)).length : due;
+        const countToShow = state.topic ? topicDue : due;
+        reviewBtn.disabled = !countToShow;
+        reviewBtn.innerHTML = (state.topic ? "🔁 Review " + esc(state.topic) + " Due " : "🔁 Daily review ") +
+            '<span class="filter-count" id="cnt-due">' + countToShow + '</span>';
+        reviewBtn.title = countToShow
+            ? countToShow + " question" + (countToShow === 1 ? "" : "s") + " due for review — click to start"
             : "Nothing due right now — answer questions to build the review schedule";
     }
     set("cnt-flt-diff-easy", countBy("diff", "easy"));
@@ -3425,7 +3480,7 @@ function drawRateBar(q) {
     const rateBar = document.getElementById("rateBar");
     if (!rateBar || !q) return;
     const r = rec(q.id);
-    const showRate = !!(r.sr || reviewDeck.active);
+    const showRate = !!(r.sr || reviewDeck.active) && statusOf(q.id) !== "mastered";
     if (!showRate) {
         if (rateBar.innerHTML) rateBar.innerHTML = "";
         rateBar.classList.remove("show");
@@ -3453,7 +3508,13 @@ function updateModalMeta(q) {
     const badge = document.querySelector("#modalBody .sr-badge");
     if (!badge) return;
     const when = badge.querySelector(".sr-when");
-    if (when) when.textContent = "🔁 " + srLabel(q.id);
+    if (when) {
+        if (statusOf(q.id) === "mastered") {
+            when.textContent = "✅ Mastered";
+        } else {
+            when.textContent = "🔁 " + srLabel(q.id);
+        }
+    }
     badge.classList.toggle("due", isDue(q.id));
 }
 function renderModal(keepScroll) {
@@ -3465,7 +3526,7 @@ function renderModal(keepScroll) {
     const r = rec(q.id);
     document.getElementById("modalTag").textContent = "Mock " + q.mock + " · Q" + q.qnum;
     document.getElementById("modalCount").textContent = reviewDeck.active
-        ? "🔁 " + (modalIdx + 1) + " / " + modalDeck.length + " due"
+        ? "🔁 " + (modalIdx + 1) + " / " + modalDeck.length + (reviewDeck.topic ? " (" + esc(reviewDeck.topic) + ")" : "") + " due"
         : (modalIdx + 1) + " / " + modalDeck.length;
 
     const answered = modalChoice != null || modalRevealed;
@@ -3490,13 +3551,18 @@ function renderModal(keepScroll) {
        daily review can be rated. */
     drawRateBar(q);
 
+    const leechHtml = (r.sr && r.sr.lapses >= 4)
+        ? '<span class="badge leech-badge" style="background:#fee2e2;color:#991b1b;font-weight:600;">⚡ Leech (' + r.sr.lapses + ' lapses)</span>'
+        : '';
+
     document.getElementById("modalBody").innerHTML =
         '<div class="q-meta">' +
             '<span class="badge">' + esc(q.topic) + '</span>' +
             '<span class="badge muted">' + esc(q.sub) + '</span>' +
             '<span class="badge muted">' + statusOf(q.id) + '</span>' +
+            leechHtml +
             '<button type="button" class="badge muted sr-badge' + (isDue(q.id) ? ' due' : '') + '" onclick="openSrMenu(event)" aria-expanded="false" title="Reschedule this question">' +
-                '<span class="sr-when">🔁 ' + srLabel(q.id) + '</span>' +
+                '<span class="sr-when">' + (statusOf(q.id) === "mastered" ? "✅ Mastered" : "🔁 " + srLabel(q.id)) + '</span>' +
                 '<span class="sr-edit">Change <span class="sr-caret">▾</span></span>' +
             '</button>' +
         '</div>' +
@@ -3554,6 +3620,34 @@ function setQStatus(s) {
        where all three pills are bright and nothing is greyed out) */
     const cur = r.s || "learning";
     if (cur === s) delete r.s; else r.s = s;
+    if (r.s === "mastered") {
+        delete r.sr;
+        if (reviewDeck.active) {
+            modalDeck.splice(modalIdx, 1);
+            if (modalIdx >= modalDeck.length) modalIdx = Math.max(0, modalDeck.length - 1);
+            if (!modalDeck.length) {
+                const deckTopic = reviewDeck.topic;
+                reviewDeck = { active: false };
+                closeModal();
+                refreshWorkspace(q.id);
+                const st2 = document.getElementById("status");
+                if (st2) {
+                    st2.innerHTML = deckTopic
+                        ? "🎆 <b>" + esc(deckTopic) + " review cleared</b> — nothing else is due right now."
+                        : "🎆 <b>Review deck cleared</b> — nothing else is due right now.";
+                    st2.style.color = "var(--color-mastered)";
+                }
+                saveStore();
+                return;
+            }
+            modalChoice = null;
+            modalRevealed = false;
+            saveStore();
+            renderModal();
+            refreshWorkspace(q.id);
+            return;
+        }
+    }
     if (!Object.keys(r).length) delete progress[q.id];
     saveStore();
     renderModal(true);
@@ -3627,14 +3721,30 @@ document.addEventListener("keydown", (e) => {
         if (open) closeModal();
         return;
     }
-    if (!open) return;
+    const answered = modalChoice != null || modalRevealed;
+    if (e.key === " " || e.code === "Space") {
+        e.preventDefault();
+        if (!answered) {
+            revealAnswer();
+        } else {
+            rateCard("good");
+        }
+        return;
+    }
     const k = e.key.toUpperCase();
-    if (["A", "B", "C", "D"].includes(k)) { chooseOption(k); e.preventDefault(); }
-    else if (k === "1") chooseOption("A");
-    else if (k === "2") chooseOption("B");
-    else if (k === "3") chooseOption("C");
-    else if (k === "4") chooseOption("D");
-    else if (k === "R") revealAnswer();
+    if (answered) {
+        if (k === "1") { rateCard("again"); e.preventDefault(); }
+        else if (k === "2") { rateCard("hard"); e.preventDefault(); }
+        else if (k === "3") { rateCard("good"); e.preventDefault(); }
+        else if (k === "4") { rateCard("easy"); e.preventDefault(); }
+    } else {
+        if (["A", "B", "C", "D"].includes(k)) { chooseOption(k); e.preventDefault(); }
+        else if (k === "1") { chooseOption("A"); e.preventDefault(); }
+        else if (k === "2") { chooseOption("B"); e.preventDefault(); }
+        else if (k === "3") { chooseOption("C"); e.preventDefault(); }
+        else if (k === "4") { chooseOption("D"); e.preventDefault(); }
+    }
+    if (k === "R") revealAnswer();
     else if (k === "B") toggleQFlag("bm");
     else if (e.key === "ArrowRight") navigateQ(1);
     else if (e.key === "ArrowLeft") navigateQ(-1);
@@ -4918,7 +5028,10 @@ function boot() {
     if (params.get("test")) startTest(parseInt(params.get("test"), 10));
     const st = params.get("selftest");
     /* on load, so the sync script below this one has registered its hooks */
-    if (st) window.addEventListener("load", () => runSelfTest(st));
+    if (st) {
+        if (document.readyState === "complete") setTimeout(() => runSelfTest(st), 100);
+        else window.addEventListener("load", () => runSelfTest(st));
+    }
 }
 
 /* ---------------- self test (headless verification) ---------------- */
@@ -5149,24 +5262,69 @@ async function runSelfTest(mode) {
     const s1 = srOf(srQ.id);
     ok(nAgain === 1 && s1.due - s1.last >= 9 * 60000, "Again brings the card back in ~" + srPrefs.lapseMin + " min");
     srRate(srQ.id, "easy");
-    ok(srOf(srQ.id).n === Math.min(3, srPrefs.days.length), "Easy skips a ladder step (n=" + srOf(srQ.id).n + ")");
+    ok(srOf(srQ.id).n === Math.min(4, srPrefs.days.length), "Easy skips to step 4 (n=" + srOf(srQ.id).n + ")");
     srRate(srQ.id, "hard");
     const s3 = srOf(srQ.id);
     ok(Math.abs((s3.due - s3.last) - DAY_MS) < 1000, "Hard schedules tomorrow");
-    const nBeforeGood = srOf(srQ.id).n;
-    srRate(srQ.id, "good");
-    ok(srOf(srQ.id).n === Math.min(nBeforeGood + 1, srPrefs.days.length),
-        "Good advances one ladder step (n=" + nBeforeGood + "→" + srOf(srQ.id).n + ")");
+    ok(srOf(srQ.id).n === 4, "Hard keeps ladder step n=4 unchanged");
+    delete ensureRec(srQ.id).sr;
+    const nGood = srRate(srQ.id, "good");
+    const sGood = srOf(srQ.id);
+    ok(nGood >= 3 && sGood.due - sGood.last >= 7 * DAY_MS, "Good schedules at least 7 days out (minimum 7 days)");
 
-    // daily review deck empties as cards are rated
-    const deckQ = QDATA[2];
-    ensureRec(deckQ.id).sr = { n: 1, last: Date.now() - 5 * 60000, due: Date.now() - 60000 };
+    // mastered exclusion test
+    ensureRec(srQ.id).s = "mastered";
+    delete ensureRec(srQ.id).sr;
+    ok(statusOf(srQ.id) === "mastered" && !srOf(srQ.id) && !isDue(srQ.id),
+        "question set to mastered has no r.sr and isDue is false");
+    scheduleReview(srQ.id, true);
+    ok(!srOf(srQ.id), "scheduleReview ignores mastered questions");
+    delete ensureRec(srQ.id).s;
+
+    // leech detection test
+    const leechQ = QDATA[3];
+    delete ensureRec(leechQ.id).sr;
+    delete ensureRec(leechQ.id).s;
+    srRate(leechQ.id, "again");
+    srRate(leechQ.id, "again");
+    srRate(leechQ.id, "again");
+    srRate(leechQ.id, "again");
+    ok(rec(leechQ.id).sr && rec(leechQ.id).sr.lapses === 4, "lapses increment to 4");
+    ok(statusOf(leechQ.id) === "weak", "4 lapses automatically assigns weak status");
+    openModal(leechQ.id);
+    ok(!!document.querySelector("#modalBody .leech-badge"), "leech badge rendered in modal");
+    closeModal();
+    delete ensureRec(leechQ.id).sr;
+    delete ensureRec(leechQ.id).s;
+
+    // daily review deck: again requeues to end of deck, good graduates
+    const deckQ1 = QDATA[4];
+    const deckQ2 = QDATA[5];
+    ensureRec(deckQ1.id).sr = { n: 1, last: Date.now() - 5 * 60000, due: Date.now() - 60000 };
+    ensureRec(deckQ2.id).sr = { n: 1, last: Date.now() - 5 * 60000, due: Date.now() - 60000 };
+    state.topic = null;
     startReview();
-    const deckLen = modalDeck.length;
-    ok(reviewDeck.active && deckLen >= 1, "daily review opens a due deck (" + deckLen + " card(s))");
+    ok(reviewDeck.active && modalDeck.length >= 2, "daily review opens a due deck (" + modalDeck.length + " card(s))");
+    const firstId = modalDeck[0].id;
+    const secondId = modalDeck[1].id;
+    rateCard("again");
+    ok(modalDeck.some(q => q.id === firstId) && modalDeck[modalDeck.length - 1].id === firstId,
+        "rating again in review mode retains card in modalDeck and pushes to end");
+    ok(modalDeck[0].id === secondId, "modal advances to next card");
+    const lenBeforeGood = modalDeck.length;
     rateCard("good");
-    ok(modalDeck.length === deckLen - 1, "rating a card removes it from the deck");
-    ok(!reviewDeck.active || modalDeck.length > 0, "deck state stays consistent after a rating");
+    ok(modalDeck.length === lenBeforeGood - 1 && !modalDeck.some(q => q.id === secondId),
+        "rating good in review mode removes card from modalDeck");
+    closeModal();
+    delete ensureRec(deckQ1.id).sr;
+    delete ensureRec(deckQ2.id).sr;
+
+    // keyboard hotkey test
+    openModal(q0.id);
+    document.dispatchEvent(new KeyboardEvent("keydown", { bubbles: true, key: " " }));
+    ok(modalRevealed, "Space reveals answer when unanswered");
+    document.dispatchEvent(new KeyboardEvent("keydown", { bubbles: true, key: " " }));
+    ok(rec(q0.id).sr && rec(q0.id).sr.rated === "good", "Space rates Good when answered");
     closeModal();
 
     // RAM mode: nothing is written to the browser

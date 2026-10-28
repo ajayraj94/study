@@ -2,7 +2,7 @@
   "app": "speed-ranker",
   "version": 2,
   "mode": "ram",
-  "exportedAt": "2026-10-27T14:43:59.447Z",
+  "exportedAt": "2026-10-28T07:55:36.672Z",
   "data": {
     "srqb_v1": {
       "progress": {
@@ -1048,6 +1048,172 @@
             "rated": "good"
           },
           "diff": "moderate"
+        },
+        "6-23": {
+          "diff": "tough",
+          "doubt": 1
+        },
+        "6-24": {
+          "seen": 1,
+          "sr": {
+            "n": 0,
+            "last": 1793168434228,
+            "due": 1793169034228
+          },
+          "doubt": 1,
+          "diff": "tough"
+        },
+        "6-25": {
+          "seen": 1,
+          "sr": {
+            "n": 2,
+            "last": 1793168608459,
+            "due": 1793427808459,
+            "rated": "good"
+          },
+          "diff": "moderate"
+        },
+        "7-1": {
+          "seen": 1,
+          "sr": {
+            "n": 2,
+            "last": 1793168832133,
+            "due": 1793428032133,
+            "rated": "good"
+          },
+          "diff": "moderate"
+        },
+        "7-2": {
+          "seen": 1,
+          "sr": {
+            "n": 2,
+            "last": 1793168952530,
+            "due": 1793428152530,
+            "rated": "good"
+          },
+          "diff": "moderate"
+        },
+        "7-3": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1793169087789,
+            "due": 1794551487789,
+            "rated": "easy"
+          },
+          "diff": "easy"
+        },
+        "7-4": {
+          "diff": "tough",
+          "doubt": 1
+        },
+        "7-5": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1793169533765,
+            "due": 1794551933765,
+            "rated": "easy"
+          },
+          "diff": "easy"
+        },
+        "7-6": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1793169696447,
+            "due": 1794552096447,
+            "rated": "good"
+          },
+          "diff": "moderate"
+        },
+        "7-7": {
+          "seen": 1,
+          "sr": {
+            "n": 0,
+            "last": 1793169951338,
+            "due": 1793170551338
+          },
+          "diff": "tough",
+          "doubt": 1
+        },
+        "7-8": {
+          "seen": 1,
+          "sr": {
+            "n": 6,
+            "last": 1793170798075,
+            "due": 1799650798075,
+            "rated": "easy"
+          },
+          "diff": "easy"
+        },
+        "7-9": {
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1793170063672,
+            "due": 1793774863672,
+            "rated": "easy"
+          },
+          "diff": "easy"
+        },
+        "7-10": {
+          "seen": 1,
+          "sr": {
+            "n": 2,
+            "last": 1793170219993,
+            "due": 1793429419993,
+            "rated": "good"
+          },
+          "diff": "moderate"
+        },
+        "7-11": {
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1793170236991,
+            "due": 1793775036991,
+            "rated": "easy"
+          },
+          "diff": "easy"
+        },
+        "7-12": {
+          "diff": "tough",
+          "doubt": 1
+        },
+        "7-13": {
+          "seen": 1,
+          "sr": {
+            "n": 0,
+            "last": 1793171405899,
+            "due": 1793172005899
+          },
+          "diff": "tough",
+          "doubt": 1
+        },
+        "7-14": {
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1793171887750,
+            "due": 1793776687750,
+            "rated": "good"
+          },
+          "diff": "moderate"
+        },
+        "7-15": {
+          "seen": 1,
+          "sr": {
+            "n": 2,
+            "last": 1793172297235,
+            "due": 1793431497235,
+            "rated": "good"
+          },
+          "diff": "moderate"
+        },
+        "7-16": {
+          "diff": "tough",
+          "doubt": 1
         }
       },
       "attempts": {
