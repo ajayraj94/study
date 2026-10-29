@@ -1110,6 +1110,18 @@
         /* the flat pill rule above would outrank the plain .active colour of Due */
         .filter-toolbar #flt-due.active { background: #fef3c7; border-color: #f59e0b; color: #92400e; font-weight: 700; }
 
+        /* my SRS level cluster — the same pills as the popup, with room for the S tag */
+        .filter-cluster.srs-cluster { gap: 8px; }
+        /* colour only: same weight and border width as the resting pill, so the
+           cluster never reflows when a level is selected */
+        .filter-toolbar .seg-btn.srs-lvl-btn.active {
+            background: #eef2ff; border-color: #6366f1; color: #3730a3; font-weight: 600;
+        }
+        .filter-toolbar .seg-btn.srs-lvl-btn.active::after { background: #3730a3; }
+        html[data-theme="dark"] .filter-toolbar .seg-btn.srs-lvl-btn.active {
+            background: #1e1b4b; border-color: #818cf8; color: #c7d2fe;
+        }
+
         .sr-settings-btn {
             width: 24px; height: 24px; padding: 0; border-radius: 999px;
             border: 1px solid #dbe3ee; background: #f8fafc; color: #334155;
@@ -1269,6 +1281,34 @@
             font-size: 10.5px; font-weight: 700; color: #64748b;
             font-variant-numeric: tabular-nums;
         }
+
+        /* --- SRS self-rating: the same three buttons as difficulty, each with a
+               small "S" tag on the upper corner so the two rows never mix up --- */
+        .srs-row-label {
+            font-size: 9.5px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
+            color: #4f46e5; white-space: nowrap;
+        }
+        .srs-lvl-btn { position: relative; }
+        .srs-lvl-btn::after {
+            content: 'S'; position: absolute; top: -5px; right: -3px;
+            font-size: 7px; font-weight: 900; line-height: 1;
+            padding: 2px 3px; border-radius: 4px;
+            background: #4338ca; color: #ffffff; letter-spacing: 0;
+            pointer-events: none;
+        }
+        .modal-footer .seg-btn.srs-lvl-btn.active {
+            background: #eef2ff; border: 1px solid #6366f1; color: #3730a3; font-weight: 600;
+        }
+        .modal-footer .seg-btn.srs-lvl-btn.active::after { background: #3730a3; }
+        .srs-level-hint {
+            font-size: 10.5px; font-weight: 700; color: #64748b; white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+        html[data-theme="dark"] .srs-row-label { color: #a5b4fc; }
+        html[data-theme="dark"] .modal-footer .seg-btn.srs-lvl-btn.active {
+            background: #1e1b4b; border-color: #818cf8; color: #c7d2fe;
+        }
+        html[data-theme="dark"] .srs-level-hint { color: #94a3b8; }
 
         /* --- type chips --- */
         .sub-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 10px 0; }
@@ -1928,6 +1968,15 @@
                 </div>
             </div>
 
+            <div class="filter-cluster srs-cluster">
+                <span class="cluster-label" title="Your own SRS recall level — set in the question popup">SRS level</span>
+                <div class="filter-pills">
+                    <button class="seg-btn srs-lvl-btn" id="flt-srs-easy" onclick="toggleFilter('mine', 'easy')" title="Filter: my SRS level = Easy">🟢 Easy <span class="filter-count" id="cnt-flt-srs-easy">0</span></button>
+                    <button class="seg-btn srs-lvl-btn" id="flt-srs-good" onclick="toggleFilter('mine', 'good')" title="Filter: my SRS level = Good">🟡 Good <span class="filter-count" id="cnt-flt-srs-good">0</span></button>
+                    <button class="seg-btn srs-lvl-btn" id="flt-srs-hard" onclick="toggleFilter('mine', 'hard')" title="Filter: my SRS level = Hard">🔴 Hard <span class="filter-count" id="cnt-flt-srs-hard">0</span></button>
+                </div>
+            </div>
+
             <div class="filter-cluster">
                 <span class="cluster-label">Priority</span>
                 <div class="filter-pills">
@@ -2021,6 +2070,23 @@
             <!-- pinned above the body's scroll area: always on screen, never scrolled away -->
             <div class="sr-rate-bar" id="rateBar"></div>
 
+            <!-- 🔁 SRS level: YOUR rating of recall. Drives the schedule only;
+                 the professional difficulty row below is never overwritten. -->
+            <div class="features-box-bottom">
+                <div class="deck-controls-left">
+                    <span class="srs-row-label" title="Your own recall rating — drives the review schedule, never the professional difficulty">🔁 SRS level</span>
+                    <div class="segmented-group">
+                        <button class="seg-btn srs-lvl-btn" id="pill-srs-easy" onclick="setSrsLevel('easy')" title="SRS: Easy — remembered easily, pushed further ahead (shortcut: E)">🟢 Easy</button>
+                        <button class="seg-btn srs-lvl-btn" id="pill-srs-good" onclick="setSrsLevel('good')" title="SRS: Good — remembered properly, next step on the ladder (shortcut: G)">🟡 Good</button>
+                        <button class="seg-btn srs-lvl-btn" id="pill-srs-hard" onclick="setSrsLevel('hard')" title="SRS: Hard — shaky recall, back tomorrow (shortcut: H)">🔴 Hard</button>
+                    </div>
+                </div>
+
+                <div class="deck-controls-right">
+                    <span class="srs-level-hint" id="srsLevelHint"></span>
+                </div>
+            </div>
+
             <div class="features-box-bottom">
                 <div class="deck-controls-left">
                     <div class="segmented-group">
@@ -2050,7 +2116,7 @@
                             ⭐ Bookmark
                         </button>
 
-                        <button class="doubt-toggle-btn flag-edited" id="pill-edited" onclick="toggleQuestionFlag('ed')" title="Mark this question as edited / corrected by you (shortcut: E)">
+                        <button class="doubt-toggle-btn flag-edited" id="pill-edited" onclick="toggleQuestionFlag('ed')" title="Mark this question as edited / corrected by you (shortcut: X)">
                             ✏️ Edited
                         </button>
                     </div>
@@ -18320,6 +18386,7 @@ Q1100. [Type B — True Homonym Context Shift]
     let activeFilters = {
         status: 'all',
         diff: 'all',
+        mine: 'all',
         imp: 'all',
         doubtOnly: false,
         bmOnly: false,
@@ -18331,7 +18398,7 @@ Q1100. [Type B — True Homonym Context Shift]
        status / difficulty / priority / doubt fields, so they ride along in
        every backup, export and ☁️ Sync payload automatically. */
     function defaultRecord() {
-        return { s: 'learning', n: '', diff: '', imp: '', doubt: false, bm: false, ed: false };
+        return { s: 'learning', n: '', diff: '', imp: '', doubt: false, bm: false, ed: false, mine: '' };
     }
 
     /* Read-only view: never touches progressData (safe inside render loops). */
@@ -18708,7 +18775,7 @@ Q1100. [Type B — True Homonym Context Shift]
     }
 
     function clearAllFilters() {
-        activeFilters = { status: 'all', diff: 'all', imp: 'all', doubtOnly: false, bmOnly: false, edOnly: false };
+        activeFilters = { status: 'all', diff: 'all', mine: 'all', imp: 'all', doubtOnly: false, bmOnly: false, edOnly: false };
         updateFilterUI();
         renderDenseModulesGrid();
     }
@@ -19007,6 +19074,12 @@ Q1100. [Type B — True Homonym Context Shift]
             if (btn) btn.classList.toggle('active', qData.imp === i);
         });
 
+        /* the SRS row keeps its own selection, separate from the difficulty row */
+        ['easy', 'good', 'hard'].forEach(l => {
+            const btn = document.getElementById('pill-srs-' + l);
+            if (btn) btn.classList.toggle('active', (qData.mine || '') === l);
+        });
+
         const doubtBtn = document.getElementById('pill-doubt');
         if (doubtBtn) doubtBtn.classList.toggle('active', !!qData.doubt);
 
@@ -19217,7 +19290,7 @@ Q1100. [Type B — True Homonym Context Shift]
             if (tag !== 'INPUT' && tag !== 'TEXTAREA' && !(e.target && e.target.isContentEditable)) {
                 const k = (e.key || '').toLowerCase();
                 if (k === 'b') toggleQuestionFlag('bm');
-                if (k === 'e') toggleQuestionFlag('ed');
+                if (k === 'x') toggleQuestionFlag('ed');
             }
         }
     });
@@ -19358,7 +19431,10 @@ const FEAT_RATINGS = [
     { key: 'good', label: 'Good' },
     { key: 'easy', label: 'Easy' }
 ];
-const FEAT_DIFF_FROM_RATING = { again: 'tough', hard: 'tough', good: 'moderate', easy: 'easy' };
+/* The rating is the SRS's own read on a card: it moves the schedule and the
+   personal level (r.mine), never the professional Easy/Good/Hard tag (r.diff). */
+const FEAT_LEVEL_FROM_RATING = { again: 'hard', hard: 'hard', good: 'good', easy: 'easy' };
+const FEAT_RATING_FROM_LEVEL = { easy: 'easy', good: 'good', hard: 'hard' };
 
 function featSrOf(num) { const r = progressData[num]; return (r && r.sr) ? r.sr : null; }
 function featIsDue(num) {
@@ -19481,10 +19557,45 @@ function featRate(num, rating) {
     const curLapses = ((r.sr && r.sr.lapses) || 0) + (rating === 'again' ? 1 : 0);
     r.sr = { n: next.n, last: Date.now(), due: next.due, rated: rating, lapses: curLapses };
     if (curLapses >= 4) r.s = 'weak';
-    r.diff = FEAT_DIFF_FROM_RATING[rating] || r.diff;
+    r.mine = FEAT_LEVEL_FROM_RATING[rating] || r.mine || '';
     return next.n;
 }
-/* The rating drives the difficulty pill so the two can never disagree. */
+/* 🔁 Three-button SRS self-rating. Tapping a level reschedules the card on the
+   ladder (Easy = further out, Good = next step, Hard = back tomorrow) and stores
+   the level on the record. The professional difficulty tag is left untouched. */
+function setSrsLevel(level) {
+    const num = currentQuestionId;
+    if (!parsedQuestions[num] || !FEAT_RATING_FROM_LEVEL[level]) return;
+    const rec = getQData(num);
+    const mastered = (rec.s || 'learning') === 'mastered';
+
+    if (!mastered) featRate(num, FEAT_RATING_FROM_LEVEL[level]);
+    rec.mine = level;
+    updateModalDeckButtons(rec);
+    featDrawRateBar(num);
+    featDrawSrsLevelHint(num);
+    saveProgress();
+
+    const st = document.getElementById('status');
+    if (st) {
+        const label = level.charAt(0).toUpperCase() + level.slice(1);
+        st.innerHTML = '🔁 <b>SRS level: ' + label + '</b>' +
+            (mastered ? ' · mastered — no further reviews booked'
+                      : (rec.sr ? ' — comes back ' + featFmtDueLong(rec.sr.due) : ''));
+        st.style.color = 'var(--secondary)';
+    }
+}
+function featDrawSrsLevelHint(num) {
+    const el = document.getElementById('srsLevelHint');
+    if (!el) return;
+    /* the recall bar just above already prints the next date — show it only once */
+    const bar = document.getElementById('rateBar');
+    if (bar && bar.classList.contains('show')) { el.textContent = ''; return; }
+    const rec = readQData(num);
+    if ((rec.s || 'learning') === 'mastered') { el.textContent = 'Mastered · out of SRS'; return; }
+    el.textContent = rec.sr ? 'Next: ' + featFmtDueNote(rec.sr.due) : '';
+}
+/* The rating drives the SRS level (never the professional difficulty tag). */
 function rateCard(rating) {
     const num = currentQuestionId;
     if (!parsedQuestions[num]) return;
@@ -19544,6 +19655,7 @@ function featLeaveSrs(num) {
     const rec = progressData[num];
     if (rec) delete rec.sr;
     featDrawRateBar(num);
+    featDrawSrsLevelHint(num);
     const badge = modalBody.querySelector('.q-meta .sr-badge');
     if (badge) {
         const when = badge.querySelector('.sr-when');
@@ -19764,7 +19876,7 @@ function toggleDueFilter() {
     featRenderAll();
 }
 function clearAllFilters() {
-    activeFilters = { status: 'all', diff: 'all', imp: 'all', doubtOnly: false, bmOnly: false, edOnly: false, dueOnly: false };
+    activeFilters = { status: 'all', diff: 'all', mine: 'all', imp: 'all', doubtOnly: false, bmOnly: false, edOnly: false, dueOnly: false };
     searchQuery = '';
     const si = document.getElementById('searchInput');
     if (si) si.value = '';
@@ -19778,6 +19890,7 @@ function matchesFilters(it) {
     const data = readQData(it.num);
     if (activeFilters.status !== 'all' && (data.s || 'learning') !== activeFilters.status) return false;
     if (activeFilters.diff !== 'all' && data.diff !== activeFilters.diff) return false;
+    if (activeFilters.mine !== 'all' && (data.mine || '') !== activeFilters.mine) return false;
     if (activeFilters.imp !== 'all' && data.imp !== activeFilters.imp) return false;
     if (activeFilters.doubtOnly && !data.doubt) return false;
     if (activeFilters.bmOnly && !data.bm) return false;
@@ -19798,6 +19911,10 @@ function updateFilterUI() {
         const el = document.getElementById('flt-diff-' + d);
         if (el) el.classList.toggle('active', activeFilters.diff === d);
     });
+    ['easy', 'good', 'hard'].forEach(l => {
+        const el = document.getElementById('flt-srs-' + l);
+        if (el) el.classList.toggle('active', activeFilters.mine === l);
+    });
     ['high', 'medium', 'low'].forEach(i => {
         const el = document.getElementById('flt-imp-' + i);
         if (el) el.classList.toggle('active', activeFilters.imp === i);
@@ -19808,7 +19925,7 @@ function updateFilterUI() {
     set('flt-edited', activeFilters.edOnly);
     set('flt-due', activeFilters.dueOnly);
 
-    const any = activeFilters.status !== 'all' || activeFilters.diff !== 'all' || activeFilters.imp !== 'all' ||
+    const any = activeFilters.status !== 'all' || activeFilters.diff !== 'all' || activeFilters.mine !== 'all' || activeFilters.imp !== 'all' ||
         activeFilters.doubtOnly || activeFilters.bmOnly || activeFilters.edOnly || activeFilters.dueOnly ||
         searchQuery.trim().length > 0;
     const resetBtn = document.getElementById('flt-clear-btn');
@@ -20110,6 +20227,7 @@ function renderChips() {
 function updateGlobalCounters() {
     let total = 0, weak = 0, mastered = 0, doubt = 0, bookmarked = 0, edited = 0, reviewed = 0;
     let easy = 0, modCnt = 0, tough = 0, high = 0, med = 0, low = 0, due = 0;
+    let mineEasy = 0, mineGood = 0, mineHard = 0;
     const now = Date.now();
     for (let k in parsedQuestions) {
         total++;
@@ -20125,6 +20243,9 @@ function updateGlobalCounters() {
         if (data.imp === 'high') high++;
         if (data.imp === 'medium') med++;
         if (data.imp === 'low') low++;
+        if (data.mine === 'easy') mineEasy++;
+        if (data.mine === 'good') mineGood++;
+        if (data.mine === 'hard') mineHard++;
         if (data.sr) reviewed++;
         if (data.sr && data.sr.due <= now) due++;
     }
@@ -20139,6 +20260,7 @@ function updateGlobalCounters() {
     const countMap = {
         'cnt-flt-weak': weak, 'cnt-flt-learning': learning, 'cnt-flt-mastered': mastered,
         'cnt-flt-easy': easy, 'cnt-flt-mod': modCnt, 'cnt-flt-tough': tough,
+        'cnt-flt-srs-easy': mineEasy, 'cnt-flt-srs-good': mineGood, 'cnt-flt-srs-hard': mineHard,
         'cnt-flt-high': high, 'cnt-flt-med': med, 'cnt-flt-low': low,
         'cnt-flt-doubt': doubt, 'cnt-flt-bm': bookmarked, 'cnt-flt-ed': edited,
         'cnt-flt-due': due
@@ -20306,6 +20428,7 @@ function afterOpenModal(num) {
     }
 
     featDrawRateBar(num);
+    featDrawSrsLevelHint(num);
     const noteBtn = document.getElementById('noteToggleBtn');
     if (noteBtn) noteBtn.classList.toggle('active', featNoteOpen);
     if (featNoteOpen) {
@@ -20327,6 +20450,9 @@ document.addEventListener('keydown', (e) => {
     const k = e.key || '';
     if (k >= '1' && k <= '4') { chooseOption('ABCD'[Number(k) - 1]); e.preventDefault(); }
     else if (k.toLowerCase() === 'r') { revealAnswer(); e.preventDefault(); }
+    else if (k.toLowerCase() === 'e') { setSrsLevel('easy'); e.preventDefault(); }
+    else if (k.toLowerCase() === 'g') { setSrsLevel('good'); e.preventDefault(); }
+    else if (k.toLowerCase() === 'h') { setSrsLevel('hard'); e.preventDefault(); }
 });
 
 /* ---------------- timed test engine ---------------- */
