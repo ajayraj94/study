@@ -1341,6 +1341,13 @@
             font-size: 17px; line-height: 1.55; color: #0f172a;
             margin: 2px 0 14px; white-space: pre-wrap;
         }
+        /* a fill-in-the-blank gap: one fixed-width underline, never an empty
+           emphasis run, so the words around it keep their own formatting */
+        .blank {
+            display: inline-block; width: 3.6em; height: 1em;
+            border-bottom: 1.5px solid currentColor; opacity: 0.75;
+            vertical-align: baseline; margin: 0 0.12em;
+        }
         .opt-list { display: flex; flex-direction: column; }
         .modal-body .explanation-box {
             background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid #0284c7;
@@ -19035,6 +19042,11 @@ Q1100. [Type B — True Homonym Context Shift]
     function updateStatus(newStatus) {
         const rec = getQData(currentQuestionId);
         rec.s = newStatus;
+        /* ✅ Mastered takes the card out of spaced repetition, exactly like the
+           Speed Ranker: the schedule is dropped and today's review deck lets it go. */
+        if (newStatus === 'mastered' && typeof featLeaveSrs === 'function') {
+            featLeaveSrs(currentQuestionId);
+        }
         updateModalDeckButtons(rec);
         saveProgress();
     }
@@ -19349,17 +19361,31 @@ const FEAT_RATINGS = [
 const FEAT_DIFF_FROM_RATING = { again: 'tough', hard: 'tough', good: 'moderate', easy: 'easy' };
 
 function featSrOf(num) { const r = progressData[num]; return (r && r.sr) ? r.sr : null; }
-function featIsDue(num) { const sr = featSrOf(num); return !!sr && sr.due <= Date.now(); }
+function featIsDue(num) {
+    const data = progressData[num];
+    if (data && data.s === 'mastered') return false;
+    const sr = featSrOf(num);
+    return !!sr && sr.due <= Date.now();
+}
 
 function featScheduleReview(num, correct) {
     const r = getQData(num);
+    /* a mastered card is out of the SRS: answering it never books a new date */
+    if (r.s === 'mastered') return;
     const now = Date.now();
-    const prev = r.sr || { n: 0 };
+    const prev = r.sr || { n: 0, lapses: 0 };
+    const curLapses = (prev.lapses || 0) + (correct ? 0 : 1);
     if (correct) {
-        const n = Math.min((prev.n || 0) + 1, featSr.days.length);
-        r.sr = { n: n, last: now, due: now + featSr.days[n - 1] * FEAT_DAY_MS };
+        // Minimum 7-day step on correct answers (matches Speed Ranker minGoodStep logic)
+        const minGoodIdx = featSr.days.findIndex(d => d >= 7);
+        const minGoodStep = (minGoodIdx >= 0) ? (minGoodIdx + 1) : 1;
+        const n = (prev.n || 0) < minGoodStep
+            ? minGoodStep
+            : Math.min((prev.n || 0) + 1, featSr.days.length);
+        r.sr = { n: n, last: now, due: now + featSr.days[n - 1] * FEAT_DAY_MS, lapses: curLapses };
     } else {
-        r.sr = { n: 0, last: now, due: now + featSr.lapseMin * 60000 };
+        r.sr = { n: 1, last: now, due: now + featSr.lapseMin * 60000, lapses: curLapses };
+        if (curLapses >= 4) r.s = 'weak';
     }
 }
 /* When would this come back, without changing anything? */
@@ -19368,14 +19394,37 @@ function featSrNext(num, rating) {
     const now = Date.now();
     const len = featSr.days.length;
     const prevN = (r.sr && r.sr.n) || 0;
+
+    // Find step index where interval is >= 7 days (step 3 in default [1, 3, 7, 16, 35, 75])
+    const minGoodIdx = featSr.days.findIndex(d => d >= 7);
+    const minGoodStep = (minGoodIdx >= 0) ? (minGoodIdx + 1) : 1;
+
     let n, due;
-    if (rating === 'again') { n = 1; due = now + featSr.lapseMin * 60000; }
-    else if (rating === 'hard') { n = Math.min(Math.max(1, prevN + 1), len); due = now + FEAT_DAY_MS; }
-    else if (rating === 'easy') { n = Math.min(Math.max(1, prevN + 2), len); due = now + featSr.days[n - 1] * FEAT_DAY_MS; }
-    else { n = Math.min(Math.max(1, prevN + 1), len); due = now + featSr.days[n - 1] * FEAT_DAY_MS; }
+    if (rating === 'again') {
+        n = 1;
+        due = now + featSr.lapseMin * 60000;
+    } else if (rating === 'hard') {
+        // Freeze step n so answering Good tomorrow does not skip ladder intervals
+        n = Math.max(1, prevN);
+        due = now + FEAT_DAY_MS;
+    } else if (rating === 'easy') {
+        // Easy skips beyond Good: minimum step 4 (16 days in defaults) for early cards
+        n = prevN < minGoodStep
+            ? Math.min(minGoodStep + 1, len)
+            : Math.min(prevN + 2, len);
+        due = now + featSr.days[n - 1] * FEAT_DAY_MS;
+    } else { // 'good'
+        // Minimum 7 days! Never schedule below 7 days on Good
+        n = prevN < minGoodStep
+            ? minGoodStep
+            : Math.min(prevN + 1, len);
+        due = now + featSr.days[n - 1] * FEAT_DAY_MS;
+    }
     return { n: n, due: due };
 }
 function featSrLabel(num) {
+    const data = progressData[num];
+    if (data && data.s === 'mastered') return 'mastered';
     const sr = featSrOf(num);
     if (!sr) return 'new';
     const left = sr.due - Date.now();
@@ -19418,15 +19467,20 @@ function featDueQuestions() {
     const now = Date.now();
     const out = [];
     for (let k in parsedQuestions) {
-        const sr = featSrOf(parsedQuestions[k].num);
-        if (sr && sr.due <= now) out.push(parsedQuestions[k]);
+        const q = parsedQuestions[k];
+        const data = progressData[q.num];
+        if (data && data.s === 'mastered') continue;
+        const sr = featSrOf(q.num);
+        if (sr && sr.due <= now) out.push(q);
     }
     return out.sort((a, b) => featSrOf(a.num).due - featSrOf(b.num).due);
 }
 function featRate(num, rating) {
     const r = getQData(num);
     const next = featSrNext(num, rating);
-    r.sr = { n: next.n, last: Date.now(), due: next.due, rated: rating };
+    const curLapses = ((r.sr && r.sr.lapses) || 0) + (rating === 'again' ? 1 : 0);
+    r.sr = { n: next.n, last: Date.now(), due: next.due, rated: rating, lapses: curLapses };
+    if (curLapses >= 4) r.s = 'weak';
     r.diff = FEAT_DIFF_FROM_RATING[rating] || r.diff;
     return next.n;
 }
@@ -19434,19 +19488,31 @@ function featRate(num, rating) {
 function rateCard(rating) {
     const num = currentQuestionId;
     if (!parsedQuestions[num]) return;
+    const curN = (progressData[num] && progressData[num].sr && progressData[num].sr.n) || 0;
     featRate(num, rating);
     const rec = readQData(num);
     updateModalDeckButtons(rec);
-    saveToLocalStorage();
+    saveProgress();
 
     const st = document.getElementById('status');
     const label = (FEAT_RATINGS.find(x => x.key === rating) || { label: rating }).label;
     if (st && rec.sr) {
         st.innerHTML = '🔁 <b>Rated ' + label + '</b> — comes back ' + featFmtDueLong(rec.sr.due) +
             ' · Q' + num + ' <span style="font-weight:500">' + escapeHtml(parsedQuestions[num].type || '') + '</span>';
+        st.style.color = 'var(--secondary)';
     }
     if (featReview.active) {
-        /* a rated card leaves the deck, so a daily review always ends */
+        /* Again and Hard on a new card requeue to end of deck; otherwise card graduates */
+        const shouldRequeue = rating === 'again' || (rating === 'hard' && curN <= 1);
+        if (shouldRequeue) {
+            const idx = featReview.deck.indexOf(num);
+            if (idx !== -1) featReview.deck.splice(idx, 1);
+            featReview.deck.push(num);
+            const nextNum = featReview.deck[0];
+            openModal(nextNum);
+            return;
+        }
+        /* card graduates from today's deck */
         const oldIdx = Math.max(0, featReview.deck.indexOf(num));
         featReview.deck = featReview.deck.filter(n => n !== num);
         if (!featReview.deck.length) {
@@ -19466,15 +19532,51 @@ function rateCard(rating) {
 
 function featDueBadgeHtml(num) {
     const due = featIsDue(num);
+    const mastered = (readQData(num).s || 'learning') === 'mastered';
     return '<button type="button" class="badge muted sr-badge' + (due ? ' due' : '') + '" aria-expanded="false"' +
         ' title="Reschedule this question">' +
-        '<span class="sr-when">🔁 ' + featSrLabel(num) + '</span>' +
+        '<span class="sr-when">' + (mastered ? '✅ Mastered' : '🔁 ' + featSrLabel(num)) + '</span>' +
         '<span class="sr-edit">Change <span class="sr-caret">▾</span></span></button>';
+}
+/* ✅ Marking a card Mastered drops its schedule, hides the recall bar and removes
+   it from the review deck, so it no longer shows up anywhere in the SRS. */
+function featLeaveSrs(num) {
+    const rec = progressData[num];
+    if (rec) delete rec.sr;
+    featDrawRateBar(num);
+    const badge = modalBody.querySelector('.q-meta .sr-badge');
+    if (badge) {
+        const when = badge.querySelector('.sr-when');
+        if (when) when.textContent = '✅ Mastered';
+        badge.classList.remove('due');
+    }
+    if (!featReview.active) return;
+    const idx = featReview.deck.indexOf(num);
+    if (idx === -1) return;
+    featReview.deck.splice(idx, 1);
+    if (!featReview.deck.length) {
+        featReview = { active: false, deck: [] };
+        closeModal();
+        const st = document.getElementById('status');
+        if (st) {
+            st.innerHTML = '🎆 <b>Review deck cleared</b> — nothing else is due right now.';
+            st.style.color = 'var(--color-mastered)';
+        }
+        return;
+    }
+    openModal(featReview.deck[Math.min(idx, featReview.deck.length - 1)]);
 }
 function featDrawRateBar(num) {
     const bar = document.getElementById('rateBar');
     if (!bar) return;
     const rec = readQData(num);
+    /* a mastered card has left the SRS: no recall bar, even if a schedule is
+       still sitting on the record */
+    if ((rec.s || 'learning') === 'mastered') {
+        bar.innerHTML = '';
+        bar.classList.remove('show');
+        return;
+    }
     if (!rec.sr && !featReview.active) {
         bar.innerHTML = '';
         bar.classList.remove('show');
@@ -19591,7 +19693,7 @@ function rescheduleQuestion(step) {
         const n = Math.min(step, featSr.days.length);
         r.sr = { n: n, last: now, due: now + featSr.days[n - 1] * FEAT_DAY_MS };
     }
-    saveToLocalStorage();
+    saveProgress();
     closeSrMenu();
     afterOpenModal(num);
 }
@@ -20129,7 +20231,8 @@ function featBodyHtml(q) {
         '<div class="explanation-box" id="explBox" style="display:none">' + featExplanation(q) + '</div>';
 }
 function featEnsureBody(num) {
-    if (featBodyNum === num && modalBody.querySelector('.q-stem')) return;
+    /* Always rebuild the body when opening a (possibly same) question so that
+       featChoice / featRevealed are reset and option buttons are re-enabled. */
     featBodyNum = num;
     featChoice = null;
     featRevealed = false;
@@ -20163,7 +20266,7 @@ function chooseOption(L) {
     featChoice = L;
     /* a practice answer feeds the review schedule exactly like a test answer */
     featScheduleReview(num, L === q.ans);
-    saveToLocalStorage();
+    saveProgress();
     featUpdateAnswerDisplay();
     featDrawRateBar(num);
     updateModalDeckButtons(readQData(num));
@@ -20277,6 +20380,10 @@ function featTickExam() {
 }
 function featFmtText(raw) {
     let html = escapeHtml(raw || '');
+    /* blanks (______) are drawn before __...__ emphasis runs, otherwise the
+       underscore pair inside the gap pairs up with the next blank and
+       underlines the whole phrase between them */
+    html = html.replace(/_{3,}/g, '<span class="blank"></span>');
     html = html.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
     html = html.replace(/__(.*?)__/g, '<u>$1</u>');
     html = html.replace(/\n/g, '<br>');
@@ -20422,7 +20529,7 @@ function submitTest() {
     };
     featAttempts[test.key] = [attempt].concat(featAttempts[test.key] || []).slice(0, 10);
     featSaveAttempts();
-    saveToLocalStorage();
+    saveProgress();
     featResult = attempt;
     featResultFilter = 'all';
     featRenderResult(attempt);
