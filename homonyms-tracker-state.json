@@ -1,7 +1,7 @@
 {
   "app": "homonyms-tracker",
   "version": 1,
-  "exportedAt": "2026-10-30T03:21:52.016Z",
+  "exportedAt": "2026-10-30T07:35:10.833Z",
   "data": {
     "homonymsMasterProgressV1": {
       "1": {
@@ -3371,7 +3371,7 @@
         "ed": false
       },
       "355": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
@@ -3413,7 +3413,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 3,
+          "last": 1793343119835,
+          "due": 1793429519835,
+          "rated": "hard",
+          "lapses": 1
+        },
+        "mine": "hard"
       },
       "360": {
         "s": "learning",
@@ -3728,7 +3736,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 3,
+          "last": 1793343195039,
+          "due": 1793429595039,
+          "rated": "hard",
+          "lapses": 2
+        },
+        "mine": "hard"
       },
       "395": {
         "s": "learning",
@@ -3854,7 +3870,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 3,
+          "last": 1793343426619,
+          "due": 1793429826619,
+          "rated": "hard",
+          "lapses": 1
+        },
+        "mine": "hard"
       },
       "409": {
         "s": "learning",
@@ -3971,7 +3995,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 3,
+          "last": 1793343496501,
+          "due": 1793429896501,
+          "rated": "hard",
+          "lapses": 0
+        },
+        "mine": "hard"
       },
       "422": {
         "s": "learning",
@@ -4046,7 +4078,7 @@
         "ed": false
       },
       "430": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
@@ -4352,7 +4384,7 @@
         "ed": false
       },
       "464": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
@@ -4502,7 +4534,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 4,
+          "last": 1793343625980,
+          "due": 1794726025980,
+          "rated": "good",
+          "lapses": 0
+        },
+        "mine": "good"
       },
       "481": {
         "s": "learning",
@@ -4583,7 +4623,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 1,
+          "last": 1793343657179,
+          "due": 1793430057179,
+          "rated": "hard",
+          "lapses": 1
+        },
+        "mine": "hard"
       },
       "490": {
         "s": "learning",
@@ -4619,7 +4667,14 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 6,
+          "last": 1793343819980,
+          "due": 1799823819980,
+          "lapses": 0
+        },
+        "mine": "good"
       },
       "494": {
         "s": "learning",
@@ -4658,7 +4713,7 @@
         "ed": false
       },
       "498": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
@@ -4673,7 +4728,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 4,
+          "last": 1793343874343,
+          "due": 1794726274343,
+          "rated": "good",
+          "lapses": 0
+        },
+        "mine": "good"
       },
       "500": {
         "s": "learning",
@@ -4691,7 +4754,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 4,
+          "last": 1793343909624,
+          "due": 1794726309624,
+          "rated": "good",
+          "lapses": 0
+        },
+        "mine": "good"
       },
       "502": {
         "s": "learning",
@@ -4736,7 +4807,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 1,
+          "last": 1793343956656,
+          "due": 1793430356656,
+          "rated": "hard",
+          "lapses": 1
+        },
+        "mine": "hard"
       },
       "507": {
         "s": "learning",
@@ -5105,7 +5184,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 3,
+          "last": 1793344254715,
+          "due": 1793430654715,
+          "rated": "hard",
+          "lapses": 0
+        },
+        "mine": "hard"
       },
       "548": {
         "s": "learning",
@@ -5114,16 +5201,33 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 3,
+          "last": 1793344299532,
+          "due": 1793430699532,
+          "rated": "hard",
+          "lapses": 0
+        },
+        "mine": "hard"
       },
       "549": {
         "s": "learning",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
-        "n": "",
-        "bm": false,
-        "ed": false
+        "n": "Foul = Bad Smell \nFoal = Marine fish\nFowl = A young horse",
+        "bm": true,
+        "ed": true,
+        "sr": {
+          "n": 4,
+          "last": 1793345648517,
+          "due": 1794728048517,
+          "lapses": 0
+        },
+        "strokes": [],
+        "imgs": [],
+        "mine": "hard"
       },
       "550": {
         "s": "learning",
@@ -5212,8 +5316,15 @@
         "imp": "high",
         "doubt": false,
         "n": "",
-        "bm": false,
-        "ed": false
+        "bm": true,
+        "ed": false,
+        "sr": {
+          "n": 3,
+          "last": 1793345656415,
+          "due": 1793950456415,
+          "lapses": 1
+        },
+        "mine": "hard"
       },
       "560": {
         "s": "learning",
@@ -5301,9 +5412,19 @@
         "diff": "easy",
         "imp": "high",
         "doubt": false,
-        "n": "",
+        "n": "To bear arms against : This is an idiom that means to carry weapons or fight against someone or something.",
         "bm": false,
-        "ed": false
+        "ed": true,
+        "sr": {
+          "n": 1,
+          "last": 1793345127755,
+          "due": 1793431527755,
+          "rated": "hard",
+          "lapses": 1
+        },
+        "strokes": [],
+        "imgs": [],
+        "mine": "hard"
       },
       "570": {
         "s": "learning",
@@ -5435,10 +5556,16 @@
         "s": "learning",
         "diff": "easy",
         "imp": "high",
-        "doubt": false,
+        "doubt": true,
         "n": "",
-        "bm": false,
-        "ed": false
+        "bm": true,
+        "ed": false,
+        "sr": {
+          "n": 1,
+          "last": 1793345207186,
+          "due": 1793345807186,
+          "lapses": 1
+        }
       },
       "585": {
         "s": "learning",
@@ -5662,8 +5789,14 @@
         "imp": "high",
         "doubt": false,
         "n": "",
-        "bm": false,
-        "ed": false
+        "bm": true,
+        "ed": false,
+        "sr": {
+          "n": 3,
+          "last": 1793345421150,
+          "due": 1793950221150,
+          "lapses": 0
+        }
       },
       "610": {
         "s": "learning",
@@ -10086,7 +10219,7 @@
       }
     },
     "homonymsMasterSettingsV1": {
-      "theme": "light",
+      "theme": "dark",
       "scoring": {
         "pos": 2,
         "neg": 0.5
