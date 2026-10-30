@@ -123,25 +123,55 @@ for (const w of words) {
     bySection.get(w.section).push(w);
 }
 
+/* Options in a real paper all have the same grammar and roughly the same length, so a
+   candidate is ranked by (a) how its sense is phrased and (b) how close it is in size. */
+function shapeOf(text) {
+    const t = String(text).trim().toLowerCase();
+    const first = (t.split(/[\s,;:]+/)[0] || "");
+    if (first === "to") return "infinitive";
+    if (/^(a|an|the|one|someone|something|person|place|thing|state|act|quality|condition)$/.test(first)) return "noun";
+    if (/ing$/.test(first)) return "ing";
+    if (/^(not|no|without|lacking|unable)$/.test(first)) return "privative";
+    return "plain";
+}
+
+const distractorUse = new Map();   /* sense -> how often it already served as a wrong option */
+
 function pickDistractors(w, count) {
-    const pools = [
-        byColumn.get(w.section + "-" + w.column) || [],
-        bySection.get(w.section) || [],
-        words
-    ];
+    const correct = w.meaning;
+    const shape = shapeOf(correct);
+    const pool = [];
+    const used = new Set([correct.toLowerCase()]);
+    for (const o of words) {
+        if (!o.meaning) continue;
+        const key = o.meaning.toLowerCase();
+        if (used.has(key)) continue;
+        used.add(key);
+        pool.push(o);
+    }
+    const distance = o => Math.abs(o.meaning.length - correct.length);
+    const near = [], sameShape = [], other = [];
+    for (const o of pool) {
+        if (shapeOf(o.meaning) === shape) (distance(o) <= 12 ? near : sameShape).push(o);
+        else other.push(o);
+    }
+    /* least-used sense first (so the bank does not keep recycling the same three phrases),
+       then a stable per-question shuffle so a rebuild gives the same paper */
+    const shuffled = arr => arr.slice().sort((a, b) =>
+        ((distractorUse.get(a.meaning) || 0) - (distractorUse.get(b.meaning) || 0)) ||
+        (hash(w.word + "|" + a.word) - hash(w.word + "|" + b.word)));
     const out = [];
-    const used = new Set([w.meaning]);
-    for (const pool of pools) {
-        const shuffled = pool.slice().sort((a, b) => hash(a.word) - hash(b.word));
-        for (const o of shuffled) {
-            if (out.length >= count) break;
-            if (!o.meaning || used.has(o.meaning)) continue;
-            used.add(o.meaning);
+    const take = arr => {
+        for (const o of arr) {
+            if (out.length >= count) return;
             out.push(o);
         }
-        if (out.length >= count) break;
-    }
-    return out;
+    };
+    take(shuffled(near));
+    if (out.length < count) take(shuffled(sameShape));
+    if (out.length < count) take(shuffled(other).sort((a, b) => distance(a) - distance(b)));
+    out.slice(0, count).forEach(o => distractorUse.set(o.meaning, (distractorUse.get(o.meaning) || 0) + 1));
+    return out.slice(0, count);
 }
 
 const LETTERS = ["A", "B", "C", "D"];
@@ -289,6 +319,67 @@ replaceOnce(
     "        'title=\"Mark this word as corrected\">✏️ Edit</button></div>' +\r\n" +
     "        body.join(\"\") + '</div>';\r\n" +
     "}\r\n" +    "function renderModal(keepScroll) {"
+);
+
+/* the same card, compact, for the review pass after a mock is submitted */
+replaceOnce(
+    "function renderModal(keepScroll) {",
+    "/* ---- review card: the word, its Hindi gloss and notes, beside the options ---- */\r\n" +
+    "function vocabReviewCardHtml(q) {\r\n" +
+    "    const body = [];\r\n" +
+    "    if (q.hin) body.push('<div class=\"vc-hin\">' + mathHtml(q.hin) + '</div>');\r\n" +
+    "    if (q.def) body.push('<div class=\"vc-panel\"><div class=\"vc-def\">' + mathHtml(q.def) + '</div></div>');\r\n" +
+    "    if (q.exEn) body.push('<div class=\"vc-ex\">🗣️ ' + mathHtml(q.exEn) + '</div>');\r\n" +
+    "    if (q.exHi) body.push('<div class=\"vc-exhi\">' + mathHtml(q.exHi) + '</div>');\r\n" +
+    "    if (q.mnem) body.push('<div class=\"vc-hint\">🧠 ' + mathHtml(q.mnem) + '</div>');\r\n" +
+    "    if (!body.length) return '';\r\n" +
+    "    return '<div class=\"vc exam-review-card\">' +\r\n" +
+    "        '<div class=\"vc-head\"><h2 class=\"vc-word\">' + esc(q.word || q.text) + '</h2></div>' +\r\n" +
+    "        body.join('') + '</div>';\r\n" +
+    "}\r\n" +    "function renderModal(keepScroll) {"
+);
+
+/* ---- the review card rides beside the options: no scrolling, no clipping ---- */
+replaceOnce(
+    "    .modal-count { font-size: 11.5px; color: #64748b; margin-left: 8px; font-weight: 600; }",
+    "    /* ---- review card (inside the exam sheet) ---- */\r\n" +
+    "    .exam-card.exam-card-review {\r\n" +
+    "        display: grid; grid-template-columns: minmax(0,1fr) 320px; gap: 16px; align-items: start;\r\n" +
+    "    }\r\n" +
+    "    .exam-review-main { min-width: 0; }\r\n" +
+    "    .exam-review-card { margin: 0; padding-left: 16px; border-left: 1px solid #e2e8f0; }\r\n" +
+    "    .exam-review-card .vc-word { font-size: 18px; }\r\n" +
+    "    .exam-review-card .vc-hin { font-size: 13.5px; margin: -2px 0 8px; }\r\n" +
+    "    .exam-review-card .vc-panel { padding: 9px 11px; }\r\n" +
+    "    .exam-review-card .vc-def, .exam-review-card .vc-ex { font-size: 12.5px; line-height: 1.55; }\r\n" +
+    "    .exam-review-card .vc-ex { margin-top: 9px; }\r\n" +
+    "    .exam-review-card .vc-exhi { margin-top: 3px; font-size: 11.5px; line-height: 1.5; }\r\n" +
+    "    .exam-review-card .vc-hint { margin-top: 9px; padding: 6px 10px; font-size: 11.5px; line-height: 1.5; }\r\n" +
+    "    @media (max-width: 1080px) {\r\n" +
+    "        .exam-card.exam-card-review { grid-template-columns: minmax(0,1fr); }\r\n" +
+    "        .exam-review-card { padding-left: 0; border-left: 0; border-top: 1px solid #e2e8f0; padding-top: 12px; }\r\n" +
+    "    }\r\n" +
+    "    .modal-count { font-size: 11.5px; color: #64748b; margin-left: 8px; font-weight: 600; }"
+);
+replaceOnce(
+    '    html[data-theme="dark"] .vc-hint { background: #33131f; border-color: #7a2c48; color: #f9c2d8; }',
+    '    html[data-theme="dark"] .vc-hint { background: #33131f; border-color: #7a2c48; color: #f9c2d8; }\r\n' +
+    '    html[data-theme="dark"] .exam-review-card { border-color: #26344a; }'
+);
+
+/* ---- hook the review card into the exam sheet ---- */
+replaceOnce(
+    '    const opts = ["A", "B", "C", "D"].map(L => {',
+    '    const reviewCard = reviewing ? vocabReviewCardHtml(q) : "";\r\n' +
+    '    const opts = ["A", "B", "C", "D"].map(L => {'
+);
+replaceOnce(
+    '        \'<div class="exam-body">\' +\r\n            \'<div class="exam-card">\' +\r\n                \'<div class="q-meta">\' +',
+    '        \'<div class="exam-body">\' +\r\n            \'<div class="exam-card\' + (reviewCard ? " exam-card-review" : "") + \'">\' +\r\n                \'<div class="exam-review-main">\' +\r\n                \'<div class="q-meta">\' +'
+);
+replaceOnce(
+    '                \'</div>\' +\r\n            \'</div>\' +\r\n            \'<div class="exam-side">\' +',
+    '                \'</div>\' +\r\n                \'</div>\' +\r\n                reviewCard +\r\n            \'</div>\' +\r\n            \'<div class="exam-side">\' +'
 );
 
 replaceOnce(
