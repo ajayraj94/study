@@ -27,8 +27,7 @@
               "title": "New tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -192,8 +191,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fbf458fb9e818527",
+  "active": "adaec8596e142854",
   "lastOpenFiles": [
+    "homonyms-tracker-state.json",
     "Untitled.md",
     "speed-ranker-2026-10-25_18-00-57.json",
     "Speed Ranker.html",

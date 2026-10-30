@@ -1,7 +1,7 @@
 {
   "app": "homonyms-tracker",
   "version": 1,
-  "exportedAt": "2026-10-29T15:01:12.454Z",
+  "exportedAt": "2026-10-30T03:21:52.016Z",
   "data": {
     "homonymsMasterProgressV1": {
       "1": {
@@ -1003,7 +1003,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "mine": "good",
+        "sr": {
+          "n": 6,
+          "last": 1793330071325,
+          "due": 1799810071325,
+          "rated": "good",
+          "lapses": 0
+        }
       },
       "106": {
         "s": "learning",
@@ -1721,7 +1729,7 @@
         "ed": false
       },
       "182": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
@@ -1736,7 +1744,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 1,
+          "last": 1793291741051,
+          "due": 1793378141050,
+          "rated": "hard",
+          "lapses": 1
+        },
+        "mine": "hard"
       },
       "184": {
         "s": "learning",
@@ -1766,13 +1782,14 @@
         "ed": false
       },
       "187": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "mine": "good"
       },
       "188": {
         "s": "learning",
@@ -1788,12 +1805,22 @@
         "diff": "easy",
         "imp": "high",
         "doubt": false,
-        "n": "",
+        "n": "principle - Rule\nPrincipal - rampal principal",
         "bm": false,
-        "ed": false
+        "ed": true,
+        "sr": {
+          "n": 1,
+          "last": 1793291845872,
+          "due": 1793378245872,
+          "rated": "hard",
+          "lapses": 0
+        },
+        "mine": "hard",
+        "strokes": [],
+        "imgs": []
       },
       "190": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
@@ -1806,9 +1833,18 @@
         "diff": "easy",
         "imp": "high",
         "doubt": false,
-        "n": "",
+        "n": "Loose - oo ढीला \nLose - ",
         "bm": false,
-        "ed": false
+        "ed": true,
+        "sr": {
+          "n": 3,
+          "last": 1793292085396,
+          "due": 1793896885396,
+          "lapses": 0
+        },
+        "mine": "hard",
+        "strokes": [],
+        "imgs": []
       },
       "192": {
         "s": "learning",
@@ -1817,7 +1853,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 4,
+          "last": 1793330347235,
+          "due": 1793416747235,
+          "rated": "hard",
+          "lapses": 0
+        },
+        "mine": "hard"
       },
       "193": {
         "s": "learning",
@@ -1928,7 +1972,7 @@
         "ed": false
       },
       "205": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
@@ -2063,13 +2107,14 @@
         "ed": false
       },
       "220": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "mine": "hard"
       },
       "221": {
         "s": "learning",
@@ -2108,7 +2153,7 @@
         "ed": false
       },
       "225": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
@@ -2153,7 +2198,7 @@
         "ed": false
       },
       "230": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
@@ -2294,7 +2339,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 3,
+          "last": 1793292716924,
+          "due": 1793379116924,
+          "rated": "hard",
+          "lapses": 0
+        },
+        "mine": "hard"
       },
       "246": {
         "s": "learning",
@@ -2306,7 +2359,7 @@
         "ed": false
       },
       "247": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
@@ -2378,7 +2431,7 @@
         "ed": false
       },
       "255": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
@@ -2447,7 +2500,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 3,
+          "last": 1793292957733,
+          "due": 1793379357733,
+          "rated": "hard",
+          "lapses": 0
+        },
+        "mine": "hard"
       },
       "263": {
         "s": "learning",
@@ -2576,7 +2637,7 @@
         "ed": false
       },
       "277": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
@@ -2600,7 +2661,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 3,
+          "last": 1793293139227,
+          "due": 1793379539227,
+          "rated": "hard",
+          "lapses": 1
+        },
+        "mine": "hard"
       },
       "280": {
         "s": "learning",
@@ -2645,7 +2714,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 1,
+          "last": 1793293317065,
+          "due": 1793379717065,
+          "rated": "hard",
+          "lapses": 2
+        },
+        "mine": "hard"
       },
       "285": {
         "s": "learning",
@@ -2666,7 +2743,7 @@
         "ed": false
       },
       "287": {
-        "s": "learning",
+        "s": "mastered",
         "diff": "easy",
         "imp": "high",
         "doubt": false,
@@ -2699,7 +2776,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 1,
+          "last": 1793330460132,
+          "due": 1793416860132,
+          "rated": "hard",
+          "lapses": 2
+        },
+        "mine": "hard"
       },
       "291": {
         "s": "learning",
@@ -3095,7 +3180,15 @@
         "doubt": false,
         "n": "",
         "bm": false,
-        "ed": false
+        "ed": false,
+        "sr": {
+          "n": 1,
+          "last": 1793330498537,
+          "due": 1793416898537,
+          "rated": "hard",
+          "lapses": 1
+        },
+        "mine": "hard"
       },
       "335": {
         "s": "learning",
@@ -9993,7 +10086,7 @@
       }
     },
     "homonymsMasterSettingsV1": {
-      "theme": "dark",
+      "theme": "light",
       "scoring": {
         "pos": 2,
         "neg": 0.5
