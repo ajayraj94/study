@@ -1551,6 +1551,12 @@
     .palette-btn.answered { background: #dbeafe; border-color: #93c5fd; color: #1d4ed8; }
     .palette-btn.marked { background: #fef3c7; border-color: #fcd34d; color: #92400e; }
     .palette-btn.current { outline: 2px solid #0f172a; outline-offset: 1px; }
+    /* the palette doubles as the scoreboard once the mock is submitted */
+    .palette-btn.correct { background: #16a34a; border-color: #15803d; color: #fff; }
+    .palette-btn.wrong { background: #dc2626; border-color: #b91c1c; color: #fff; }
+    .palette-btn.skipped { background: #e2e8f0; border-color: #cbd5e1; color: #64748b; }
+    .exam-score { font-size: 12.5px; font-weight: 600; color: #0f766e; }
+    .exam-score b { font-weight: 800; }
     .exam-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
     .btn-solid {
         background: var(--primary); color: #fff; border: 1px solid var(--primary);
@@ -2126,6 +2132,10 @@
     html[data-theme="dark"] .palette-btn.answered { background: #172554; border-color: #1d4ed8; color: #bfdbfe; }
     html[data-theme="dark"] .palette-btn.marked { background: #3b2506; border-color: #b45309; color: #fcd34d; }
     html[data-theme="dark"] .palette-btn.current { outline-color: #e2e8f0; }
+    html[data-theme="dark"] .palette-btn.correct { background: #15803d; border-color: #22c55e; color: #f0fdf4; }
+    html[data-theme="dark"] .palette-btn.wrong { background: #b91c1c; border-color: #ef4444; color: #fef2f2; }
+    html[data-theme="dark"] .palette-btn.skipped { background: #1e293b; border-color: #334155; color: #94a3b8; }
+    html[data-theme="dark"] .exam-score { color: #5eead4; }
     html[data-theme="dark"] .review-row { border-bottom-color: #22314a; color: #cbd5e1; }
     html[data-theme="dark"] .pill-skip { background: #22314a; color: #cbd5e1; }
     html[data-theme="dark"] .btn-solid { background: #1d4ed8; border-color: #1d4ed8; }
@@ -2514,7 +2524,10 @@ function hasUnsavedSessionData() {
         const n = notes[k] || {};
         return (n.strokes && n.strokes.length) || (n.images && n.images.length);
     });
-    return hasProgress || hasAttempts || hasNotes;
+    /* a mock with answers on it is unsynced work too */
+    const hasTest = !!(test && test.items && test.items.length &&
+        (Object.keys(test.answers).length || test.submitted));
+    return hasProgress || hasAttempts || hasTest || hasNotes;
 }
 /* 🛡️ closing/reloading with unsynced work: write a JSON file out first, then ask */
 function stampNow() {
@@ -3172,6 +3185,9 @@ function renderCards() {
                     '<span>🎯 ' + (b == null ? "not attempted" : "best " + b + "%") + '</span>' +
                     '<span>⭐ ' + items.filter(q => rec(q.id).bm).length + '</span>' +
                 '</div>' +
+                (best
+                    ? '<button class="start-test-btn" onclick="event.stopPropagation();openResult(' + m + ')">📊 View result · ' + (attempts[m] || []).length + ' attempt' + ((attempts[m] || []).length === 1 ? '' : 's') + '</button>'
+                    : '') +
                 '<button class="start-test-btn" onclick="event.stopPropagation();startTest(' + m + ')">⏱ Start timed test</button>';
             grid.appendChild(card);
         });
@@ -3710,7 +3726,8 @@ document.addEventListener("keydown", (e) => {
     /* typing in the Type box (or any other field) is text, not a deck shortcut */
     const field = e.target;
     if (field && (field.tagName === "TEXTAREA" || field.tagName === "INPUT" || field.isContentEditable) && e.key !== "Escape") return;
-    if (test && !test.submitted) {
+    /* arrows walk the paper during the test and through the post-submit review */
+    if (test) {
         if (e.key === "ArrowRight") { moveTest(1); e.preventDefault(); }
         if (e.key === "ArrowLeft") { moveTest(-1); e.preventDefault(); }
         return;
@@ -3792,17 +3809,60 @@ function renderExam() {
     if (!test) return;
     const q = test.items[test.idx];
     const answeredCount = Object.keys(test.answers).length;
+    /* once submitted the paper stays on screen and the palette turns into the scoreboard */
+    const reviewing = !!test.submitted;
+    const tallies = { correct: 0, wrong: 0, skipped: 0 };
+    if (reviewing) {
+        test.items.forEach(item => {
+            const given = test.answers[item.qnum];
+            tallies[!given ? "skipped" : (given === item.ans ? "correct" : "wrong")] += 1;
+        });
+    }
+    /* per-topic score for the review pass, weakest first: the diagnosis the
+       palette alone cannot give */
+    let topicPanel = "";
+    if (reviewing) {
+        const byTopic = {};
+        test.items.forEach(item => {
+            const t = byTopic[item.topic] || (byTopic[item.topic] = { n: 0, ok: 0, tried: 0 });
+            t.n += 1;
+            const given = test.answers[item.qnum];
+            if (given) t.tried += 1;
+            if (given === item.ans) t.ok += 1;
+        });
+        const topicRows = Object.keys(byTopic).map(name => {
+            const t = byTopic[name];
+            return { name: name, n: t.n, ok: t.ok, tried: t.tried, pct: t.n ? Math.round((t.ok / t.n) * 100) : 0 };
+        }).sort((x, y) => (x.pct - y.pct) || (y.n - x.n)).map(t => {
+            const tone = !t.tried ? "empty" : (t.pct >= 70 ? "" : (t.pct >= 40 ? "mid" : "low"));
+            return '<div class="result-topic-row">' +
+                '<span class="result-topic-name" title="' + esc(t.name) + '">' + esc(t.name) + '</span>' +
+                '<span class="result-topic-bar"><i class="' + tone + '" style="width:' + t.pct + '%"></i></span>' +
+                '<span class="result-topic-val">' + t.ok + '/' + t.n + '</span>' +
+                '</div>';
+        }).join("");
+        topicPanel = '<div class="exam-card" style="margin-top:12px;">' +
+            '<div class="result-card-head"><span class="result-card-title">Topic performance</span></div>' +
+            topicRows + '</div>';
+    }
     const palette = test.items.map((item, i) => {
         const cls = ["palette-btn"];
-        if (test.answers[item.qnum]) cls.push("answered");
-        if (test.marked.has(item.qnum)) cls.push("marked");
+        const given = test.answers[item.qnum];
+        if (reviewing) cls.push(!given ? "skipped" : (given === item.ans ? "correct" : "wrong"));
+        else {
+            if (given) cls.push("answered");
+            if (test.marked.has(item.qnum)) cls.push("marked");
+        }
         if (i === test.idx) cls.push("current");
         return '<button class="' + cls.join(" ") + '" onclick="jumpTest(' + i + ')">' + (i + 1) + '</button>';
     }).join("");
 
     const opts = ["A", "B", "C", "D"].map(L => {
         const chosen = test.answers[q.qnum] === L;
-        return '<button class="opt-btn' + (chosen ? " correct" : "") + '" onclick="selectTestOption(\'' + L + '\')">' +
+        let mark = "";
+        if (reviewing) mark = chosen ? (L === q.ans ? " correct" : " wrong") : (L === q.ans ? " reveal" : "");
+        else if (chosen) mark = " correct";
+        return '<button class="opt-btn' + mark + '"' + (reviewing ? " disabled" : "") + ' onclick="selectTestOption(\'' + L + '\')">' +
             '<span class="opt-key">' + L + '</span><span class="opt-val">' + mathHtml(q.opts[L]) + '</span></button>';
     }).join("");
 
@@ -3826,10 +3886,12 @@ function renderExam() {
                 '<div class="exam-actions">' +
                     '<button class="btn-ghost" onclick="moveTest(-1)">← Prev</button>' +
                     '<button class="btn-ghost" onclick="moveTest(1)">Next →</button>' +
-                    '<button class="btn-ghost" onclick="markTest()">' +
-                        (test.marked.has(q.qnum) ? "★ Unmark" : "☆ Mark for review") + '</button>' +
+                    (reviewing ? "" : '<button class="btn-ghost" onclick="markTest()">' +
+                        (test.marked.has(q.qnum) ? "★ Unmark" : "☆ Mark for review") + '</button>') +
                     '<span style="flex:1"></span>' +
-                    '<button class="btn-danger btn-ghost" onclick="submitTest()">Submit test (' + answeredCount + '/' + test.items.length + ')</button>' +
+                    (reviewing
+                        ? '<span class="exam-score">✔ Submitted · <b>' + tallies.correct + '</b> correct · <b>' + tallies.wrong + '</b> wrong · <b>' + tallies.skipped + '</b> not attempted</span>'
+                        : '<button class="btn-danger btn-ghost" onclick="submitTest()">Submit test (' + answeredCount + '/' + test.items.length + ')</button>') +
                 '</div>' +
             '</div>' +
             '<div class="exam-side">' +
@@ -3837,11 +3899,16 @@ function renderExam() {
                     '<div style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px;">Question palette</div>' +
                     '<div class="palette">' + palette + '</div>' +
                     '<div style="margin-top:10px;font-size:11.5px;color:#64748b;line-height:1.6;">' +
-                        '<span class="palette-btn answered" style="display:inline-block;width:14px;height:14px;vertical-align:-2px;"></span> answered<br>' +
-                        '<span class="palette-btn marked" style="display:inline-block;width:14px;height:14px;vertical-align:-2px;"></span> marked<br>' +
-                        '<span class="palette-btn" style="display:inline-block;width:14px;height:14px;vertical-align:-2px;"></span> not answered' +
+                        (reviewing
+                            ? '<span class="palette-btn correct" style="display:inline-block;width:14px;height:14px;vertical-align:-2px;"></span> correct<br>' +
+                              '<span class="palette-btn wrong" style="display:inline-block;width:14px;height:14px;vertical-align:-2px;"></span> wrong<br>' +
+                              '<span class="palette-btn skipped" style="display:inline-block;width:14px;height:14px;vertical-align:-2px;"></span> not attempted'
+                            : '<span class="palette-btn answered" style="display:inline-block;width:14px;height:14px;vertical-align:-2px;"></span> answered<br>' +
+                              '<span class="palette-btn marked" style="display:inline-block;width:14px;height:14px;vertical-align:-2px;"></span> marked<br>' +
+                              '<span class="palette-btn" style="display:inline-block;width:14px;height:14px;vertical-align:-2px;"></span> not answered') +
                     '</div>' +
                 '</div>' +
+                topicPanel +
             '</div>' +
         '</div>';
     renderMathInElementSafe(document.getElementById("examScreen"));
@@ -3851,10 +3918,11 @@ function selectTestOption(L) {
     if (!test || test.submitted) return;
     const q = test.items[test.idx];
     test.answers[q.qnum] = L;
+    saveStore();
     renderExam();
 }
 function moveTest(d) {
-    if (!test || test.submitted) return;
+    if (!test) return;
     const next = test.idx + d;
     if (next < 0 || next >= test.items.length) return;
     test.idx = next;
@@ -3862,7 +3930,7 @@ function moveTest(d) {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 function jumpTest(i) {
-    if (!test || test.submitted) return;
+    if (!test) return;
     test.idx = i;
     renderExam();
 }
@@ -3870,11 +3938,14 @@ function markTest() {
     if (!test || test.submitted) return;
     const q = test.items[test.idx];
     if (test.marked.has(q.qnum)) test.marked.delete(q.qnum); else test.marked.add(q.qnum);
+    saveStore();
     renderExam();
 }
 function exitTest() {
     const answered = test ? Object.keys(test.answers).length : 0;
-    const msg = answered
+    const msg = (test && test.submitted)
+        ? "Leave this review and go back to the mocks?"
+        : answered
         ? "Exit this test? " + answered + " answered question(s) will be discarded."
         : "Exit this test?";
     if (window.confirm(msg)) abortTest();
@@ -3884,6 +3955,41 @@ function abortTest() {
     test = null;
     document.getElementById("examScreen").classList.remove("show");
     document.getElementById("examScreen").innerHTML = "";
+}
+/* ---- pick the paper back up: same answers, same question, same clock ---- */
+function resumeTestSnapshot(snap) {
+    const m = Number(snap && snap.mock);
+    const items = m ? qsOfMock(m) : [];
+    if (!items.length) return false;
+    const answers = {};
+    const src = snap.answers || {};
+    for (const k in src) {
+        if (!Object.prototype.hasOwnProperty.call(src, k)) continue;
+        const L = String(src[k] || "").toUpperCase().charAt(0);
+        if (["A", "B", "C", "D"].includes(L)) answers[k] = L;
+    }
+    /* answers for questions this mock no longer has are dropped, not carried */
+    const qnums = new Set(items.map(q => q.qnum));
+    for (const k in answers) if (!qnums.has(Number(k))) delete answers[k];
+    const marked = new Set((snap.marked || []).map(Number));
+    const duration = Number(snap.duration) || TEST_SECONDS;
+    test = {
+        mock: m,
+        items: items,
+        answers: answers,
+        marked: marked,
+        idx: Math.max(0, Math.min(items.length - 1, Number(snap.idx) || 0)),
+        duration: duration,
+        startedAt: Number(snap.startedAt) || Date.now(),
+        endAt: Number(snap.endAt) || (Date.now() + duration * 1000),
+        submitted: !!snap.submitted
+    };
+    state.mock = m;
+    document.getElementById("examScreen").classList.add("show");
+    renderExam();
+    if (testTimer) clearInterval(testTimer);
+    if (!test.submitted) testTimer = setInterval(tickExam, 1000);
+    return true;
 }
 function submitTest() {
     if (!test || test.submitted) return;
@@ -3915,7 +4021,8 @@ function submitTest() {
     attempts[test.mock] = [attempt].concat(attempts[test.mock] || []).slice(0, 10);
     saveStore();
     resultFilter = "all";
-    renderResult(attempt);
+    /* stay on the paper: the palette now reports right / wrong / not attempted */
+    renderExam();
     render();
 }
 let resultAttempt = null;
@@ -3930,6 +4037,30 @@ function resultStatusOf(a, q) {
 function setResultFilter(f) {
     resultFilter = f;
     if (resultAttempt) renderResult(resultAttempt);
+}
+/* ---- reopen a submitted mock: the result sheet is rebuilt from the stored attempt ---- */
+function openResult(m) {
+    const list = attempts[m] || [];
+    if (!list.length) return;
+    const a = list[0];
+    const items = qsOfMock(m);
+    if (!items.length) return;
+    test = {
+        mock: m,
+        items: items,
+        answers: Object.assign({}, a.answers || {}),
+        marked: new Set(),
+        idx: 0,
+        duration: a.timeSec || TEST_SECONDS,
+        startedAt: a.ts || Date.now(),
+        endAt: Date.now(),
+        submitted: true
+    };
+    state.mock = m;
+    resultFilter = "all";
+    /* the paper itself, with the palette in answer colours */
+    document.getElementById("examScreen").classList.add("show");
+    renderExam();
 }
 function renderResult(a) {
     resultAttempt = a;
@@ -5055,6 +5186,29 @@ async function runSelfTest(mode) {
         ok(progress["x-1"] && progress["x-1"].s === "mastered", "apply restores progress in RAM");
         ok(notes["x-1"] && notes["x-1"].strokes.length === 1, "apply restores notes in RAM");
         ok(!localStorage.getItem(STORE_KEY) && !localStorage.getItem(NOTES_KEY), "sync never writes to localStorage");
+        /* the mock in progress rides in the same file, and a submitted one reopens */
+        QDATA = [{ id: "t-9", mock: 1, qnum: 1, text: "What is 2 + 2?",
+            opts: { A: "3", B: "4", C: "5", D: "6" }, ans: "B", topic: "Arithmetic", sub: "Addition" }];
+        progress = {}; attempts = {}; notes = {};
+        startTest(1);
+        selectTestOption("B");
+        const withTest = window.__srSync.snapshot();
+        ok(withTest.data.srqb_test_v1 && withTest.data.srqb_test_v1.mock === 1,
+            "snapshot carries the mock in progress");
+        abortTest();
+        ok(window.__srSync.apply(JSON.stringify(withTest)) === "", "a carried paper applies cleanly");
+        ok(!!test && test.mock === 1 && Object.keys(test.answers).length === 1,
+            "apply puts the paper back on the exam screen");
+        submitTest();
+        abortTest();
+        render();
+        const viewBtn = document.querySelector('#cardsGrid .mod-card .start-test-btn[onclick*="openResult"]');
+        ok(!!viewBtn, "a submitted mock offers View result on its card");
+        if (viewBtn) viewBtn.click();
+        ok(document.querySelectorAll('#examScreen .palette .palette-btn.correct').length === 1 &&
+            !!document.querySelector('#examScreen .exam-score'),
+            "View result reopens the paper with the answer palette");
+        abortTest();
         const box0 = document.getElementById("selftestOut");
         box0.textContent = out.join("\n") + "\nDONE";
         box0.style.display = "block";
@@ -5452,7 +5606,9 @@ async function runSelfTest(mode) {
     selectTestOption(qsOfMock(12)[0].ans);
     ok(Object.keys(test.answers).length === 1, "test records the selected option");
     submitTest();
-    ok(document.querySelectorAll(".review-row").length === qsOfMock(12).length, "result review lists every question");
+    ok(document.querySelectorAll("#examScreen .palette .palette-btn.correct").length === 1 &&
+        document.querySelectorAll("#examScreen .palette .palette-btn.skipped").length === qsOfMock(12).length - 1,
+        "submitted mock stays on the paper with the answer palette");
     ok((attempts[12] || []).length >= 1, "attempt stored");
     const lastAttempt = attempts[12][0];
     ok(lastAttempt.score === rawScore(1, 0), "raw score uses +" + scoring.pos + " / \u2212" + scoring.neg + " (got " + lastAttempt.score + ")");
@@ -5518,6 +5674,21 @@ boot();
         };
         /* only notes that carry ink or a pasted image belong in the export: opening
            the note popup, or clearing it, must never add an empty record */
+        /* the mock on screen rides along too: the answers given so far, the question
+           you were on and the clock, so it can be picked up again here or on the
+           other device */
+        if (test && test.items && test.items.length) {
+            var tAnswers = {}, tMarked = [];
+            for (var tk in test.answers) {
+                if (Object.prototype.hasOwnProperty.call(test.answers, tk)) tAnswers[tk] = test.answers[tk];
+            }
+            test.marked.forEach(function (n) { tMarked.push(n); });
+            data["srqb_test_v1"] = {
+                mock: test.mock, idx: test.idx, answers: tAnswers, marked: tMarked,
+                duration: test.duration, startedAt: test.startedAt, endAt: test.endAt,
+                submitted: !!test.submitted
+            };
+        }
         data[KEY_NOTES] = {};
         for (var nid in notes) {
             if (!Object.prototype.hasOwnProperty.call(notes, nid)) continue;
@@ -5553,6 +5724,8 @@ boot();
                 touched++;
             }
         }
+        if (isObj(data["srqb_test_v1"]) && typeof resumeTestSnapshot === 'function' &&
+            resumeTestSnapshot(data["srqb_test_v1"])) touched++;
         if (isObj(data[KEY_NOTES])) { notes = mergeInto(notes, data[KEY_NOTES]); touched++; }
         return touched;
     }

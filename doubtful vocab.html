@@ -3182,6 +3182,7 @@ let modalDeck = [];
 let modalIdx = 0;
 let modalChoice = null;
 let modalRevealed = false;
+let modalStudy = false;   /* opened from the word cloud: show the card itself, no options */
 let lastStudied = null;   /* { id, word, at } — where study stopped */
 let test = null;
 let testTimer = null;
@@ -3258,7 +3259,10 @@ function hasUnsavedSessionData() {
         const n = notes[k] || {};
         return (n.strokes && n.strokes.length) || (n.images && n.images.length);
     });
-    return hasProgress || hasAttempts || hasNotes;
+    /* a section test with answers on it is unsynced work too */
+    const hasTest = !!(test && test.items && test.items.length &&
+        (Object.keys(test.answers).length || test.submitted));
+    return hasProgress || hasAttempts || hasTest || hasNotes;
 }
 /* 🛡️ closing/reloading with unsynced work: write a JSON file out first, then ask */
 function stampNow() {
@@ -3687,6 +3691,7 @@ function startReview() {
     modalIdx = 0;
     modalChoice = null;
     modalRevealed = false;
+    modalStudy = false;
     renderModal();
     document.getElementById("modalOverlay").classList.add("show");
 }
@@ -3917,6 +3922,9 @@ function renderCards() {
                     '<span>🎯 ' + (b == null ? "not attempted" : "best " + b + "%") + '</span>' +
                     '<span>⭐ ' + items.filter(q => rec(q.id).bm).length + '</span>' +
                 '</div>' +
+                (best
+                    ? '<button class="start-test-btn" onclick="event.stopPropagation();openResult(' + m + ')">📊 View result · ' + (attempts[m] || []).length + ' attempt' + ((attempts[m] || []).length === 1 ? '' : 's') + '</button>'
+                    : '') +
                 '<button class="start-test-btn" onclick="event.stopPropagation();startTest(' + m + ')">⏱ Start timed test</button>';
             grid.appendChild(card);
         });
@@ -4036,9 +4044,8 @@ function makeColumn(title, subtitle, items, labelFn) {
 function renderWordCloud(grid, items) {
     const cloud = document.createElement("div");
     cloud.className = "word-cloud";
-    /* shuffle so the section colours interleave instead of stacking in blocks */
-    const order = s => { let x = 2166136261; for (let i = 0; i < s.length; i++) { x ^= s.charCodeAt(i); x = Math.imul(x, 16777619); } return x >>> 0; };
-    items.slice().sort((a, b) => order(a.id) - order(b.id)).forEach(q => {
+    /* serial, first word to last: the order the notes were written in */
+    items.forEach(q => {
         const btn = document.createElement("button");
         btn.type = "button";
         btn.className = "cloud-word";
@@ -4226,6 +4233,8 @@ function openModal(id, groupKey) {
     markResume();
     modalChoice = null;
     modalRevealed = false;
+    /* the cloud is study, not practice: the card comes first, without the MCQ */
+    modalStudy = groupKey === "cloud";
     renderModal();
     document.getElementById("modalOverlay").classList.add("show");
     if (noteOpen) { renderNoteTitle(); setupNoteCanvas(); }
@@ -4371,7 +4380,7 @@ function renderModal(keepScroll) {
         ? "🔁 " + (modalIdx + 1) + " / " + modalDeck.length + (reviewDeck.topic ? " (" + esc(reviewDeck.topic) + ")" : "") + " due"
         : (modalIdx + 1) + " / " + modalDeck.length;
 
-    const answered = modalChoice != null || modalRevealed;
+    const answered = modalStudy || modalChoice != null || modalRevealed;
     let opts = "";
     ["A", "B", "C", "D"].forEach(L => {
         const cls = ["opt-btn"];
@@ -4384,7 +4393,9 @@ function renderModal(keepScroll) {
             '<span class="opt-val">' + mathHtml(q.opts[L]) + '</span></button>';
     });
 
-    const answerLine = answered
+    /* study mode (word cloud): the word card alone — no options, no answer line */
+    if (modalStudy) opts = "";
+    const answerLine = (answered && !modalStudy)
         ? '<div class="ans-line">Correct Option: [' + q.ans + '] ' + mathHtml(q.opts[q.ans]) + '</div>'
         : "";
 
@@ -4439,7 +4450,7 @@ function ensureRec(id) {
 }
 function chooseOption(L) {
     const q = currentQ();
-    if (!q || modalChoice != null || modalRevealed) return;
+    if (!q || modalStudy || modalChoice != null || modalRevealed) return;
     modalChoice = L;
     const r = ensureRec(q.id);
     r.seen = 1;
@@ -4724,6 +4735,7 @@ function selectTestOption(L) {
     if (!test || test.submitted) return;
     const q = test.items[test.idx];
     test.answers[q.qnum] = L;
+    saveStore();
     renderExam();
 }
 function moveTest(d) {
@@ -4743,6 +4755,7 @@ function markTest() {
     if (!test || test.submitted) return;
     const q = test.items[test.idx];
     if (test.marked.has(q.qnum)) test.marked.delete(q.qnum); else test.marked.add(q.qnum);
+    saveStore();
     renderExam();
 }
 function exitTest() {
@@ -4760,6 +4773,41 @@ function abortTest() {
     document.getElementById("examScreen").classList.remove("show", "exam-live");
     document.getElementById("examScreen").innerHTML = "";
     document.body.classList.remove("exam-lock");
+}
+/* ---- pick the paper back up: same answers, same question, same clock ---- */
+function resumeTestSnapshot(snap) {
+    const m = Number(snap && snap.mock);
+    const items = m ? qsOfMock(m) : [];
+    if (!items.length) return false;
+    const answers = {};
+    const src = snap.answers || {};
+    for (const k in src) {
+        if (!Object.prototype.hasOwnProperty.call(src, k)) continue;
+        const L = String(src[k] || "").toUpperCase().charAt(0);
+        if (["A", "B", "C", "D"].includes(L)) answers[k] = L;
+    }
+    /* answers for questions this section no longer has are dropped, not carried */
+    const qnums = new Set(items.map(q => q.qnum));
+    for (const k in answers) if (!qnums.has(Number(k))) delete answers[k];
+    const marked = new Set((snap.marked || []).map(Number));
+    const duration = Number(snap.duration) || setClock(items.length);
+    test = {
+        mock: m,
+        items: items,
+        answers: answers,
+        marked: marked,
+        idx: Math.max(0, Math.min(items.length - 1, Number(snap.idx) || 0)),
+        duration: duration,
+        startedAt: Number(snap.startedAt) || Date.now(),
+        endAt: Number(snap.endAt) || (Date.now() + duration * 1000),
+        submitted: !!snap.submitted
+    };
+    state.mock = m;
+    document.getElementById("examScreen").classList.add("show");
+    renderExam();
+    if (testTimer) clearInterval(testTimer);
+    if (!test.submitted) testTimer = setInterval(tickExam, 1000);
+    return true;
 }
 function submitTest() {
     if (!test || test.submitted) return;
@@ -4807,6 +4855,30 @@ function resultStatusOf(a, q) {
 function setResultFilter(f) {
     resultFilter = f;
     if (resultAttempt) renderResult(resultAttempt);
+}
+/* ---- reopen a submitted paper: the result screen is rebuilt from the stored attempt ---- */
+function openResult(m) {
+    const list = attempts[m] || [];
+    if (!list.length) return;
+    const a = list[0];
+    const items = qsOfMock(m);
+    if (!items.length) return;
+    test = {
+        mock: m,
+        items: items,
+        answers: Object.assign({}, a.answers || {}),
+        marked: new Set(),
+        idx: 0,
+        duration: a.timeSec || setClock(items.length),
+        startedAt: a.ts || Date.now(),
+        endAt: Date.now(),
+        submitted: true
+    };
+    state.mock = m;
+    /* the paper itself, with the palette in answer colours — not the maths-style
+       score sheet this template shipped with */
+    document.getElementById("examScreen").classList.add("show");
+    renderExam();
 }
 function renderResult(a) {
     resultAttempt = a;
@@ -5935,6 +6007,18 @@ async function runSelfTest(mode) {
         ok(progress["x-1"] && progress["x-1"].s === "mastered", "apply restores progress in RAM");
         ok(notes["x-1"] && notes["x-1"].strokes.length === 1, "apply restores notes in RAM");
         ok(!localStorage.getItem(STORE_KEY) && !localStorage.getItem(NOTES_KEY), "sync never writes to localStorage");
+        /* the section test in progress rides in the same file */
+        progress = {}; attempts = {}; notes = {};
+        startTest(1);
+        selectTestOption(qsOfMock(1)[2].ans);
+        const withTest = window.__srSync.snapshot();
+        ok(withTest.data.srqb_test_v1 && withTest.data.srqb_test_v1.mock === 1,
+            "snapshot carries the section test in progress");
+        abortTest();
+        ok(window.__srSync.apply(JSON.stringify(withTest)) === "", "a carried paper applies cleanly");
+        ok(!!test && test.mock === 1 && test.idx === 0 && Object.keys(test.answers).length === 1,
+            "apply puts the paper back on the exam screen");
+        abortTest();
         const box0 = document.getElementById("selftestOut");
         box0.textContent = out.join("\n") + "\nDONE";
         box0.style.display = "block";
@@ -6399,6 +6483,21 @@ boot();
         /* only notes that carry ink or a pasted image belong in the export: opening
            the note popup, or clearing it, must never add an empty record */
         if (lastStudied) data["srqb_last_v1"] = lastStudied;
+        /* the section test on screen rides along too: the answers given so far,
+           the question you were on and the clock, so it can be picked up again
+           here or on the other device */
+        if (test && test.items && test.items.length) {
+            var tAnswers = {}, tMarked = [];
+            for (var tk in test.answers) {
+                if (Object.prototype.hasOwnProperty.call(test.answers, tk)) tAnswers[tk] = test.answers[tk];
+            }
+            test.marked.forEach(function (n) { tMarked.push(n); });
+            data["srqb_test_v1"] = {
+                mock: test.mock, idx: test.idx, answers: tAnswers, marked: tMarked,
+                duration: test.duration, startedAt: test.startedAt, endAt: test.endAt,
+                submitted: !!test.submitted
+            };
+        }
         data[KEY_NOTES] = {};
         for (var nid in notes) {
             if (!Object.prototype.hasOwnProperty.call(notes, nid)) continue;
@@ -6439,6 +6538,8 @@ boot();
             markResume();
             touched++;
         }
+        if (isObj(data["srqb_test_v1"]) && typeof resumeTestSnapshot === 'function' &&
+            resumeTestSnapshot(data["srqb_test_v1"])) touched++;
         if (isObj(data[KEY_NOTES])) { notes = mergeInto(notes, data[KEY_NOTES]); touched++; }
         return touched;
     }
