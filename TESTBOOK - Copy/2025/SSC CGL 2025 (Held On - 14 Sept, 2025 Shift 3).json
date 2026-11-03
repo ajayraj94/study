@@ -1,0 +1,1713 @@
+{
+  "test_id": "6a0f3f01076c0c08431178d4",
+  "test_title": "SSC CGL 2025 (Held On: 14 Sept, 2025 Shift 3)",
+  "total_questions": 100,
+  "sections": [
+    "General Intelligence and Reasoning",
+    "General Awareness",
+    "Quantitative Aptitude",
+    "English Comprehension"
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 1,
+      "id": "6909e3a4f01110a12e38b17f",
+      "passage": "",
+      "question": "Which letter in the word \"TREATMENT\" is equidistant from both ends?",
+      "options": {
+        "A": "A",
+        "B": "T",
+        "C": "E",
+        "D": "M"
+      },
+      "correct_option": "B",
+      "correct_answer": "T",
+      "solution": "Given word: TREATMENT\n\nNumber of letters = 9\n\nEquidistant from both ends means the middle letter (5th letter)\n\n| T | R | E | A | T | M | E | N | T |\n| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |\n\nSo, The 5th letter is T\n\nHence, the correct answer is Option 2."
+    },
+    {
+      "number": 2,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 2,
+      "id": "6909e3a59002b79a1f1eea31",
+      "passage": "",
+      "question": "Select the letter-cluster from among the given options that can replace the question mark (?) in the following series.\n\nPRT, OQS, NPR, ?",
+      "options": {
+        "A": "GAS",
+        "B": "MJS",
+        "C": "GHA",
+        "D": "MOQ"
+      },
+      "correct_option": "D",
+      "correct_answer": "MOQ",
+      "solution": "[Image: https://cdn.testbook.com/images/production/quesImages/qImage644f8f4d6f9d992a4f3a1855.png]\n\nThe logic followed here is:\n\n[Image: https://storage.googleapis.com/tb-img/production/26/03/IMG-2122%20Ratna%2023-3-2026_D156.png]\n\nSo, 'MOQ' will replace the question mark in the given series.\n\nHence, the correct answer is \"Option 4\"."
+    },
+    {
+      "number": 3,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 3,
+      "id": "6909e3a50a867837a1c5117f",
+      "passage": "",
+      "question": "Select the letter-cluster from among the given options that can replace the question mark (?) in the following series.\n\nXJL,YMK,ZPJ,?",
+      "options": {
+        "A": "ASI",
+        "B": "ZOO",
+        "C": "AAP",
+        "D": "ZMP"
+      },
+      "correct_option": "A",
+      "correct_answer": "ASI",
+      "solution": "[Image: https://cdn.testbook.com/images/production/quesImages/qImage644f8f4d6f9d992a4f3a1855.png]\n\nThe logic followed here is:\n\n[Image: https://storage.googleapis.com/tb-img/production/26/03/IMG-2122%20Ratna%2023-3-2026_D158.png]\n\nSo, 'ASI' will replace the question mark in the given series.\n\nHence, the correct answer is \"Option 1\"."
+    },
+    {
+      "number": 4,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 4,
+      "id": "6909e3a669d3c26083297917",
+      "passage": "",
+      "question": "Which one is different from the rest?",
+      "options": {
+        "A": "Rose",
+        "B": "Guava",
+        "C": "Banana",
+        "D": "Papaya"
+      },
+      "correct_option": "A",
+      "correct_answer": "Rose",
+      "solution": "The logic followed here is:\n\nOption 1) Rose → This is a flower.\n\nOption 2) Guava → This is a fruit.\n\nOption 3) Banana → This is a fruit.\n\nOption 4) Papaya → This is a fruit.\n\nThus, Rose is different because it is a flower, while the others are all fruits.\n\nHence, the correct answer is \"Option 1\"."
+    },
+    {
+      "number": 5,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 5,
+      "id": "6909e3a65f28061c8973cd44",
+      "passage": "",
+      "question": "Complete the series: 24,120, 720, 5040, 40320, ____?",
+      "options": {
+        "A": "461291",
+        "B": "362880",
+        "C": "242880",
+        "D": "162770"
+      },
+      "correct_option": "B",
+      "correct_answer": "362880",
+      "solution": "The logic followed here is:\n\n[Image: https://storage.googleapis.com/tb-img/production/26/03/IMG-2122%20Ratna%2023-3-2026_D160.png]\n\nHere, 24 = 4! = 4 × 3 × 2 × 1\n\n120 = 5! = 5 × 4 × 3 × 2 × 1\n\n720 = 6!\n\n5040 = 7!\n\n40320 = 8!\n\nthus, \"362880\" will replace the question mark in the given series.\n\nHence, the correct option is \"Option 2\"."
+    },
+    {
+      "number": 6,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 6,
+      "id": "6909e3a6f579995fc0aa3956",
+      "passage": "",
+      "question": "What will come at the place of question mark? 1, 9, 31, 73, 141, ?",
+      "options": {
+        "A": "241",
+        "B": "398",
+        "C": "49",
+        "D": "155"
+      },
+      "correct_option": "A",
+      "correct_answer": "241",
+      "solution": "The logic followed here is:\n\n[Image: https://storage.googleapis.com/tb-img/production/26/03/IMG-2122%20Ratna%2023-3-2026_D162.png]\n\nthus, \"241\" will replace the question mark in the given series.\n\nHence, the correct option is \"Option 1\"."
+    },
+    {
+      "number": 7,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 7,
+      "id": "6909e3a70a73c1795a9edfdb",
+      "passage": "",
+      "question": "Read the following statement carefully and identify the conclusion that follows. Statement: Smoking is prohibited in public places as per the new law.\n\nConclusions:\n\nI. People can smoke in private spaces.\n\nII. Smoking harms public health.",
+      "options": {
+        "A": "Only Conclusion I follows",
+        "B": "Only Conclusion II follows",
+        "C": "Both I and II follow",
+        "D": "Neither I nor II follows"
+      },
+      "correct_option": "D",
+      "correct_answer": "Neither I nor II follows",
+      "solution": "Given Statement: Smoking is prohibited in public places as per the new law.\n\nNow,\n\nConclusions:\n\n(i) People can smoke in private spaces → Does not follow (The statement only talks about prohibition in public places; nothing is mentioned about private spaces.)\n\n(ii) Smoking harms public health → Does not follow (The reason for the law is not stated.)\n\nHere, Neither conclusion I nor II follows.\n\nHence, the correct answer is \"Option 4\"."
+    },
+    {
+      "number": 8,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 8,
+      "id": "6909e3a74ae2a067d12aa1b5",
+      "passage": "",
+      "question": "Instruction: Identify the assumptions that must hold for the statement to be valid, then choose the correct option.\n\nStatement: The Himalayas act as a natural barrier that prevents the monsoon winds from reaching the northern plains, thereby creating a dry region in the rain shadow area.\n\nAssumptions:\n\nI. The Himalayas prevent monsoon winds from reaching certain areas.\n\nII. The rain shadow effect leads to dry conditions in specific regions.\n\nIII. Monsoon winds are the sole cause of rainfall in the northern plains.",
+      "options": {
+        "A": "Only I and II are implicit",
+        "B": "Only II and III are implicit",
+        "C": "Only I is implicit",
+        "D": "All assumptions are implicit"
+      },
+      "correct_option": "A",
+      "correct_answer": "Only I and II are implicit",
+      "solution": "Given Statement:\n\nThe Himalayas act as a natural barrier that prevents the monsoon winds from reaching the northern plains, thereby creating a dry region in the rain shadow area.\n\nNow,\n\nAssumptions:\n\n1.The Himalayas prevent monsoon winds from reaching certain areas - Implicit (The statement directly says the Himalayas act as a barrier preventing monsoon winds.)\n\n2.The rain shadow effect leads to dry conditions in specific regions - Implicit (The statement links the rain shadow area with creation of a dry region.)\n\n3.Monsoon winds are the sole cause of rainfall in the northern plains - Not Implicit (The statement does not say monsoon winds are the only cause of rainfall.)\n\nHere, Only assumptions I and II are implicit.\n\nHence, the correct answer is \"Option 1\"."
+    },
+    {
+      "number": 9,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 9,
+      "id": "6909e3a8d71fcf82aee3b5cd",
+      "passage": "",
+      "question": "Each of the letters in the word LAPTOP is arranged in alphabetical order. How many letters are there in the English alphabetical series between the letter that is fourth from the left and the one that is first from the right in the new letter-cluster formed?",
+      "options": {
+        "A": "Two",
+        "B": "Four",
+        "C": "Three",
+        "D": "One"
+      },
+      "correct_option": "C",
+      "correct_answer": "Three",
+      "solution": "Given word: LAPTOP\n\nArrange the letters in alphabetical order:\n\nA L O P P T\n\nThe fourth letter from the left = P\n\nThe first letter from the right = T\n\nNow, letters between P and T in the English alphabet = Q, R, S → 3 letters\n\nHence, the correct answer is Option 3."
+    },
+    {
+      "number": 10,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 10,
+      "id": "6909e3a8327d8630a5c9e33c",
+      "passage": "",
+      "question": "Each of the letters in the word HARMONIOUS is arranged in alphabetical order. How many letters are there in the English alphabetical series between the letter that is first from the left and the one that is fourth from the right in the new letter-cluster formed?",
+      "options": {
+        "A": "12",
+        "B": "13",
+        "C": "15",
+        "D": "11"
+      },
+      "correct_option": "B",
+      "correct_answer": "13",
+      "solution": "Given word: HARMONIOUS\n\nArrange the letters in alphabetical order:\n\nA H I M N O O R S U\n\nFirst letter from the left = A\n\nFourth letter from the right = O (from U, S, R, O)\n\nNow, letters between A and O in the English alphabet:\n\nB, C, D, E, F, G, H, I, J, K, L, M, N → 13 letters\n\nHence, the correct answer is Option 2."
+    },
+    {
+      "number": 11,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 11,
+      "id": "6909e3a95f28061c8973cda1",
+      "passage": "",
+      "question": "Which of the following is/are identical to the address given: Priya Yadav B-22, Rosewood Heights, Sector 15, Gurgaon, 122002\n\n1. Priya Yadav B-22, Rosewood Heights, Sector 15, Gurgaon, 122002\n\n2. Priya Yadav B-22, Rosewood Heights, Sector 15, Gurugram, 122002\n\n3. Priya Yadav B-22, Rosewood Heights, Sector 15, Gurgaon, 122003\n\n4. Priya Yadav B-22, Rosewood Heights, Sector 15, Gurgaon, 122001",
+      "options": {
+        "A": "2 Only",
+        "B": "1 Only",
+        "C": "4 Only",
+        "D": "3 Only"
+      },
+      "correct_option": "B",
+      "correct_answer": "1 Only",
+      "solution": "The address given in the problem is,\n\nPriya Yadav B-22, Rosewood Heights, Sector 15, Gurgaon, 122002\n\nLet's match this address with the given options one by one to figure out which one is exactly the same.\n\n| Option | Address in Option | Given Address | Comment |\n| (1) | Priya Yadav B-22, Rosewood Heights, Sector 15, Gurgaon, 122002 | Priya Yadav B-22, Rosewood Heights, Sector 15, Gurgaon, 122002 | Exactly the same as the given address. |\n| (2) | Priya Yadav B-22, Rosewood Heights, Sector 15, Gurugram, 122002 | Priya Yadav B-22, Rosewood Heights, Sector 15, Gurgaon, 122002 | 'Gurugram' is different from 'Gurgaon'. |\n| (3) | Priya Yadav B-22, Rosewood Heights, Sector 15, Gurgaon, 122003 | Priya Yadav B-22, Rosewood Heights, Sector 15, Gurgaon, 122002 | PIN code is different (122003 vs 122002). |\n| (4) | Priya Yadav B-22, Rosewood Heights, Sector 15, Gurgaon, 122001 | Priya Yadav B-22, Rosewood Heights, Sector 15, Gurgaon, 122002 | PIN code is different (122001 vs 122002). |\n\nSo, the address that is exactly the same as the given address is in option (1).\n\nHence, the correct option is \"option (1)\"."
+    },
+    {
+      "number": 12,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 12,
+      "id": "6909e3a9f579995fc0aa3960",
+      "passage": "",
+      "question": "Find the group of letters that best completes the analogy. Use alphabetical positions and reverse position logic where necessary.\n\nBEKQ : YVPJ :: CFGL : ?",
+      "options": {
+        "A": "XUOM",
+        "B": "XUTO",
+        "C": "XUPM",
+        "D": "XVPL"
+      },
+      "correct_option": "B",
+      "correct_answer": "XUTO",
+      "solution": "[Image: https://cdn.testbook.com/images/production/quesImages/qImage640dc90d2ebe070729f6bb9d.png]\n\nThe logic followed here is:\n\nBEKQ : YVPJ\n\n[Image: https://storage.googleapis.com/tb-img/production/26/03/IMG-2122%20Ratna%2023-3-2026_D164.png]\n\nSimilarly,\n\nCFGL : ?\n\n[Image: https://storage.googleapis.com/tb-img/production/26/03/IMG-2122%20Ratna%2023-3-2026_D165.png]\n\nHence, the correct answer is \"Option 2\"."
+    },
+    {
+      "number": 13,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 13,
+      "id": "6909e3a97c884af8f7091e32",
+      "passage": "",
+      "question": "Choose the correct option to complete the series. Growth : Stagnation :: Success : ?",
+      "options": {
+        "A": "Achievement",
+        "B": "Failure",
+        "C": "Progress",
+        "D": "Gain"
+      },
+      "correct_option": "B",
+      "correct_answer": "Failure",
+      "solution": "The logic followed here is:\n\nLogic: The first word is antonym of the second word.\n\nHere,\n\nGrowth : Stagnation → Growth and Stagnation are opposites.\n\nSimilarly,\n\nSuccess : Failure → Success and Failure are opposites.\n\nHence, the correct answer is \"Option 2\"."
+    },
+    {
+      "number": 14,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 14,
+      "id": "6909e3aa335dea9be42ab7c7",
+      "passage": "",
+      "question": "Find the word that does not fit in the series: Silent, Muted, Tranquil, Clamorous, Calm",
+      "options": {
+        "A": "Silent",
+        "B": "Muted",
+        "C": "Tranquil",
+        "D": "clamorous"
+      },
+      "correct_option": "D",
+      "correct_answer": "clamorous",
+      "solution": "The logic followed here is:\n\nLogic: All words except one denote quietness or calmness.\n\nSilent → quiet → fits\n\nMuted → soft, quiet → fits\n\nTranquil → peaceful → fits\n\nCalm → peaceful → fits\n\nClamorous → noisy, loud → does not fit\n\nHence, the correct answer is \"Option 4\"."
+    },
+    {
+      "number": 15,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 15,
+      "id": "6909e3aaad853d4240782b88",
+      "passage": "",
+      "question": "In each of the following questions, a word is transformed by rearranging its letters according to a specific pattern. Apply the same pattern to the third word and choose the correct answer from the given alternatives.\n\nEXCUSE : CXEESU :: ERODES : ?",
+      "options": {
+        "A": "OREESD",
+        "B": "ORESED",
+        "C": "REOSDE",
+        "D": "ERODSE"
+      },
+      "correct_option": "B",
+      "correct_answer": "ORESED",
+      "solution": "[Image: https://cdn.testbook.com/images/production/quesImages/qImage640dc90d2ebe070729f6bb9d.png]\n\nThe logic followed here is:\n\nEXCUSE : CXEESU\n\n[Image: https://storage.googleapis.com/tb-img/production/21/08/F1_Kumar%20R_Shraddha_30.08.2021_D10.png]\n\nSimilarly,\n\nERODES : ?\n\n[Image: https://storage.googleapis.com/tb-img/production/21/08/F1_Kumar%20R_Shraddha_30.08.2021_D11.png]\n\nHence, the correct answer is \"Option 2\"."
+    },
+    {
+      "number": 16,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 16,
+      "id": "6909e3aa13685a39edc39097",
+      "passage": "",
+      "question": "A&#39;s father&#39;s wife&#39;s only daughter is B. How is A related to B? (Assuming A is a male member)",
+      "options": {
+        "A": "Sister",
+        "B": "Cousin",
+        "C": "Brother",
+        "D": "Uncle"
+      },
+      "correct_option": "C",
+      "correct_answer": "Brother",
+      "solution": "Family Chart:\n\n[Image: https://storage.googleapis.com/tb-img/production/21/01/Common_Diagram_28.01.2020_D3.png]\n\nGiven:\n\n1. A’s father’s wife = A’s mother.\n\n2. A’s father’s wife’s only daughter = The only daughter of A’s mother = A’s sister.\n\n[Image: https://storage.googleapis.com/tb-img/production/26/03/IMG-2122%20Ratna%2023-3-2026_D167.png]\n\nSo, A is the Brother of B.\n\nHence, the correct answer is \"Option 3\"."
+    },
+    {
+      "number": 17,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 17,
+      "id": "6909e3ab5414173cf602875d",
+      "passage": "",
+      "question": "Identify the odd number: 1, 8, 27, 64, 121, 216",
+      "options": {
+        "A": "64",
+        "B": "121",
+        "C": "216",
+        "D": "27"
+      },
+      "correct_option": "B",
+      "correct_answer": "121",
+      "solution": "Given:\n\nNumbers = 1, 8, 27, 64, 121, 216\n\nFormula used:\n\nPerfect cube = n × n × n\n\nCalculation:\n\n1 = 1 × 1 × 1 = 13\n\n8 = 2 × 2 × 2 = 23\n\n27 = 3 × 3 × 3 = 33\n\n64 = 4 × 4 × 4 = 43\n\n121 = 11 × 11 = 112\n\n216 = 6 × 6 × 6 = 63\n\nAll numbers except 121 are perfect cubes\n\n∴ The odd number is 121."
+    },
+    {
+      "number": 18,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 18,
+      "id": "6909e3ab4ae2a067d12aa22d",
+      "passage": "",
+      "question": "P + Q means P is the husband of Q, P - Q means P is the sister of Q, P &times; Q means P is the mother of Q. Then what does A &times; B + C mean?",
+      "options": {
+        "A": "A is mother-in-law of C",
+        "B": "A is mother of C",
+        "C": "A is sister-in-law of C",
+        "D": "A is grandmother of C"
+      },
+      "correct_option": "A",
+      "correct_answer": "A is mother-in-law of C",
+      "solution": "Family Chart:\n\n[Image: https://storage.googleapis.com/tb-img/production/21/01/Common_Diagram_28.01.2020_D3.png]\n\nDecoding the Symbols:\n\n| Symbol | + | - | × |\n| Meaning | Husband | Sister | Mother |\n\nGiven: A × B + C\n\nIt means:\n\nA is the Mother of B\n\nB is the Husband of C.\n\n[Image: https://storage.googleapis.com/tb-img/production/26/03/IMG-2122%20Ratna%2023-3-2026_D169.png]\n\nSo, A is the mother-in-law of C.\n\nHence, the correct answer is \"Option 3\"."
+    },
+    {
+      "number": 19,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 19,
+      "id": "6909e3aba1f28097b1dcfac9",
+      "passage": "",
+      "question": "Choose the odd one out: (17, P, #), (13, J, !), (19, R, %), (23, V, @)",
+      "options": {
+        "A": "(17, P, #)",
+        "B": "(13, J, !)",
+        "C": "(19, R, %)",
+        "D": "(23, V, @)"
+      },
+      "correct_option": "B",
+      "correct_answer": "(13, J, !)",
+      "solution": "[Image: https://cdn.testbook.com/images/production/quesImages/qImage699d9e21fcec28499a7cd043.png]\n\nThe logic followed here is:\n\nLogic: Number - letter position = 1\n\n(17, P) → 17 - 16 = 1\n\n(13, J) → 13 - 10 = 3 (odd one)\n\n(19, R) → 19 - 18 = 1\n\n(23, V) → 23 - 22 = 1\n\nSo, the odd one is (13, J, !).\n\nHence, the odd one out is Option 2."
+    },
+    {
+      "number": 20,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 20,
+      "id": "6909e3ac7e2abf590ea048a9",
+      "passage": "",
+      "question": "If 2 @ 3 = 25 and 3 @ 4 = 49, what is 4 @ 5?",
+      "options": {
+        "A": "81",
+        "B": "100",
+        "C": "121",
+        "D": "91"
+      },
+      "correct_option": "A",
+      "correct_answer": "81",
+      "solution": "The logic followed here is:\n\nLogic: The operation “@” is defined as a @ b = (a + b)²\n\n2 @ 3 = (2 + 3)² = 5² = 25\n\n3 @ 4 = (3 + 4)² = 7² = 49\n\nSimilarly, 4 @ 5 = (4 + 5)² = 9² = 81\n\nHence, the correct answer is Option 1."
+    },
+    {
+      "number": 21,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 21,
+      "id": "6909e3ac7c884af8f7091e3f",
+      "passage": "",
+      "question": "If &#39;READ&#39; is coded as &#39;SFBE&#39;, how is &#39;BOOK&#39; coded?",
+      "options": {
+        "A": "CPPL",
+        "B": "DQQM",
+        "C": "APPL",
+        "D": "AQQM"
+      },
+      "correct_option": "A",
+      "correct_answer": "CPPL",
+      "solution": "[Image: https://cdn.testbook.com/images/production/quesImages/qImage699d9f7c74d9e4352c6eb6c4.png]\n\nThe logic followed here is:\n\nLogic: Each letter is shifted forward by 1 in the English alphabet.\n\nFor, READ → SFBE\n\n[Image: https://storage.googleapis.com/tb-img/production/26/03/IMG-2122%20Ratna%2023-3-2026_D171.png]\n\nSimilarly, for BOOK → ?\n\n[Image: https://storage.googleapis.com/tb-img/production/26/03/IMG-2122%20Ratna%2023-3-2026_D172.png]\n\nSo, BOOK → CPPL\n\nHence, the correct answer is Option 1."
+    },
+    {
+      "number": 22,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 22,
+      "id": "6909e3adf01110a12e38b28e",
+      "passage": "",
+      "question": "A sum becomes 2.5 times in 10 years under simple interest. Find the rate.",
+      "options": {
+        "A": "10%",
+        "B": "12.5%",
+        "C": "15%",
+        "D": "20%"
+      },
+      "correct_option": "C",
+      "correct_answer": "15%",
+      "solution": "📌📌 Shortcut Trick\n\nRate (R) = [(n − 1) × 100] ÷ Time\n\nHere, n = 2.5 and Time = 10 years.\n\nR = [(2.5 − 1) × 100] ÷ 10 = [1.5 × 100] ÷ 10 = 150 ÷ 10 = 15%.\n\n∴ The correct answer is 15%.\n\nAlternate Method\n\nGiven: Principal (P) = P, Amount (A) = 2.5P, Time (T) = 10 years.\n\nFormula Used: Simple Interest (SI) = (P × R × T) ÷ 100; SI = Amount − Principal\n\n[Image: https://cdn.testbook.com/images/production/quesImages/qImage6abbae2e706a6ce4b37b1eb5.png]\n\n⇒ SI = 2.5P − P = 1.5P\n\n⇒ 1.5P = (P × R × 10) ÷ 100\n\n⇒ 1.5 = (R × 10) ÷ 100\n\n⇒ 1.5 = R ÷ 10\n\n⇒ R = 1.5 × 10 = 15%\n\n∴ The correct answer is 15%.\n\n📌📌 Additional Information\n\nSimple Interest Formula\n\nSI = (P × R × T) ÷ 100, where P is Principal, R is Rate per annum, and T is Time in years.\n\nSum Multiplier Rule\n\nIf a sum becomes 'n' times in 'T' years, the rate R = [(n − 1) ÷ T] × 100.\n\nAmount in Simple Interest\n\nAmount (A) = P + SI = P[1 + (RT ÷ 100)]."
+    },
+    {
+      "number": 23,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 23,
+      "id": "6909e3ad9002b79a1f1eea69",
+      "passage": "",
+      "question": "X and Y are brothers. Z is the wife of Y. A is the father of X. B is the daughter of Z. How is B related to A?",
+      "options": {
+        "A": "Daughter",
+        "B": "Granddaughter",
+        "C": "Niece",
+        "D": "Sister"
+      },
+      "correct_option": "B",
+      "correct_answer": "Granddaughter",
+      "solution": "Family Chart:\n\n[Image: https://storage.googleapis.com/tb-img/production/21/01/Common_Diagram_28.01.2020_D3.png]\n\nGiven:\n\nX and Y are brothers → They are sons of A.\n\nZ is the wife of Y.\n\nB is the daughter of Z → Since Z is Y’s wife, B is the daughter of Y and Z.\n\n[Image: https://storage.googleapis.com/tb-img/production/26/03/IMG-2122%20Ratna%2023-3-2026_D174.png]\n\nSo, B is the granddaughter of A.\n\nHence, the correct answer is \"Option 2\"."
+    },
+    {
+      "number": 24,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 24,
+      "id": "6909e3ae5f28061c8973ce52",
+      "passage": "",
+      "question": "If a $ b = 2, where a $ b = a&sup2; - b, what is the value of a and b?",
+      "options": {
+        "A": "2,2",
+        "B": "8,1",
+        "C": "4,5",
+        "D": "9,6"
+      },
+      "correct_option": "A",
+      "correct_answer": "2,2",
+      "solution": "The logic followed here is:\n\nLogic: The operation \"$\" is defined as a $ b = a² - b\n\nGiven: a $ b = 2 → a² - b = 2 → b = a² - 2\n\nCheck each option:\n\nOption 1) a = 2, b = 2 → 2² - 2 = 4 - 2 = 2\n\nOption 2) a = 8, b = 1 → 8² - 1 = 64 - 1 = 63\n\nOption 3) a = 4, b = 5 → 16 - 5 = 11\n\nOption 4) a = 9, b = 6 → 81 - 6 = 75\n\nHence, the correct answer is Option 1."
+    },
+    {
+      "number": 25,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 25,
+      "id": "6909e3ae621842063c1c5ac1",
+      "passage": "",
+      "question": "If the sum of 42 and 42 is multiplied by 4, what is the result?",
+      "options": {
+        "A": "332",
+        "B": "333",
+        "C": "336",
+        "D": "340"
+      },
+      "correct_option": "C",
+      "correct_answer": "336",
+      "solution": "The logic followed here is:\n\nFind the sum of 42 and 42 → 42 + 42 = 84\n\nMultiply the sum by 4 → 84 × 4 = 336\n\nHence, the correct answer is Option 3."
+    },
+    {
+      "number": 26,
+      "section": "General Awareness",
+      "section_question_number": 1,
+      "id": "6909e3ae5414173cf602876b",
+      "passage": "",
+      "question": "Given below are two statements:\n\nStatement I: The harmika of a stupa is the symbolic abode of the gods, located at the top.\n\nStatement II: The harmika is where relics of the Buddha were usually kept. Which of the following statements is/are correct?",
+      "options": {
+        "A": "Both statements are true and Statement II is the correct explanation of Statement I",
+        "B": "Both statements are true but Statement II is not the correct explanation of Statement I",
+        "C": "Statement I is true but Statement II is false",
+        "D": "Statement II is true but statement I is false"
+      },
+      "correct_option": "C",
+      "correct_answer": "Statement I is true but Statement II is false",
+      "solution": "The correct answer is Statement I is true but Statement II is false.\n\n📌📌 Key Points\n\nThe harmika of a stupa is a small, square railing located at the top of the dome (anda) and is considered the symbolic abode of the gods.\n\nIt is an important architectural feature of stupas and signifies the connection between the earthly realm and the divine.\n\nThe harmika is typically surmounted by a mast (yasti) with umbrellas or chhatras, symbolizing honor and protection.\n\nStatement II is incorrect because the relics of the Buddha or other revered figures are not kept in the harmika; they are enshrined in the anda (the hemispherical dome) of the stupa.\n\nThe anda serves as the primary burial mound or relic chamber, which houses sacred relics and is the focal point of veneration.\n\n📌📌 Additional Information\n\nComponents of a Stupa:\n\nAnda (Dome): The hemispherical dome represents the mound of dirt used to cover the Buddha's relics. It is the most important part of the stupa, symbolizing the universe.\n\nHarmika: A square platform at the top of the dome, representing the abode of gods. It does not contain relics but serves as a symbolic feature.\n\nChhatra: The umbrella-like structure above the harmika symbolizes protection and honor. It often represents the Three Jewels of Buddhism: the Buddha, the Dharma, and the Sangha.\n\nMedhi: A circular terrace at the base of the dome, used by devotees for circumambulation (pradakshina).\n\nTorana: The gateway of the stupa, typically elaborately carved, representing the entry point for devotees."
+    },
+    {
+      "number": 27,
+      "section": "General Awareness",
+      "section_question_number": 2,
+      "id": "6909e3afc84844ac6d413bca",
+      "passage": "",
+      "question": "Which Veda primarily contains ritual formulas and detailed procedures for performing sacrifices?",
+      "options": {
+        "A": "Samaveda",
+        "B": "Yajurveda",
+        "C": "Atharvaveda",
+        "D": "Rigveda"
+      },
+      "correct_option": "B",
+      "correct_answer": "Yajurveda",
+      "solution": "The correct answer is Yajurveda.\n\n📌📌 Key Points\n\nYajurveda is one of the four Vedas and is primarily concerned with ritualistic formulas and the proper procedures for performing sacrifices (Yajnas).\n\nIt serves as a guide for priests and offers detailed instructions on how to conduct rituals and ceremonies, including the recitation of mantras.\n\nIt is divided into two parts: the Shukla (White) Yajurveda, which contains clear and organized rituals, and the Krishna (Black) Yajurveda, which includes a mix of mantras and explanatory prose.\n\nThe Yajurveda is written in Sanskrit and focuses on the performance of Vedic sacrificial rituals to invoke deities and ensure harmony in the universe.\n\nIts primary purpose is to provide a detailed framework for conducting ceremonial offerings, including fire sacrifices, to maintain cosmic order and promote spiritual well-being.\n\n📌📌 Additional Information\n\nRigveda\n\nThe Rigveda is the oldest of the four Vedas and primarily contains hymns (Suktas) dedicated to various deities such as Agni, Indra, and Soma.\n\nIt is composed of 10 Mandalas (books) and focuses on philosophical and spiritual concepts.\n\nThe hymns in the Rigveda were recited during rituals but are less focused on procedural details compared to the Yajurveda.\n\nSamaveda\n\nThe Samaveda is known as the \"Veda of Melodies\" and primarily consists of hymns from the Rigveda set to music.\n\nIt is meant to be sung during Vedic sacrifices and rituals, especially during the Soma sacrifice.\n\nThe Samaveda highlights the importance of sound and music in invoking divine forces and creating a sacred atmosphere.\n\nAtharvaveda\n\nThe Atharvaveda contains hymns, spells, and incantations that deal with everyday life, health, and healing, as well as spiritual practices.\n\nIt includes knowledge of Ayurveda, focusing on remedies for diseases and methods to ward off negative influences.\n\nUnlike the other three Vedas, it is more practical and addresses the needs of common people."
+    },
+    {
+      "number": 28,
+      "section": "General Awareness",
+      "section_question_number": 3,
+      "id": "6909e3af08e6e2aa8b1ffb98",
+      "passage": "",
+      "question": "Which of the following statements best defines Ghana Vadya in the context of Indian traditional music?",
+      "options": {
+        "A": "Tuned melodic instruments played with strings and bow",
+        "B": "Percussion instruments requiring precise tuning before use",
+        "C": "Solid, non-tunable instruments primarily used for rhythm in folk music",
+        "D": "Wind instruments made of bamboo or reed used in classical traditions"
+      },
+      "correct_option": "C",
+      "correct_answer": "Solid, non-tunable instruments primarily used for rhythm in folk music",
+      "solution": "The correct answer is Solid, non-tunable instruments primarily used for rhythm in folk music.\n\n📌📌 Key Points\n\nGhana Vadya refers to solid, non-tunable instruments used to produce rhythm and percussion in Indian traditional and folk music.\n\nThese instruments are primarily made of solid materials like wood, metal, or clay and are struck or shaken to create sound.\n\nUnlike other musical instruments, Ghana Vadya do not require tuning as their sound is determined by the material and shape.\n\nSome prominent examples of Ghana Vadya include kartal, manjira, ghunghroo, jal tarang, and chimta, which are widely used in folk and devotional music.\n\nGhana Vadya instruments are among the oldest types of musical instruments in India and are considered precursors to more complex percussion instruments.\n\n📌📌 Additional Information\n\nThe classification of musical instruments in Indian tradition is based on the Natyashastra by Bharat Muni, which categorizes them into four types:\n\nGhana Vadya (solid instruments), Avanaddha Vadya (membrane-covered instruments), Tat Vadya (string instruments), and Sushir Vadya (wind instruments).\n\nEach category plays a significant role in Indian classical, folk, and devotional music, contributing to the rich and diverse musical heritage of India."
+    },
+    {
+      "number": 29,
+      "section": "General Awareness",
+      "section_question_number": 4,
+      "id": "6909e3af1d2b12c536ac6cb2",
+      "passage": "",
+      "question": "Which of the following statements about sculling in swimming is correct?",
+      "options": {
+        "A": "Sculling is used only by beginners to prevent sinking.",
+        "B": "During sculling, the hands remain above the water surface.",
+        "C": "In forward sculling, the arms stay straight and positioned in front.",
+        "D": "Sculling maintains balance by moving hands under water."
+      },
+      "correct_option": "D",
+      "correct_answer": "Sculling maintains balance by moving hands under water.",
+      "solution": "The correct answer is Sculling maintains balance by moving hands under water..\n\n📌📌 Key Points\n\nSculling is a swimming technique where small, controlled hand movements are used to generate propulsion and maintain balance in the water.\n\nIt is primarily performed under the water surface by moving the hands in a figure-eight or sweeping pattern.\n\nThe primary goal of sculling is to stabilize the body and maintain proper position in the water, essential for efficient swimming.\n\nSculling improves swimming technique, allowing swimmers to refine their control, coordination, and feel for the water.\n\nThis technique is commonly used by advanced swimmers, synchronized swimmers, and water polo players for balance and positioning.\n\n📌📌 Additional Information\n\nKey Indian swimmers include:\n\nSrihari Nataraj, a record-holder in multiple events and Olympic qualifier;\n\nSajan Prakash, the first Indian swimmer with a direct Olympic qualification; and\n\nDhinidhi Desinghu, a young sensation and Olympic participant.\n\nOther prominent names are Virdhawal Khade, an Olympian and former national champion, and Shikha Tandon, a respected female swimmer, alongside Para-swimmer Vishwas K.S."
+    },
+    {
+      "number": 30,
+      "section": "General Awareness",
+      "section_question_number": 5,
+      "id": "6909e3b05414173cf6028772",
+      "passage": "",
+      "question": "Who became India&#39;s first Asian Games gold medallist by winning the 100m freestyle swimming event at New Delhi in 1951?",
+      "options": {
+        "A": "Johnny Weissmuller",
+        "B": "Arjun Singh",
+        "C": "Mihir Sen",
+        "D": "Sachin Nag"
+      },
+      "correct_option": "D",
+      "correct_answer": "Sachin Nag",
+      "solution": "The correct answer is Sachin Nag.\n\n📌📌 Key Points\n\nSachin Nag became India's first Asian Games gold medallist by winning the 100m freestyle swimming event during the inaugural Asian Games held in New Delhi in 1951.\n\nHe was a prominent swimmer and water polo player from India, known for his significant contribution to Indian aquatic sports.\n\nAt the 1951 Asian Games, Sachin Nag’s victory was a historic moment as it marked India's maiden gold medal at the continental event.\n\nHis achievement laid the foundation for India’s future success in swimming and other aquatic events.\n\nThe 1951 Asian Games was the first edition of the multi-sport event conducted by the Asian Games Federation, and it was hosted by India in New Delhi.\n\n📌📌 Additional Information\n\nJohnny Weissmuller\n\nJohnny Weissmuller was an American swimmer and actor known for his role as Tarzan in Hollywood films.\n\nHe won five Olympic gold medals in swimming during the 1924 and 1928 Olympic Games.\n\nWeissmuller is not associated with Indian swimming or the Asian Games.\n\nArjun Singh\n\nThere is no record of Arjun Singh being associated with swimming or winning any medal at the Asian Games.\n\nThe name might be linked to other notable Indian personalities in politics or other fields but is unrelated to this context.\n\nMihir Sen\n\nMihir Sen was a renowned Indian long-distance swimmer, famous for crossing the English Channel in 1958.\n\nHe was the first Indian and the first Asian to achieve this feat.\n\nAlthough a celebrated swimmer, Mihir Sen’s accomplishments came after the 1951 Asian Games and were focused on long-distance swimming rather than competitive events like the 100m freestyle."
+    },
+    {
+      "number": 31,
+      "section": "General Awareness",
+      "section_question_number": 6,
+      "id": "6909e3b069d3c26083297959",
+      "passage": "",
+      "question": "How did Raja Rammohan Roy contribute to the movement against the practice of Sati in early 19th-century Bengal?",
+      "options": {
+        "A": "He organized armed protests in Bengal villages",
+        "B": "He issued government ordinances against orthodox leaders",
+        "C": "He campaigned using newspapers and engaged in debates",
+        "D": "He formed alliances with British Christian missionaries"
+      },
+      "correct_option": "C",
+      "correct_answer": "He campaigned using newspapers and engaged in debates",
+      "solution": "The correct answer is He campaigned using newspapers and engaged in debates.\n\n📌📌 Key Points\n\nRaja Rammohan Roy played a pivotal role in abolishing the practice of Sati (widow immolation) during the early 19th century in Bengal.\n\nHe used newspapers and journals such as ‘Sambad Kaumudi’ to educate the masses and highlight the evils of Sati.\n\nRammohan Roy engaged in debates and dialogues with orthodox Hindu leaders and British officials, advocating for social reform and raising awareness about the cruelty and religious misinterpretation related to Sati.\n\nHe presented reasoned arguments and petitions to the British government, which culminated in the Sati Regulation Act of 1829 under Governor-General Lord William Bentinck.\n\nHis efforts were instrumental in fostering a progressive mindset in society, paving the way for the eradication of practices rooted in superstition.\n\n📌📌 Additional Information\n\nAbolition of Sati\n\nThe practice of Sati involved the immolation of widows on the funeral pyres of their husbands, and it was deeply rooted in societal and religious traditions in India.\n\nRammohan Roy’s efforts played a crucial role in the enactment of the Sati Regulation Act of 1829, which prohibited the practice and made it illegal.\n\nHis work is considered a landmark in the history of social reform in India, symbolizing the shift towards modernity and human rights."
+    },
+    {
+      "number": 32,
+      "section": "General Awareness",
+      "section_question_number": 7,
+      "id": "6909e3b09002b79a1f1eeadb",
+      "passage": "",
+      "question": "Where was the 11th edition of the India-Bangladesh joint military exercise SAMPRITI-XI conducted in 2023?",
+      "options": {
+        "A": "Jaisalmer, Rajasthan",
+        "B": "Siliguri, West Bengal",
+        "C": "Umroi, Meghalaya",
+        "D": "Guwahati, Assam"
+      },
+      "correct_option": "C",
+      "correct_answer": "Umroi, Meghalaya",
+      "solution": "The correct answer is Umroi, Meghalaya.\n\n📌📌 Key Points\n\nThe 11th edition of the India-Bangladesh joint military exercise SAMPRITI-XI was conducted in Umroi, Meghalaya, in 2023.\n\nSAMPRITI is an annual bilateral military exercise between the Indian Army and the Bangladesh Army, aimed at enhancing cooperation and mutual understanding.\n\nThe exercise focuses on counter-terrorism operations, humanitarian assistance, and disaster relief in a simulated environment.\n\nIt aims to strengthen the friendship and bilateral relations between the two countries while fostering interoperability and coordination.\n\nTroops from both nations participated in joint training sessions, including field exercises, cultural exchanges, and discussions on military strategies.\n\n📌📌 Additional Information\n\nIndia-Bangladesh Military Exercise (SAMPRITI)\n\nSAMPRITI is a joint military exercise conducted annually between the armed forces of India and Bangladesh.\n\nIt serves as a platform for both nations to share their experiences, strategies, and best practices in conducting military operations.\n\nThe exercise focuses on enhancing defense cooperation and maintaining regional peace and security in South Asia.\n\nSAMPRITI also highlights the commitment of both nations toward combating terrorism and addressing disaster management challenges collaboratively."
+    },
+    {
+      "number": 33,
+      "section": "General Awareness",
+      "section_question_number": 8,
+      "id": "6909e3b11d2b12c536ac6cba",
+      "passage": "",
+      "question": "Which historical figure is the Santosh Trophy, launched in 1941, named after?",
+      "options": {
+        "A": "Sir Manmatha Nath Roy Chowdhury",
+        "B": "Sir Henry Mortimer Durand",
+        "C": "Syed Abdul Rahim",
+        "D": "Sailen Manna"
+      },
+      "correct_option": "A",
+      "correct_answer": "Sir Manmatha Nath Roy Chowdhury",
+      "solution": "The correct answer is Sir Manmatha Nath Roy Chowdhury.\n\n📌📌 Key Points\n\nThe Santosh Trophy, launched in 1941, is named after Sir Manmatha Nath Roy Chowdhury, the Maharaja of Santosh, a region in present-day Bangladesh.\n\nSir Manmatha Nath Roy Chowdhury was an eminent personality known for his contributions to Indian football and his patronage of sports.\n\nThe Santosh Trophy is an annual Indian football tournament contested by states and government institutions.\n\nIt was originally organized to promote football at the grassroots level and is considered one of the most prestigious state-level competitions in India.\n\nInitially, the tournament featured teams representing various states in India, encouraging regional talent to compete and gain recognition.\n\n📌📌 Additional Information\n\nSir Henry Mortimer Durand:\n\nHe was a British diplomat and civil servant, best known for the Durand Line Agreement of 1893, which established the border between British India and Afghanistan.\n\nThe Durand Line remains a significant geopolitical boundary between modern-day Pakistan and Afghanistan.\n\nHe played no role in Indian football or sports development, making this option unrelated to the Santosh Trophy.\n\nSyed Abdul Rahim:\n\nSyed Abdul Rahim was an iconic Indian football coach and manager who led the Indian national team during its golden era in the 1950s and 1960s.\n\nUnder his guidance, India won the 1951 and 1962 Asian Games gold medals in football.\n\nAlthough he made significant contributions to Indian football, the Santosh Trophy was not named after him.\n\nSailen Manna:\n\nSailen Manna was a legendary Indian footballer and captain of the national team in the 1950s.\n\nHe is regarded as one of the finest defenders in Indian football history and was awarded the Padma Shri for his contributions to the sport."
+    },
+    {
+      "number": 34,
+      "section": "General Awareness",
+      "section_question_number": 9,
+      "id": "6909e3b1f579995fc0aa3a10",
+      "passage": "",
+      "question": "Read the below statements marked as Assertion (A) and Reason (R). Mark the correct options:\n\nAssertion (A): The Moor's Last Sigh is acclaimed for its intricate narrative that blends historical events with magical realism to explore Indian identity and politics.\n\nReason (R): The novel won the Booker Prize for its innovative storytelling and profound cultural insights.",
+      "options": {
+        "A": "Both A and R are true, and R is the correct explanation of A.",
+        "B": "Both A and R are true, but R is not the correct explanation of A.",
+        "C": "A is true, but R is false.",
+        "D": "A is false, but R is true."
+      },
+      "correct_option": "C",
+      "correct_answer": "A is true, but R is false.",
+      "solution": "The correct answer is 3) A is true, but R is false..\n\n📌📌 Key Points\n\nAssertion (A): \"The Moor's Last Sigh\" is indeed acclaimed for its intricate narrative that blends historical events with magical realism to explore Indian identity and politics.\n\nThe novel was written by Salman Rushdie and published in 1995.\n\nIt is a multi-generational family saga infused with elements of magical realism, addressing themes like politics, history, art, and identity.\n\nReason (R): The statement claiming that the novel won the Booker Prize is false.\n\nAlthough Salman Rushdie is a Booker Prize-winning author (for \"Midnight's Children\" in 1981), \"The Moor's Last Sigh\" did not win the Booker Prize.\n\nHence, while the assertion is true, the reason provided is false, making option 3 the correct answer.\n\n📌📌 Additional Information\n\nKey Novels of Salman Rushdie:\n\nMidnight's Children (1981): A landmark of magical realism, exploring post-colonial India through a child born at the moment of independence.\n\nShame (1983): A satirical look at Pakistan and the nature of shame.\n\nThe Satanic Verses (1988): His most famous and controversial work, leading to a fatwa and extensive international debate.\n\nShalimar the Clown (2006): Focuses on terrorism and Kashmir.\n\nThe Golden House (2017): Explores the immigrant experience in America.\n\nQuichotte (2019): A modern reimagining of Don Quixote."
+    },
+    {
+      "number": 35,
+      "section": "General Awareness",
+      "section_question_number": 10,
+      "id": "6909e3b1335dea9be42ab8e4",
+      "passage": "",
+      "question": "Who launched the Bharatpol portal?",
+      "options": {
+        "A": "Amit Shah",
+        "B": "Narendra Modi",
+        "C": "Droupadi Murmu",
+        "D": "Ashwini Vaishnaw"
+      },
+      "correct_option": "A",
+      "correct_answer": "Amit Shah",
+      "solution": "The correct answer is Amit Shah.\n\n📌📌 Key Points\n\nThe Bharatpol portal was launched by Amit Shah, the Union Minister of Home Affairs, to enhance the efficiency of police services across India.\n\nThis portal aims to strengthen the coordination among police departments of different states and union territories.\n\nIt is designed to provide a centralized database of criminals, missing persons, and stolen property, facilitating better communication and tracking.\n\nThe initiative is part of the broader goal of modernizing and digitizing the police system under the Smart Policing concept.\n\nThe portal integrates technology like artificial intelligence and machine learning for predictive analysis and crime prevention.\n\n📌📌 Additional Information\n\nNarendra Modi\n\nPM Narendra Modi is known for launching key national initiatives like Digital India, Swachh Bharat Abhiyan, and Ayushman Bharat.\n\nHe has been instrumental in policy reforms aimed at economic growth and technological advancements in India.\n\nMany initiatives under his leadership have promoted e-governance and digital infrastructure across sectors.\n\nDroupadi Murmu\n\nDroupadi Murmu is the current President of India, serving as the first tribal woman to hold the office of President.\n\nShe focuses on social welfare and upliftment of marginalized communities.\n\nAlthough she hasn’t launched the Bharatpol portal, her leadership symbolizes inclusivity and representation of tribal voices in governance.\n\nAshwini Vaishnaw\n\nAshwini Vaishnaw is the Minister for Railways, Communications, and Electronics & IT.\n\nHe has spearheaded projects like 5G rollout in India and modernization of the Indian Railways.\n\nHis work primarily focuses on technological advancements in infrastructure and communication but does not involve police reforms or portals like Bharatpol."
+    },
+    {
+      "number": 36,
+      "section": "General Awareness",
+      "section_question_number": 11,
+      "id": "6909e3b2d9de8466e62c0b1f",
+      "passage": "",
+      "question": "What is the primary cause of convectional rainfall?",
+      "options": {
+        "A": "Cold fronts meeting warm air",
+        "B": "Mountains forcing air to rise",
+        "C": "Heating of air that rises and cools",
+        "D": "Moist air from polar regions"
+      },
+      "correct_option": "C",
+      "correct_answer": "Heating of air that rises and cools",
+      "solution": "The correct answer is Heating of air that rises and cools.\n\n📌📌 Key Points\n\nConvectional rainfall occurs due to the intense heating of the Earth's surface, which causes the air above it to rise.\n\nAs the warm air rises, it expands and cools due to lower atmospheric pressure at higher altitudes.\n\nThe cooling of the rising air leads to the condensation of water vapor present in it, resulting in the formation of clouds.\n\nOnce the clouds become saturated, they release moisture in the form of rainfall, which is termed convectional rainfall.\n\nThis type of rainfall is most common in regions near the equator, such as tropical areas, where the sun's heat is intense year-round.\n\n📌📌 Additional Information\n\nCold fronts meeting warm air\n\nThis phenomenon typically leads to frontal rainfall, not convectional rainfall.\n\nFrontal rainfall occurs when a cold air mass meets a warm air mass, causing the warm air to rise over the cold air, leading to condensation and precipitation.\n\nThis type of rainfall is common in temperate regions and is often associated with cyclonic weather systems.\n\nMountains forcing air to rise\n\nThis process results in orographic or relief rainfall, not convectional rainfall.\n\nWhen moist air is forced to ascend over mountain ranges, it cools and condenses, leading to rainfall on the windward side of the mountains.\n\nThe leeward side, also known as the rain shadow region, typically experiences dry conditions.\n\nMoist air from polar regions\n\nMoist air from polar regions is not associated with convectional rainfall.\n\nInstead, it plays a role in polar climates, where precipitation is typically in the form of snow rather than rain.\n\nPolar regions experience low precipitation levels due to the cold temperatures and limited moisture in the air."
+    },
+    {
+      "number": 37,
+      "section": "General Awareness",
+      "section_question_number": 12,
+      "id": "6909e3b25f28061c8973ce7b",
+      "passage": "",
+      "question": "Which of the following best explains how mineral deposits influence population distribution?",
+      "options": {
+        "A": "They improve soil fertility",
+        "B": "They reduce need for employment",
+        "C": "They attract industries and create jobs",
+        "D": "They lead to deforestation only"
+      },
+      "correct_option": "C",
+      "correct_answer": "They attract industries and create jobs",
+      "solution": "The correct answer is They attract industries and create jobs.\n\n📌📌 Key Points\n\nMineral deposits are often found in specific geographic locations, which leads to industrial development in those areas to extract and process these resources.\n\nIndustries that utilize mineral resources, such as mining, metallurgy, and manufacturing, create a significant number of job opportunities, attracting workers and their families to live nearby.\n\nThe presence of mineral resources stimulates the local economy, leading to the development of infrastructure such as roads, schools, and healthcare facilities, which further encourages population growth.\n\nRegions rich in minerals often experience urbanization as industries and ancillary services grow, leading to higher population densities in these areas.\n\nExamples include cities like Jamshedpur in India, which developed around the steel industry due to the availability of iron ore in the region.\n\n📌📌 Additional Information\n\nRole of Mineral Deposits:\n\nMineral deposits are crucial for economic development and the industrialization of regions.\n\nThey attract investment, industries, and workforce, leading to urbanization and population growth around mining and industrial hubs.\n\nHowever, their extraction and processing must be managed sustainably to minimize environmental degradation and ensure long-term benefits for society."
+    },
+    {
+      "number": 38,
+      "section": "General Awareness",
+      "section_question_number": 13,
+      "id": "6909e3b3d9de8466e62c0b23",
+      "passage": "",
+      "question": "Which of the following statement accurately reflects the relationship between demographic transition and replacement level?",
+      "options": {
+        "A": "In the third stage, fertility begins to approach replacement level",
+        "B": "Population stabilization occurs when fertility rate drops below replacement level",
+        "C": "The transition from high growth to low growth aligns with reaching replacement level",
+        "D": "Replacement level is unrelated to demographic transition"
+      },
+      "correct_option": "C",
+      "correct_answer": "The transition from high growth to low growth aligns with reaching replacement level",
+      "solution": "The correct answer is The transition from high growth to low growth aligns with reaching replacement level.\n\n📌📌 Key Points\n\nDemographic transition refers to the process of change in a society's population from high fertility and mortality rates to low fertility and mortality rates, typically in four stages.\n\nIn the demographic transition model, the shift from high population growth to low growth (Stage 3 to Stage 4) is associated with fertility rates reaching replacement level fertility.\n\nReplacement level fertility is the average number of children per woman needed to maintain a stable population, which is approximately 2.1 in most developed countries.\n\nDuring Stage 3, fertility rates decline significantly due to increased access to education, family planning, and economic changes, leading to population stabilization in Stage 4.\n\nThe alignment of demographic transition with replacement level fertility indicates the balance between births and deaths, ensuring sustainable population growth.\n\n📌📌 Additional Information\n\nSocioeconomic factors influencing demographic transition:\n\nEconomic Development & Industrialization: Shifts from agrarian to industrial/service economies increase costs of raising children, reducing family size, and create demand for educated labor.\n\nEducation: Higher education, especially for women, correlates with later childbearing, increased family planning knowledge, and lower fertility rates.\n\nUrbanization: Migration to cities for opportunities changes family dynamics and exposes people to new norms, often leading to smaller families.\n\nIncome Levels: Increased wealth and job opportunities often lead to delayed marriage and childbearing."
+    },
+    {
+      "number": 39,
+      "section": "General Awareness",
+      "section_question_number": 14,
+      "id": "6909e3b3c84844ac6d413bdc",
+      "passage": "",
+      "question": "Why is the NISAR (NASA-ISRO Synthetic Aperture Radar) mission designed to revisit the same location every 12 days?",
+      "options": {
+        "A": "To support low-earth orbit operations at reduced altitude",
+        "B": "To enable cost-efficient satellite passes through optimized fuel consumption",
+        "C": "To ensure consistent caching of data before transmission to ground stations",
+        "D": "To achieve temporal resolution for global coverage and land deformation monitoring"
+      },
+      "correct_option": "D",
+      "correct_answer": "To achieve temporal resolution for global coverage and land deformation monitoring",
+      "solution": "The correct answer is To achieve temporal resolution for global coverage and land deformation monitoring.\n\n📌📌 Key Points\n\nThe NISAR mission is jointly developed by NASA and ISRO to provide high-resolution radar imaging that supports monitoring of Earth's surface changes, including land deformation, ice dynamics, and ecosystem disturbances.\n\nThe Synthetic Aperture Radar (SAR) on NISAR allows precise measurements and monitoring of surface changes by achieving temporal resolution through revisiting the same location every 12 days.\n\nRevisiting the same location ensures consistent monitoring of dynamic phenomena such as earthquakes, landslides, and glacier movements, contributing to disaster preparedness and response.\n\nThe 12-day revisit cycle enables global coverage while maintaining a balance between high spatial resolution and temporal frequency, critical for analyzing long-term environmental and climatic patterns.\n\nNISAR's ability to monitor land deformation and surface changes supports applications in agriculture, forestry, hydrology, and urban planning, making it a valuable tool for scientific and societal benefits.\n\n📌📌 Additional Information\n\nSynthetic Aperture Radar (SAR) Technology\n\nSAR technology uses radar signals to create high-resolution images of Earth's surface, regardless of weather conditions or time of day.\n\nNISAR is equipped with dual-frequency SAR systems (L-band and S-band), enabling detailed imaging of natural and man-made features.\n\nThis cutting-edge technology is crucial for monitoring Earth's dynamic processes, including environmental changes, disaster management, and resource planning."
+    },
+    {
+      "number": 40,
+      "section": "General Awareness",
+      "section_question_number": 15,
+      "id": "6909e3b469d3c26083297ad8",
+      "passage": "",
+      "question": "Which biomolecule acts as the primary energy storage in animals?",
+      "options": {
+        "A": "Glycogen",
+        "B": "Starch",
+        "C": "Cellulose",
+        "D": "Sucrose"
+      },
+      "correct_option": "A",
+      "correct_answer": "Glycogen",
+      "solution": "The correct answer is Glycogen.\n\n📌📌 Key Points\n\nGlycogen is the primary energy storage molecule in animals, particularly in the liver and muscles.\n\nIt is a polysaccharide made up of glucose monomers linked together by alpha-1,4-glycosidic bonds with branching via alpha-1,6-glycosidic bonds.\n\nGlycogen serves as a readily mobilizable source of glucose to meet energy needs during periods of fasting or intense physical activity.\n\nThe process of glycogen synthesis is called glycogenesis, while its breakdown is known as glycogenolysis.\n\nIn humans, the liver stores approximately 100 grams of glycogen, while muscles store about 400 grams, providing energy for metabolic processes.\n\n📌📌 Additional Information\n\nStarch\n\nStarch is the primary energy storage polysaccharide in plants, not animals.\n\nIt is composed of two molecules: amylose (linear chains of glucose) and amylopectin (branched chains of glucose).\n\nHumans and animals can digest starch by breaking it down into glucose with the help of the enzyme amylase.\n\nStarch is found in foods like potatoes, rice, wheat, and corn.\n\nCellulose\n\nCellulose is a structural polysaccharide found in the cell walls of plants, providing strength and rigidity.\n\nIt is composed of glucose monomers linked by beta-1,4-glycosidic bonds, making it indigestible for humans due to the lack of the enzyme cellulase.\n\nIt is a major component of dietary fiber, which aids in digestion and maintains gut health.\n\nSucrose\n\nSucrose is a disaccharide composed of one glucose and one fructose molecule, commonly known as table sugar.\n\nIt is used as a quick source of energy and is found naturally in fruits, vegetables, and sugarcane.\n\nSucrose is not a storage molecule but rather a transport molecule in plants."
+    },
+    {
+      "number": 41,
+      "section": "General Awareness",
+      "section_question_number": 16,
+      "id": "6909e3b4ad99a41aa37b4ec7",
+      "passage": "",
+      "question": "Under Article 262 of the Indian Constitution, which of the following interpretations most accurately reflects Parliament&#39;s authority regarding inter-State water disputes?",
+      "options": {
+        "A": "Legislate on river navigation but not bar SC jurisdiction",
+        "B": "Set up tribunals for water disputes and bar SC review",
+        "C": "Abolish State-level water bodies permanently",
+        "D": "Mandate ISC mediation before court action"
+      },
+      "correct_option": "B",
+      "correct_answer": "Set up tribunals for water disputes and bar SC review",
+      "solution": "The correct answer is Set up tribunals for water disputes and bar SC review.\n\n📌📌 Key Points\n\nUnder Article 262 of the Indian Constitution, Parliament has the authority to legislate for the adjudication of inter-State water disputes.\n\nThe provision explicitly allows Parliament to bar the jurisdiction of the Supreme Court or any other court in such disputes by creating specialized mechanisms like tribunals.\n\nIn accordance with Article 262, the Inter-State River Water Disputes Act (1956) was enacted, which empowers the Union Government to establish tribunals for resolving inter-State water disputes.\n\nTribunals constituted under this act are the highest authority for adjudicating water disputes, with no provision for judicial review by the Supreme Court to ensure quicker resolution.\n\nThe purpose of this constitutional arrangement is to avoid legal delays and ensure impartial resolution of disputes through a focused mechanism.\n\n📌📌 Additional Information\n\nInter-State Water Disputes\n\nInter-State water disputes arise when States disagree over sharing, usage, or control of river waters flowing across their boundaries.\n\nArticle 262 of the Constitution provides a framework for resolving these disputes through legislation and tribunals.\n\nSuch disputes are handled under the Inter-State River Water Disputes Act, ensuring legal and administrative mechanisms for resolution without judicial delays."
+    },
+    {
+      "number": 42,
+      "section": "General Awareness",
+      "section_question_number": 17,
+      "id": "6909e3b57c884af8f7091e6a",
+      "passage": "",
+      "question": "A person standing on a railway platform notices that the sound of an approaching train&#39;s whistle changes in pitch (frequency) as the train passes by. This phenomenon is best explained by:",
+      "options": {
+        "A": "Refraction of sound",
+        "B": "Diffraction of sound",
+        "C": "Doppler effect",
+        "D": "Resonance"
+      },
+      "correct_option": "C",
+      "correct_answer": "Doppler effect",
+      "solution": "The correct answer is Doppler effect.\n\n📌📌 Key Points\n\nThe Doppler effect is the change in the frequency or wavelength of a wave concerning an observer moving relative to the wave source.\n\nIt occurs for all types of waves, including sound, light, and water waves, and is commonly experienced in the case of sound waves.\n\nIn the given scenario, as the train approaches, the sound waves compress, causing an increase in frequency (higher pitch), and as it moves away, the sound waves spread out, causing a decrease in frequency (lower pitch).\n\nThe mathematical expression for the Doppler effect in sound is given by: f' = f(v + vo) / (v + vs), where f' is the observed frequency, f is the source frequency, v is the speed of sound, vo is the observer’s velocity, and vs is the source velocity.\n\nThis phenomenon has practical applications in various fields, such as astronomy (to study the motion of stars and galaxies), radar technology, and medical imaging (Doppler ultrasound).\n\n📌📌 Additional Information\n\nRefraction of Sound\n\nRefraction refers to the bending of sound waves as they pass from one medium to another, where the speed of sound differs.\n\nFor instance, sound waves bend towards cooler regions where the speed of sound is slower.\n\nWhile refraction affects the propagation direction of sound, it does not explain the change in pitch observed in the given scenario.\n\nDiffraction of Sound\n\nDiffraction is the bending of sound waves around obstacles or through openings.\n\nIt allows sound to be heard even when the source is not in the direct line of sight.\n\nThis phenomenon is unrelated to the change in frequency or pitch caused by relative motion between the source and observer.\n\nResonance\n\nResonance occurs when an object vibrates at its natural frequency due to an external force of the same frequency.\n\nThis results in a significant increase in amplitude, as seen in musical instruments or structures like bridges.\n\nResonance does not explain the change in pitch when the train passes by, as it is unrelated to relative motion or frequency shifts."
+    },
+    {
+      "number": 43,
+      "section": "General Awareness",
+      "section_question_number": 18,
+      "id": "6909e3b5bf3b74d68bc1bbc9",
+      "passage": "",
+      "question": "The Bharatiya Nyaya Samhita (BNS) now explicitly defines and criminalizes &#39;organized crime&#39; and &#39;petty organized crime&#39;. Which of the following is an example of an offense that might fall under &#39;petty organized crime&#39; under Bharatiya Nyaya Samhita(BNS)?",
+      "options": {
+        "A": "Terrorist Act",
+        "B": "Large-scale Drug Trafficking",
+        "C": "Theft committed by a gang",
+        "D": "Murder for hire"
+      },
+      "correct_option": "C",
+      "correct_answer": "Theft committed by a gang",
+      "solution": "The correct answer is Theft committed by a gang.\n\n📌📌 Key Points\n\nThe Bharatiya Nyaya Samhita (BNS) explicitly defines 'organized crime' and 'petty organized crime' to address offenses committed systematically by groups.\n\nPetty organized crime refers to smaller-scale, less severe offenses carried out by a group, such as theft or burglary committed by a gang.\n\nThe focus is on crimes involving collaboration between multiple individuals, even if the financial or physical damage is relatively minor.\n\nThe inclusion of 'petty organized crime' under BNS ensures that such offenses are penalized and deterred effectively.\n\nThis categorization aims to tackle the growing threat posed by organized criminal behavior, including minor offenses, thereby maintaining law and order.\n\n📌📌 Additional Information\n\nBharatiya Nyaya Samhita (BNS)\n\nThe BNS is the proposed replacement for the Indian Penal Code (IPC) to address contemporary challenges in criminal justice.\n\nIt introduces modern definitions and classifications of crimes, including 'organized crime' and 'petty organized crime'.\n\nThe framework aims to simplify and enhance the efficiency of the Indian criminal justice system."
+    },
+    {
+      "number": 44,
+      "section": "General Awareness",
+      "section_question_number": 19,
+      "id": "6909e3b6ad853d4240782c98",
+      "passage": "",
+      "question": "Which of these schemes is implemented to promote organic farming?",
+      "options": {
+        "A": "PM-KMY (Pradhan Mantri Kisan Maandhan Yojana)",
+        "B": "PKVY (Paramparagat Krishi Vikas Yojana)",
+        "C": "SHC (Soil Health Card Scheme)",
+        "D": "ATMA (Agricultural Technology Management Agency)"
+      },
+      "correct_option": "B",
+      "correct_answer": "PKVY (Paramparagat Krishi Vikas Yojana)",
+      "solution": "The correct answer is Paramparagat Krishi Vikas Yojana (PKVY).\n\n📌📌 Key Points\n\nParamparagat Krishi Vikas Yojana (PKVY) is a sub-component of the Soil Health Management (SHM) scheme under the National Mission of Sustainable Agriculture (NMSA).\n\nThe scheme was launched in 2015 to promote organic farming and improve soil health by reducing the dependence on chemical fertilizers and pesticides.\n\nPKVY helps farmers adopt organic farming practices such as the use of bio-fertilizers, vermicomposting, and traditional techniques to improve crop productivity sustainably.\n\nUnder the scheme, farmers are incentivized to form clusters of 20 hectares to take up organic farming collectively, thereby reducing input costs and improving yields.\n\nThe scheme also focuses on creating market linkages for organic produce, promoting Participatory Guarantee Systems (PGS), and assisting farmers in getting organic certification.\n\n📌📌 Additional Information\n\nPradhan Mantri Kisan Maandhan Yojana (PM-KMY)\n\nPM-KMY is a pension scheme introduced in 2019 for small and marginal farmers.\n\nFarmers aged between 18 and 40 years can enroll in this scheme, contributing a small monthly premium based on their age.\n\nOn attaining the age of 60, enrolled farmers receive a minimum fixed pension of Rs. 3,000 per month.\n\nThe scheme aims to provide social security to farmers after their retirement.\n\nSoil Health Card Scheme (SHC)\n\nThe Soil Health Card Scheme was launched by the Government of India in 2015 to promote soil testing and balanced use of fertilizers.\n\nUnder this scheme, farmers receive soil health cards containing detailed information about the nutrient content of their soil.\n\nThe cards provide recommendations on the type and quantity of fertilizers required to improve soil health and crop productivity.\n\nThe scheme aims to reduce overuse of fertilizers, increase crop yields, and improve soil fertility.\n\nAgricultural Technology Management Agency (ATMA)\n\nATMA is a central sector scheme launched in 2005 as part of the National Mission on Agricultural Extension and Technology (NMAET).\n\nIt aims to strengthen extension services by integrating research and extension activities at the district level.\n\nATMA focuses on capacity-building, training, and dissemination of technology to farmers through Farmer Field Schools (FFS) and demonstrations.\n\nThe scheme emphasizes participatory and bottom-up planning for agricultural development."
+    },
+    {
+      "number": 45,
+      "section": "General Awareness",
+      "section_question_number": 20,
+      "id": "6909e3b669d3c26083297adf",
+      "passage": "",
+      "question": "Read the below statements marked as Assertion (A) and Reason (R). Mark the correct options:\n\nAssertion (A): The National Single Window System (NSWS) supports investor clearances.\n\nReason (R) : It works as a separate ministry.",
+      "options": {
+        "A": "Both A and R are true, and R is the correct explanation of A",
+        "B": "Both A and R are true, but R is not the correct explanation of A",
+        "C": "A is true, but R is false",
+        "D": "A is false, but R is true"
+      },
+      "correct_option": "C",
+      "correct_answer": "A is true, but R is false",
+      "solution": "The correct answer is A is true, but R is false.\n\n📌📌 Key Points\n\nThe National Single Window System (NSWS) is an initiative by the Government of India that facilitates investors in obtaining clearances and approvals from various departments and ministries.\n\nThe NSWS is designed to reduce bureaucratic hurdles and enhance the ease of doing business in India by providing a centralized platform.\n\nIt integrates multiple government systems and services across Ministries and States, providing a single interface for businesses.\n\nThe system includes a common registration form, document repository, and a dashboard for real-time tracking of approvals and clearances.\n\nContrary to the Reason (R) in the question, the NSWS is not a separate ministry. Instead, it operates under the Department for Promotion of Industry and Internal Trade (DPIIT) within the Ministry of Commerce and Industry.\n\n📌📌 Additional Information\n\nNational Single Window System (NSWS)\n\nThe NSWS is a digital platform that provides guidance for investors to identify and apply for approvals as per their business requirements.\n\nIt aims to reduce the compliance burden on businesses and increase transparency and accountability in government processes.\n\nThe platform is designed to cater to both domestic and global investors, promoting India as a business-friendly destination.\n\nThe Department for Promotion of Industry and Internal Trade (DPIIT)\n\nThe DPIIT is a central government department under the Ministry of Commerce and Industry.\n\nIt is responsible for formulating and implementing promotional and developmental measures for industrial growth in India.\n\nThe NSWS is one of the key initiatives under DPIIT to improve ease of doing business.\n\nEase of Doing Business in India\n\nIndia has made significant improvements in the World Bank's Ease of Doing Business rankings over the years, thanks to initiatives like the NSWS.\n\nThese reforms aim to simplify regulatory processes, digitize services, and provide a conducive environment for businesses to thrive."
+    },
+    {
+      "number": 46,
+      "section": "General Awareness",
+      "section_question_number": 21,
+      "id": "6909e3b669d3c26083297ae3",
+      "passage": "",
+      "question": "Based on the 2024 Travel and Tourism Development Index (TTDI), which of the following best describes global trends in tourism development conditions?",
+      "options": {
+        "A": "Low-income countries dominate the top 30 scorers",
+        "B": "Most of the top 30 TTDI scorers are high-income economies from Europe and Asia-Pacific",
+        "C": "The Americas and MENA account for more than half of the top 30 rankings",
+        "D": "Developing economies have surpassed high-income countries in tourism infrastructure"
+      },
+      "correct_option": "B",
+      "correct_answer": "Most of the top 30 TTDI scorers are high-income economies from Europe and Asia-Pacific",
+      "solution": "The correct answer is Most of the top 30 TTDI scorers are high-income economies from Europe and Asia-Pacific.\n\n📌📌 Key Points\n\nThe 2024 Travel and Tourism Development Index (TTDI) highlights the dominance of high-income economies from Europe and the Asia-Pacific region among the top 30 scorers.\n\nDeveloped nations such as Japan, the United States, and several European countries consistently rank high due to their superior infrastructure, safety, and sustainability measures.\n\nThe TTDI assesses countries on various parameters, including business environment, safety, health, infrastructure, and natural resources.\n\nEurope remains a strong performer, with many of its high-income nations being global leaders in areas such as tourism infrastructure and cultural resources.\n\nThe Asia-Pacific region, led by countries like Japan and Singapore, has been recognized for its high-quality infrastructure and focus on sustainable tourism practices.\n\n📌📌 Additional Information\n\nThe Travel and Tourism Development Index (TTDI)\n\nThe TTDI is a global benchmark developed by the World Economic Forum to assess travel and tourism development conditions across countries.\n\nThe index evaluates factors such as enabling environment, travel and tourism policy, and infrastructure to measure how countries perform in fostering sustainable tourism development.\n\nThe TTDI is an essential tool for policymakers and stakeholders in identifying strengths and areas for improvement in their tourism sectors."
+    },
+    {
+      "number": 47,
+      "section": "General Awareness",
+      "section_question_number": 22,
+      "id": "6909e3b70a8cbed3734a9ee2",
+      "passage": "",
+      "question": "The Aravalli Green Wall Project launched in 2023 aims to achieve which of the following?",
+      "options": {
+        "A": "Afforestation in Himalayan states",
+        "B": "Building forest corridors across Indo-Gangetic plains",
+        "C": "Restoration of degraded forest patches in Aravalli range",
+        "D": "Soil carbon sequestration in desert zones"
+      },
+      "correct_option": "C",
+      "correct_answer": "Restoration of degraded forest patches in Aravalli range",
+      "solution": "The correct answer is Restoration of degraded forest patches in Aravalli range.\n\n📌📌 Key Points\n\nThe Aravalli Green Wall Project was launched in 2023 by the Ministry of Environment, Forest, and Climate Change (MoEFCC) to address environmental degradation in the Aravalli range.\n\nThe initiative focuses on restoring degraded forest lands in the Aravalli range, which spans across Haryana, Rajasthan, Gujarat, and Delhi.\n\nThe project aims to increase green cover and biodiversity in the region, thereby mitigating the adverse effects of desertification and climate change.\n\nOne of the key objectives is to create a continuous green barrier along the Aravalli range to prevent the spread of the Thar Desert and improve ecosystem services.\n\nThe project involves community participation, afforestation drives, and soil conservation measures to restore the ecological balance of the region.\n\n📌📌 Additional Information\n\nAfforestation in Himalayan States\n\nAfforestation efforts in Himalayan states focus on increasing forest cover in ecologically sensitive areas, which are crucial for mitigating climate change and preserving biodiversity.\n\nSuch initiatives aim to reduce soil erosion, improve water retention, and support local livelihoods through sustainable forest management.\n\nThese efforts are not directly linked to the Aravalli Green Wall Project, which specifically targets the Aravalli range.\n\nBuilding Forest Corridors Across Indo-Gangetic Plains\n\nForest corridors are designed to connect fragmented forest patches to facilitate wildlife movement and conserve biodiversity.\n\nWhile the Indo-Gangetic plains are an important ecological zone, this option does not pertain to the Aravalli Green Wall Project, which is limited to the Aravalli range.\n\nSoil Carbon Sequestration in Desert Zones\n\nSoil carbon sequestration refers to capturing atmospheric carbon dioxide and storing it in soil organic matter, which improves soil fertility and mitigates climate change.\n\nAlthough soil conservation is a component of the Aravalli Green Wall Project, its primary focus is on restoring forests rather than exclusively targeting desert zones for carbon sequestration.\n\nAravalli Range and Desertification\n\nThe Aravalli range acts as a natural barrier against the spread of the Thar Desert into the Indo-Gangetic plains.\n\nDeforestation and mining activities have degraded the region, increasing vulnerability to desertification and biodiversity loss.\n\nThe Aravalli Green Wall Project aims to counter these challenges by restoring forest patches and enhancing ecosystem resilience."
+    },
+    {
+      "number": 48,
+      "section": "General Awareness",
+      "section_question_number": 23,
+      "id": "6909e3b7335dea9be42ab907",
+      "passage": "",
+      "question": "Which of the following statements best defines joint sector industries?",
+      "options": {
+        "A": "They are jointly owned by the public and private sectors.",
+        "B": "They are run by village panchayats and municipalities.",
+        "C": "They are fully financed by foreign companies.",
+        "D": "They are operated only by self-help groups."
+      },
+      "correct_option": "A",
+      "correct_answer": "They are jointly owned by the public and private sectors.",
+      "solution": "The correct answer is They are jointly owned by the public and private sectors..\n\n📌📌 Key Points\n\nJoint sector industries are enterprises where ownership is shared between the government (public sector) and private entities.\n\nThe concept of joint sector industries was introduced to combine the strengths of both public and private sectors, such as government control and private sector efficiency.\n\nThese industries aim to promote economic growth, generate employment, and develop industries in underdeveloped regions.\n\nExamples of joint sector industries include companies like Oil India Ltd., where both government and private stakeholders share ownership and management responsibilities.\n\nThese industries play a vital role in bridging the gap between large-scale private monopolies and complete state control.\n\n📌📌 Additional Information\n\nBy Economic Activity (The 5-Sector Model)\n\nPrimary: Extracts or harvests natural resources (e.g., agriculture, fishing, mining, forestry).\n\nSecondary: Transforms raw materials into finished products (e.g., manufacturing, construction, food processing).\n\nTertiary: Provides intangible services (e.g., retail, healthcare, education, transportation, banking).\n\nQuaternary: Focuses on information, knowledge, and research (e.g., IT, R&D, consultancy).\n\nQuinary: Involves high-level decision-making and top executives (e.g., government, senior management, scientific research)."
+    },
+    {
+      "number": 49,
+      "section": "General Awareness",
+      "section_question_number": 24,
+      "id": "6909e3b7776b6762688b5314",
+      "passage": "",
+      "question": "Which authority decides whether a Bill is a Money Bill?",
+      "options": {
+        "A": "Finance Minister",
+        "B": "President",
+        "C": "Speaker of Lok Sabha",
+        "D": "Comptroller &amp; Auditor General"
+      },
+      "correct_option": "C",
+      "correct_answer": "Speaker of Lok Sabha",
+      "solution": "The correct answer is Speaker of Lok Sabha.\n\n📌📌 Key Points\n\nThe Speaker of Lok Sabha has the exclusive authority to decide whether a Bill is a Money Bill as per Article 110 of the Indian Constitution.\n\nA Money Bill is primarily concerned with matters such as taxation, borrowing by the government, expenditure, and financial obligations of the state.\n\nThe Speaker’s decision regarding the classification of a Bill as a Money Bill is considered final and cannot be challenged in any court.\n\nThe Money Bill can only be introduced in the Lok Sabha on the recommendation of the President, but its categorization rests with the Speaker.\n\nThe Rajya Sabha can only make recommendations on a Money Bill, and these recommendations may or may not be accepted by the Lok Sabha.\n\n📌📌 Additional Information\n\nFinance Minister\n\nThe Finance Minister is responsible for presenting the Union Budget and managing the financial affairs of the country.\n\nHowever, the Finance Minister does not have the authority to decide whether a Bill is a Money Bill.\n\nThe Finance Minister may propose the Bill, but its classification as a Money Bill is decided solely by the Speaker of Lok Sabha.\n\nPresident\n\nThe President of India has the power to recommend the introduction of a Money Bill in the Lok Sabha.\n\nBefore the introduction of a Money Bill, the recommendation of the President is mandatory under Article 110.\n\nHowever, the President does not determine whether a Bill qualifies as a Money Bill; this decision is made by the Speaker of Lok Sabha.\n\nComptroller & Auditor General (CAG)\n\nThe Comptroller & Auditor General (CAG) is responsible for auditing the accounts of the central and state governments and ensuring financial accountability.\n\nThe CAG does not play any role in determining the classification of a Bill as a Money Bill.\n\nThe CAG’s functions are limited to auditing and reporting financial irregularities, not legislative procedures.\n\n📌📌 Important Points\n\nMoney Bill\n\nA Money Bill is defined under Article 110 of the Indian Constitution. It deals exclusively with matters specified in Article 110(1), such as taxation, public expenditure, and borrowing.\n\nIt can only be introduced in Lok Sabha and requires the President's recommendation before introduction.\n\nThe Rajya Sabha cannot amend or reject a Money Bill; it can only make recommendations, which the Lok Sabha may or may not accept.\n\nThe final authority to determine whether a Bill is a Money Bill rests with the Speaker of Lok Sabha."
+    },
+    {
+      "number": 50,
+      "section": "General Awareness",
+      "section_question_number": 25,
+      "id": "6909e3b8e2777a335c2e44e7",
+      "passage": "",
+      "question": "What astronomical observation is most severely hampered by increasing levels of urban light pollution?",
+      "options": {
+        "A": "Sunspots",
+        "B": "Planetary transit",
+        "C": "Deep-sky objects",
+        "D": "Lunar phases"
+      },
+      "correct_option": "C",
+      "correct_answer": "Deep-sky objects",
+      "solution": "The correct answer is Deep-sky objects.\n\n📌📌 Key Points\n\nDeep-sky objects refer to astronomical entities such as galaxies, nebulae, star clusters, and distant celestial objects that are faint and require dark skies for observation.\n\nUrban light pollution significantly hampers the visibility of deep-sky objects by increasing the sky brightness, reducing contrast, and obscuring faint objects.\n\nLight pollution from artificial sources, such as streetlights and buildings, scatters in the atmosphere, overwhelming the faint light emitted by deep-sky objects.\n\nObserving deep-sky objects typically requires remote locations or observatories situated far from urban areas to minimize the effects of light pollution.\n\nEfforts to mitigate light pollution, including the use of shielded lighting and adherence to dark-sky standards, are crucial for preserving the visibility of deep-sky objects.\n\n📌📌 Additional Information\n\nSunspots\n\nSunspots are dark, cooler areas on the Sun's surface caused by magnetic activity that inhibits convection.\n\nObserving sunspots does not typically require dark skies, as they can be seen using solar filters or telescopes during the daytime.\n\nUrban light pollution does not significantly affect the observation of sunspots, as they are observed against the bright background of the Sun.\n\nPlanetary Transit\n\nPlanetary transit occurs when a planet passes in front of its host star, causing a temporary dip in the star's brightness.\n\nThese events are usually studied using telescopes equipped with photometers or spectrometers, and they are not as affected by light pollution as deep-sky objects.\n\nHowever, precise measurements of brightness changes may require optimal conditions, which can be influenced by urban light pollution.\n\nLunar Phases\n\nLunar phases refer to the appearance of the Moon as it orbits Earth, changing its illuminated portion visible from Earth.\n\nLight pollution has minimal impact on observing lunar phases because the Moon is bright enough to be visible even in urban environments.\n\nLunar observation is often used as an introductory activity for amateur astronomers due to its ease of visibility.\n\nLight Pollution and Astronomy\n\nLight pollution refers to the excessive and misdirected artificial light that disrupts natural darkness, impacting astronomical observations.\n\nIt reduces the visibility of faint celestial objects and interferes with professional and amateur astronomy.\n\nOrganizations like the International Dark-Sky Association (IDA) advocate for measures to reduce light pollution through responsible lighting practices."
+    },
+    {
+      "number": 51,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 1,
+      "id": "6909e3b8335dea9be42ab90c",
+      "passage": "",
+      "question": "If a = &radic;7 - &radic;3, and b = &radic;5 - &radic;2, then which of the following is true?",
+      "options": {
+        "A": "a = b",
+        "B": "a &lt; b",
+        "C": "a &gt; b",
+        "D": "Cannot be determined"
+      },
+      "correct_option": "C",
+      "correct_answer": "a &gt; b",
+      "solution": "📌📌 Shortcut Trick\n\nWe can use approximate square root values to quickly compare the two given terms.\n\n⇒ a = √7 − √3 ≈ 2.64 − 1.73 ≈ 0.91\n\n⇒ b = √5 − √2 ≈ 2.23 − 1.41 ≈ 0.82\n\nComparing the final decimal values, 0.91 > 0.82, which clearly indicates that a > b.\n\n∴ The correct answer is a > b.\n\nAlternate Method\n\nGiven:\n\na = √7 − √3\n\nb = √5 − √2\n\nCalculation:\n\nWe can accurately compare a and b by finding their reciprocals and rationalizing the denominators:\n\n⇒ 1/a = 1 / (√7 − √3)\n\n⇒ 1/a = (√7 + √3) / (7 − 3) = (√7 + √3) / 4\n\n⇒ 1/b = 1 / (√5 − √2)\n\n⇒ 1/b = (√5 + √2) / (5 − 2) = (√5 + √2) / 3\n\nNow, let us compare 1/a and 1/b by equating their denominators (LCM of 3 and 4 is 12):\n\n⇒ 1/a = 3(√7 + √3) / 12 = (√63 + √27) / 12\n\n⇒ 1/b = 4(√5 + √2) / 12 = (√80 + √32) / 12\n\nNow comparing the numerators of both fractions:\n\n⇒ Since 63 < 80, we have √63 < √80\n\n⇒ Since 27 < 32, we have √27 < √32\n\nTherefore, (√63 + √27) < (√80 + √32), which directly implies that 1/a < 1/b.\n\nSince both a and b are positive numbers, taking the reciprocal reverses the inequality sign:\n\n⇒ a > b\n\n∴ The correct answer is a > b.\n\n📌📌 Additional Information\n\nRationalization of Surds\n\nTo remove roots from the denominator, multiply both the numerator and the denominator by the conjugate of the denominator using the formula (x − y)(x + y) = x2 − y2.\n\nReciprocal Inequality Rule\n\nFor any two positive numbers x and y, if x > y, then taking their reciprocal reverses the inequality resulting in 1/x < 1/y.\n\nComparing Pure Surds\n\nWhen comparing mixed surds like a√b, move the outside coefficient inside by squaring it as √(a2b) to make comparisons entirely based on the inner radicands."
+    },
+    {
+      "number": 52,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 2,
+      "id": "6909e3b97bcbac1695066a4d",
+      "passage": "",
+      "question": "Evaluate the expression: \\((\\frac{1}{4} \\div \\frac{1}{2}) \\div (\\frac{1}{15} + 1 - \\frac{9}{10}) \\)",
+      "options": {
+        "A": "5",
+        "B": "6",
+        "C": "3",
+        "D": "2"
+      },
+      "correct_option": "C",
+      "correct_answer": "3",
+      "solution": "📌📌 Shortcut Trick\n\nFirst bracket: (1/4 ÷ 1/2) = 1/4 × 2 = 1/2\n\nSecond bracket: (1/15 + 1 − 9/10) = 2/30 + 30/30 − 27/30 = 5/30 = 1/6\n\nCombine results: 1/2 ÷ 1/6 = 1/2 × 6 = 3\n\n∴ The correct answer is 3.\n\nAlternate Method\n\nGiven:\n\nExpression: (1/4 ÷ 1/2) ÷ (1/15 + 1 − 9/10)\n\nFormula Used:\n\nBODMAS Rule: Brackets, Orders, Division, Multiplication, Addition, Subtraction.\n\nCalculations:\n\n⇒ Step 1: Solve the first bracket (1/4 ÷ 1/2)\n\n⇒ 1/4 ÷ 1/2 = 1/4 × 2/1 = 2/4 = 1/2\n\n⇒ Step 2: Solve the second bracket (1/15 + 1 − 9/10)\n\n⇒ Find the Least Common Multiple (LCM) of the denominators 15 and 10, which is 30.\n\n⇒ 1/15 = 2/30\n\n⇒ 1 = 30/30\n\n⇒ 9/10 = 27/30\n\n⇒ (2/30 + 30/30 − 27/30) = (2 + 30 − 27) / 30 = 5/30 = 1/6\n\n⇒ Step 3: Divide the result of the first bracket by the result of the second bracket\n\n⇒ 1/2 ÷ 1/6 = 1/2 × 6/1\n\n⇒ 6 / 2 = 3\n\n∴ The correct answer is 3.\n\n📌📌 Additional Information\n\nBODMAS Rule\n\nIt dictates the order of operations: Brackets first, then Orders (powers/roots), Division, Multiplication, Addition, and finally Subtraction.\n\nFraction Division\n\nTo divide by a fraction, multiply by its reciprocal: (a/b) ÷ (c/d) = (a/b) × (d/c).\n\nFraction Addition & Subtraction\n\nAlways find the LCM of the denominators to make them identical before adding or subtracting the numerators directly."
+    },
+    {
+      "number": 53,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 3,
+      "id": "6909e3b913685a39edc39197",
+      "passage": "",
+      "question": "The number of red, blue, and green marbles in a bag is in the ratio 3 : 4 : 6. If 20 red marbles, 15 blue marbles, and an unknown number of green marbles are added to the bag, the ratio of red, blue, and green marbles becomes 4 : 5 : 7. Determine the number of green marbles added.",
+      "options": {
+        "A": "3",
+        "B": "5",
+        "C": "7",
+        "D": "9"
+      },
+      "correct_option": "B",
+      "correct_answer": "5",
+      "solution": "📌📌 Shortcut Trick\n\nInitial R : B = 3 : 4 and final R : B = 4 : 5. Quantities added are +20 and +15.\nUsing cross-multiplication: 1 unit = (20 × 5 − 15 × 4) / (4 × 4 − 3 × 5) = (100 − 60) / 1 = 40.\nInitial green marbles = 6 units = 6 × 40 = 240. New red marbles = (3 × 40) + 20 = 140.\nNew red (140) equals 4 parts in final ratio. Thus, 1 final part = 140 ÷ 4 = 35.\nNew green = 7 final parts = 7 × 35 = 245. Green marbles added = 245 − 240 = 5.\n∴ The correct answer is 5.\nAlternate Method\nGiven:\nInitial ratio of red, blue, and green marbles = 3 : 4 : 6\nRed marbles added = 20, Blue marbles added = 15\nFinal ratio of red, blue, and green marbles = 4 : 5 : 7\nRatio Change of MarblesInitial Ratio3y (R)4y (B)6y (G)Added+ 20+ 15+ xFinal Ratio4 parts5 parts7 parts(3y + 20) : (4y + 15) = 4 : 5Calculations:\n⇒ Let the initial number of red, blue, and green marbles be 3y, 4y, and 6y respectively.\n⇒ After adding the marbles, new number of red marbles = 3y + 20\n⇒ New number of blue marbles = 4y + 15\n⇒ The new ratio of red to blue marbles is 4 : 5.\n⇒ (3y + 20) ÷ (4y + 15) = 4 ÷ 5\n⇒ 5 × (3y + 20) = 4 × (4y + 15)\n⇒ 15y + 100 = 16y + 60\n⇒ 16y − 15y = 100 − 60\n⇒ y = 40\n⇒ Initial number of green marbles = 6 × 40 = 240\n⇒ New number of red marbles = (3 × 40) + 20 = 140\n⇒ The final ratio of red to green marbles is 4 : 7.\n⇒ Let the new number of green marbles be G.\n⇒ 140 ÷ G = 4 ÷ 7\n⇒ 4 × G = 140 × 7\n⇒ G = 980 ÷ 4 = 245\n⇒ Number of green marbles added = New green marbles − Initial green marbles\n⇒ Green marbles added = 245 − 240 = 5\n∴ The correct answer is 5.\n\n📌📌 Additional Information\n\nRatio Comparison Method\nWhen individual components of a ratio are increased by specific quantities, establishing an equation with any two known components allows determining the exact multiplier of the ratio.\nCross-Multiplication Trick\nFor an initial ratio a:b becoming c:d after adding quantities p and q respectively, 1 ratio unit can be calculated directly as (pd − qc) ÷ (ad − bc).\nProportional Value Assignment\nOnce a new concrete value corresponding to a final ratio part is found (like 140 equivalent to 4 parts), the exact quantities of all other parts in the final state can be determined by direct proportion."
+    },
+    {
+      "number": 54,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 4,
+      "id": "6909e3b9367763f7675479b1",
+      "passage": "",
+      "question": "A invests ₹25,000 for 12 months, B invests ₹50,000 for 6 months. What is A&#39;s share of ₹30,000 profit?",
+      "options": {
+        "A": "₹10,000",
+        "B": "₹12,000",
+        "C": "₹15,000",
+        "D": "₹18,000"
+      },
+      "correct_option": "C",
+      "correct_answer": "₹15,000",
+      "solution": "📌📌 Shortcut Trick\n\nProfit ratio = (Capital of A × Time of A) : (Capital of B × Time of B)\nProfit ratio = (25000 × 12) : (50000 × 6) = 300000 : 300000 = 1 : 1\nTotal profit ratio parts = 1 + 1 = 2 parts.\n2 parts = ₹30,000 ⇒ 1 part = ₹15,000.\nA's share is 1 part = ₹15,000.\n∴ The correct answer is ₹15,000.\nAlternate Method\nGiven:\nA's Investment = ₹25,000, Time = 12 months\nB's Investment = ₹50,000, Time = 6 months\nTotal Profit = ₹30,000\nFormula Used:\nProfit Ratio = (C1 × T1) : (C2 × T2)\nPartner ACap: ₹25,000Time: 12 monthsWeight: 3,00,000Partner BCap: ₹50,000Time: 6 monthsWeight: 3,00,000Profit Ratio (A : B) = 1 : 1Calculations:\n⇒ Profit ratio of A and B = (25000 × 12) : (50000 × 6)\n⇒ Profit ratio = 300000 : 300000 = 1 : 1\n⇒ Sum of ratio parts = 1 + 1 = 2\n⇒ A's share = (1 ÷ 2) × Total Profit\n⇒ A's share = (1 ÷ 2) × 30000\n⇒ A's share = 15000\n∴ The correct answer is ₹15,000.\n\n📌📌 Additional Information\n\nSimple Partnership\nWhen all partners invest their capital for the same duration of time, the profit is distributed strictly in the ratio of their original investments.\nCompound Partnership\nWhen partners invest for different periods, the equivalent capital for each is calculated as Investment × Time. Profit is distributed in the ratio of these final products.\nWorking Partner vs Sleeping Partner\nA working partner actively manages the business and is typically paid a fixed salary or a certain profit percentage before the rest of the profit is divided among all active and sleeping partners."
+    },
+    {
+      "number": 55,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 5,
+      "id": "6909e3baa403e0dfbd77d693",
+      "passage": "",
+      "question": "A and B start a business with capitals in the ratio 5:3. After 6 months, A withdraws ₹10,000 and B doubles his investment. If the initial investment of A was ₹50,000, and the total profit after 1 year is ₹84,000, find the profit share of A.",
+      "options": {
+        "A": "₹42,000",
+        "B": "₹50,000",
+        "C": "₹60,000",
+        "D": "₹45,000"
+      },
+      "correct_option": "A",
+      "correct_answer": "₹42,000",
+      "solution": "📌📌 Shortcut Trick\n\nInitial capital ratio = 5 : 3. Since A's capital = ₹50,000, B's = ₹30,000.\nEquivalent capital of A = (50k × 6) + (40k × 6) = 540k\nEquivalent capital of B = (30k × 6) + (60k × 6) = 540k\nProfit ratio = 540k : 540k = 1 : 1\nProfit share of A = (1 ÷ 2) × ₹84,000 = ₹42,000\n∴ The correct answer is ₹42,000.\nAlternate Method\nGiven:\nInitial capital ratio of A : B = 5 : 3\nInitial capital of A = ₹50,000\nTotal profit after 1 year = ₹84,000\nFormula Used:\nProfit Ratio = (CapitalA × TimeA) : (CapitalB × TimeB)\nPartner A's Timeline₹50,000 × 6m₹40,000 × 6mPartner B's Timeline₹30,000 × 6m₹60,000 × 6mTotal Equivalent Capitals: A = ₹5,40,000 | B = ₹5,40,000Calculations:\n⇒ Initial capital of A = 5 units = ₹50,000\n⇒ 1 unit = ₹50,000 ÷ 5 = ₹10,000\n⇒ Initial capital of B = 3 units = 3 × ₹10,000 = ₹30,000\n⇒ After 6 months, A withdraws ₹10,000, so new capital = ₹50,000 − ₹10,000 = ₹40,000\n⇒ After 6 months, B doubles his investment, so new capital = ₹30,000 × 2 = ₹60,000\n⇒ Equivalent capital of A = (₹50,000 × 6) + (₹40,000 × 6) = ₹3,00,000 + ₹2,40,000 = ₹5,40,000\n⇒ Equivalent capital of B = (₹30,000 × 6) + (₹60,000 × 6) = ₹1,80,000 + ₹3,60,000 = ₹5,40,000\n⇒ Ratio of profit share = 5,40,000 : 5,40,000 = 1 : 1\n⇒ Sum of profit ratios = 1 + 1 = 2 units\n⇒ A's profit share = (1 ÷ 2) × ₹84,000 = ₹42,000\n∴ The correct answer is ₹42,000.\n\n📌📌 Additional Information\n\nCompound Partnership\nWhen capitals are invested for unequal time periods, profits are shared in the ratio of the product of capital and time, known as equivalent capital.\nSimple Partnership\nWhen partners invest their capitals for the exact same period, the profit is purely distributed in the respective ratio of their original investments.\nWorking vs Sleeping Partner\nA working active partner manages the business and usually receives a salary or fixed percentage of profit. A sleeping partner only provides funds and gets a share solely based on capital and time ratio."
+    },
+    {
+      "number": 56,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 6,
+      "id": "6909e3ba335dea9be42ab915",
+      "passage": "",
+      "question": "What is the average of all three-digit numbers divisible by 23?",
+      "options": {
+        "A": "752",
+        "B": "552",
+        "C": "652",
+        "D": "452"
+      },
+      "correct_option": "B",
+      "correct_answer": "552",
+      "solution": "📌📌 Shortcut Trick\n\nThe sequence of multiples forms an Arithmetic Progression (A.P.).\n\nAverage of an A.P. = (First Term + Last Term) ÷ 2\n\nFirst 3-digit multiple of 23 = 115\n\nLast 3-digit multiple of 23 = 989\n\nAverage = (115 + 989) ÷ 2 = 552\n\n∴ The correct answer is 552.\n\nAlternate Method\n\nGiven:\n\nWe need to find the average of all three-digit numbers divisible by 23.\n\nFormula Used:\n\nFor an Arithmetic Progression (A.P.), Average = (a + l) ÷ 2\n\nWhere 'a' is the first term and 'l' is the last term.\n\n115\nFirst Term\n\n989\nLast Term\n\n552\nAverage (Midpoint)\n\nAverage = (First Term + Last Term) ÷ 2\n\nCalculations:\n\n⇒ Smallest three-digit number = 100\n\n⇒ 100 ÷ 23 = 4 with a remainder of 8\n\n⇒ First 3-digit multiple of 23 (a) = 23 × 5 = 115\n\n⇒ Largest three-digit number = 999\n\n⇒ 999 ÷ 23 = 43 with a remainder of 10\n\n⇒ Last 3-digit multiple of 23 (l) = 23 × 43 = 989\n\n⇒ The sequence of numbers forms an A.P.: 115, 138, 161, ..., 989\n\n⇒ Average of the A.P. = (115 + 989) ÷ 2\n\n⇒ Average = 1104 ÷ 2 = 552\n\n∴ The correct answer is 552.\n\n📌📌 Additional Information\n\nArithmetic Progression (A.P.)\n\nA sequence of numbers where the difference between consecutive terms is constant. General form: a, a+d, a+2d, ...\n\nAverage of an A.P.\n\nThe average (mean) of an A.P. is strictly equal to the average of its first and last terms: Average = (a + l) ÷ 2.\n\nNumber of Terms in an A.P.\n\nThe total number of terms (n) in a finite arithmetic sequence can be calculated using the formula: n = [(l − a) ÷ d] + 1."
+    },
+    {
+      "number": 57,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 7,
+      "id": "6909e3bad6628571318a6949",
+      "passage": "",
+      "question": "Two containers of the same volume are 40% and 50% full of water, respectively. They are then filled completely with milk. If the contents of both containers are mixed in a larger vessel, what is the percentage of milk in the final mixture?",
+      "options": {
+        "A": "0.45",
+        "B": "0.5",
+        "C": "0.55",
+        "D": "0.6"
+      },
+      "correct_option": "C",
+      "correct_answer": "0.55",
+      "solution": "📌📌 Shortcut Trick\n\nLet the volume of each container be 100 units.\nContainer 1 has 40 units water ⇒ Milk filled = 100 − 40 = 60 units.\nContainer 2 has 50 units water ⇒ Milk filled = 100 − 50 = 50 units.\nTotal milk in mixture = 60 + 50 = 110 units; Total volume = 100 + 100 = 200 units.\nFraction of milk in final mixture = 110 ÷ 200 = 0.55.\n∴ The correct answer is 0.55 (or 55%).\nAlternate Method\nGiven:\n⇒ Volume of Container 1 = Volume of Container 2\n⇒ Water in Container 1 = 40%\n⇒ Water in Container 2 = 50%\n⇒ Remaining capacity of both containers is completely filled with milk.\nFormula Used:\n⇒ Fraction of Milk = (Total Volume of Milk) ÷ (Total Volume of Mixture)\nMilk: 60Water: 40Vol: 100+Milk: 50Water: 50Vol: 100Total Milk: 110(55%)Total Water: 90(45%)Final Vol: 200Mixture ProcessCalculations:\n⇒ Let the capacity of each container be 100 units.\n⇒ Volume of water in Container 1 = 40% of 100 = 40 units\n⇒ Volume of milk added in Container 1 = 100 − 40 = 60 units\n⇒ Volume of water in Container 2 = 50% of 100 = 50 units\n⇒ Volume of milk added in Container 2 = 100 − 50 = 50 units\n⇒ Total volume of milk in final mixture = 60 + 50 = 110 units\n⇒ Total volume of the final mixture = 100 + 100 = 200 units\n⇒ Fraction of milk in final mixture = 110 ÷ 200\n⇒ Fraction = 11 ÷ 20 = 0.55\n∴ The correct answer is 0.55 (or 55%).\n\n📌📌 Additional Information\n\nMixtures & Alligations\nWhen mixing two quantities, the ratio of their volumes directly determines the weighted average of any concentration present in them.\nWeighted Average Formula\nFinal Concentration = (C1V1 + C2V2) ÷ (V1 + V2), where C is concentration and V is volume.\nSuccessive Replacement\nIf a fraction of a mixture is removed and replaced with a pure component iteratively, the remaining original component is calculated as Final = Initial × (1 − Removed/Total)n."
+    },
+    {
+      "number": 58,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 8,
+      "id": "6909e3bb64b6a011f3e0bd31",
+      "passage": "",
+      "question": "A stationery shop ordered 6 dozen red pens and some additional dozen blue pens. The price of the red pens per dozen was three times that of the blue ones. When the order was delivered, it was found that the number of dozens of the two colours had been interchanged. This increased the bill by 40%. Find the ratio of the number of dozens of red pens to the number of dozens of blue pens in the original order.",
+      "options": {
+        "A": "1:1",
+        "B": "1:2",
+        "C": "2:3",
+        "D": "3:4"
+      },
+      "correct_option": "B",
+      "correct_answer": "1:2",
+      "solution": "📌📌 Shortcut Trick\n\nAssume the price of Blue pens = 1 unit, Red pens = 3 units, and let Blue pens ordered = B dozens.\nOriginal Bill = (6 × 3) + (B × 1) = 18 + B\nInterchanged Bill = (B × 3) + (6 × 1) = 3B + 6\nThe new bill is 40% more, meaning it is 1.4 times the original bill.\n⇒ 3B + 6 = 1.4 × (18 + B) ⇒ 1.6B = 19.2 ⇒ B = 12\n∴ The correct answer is 1:2.\nAlternate Method\nOriginal BillRed : 6 × 3 = 18Blue : B × 1 = BTotal = 18 + BNew BillRed : B × 3 = 3BBlue : 6 × 1 = 6Total = 3B + 6+ 40% IncreaseGiven:\nNumber of red pens originally ordered = 6 dozens.\nLet the number of blue pens originally ordered be B dozens.\nLet the price of 1 dozen blue pens be x. Then, the price of 1 dozen red pens = 3x.\nCalculations:\n⇒ Original Bill = (6 × 3x) + (B × x) = 18x + Bx = x(18 + B)\n⇒ When the quantities of the two colours are interchanged, Red = B dozens and Blue = 6 dozens.\n⇒ New Bill = (B × 3x) + (6 × x) = 3Bx + 6x = x(3B + 6)\n⇒ According to the problem, the new bill is 40% more than the original bill.\n⇒ New Bill = Original Bill + 40% of Original Bill\n⇒ x(3B + 6) = x(18 + B) × 1.4\n⇒ Since price x is a positive value, we can divide both sides by x:\n⇒ 3B + 6 = 1.4 × (18 + B)\n⇒ 3B + 6 = 25.2 + 1.4B\n⇒ 3B − 1.4B = 25.2 − 6\n⇒ 1.6B = 19.2\n⇒ B = 19.2 ÷ 1.6 = 12\n⇒ The original order had 6 dozens of red pens and 12 dozens of blue pens.\n⇒ Required Ratio = Red pens : Blue pens = 6 : 12 = 1 : 2.\n∴ The correct answer is 1:2.\n\n📌📌 Additional Information\n\nPercentage Increase Formula\nIf a value is increased by p%, the final value can directly be computed as Original Value × (1 + p/100).\nTotal Value Relationship\nTotal value of any item is given by Quantity × Unit Price. Any changes in quantities or unit prices directly impact the proportionate bill linearly.\nCross-Multiplication in Equations\nTo simplify decimal coefficients quickly, you can multiply the entire equation by a power of 10. For instance, 1.6B = 19.2 transforms immediately into 16B = 192."
+    },
+    {
+      "number": 59,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 9,
+      "id": "6909e3bbe2777a335c2e4517",
+      "passage": "",
+      "question": "A flower vendor bought 200 flowers for ₹800. 20 flowers withered and became unsellable. At what price per flower should he sell the remaining flowers to earn a profit of 30% on his total cost?",
+      "options": {
+        "A": "₹7.85",
+        "B": "₹6.54",
+        "C": "₹5.78",
+        "D": "₹3.82"
+      },
+      "correct_option": "C",
+      "correct_answer": "₹5.78",
+      "solution": "📌📌 Shortcut Trick\n\nTotal Selling Price required for a 30% profit = 130% of ₹800 = ₹1040.\n\nTotal sellable flowers = 200 − 20 = 180 flowers.\n\nSelling Price per flower = 1040 ÷ 180 = 52 ÷ 9 ≈ ₹5.78.\n\n∴ The correct answer is ₹5.78.\n\nAlternate Method\n\nGiven:\n\nTotal cost price of 200 flowers = ₹800\n\nNumber of withered flowers = 20\n\nDesired profit percentage = 30%\n\nFormula Used:\n\nSelling Price (SP) = CP × (100 + Profit%) ÷ 100\n\nSP per unit = Total SP ÷ Total units available for sale\n\nCP = ₹800\n(200 flowers)\n\n+30% Profit\n\nTotal SP = ₹1040\n(130% of CP)\n\n÷ 180 flowers\n\n(200 − 20 withered)\n\nSP / flower = ₹5.78\n\nCalculations:\n\n⇒ Total Selling Price = 800 × (100 + 30) ÷ 100\n\n⇒ Total Selling Price = 800 × 130 ÷ 100 = ₹1040\n\n⇒ Number of flowers available to sell = 200 − 20 = 180\n\n⇒ Selling Price per flower = Total Selling Price ÷ 180\n\n⇒ Selling Price per flower = 1040 ÷ 180\n\n⇒ Selling Price per flower = 52 ÷ 9\n\n⇒ Selling Price per flower = 5.777... ≈ ₹5.78\n\n∴ The correct answer is ₹5.78.\n\n📌📌 Additional Information\n\nProfit and Loss Percentage\n\nProfit% or Loss% is strictly calculated based on the Total Cost Price (CP) of the initial quantity bought, unless stated otherwise. Formula: Profit% = (Profit ÷ CP) × 100.\n\nEffective Cost Recovery\n\nWhen a fraction of goods gets damaged or lost, the desired revenue (Total SP) must be fully recovered by selling only the remaining intact goods. This inherently increases the required Selling Price per unit.\n\nMarked Price and Discount\n\nIf a vendor wants to offer discounts while maintaining a fixed profit rate, the Marked Price must be calculated above this calculated Selling Price (SP). Selling Price = Marked Price − Discount."
+    },
+    {
+      "number": 60,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 10,
+      "id": "6909e3bbd9de8466e62c0b57",
+      "passage": "",
+      "question": "A furniture store sells a dining table for ₹Z, making a 25% profit. During a festive season, they increase the marked price of the same table to ₹1.6Z. They then offer a special discount of 20% on this increased marked price. What will be the percentage profit made by the store during the festive season?",
+      "options": {
+        "A": "0.26",
+        "B": "0.56",
+        "C": "0.62",
+        "D": "0.6"
+      },
+      "correct_option": "D",
+      "correct_answer": "0.6",
+      "solution": "📌📌 Shortcut Trick\n\nGiven the initial Selling Price is ₹Z and the profit is 25%, the Cost Price (CP) = Z ÷ 1.25 = 0.8Z.\nDuring the festive season, the new Marked Price is ₹1.6Z.\nWith a 20% discount on the Marked Price, the new SP = 1.6Z × (1 − 0.20) = 1.28Z.\nProfit amount = New SP − CP = 1.28Z − 0.8Z = 0.48Z.\nPercentage profit (as a fraction) = 0.48Z ÷ 0.8Z = 0.6.\n∴ The correct answer is 60% (0.6).\nAlternate Method\nGiven:\nInitial Selling Price = ₹Z\nInitial Profit = 25%\nNew Marked Price (MP) = ₹1.6Z\nFestive Discount = 20%\nFormula Used:\nCost Price (CP) = SP ÷ (1 + Profit/100)\nSelling Price (SP) = MP × (1 − Discount/100)\nPercentage Profit = [(SP − CP) ÷ CP] × 100\nCP = 0.8ZSP = 1.28ZMP = 1.6Z−20% DiscountProfit = +0.48ZCalculations:\n⇒ First, calculate the original Cost Price (CP):\n⇒ CP × (1 + 0.25) = Z\n⇒ 1.25 × CP = Z\n⇒ CP = Z ÷ 1.25 = 0.8Z\n⇒ Next, calculate the new Selling Price after applying the 20% discount on the new MP:\n⇒ New SP = 1.6Z × (1 − 0.20)\n⇒ New SP = 1.6Z × 0.80 = 1.28Z\n⇒ Calculate the profit earned during the festive season:\n⇒ Profit = New SP − CP = 1.28Z − 0.8Z = 0.48Z\n⇒ Calculate the profit fraction / percentage:\n⇒ Profit fraction = Profit ÷ CP = 0.48Z ÷ 0.8Z = 0.6\n⇒ This translates to exactly 60% profit.\n∴ The correct answer is 60% (0.6).\n\n📌📌 Additional Information\n\nMarked Price and Discount\nA discount is strictly calculated on the Marked Price (MP), not the Cost Price. The Selling Price is derived directly by deducting the discount: SP = MP × (1 − Discount%).\nCost Price from Profit Percentage\nWhen the final Selling Price and Profit% are provided, the Cost Price can be efficiently found using the formula: CP = SP × [100 ÷ (100 + Profit%)].\nSuccessive Price Changes\nWhen an article's price is marked up and then followed by a discount, a chain calculation or a successsive percentage formula [a + b + (a × b ÷ 100)] can be used to track the overall profit or loss."
+    },
+    {
+      "number": 61,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 11,
+      "id": "6909e3bc621842063c1c5bed",
+      "passage": "",
+      "question": "A solution consists acid and water in the ratio 5:3. If 4 litres of water is added, the new ratio becomes 5:4. What is the original quantity of acid in the solution?",
+      "options": {
+        "A": "20 litres",
+        "B": "25 litres",
+        "C": "30 litres",
+        "D": "35 litres"
+      },
+      "correct_option": "A",
+      "correct_answer": "20 litres",
+      "solution": "📌📌 Shortcut Trick\n\nInitial Ratio (Acid : Water) = 5 : 3\n\nFinal Ratio (Acid : Water) = 5 : 4\n\nSince only water is added, the ratio of acid (5 parts) correctly remains unchanged.\n\nIncrease in water ratio = 4 − 3 = 1 part.\n\n1 part = 4 litres ⇒ Original Acid = 5 parts = 5 × 4 = 20 litres.\n\n∴ The correct answer is 20 litres.\n\nAlternate Method\n\nInitial\nAcid = 5u\nWater = 3u\n\nFinal\nAcid = 5u\nWater = 4u\n\n+ 4 L Water\n\nWater Change: 4u − 3u = 1u = 4 Litres\nOriginal Acid: 5u = 5 × 4 = 20 Litres\n\nGiven:\n\nInitial ratio of acid to water = 5 : 3\n\nWater added = 4 litres\n\nNew ratio of acid to water = 5 : 4\n\nCalculations:\n\n⇒ Let initial acid = 5x and initial water = 3x.\n\n⇒ After adding 4 litres of water, new quantity of water = 3x + 4.\n\n⇒ New ratio = 5x / (3x + 4) = 5 / 4\n\n⇒ 20x = 15x + 20\n\n⇒ 20x − 15x = 20\n\n⇒ 5x = 20 ⇒ x = 4\n\n⇒ Original quantity of acid = 5x = 5 × 4 = 20 litres.\n\n∴ The correct answer is 20 litres.\n\n📌📌 Additional Information\n\nConstant Component Concept\n\nWhen one substance is added to a mixture, the quantity of the other substance remains strictly constant. Equating the ratio parts of the undisturbed component simplifies calculations directly without full equations.\n\nCross-Multiplication Method\n\nIf the initial ratio is a:b and final ratio becomes c:d after adding x and y respectively, the relation is: (a × d) − (b × c) = (y × c) − (x × d). Here, y = 4 and x = 0.\n\nReplacement in Mixtures\n\nWhen a portion of a mixture is withdrawn without adding anything, the ratio of its components remains identical to the original mixture. The ratio alters only upon adding a new quantity."
+    },
+    {
+      "number": 62,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 12,
+      "id": "6909e3bc4abbf384c68ebf37",
+      "passage": "",
+      "question": "A alone can complete a job in 12 days and B alone in 18 days. A and B agree to do the work for ₹ 7,200. With C&#39;s help they finish it in 5 days. How much should C be paid?",
+      "options": {
+        "A": "₹2,200",
+        "B": "₹2,400",
+        "C": "₹2,600",
+        "D": "₹2,800"
+      },
+      "correct_option": "A",
+      "correct_answer": "₹2,200",
+      "solution": "📌📌 Shortcut Trick\n\nTotal work = LCM(12, 18, 5) = 180 units.\n\nEfficiency of A = 180 ÷ 12 = 15, B = 180 ÷ 18 = 10, A+B+C = 180 ÷ 5 = 36.\n\nEfficiency of C = 36 − (15 + 10) = 11.\n\nWage ratio A : B : C = 15 : 10 : 11.\n\nC's share = (11 ÷ 36) × 7200 = ₹2,200.\n\n∴ The correct answer is ₹2,200.\n\nAlternate Method\n\nGiven:\n\nTime taken by A alone = 12 days\n\nTime taken by B alone = 18 days\n\nTime taken by A, B, and C together = 5 days\n\nTotal wages = ₹ 7,200\n\nFormula Used:\n\nTotal Work = LCM of time taken\n\nEfficiency = Total Work ÷ Time\n\nWages are distributed in the ratio of efficiencies when workers work for the same total time.\n\nCalculations:\n\n| Person | Days | Total Work | Efficiency |\n| A | 12 | 180 | 15 |\n| B | 18 | 10 |\n| A + B + C | 5 | 36 |\n\n⇒ Total efficiency of A, B, and C = 36 units/day\n\n⇒ Efficiency of C = Total efficiency − (Efficiency of A + Efficiency of B)\n\n⇒ Efficiency of C = 36 − (15 + 10) = 11 units/day\n\n⇒ Since they worked together for all 5 days, wages are shared directly in the ratio of their individual efficiencies.\n\n⇒ Ratio of wages A : B : C = 15 : 10 : 11\n\n⇒ Total ratio parts = 15 + 10 + 11 = 36 parts\n\n⇒ 36 parts = ₹ 7,200\n\n⇒ 1 part = 7200 ÷ 36 = ₹ 200\n\n⇒ C's share = 11 parts = 11 × 200 = ₹ 2,200\n\n∴ The correct answer is ₹2,200.\n\n📌📌 Additional Information\n\nWork and Wages\n\nWages are strictly proportional to the actual amount of work done by each individual. If workers work together for the same duration, their wages are distributed directly in the ratio of their daily efficiencies.\n\nDifferent Working Days\n\nIf workers work for different numbers of days, their respective wage shares are calculated by multiplying their efficiency with the number of days they worked: Share = Efficiency × Days Worked.\n\nPipes and Cisterns\n\nThis concept mirrors Time and Work exactly. Filling pipes have a positive efficiency (doing work), while emptying pipes or leaks have a negative efficiency (undoing work)."
+    },
+    {
+      "number": 63,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 13,
+      "id": "6909e3bc03a111035ab29018",
+      "passage": "",
+      "question": "A tank has a mixture of solutions A, B, and C in the respective ratio of 7:8:5. 40 litres of this mixture is drained out, and subsequently, 15 litres of solution A and 5 litres of solution C are added to the tank. If the resultant quantity of solution A is 25 litres less than the resultant quantity of solution B, what was the initial quantity of mixture in the tank (in litres)?",
+      "options": {
+        "A": "840",
+        "B": "240",
+        "C": "890",
+        "D": "320"
+      },
+      "correct_option": "A",
+      "correct_answer": "840",
+      "solution": "📌📌 Shortcut Trick\n\nLet remaining mixture components A, B, and C be 7k, 8k, and 5k (Total = 20k).\nFinal quantity of A = 7k + 15 L and Final quantity of B = 8k.\nGiven, Final B − Final A = 25 ⇒ 8k − (7k + 15) = 25 ⇒ k = 40.\nTotal remaining mixture = 20 × 40 = 800 L.\nInitial mixture = 800 L + 40 L (drained) = 840 L.\n∴ The correct answer is 840 litres.\nAlternate Method\nGiven:\n⇒ Initial ratio of A : B : C = 7 : 8 : 5\n⇒ Quantity of mixture drained = 40 litres\n⇒ Added quantities: 15 litres of A and 5 litres of C\nRemaining Mixture Components7k+ 15 LSolution A8kSolution B5k+ 5 LSolution CFinal B − Final A = 8k − (7k + 15) = 25 LCalculations:\n⇒ Let the quantities of A, B, and C in the remaining mixture be 7k, 8k, and 5k respectively.\n⇒ Total remaining mixture = 7k + 8k + 5k = 20k\n⇒ After addition, Final quantity of A = 7k + 15\n⇒ After addition, Final quantity of B = 8k\n⇒ After addition, Final quantity of C = 5k + 5\n⇒ We are given that Final A is 25 litres less than Final B:\n⇒ 8k − (7k + 15) = 25\n⇒ 8k − 7k − 15 = 25\n⇒ k − 15 = 25\n⇒ k = 40\n⇒ Total remaining mixture = 20k = 20 × 40 = 800 litres\n⇒ Initial quantity of mixture = Remaining mixture + Drained mixture\n⇒ Initial quantity of mixture = 800 + 40 = 840 litres\n∴ The correct answer is 840 litres.\n\n📌📌 Additional Information\n\nMixture Replacement Concept\nWhen a part of a mixture is drained, the remaining mixture still retains the exact same ratio of ingredients as the original mixture before any subsequent pure addition is made.\nSuccessive Replacement\nIf V is the initial volume of pure liquid, and x volume is replaced by water n times sequentially, the final volume of pure liquid is given by V × (1 − x/V)n.\nRule of Alligation\nIt allows calculating the required ratio in which two components of given prices or concentrations must be mixed to obtain a mixture of a desired average price or concentration."
+    },
+    {
+      "number": 64,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 14,
+      "id": "6909e3bdd9de8466e62c0b5d",
+      "passage": "",
+      "question": "The ratio of the time taken by A and B to complete a task is 3 : 2. If B can complete the task alone in 18 hours, how many hours will they take to complete the task if they work together?",
+      "options": {
+        "A": "12 hours",
+        "B": "10.8 hours",
+        "C": "9.8 hours",
+        "D": "10 hours"
+      },
+      "correct_option": "B",
+      "correct_answer": "10.8 hours",
+      "solution": "📌📌 Shortcut Trick\n\nTime ratio of A : B = 3 : 2, so efficiency ratio of A : B = 2 : 3.\n\nTotal work = Efficiency of B × Time taken by B = 3 × 18 = 54 units.\n\nCombined efficiency of A and B = 2 + 3 = 5 units/hour.\n\nTime taken together = Total work ÷ Combined efficiency = 54 ÷ 5 = 10.8 hours.\n\n∴ The correct answer is 10.8 hours.\n\nAlternate Method\n\nGiven:\n\nRatio of time taken by A and B = 3 : 2\n\nTime taken by B = 18 hours\n\nCalculations:\n\n⇒ Let the time taken by A be 3x and by B be 2x.\n\n⇒ 2x = 18 hours\n\n⇒ x = 9 hours\n\n⇒ Time taken by A = 3 × 9 = 27 hours.\n\n| Person | Hours | Total Work | Efficiency |\n| A | 27 | 54 | 2 |\n| B | 18 | 3 |\n\n⇒ Total efficiency of A and B together = 2 + 3 = 5 units/hour.\n\n⇒ Time taken by A and B working together = Total Work ÷ Total Efficiency\n\n⇒ Time taken = 54 ÷ 5 = 10.8 hours.\n\n∴ The correct answer is 10.8 hours.\n\n📌📌 Additional Information\n\nTime & Efficiency Relationship\n\nEfficiency is inversely proportional to the time taken. If the ratio of time taken by A and B is x : y, then the ratio of their efficiencies is y : x.\n\nWork and Wages\n\nWages are generally distributed in the ratio of the total work done by each individual. If workers work for the same number of days, the wages are distributed directly in the ratio of their efficiencies.\n\nPipes & Cisterns\n\nThe concept of time and work directly applies to pipes. Inlet pipes have positive efficiency (filling work) while outlet pipes or leaks have negative efficiency (emptying work)."
+    },
+    {
+      "number": 65,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 15,
+      "id": "6909e3bd621842063c1c5bf4",
+      "passage": "",
+      "question": "Three friends, X, Y, and Z, are cycling on a circular track with a circumference of 2 km. They all start from the same point at 9:00 a.m. and travel in the same direction with speeds of 10 km/h, 12 km/h, and 15 km/h respectively. How many times will all three of them meet at the starting point if they continue cycling until 1:00 p.m.?",
+      "options": {
+        "A": "1 time",
+        "B": "2 times",
+        "C": "3 times",
+        "D": "4 times"
+      },
+      "correct_option": "B",
+      "correct_answer": "2 times",
+      "solution": "📌📌 Shortcut Trick\n\nTime taken for one round = Distance ÷ Speed.\nTx = 2/10 = 1/5 h, Ty = 2/12 = 1/6 h, Tz = 2/15 h.\nTime to meet at start = LCM(1/5, 1/6, 2/15) = 2/1 = 2 hours.\nTotal time from 9:00 a.m. to 1:00 p.m. = 4 hours.\nNumber of meetings = Total time ÷ Meeting interval = 4 ÷ 2 = 2 times.\n∴ The correct answer is 2 times.\nAlternate Method\nGiven:\nCircumference of the track (D) = 2 km\nSpeeds: X = 10 km/h, Y = 12 km/h, Z = 15 km/h\nCycling duration = 9:00 a.m. to 1:00 p.m. = 4 hours\nFormula Used:\nTime = Distance ÷ Speed\nMeeting time at start point = LCM of individual times taken for one round\nLCM of fractions = LCM of Numerators ÷ HCF of Denominators\nStart PointD = 2 kmSpeeds:X = 10 km/hY = 12 km/hZ = 15 km/hTime to meet = LCM of individual timesCalculations:\n⇒ Tx = 2 ÷ 10 = 1/5 h\n⇒ Ty = 2 ÷ 12 = 1/6 h\n⇒ Tz = 2 ÷ 15 = 2/15 h\n⇒ Meeting time = LCM(1/5, 1/6, 2/15)\n⇒ LCM of numerators (1, 1, 2) = 2\n⇒ HCF of denominators (5, 6, 15) = 1\n⇒ LCM(1/5, 1/6, 2/15) = 2 ÷ 1 = 2 hours\n⇒ They all meet at the starting point every 2 hours.\n⇒ Total duration from 9:00 a.m. to 1:00 p.m. = 4 hours.\n⇒ Number of meetings = 4 ÷ 2 = 2 times\n∴ The correct answer is 2 times.\n\n📌📌 Additional Information\n\nMeeting at the Starting Point\nWhen multiple runners or objects move around a circular path starting at the same time, the time required for all of them to meet at the starting point simultaneously is always the LCM of the times taken by each to complete exactly one round.\nFirst Meeting on a Circular Track\nIf two bodies move in the same direction, they will meet for the very first time anywhere on the track after a time = Distance ÷ Relative Speed (Difference of their speeds). If moving in opposite directions, relative speed is the sum of their speeds.\nLCM & HCF of Fractions\nLCM of fractions = LCM of Numerators ÷ HCF of Denominators.\nHCF of fractions = HCF of Numerators ÷ LCM of Denominators."
+    },
+    {
+      "number": 66,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 16,
+      "id": "6909e3bd0a73c1795a9ee03e",
+      "passage": "",
+      "question": "A circular path of 3 m width runs around a circular park with radius 8 m. What is the area of the path?",
+      "options": {
+        "A": "179 m&sup2;",
+        "B": "131.09 m&sup2;",
+        "C": "138.02 m&sup2;",
+        "D": "144.05 m&sup2;"
+      },
+      "correct_option": "A",
+      "correct_answer": "179 m&sup2;",
+      "solution": "📌📌 Shortcut Trick\n\nArea of a circular path = π × w × (2r + w)\n\nWhere w = 3 m (width of path) and r = 8 m (inner radius)\n\nArea = π × 3 × (2 × 8 + 3) = π × 3 × 19\n\nArea = 57π ≈ 57 × 3.14 ≈ 179 m2\n\n∴ The correct answer is 179 m2.\n\nAlternate Method\n\nGiven:\n\nInner radius of the park (r) = 8 m\n\nWidth of the path (w) = 3 m\n\nOuter radius of the park with path (R) = 8 m + 3 m = 11 m\n\n8 m\n\n3 m\n\n11 m\n\nCircular Park with Path\n\nFormula Used:\n\nArea of circular path = Area of outer circle − Area of inner circle\n\nArea = πR2 − πr2 = π(R2 − r2)\n\nCalculations:\n\n⇒ Area = π × (112 − 82)\n\n⇒ Area = π × (121 − 64)\n\n⇒ Area = 57π\n\n⇒ Area ≈ 57 × 3.14159\n\n⇒ Area ≈ 179.07 m2\n\nBy comparing the options, the nearest value is 179 m2.\n\n∴ The correct answer is 179 m2.\n\n📌📌 Additional Information\n\nArea of a Circle\n\nThe total region enclosed by a circle is given by Area = πr2, where r is the radius.\n\nArea of a Circular Path\n\nFor a circular path of width w around a circle of radius r, the area is calculated as π(R2 − r2) or πw(2r + w), where the outer radius R = r + w.\n\nCircumference\n\nThe perimeter or length of the outer boundary of a circle is calculated as C = 2πr."
+    },
+    {
+      "number": 67,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 17,
+      "id": "6909e3bead30b3fd94261919",
+      "passage": "",
+      "question": "Find the slope of the line perpendicular to \\(y = \\frac{1}{4}x + 7\\)",
+      "options": {
+        "A": "-4",
+        "B": "4",
+        "C": "\\(-\\frac{1}{4}\\)",
+        "D": "\\(\\frac{1}{4}\\)"
+      },
+      "correct_option": "A",
+      "correct_answer": "-4",
+      "solution": "📌📌 Shortcut Trick\n\nThe slope of the given line in the form y = mx + c is m = 1/4.\n\nThe slope of a perpendicular line is always the negative reciprocal of the original line's slope.\n\nPerpendicular slope = −1 ÷ (1/4) = −4.\n\n∴ The correct answer is -4.\n\nAlternate Method\n\nGiven:\n\nEquation of the line: y = 1/4x + 7\n\nFormula Used:\n\nFor two perpendicular lines with slopes m1 and m2: m1 × m2 = −1\n\ny = 1/4x + 7\nm₁ = 1/4\n\nPerpendicular Line\nm₂ = -4\n\nCalculations:\n\n⇒ The given line is structured in the standard form y = mx + c, where m represents the slope of the line.\n\n⇒ By comparing the equations directly, the slope of the given line (m1) = 1/4\n\n⇒ Let the slope of the required perpendicular line be defined as m2.\n\n⇒ Since the properties of perpendicular lines state that their product is −1, we have m1 × m2 = −1\n\n⇒ (1/4) × m2 = −1\n\n⇒ m2 = −1 × 4\n\n⇒ m2 = −4\n\n∴ The correct answer is -4.\n\n📌📌 Additional Information\n\nSlope-Intercept Form\n\nThe equation of a straight line is typically expressed as y = mx + c, where m is the slope defining the steepness and c is the y-intercept.\n\nParallel Lines\n\nIf two straight lines are distinctly parallel to each other, their slopes will always be exactly equal (m1 = m2).\n\nPerpendicular Lines\n\nWhen two non-vertical straight lines intersect perfectly at a right angle, the resulting product of their slopes evaluates to −1 (m1 × m2 = −1)."
+    },
+    {
+      "number": 68,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 18,
+      "id": "6909e3beb7a1ac7c4e952274",
+      "passage": "",
+      "question": "Convert 2.5 radians to degrees.",
+      "options": {
+        "A": "130&deg;",
+        "B": "143.24&deg;",
+        "C": "180&deg;",
+        "D": "200.56&deg;"
+      },
+      "correct_option": "B",
+      "correct_answer": "143.24&deg;",
+      "solution": "📌📌 Shortcut Trick\n\nWe know the standard conversion where 1 radian is approximately equal to 57.3°.\n\nTo convert 2.5 radians to degrees, we simply multiply the value by 57.3°.\n\n⇒ 2.5 × 57.3° = 143.25°\n\nLooking at the given options, the closest exact value is 143.24°.\n\n∴ The correct answer is 143.24°.\n\nAlternate Method\n\nGiven:\n\nAngle = 2.5 radians\n\nFormula Used:\n\nAngle in Degrees = Angle in Radians × (180° ÷ π)\n\n2.5 rad\n143.24°\n\nCalculation:\n\n⇒ Angle in Degrees = 2.5 × (180° ÷ π)\n\n⇒ Angle in Degrees = 450° ÷ π\n\nUsing the precise value of π ≈ 3.14159:\n\n⇒ Angle in Degrees = 450° ÷ 3.14159\n\n⇒ Angle in Degrees ≈ 143.2395°\n\n⇒ Rounding off to two decimal places, we get 143.24°.\n\n∴ The correct answer is 143.24°.\n\n📌📌 Additional Information\n\nRadian to Degree Conversion\n\nTo convert any given angle from radians to degrees, multiply the radian value by 180° ÷ π.\n\nDegree to Radian Conversion\n\nTo convert an angle from degrees back to radians, multiply the degree value by π ÷ 180°.\n\nStandard Conversions\n\nSome common unit circle angles include: π radians = 180°, π ÷ 2 radians = 90°, and π ÷ 4 radians = 45°."
+    },
+    {
+      "number": 69,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 19,
+      "id": "6909e3be4ae2a067d12aa459",
+      "passage": "",
+      "question": "A sector of a circle having a radius of 10 cm and has a central angle of \\( \\frac{\\pi}{6}\\) radians. What is the area of the sector?",
+      "options": {
+        "A": "26.17 cm&sup2;",
+        "B": "8.33 cm&sup2;",
+        "C": "10.47 cm&sup2;",
+        "D": "12.5 cm&sup2;"
+      },
+      "correct_option": "A",
+      "correct_answer": "26.17 cm&sup2;",
+      "solution": "📌📌 Shortcut Trick\n\nDirect formula for the area of a sector in radians: Area = ½ × r2 × θ\nSubstitute the given values: r = 10 cm and θ = π/6.\nArea = ½ × (10)2 × (π/6) = ½ × 100 × π/6 = 25π / 3\nUsing π ≈ 3.14, Area = (25 × 3.14) ÷ 3 = 78.5 ÷ 3 ≈ 26.17 cm2.\n∴ The correct answer is 26.17 cm2.\nAlternate Method\nGiven:\nRadius of the sector (r) = 10 cm\nCentral angle (θ) = π/6 radians\nOπ/610 cm10 cmRadius (r) = 10 cmAngle (θ) = π/6 radArea = ?Formula Used:\nArea of a sector = ½ × r2 × θ (where θ is in radians)\nCalculations:\n⇒ Area = ½ × (10)2 × (π / 6)\n⇒ Area = ½ × 100 × (π / 6)\n⇒ Area = 50 × π / 6\n⇒ Area = 25π / 3\nUsing π ≈ 3.14:\n⇒ Area = (25 × 3.14) / 3\n⇒ Area = 78.5 / 3\n⇒ Area = 26.166... ≈ 26.17 cm2\n∴ The correct answer is 26.17 cm2.\n\n📌📌 Additional Information\n\nArea of a Sector (in degrees)\nIf the central angle θ is given in degrees instead of radians, the formula to calculate the area becomes Area = (θ ÷ 360°) × πr2.\nLength of an Arc\nThe length of the arc (s) is calculated directly as s = rθ (if θ is in radians) or s = (θ ÷ 360°) × 2πr (if θ is in degrees).\nPerimeter of a Sector\nThe total perimeter bounds the sector, including the curved arc length and the two straight radii. It is found using Perimeter = s + 2r."
+    },
+    {
+      "number": 70,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 20,
+      "id": "6909e3bff579995fc0aa3c05",
+      "passage": "",
+      "question": "If tan A = cot(2A - 30&deg;), then what is the value of A?",
+      "options": {
+        "A": "30&deg;",
+        "B": "25&deg;",
+        "C": "18&deg;",
+        "D": "40&deg;"
+      },
+      "correct_option": "D",
+      "correct_answer": "40&deg;",
+      "solution": "📌📌 Shortcut Trick\n\nIf tan x = cot y, then their angles are complementary: x + y = 90°\n\nGiven: tan A = cot(2A − 30°)\n\n⇒ A + (2A − 30°) = 90°\n\n⇒ 3A = 120°\n\n⇒ A = 40°\n\n∴ The correct answer is 40°.\n\nAlternate Method\n\nGiven:\n\ntan A = cot(2A − 30°)\n\nFormula Used:\n\ncot θ = tan(90° − θ)\n\nA\n\n2A − 30°\nAdjacent to A\nOpposite to A\nIf tan x = cot y, then x + y = 90°\n\nCalculations:\n\n⇒ tan A = tan(90° − (2A − 30°))\n\nComparing the angles on both sides:\n\n⇒ A = 90° − (2A − 30°)\n\n⇒ A = 90° − 2A + 30°\n\n⇒ A + 2A = 120°\n\n⇒ 3A = 120°\n\n⇒ A = 40°\n\n∴ The correct answer is 40°.\n\n📌📌 Additional Information\n\nComplementary Angle Identities\n\nsin(90° − θ) = cos θ | tan(90° − θ) = cot θ | sec(90° − θ) = cosec θ\n\nSupplementary Angle Identities\n\nsin(180° − θ) = sin θ | cos(180° − θ) = −cos θ | tan(180° − θ) = −tan θ\n\nNegative Angle Identities\n\nsin(−θ) = −sin θ | cos(−θ) = cos θ | tan(−θ) = −tan θ"
+    },
+    {
+      "number": 71,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 21,
+      "id": "6909e3bf13685a39edc391b7",
+      "passage": "",
+      "question": "In similar triangles, the ratio of corresponding altitudes is 2:5. What is the ratio of their areas?",
+      "options": {
+        "A": "2:5",
+        "B": "4:25",
+        "C": "2:25",
+        "D": "5:2"
+      },
+      "correct_option": "B",
+      "correct_answer": "4:25",
+      "solution": "📌📌 Shortcut Trick\n\nFor similar triangles, the ratio of their areas equals the square of the ratio of their corresponding altitudes.\n\nRatio of areas = (Ratio of altitudes)2\n\n⇒ Area Ratio = (2 ÷ 5)2 = 4 : 25\n\n∴ The correct answer is 4:25.\n\nAlternate Method\n\nGiven:\n\nRatio of corresponding altitudes of two similar triangles (h1 : h2) = 2 : 5\n\nFormula Used:\n\nArea of Δ1 ÷ Area of Δ2 = (h1 ÷ h2)2\n\nh1 = 2\nArea = A1\n\nh2 = 5\nArea = A2\n\nA1 : A2 = h1² : h2²\n\nCalculations:\n\n⇒ Area of Δ1 ÷ Area of Δ2 = (2 ÷ 5)2\n\n⇒ Area of Δ1 ÷ Area of Δ2 = 4 ÷ 25\n\n⇒ Ratio of their areas = 4 : 25\n\n∴ The correct answer is 4:25.\n\n📌📌 Additional Information\n\nArea of Similar Triangles\n\nThe ratio of the areas of two similar triangles is precisely equal to the square of the ratio of their corresponding sides, altitudes, or medians.\n\nPerimeter of Similar Triangles\n\nThe ratio of the perimeters of two similar triangles is directly equal to the ratio of their corresponding sides, altitudes, or medians.\n\nInradius & Circumradius Ratio\n\nFor two similar triangles, the ratio of their corresponding inradii or circumradii follows the exact same ratio as their corresponding sides."
+    },
+    {
+      "number": 72,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 22,
+      "id": "6909e3bf03a111035ab2904e",
+      "passage": "",
+      "question": "Given, \\(a = \\sqrt{5}\\), what is \\((a + 1)^2 + (a - 1)^2\\) ?",
+      "options": {
+        "A": "13",
+        "B": "12",
+        "C": "14",
+        "D": "15"
+      },
+      "correct_option": "B",
+      "correct_answer": "12",
+      "solution": "📌📌 Shortcut Trick\n\nDirectly apply the algebraic identity: (x + y)2 + (x − y)2 = 2(x2 + y2)\n\nHere, replacing x with a and y with 1:\n\n⇒ (a + 1)2 + (a − 1)2 = 2(a2 + 12)\n\nSubstitute a = √5 ⇒ a2 = 5.\n\n⇒ 2(5 + 1) = 2 × 6 = 12\n\n∴ The correct answer is 12.\n\nAlternate Method\n\nGiven:\n\na = √5\n\nFormula Used:\n\n(x + y)2 = x2 + 2xy + y2\n\n(x − y)2 = x2 − 2xy + y2\n\nCalculation:\n\n⇒ (a + 1)2 = a2 + 2a + 1\n\n⇒ (a − 1)2 = a2 − 2a + 1\n\nAdding both expanded expressions together:\n\n⇒ (a2 + 2a + 1) + (a2 − 2a + 1)\n\n⇒ 2a2 + 2\n\nSubstitute the given value a = √5:\n\n⇒ 2(√5)2 + 2\n\n⇒ 2 × 5 + 2\n\n⇒ 10 + 2 = 12\n\n∴ The correct answer is 12.\n\n📌📌 Additional Information\n\nImportant Algebraic Identities\n\nAnother useful identity for subtraction is: (a + b)2 − (a − b)2 = 4ab.\n\nDifference of Squares\n\nThe product of sum and difference is: a2 − b2 = (a − b)(a + b).\n\nSquare Root Properties\n\nThe square of a square root returns the original non-negative value: (√x)2 = x. Also, roots can be multiplied directly: √x × √y = √(xy)."
+    },
+    {
+      "number": 73,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 23,
+      "id": "6909e3c04abbf384c68ebf85",
+      "passage": "",
+      "question": "Simplify: &radic;50 + &radic;18 - &radic;8",
+      "options": {
+        "A": "7&radic;2",
+        "B": "6&radic;2",
+        "C": "5&radic;2",
+        "D": "8&radic;2"
+      },
+      "correct_option": "B",
+      "correct_answer": "6&radic;2",
+      "solution": "📌📌 Shortcut Trick\n\nDirectly extract perfect squares from the square roots:\n\n⇒ √50 + √18 − √8\n\n⇒ √(25 × 2) + √(9 × 2) − √(4 × 2)\n\n⇒ 5√2 + 3√2 − 2√2 = 6√2\n\n∴ The correct answer is 6√2.\n\nAlternate Method\n\nGiven:\n\nExpression: √50 + √18 − √8\n\nMethod Used:\n\nPrime factorization of the numbers inside the roots to extract terms outside the square root.\n\nCalculations:\n\n⇒ √50 = √(2 × 5 × 5) = 5√2\n\n⇒ √18 = √(2 × 3 × 3) = 3√2\n\n⇒ √8 = √(2 × 2 × 2) = 2√2\n\nSubstitute these values back into the expression:\n\n⇒ 5√2 + 3√2 − 2√2\n\nTake √2 as common:\n\n⇒ (5 + 3 − 2) × √2\n\n⇒ 6√2\n\n∴ The correct answer is 6√2.\n\n📌📌 Additional Information\n\nSimilar Surds\n\nSurds which have the same irrational factor are called similar surds. Only similar surds can be added or subtracted. Example: 3√2 and 5√2 are similar surds.\n\nMultiplication and Division of Surds\n\nUnlike addition and subtraction, surds with the same order can be multiplied or divided regardless of their base. √a × √b = √(ab) and √a ÷ √b = √(a/b).\n\nSimplifying Surds\n\nTo simplify a square root, find the largest perfect square factor of the number inside the root, and bring its square root outside. Example: √(x2y) = x√y."
+    },
+    {
+      "number": 74,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 24,
+      "id": "6909e3c046afbbd01e8f1014",
+      "passage": "",
+      "question": "The diameter of a circle measures 25 cm. What is the maximum length of a chord in this circle?",
+      "options": {
+        "A": "12 cm",
+        "B": "25 cm",
+        "C": "50 cm",
+        "D": "100 cm"
+      },
+      "correct_option": "B",
+      "correct_answer": "25 cm",
+      "solution": "📌📌 Shortcut Trick\n\nThe longest chord of a circle is its diameter.\nGiven the diameter of the circle is 25 cm.\nMaximum length of the chord = Diameter = 25 cm.\n∴ The correct answer is 25 cm.\nAlternate Method\nGiven:\nDiameter of the circle = 25 cm\nConcept Used:\nA chord is a line segment whose endpoints lie on the circumference of the circle.\nAs a chord moves closer to the center of the circle, its length continuously increases.\nThe chord that passes exactly through the center is the longest possible chord, which is known as the diameter.\nShorter ChordLongest Chord (Diameter) = 25 cmCenter OCalculation:\n⇒ Maximum length of chord = Length of diameter\n⇒ Maximum length of chord = 25 cm\n∴ The correct answer is 25 cm.\n\n📌📌 Additional Information\n\nPerpendicular from Center to Chord\nA perpendicular drawn from the center of a circle to a chord perfectly bisects the chord into two equal parts.\nEqual Chords and Subtended Angles\nEqual chords of a circle subtend equal angles at the center of the circle.\nDistance of Chords from Center\nEqual chords of a circle are always equidistant from the center. Conversely, chords that are equidistant from the center are exactly equal in length."
+    },
+    {
+      "number": 75,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 25,
+      "id": "6909e3c00a867837a1c51319",
+      "passage": "",
+      "question": "If sin A + cos A = &radic;2 sin A, then what is the value of tanA?",
+      "options": {
+        "A": "&radic;2",
+        "B": "1",
+        "C": "&radic;2 + 1",
+        "D": "&radic;2 - 1"
+      },
+      "correct_option": "C",
+      "correct_answer": "&radic;2 + 1",
+      "solution": "📌📌 Shortcut Trick\n\n⇒ sin A + cos A = √2 sin A\n\n⇒ cos A = sin A(√2 − 1) ⇒ cot A = √2 − 1\n\n⇒ tan A = 1 ÷ cot A = 1 ÷ (√2 − 1)\n\n⇒ Rationalizing the denominator gives tan A = √2 + 1\n\n∴ The correct answer is √2 + 1.\n\nAlternate Method\n\nGiven:\n\nsin A + cos A = √2 sin A\n\nFormula Used:\n\ntan A = sin A ÷ cos A\n\n(a − b)(a + b) = a2 − b2\n\nCalculations:\n\n⇒ Divide the entire given equation by cos A:\n\n⇒ (sin A ÷ cos A) + (cos A ÷ cos A) = √2(sin A ÷ cos A)\n\n⇒ tan A + 1 = √2 tan A\n\n⇒ 1 = √2 tan A − tan A\n\n⇒ 1 = tan A(√2 − 1)\n\n⇒ tan A = 1 ÷ (√2 − 1)\n\n⇒ Multiply numerator and denominator by (√2 + 1):\n\n⇒ tan A = (√2 + 1) ÷ [(√2 − 1)(√2 + 1)]\n\n⇒ tan A = (√2 + 1) ÷ [(√2)2 − (1)2]\n\n⇒ tan A = (√2 + 1) ÷ (2 − 1)\n\n⇒ tan A = √2 + 1\n\n∴ The correct answer is √2 + 1.\n\n📌📌 Additional Information\n\nBasic Trigonometric Ratios\n\ntan A = sin A ÷ cos A and cot A = cos A ÷ sin A.\n\nPythagorean Identities\n\nsin2 A + cos2 A = 1 | 1 + tan2 A = sec2 A | 1 + cot2 A = cosec2 A.\n\nAlgebraic Rationalization\n\nTo rationalize a denominator of the form (a − b), multiply numerator and denominator by its conjugate (a + b) using the identity (a − b)(a + b) = a2 − b2."
+    },
+    {
+      "number": 76,
+      "section": "English Comprehension",
+      "section_question_number": 1,
+      "id": "6909e3a6ad853d4240782b4d",
+      "passage": "",
+      "question": "Select the most appropriate synonym of the given word: APOGEE",
+      "options": {
+        "A": "Start",
+        "B": "Peak",
+        "C": "Nadir",
+        "D": "Base"
+      },
+      "correct_option": "B",
+      "correct_answer": "Peak",
+      "solution": "The correct answer is '2' i.e. Peak .\n\n📌📌 Key Points\n\nThe word APOGEE refers to the highest point or the peak of something.\n\nAmong the given options:\n\nStart: Refers to the beginning of something.\n\nPeak: Refers to the highest point or summit, which is synonymous with \"apogee.\"\n\nNadir: Refers to the lowest point, which is the opposite of \"apogee.\"\n\nBase: Refers to the bottom or foundation, which is unrelated to \"apogee.\"\n\nThus, the synonym for \"APOGEE\" is Peak.\n\nCorrect sentence: The apogee of her career was when she won the prestigious award, reaching the peak of her success.\n\n📌📌 Additional Information\n\nOpposite Words: The opposite of \"apogee\" is \"nadir,\" which denotes the lowest point.\n\nUsage in Context: \"Apogee\" is often used metaphorically to describe the pinnacle of achievement or success."
+    },
+    {
+      "number": 77,
+      "section": "English Comprehension",
+      "section_question_number": 2,
+      "id": "6909e3a6043b2e998e0924ce",
+      "passage": "",
+      "question": "Choose the correct meaning of idiom:\n\nThrow cold water on",
+      "options": {
+        "A": "To make something popular",
+        "B": "To oppose or discourage",
+        "C": "To wash away concerns",
+        "D": "To encourage enthusiastically"
+      },
+      "correct_option": "B",
+      "correct_answer": "To oppose or discourage",
+      "solution": "The correct answer is '2' i.e. To oppose or discourage.\n\n📌📌 Key Points\n\nThe idiom \"Throw cold water on\" means to oppose or discourage an idea, plan, or enthusiasm.\n\nIt is generally used in situations where someone is critical of or undermines excitement or positivity about something.\n\nCorrect usage example: She threw cold water on his idea of starting a new business by pointing out all the risks involved.\n\n📌📌 Additional Information\n\nIdioms:\n\nIdioms are phrases or expressions that have figurative meanings different from their literal meanings.\n\nExamples of idioms include \"Break the ice,\" \"Burn the midnight oil,\" and \"Hit the nail on the head.\"\n\nContext:\n\nThe meaning of an idiom often depends on the context it is used in.\n\nUnderstanding idioms can enhance communication and comprehension skills."
+    },
+    {
+      "number": 78,
+      "section": "English Comprehension",
+      "section_question_number": 3,
+      "id": "6909e3a7a403e0dfbd77d57d",
+      "passage": "",
+      "question": "Select the most appropriate antonym of the given word.Mendacious",
+      "options": {
+        "A": "Dishonest",
+        "B": "Fraudulent",
+        "C": "Truthful",
+        "D": "Deceitful"
+      },
+      "correct_option": "C",
+      "correct_answer": "Truthful",
+      "solution": "The correct answer is '3' i.e. Truthful .\n\n📌📌 Key Points\n\nThe word Mendacious means dishonest or lying.\n\nTo find the antonym, we need to look for a word that conveys the opposite meaning, i.e., being honest or truthful.\n\nAmong the options, Truthful is the most appropriate antonym as it directly signifies honesty.\n\nThe other options like Dishonest, Fraudulent, and Deceitful are synonyms of Mendacious, not antonyms.\n\nCorrect answer: Truthful is the antonym of Mendacious.\n\n📌📌 Additional Information\n\nMendacious: Comes from the Latin word \"mendax,\" meaning lying or deceitful.\n\nSynonyms: Dishonest, Fraudulent, Deceitful.\n\nAntonym: Truthful (meaning honest or sincere)."
+    },
+    {
+      "number": 79,
+      "section": "English Comprehension",
+      "section_question_number": 4,
+      "id": "6909e3a7043b2e998e0924d2",
+      "passage": "",
+      "question": "Identify the misspelled word",
+      "options": {
+        "A": "Antediluvian",
+        "B": "Infinitesimal",
+        "C": "Persiflage",
+        "D": "Obfescate"
+      },
+      "correct_option": "D",
+      "correct_answer": "Obfescate",
+      "solution": "The correct answer is '4' i.e. Obfescate .\n\n📌📌 Key Points\n\nThe word Obfescate is misspelled. The correct spelling is Obfuscate, which means to make something unclear or difficult to understand.\n\nThe other options, Antediluvian, Infinitesimal, and Persiflage, are correctly spelled.\n\nThis question tests your ability to identify spelling errors in vocabulary.\n\nCorrect sentence: The correct spelling is Obfuscate, which refers to making something obscure or unclear..\n\n📌📌 Additional Information\n\nTips for identifying spelling errors:\n\nPay attention to common misspellings or letter swaps in complex words.\n\nUse mnemonic devices to remember tricky spellings, such as “Obfuscate” (think of “obscure”).\n\nLearning new vocabulary:\n\nRead regularly to familiarize yourself with uncommon words.\n\nUse a dictionary to verify the meanings and spellings of unfamiliar terms."
+    },
+    {
+      "number": 80,
+      "section": "English Comprehension",
+      "section_question_number": 5,
+      "id": "6909e3a70a73c1795a9edfdd",
+      "passage": "",
+      "question": "Spot the correct spelling of a microchip printing method.",
+      "options": {
+        "A": "Photolithography",
+        "B": "Photolithographe",
+        "C": "Photolitography",
+        "D": "Potolithography"
+      },
+      "correct_option": "A",
+      "correct_answer": "Photolithography",
+      "solution": "The correct answer is '1' i.e. Photolithography .\n\n📌📌 Key Points\n\nThe word \"Photolithography\" is a microchip printing method and is the correct spelling.\n\nThe other options provided are incorrect spellings:\n\nOption 2: \"Photolithographe\" is incorrect because of the added \"e\" at the end.\n\nOption 3: \"Photolitography\" is incorrect due to the missing \"h\" in \"litho\".\n\nOption 4: \"Potolithography\" is incorrect as the \"Ph\" is misspelled as \"Po\".\n\nCorrect spelling: Photolithography\n\n📌📌 Additional Information\n\nPhotolithography is a process used in semiconductor manufacturing to transfer patterns onto a substrate using light. It is a crucial step in creating microchips.\n\nThe word comes from \"photo\" (light) and \"lithography\" (stone printing), which is derived from Greek words."
+    },
+    {
+      "number": 81,
+      "section": "English Comprehension",
+      "section_question_number": 6,
+      "id": "6909e3a84abbf384c68ebdeb",
+      "passage": "",
+      "question": "Choose the correct one-word substitute for: 'A speech or piece of writing that praises someone highly'.",
+      "options": {
+        "A": "Elegy",
+        "B": "Encomium",
+        "C": "Sermon",
+        "D": "Soliloquy"
+      },
+      "correct_option": "B",
+      "correct_answer": "Encomium",
+      "solution": "The correct answer is '2' i.e. Encomium .\n\n📌📌 Key Points\n\nThe word Encomium refers to a speech or piece of writing that praises someone or something highly.\n\nElegy: A poem of serious reflection, typically a lament for the dead.\n\nSermon: A talk on a religious or moral subject, especially one given during a church service.\n\nSoliloquy: An act of speaking one's thoughts aloud when by oneself, especially by a character in a play.\n\nCorrect sentence: A speech or piece of writing that praises someone highly is called an Encomium.\n\n📌📌 Additional Information\n\nEnsure to differentiate among the terms provided in the options to select the most appropriate one-word substitute.\n\nUnderstand the context of the question to eliminate incorrect options effectively."
+    },
+    {
+      "number": 82,
+      "section": "English Comprehension",
+      "section_question_number": 7,
+      "id": "6909e3a808e6e2aa8b1ffa8a",
+      "passage": "",
+      "question": "Select the correct option:\n\nThe journalist refused to ___ her sources despite repeated legal threats.",
+      "options": {
+        "A": "give out",
+        "B": "give over",
+        "C": "give away",
+        "D": "give up"
+      },
+      "correct_option": "C",
+      "correct_answer": "give away",
+      "solution": "The correct answer is 'give away'.\n\n📌📌 Key Points\n\nThe phrasal verb \"give away\" means to reveal or disclose something, especially information that is meant to be kept secret.\n\nIn the sentence, the journalist is unwilling to reveal the identity or information about her sources despite legal pressure, so \"give away\" is the most appropriate choice.\n\nOptions 1, 2, and 4 do not convey the intended meaning in this context.\n\nTherefore, the correct answer is Option 3.\n\nComplete Sentence: \"The journalist refused to give away her sources despite repeated legal threats.\"\n\n📌📌 Additional Information\n\nOption 1: \"give out\" generally means to distribute or provide something, such as information or materials, rather than specifically revealing a confidential source.\n\nOption 2: \"give over\" means to hand something over or surrender control of something and is not appropriate in this context.\n\nOption 4: \"give up\" means to stop doing something, surrender, or abandon an effort; it does not specifically mean to disclose information."
+    },
+    {
+      "number": 83,
+      "section": "English Comprehension",
+      "section_question_number": 8,
+      "id": "6909e3a81d2b12c536ac6c38",
+      "passage": "",
+      "question": "Select the correct option:\n\nThe memorandum clarified that employees must comply ___ the revised code of ethics.",
+      "options": {
+        "A": "to",
+        "B": "with",
+        "C": "by",
+        "D": "in"
+      },
+      "correct_option": "B",
+      "correct_answer": "with",
+      "solution": "The correct answer is '2' i.e. with.\n\n📌📌 Key Points\n\nThe preposition with is commonly used after the verb comply to indicate adherence or obedience to rules, regulations, or standards.\n\nThe sentence refers to compliance with the revised code of ethics, so with is the appropriate choice.\n\nOther options such as to, by, or in are grammatically incorrect in this context.\n\nCorrect sentence: The memorandum clarified that employees must comply with the revised code of ethics.\n\n📌📌 Additional Information\n\nUsage of prepositions:\n\nComply with: To follow rules or adhere to standards. Example: \"You must comply with the safety regulations.\"\n\nComply to: Incorrect usage; avoid using \"to\" after comply.\n\nComply by: Rarely used and usually incorrect in this context.\n\nComply in: Incorrect usage; \"in\" does not fit grammatically here."
+    },
+    {
+      "number": 84,
+      "section": "English Comprehension",
+      "section_question_number": 9,
+      "id": "6909e3a969d3c2608329791f",
+      "passage": "",
+      "question": "Select the correct option:\n\nThe scientist's hypothesis was not only radical but also diametrically____ to the foundational assumptions of her discipline.",
+      "options": {
+        "A": "opposed",
+        "B": "opposing",
+        "C": "opposite",
+        "D": "averse"
+      },
+      "correct_option": "A",
+      "correct_answer": "opposed",
+      "solution": "The correct answer is '1' i.e. opposed .\n\n📌📌 Key Points\n\nThe sentence discusses how the scientist's hypothesis was not just radical but also completely contrary to the foundational assumptions of her discipline.\n\nThe correct word to fill the blank should mean \"completely contrary or in disagreement with.\"\n\nOpposed is the most appropriate choice as it correctly conveys the meaning of being \"diametrically contrary\" or \"against.\"\n\nOther options like opposing and opposite are not suitable in this context. Averse is incorrect as it refers to a strong dislike or disinclination, which doesn't fit the sentence.\n\nCorrect sentence: The scientist's hypothesis was not only radical but also diametrically opposed to the foundational assumptions of her discipline.\n\n📌📌 Additional Information\n\nOpposed: Means \"completely against or in disagreement with something.\"\n\nOpposing: Refers to something that is in opposition, often used in contexts like teams or forces.\n\nOpposite: Indicates something that is entirely different, often used in physical or conceptual contrasts.\n\nAverse: Means \"having a strong dislike for something,\" which doesn't fit the context here."
+    },
+    {
+      "number": 85,
+      "section": "English Comprehension",
+      "section_question_number": 10,
+      "id": "6909e3a9327d8630a5c9e33e",
+      "passage": "",
+      "question": "Find the part of the sentence that contains an error:\n\nThe investigation's findings, alarming in both scope and content, (1)/ prompted responses not just from the agencies concerned (2)/ but also from the auditors who report they (3)/ were never granted access to critical records. (4)",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "correct_option": "C",
+      "correct_answer": "3",
+      "solution": "The correct answer is '3' i.e. Part 3 .\n\n📌📌 Key Points\n\nThe Error: The error lies in the usage of the subjective pronoun 'they' at the end of Part 3.\n\nGrammatical Rule (Pronoun Case): In English, we use Subjective Pronouns (I, he, she, we, they) when the pronoun is the subject of a verb. We use Objective Pronouns (me, him, her, us, them) when the pronoun is the object of a verb or preposition.\n\nAnalysis: In the phrase \"who report they,\" the pronoun 'they' is intended to be the subject of the clause that follows (\"they were never granted...\"). However, the way the sentence is structured, the reporting act requires a conjunction (that) to lead into the next clause, or the pronoun must clearly act as the subject of the subsequent verb.\n\nCorrection: The sentence should read \"...auditors who report that they were never granted...\" or simply ensure the pronoun 'they' is properly placed as the subject of the passive verb \"were granted\" in Part 4. The current transition in Part 3 is abrupt and grammatically incomplete.\n\n📌📌 Additional Information\n\nNot just... but also: This is a correlative conjunction. The sentence correctly uses this pair to link \"from the agencies\" and \"from the auditors.\" (Parallelism).\n\nConcerned: When placed after a noun (agencies concerned), it means \"involved\" or \"relevant.\" When placed before (concerned agencies), it often means \"worried.\" Both are grammatically correct depending on meaning.\n\nSubject-Verb Agreement: The main subject \"findings\" (plural) correctly agrees with the verb \"prompted\" (past tense)."
+    },
+    {
+      "number": 86,
+      "section": "English Comprehension",
+      "section_question_number": 11,
+      "id": "6909e3a9043b2e998e09253c",
+      "passage": "",
+      "question": "Find the part of the sentence that contains an error:\n\nThat certain state governments have invoked archaic laws (1)/ to suppress dissent does not only reflect legal opportunism (2)/ but also undermines the constitutional ethos (3)/ that such provisions were meant to uphold. (4)",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "correct_option": "B",
+      "correct_answer": "2",
+      "solution": "The correct answer is '2' i.e. to suppress dissent does not only reflect legal opportunism .\n\n📌📌 Key Points\n\nThe phrase \"does not only reflect\" is incorrect. The correct phrase should be \"not only reflects\" to maintain proper grammatical structure and parallelism.\n\nUsing \"does not only reflect\" introduces unnecessary complexity and breaks the flow of the sentence.\n\nThe corrected portion ensures that the sentence is grammatically accurate and stylistically coherent.\n\nCorrect sentence: That certain state governments have invoked archaic laws to suppress dissent not only reflects legal opportunism but also undermines the constitutional ethos that such provisions were meant to uphold.\n\n📌📌 Additional Information\n\nParallelism: When using phrases like \"not only... but also,\" ensure that the structure of the sentence is consistent and grammatically correct.\n\nExamples:\n\nIncorrect: He does not only sing, but also dances.\n\nCorrect: He not only sings but also dances."
+    },
+    {
+      "number": 87,
+      "section": "English Comprehension",
+      "section_question_number": 12,
+      "id": "6909e3aa03a111035ab28ef5",
+      "passage": "",
+      "question": "Change the following from active to passive:\n\nThe jury has delivered a unanimous verdict.",
+      "options": {
+        "A": "A unanimous verdict has been delivered by the jury.",
+        "B": "A unanimous verdict was being delivered by the jury.",
+        "C": "A unanimous verdict had been delivered by the jury.",
+        "D": "A unanimous verdict is delivered by the jury."
+      },
+      "correct_option": "A",
+      "correct_answer": "A unanimous verdict has been delivered by the jury.",
+      "solution": "The correct answer is '1' i.e. A unanimous verdict has been delivered by the jury. .\n\n📌📌 Key Points\n\nTo change a sentence from active to passive voice, the subject becomes the receiver of the action, and the object becomes the doer.\n\nThe active sentence here is: The jury has delivered a unanimous verdict.\n\nIn passive voice, the object (\"a unanimous verdict\") comes first, followed by the verb in the passive form. The subject (\"the jury\") follows, preceded by \"by\".\n\nThe correct passive construction is: A unanimous verdict has been delivered by the jury.\n\nCorrect sentence: A unanimous verdict has been delivered by the jury.\n\n📌📌 Additional Information\n\nActive voice: The subject performs the action expressed by the verb.\n\nExample: The chef prepared the meal.\n\nPassive voice: The subject receives the action expressed by the verb.\n\nExample: The meal was prepared by the chef.\n\nVerb tense in passive voice is formed by using the correct form of \"to be\" + the past participle of the main verb."
+    },
+    {
+      "number": 88,
+      "section": "English Comprehension",
+      "section_question_number": 13,
+      "id": "6909e3aa46afbbd01e8f0e4f",
+      "passage": "",
+      "question": "Select the sentence containing the homonym of the highlighted word:\n\nThe treatise critiqued the rheme in the syntactical arrangement of propositions.",
+      "options": {
+        "A": "The linguist isolated the rheme in the sentence structure.",
+        "B": "The rheme was pronounced with unique intonation in Tagalog.",
+        "C": "The rheme swam rapidly into the estuarine current.",
+        "D": "The poet emphasized the rheme for metrical impact."
+      },
+      "correct_option": "C",
+      "correct_answer": "The rheme swam rapidly into the estuarine current.",
+      "solution": "The correct answer is '3' i.e. The rheme swam rapidly into the estuarine current.\n\n📌📌 Key Points\n\nThe term “rheme” as highlighted in the question refers to linguistic usage, specifically the part of a sentence that provides new information.\n\nOption 3 presents a homonym of the word “rheme.” Here, “rheme” is used in a completely different context, referring to an aquatic organism (a fictional usage for illustrative purposes).\n\nThis makes Option 3 the correct answer since it demonstrates a homonym—a word spelled the same but with a different meaning.\n\nCorrect sentence: The rheme swam rapidly into the estuarine current.\n\n📌📌 Additional Information\n\nHomonyms: Words that are spelled the same and may sound the same but have different meanings.\n\nExamples:\n\nBat: Referring to the flying mammal or the equipment used in cricket/baseball.\n\nBank: Referring to a financial institution or the side of a river."
+    },
+    {
+      "number": 89,
+      "section": "English Comprehension",
+      "section_question_number": 14,
+      "id": "6909e3aa08e6e2aa8b1ffb63",
+      "passage": "",
+      "question": "Convert the sentence provided below from its passive voice structure to an active voice structure:\n\nThe construction is alleged to have been halted due to environmental violations.",
+      "options": {
+        "A": "It is alleged that the authorities halted the construction.",
+        "B": "Authorities allegedly halted the construction.",
+        "C": "The authorities are alleged to have halted the construction.",
+        "D": "The violation allegedly halted the construction."
+      },
+      "correct_option": "C",
+      "correct_answer": "The authorities are alleged to have halted the construction.",
+      "solution": "The correct answer is '3' i.e. The authorities are alleged to have halted the construction.\n\n📌📌 Key Points\n\nThe original sentence is in the passive voice, where the subject receives the action.\n\nTo convert it to the active voice, the focus shifts to the performer of the action (i.e., the authorities).\n\nAmong the options provided, Option 3 accurately conveys the meaning of the original sentence in active voice.\n\nOption 3, \"The authorities are alleged to have halted the construction,\" maintains the context of the allegation and specifies who performed the action.\n\n📌📌 Additional Information\n\nPassive Voice Structure: Subject + verb (to be) + past participle +📌📌 additional information\n\n.\n\nActive Voice Structure: Subject (performer of action) + verb + object +📌📌 additional information\n\n.\n\nIn this case, the authorities are the subject performing the action, making Option 3 the most appropriate active voice transformation."
+    },
+    {
+      "number": 90,
+      "section": "English Comprehension",
+      "section_question_number": 15,
+      "id": "6909e3abf579995fc0aa3965",
+      "passage": "Read the following passage and answer the questions based on the passage:\n\nIndia's digital transformation over the last decade has been nothing short of revolutionary. What began as a modest attempt to expand internet access has now evolved into one of the largest digital ecosystems in the world. Spearheaded by government initiatives such as Digital India, the country has witnessed an unprecedented surge in internet penetration, digital payments, and online governance. A pivotal moment in this journey was the launch of Aadhaar, a biometric-based identification system that enabled secure and streamlined access to various public services. Coupled with the rise of Unified Payments Interface (UPI), India has leapfrogged traditional banking hurdles and facilitated real-time, low-cost transactions across urban and rural regions alike. Significantly, the pandemic acted as an unexpected catalyst. As lockdowns forced physical distancing, citizens turned to digital alternatives—telemedicine, online education, and remote work became not just accessible but essential. This sudden shift forced both public and private sectors to rethink infrastructure and embrace scalable tech solutions. However, the digital journey hasn't been without obstacles. A persistent digital divide remains, particularly between urban and rural populations. While metros enjoy high-speed broadband, many villages struggle with basic connectivity. Moreover, concerns around data privacy, cybersecurity, and misinformation have emerged as pressing issues in this digital age. Nonetheless, India's digital growth story remains a testament to its adaptability and ambition. With over 850 million internet users and counting, the nation stands at a crucial intersection—where robust digital policy, inclusive access, and responsible innovation will determine the trajectory of its digital future.",
+      "question": "What major government initiative catalyzed India&#39;s digital ecosystem?",
+      "options": {
+        "A": "BharatNet",
+        "B": "Digital Bharat",
+        "C": "Digital India",
+        "D": "India Connect"
+      },
+      "correct_option": "C",
+      "correct_answer": "Digital India",
+      "solution": "The correct answer is Option 3.\n\n📌📌 Key Points\n\nThe passage identifies the primary driver behind the country's technological shift as a specific government program.\n\nIt explicitly states that the transformation was \"spearheaded by government initiatives such as Digital India.\"\n\nThis program is credited with fueling the massive growth in internet penetration, digital payments, and the delivery of online public services.\n\nWhile the text mentions other systems like Aadhaar and UPI, these are presented as pivotal components or results that functioned alongside the broader Digital India framework.\n\nTherefore, the correct answer is Option 3.\n\nCorrect Sentence from Text: \"Spearheaded by government initiatives such as Digital India, the country has witnessed an unprecedented surge...\"\n\n📌📌 Additional Information\n\nOption 1: BharatNet – This is a real-world project for rural broadband, but it is not mentioned by name in the provided passage.\n\nOption 2: Digital Bharat – This is a similar-sounding term, but the passage specifically uses the name Digital India.\n\nOption 4: India Connect – This term does not appear in the text as a government initiative."
+    },
+    {
+      "number": 91,
+      "section": "English Comprehension",
+      "section_question_number": 16,
+      "id": "6909e3ab9002b79a1f1eea43",
+      "passage": "Read the following passage and answer the questions based on the passage:\n\nIndia's digital transformation over the last decade has been nothing short of revolutionary. What began as a modest attempt to expand internet access has now evolved into one of the largest digital ecosystems in the world. Spearheaded by government initiatives such as Digital India, the country has witnessed an unprecedented surge in internet penetration, digital payments, and online governance. A pivotal moment in this journey was the launch of Aadhaar, a biometric-based identification system that enabled secure and streamlined access to various public services. Coupled with the rise of Unified Payments Interface (UPI), India has leapfrogged traditional banking hurdles and facilitated real-time, low-cost transactions across urban and rural regions alike. Significantly, the pandemic acted as an unexpected catalyst. As lockdowns forced physical distancing, citizens turned to digital alternatives—telemedicine, online education, and remote work became not just accessible but essential. This sudden shift forced both public and private sectors to rethink infrastructure and embrace scalable tech solutions. However, the digital journey hasn't been without obstacles. A persistent digital divide remains, particularly between urban and rural populations. While metros enjoy high-speed broadband, many villages struggle with basic connectivity. Moreover, concerns around data privacy, cybersecurity, and misinformation have emerged as pressing issues in this digital age. Nonetheless, India's digital growth story remains a testament to its adaptability and ambition. With over 850 million internet users and counting, the nation stands at a crucial intersection—where robust digital policy, inclusive access, and responsible innovation will determine the trajectory of its digital future.",
+      "question": "What role did Aadhaar play in digital growth?",
+      "options": {
+        "A": "Promoted telecom infrastructure",
+        "B": "Enabled biometric voting",
+        "C": "Offered unified payments",
+        "D": "Enabled access to public services"
+      },
+      "correct_option": "D",
+      "correct_answer": "Enabled access to public services",
+      "solution": "The correct answer is Option 4.\n\n📌📌 Key Points\n\nThe passage identifies Aadhaar as a \"pivotal moment\" in India's digital transformation journey.\n\nIt specifically describes Aadhaar as a \"biometric-based identification system\" designed for a particular purpose.\n\nAccording to the text, the primary role of this system was that it \"enabled secure and streamlined access to various public services.\"\n\nThis streamlined access is a core part of how the country expanded its digital ecosystem and improved online governance.\n\nTherefore, the correct answer is Option 4.\n\nCorrect Sentence from Text: \"A pivotal moment in this journey was the launch of Aadhaar... that enabled secure and streamlined access to various public services.\"\n\n📌📌 Additional Information\n\nOption 1: Promoted telecom infrastructure – While digital growth relies on infrastructure, the passage does not specifically attribute the promotion of telecom hardware to Aadhaar.\n\nOption 2: Enabled biometric voting – This is not mentioned in the text; the passage focuses on \"public services\" generally.\n\nOption 3: Offered unified payments – The passage attributes \"real-time, low-cost transactions\" and unified payments to the UPI (Unified Payments Interface), not Aadhaar."
+    },
+    {
+      "number": 92,
+      "section": "English Comprehension",
+      "section_question_number": 17,
+      "id": "6909e3ab0093c49a0945227f",
+      "passage": "Read the following passage and answer the questions based on the passage:\n\nIndia's digital transformation over the last decade has been nothing short of revolutionary. What began as a modest attempt to expand internet access has now evolved into one of the largest digital ecosystems in the world. Spearheaded by government initiatives such as Digital India, the country has witnessed an unprecedented surge in internet penetration, digital payments, and online governance. A pivotal moment in this journey was the launch of Aadhaar, a biometric-based identification system that enabled secure and streamlined access to various public services. Coupled with the rise of Unified Payments Interface (UPI), India has leapfrogged traditional banking hurdles and facilitated real-time, low-cost transactions across urban and rural regions alike. Significantly, the pandemic acted as an unexpected catalyst. As lockdowns forced physical distancing, citizens turned to digital alternatives—telemedicine, online education, and remote work became not just accessible but essential. This sudden shift forced both public and private sectors to rethink infrastructure and embrace scalable tech solutions. However, the digital journey hasn't been without obstacles. A persistent digital divide remains, particularly between urban and rural populations. While metros enjoy high-speed broadband, many villages struggle with basic connectivity. Moreover, concerns around data privacy, cybersecurity, and misinformation have emerged as pressing issues in this digital age. Nonetheless, India's digital growth story remains a testament to its adaptability and ambition. With over 850 million internet users and counting, the nation stands at a crucial intersection—where robust digital policy, inclusive access, and responsible innovation will determine the trajectory of its digital future.",
+      "question": "Which factor unexpectedly accelerated India&#39;s digital adoption?",
+      "options": {
+        "A": "Demonetisation",
+        "B": "GST Implementation",
+        "C": "COVID-19 pandemic",
+        "D": "Global recession"
+      },
+      "correct_option": "C",
+      "correct_answer": "COVID-19 pandemic",
+      "solution": "The correct answer is Option 3.\n\n📌📌 Key Points\n\nThe passage describes various planned initiatives (like Aadhaar and UPI), but highlights one specific event that forced a rapid shift in behavior.\n\nIt explicitly states that \"the pandemic acted as an unexpected catalyst\" for India's digital transformation.\n\nBecause lockdowns required physical distancing, digital services like telemedicine, online education, and remote work moved from being optional to \"essential.\"\n\nThis event forced both the public and private sectors to quickly \"embrace scalable tech solutions,\" thereby accelerating adoption faster than previously expected.\n\nTherefore, the correct answer is Option 3.\n\nCorrect Sentence from Text: \"Significantly, the pandemic acted as an unexpected catalyst. As lockdowns forced physical distancing, citizens turned to digital alternatives...\"\n\n📌📌 Additional Information\n\nOption 1: Demonetisation – While this historically impacted digital payments in India, it is not mentioned in this specific passage.\n\nOption 2: GST Implementation – This is a tax reform that is not discussed in the context of digital acceleration within the provided text.\n\nOption 4: Global recession – The passage does not link digital adoption to a global economic downturn; it focuses on the health crisis as the driver."
+    },
+    {
+      "number": 93,
+      "section": "English Comprehension",
+      "section_question_number": 18,
+      "id": "6909e3ac621842063c1c5ab8",
+      "passage": "Read the following passage and answer the questions based on the passage:\n\nIndia's digital transformation over the last decade has been nothing short of revolutionary. What began as a modest attempt to expand internet access has now evolved into one of the largest digital ecosystems in the world. Spearheaded by government initiatives such as Digital India, the country has witnessed an unprecedented surge in internet penetration, digital payments, and online governance. A pivotal moment in this journey was the launch of Aadhaar, a biometric-based identification system that enabled secure and streamlined access to various public services. Coupled with the rise of Unified Payments Interface (UPI), India has leapfrogged traditional banking hurdles and facilitated real-time, low-cost transactions across urban and rural regions alike. Significantly, the pandemic acted as an unexpected catalyst. As lockdowns forced physical distancing, citizens turned to digital alternatives—telemedicine, online education, and remote work became not just accessible but essential. This sudden shift forced both public and private sectors to rethink infrastructure and embrace scalable tech solutions. However, the digital journey hasn't been without obstacles. A persistent digital divide remains, particularly between urban and rural populations. While metros enjoy high-speed broadband, many villages struggle with basic connectivity. Moreover, concerns around data privacy, cybersecurity, and misinformation have emerged as pressing issues in this digital age. Nonetheless, India's digital growth story remains a testament to its adaptability and ambition. With over 850 million internet users and counting, the nation stands at a crucial intersection—where robust digital policy, inclusive access, and responsible innovation will determine the trajectory of its digital future.",
+      "question": "What is a current challenge in India&#39;s digital development?",
+      "options": {
+        "A": "Internet monopoly by private ISPs",
+        "B": "Lack of mobile phone production",
+        "C": "Digital divide and data privacy",
+        "D": "Excess of international investors"
+      },
+      "correct_option": "C",
+      "correct_answer": "Digital divide and data privacy",
+      "solution": "The correct answer is Option 3.\n\n📌📌 Key Points\n\nThe passage notes that while India's growth is revolutionary, it faces several \"obstacles\" and \"pressing issues.\"\n\nIt specifically mentions a \"persistent digital divide\" that exists between urban metros and rural villages regarding connectivity speeds.\n\nFurthermore, it highlights that the digital age has brought about significant concerns regarding \"data privacy, cybersecurity, and misinformation.\"\n\nOption 3 correctly combines these two major challenges explicitly stated in the text.\n\nTherefore, the correct answer is Option 3.\n\nCorrect Sentence from Text: \"However, the digital journey hasn't been without obstacles. A persistent digital divide remains... Moreover, concerns around data privacy, cybersecurity, and misinformation have emerged as pressing issues...\"\n\n📌📌 Additional Information\n\nOption 1: Internet monopoly – The passage does not discuss the market structure of Internet Service Providers (ISPs) or monopolies.\n\nOption 2: Mobile phone production – This is an industrial/manufacturing topic that is not mentioned in the passage.\n\nOption 4: Excess of investors – The text does not mention international investment levels as a challenge; it focuses on infrastructure and security."
+    },
+    {
+      "number": 94,
+      "section": "English Comprehension",
+      "section_question_number": 19,
+      "id": "6909e3ac6c407480e20ae813",
+      "passage": "Read the following passage and answer the questions based on the passage:\n\nIndia's digital transformation over the last decade has been nothing short of revolutionary. What began as a modest attempt to expand internet access has now evolved into one of the largest digital ecosystems in the world. Spearheaded by government initiatives such as Digital India, the country has witnessed an unprecedented surge in internet penetration, digital payments, and online governance. A pivotal moment in this journey was the launch of Aadhaar, a biometric-based identification system that enabled secure and streamlined access to various public services. Coupled with the rise of Unified Payments Interface (UPI), India has leapfrogged traditional banking hurdles and facilitated real-time, low-cost transactions across urban and rural regions alike. Significantly, the pandemic acted as an unexpected catalyst. As lockdowns forced physical distancing, citizens turned to digital alternatives—telemedicine, online education, and remote work became not just accessible but essential. This sudden shift forced both public and private sectors to rethink infrastructure and embrace scalable tech solutions. However, the digital journey hasn't been without obstacles. A persistent digital divide remains, particularly between urban and rural populations. While metros enjoy high-speed broadband, many villages struggle with basic connectivity. Moreover, concerns around data privacy, cybersecurity, and misinformation have emerged as pressing issues in this digital age. Nonetheless, India's digital growth story remains a testament to its adaptability and ambition. With over 850 million internet users and counting, the nation stands at a crucial intersection—where robust digital policy, inclusive access, and responsible innovation will determine the trajectory of its digital future.",
+      "question": "What does the passage suggest is key to India&#39;s digital future?",
+      "options": {
+        "A": "More mobile apps",
+        "B": "Higher tax rates on digital goods",
+        "C": "Stricter censorship laws",
+        "D": "Inclusive access and responsible tech"
+      },
+      "correct_option": "D",
+      "correct_answer": "Inclusive access and responsible tech",
+      "solution": "The correct answer is Option 4.\n\n📌📌 Key Points\n\nThe passage concludes by looking toward the future of India's digital trajectory.\n\nIt states that the nation is at a \"crucial intersection\" where specific factors will determine its success.\n\nThe author explicitly identifies these factors as \"robust digital policy, inclusive access, and responsible innovation.\"\n\nThis highlights that bridging the digital divide (inclusive access) and ensuring technology is used ethically (responsible innovation) are the core pillars for future growth.\n\nTherefore, the correct answer is Option 4.\n\nCorrect Sentence from Text: \"...where robust digital policy, inclusive access, and responsible innovation will determine the trajectory of its digital future.\"\n\n📌📌 Additional Information\n\nOption 1: More mobile apps – While apps are part of the ecosystem, the passage emphasizes policy and access rather than just the quantity of applications.\n\nOption 2: Higher tax rates – The passage does not mention taxation at all.\n\nOption 3: Stricter censorship laws – The text mentions \"misinformation\" as a concern, but it points toward \"responsible innovation\" and policy rather than censorship as the key to the future."
+    },
+    {
+      "number": 95,
+      "section": "English Comprehension",
+      "section_question_number": 20,
+      "id": "6909e3ad335dea9be42ab898",
+      "passage": "",
+      "question": "Choose the most suitable option to replace the highlighted part of the sentence: I am confident to pass the examination.",
+      "options": {
+        "A": "in passing the exam",
+        "B": "to passing the exam",
+        "C": "of passing the examination",
+        "D": "for passing examination"
+      },
+      "correct_option": "C",
+      "correct_answer": "of passing the examination",
+      "solution": "The correct answer is 'of passing the examination'.\n\n📌📌 Key Points\n\nThe phrase \"confident of passing\" is the correct grammatical construction.\nThe preposition \"of\" is used with \"confident\" to indicate belief or assurance about achieving something.\nOptions 1, 2, and 4 are incorrect as they do not follow the standard grammatical pattern.\nTherefore, the correct answer is Option 3.\n\nComplete Sentence:\"I am confident of passing the examination.\"\n\n📌📌 Additional Information\n\nOption 1: \"in passing the exam\" is incorrect as \"confident\" is not followed by \"in\" in standard usage.\nOption 2: \"to passing the exam\" is incorrect because \"to\" does not correctly pair with \"confident.\"\nOption 4: \"for passing examination\" is incorrect; \"for\" is not the correct preposition to use with \"confident.\""
+    },
+    {
+      "number": 96,
+      "section": "English Comprehension",
+      "section_question_number": 21,
+      "id": "6909e3ad32cf9c8dc7773f1d",
+      "passage": "",
+      "question": "Choose the most suitable option to replace the highlighted part of the sentence:\n\nYou must adapt with the situation.",
+      "options": {
+        "A": "to the situation",
+        "B": "the situation",
+        "C": "adapt to the situation",
+        "D": "by the situation"
+      },
+      "correct_option": "C",
+      "correct_answer": "adapt to the situation",
+      "solution": "The correct answer is 'adapt to the situation'.\n\n📌📌 Key Points\n\nThe correct preposition to use with the verb \"adapt\" is \"to.\"\n\nThe phrase \"adapt to the situation\" means to adjust oneself to the circumstances effectively.\n\nOption 1 is incorrect because \"to the situation\" alone does not convey the full meaning without the verb \"adapt.\"\n\nOption 2 is incorrect as it lacks a preposition and is grammatically incomplete.\n\nOption 4 is incorrect because \"by the situation\" conveys a different meaning, implying causation rather than adjustment.\n\nTherefore, the correct answer is Option 3.\n\nComplete Sentence: \"You must adapt to the situation.\"\n\n📌📌 Additional Information\n\nOption 1: \"to the situation\" is incomplete without the verb \"adapt.\"\n\nOption 2: \"the situation\" is grammatically incorrect as it omits the necessary preposition.\n\nOption 4: \"by the situation\" is incorrect as it changes the intended meaning of the sentence."
+    },
+    {
+      "number": 97,
+      "section": "English Comprehension",
+      "section_question_number": 22,
+      "id": "6909e3ada937eb1254befbd3",
+      "passage": "",
+      "question": "A sentence is provided in direct speech. From the four given options, choose the one that most accurately conveys the sentence in its corresponding indirect speech.\n\nShe said, \"I had completed the report.\"",
+      "options": {
+        "A": "She said that she completed the report.",
+        "B": "She said that she has completed the report.",
+        "C": "She said that she had completed the report.",
+        "D": "She said she had been completing the report."
+      },
+      "correct_option": "C",
+      "correct_answer": "She said that she had completed the report.",
+      "solution": "The correct answer is Option 3.\n\n📌📌 Key Points\n\nIndirect Speech: She said that she had completed the report.\n\nKey Conversions:\n\nDirect Speech: \"I had completed the report.\" becomes Indirect Speech: \"She said that she had completed the report.\"\n\nTense Change:\n\nPast perfect tense (\"had completed\") remains unchanged in indirect speech because it is already in the correct form.\n\nPronoun Change:\n\nThe pronoun \"I\" in direct speech is changed to \"she\" in indirect speech to match the subject of the reporting verb \"she said.\"\n\nReporting Verb:\n\nThe reporting verb \"said\" remains as it is in indirect speech.\n\nPunctuation and Format:\n\nQuotation marks are removed in indirect speech.\n\nThe sentence is introduced with \"that\" to link the reporting clause and the reported speech.\n\nTherefore, the correct answer is Option 3.\n\nCorrect Sentence: She said that she had completed the report.\n\n📌📌 Additional Information\n\nOption 1: \"She said that she completed the report.\"\n\nIncorrect because the past perfect tense (\"had completed\") is not maintained, which changes the meaning of the sentence.\n\nOption 2: \"She said that she has completed the report.\"\n\nIncorrect because the present perfect tense (\"has completed\") is used, which does not align with the past perfect tense of the direct speech.\n\nOption 4: \"She said she had been completing the report.\"\n\nIncorrect because the past perfect continuous tense (\"had been completing\") changes the meaning of the original sentence, implying an ongoing action rather than a completed action."
+    },
+    {
+      "number": 98,
+      "section": "English Comprehension",
+      "section_question_number": 23,
+      "id": "6909e3ae08e6e2aa8b1ffb75",
+      "passage": "",
+      "question": "A sentence is provided in indirect speech. From the four given options, choose the one that most accurately conveys the sentence in its corresponding direct speech.\n\nThe scientist stated that water boiled at 100 degrees Celsius.",
+      "options": {
+        "A": "&quot;Water will boil at 100 degrees Celsius,&quot; said the scientist.",
+        "B": "&quot;Water boils at 100 degrees Celsius,&quot; the scientist stated.",
+        "C": "&quot;Water had boiled at 100 degrees Celsius,&quot; said the scientist.",
+        "D": "&quot;Water is boiling at 100 degrees Celsius,&quot; said the scientist."
+      },
+      "correct_option": "B",
+      "correct_answer": "&quot;Water boils at 100 degrees Celsius,&quot; the scientist stated.",
+      "solution": "The correct answer is Option 2.\n\n📌📌 Key Points\n\nIndirect Speech: The scientist stated that water boiled at 100 degrees Celsius.\n\nKey Conversions:\n\n\"water boiled\" becomes \"Water boils\"\n\nThe verb \"boiled\" is changed to \"boils\" to express a universal truth, which is always stated in the present tense in direct speech.\n\nReporting verb:\n\nIndirect: \"stated\"\n\nConverted to: \"the scientist stated,\" retaining the original reporting verb.\n\nPunctuation and Format:\n\nDirect speech is enclosed in quotation marks.\n\nStarts with a capital letter \"Water\" and ends with a period \".\".\n\nReporting clause follows the quoted speech, starting with a lowercase letter after the comma.\n\nTherefore, the correct answer is Option 2.\n\nCorrect Sentence: \"Water boils at 100 degrees Celsius,\" the scientist stated.\n\n📌📌 Additional Information\n\nOption 1: \"Water will boil at 100 degrees Celsius,\" said the scientist.\n\nIncorrect tense: \"will boil\" implies a future event, not a universal truth.\n\nOption 3: \"Water had boiled at 100 degrees Celsius,\" said the scientist.\n\nIncorrect tense: \"had boiled\" indicates a past event, not a universal truth.\n\nOption 4: \"Water is boiling at 100 degrees Celsius,\" said the scientist.\n\nIncorrect tense: \"is boiling\" indicates a current ongoing action, not a universal truth."
+    },
+    {
+      "number": 99,
+      "section": "English Comprehension",
+      "section_question_number": 24,
+      "id": "6909e3aebf3b74d68bc1bb67",
+      "passage": "",
+      "question": "Rearrange the following sentences to form a coherent paragraph:\n\n1. This allows a programmer to specify the structure and behavior of an object-oriented program.\n\n2. Object-Oriented Programming (OOP) is a programming paradigm based on the concept of \"objects,\" which can contain data and code.\n\n3. A central tenet of OOP is the concept of a \"class,\" which acts as a blueprint for creating objects.\n\n4. The key advantage of this approach is that it models real-world entities, making complex systems easier to manage and debug.",
+      "options": {
+        "A": "2, 3, 1, 4",
+        "B": "4, 3, 2, 1",
+        "C": "3, 1, 4, 2",
+        "D": "1, 2, 3, 4"
+      },
+      "correct_option": "A",
+      "correct_answer": "2, 3, 1, 4",
+      "solution": "The correct answer is Option 1.\n\n📌📌 Key Points\n\nThe paragraph begins by introducing Object-Oriented Programming (OOP) and its core concept of \"objects.\"\n\nSentence 2 is the first sentence as it introduces the concept of Object-Oriented Programming:\n\n\"Object-Oriented Programming (OOP) is a programming paradigm based on the concept of 'objects,' which can contain data and code.\"\n\nSentence 3 follows as it elaborates on the central tenet of OOP, which is the concept of a \"class\":\n\n\"A central tenet of OOP is the concept of a 'class,' which acts as a blueprint for creating objects.\"\n\nSentence 1 is the third sentence because it explains how a programmer can use classes to specify the structure and behavior of an OOP program:\n\n\"This allows a programmer to specify the structure and behavior of an object-oriented program.\"\n\nSentence 4 is the fourth as it highlights the key advantage of OOP, which is its ability to model real-world entities effectively:\n\n\"The key advantage of this approach is that it models real-world entities, making complex systems easier to manage and debug.\"\n\nThe correct sequence is 2, 3, 1, 4.\n\nCoherent paragraph after rearrangement:\n\n\"Object-Oriented Programming (OOP) is a programming paradigm based on the concept of 'objects,' which can contain data and code. A central tenet of OOP is the concept of a 'class,' which acts as a blueprint for creating objects. This allows a programmer to specify the structure and behavior of an object-oriented program. The key advantage of this approach is that it models real-world entities, making complex systems easier to manage and debug.\""
+    },
+    {
+      "number": 100,
+      "section": "English Comprehension",
+      "section_question_number": 25,
+      "id": "6909e3aebf3b74d68bc1bb69",
+      "passage": "",
+      "question": "Rearrange the following sentences to form a coherent paragraph:\n\n1. This process, a cornerstone of evolution, ensures that only individuals best suited to their environment survive to reproduce.\n\n2. The diversity of life on Earth is the result of a gradual process of change over vast spans of time.\n\n3. This leads to the gradual accumulation of favorable traits within a population.\n\n4. It begins with inherited variation among individuals, where some possess characteristics that give them an advantage over others.",
+      "options": {
+        "A": "2, 1, 4, 3",
+        "B": "4, 3, 1, 2",
+        "C": "2, 4, 3, 1",
+        "D": "1, 2, 4, 3"
+      },
+      "correct_option": "C",
+      "correct_answer": "2, 4, 3, 1",
+      "solution": "The correct answer is '2' i.e. 2, 4, 3, 1.\n\n📌📌 Key Points\n\nThe sentences need to be rearranged to form a coherent paragraph.\n\nThe paragraph logically starts with sentence 2, introducing the diversity of life and the gradual process of evolution.\n\nSentence 4 explains how the process begins, with inherited variation among individuals.\n\nSentence 3 discusses the accumulation of favorable traits within a population.\n\nFinally, sentence 1 concludes with the idea of survival and reproduction being the cornerstone of evolution.\n\nCorrect arrangement: 2, 4, 3, 1.\n\n📌📌 Additional Information\n\nKey Sentence Analysis:\n\nSentence 2: Introduces the diversity of life and the gradual process of evolution.\n\nSentence 4: Explains the beginning of the process with inherited variation.\n\nSentence 3: Describes the accumulation of favorable traits within a population.\n\nSentence 1: Concludes the paragraph with the idea of survival and reproduction as the cornerstone of evolution."
+    }
+  ]
+}
