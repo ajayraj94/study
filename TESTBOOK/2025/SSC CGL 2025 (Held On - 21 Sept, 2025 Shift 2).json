@@ -1,0 +1,4113 @@
+{
+  "test_id": "6a0f3f2a8d0a5c66cc0dc6d2",
+  "test_title": "SSC CGL 2025 (Held On: 21 Sept, 2025 Shift 2)",
+  "total_questions": 100,
+  "sections": [
+    "General Intelligence and Reasoning",
+    "General Awareness",
+    "Quantitative Aptitude",
+    "English Comprehension"
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 1,
+      "id": "690b31e4c6af04fa80fa9455",
+      "passage": "",
+      "question": "Choose the address that is the same as the one given below. Sample Address:D.No. 4-98, Krishna Colony, Guntur, Andhra Pradesh - 522002",
+      "options": {
+        "A": "Door No. 4-98, Krishna Colony, Guntur, Andhra Pradesh - 522002",
+        "B": "D.No. 4-89, Krishna Colony, Guntur, Andhra Pradesh - 522002",
+        "C": "D.No. 4-98, Krushna Colony, Guntur, Andhra Pradesh - 522002",
+        "D": "D.No. 4-98, Krishna Colony, Guntur, Andhra Pradesh - 522002"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q1",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 1,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "number-analogy",
+        "microTopicId": "num-triplet-set",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Number Analogy",
+        "microTopicName": "Set-Based Number Triplets (a, b, c)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 2,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 2,
+      "id": "690b31e43b1ef1c5fde63bc9",
+      "passage": "",
+      "question": "The following equation is incorrect. Which two signs should be interchanged to correct the equation? 14 - 7 &times; 30 &divide; 10 + 4 = 54",
+      "options": {
+        "A": "+ and -",
+        "B": "&times; and -",
+        "C": "- and &divide;",
+        "D": "&divide; and &times;"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q2",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 2,
+        "subjectId": "reasoning",
+        "chapterId": "mathematical-operations-logic",
+        "topicId": "math-operators",
+        "microTopicId": "math-sign-interchange",
+        "chapterName": "Mathematical Operations & Logic",
+        "topicName": "Mathematical Operations",
+        "microTopicName": "Interchanging Signs (+ and ×)",
+        "format": "equation-balance",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 3,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 3,
+      "id": "690b31e5cc83e0c7c1cbbb12",
+      "passage": "",
+      "question": "By interchanging the given two signs which of the following equation will NOT be correct?\n\n+ and ÷\n\nI. 27 ÷ 3 - 18 × 3 + 9 = 24\n\nII. 12 ÷ 8 × 12 + 16 - 7 = 19",
+      "options": {
+        "A": "Only I",
+        "B": "Both I and II",
+        "C": "Neither I nor II",
+        "D": "Only II"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q3",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 3,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "number-analogy",
+        "microTopicId": "num-triplet-set",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Number Analogy",
+        "microTopicName": "Set-Based Number Triplets (a, b, c)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 4,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 4,
+      "id": "690b31e56df9c2dd31c5fa97",
+      "passage": "",
+      "question": "A is the mother of B. B is the sister of C. How is A related to C?",
+      "options": {
+        "A": "Sister",
+        "B": "Aunt",
+        "C": "Mother",
+        "D": "Grandmother"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q4",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 4,
+        "subjectId": "reasoning",
+        "chapterId": "deductive-analytical",
+        "topicId": "blood-relations",
+        "microTopicId": "blood-family-tree",
+        "chapterName": "Deductive & Analytical Reasoning",
+        "topicName": "Blood Relations",
+        "microTopicName": "Direct Statement & Family Tree",
+        "format": "blood-relation",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 5,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 5,
+      "id": "690b31e5dcf03f0fb2bd9266",
+      "passage": "",
+      "question": "P is the brother of Q. Q is the sister of R. R is the father of S. How is P related to S?",
+      "options": {
+        "A": "Father",
+        "B": "Grandfather",
+        "C": "Brother",
+        "D": "Uncle"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q5",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 5,
+        "subjectId": "reasoning",
+        "chapterId": "deductive-analytical",
+        "topicId": "blood-relations",
+        "microTopicId": "blood-family-tree",
+        "chapterName": "Deductive & Analytical Reasoning",
+        "topicName": "Blood Relations",
+        "microTopicName": "Direct Statement & Family Tree",
+        "format": "blood-relation",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 6,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 6,
+      "id": "690b31e6b4e4ad62c8512c68",
+      "passage": "",
+      "question": "Read the following statement carefully and identify the action that follows. A student fails to submit assignments repeatedly.\n\nCourse of Action:\n\n1. Give extra time and counseling.\n\n2. Suspend the student.",
+      "options": {
+        "A": "Only 1",
+        "B": "Only 2",
+        "C": "Both follow",
+        "D": "Neither follows"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q6",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 6,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "number-analogy",
+        "microTopicId": "num-triplet-set",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Number Analogy",
+        "microTopicName": "Set-Based Number Triplets (a, b, c)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 7,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 7,
+      "id": "690b31e6d26c7b9aa1a41f31",
+      "passage": "",
+      "question": "Find the odd one out in the series: P1*, Q2*, R3*, S4*, T5*, E6*, V7*, W8*, X9*",
+      "options": {
+        "A": "W8*",
+        "B": "X9*",
+        "C": "E6*",
+        "D": "T5*"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q7",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 7,
+        "subjectId": "reasoning",
+        "chapterId": "series-completion",
+        "topicId": "letter-series",
+        "microTopicId": "let-ser-continuous",
+        "chapterName": "Series Completion",
+        "topicName": "Letter & Cluster Series",
+        "microTopicName": "Continuous Repeating Letter Pattern (a_b_a)",
+        "format": "series",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 8,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 8,
+      "id": "690b31e7e0dc3e953941b40b",
+      "passage": "",
+      "question": "Read the following statement carefully and identify the conclusion that follows.\n\nStatement:\n\nSome pens are pencils. All pencils are stationary. No stationary is electronic.\n\nConclusions:\n\nI. Some pens are not electronic.\n\nII. Some stationary are pens.",
+      "options": {
+        "A": "Only I follows",
+        "B": "Only II follows",
+        "C": "Both I and II follow",
+        "D": "Neither I nor II follows"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q8",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 8,
+        "subjectId": "reasoning",
+        "chapterId": "deductive-analytical",
+        "topicId": "syllogism",
+        "microTopicId": "syl-standard-23",
+        "chapterName": "Deductive & Analytical Reasoning",
+        "topicName": "Syllogism",
+        "microTopicName": "Standard 2 or 3 Statements (All, Some, No)",
+        "format": "deductive-statements",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 9,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 9,
+      "id": "690b31e79731082a68b9b8a3",
+      "passage": "",
+      "question": "From the given words, select the word that can be formed using the letters of the given word. PREACHER",
+      "options": {
+        "A": "TEACH",
+        "B": "TOUCH",
+        "C": "CHAR",
+        "D": "CREATE"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q9",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 9,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "number-analogy",
+        "microTopicId": "num-triplet-set",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Number Analogy",
+        "microTopicName": "Set-Based Number Triplets (a, b, c)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 10,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 10,
+      "id": "690b31e73731ace36e907f63",
+      "passage": "",
+      "question": "Which of the following prefixes can complete all three words meaningfully? _ABLE, _LIKELY, _BALANCE",
+      "options": {
+        "A": "IN",
+        "B": "UN",
+        "C": "RE",
+        "D": "DE"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q10",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 10,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "number-analogy",
+        "microTopicId": "num-triplet-set",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Number Analogy",
+        "microTopicName": "Set-Based Number Triplets (a, b, c)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 11,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 11,
+      "id": "690b31e8ce29a1f2f631d4df",
+      "passage": "",
+      "question": "Comprehension:\n\nDirections: Study the following information carefully and answer the questions given below. In a certain code,\n\n\"check list has been generated\" is written as\"jo ke al si ha\",\n\n\"His idea has check\" is written as \"of al fu ha\",\n\n\"number in check list\" is written as \"ha ya go ke\".\n\n\"His number generated there\" is written as \"ya si fu xo\"\n\nWhich of the following may represents 'My number has been generated'?",
+      "options": {
+        "A": "si ne jo ke na",
+        "B": "ya ne al ke si",
+        "C": "jo si ya al ne",
+        "D": "ne fu ya ke al"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q11",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 11,
+        "subjectId": "reasoning",
+        "chapterId": "deductive-analytical",
+        "topicId": "direction-distance",
+        "microTopicId": "dir-turns-displacement",
+        "chapterName": "Deductive & Analytical Reasoning",
+        "topicName": "Direction & Distance",
+        "microTopicName": "Cardinal Turns & Pythagoras Shortest Distance",
+        "format": "spatial-navigation",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 12,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 12,
+      "id": "690b31e8c7e7e44c169fdfd2",
+      "passage": "",
+      "question": "What comes next? ARB, BSC, CTD, DUE, ?",
+      "options": {
+        "A": "EWF",
+        "B": "FVE",
+        "C": "EVF",
+        "D": "FVG"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q12",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 12,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "number-analogy",
+        "microTopicId": "num-triplet-set",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Number Analogy",
+        "microTopicName": "Set-Based Number Triplets (a, b, c)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 13,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 13,
+      "id": "690b31e8e256d2aae847399a",
+      "passage": "",
+      "question": "Find the odd one out from the given alternatives:",
+      "options": {
+        "A": "Razia Sultana",
+        "B": "Rani Durgavati",
+        "C": "Rani Lakshmi Bai",
+        "D": "Sarojini Naidu"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q13",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 13,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "classification-odd-one",
+        "microTopicId": "odd-letter",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Odd One Out (Classification)",
+        "microTopicName": "Letter Cluster Odd One Out",
+        "format": "odd-one-out",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 14,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 14,
+      "id": "690b31e91dfe1358b30b76bb",
+      "passage": "",
+      "question": "Select the letter-cluster from among the given options that can replace the question mark (?) in the following series: ACE, BDF, CEG, ?",
+      "options": {
+        "A": "DFH",
+        "B": "DEH",
+        "C": "DFI",
+        "D": "DEI"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q14",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 14,
+        "subjectId": "reasoning",
+        "chapterId": "series-completion",
+        "topicId": "letter-series",
+        "microTopicId": "let-ser-cluster",
+        "chapterName": "Series Completion",
+        "topicName": "Letter & Cluster Series",
+        "microTopicName": "Multi-Letter Cluster Series",
+        "format": "series",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 15,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 15,
+      "id": "690b31e997287b67b4638c36",
+      "passage": "",
+      "question": "A product is originally priced at ₹2,000. A 15% discount is applied to the original price. After the discount, a 10% Value Added Tax (VAT) is charged on the discounted price. What is the net amount paid for the product?",
+      "options": {
+        "A": "₹1870",
+        "B": "₹1720",
+        "C": "₹1530",
+        "D": "₹1960"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q15",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 15,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "number-analogy",
+        "microTopicId": "num-triplet-set",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Number Analogy",
+        "microTopicName": "Set-Based Number Triplets (a, b, c)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 16,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 16,
+      "id": "690b31ea48b82c549be733b9",
+      "passage": "",
+      "question": "If 9 @ 3 = 108 and 10 @ 2 = 80, what is 7 @ 1?",
+      "options": {
+        "A": "18",
+        "B": "35",
+        "C": "28",
+        "D": "43"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q16",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 16,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "number-analogy",
+        "microTopicId": "num-triplet-set",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Number Analogy",
+        "microTopicName": "Set-Based Number Triplets (a, b, c)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 17,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 17,
+      "id": "690b31eafe8107c7f920a884",
+      "passage": "",
+      "question": "While walking to office, you witness a road accident. What will you do?",
+      "options": {
+        "A": "Ignore and move ahead",
+        "B": "Call emergency services and inform traffic police",
+        "C": "Wait until someone else helps",
+        "D": "Post it on social media"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q17",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 17,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "number-analogy",
+        "microTopicId": "num-triplet-set",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Number Analogy",
+        "microTopicName": "Set-Based Number Triplets (a, b, c)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 18,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 18,
+      "id": "690b31eae5487d5c9d211126",
+      "passage": "",
+      "question": "If the signs are interchanged as follows:\n\n• '+' means 'x'\n\n• 'x' means '-'\n\n• '-' means '+'\n\n• '÷' means '÷'\n\nWhich equation is incorrect after applying these symbol transformations?",
+      "options": {
+        "A": "6 + 3 - 2 x 1 = 19",
+        "B": "8 - 4 x 2 + 1 = 10",
+        "C": "5 + 2 x 4 - 3 = 11",
+        "D": "10 x 3 - 5 + 2 = 17"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q18",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 18,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "number-analogy",
+        "microTopicId": "num-triplet-set",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Number Analogy",
+        "microTopicName": "Set-Based Number Triplets (a, b, c)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 19,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 19,
+      "id": "690b31ebfe8107c7f920a88c",
+      "passage": "",
+      "question": "You are a nurse in an emergency ward. A patient arrives with severe chest pain. What should you do first?",
+      "options": {
+        "A": "Call the doctor immediately",
+        "B": "Check patient&#39;s insurance",
+        "C": "Fill out admission form",
+        "D": "Contact the family"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q19",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 19,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "number-analogy",
+        "microTopicId": "num-triplet-set",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Number Analogy",
+        "microTopicName": "Set-Based Number Triplets (a, b, c)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 20,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 20,
+      "id": "690b31ebcc83e0c7c1cbbb48",
+      "passage": "",
+      "question": "What should come at the place of question mark? 144, 121, 100, 81, ?, 49",
+      "options": {
+        "A": "64",
+        "B": "72",
+        "C": "66",
+        "D": "70"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q20",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 20,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "number-analogy",
+        "microTopicId": "num-triplet-set",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Number Analogy",
+        "microTopicName": "Set-Based Number Triplets (a, b, c)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 21,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 21,
+      "id": "690b31eb97287b67b4638c3e",
+      "passage": "",
+      "question": "In this mathematical expression, the symbols have been replaced by code symbols. You are required to substitute each symbol with its actual arithmetic operator as per the given code :\n\nFind the value of the expression:\n\n3 * 4 # 2 @ 5\n\n| Symbol | Actual Operator |\n| * | + (Addition) |\n| @ | - (Subtraction) |\n| # | × (Multiplication) |\n| & | ÷ (Division) |",
+      "options": {
+        "A": "9",
+        "B": "6",
+        "C": "10",
+        "D": "7"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q21",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 21,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "number-analogy",
+        "microTopicId": "num-triplet-set",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Number Analogy",
+        "microTopicName": "Set-Based Number Triplets (a, b, c)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 22,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 22,
+      "id": "690b31ec4181770ac4673b38",
+      "passage": "",
+      "question": "Statements: Some keys are locks. Some locks are doors. Conclusions: I. Some keys are doors. II. All locks being keys is a possibility.",
+      "options": {
+        "A": "Only Conclusion II follows",
+        "B": "Only Conclusion I follows",
+        "C": "Both I and II follow",
+        "D": "Neither I nor II follows"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q22",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 22,
+        "subjectId": "reasoning",
+        "chapterId": "deductive-analytical",
+        "topicId": "syllogism",
+        "microTopicId": "syl-possibility",
+        "chapterName": "Deductive & Analytical Reasoning",
+        "topicName": "Syllogism",
+        "microTopicName": "Possibility Cases & Either-Or Conditions",
+        "format": "deductive-statements",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 23,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 23,
+      "id": "690b31ec1dfe1358b30b76fb",
+      "passage": "",
+      "question": "If &#39;LION&#39; is coded as &#39;12-9-15-14&#39;, how will &#39;NOIL&#39; be coded?",
+      "options": {
+        "A": "22-24-3-18",
+        "B": "14-3-21-8",
+        "C": "25-4-20-13",
+        "D": "14-15-9-12"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q23",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 23,
+        "subjectId": "reasoning",
+        "chapterId": "coding-decoding",
+        "topicId": "number-symbol-coding",
+        "microTopicId": "code-pos-sum",
+        "chapterName": "Coding-Decoding",
+        "topicName": "Number & Symbol Coding",
+        "microTopicName": "Letter Position Sum & Calculation",
+        "format": "coding-decoding",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 24,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 24,
+      "id": "690b31eceb5683f477ac2627",
+      "passage": "",
+      "question": "3, 6, 18, 72, 360, ?",
+      "options": {
+        "A": "1800",
+        "B": "1400",
+        "C": "2160",
+        "D": "1080"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q24",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 24,
+        "subjectId": "reasoning",
+        "chapterId": "analogy-classification",
+        "topicId": "number-analogy",
+        "microTopicId": "num-triplet-set",
+        "chapterName": "Analogy & Classification",
+        "topicName": "Number Analogy",
+        "microTopicName": "Set-Based Number Triplets (a, b, c)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 25,
+      "section": "General Intelligence and Reasoning",
+      "section_question_number": 25,
+      "id": "690b31edcf19d6986cb6cbcf",
+      "passage": "",
+      "question": "The series given below contains a sequence of numbers. Accordingly identify the incorrect combination. 5, 9, 27, 31, 94, 97, 292",
+      "options": {
+        "A": "27, 292",
+        "B": "97, 292",
+        "C": "31, 94",
+        "D": "94, 292"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q25",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 25,
+        "subjectId": "reasoning",
+        "chapterId": "series-completion",
+        "topicId": "number-series",
+        "microTopicId": "num-ser-diff",
+        "chapterName": "Series Completion",
+        "topicName": "Number Series",
+        "microTopicName": "Constant / Increasing Step Difference",
+        "format": "series",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 26,
+      "section": "General Awareness",
+      "section_question_number": 1,
+      "id": "690b31eddcf03f0fb2bd935e",
+      "passage": "",
+      "question": "What does ISRO stand for?",
+      "options": {
+        "A": "Indian Scientific Research Organization",
+        "B": "Indian Space Research Organization",
+        "C": "Indian Satellite Rocket Organization",
+        "D": "International Space Research Organization"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q26",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 26,
+        "subjectId": "ga",
+        "chapterId": "static-gk-current",
+        "topicId": "static-gk",
+        "microTopicId": "ga-gk-org-headquarters",
+        "chapterName": "Static GK & Current Affairs",
+        "topicName": "Static General Knowledge",
+        "microTopicName": "International Organizations & Headquarters",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 27,
+      "section": "General Awareness",
+      "section_question_number": 2,
+      "id": "690b31ede5487d5c9d21119d",
+      "passage": "",
+      "question": "What is the primary strategic significance of Chabahar Port?",
+      "options": {
+        "A": "Access to the Persian Gulf",
+        "B": "Connecting India to the Mediterranean Sea",
+        "C": "Bypassing Pakistan for trade with Afghanistan",
+        "D": "Enhancing Iran's naval capabilities"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q27",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 27,
+        "subjectId": "ga",
+        "chapterId": "geography",
+        "topicId": "indian-geography",
+        "microTopicId": "ga-geo-mountains-passes",
+        "chapterName": "Geography",
+        "topicName": "Indian Geography",
+        "microTopicName": "Mountain Ranges, Himalayan Passes & Peaks",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 28,
+      "section": "General Awareness",
+      "section_question_number": 3,
+      "id": "690b31eeb4e4ad62c8512c96",
+      "passage": "",
+      "question": "Which Indian state is known for its traditional archery competitions called \"Teer\"?",
+      "options": {
+        "A": "Kerala",
+        "B": "Meghalaya",
+        "C": "Rajasthan",
+        "D": "Tamil Nadu"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q28",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 28,
+        "subjectId": "ga",
+        "chapterId": "static-gk-current",
+        "topicId": "static-gk",
+        "microTopicId": "ga-gk-firsts-records",
+        "chapterName": "Static GK & Current Affairs",
+        "topicName": "Static General Knowledge",
+        "microTopicName": "First in India & World, Superlatives & Landmarks",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 29,
+      "section": "General Awareness",
+      "section_question_number": 4,
+      "id": "690b31eecf19d6986cb6cbf6",
+      "passage": "",
+      "question": "The 2018 Intercontinental Cup final, where India won under Sunil Chhetri's leadership, was held in which city?",
+      "options": {
+        "A": "Kochi",
+        "B": "Mumbai",
+        "C": "Bengaluru",
+        "D": "Kolkata"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q29",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 29,
+        "subjectId": "ga",
+        "chapterId": "static-gk-current",
+        "topicId": "static-gk",
+        "microTopicId": "ga-gk-firsts-records",
+        "chapterName": "Static GK & Current Affairs",
+        "topicName": "Static General Knowledge",
+        "microTopicName": "First in India & World, Superlatives & Landmarks",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 30,
+      "section": "General Awareness",
+      "section_question_number": 5,
+      "id": "690b31efef081d3344805f12",
+      "passage": "",
+      "question": "What is one of the following digital reforms was included under Bharatiya Nyaya Sanhita for courts?",
+      "options": {
+        "A": "No trials allowed",
+        "B": "Introduction of virtual court hearings",
+        "C": "Online registration for judges",
+        "D": "Abolition of police reports"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q30",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 30,
+        "subjectId": "ga",
+        "chapterId": "static-gk-current",
+        "topicId": "static-gk",
+        "microTopicId": "ga-gk-firsts-records",
+        "chapterName": "Static GK & Current Affairs",
+        "topicName": "Static General Knowledge",
+        "microTopicName": "First in India & World, Superlatives & Landmarks",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 31,
+      "section": "General Awareness",
+      "section_question_number": 6,
+      "id": "690b31efef081d3344805f16",
+      "passage": "",
+      "question": "Who was appointed as the Executive Director of Foods at Hindustan Unilever Limited (HUL) in March 2025?",
+      "options": {
+        "A": "CS Setty",
+        "B": "Rajneet Kohli",
+        "C": "Dr. Jay Bhattacharya",
+        "D": "Sunil Kakkar"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q31",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 31,
+        "subjectId": "ga",
+        "chapterId": "geography",
+        "topicId": "indian-geography",
+        "microTopicId": "ga-geo-rivers-dams",
+        "chapterName": "Geography",
+        "topicName": "Indian Geography",
+        "microTopicName": "River Systems (Himalayan vs Peninsular) & Multipurpose Dams",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 32,
+      "section": "General Awareness",
+      "section_question_number": 7,
+      "id": "690b31ef3a23b940210fdd9c",
+      "passage": "",
+      "question": "Which structural elements enhance the visual grandeur of Kangra Fort?",
+      "options": {
+        "A": "Wooden sculptures",
+        "B": "Colorful glass windows",
+        "C": "Arches, domes, and rock carvings",
+        "D": "Painted ceilings and tiled floors"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q32",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 32,
+        "subjectId": "ga",
+        "chapterId": "history",
+        "topicId": "art-culture",
+        "microTopicId": "ga-art-temple-architecture",
+        "chapterName": "History & Culture",
+        "topicName": "Art & Culture (High Yield)",
+        "microTopicName": "Temple Styles (Nagara, Dravida), Caves & UNESCO Sites",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 33,
+      "section": "General Awareness",
+      "section_question_number": 8,
+      "id": "690b31f0f045476125bbd6ad",
+      "passage": "",
+      "question": "Which of the following best reflects a distinct cultural feature of the Festival of Salhesh?",
+      "options": {
+        "A": "Harvest ceremonies involving animal sacrifice by elders in Mithila",
+        "B": "Dramatic retelling of Salhesh legends by a Bhagat and Manarias",
+        "C": "Buddhist chants invoking Salhesh for monsoon rains",
+        "D": "Sword dances performed by women warriors in tribal hill regions"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q33",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 33,
+        "subjectId": "ga",
+        "chapterId": "history",
+        "topicId": "art-culture",
+        "microTopicId": "ga-art-classical-folk-dance",
+        "chapterName": "History & Culture",
+        "topicName": "Art & Culture (High Yield)",
+        "microTopicName": "Classical & Folk Dances of Indian States",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 34,
+      "section": "General Awareness",
+      "section_question_number": 9,
+      "id": "690b31f00e1fba21c35c11c9",
+      "passage": "",
+      "question": "Which of the following is a primary literary source for the Gupta period?",
+      "options": {
+        "A": "Nasik Prashasti of Gautamiputra Satakarni",
+        "B": "Aihole inscription of Pulakeshin II",
+        "C": "Allahabad Pillar Inscription of Samudragupta",
+        "D": "Hathigumpha Inscription of Kharavela"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q34",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 34,
+        "subjectId": "ga",
+        "chapterId": "history",
+        "topicId": "ancient-india",
+        "microTopicId": "ga-hist-mauryas-guptas",
+        "chapterName": "History & Culture",
+        "topicName": "Ancient India",
+        "microTopicName": "Mauryan Empire, Gupta Golden Age & Inscriptions",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 35,
+      "section": "General Awareness",
+      "section_question_number": 10,
+      "id": "690b31f1f2572e4774f9b24f",
+      "passage": "",
+      "question": "Which sports player won the bronze medal in the 50m Rifle 3 Position Men's event at the Paris 2024 Olympics, becoming the first Indian to do so?",
+      "options": {
+        "A": "Aishwary Pratap Singh Tomar",
+        "B": "Swapnil Kusale",
+        "C": "Rudrankksh Patil",
+        "D": "Saurabh Chaudhary"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q35",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 35,
+        "subjectId": "ga",
+        "chapterId": "static-gk-current",
+        "topicId": "current-affairs",
+        "microTopicId": "ga-ca-sports-awards",
+        "chapterName": "Static GK & Current Affairs",
+        "topicName": "Current Affairs & Awards",
+        "microTopicName": "Major Tournaments, Grand Slams & Winners",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 36,
+      "section": "General Awareness",
+      "section_question_number": 11,
+      "id": "690b31f19b71212a5ba111f0",
+      "passage": "",
+      "question": "Consider the following statements:\n\nStatement 1. Qutub-ud-din Aibak established the Slave Dynasty after the death of Mohammad Ghori.\n\nStatement 2. The Delhi Sultanate began with the rule of Balban, one of the notable rulers of the Khalji dynasty.\n\nWhich of the statements given above is/are correct?",
+      "options": {
+        "A": "Only 1",
+        "B": "Only 2",
+        "C": "Both 1 and 2",
+        "D": "Neither 1 nor 2"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q36",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 36,
+        "subjectId": "ga",
+        "chapterId": "history",
+        "topicId": "medieval-india",
+        "microTopicId": "ga-hist-delhi-sultanate",
+        "chapterName": "History & Culture",
+        "topicName": "Medieval India",
+        "microTopicName": "Delhi Sultanate (Dynasties, Administration & Reforms)",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 37,
+      "section": "General Awareness",
+      "section_question_number": 12,
+      "id": "690b31f197287b67b4638c9b",
+      "passage": "",
+      "question": "Fill in the blank: The Factory Act 1881 primarily regulated ____.",
+      "options": {
+        "A": "working hours of women and children",
+        "B": "industrial pollution and working conditions",
+        "C": "night shifts hours for men only",
+        "D": "minimum wage for women and children"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q37",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 37,
+        "subjectId": "ga",
+        "chapterId": "geography",
+        "topicId": "indian-geography",
+        "microTopicId": "ga-geo-rivers-dams",
+        "chapterName": "Geography",
+        "topicName": "Indian Geography",
+        "microTopicName": "River Systems (Himalayan vs Peninsular) & Multipurpose Dams",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 38,
+      "section": "General Awareness",
+      "section_question_number": 13,
+      "id": "690b31f2e256d2aae84739d8",
+      "passage": "",
+      "question": "Consider the following statements about the book 'India on Our Minds':\n\n1) The book offers an insightful analysis of India's economic growth and social challenges.\n\n2) It is a fictional novel about India's freedom struggle. Which of the above statements is/are correct?",
+      "options": {
+        "A": "Only statement 1 is correct",
+        "B": "Only statement 2 is correct",
+        "C": "Both statements 1 and 2 are correct",
+        "D": "Neither statement 1 nor 2 is correct"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q38",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 38,
+        "subjectId": "ga",
+        "chapterId": "static-gk-current",
+        "topicId": "static-gk",
+        "microTopicId": "ga-gk-books-authors",
+        "chapterName": "Static GK & Current Affairs",
+        "topicName": "Static General Knowledge",
+        "microTopicName": "Famous Historical Books & Personalities' Autobiographies",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 39,
+      "section": "General Awareness",
+      "section_question_number": 14,
+      "id": "690b31f27ec4a7bd508ab221",
+      "passage": "",
+      "question": "Read the following Assertion (A) and Reason (R) carefully and choose the correct option:\n\nAssertion (A): The retreating monsoon winds are associated with dry weather and clear skies in northern India.\n\nReason (R): During the retreating monsoon, the low-pressure area over the northern plains is replaced by a high-pressure system.",
+      "options": {
+        "A": "Both A and R are true, and R is the correct explanation of A",
+        "B": "Both A and R are true, but R is not the correct explanation of A",
+        "C": "A is true, but R is false",
+        "D": "A is false, but R is true"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q39",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 39,
+        "subjectId": "ga",
+        "chapterId": "geography",
+        "topicId": "indian-geography",
+        "microTopicId": "ga-geo-monsoon-soils",
+        "chapterName": "Geography",
+        "topicName": "Indian Geography",
+        "microTopicName": "Indian Monsoon, Climate Zones & Soil Types",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 40,
+      "section": "General Awareness",
+      "section_question_number": 15,
+      "id": "690b31f27ec4a7bd508ab222",
+      "passage": "",
+      "question": "Fill in the blanks: A Bill that \"imposes a new tax\" is categorised at the Centre as a ______ Bill.",
+      "options": {
+        "A": "Money",
+        "B": "Ordinary",
+        "C": "Private",
+        "D": "Constitutional"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q40",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 40,
+        "subjectId": "ga",
+        "chapterId": "economy",
+        "topicId": "banking-fiscal",
+        "microTopicId": "ga-eco-budget-taxation",
+        "chapterName": "Indian Economy",
+        "topicName": "Banking & Fiscal Policy",
+        "microTopicName": "Union Budget, Direct/Indirect Taxes & Fiscal Deficits",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 41,
+      "section": "General Awareness",
+      "section_question_number": 16,
+      "id": "690b31f33731ace36e907f88",
+      "passage": "",
+      "question": "The moment of inertia of a rigid body about an axis:",
+      "options": {
+        "A": "Is a scalar quantity, independent of the axis",
+        "B": "Is a vector quantity, dependent on the axis",
+        "C": "Is a scalar quantity, dependent on the axis",
+        "D": "Is a tensor quantity, independent of the axis"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q41",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 41,
+        "subjectId": "ga",
+        "chapterId": "static-gk-current",
+        "topicId": "static-gk",
+        "microTopicId": "ga-gk-firsts-records",
+        "chapterName": "Static GK & Current Affairs",
+        "topicName": "Static General Knowledge",
+        "microTopicName": "First in India & World, Superlatives & Landmarks",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 42,
+      "section": "General Awareness",
+      "section_question_number": 17,
+      "id": "690b31f3c6af04fa80fa9540",
+      "passage": "",
+      "question": "Under Universal Immunisation Programme (UIP), how many diseases are covered for free immunization nationally and sub-nationally?",
+      "options": {
+        "A": "5",
+        "B": "7",
+        "C": "9",
+        "D": "12"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q42",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 42,
+        "subjectId": "ga",
+        "chapterId": "general-science",
+        "topicId": "biology",
+        "microTopicId": "ga-sci-diseases-immunity",
+        "chapterName": "General Science",
+        "topicName": "Biology",
+        "microTopicName": "Pathogens, Infectious Diseases & Immunity",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 43,
+      "section": "General Awareness",
+      "section_question_number": 18,
+      "id": "690b31f326bf51479e47efe1",
+      "passage": "",
+      "question": "Which of the following accurately represents India's trend in the Global Gender Gap Report 2025?",
+      "options": {
+        "A": "India significantly improved its rank",
+        "B": "India remained at same rank",
+        "C": "India slipped in its global rank",
+        "D": "India joined the top twenty nations"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q43",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 43,
+        "subjectId": "ga",
+        "chapterId": "static-gk-current",
+        "topicId": "static-gk",
+        "microTopicId": "ga-gk-firsts-records",
+        "chapterName": "Static GK & Current Affairs",
+        "topicName": "Static General Knowledge",
+        "microTopicName": "First in India & World, Superlatives & Landmarks",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 44,
+      "section": "General Awareness",
+      "section_question_number": 19,
+      "id": "690b31f4cf19d6986cb6cd12",
+      "passage": "",
+      "question": "Which of the following is another name for the revenue account of the government budget?",
+      "options": {
+        "A": "Finance budget",
+        "B": "Expenditure budget",
+        "C": "Revenue budget",
+        "D": "Capital budget"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q44",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 44,
+        "subjectId": "ga",
+        "chapterId": "economy",
+        "topicId": "banking-fiscal",
+        "microTopicId": "ga-eco-budget-taxation",
+        "chapterName": "Indian Economy",
+        "topicName": "Banking & Fiscal Policy",
+        "microTopicName": "Union Budget, Direct/Indirect Taxes & Fiscal Deficits",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 45,
+      "section": "General Awareness",
+      "section_question_number": 20,
+      "id": "690b31f4c7e7e44c169fe0a5",
+      "passage": "",
+      "question": "Consider the statements about Jhumar :\n\n1. It is a harvest dance of Jharkhand, performed in linked rows with mandar and nagara drums.\n\n2. Women alone perform the Mardani variant wielding swords. Which is/are correct?",
+      "options": {
+        "A": "Only 1 correct",
+        "B": "Only 2 correct",
+        "C": "Both 1 &amp; 2 correct",
+        "D": "Neither 1 nor 2 correct"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q45",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 45,
+        "subjectId": "ga",
+        "chapterId": "history",
+        "topicId": "art-culture",
+        "microTopicId": "ga-art-classical-folk-dance",
+        "chapterName": "History & Culture",
+        "topicName": "Art & Culture (High Yield)",
+        "microTopicName": "Classical & Folk Dances of Indian States",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 46,
+      "section": "General Awareness",
+      "section_question_number": 21,
+      "id": "690b31f43b1ef1c5fde63cbb",
+      "passage": "",
+      "question": "Kanaklata Barua, a young female revolutionary, was shot dead by the police while attempting to hoist the Indian national flag during the \"Quit India Movement\" in which state?",
+      "options": {
+        "A": "Odisha",
+        "B": "West Bengal",
+        "C": "Assam",
+        "D": "Bihar"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q46",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 46,
+        "subjectId": "ga",
+        "chapterId": "history",
+        "topicId": "modern-india",
+        "microTopicId": "ga-hist-freedom-movements",
+        "chapterName": "History & Culture",
+        "topicName": "Modern India & Freedom Struggle",
+        "microTopicName": "Socio-Religious Reformers & Revolutionary Leaders",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 47,
+      "section": "General Awareness",
+      "section_question_number": 22,
+      "id": "690b31f5cc83e0c7c1cbbbbc",
+      "passage": "",
+      "question": "Baji Raut, a young boy from Odisha, became a martyr when he was shot by British police for refusing to ferry them across a river to reach freedom fighters. How old was he?",
+      "options": {
+        "A": "8 years old",
+        "B": "10 years old",
+        "C": "12 years old",
+        "D": "15 years old"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q47",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 47,
+        "subjectId": "ga",
+        "chapterId": "history",
+        "topicId": "modern-india",
+        "microTopicId": "ga-hist-freedom-movements",
+        "chapterName": "History & Culture",
+        "topicName": "Modern India & Freedom Struggle",
+        "microTopicName": "Socio-Religious Reformers & Revolutionary Leaders",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 48,
+      "section": "General Awareness",
+      "section_question_number": 23,
+      "id": "690b31f5dcf03f0fb2bd93e2",
+      "passage": "",
+      "question": "Under the \"National Mission for Clean Ganga\", which river was newly added to the 'National Aquatic Ecosystem Restoration Mission' in 2025 for ecological rejuvenation alongside the Ganga mainstream?",
+      "options": {
+        "A": "Ghaghara River",
+        "B": "Gandak River",
+        "C": "Son River",
+        "D": "Yamuna River"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q48",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 48,
+        "subjectId": "ga",
+        "chapterId": "geography",
+        "topicId": "indian-geography",
+        "microTopicId": "ga-geo-rivers-dams",
+        "chapterName": "Geography",
+        "topicName": "Indian Geography",
+        "microTopicName": "River Systems (Himalayan vs Peninsular) & Multipurpose Dams",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 49,
+      "section": "General Awareness",
+      "section_question_number": 24,
+      "id": "690b31f63f7e30afba7262fb",
+      "passage": "",
+      "question": "Why did the Indian government resort to licensing even for expanding existing private sector industries under IPR 1956?",
+      "options": {
+        "A": "To promote export competition",
+        "B": "To keep production under government control",
+        "C": "To prevent technological innovation",
+        "D": "To encourage luxury production"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q49",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 49,
+        "subjectId": "ga",
+        "chapterId": "geography",
+        "topicId": "indian-geography",
+        "microTopicId": "ga-geo-rivers-dams",
+        "chapterName": "Geography",
+        "topicName": "Indian Geography",
+        "microTopicName": "River Systems (Himalayan vs Peninsular) & Multipurpose Dams",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 50,
+      "section": "General Awareness",
+      "section_question_number": 25,
+      "id": "690b31f62b966e24a1a5e4e2",
+      "passage": "",
+      "question": "Consider the following statements:\n\n1. Article 263 empowers Parliament to establish Inter-State Council.\n\n2. The Council can investigate inter-state disputes.\n\n3. Its composition includes PM and Union Ministers.\n\nWhich of the above is/are correct?",
+      "options": {
+        "A": "2 and 3 only",
+        "B": "1 and 2 only",
+        "C": "1 and 3 only",
+        "D": "1, 2 and 3"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q50",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 50,
+        "subjectId": "ga",
+        "chapterId": "indian-polity",
+        "topicId": "fundamental-rights-duties",
+        "microTopicId": "ga-pol-fr-freedom",
+        "chapterName": "Indian Polity & Constitution",
+        "topicName": "Fundamental Rights, DPSP & Duties",
+        "microTopicName": "Articles 19–22 (Right to Freedom)",
+        "format": "gk-fact",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 51,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 1,
+      "id": "690b31f6c7e7e44c169fe120",
+      "passage": "",
+      "question": "What is the simplified value of: \\(\\frac{0.01404}{24^2+6^2-144}\\)",
+      "options": {
+        "A": "3×10-5",
+        "B": "6&times;10⁻⁵",
+        "C": "2.4&times;10⁻⁴",
+        "D": "3&times;10⁻⁴"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q51",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 51,
+        "subjectId": "quant",
+        "chapterId": "number-system",
+        "topicId": "fractions-remainders",
+        "microTopicId": "num-surds-indices",
+        "chapterName": "Number System & Simplification",
+        "topicName": "Fractions & Remainders",
+        "microTopicName": "Surds & Indices Simplification & Comparison",
+        "format": "simplification-bodmas",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 52,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 2,
+      "id": "690b31f7cc83e0c7c1cbbbd9",
+      "passage": "",
+      "question": "A sum of money invested at compound interest amounts to twice itself in 4 years. In how many years will it become 8 times itself?",
+      "options": {
+        "A": "12 years",
+        "B": "10 years",
+        "C": "13 years",
+        "D": "15 years"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q52",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 52,
+        "subjectId": "quant",
+        "chapterId": "arithmetic-interest",
+        "topicId": "compound-interest",
+        "microTopicId": "ci-compounding-periods",
+        "chapterName": "Simple & Compound Interest",
+        "topicName": "Compound Interest",
+        "microTopicName": "Annual, Half-Yearly & Quarterly Compounding",
+        "format": "compound-interest",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 53,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 3,
+      "id": "690b31f7f41e471fbf89e1db",
+      "passage": "",
+      "question": "Which of the following is a non-zero number that belongs to every set: Whole, Integer, Rational, and Real?",
+      "options": {
+        "A": "1",
+        "B": "0",
+        "C": "-1",
+        "D": "&radic;2"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q53",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 53,
+        "subjectId": "quant",
+        "chapterId": "arithmetic-ratio-proportion",
+        "topicId": "ratio-proportions",
+        "microTopicId": "ratio-income-expenditure",
+        "chapterName": "Ratio, Proportion & Mixture",
+        "topicName": "Ratio & Proportions",
+        "microTopicName": "Income, Expenditure & Savings Proportions",
+        "format": "ratio",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 54,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 4,
+      "id": "690b31f8c7d7b06b36d2f0fb",
+      "passage": "",
+      "question": "An athlete runs a 300-meter race in 24 seconds. How much is his speed in km/h?",
+      "options": {
+        "A": "45 km/h",
+        "B": "30 km/h",
+        "C": "35 km/h",
+        "D": "40 km/h"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q54",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 54,
+        "subjectId": "quant",
+        "chapterId": "arithmetic-speed-distance",
+        "topicId": "boats-streams-races",
+        "microTopicId": "race-linear-circular",
+        "chapterName": "Speed, Time & Distance",
+        "topicName": "Boats, Streams & Races",
+        "microTopicName": "Linear & Circular Track Races (Head-start/Beats by)",
+        "format": "races",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 55,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 5,
+      "id": "690b31f8cc83e0c7c1cbbbfc",
+      "passage": "",
+      "question": "If the numerical value of the volume of a sphere is equal to the numerical value of its surface area, find the radius of the sphere.",
+      "options": {
+        "A": "1 unit",
+        "B": "4 units",
+        "C": "2 units",
+        "D": "3 units"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q55",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 55,
+        "subjectId": "quant",
+        "chapterId": "mensuration",
+        "topicId": "mensuration-3d",
+        "microTopicId": "mens-sphere-hemisphere",
+        "chapterName": "Mensuration 2D & 3D",
+        "topicName": "3D Mensuration (Volume & Surface Area)",
+        "microTopicName": "Sphere & Hemisphere (Melting & Recasting Problems)",
+        "format": "mensuration-3d",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 56,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 6,
+      "id": "690b31f8dcf03f0fb2bd943d",
+      "passage": "",
+      "question": "A runner completes 7.2 km in 48 minutes. What is his speed in km/h?",
+      "options": {
+        "A": "9 km/h",
+        "B": "8 km/h",
+        "C": "10 km/h",
+        "D": "11 km/h"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q56",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 56,
+        "subjectId": "quant",
+        "chapterId": "arithmetic-speed-distance",
+        "topicId": "speed-time-basics",
+        "microTopicId": "spd-relative-speed",
+        "chapterName": "Speed, Time & Distance",
+        "topicName": "Speed & Distance Basics",
+        "microTopicName": "Relative Speed in Same & Opposite Directions",
+        "format": "speed-time-distance",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 57,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 7,
+      "id": "690b31f9d26c7b9aa1a4203b",
+      "passage": "",
+      "question": "Partners X and Y entered into a business investing Rs. 50,000 and Rs. 1,00,000 respectively. After 6 months, Z joins with Rs. 1,50,000. At year-end, profit was Rs. 90,000. How much more did Z earn than X?",
+      "options": {
+        "A": "Rs. 5,000",
+        "B": "Rs. 10,000",
+        "C": "Rs. 12,000",
+        "D": "Rs. 15,000"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q57",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 57,
+        "subjectId": "quant",
+        "chapterId": "arithmetic-profit-loss",
+        "topicId": "cost-selling-price",
+        "microTopicId": "pl-basic-cpsp",
+        "chapterName": "Profit, Loss & Discount",
+        "topicName": "Cost & Selling Price",
+        "microTopicName": "Basic CP, SP & Profit/Loss%",
+        "format": "profit-loss",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 58,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 8,
+      "id": "690b31f99b71212a5ba11222",
+      "passage": "",
+      "question": "Three friends share a winning prize in the ratio 2:3:4. If the total prize is Rs. 9000, how much more does the person with the highest share get than the lowest?",
+      "options": {
+        "A": "1000",
+        "B": "1500",
+        "C": "2000",
+        "D": "2500"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q58",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 58,
+        "subjectId": "quant",
+        "chapterId": "arithmetic-ratio-proportion",
+        "topicId": "ratio-proportions",
+        "microTopicId": "ratio-income-expenditure",
+        "chapterName": "Ratio, Proportion & Mixture",
+        "topicName": "Ratio & Proportions",
+        "microTopicName": "Income, Expenditure & Savings Proportions",
+        "format": "ratio",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 59,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 9,
+      "id": "690b31fa9b71212a5ba11226",
+      "passage": "",
+      "question": "A triangular flag has base and height in the ratio 5:4. If the area is 160 cm&sup2;, what are the base and height?",
+      "options": {
+        "A": "10 cm and 8 cm",
+        "B": "20 cm and 16 cm",
+        "C": "25 cm and 20 cm",
+        "D": "30 cm and 24 cm"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q59",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 59,
+        "subjectId": "quant",
+        "chapterId": "arithmetic-ratio-proportion",
+        "topicId": "ratio-proportions",
+        "microTopicId": "ratio-income-expenditure",
+        "chapterName": "Ratio, Proportion & Mixture",
+        "topicName": "Ratio & Proportions",
+        "microTopicName": "Income, Expenditure & Savings Proportions",
+        "format": "ratio",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 60,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 10,
+      "id": "690b31fa3731ace36e907fbd",
+      "passage": "",
+      "question": "The population of a village increases by 8% annually. If the current population is 58,320, what was it two years ago (approx)?",
+      "options": {
+        "A": "50000",
+        "B": "49900",
+        "C": "49980",
+        "D": "49800"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q60",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 60,
+        "subjectId": "quant",
+        "chapterId": "arithmetic-percentages",
+        "topicId": "percentage-change",
+        "microTopicId": "pct-depreciation-population",
+        "chapterName": "Percentages",
+        "topicName": "Percentage Change & Applications",
+        "microTopicName": "Population & Machine Value Depreciation",
+        "format": "percentage",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 61,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 11,
+      "id": "690b31fa27e736c820e45ddf",
+      "passage": "",
+      "question": "A person invested in two items &mdash; one gave a 10% profit and the other a 5% loss. If the total investment was Rs. 5,000 and the net result was a Rs. 100 profit, what was the investment in the profit-making item?",
+      "options": {
+        "A": "Rs. 2,333.33",
+        "B": "Rs. 3,333.33",
+        "C": "Rs. 4,333.33",
+        "D": "Rs. 2,222.33"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q61",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 61,
+        "subjectId": "quant",
+        "chapterId": "arithmetic-profit-loss",
+        "topicId": "cost-selling-price",
+        "microTopicId": "pl-basic-cpsp",
+        "chapterName": "Profit, Loss & Discount",
+        "topicName": "Cost & Selling Price",
+        "microTopicName": "Basic CP, SP & Profit/Loss%",
+        "format": "profit-loss",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 62,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 12,
+      "id": "690b31fb27e736c820e45de0",
+      "passage": "",
+      "question": "A group of 5 men or 12 women can complete a task in 70 days. Find the time taken by 5 men and 12 women to complete the task.",
+      "options": {
+        "A": "40 Days",
+        "B": "35 Days",
+        "C": "30 Days",
+        "D": "48 Days"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q62",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 62,
+        "subjectId": "quant",
+        "chapterId": "arithmetic-time-work",
+        "topicId": "time-work-basics",
+        "microTopicId": "tw-men-women-days",
+        "chapterName": "Time, Work & Pipes",
+        "topicName": "Time & Work",
+        "microTopicName": "Men, Women, Children MDH Formula (M1D1H1/W1)",
+        "format": "time-work",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 63,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 13,
+      "id": "690b31fbf2572e4774f9b2e4",
+      "passage": "",
+      "question": "A machine can fill 120 milk bottles in 6 minutes. How many milk bottles can it fill in 14 minutes?",
+      "options": {
+        "A": "190 milk bottles",
+        "B": "250 milk bottles",
+        "C": "280 milk bottles",
+        "D": "200 milk bottles"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q63",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 63,
+        "subjectId": "quant",
+        "chapterId": "number-system",
+        "topicId": "fractions-remainders",
+        "microTopicId": "num-fraction-compare",
+        "chapterName": "Number System & Simplification",
+        "topicName": "Fractions & Remainders",
+        "microTopicName": "Comparison of Fractions (Ascending / Descending Order)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 64,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 14,
+      "id": "690b31fcd26c7b9aa1a42047",
+      "passage": "",
+      "question": "The average weight of 10 boxes is 15.5 kg. If the heaviest box weighs 21 kg and the lightest weighs 10 kg, what is the average weight of the remaining boxes?",
+      "options": {
+        "A": "15.8 kg",
+        "B": "15.5 kg",
+        "C": "15.7 kg",
+        "D": "15.3 kg"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q64",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 64,
+        "subjectId": "quant",
+        "chapterId": "arithmetic-percentages",
+        "topicId": "percentage-change",
+        "microTopicId": "pct-fraction-conv",
+        "chapterName": "Percentages",
+        "topicName": "Percentage Change & Applications",
+        "microTopicName": "Fraction to Percentage Equivalents",
+        "format": "percentage",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 65,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 15,
+      "id": "690b31fcf41e471fbf89e235",
+      "passage": "",
+      "question": "A mixture of 150 litres contains acid and water in the ratio 2:3. If 30 litres of the mixture is replaced with water, what will be the percentage of acid in the final mixture?",
+      "options": {
+        "A": "20%",
+        "B": "24%",
+        "C": "28%",
+        "D": "32%"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q65",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 65,
+        "subjectId": "quant",
+        "chapterId": "arithmetic-ratio-proportion",
+        "topicId": "mixture-alligation",
+        "microTopicId": "mix-alligation-rule",
+        "chapterName": "Ratio, Proportion & Mixture",
+        "topicName": "Mixture & Alligation",
+        "microTopicName": "Alligation on Prices, Averages & Percentages",
+        "format": "mixture-alligation",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 66,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 16,
+      "id": "690b31fce256d2aae8473aa5",
+      "passage": "",
+      "question": "A water tank is shaped like a composite prism: the bottom part is a triangular prism with base area 60 cm&sup2; and height 1.2 m, while the top part is a rectangular prism with base 40 cm &times; 30 cm and height 0.8 m. What is the total volume of the tank in liters? (1 m&sup3; = 1000 L)",
+      "options": {
+        "A": "103.2 L",
+        "B": "134.4 L",
+        "C": "153.6 L",
+        "D": "172.8 L"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q66",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 66,
+        "subjectId": "quant",
+        "chapterId": "mensuration",
+        "topicId": "mensuration-3d",
+        "microTopicId": "mens-cuboid-cube",
+        "chapterName": "Mensuration 2D & 3D",
+        "topicName": "3D Mensuration (Volume & Surface Area)",
+        "microTopicName": "Cuboid, Cube & Diagonal Lengths",
+        "format": "mensuration-3d",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 67,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 17,
+      "id": "690b31fdcc83e0c7c1cbbc89",
+      "passage": "",
+      "question": "If cotA = x + (\\(\\frac{1}{x}\\)), then what is cosec²A?",
+      "options": {
+        "A": "x² + (\\(\\frac{1}{x²}\\)) + 3",
+        "B": "x² + (\\(\\frac{1}{x²}\\))",
+        "C": "x + (\\(\\frac{1}{x}\\))",
+        "D": "x² + (\\(\\frac{1}{x²}\\)) - 2"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q67",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 67,
+        "subjectId": "quant",
+        "chapterId": "number-system",
+        "topicId": "fractions-remainders",
+        "microTopicId": "num-fraction-compare",
+        "chapterName": "Number System & Simplification",
+        "topicName": "Fractions & Remainders",
+        "microTopicName": "Comparison of Fractions (Ascending / Descending Order)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 68,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 18,
+      "id": "690b31fd3b1ef1c5fde63d5a",
+      "passage": "",
+      "question": "Find slope of the line passing through points (-2,5) and (4,-7).",
+      "options": {
+        "A": "2",
+        "B": "-2",
+        "C": "3",
+        "D": "-3"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q68",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 68,
+        "subjectId": "quant",
+        "chapterId": "number-system",
+        "topicId": "fractions-remainders",
+        "microTopicId": "num-fraction-compare",
+        "chapterName": "Number System & Simplification",
+        "topicName": "Fractions & Remainders",
+        "microTopicName": "Comparison of Fractions (Ascending / Descending Order)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 69,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 19,
+      "id": "690b31fd97287b67b4638db6",
+      "passage": "",
+      "question": "What is the minimum distance from the origin (0,0) to a point on the line segment connecting the points A(3, 0) and B(0, 4)?",
+      "options": {
+        "A": "2.4",
+        "B": "3.2",
+        "C": "4.6",
+        "D": "6.8"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q69",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 69,
+        "subjectId": "quant",
+        "chapterId": "number-system",
+        "topicId": "fractions-remainders",
+        "microTopicId": "num-fraction-compare",
+        "chapterName": "Number System & Simplification",
+        "topicName": "Fractions & Remainders",
+        "microTopicName": "Comparison of Fractions (Ascending / Descending Order)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 70,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 20,
+      "id": "690b31fe2b966e24a1a5e52a",
+      "passage": "",
+      "question": "If in △LMN and △OPQ, &ang;L=&ang;O, LM = OP, and &ang;M=&ang;P, which rule proves △LMN&cong;△OPQ?",
+      "options": {
+        "A": "SSS",
+        "B": "SAS",
+        "C": "ASA",
+        "D": "AAS"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q70",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 70,
+        "subjectId": "quant",
+        "chapterId": "number-system",
+        "topicId": "fractions-remainders",
+        "microTopicId": "num-fraction-compare",
+        "chapterName": "Number System & Simplification",
+        "topicName": "Fractions & Remainders",
+        "microTopicName": "Comparison of Fractions (Ascending / Descending Order)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 71,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 21,
+      "id": "690b31fe3731ace36e908026",
+      "passage": "",
+      "question": "The value of \\(\\sqrt{11 - 2\\sqrt{30}} - \\frac{1}{\\sqrt{11-2\\sqrt{30}}} \\) is:",
+      "options": {
+        "A": "\\(1 + \\sqrt{5}\\)",
+        "B": "\\(2\\sqrt{5}\\)",
+        "C": "\\(-2\\sqrt{5}\\)",
+        "D": "\\(1 - \\sqrt{5}\\)"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q71",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 71,
+        "subjectId": "quant",
+        "chapterId": "number-system",
+        "topicId": "fractions-remainders",
+        "microTopicId": "num-surds-indices",
+        "chapterName": "Number System & Simplification",
+        "topicName": "Fractions & Remainders",
+        "microTopicName": "Surds & Indices Simplification & Comparison",
+        "format": "simplification-bodmas",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 72,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 22,
+      "id": "690b31fe48b82c549be734ad",
+      "passage": "",
+      "question": "The line segment from the center of a circle to the midpoint of a chord is 10 cm long. If the radius is 26 cm, what is the length of the chord?",
+      "options": {
+        "A": "12 cm",
+        "B": "24 cm",
+        "C": "36 cm",
+        "D": "48 cm"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q72",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 72,
+        "subjectId": "quant",
+        "chapterId": "geometry",
+        "topicId": "circles",
+        "microTopicId": "geom-chord-properties",
+        "chapterName": "Geometry",
+        "topicName": "Circles",
+        "microTopicName": "Chords Equidistant from Center & Perpendicular Bisector",
+        "format": "geometry",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 73,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 23,
+      "id": "690b31ffc7d7b06b36d2f141",
+      "passage": "",
+      "question": "A chord of a circle subtends an angle of 60&deg; at the center. What is the angle subtended at a point on the circle in the same segment?",
+      "options": {
+        "A": "60&deg;",
+        "B": "30&deg;",
+        "C": "90&deg;",
+        "D": "120&deg;"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q73",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 73,
+        "subjectId": "quant",
+        "chapterId": "geometry",
+        "topicId": "circles",
+        "microTopicId": "geom-chord-properties",
+        "chapterName": "Geometry",
+        "topicName": "Circles",
+        "microTopicName": "Chords Equidistant from Center & Perpendicular Bisector",
+        "format": "geometry",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 74,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 24,
+      "id": "690b31ff569f092a366b8620",
+      "passage": "",
+      "question": "If secA + tanA = \\(\\frac{5}{2}\\), then what is secA-tanA?",
+      "options": {
+        "A": "\\(\\frac{2}{5}\\)",
+        "B": "\\(\\frac{5}{2}\\)",
+        "C": "\\(\\frac{1}{2}\\)",
+        "D": "\\(\\frac{1}{5}\\)"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q74",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 74,
+        "subjectId": "quant",
+        "chapterId": "number-system",
+        "topicId": "fractions-remainders",
+        "microTopicId": "num-fraction-compare",
+        "chapterName": "Number System & Simplification",
+        "topicName": "Fractions & Remainders",
+        "microTopicName": "Comparison of Fractions (Ascending / Descending Order)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 75,
+      "section": "Quantitative Aptitude",
+      "section_question_number": 25,
+      "id": "690b3200ce29a1f2f631d693",
+      "passage": "",
+      "question": "You earn 52.50 in 3.5 hours. Find your hourly wage as a fraction.",
+      "options": {
+        "A": "\\(\\frac{15}{1}\\)",
+        "B": "\\(\\frac{12}{1}\\)",
+        "C": "\\(\\frac{15}{4}\\)",
+        "D": "\\(\\frac{17}{4}\\)"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q75",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 75,
+        "subjectId": "quant",
+        "chapterId": "number-system",
+        "topicId": "fractions-remainders",
+        "microTopicId": "num-fraction-compare",
+        "chapterName": "Number System & Simplification",
+        "topicName": "Fractions & Remainders",
+        "microTopicName": "Comparison of Fractions (Ascending / Descending Order)",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 76,
+      "section": "English Comprehension",
+      "section_question_number": 1,
+      "id": "690b31e3b5904ecb896ef422",
+      "passage": "",
+      "question": "Select the most appropriate synonym of the given word: TRENCHANT",
+      "options": {
+        "A": "Blurry",
+        "B": "Weak",
+        "C": "Incisive",
+        "D": "Vague"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q76",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 76,
+        "subjectId": "english",
+        "chapterId": "vocabulary",
+        "topicId": "synonyms-antonyms",
+        "microTopicId": "eng-vocab-synonym",
+        "chapterName": "Vocabulary",
+        "topicName": "Synonyms & Antonyms",
+        "microTopicName": "High-Frequency SSC Synonyms",
+        "format": "synonym",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 77,
+      "section": "English Comprehension",
+      "section_question_number": 2,
+      "id": "690b31e30e1fba21c35c102b",
+      "passage": "",
+      "question": "Select the most appropriate antonym of the given word. Nugatory",
+      "options": {
+        "A": "Worthless",
+        "B": "Futile",
+        "C": "Significant",
+        "D": "Trivial"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q77",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 77,
+        "subjectId": "english",
+        "chapterId": "vocabulary",
+        "topicId": "synonyms-antonyms",
+        "microTopicId": "eng-vocab-antonym",
+        "chapterName": "Vocabulary",
+        "topicName": "Synonyms & Antonyms",
+        "microTopicName": "High-Frequency SSC Antonyms",
+        "format": "antonym",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 78,
+      "section": "English Comprehension",
+      "section_question_number": 3,
+      "id": "690b31e3a0f66e3129354542",
+      "passage": "",
+      "question": "Choose the correct meaning of idiom: Mad as a hatter",
+      "options": {
+        "A": "Poor but honest",
+        "B": "Overly focused",
+        "C": "Completely insane or eccentric",
+        "D": "Fashionable and bold"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q78",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 78,
+        "subjectId": "english",
+        "chapterId": "vocabulary",
+        "topicId": "idioms-phrases",
+        "microTopicId": "eng-idiom-actions",
+        "chapterName": "Vocabulary",
+        "topicName": "Idioms & Phrases",
+        "microTopicName": "Action, Body-Part & Emotion Idioms",
+        "format": "idiom",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 79,
+      "section": "English Comprehension",
+      "section_question_number": 4,
+      "id": "690b31e41dfe1358b30b769e",
+      "passage": "",
+      "question": "Choose the correct meaning of idiom: By the skin of one's teeth",
+      "options": {
+        "A": "With deceptive appearance",
+        "B": "With the barest possible margin",
+        "C": "Through inherited privilege",
+        "D": "With false humility"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q79",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 79,
+        "subjectId": "english",
+        "chapterId": "vocabulary",
+        "topicId": "idioms-phrases",
+        "microTopicId": "eng-idiom-actions",
+        "chapterName": "Vocabulary",
+        "topicName": "Idioms & Phrases",
+        "microTopicName": "Action, Body-Part & Emotion Idioms",
+        "format": "idiom",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 80,
+      "section": "English Comprehension",
+      "section_question_number": 5,
+      "id": "690b31e40e1fba21c35c10d3",
+      "passage": "",
+      "question": "Select the correct spelling of a word meaning 'complex administrative system'.",
+      "options": {
+        "A": "Bureaucracy",
+        "B": "Bureaucrcy",
+        "C": "Bureaucrasy",
+        "D": "Bureaucazy"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q80",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 80,
+        "subjectId": "english",
+        "chapterId": "vocabulary",
+        "topicId": "spelling-check",
+        "microTopicId": "eng-spell-double-consonant",
+        "chapterName": "Vocabulary",
+        "topicName": "Spelling Correction",
+        "microTopicName": "Double Letters & Confusing Vowels",
+        "format": "spelling",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 81,
+      "section": "English Comprehension",
+      "section_question_number": 6,
+      "id": "690b31e4f17d05aaff4c6ffe",
+      "passage": "",
+      "question": "Choose the correct spelling of a word meaning 'harmless'.",
+      "options": {
+        "A": "Innocuous",
+        "B": "Inoccuous",
+        "C": "Innocous",
+        "D": "Innocuouss"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q81",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 81,
+        "subjectId": "english",
+        "chapterId": "vocabulary",
+        "topicId": "spelling-check",
+        "microTopicId": "eng-spell-double-consonant",
+        "chapterName": "Vocabulary",
+        "topicName": "Spelling Correction",
+        "microTopicName": "Double Letters & Confusing Vowels",
+        "format": "spelling",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 82,
+      "section": "English Comprehension",
+      "section_question_number": 7,
+      "id": "690b31e5d26c7b9aa1a41f1a",
+      "passage": "",
+      "question": "Choose the correct one-word substitute for: 'The study of human races, origins, and societies'.",
+      "options": {
+        "A": "Anthropology",
+        "B": "Archaeology",
+        "C": "Ethnology",
+        "D": "Sociology"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q82",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 82,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "cloze-test",
+        "microTopicId": "eng-cloze-vocabulary",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Cloze Test",
+        "microTopicName": "Collocation & Contextual Word Fills",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 83,
+      "section": "English Comprehension",
+      "section_question_number": 8,
+      "id": "690b31e5eb5683f477ac25a7",
+      "passage": "",
+      "question": "Choose the correct one-word substitution for: 'A praising speech made when someone dies'.",
+      "options": {
+        "A": "Eulogy",
+        "B": "Obituary",
+        "C": "Elegy",
+        "D": "Tribute"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q83",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 83,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "cloze-test",
+        "microTopicId": "eng-cloze-vocabulary",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Cloze Test",
+        "microTopicName": "Collocation & Contextual Word Fills",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 84,
+      "section": "English Comprehension",
+      "section_question_number": 9,
+      "id": "690b31e5c7e7e44c169fdfc9",
+      "passage": "In the given passage, some words have been deleted. Read the passage intently and choose the most appropriate option to fill in each blank: Literature, far from being a static repository of aesthetic delight, is a restless medium through which cultures interrogate themselves. The novel, the poem, the play—all are not merely forms but fields wherein ideologies (1) _____, mutate, and sometimes dissolve. To read deeply is to risk disorientation, for every interpretation implies an act of displacement: of authorial intent, of reader expectation, of historical certainty. The literary canon itself is less a monument than a (2) _____—a site of contestation shaped by inclusion, exclusion, and reinvention. A Shakespearean soliloquy may bear universal resonance, yet it also emerges from a matrix of Elizabethan anxieties and power structures. The illusion of timelessness is, more often than not, a function of critical emphasis rather than intrinsic merit. Postcolonial and feminist critiques have challenged this apparent neutrality, foregrounding the voices that were once peripheral. Such interventions have not diminished literature’s prestige but instead (3) _____ its moral and political stakes. Texts once considered apolitical are now read as cultural artifacts entangled in empire, patriarchy, and resistance. In this light, literary criticism becomes an act not of judgment but of (4) _____—an excavation of silences as much as meanings. The reader, then, is not a passive consumer but a co-creator, whose insights must be (5) _____ with humility and historical awareness.",
+      "question": "What should come in the place of blank number (1)?",
+      "options": {
+        "A": "stabilize",
+        "B": "collide",
+        "C": "gestate",
+        "D": "circulate"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q84",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 84,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "cloze-test",
+        "microTopicId": "eng-cloze-vocabulary",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Cloze Test",
+        "microTopicName": "Collocation & Contextual Word Fills",
+        "format": "cloze-test",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 85,
+      "section": "English Comprehension",
+      "section_question_number": 10,
+      "id": "690b31e627e736c820e45cb7",
+      "passage": "In the given passage, some words have been deleted. Read the passage intently and choose the most appropriate option to fill in each blank: Literature, far from being a static repository of aesthetic delight, is a restless medium through which cultures interrogate themselves. The novel, the poem, the play—all are not merely forms but fields wherein ideologies (1) _____, mutate, and sometimes dissolve. To read deeply is to risk disorientation, for every interpretation implies an act of displacement: of authorial intent, of reader expectation, of historical certainty. The literary canon itself is less a monument than a (2) _____—a site of contestation shaped by inclusion, exclusion, and reinvention. A Shakespearean soliloquy may bear universal resonance, yet it also emerges from a matrix of Elizabethan anxieties and power structures. The illusion of timelessness is, more often than not, a function of critical emphasis rather than intrinsic merit. Postcolonial and feminist critiques have challenged this apparent neutrality, foregrounding the voices that were once peripheral. Such interventions have not diminished literature’s prestige but instead (3) _____ its moral and political stakes. Texts once considered apolitical are now read as cultural artifacts entangled in empire, patriarchy, and resistance. In this light, literary criticism becomes an act not of judgment but of (4) _____—an excavation of silences as much as meanings. The reader, then, is not a passive consumer but a co-creator, whose insights must be (5) _____ with humility and historical awareness.",
+      "question": "What should come in the place of blank number (2)?",
+      "options": {
+        "A": "sanctuary",
+        "B": "battleground",
+        "C": "anthology",
+        "D": "threshold"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q85",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 85,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "cloze-test",
+        "microTopicId": "eng-cloze-vocabulary",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Cloze Test",
+        "microTopicName": "Collocation & Contextual Word Fills",
+        "format": "cloze-test",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 86,
+      "section": "English Comprehension",
+      "section_question_number": 11,
+      "id": "690b31e6bf6c92c9ce9f4178",
+      "passage": "In the given passage, some words have been deleted. Read the passage intently and choose the most appropriate option to fill in each blank: Literature, far from being a static repository of aesthetic delight, is a restless medium through which cultures interrogate themselves. The novel, the poem, the play—all are not merely forms but fields wherein ideologies (1) _____, mutate, and sometimes dissolve. To read deeply is to risk disorientation, for every interpretation implies an act of displacement: of authorial intent, of reader expectation, of historical certainty. The literary canon itself is less a monument than a (2) _____—a site of contestation shaped by inclusion, exclusion, and reinvention. A Shakespearean soliloquy may bear universal resonance, yet it also emerges from a matrix of Elizabethan anxieties and power structures. The illusion of timelessness is, more often than not, a function of critical emphasis rather than intrinsic merit. Postcolonial and feminist critiques have challenged this apparent neutrality, foregrounding the voices that were once peripheral. Such interventions have not diminished literature’s prestige but instead (3) _____ its moral and political stakes. Texts once considered apolitical are now read as cultural artifacts entangled in empire, patriarchy, and resistance. In this light, literary criticism becomes an act not of judgment but of (4) _____—an excavation of silences as much as meanings. The reader, then, is not a passive consumer but a co-creator, whose insights must be (5) _____ with humility and historical awareness.",
+      "question": "What should come in the place of blank number (3)?",
+      "options": {
+        "A": "diluted",
+        "B": "intensified",
+        "C": "displaced",
+        "D": "moderated"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q86",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 86,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "cloze-test",
+        "microTopicId": "eng-cloze-vocabulary",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Cloze Test",
+        "microTopicName": "Collocation & Contextual Word Fills",
+        "format": "cloze-test",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 87,
+      "section": "English Comprehension",
+      "section_question_number": 12,
+      "id": "690b31e6f22e84a0937e43c8",
+      "passage": "In the given passage, some words have been deleted. Read the passage intently and choose the most appropriate option to fill in each blank: Literature, far from being a static repository of aesthetic delight, is a restless medium through which cultures interrogate themselves. The novel, the poem, the play—all are not merely forms but fields wherein ideologies (1) _____, mutate, and sometimes dissolve. To read deeply is to risk disorientation, for every interpretation implies an act of displacement: of authorial intent, of reader expectation, of historical certainty. The literary canon itself is less a monument than a (2) _____—a site of contestation shaped by inclusion, exclusion, and reinvention. A Shakespearean soliloquy may bear universal resonance, yet it also emerges from a matrix of Elizabethan anxieties and power structures. The illusion of timelessness is, more often than not, a function of critical emphasis rather than intrinsic merit. Postcolonial and feminist critiques have challenged this apparent neutrality, foregrounding the voices that were once peripheral. Such interventions have not diminished literature’s prestige but instead (3) _____ its moral and political stakes. Texts once considered apolitical are now read as cultural artifacts entangled in empire, patriarchy, and resistance. In this light, literary criticism becomes an act not of judgment but of (4) _____—an excavation of silences as much as meanings. The reader, then, is not a passive consumer but a co-creator, whose insights must be (5) _____ with humility and historical awareness.",
+      "question": "What should come in the place of blank number (4)?",
+      "options": {
+        "A": "reparation",
+        "B": "affirmation",
+        "C": "archaeology",
+        "D": "speculation"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q87",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 87,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "cloze-test",
+        "microTopicId": "eng-cloze-vocabulary",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Cloze Test",
+        "microTopicName": "Collocation & Contextual Word Fills",
+        "format": "cloze-test",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 88,
+      "section": "English Comprehension",
+      "section_question_number": 13,
+      "id": "690b31e73731ace36e907f5e",
+      "passage": "In the given passage, some words have been deleted. Read the passage intently and choose the most appropriate option to fill in each blank: Literature, far from being a static repository of aesthetic delight, is a restless medium through which cultures interrogate themselves. The novel, the poem, the play—all are not merely forms but fields wherein ideologies (1) _____, mutate, and sometimes dissolve. To read deeply is to risk disorientation, for every interpretation implies an act of displacement: of authorial intent, of reader expectation, of historical certainty. The literary canon itself is less a monument than a (2) _____—a site of contestation shaped by inclusion, exclusion, and reinvention. A Shakespearean soliloquy may bear universal resonance, yet it also emerges from a matrix of Elizabethan anxieties and power structures. The illusion of timelessness is, more often than not, a function of critical emphasis rather than intrinsic merit. Postcolonial and feminist critiques have challenged this apparent neutrality, foregrounding the voices that were once peripheral. Such interventions have not diminished literature’s prestige but instead (3) _____ its moral and political stakes. Texts once considered apolitical are now read as cultural artifacts entangled in empire, patriarchy, and resistance. In this light, literary criticism becomes an act not of judgment but of (4) _____—an excavation of silences as much as meanings. The reader, then, is not a passive consumer but a co-creator, whose insights must be (5) _____ with humility and historical awareness.",
+      "question": "What should come in the place of blank number (5)?",
+      "options": {
+        "A": "annotated",
+        "B": "imposed",
+        "C": "brandished",
+        "D": "tempered"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q88",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 88,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "cloze-test",
+        "microTopicId": "eng-cloze-vocabulary",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Cloze Test",
+        "microTopicName": "Collocation & Contextual Word Fills",
+        "format": "cloze-test",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 89,
+      "section": "English Comprehension",
+      "section_question_number": 14,
+      "id": "690b31e73a23b940210fdc97",
+      "passage": "",
+      "question": "Choose the correct comparison structure: Few solutions were ______ promising as this one.",
+      "options": {
+        "A": "so",
+        "B": "as",
+        "C": "that",
+        "D": "too"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q89",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 89,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "cloze-test",
+        "microTopicId": "eng-cloze-vocabulary",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Cloze Test",
+        "microTopicName": "Collocation & Contextual Word Fills",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 90,
+      "section": "English Comprehension",
+      "section_question_number": 15,
+      "id": "690b31e7f045476125bbd68d",
+      "passage": "",
+      "question": "Select the correct option: Not until the auditors had submitted their exhaustive report ____ the full extent of procedural lapses become evident.",
+      "options": {
+        "A": "did",
+        "B": "had",
+        "C": "was",
+        "D": "has"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q90",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 90,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "cloze-test",
+        "microTopicId": "eng-cloze-vocabulary",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Cloze Test",
+        "microTopicName": "Collocation & Contextual Word Fills",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 91,
+      "section": "English Comprehension",
+      "section_question_number": 16,
+      "id": "690b31e8039b6c183b7ebed3",
+      "passage": "",
+      "question": "Find the part of the sentence that contains an error: He objected to the new policy (1)/ on the grounds that (2)/ it violated the principle rights (3)/ of the employees. (4)/",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q91",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 91,
+        "subjectId": "english",
+        "chapterId": "grammar-rules",
+        "topicId": "parts-of-speech",
+        "microTopicId": "eng-modifiers-conjunctions",
+        "chapterName": "Grammar Rules",
+        "topicName": "Parts of Speech & Modifiers",
+        "microTopicName": "Correlative Conjunctions, Adjective vs Adverb",
+        "format": "spotting-error",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 92,
+      "section": "English Comprehension",
+      "section_question_number": 17,
+      "id": "690b31e89731082a68b9b8a6",
+      "passage": "",
+      "question": "Change the following from active to passive: The court let the plaintiff argue the motion without interruption.",
+      "options": {
+        "A": "The motion was argued by the plaintiff without interruption.",
+        "B": "The plaintiff was let to argue the motion without interruption.",
+        "C": "The plaintiff was allowed to argue the motion without interruption.",
+        "D": "The court was letting the plaintiff argue the motion."
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q92",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 92,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "cloze-test",
+        "microTopicId": "eng-cloze-vocabulary",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Cloze Test",
+        "microTopicName": "Collocation & Contextual Word Fills",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 93,
+      "section": "English Comprehension",
+      "section_question_number": 18,
+      "id": "690b31e9c6af04fa80fa9467",
+      "passage": "",
+      "question": "Select the sentence containing the homonym of the highlighted word: The chant ended with a resounding trisagion.",
+      "options": {
+        "A": "The choir practiced the ancient trisagion before vespers.",
+        "B": "The mystic whispered the trisagion under candlelight.",
+        "C": "The geologist identified a trisagion layer in the strata.",
+        "D": "The monk led the congregation through the trisagion."
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q93",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 93,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "cloze-test",
+        "microTopicId": "eng-cloze-vocabulary",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Cloze Test",
+        "microTopicName": "Collocation & Contextual Word Fills",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 94,
+      "section": "English Comprehension",
+      "section_question_number": 19,
+      "id": "690b31e93f7e30afba7261e1",
+      "passage": "",
+      "question": "Convert the sentence provided below from its passive voice structure to an active voice structure: The car had been parked in front of the gate by the visitor.",
+      "options": {
+        "A": "The visitor parks the car in front of the gate.",
+        "B": "The visitor had parked the car in front of the gate.",
+        "C": "The car was being parked in front of the gate by the visitor.",
+        "D": "The visitor will park the car in front of the gate."
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q94",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 94,
+        "subjectId": "english",
+        "chapterId": "voice-narration",
+        "topicId": "active-passive-voice",
+        "microTopicId": "eng-voice-assertive",
+        "chapterName": "Voice & Narration",
+        "topicName": "Active & Passive Voice",
+        "microTopicName": "Assertive Tense Transformations",
+        "format": "voice",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 95,
+      "section": "English Comprehension",
+      "section_question_number": 20,
+      "id": "690b31e9f22e84a0937e443a",
+      "passage": "",
+      "question": "Choose the most suitable option to replace the highlighted part of the sentence: He asked me where do I live.",
+      "options": {
+        "A": "where I live",
+        "B": "where did I live",
+        "C": "where I lived",
+        "D": "where do I lived"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q95",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 95,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "cloze-test",
+        "microTopicId": "eng-cloze-vocabulary",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Cloze Test",
+        "microTopicName": "Collocation & Contextual Word Fills",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 96,
+      "section": "English Comprehension",
+      "section_question_number": 21,
+      "id": "690b31eacf19d6986cb6cbad",
+      "passage": "",
+      "question": "Choose the most suitable option to replace the highlighted part of the sentence:\n\nThe teacher insisted that the student to be honest.",
+      "options": {
+        "A": "be honest",
+        "B": "is honest",
+        "C": "should honest",
+        "D": "should be honest"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q96",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 96,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "cloze-test",
+        "microTopicId": "eng-cloze-vocabulary",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Cloze Test",
+        "microTopicName": "Collocation & Contextual Word Fills",
+        "format": "standard",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.85
+        }
+      }
+    },
+    {
+      "number": 97,
+      "section": "English Comprehension",
+      "section_question_number": 22,
+      "id": "690b31ea3b1ef1c5fde63be7",
+      "passage": "",
+      "question": "A sentence is provided in indirect speech. From the four given options, choose the one that most accurately conveys the sentence in its corresponding direct speech. The CEO admitted that the company's projections had been overly optimistic.",
+      "options": {
+        "A": "&quot;Our projections were overly optimistic,&quot; admitted the CEO.",
+        "B": "&quot;The company&#39;s projections are overly optimistic,&quot; the CEO admitted.",
+        "C": "The CEO said, &quot;Company Projections had been too optimistic.&quot;",
+        "D": "The CEO said, &quot;The company&#39;s projections had been overly optimistic.&quot;"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q97",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 97,
+        "subjectId": "english",
+        "chapterId": "voice-narration",
+        "topicId": "direct-indirect-speech",
+        "microTopicId": "eng-narr-assertive",
+        "chapterName": "Voice & Narration",
+        "topicName": "Direct & Indirect Speech",
+        "microTopicName": "Tense & Pronoun Shifts in Assertive Sentences",
+        "format": "narration",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 98,
+      "section": "English Comprehension",
+      "section_question_number": 23,
+      "id": "690b31eabf6c92c9ce9f4187",
+      "passage": "",
+      "question": "A sentence is provided in direct speech. From the four given options, choose the one that most accurately conveys the sentence in its corresponding indirect speech. He said, \"Would you help me with this work?\"",
+      "options": {
+        "A": "He said if I would help him with that work.",
+        "B": "He asked if I would help him with that work.",
+        "C": "He asked would I help him with this work.",
+        "D": "He told me would I help him."
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q98",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 98,
+        "subjectId": "english",
+        "chapterId": "voice-narration",
+        "topicId": "direct-indirect-speech",
+        "microTopicId": "eng-narr-interrogative",
+        "chapterName": "Voice & Narration",
+        "topicName": "Direct & Indirect Speech",
+        "microTopicName": "Questions (If/Whether vs Wh-words)",
+        "format": "narration",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 99,
+      "section": "English Comprehension",
+      "section_question_number": 24,
+      "id": "690b31eb97287b67b4638c3b",
+      "passage": "",
+      "question": "Rearrange the following sentences to form a coherent paragraph:\n\n1. Molecular structure is a fundamental concept in chemistry that describes the three-dimensional arrangement of atoms in a molecule. 2. These differences can significantly alter the physical and chemical properties of the substance, a concept known as isomerism. 3. It is typically represented by structural formulas, which illustrate the connectivity between atoms. 4. However, molecules with the same chemical formula can have different arrangements of atoms in space.",
+      "options": {
+        "A": "3, 1, 2, 4",
+        "B": "2, 4, 3, 1",
+        "C": "1, 3, 4, 2",
+        "D": "1, 4, 3, 2"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q99",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 99,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "para-jumbles",
+        "microTopicId": "eng-jumble-mandatory-pairs",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Para Jumbles & Rearrangement",
+        "microTopicName": "Sentence Rearrangement & Mandatory Pairs",
+        "format": "para-jumbles",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    },
+    {
+      "number": 100,
+      "section": "English Comprehension",
+      "section_question_number": 25,
+      "id": "690b31ebf2572e4774f9b1b9",
+      "passage": "",
+      "question": "Rearrange the following sentences in correct order to make a logical passage.\n\n1. This creates a sense of belonging and support.\n\n2. Community engagement is vital for social cohesion.\n\n3. It involves active participation in local initiatives and events.\n\n4. Strong communities lead to improved quality of life for all residents.",
+      "options": {
+        "A": "2-1-3-4",
+        "B": "2-4-1-3",
+        "C": "3-4-2-1",
+        "D": "2-3-1-4"
+      },
+      "correct_option": "",
+      "correct_answer": "",
+      "solution": "",
+      "meta": {
+        "key": "M29-Q100",
+        "mockId": "M29",
+        "mockNum": 29,
+        "qNum": 100,
+        "subjectId": "english",
+        "chapterId": "discourse-comprehension",
+        "topicId": "para-jumbles",
+        "microTopicId": "eng-jumble-mandatory-pairs",
+        "chapterName": "Discourse & Reading",
+        "topicName": "Para Jumbles & Rearrangement",
+        "microTopicName": "Sentence Rearrangement & Mandatory Pairs",
+        "format": "para-jumbles",
+        "exam": {
+          "year": 2025,
+          "shiftLabel": "21 Sept 2025 · Shift 2",
+          "date": "21 Sept 2025",
+          "shift": "Shift 2"
+        },
+        "tagging": {
+          "method": "rules-engine-v2",
+          "confidence": 0.9
+        }
+      }
+    }
+  ]
+}

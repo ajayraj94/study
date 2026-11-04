@@ -1,0 +1,621 @@
+SSC CGL QUESTION TAGGING PLAN
+=============================
+
+Purpose
+-------
+This file explains how to add correct subject / chapter / topic tagging and a
+topic-level block to the type-wise mode, and how to handle future uploads of
+about 120 full SSC CGL mocks.
+
+The short recommendation:
+
+    Use one-time automated backfill now, plus a reusable offline tagging
+    pipeline for every future upload. Use manual review only for
+    low-confidence or conflicting tags.
+
+Do not tag 12,000 questions by hand. Do not tag questions in the browser on
+every page load. Tag once at import time and store the result.
+
+
+1. WHAT THE CURRENT DATA LOOKS LIKE
+-----------------------------------
+Current bank: 24 JSON files = 2,400 questions.
+
+A question currently contains only these fields:
+
+    id
+    number
+    section
+    section_question_number
+    question
+    options
+    correct_option
+    correct_answer
+    solution
+    passage
+
+There are 0 chapter tags and 0 topic tags in the JSON files.
+The HTML files have data-section attributes but no data-chapter or data-topic
+attributes.
+
+Because real tags are missing, index.html currently invents a chapter with:
+
+    (m + q) % sec.chapters.length === chIdx
+
+That means a question's chapter is based on its mock number and question
+number, not on what the question is about. This is why the chapter tagging is
+wrong.
+
+Type-wise mode also has hardcoded 24-mock assumptions:
+
+    for (let m = 1; m <= 24; m++)
+    for (let Qt = 1; Qt <= 24; Qt++)
+    weightPct = qs / 600 * 100
+    avgPerShift = qs / 24
+    labels such as "600 Qs"
+
+At 120 mocks these numbers are wrong. They must be calculated from the loaded
+data instead.
+
+
+2. RECOMMENDED TAGGING APPROACH
+-------------------------------
+Use a hybrid system:
+
+    Source metadata  ->  rules  ->  LLM fallback  ->  validation  ->  review
+
+Why this order:
+
+- The section/subject is already reliable in the source data. Use it directly.
+- Many SSC questions are easy to classify from keywords and structure.
+- An LLM is useful only for ambiguous questions and is too expensive and
+  inconsistent to use for everything.
+- A human should review only the uncertain cases, not all 12,000 questions.
+
+Recommended split of work:
+
+    One-time now:       Backfill tags for the existing 2,400 questions.
+    Future upload:      Run the same script before importing a new mock.
+    Manual review:      Only low-confidence, uncategorized or conflicting tags.
+    Never:              Silently guess a chapter from (mock + question) number.
+
+If a question cannot be tagged, mark it "uncategorized" and show
+"Needs tagging" in the UI. A visible missing tag is better than a wrong tag.
+
+
+3. CREATE A CANONICAL TAXONOMY
+------------------------------
+Add a taxonomy file, for example:
+
+    taxonomy.json
+
+It defines the only valid subjects, chapters and topics. Use stable IDs, not
+display names. Names can change; IDs should not.
+
+Basic structure:
+
+    {
+      "version": 1,
+      "subjects": [
+        {
+          "id": "reasoning",
+          "name": "General Intelligence & Reasoning",
+          "chapters": [
+            {
+              "id": "analogy",
+              "name": "Analogy",
+              "topics": [
+                { "id": "number-analogy", "name": "Number Analogy" },
+                { "id": "word-analogy", "name": "Word Analogy" },
+                { "id": "letter-analogy", "name": "Letter Analogy" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+
+Starter subjects:
+
+    reasoning  -> General Intelligence & Reasoning
+    ga         -> General Awareness
+    quant      -> Quantitative Aptitude
+    english    -> English Comprehension
+
+Example chapter/topic starter set:
+
+Reasoning:
+    Analogy
+        Number Analogy
+        Word Analogy
+        Letter Analogy
+    Series
+        Number Series
+        Letter Series
+        Mixed Series
+    Coding-Decoding
+        Letter Coding
+        Number Coding
+        Symbol Coding
+    Syllogism
+        Two Statements
+        Three Statements
+        Possibility Cases
+    Blood Relations
+        Family Tree
+        Coded Relations
+    Direction & Distance
+    Mirror & Water Image
+    Paper Folding & Cutting
+    Embedded Figures
+    Matrix / Figure Series
+    Mathematical Operations
+    Ranking & Arrangement
+    Venn Diagram
+    Statement & Conclusion
+
+Quantitative Aptitude:
+    Percentage
+        Basic Percentage
+        Successive Percentage
+        Population & Depreciation
+    Simplification
+        BODMAS
+        Surds & Indices
+        Approximation
+    Ratio & Proportion
+        Basic Ratio
+        Compound Ratio
+        Age Ratio
+    Average
+        Basic Average
+        Weighted Average
+    Profit & Loss
+        Cost Price / Selling Price
+        Marked Price & Discount
+        Successive Discount
+    Simple & Compound Interest
+        Simple Interest
+        Compound Interest
+        Installments
+    Mixture & Alligation
+    Partnership
+    Time & Work
+        Work Efficiency
+        Wages
+    Pipes & Cistern
+    Speed, Time & Distance
+        Relative Speed
+        Trains
+        Boats & Streams
+    Mensuration
+        2D Figures
+        3D Figures
+    Coordinate Geometry
+    Trigonometry
+        Heights & Distances
+        Identities
+    Data Interpretation
+        Table
+        Bar Graph
+        Pie Chart
+
+General Awareness:
+    History
+        Ancient India
+        Medieval India
+        Modern India
+        Art & Culture
+    Polity
+        Constitution
+        Fundamental Rights
+        Parliament
+        Judiciary
+        Amendments
+    Geography
+        Indian Geography
+        World Geography
+        Physical Geography
+    Economy
+        Basic Concepts
+        Budget & Taxation
+        Banking
+        Schemes
+    Science
+        Physics
+        Chemistry
+        Biology
+        Computer Awareness
+    Current Affairs
+        Awards
+        Sports
+        Appointments
+        Important Days
+    Static GK
+        Books & Authors
+        Dances
+        Festivals
+        National Parks
+
+English Comprehension:
+    Reading Comprehension
+        Main Idea
+        Inference
+        Vocabulary in Context
+        Factual Detail
+    Grammar
+        Error Spotting
+        Sentence Correction
+        Subject-Verb Agreement
+        Tense
+        Preposition
+        Article
+    Vocabulary
+        Synonym
+        Antonym
+        One Word Substitution
+        Idiom & Phrase
+        Spelling
+    Sentence Improvement
+    Active & Passive Voice
+    Direct & Indirect Speech
+    Cloze Test
+    Para Jumbles
+    Fill in the Blanks
+
+This is a starting point. Edit the taxonomy once, carefully, before tagging.
+Every question must point to a valid subject -> chapter -> topic path.
+
+
+4. STORE TAGS ON EACH QUESTION
+------------------------------
+Add these fields to each normalized question record:
+
+    {
+      "id": "6901f8b14d79a5a4a1ddefd0",
+      "mockId": "ssc-cgl-2025-09-12-s1",
+      "number": 1,
+      "subjectId": "reasoning",
+      "chapterId": "analogy",
+      "topicId": "number-analogy",
+      "tags": ["number-analogy"],
+      "tagging": {
+        "method": "rules-v1",
+        "confidence": 0.96,
+        "reviewed": false
+      }
+    }
+
+Field meanings:
+
+    id          Stable source question ID. Use this as the primary key.
+    mockId      Stable ID for the mock/shift, not just "M1".
+    subjectId   One of reasoning, ga, quant, english.
+    chapterId   Must exist in taxonomy.json.
+    topicId     Must belong to chapterId in taxonomy.json.
+    tags        Optional extra labels for search and cross-reference.
+    tagging     How the tag was produced and whether a human reviewed it.
+
+Do not use "M12-Q7" as the permanent identity. It is only a display label.
+When you add more mocks, or reorder them, old progress and bookmarks should
+still point to the same question. Use the source id for that.
+
+Keep display fields separately:
+
+    mockNum
+    qNum
+    shiftLabel
+    year
+
+For migration, keep a map from old "M#-Q#" keys to the new question IDs so
+existing progress is not lost.
+
+
+5. OFFLINE TAGGING PIPELINE
+---------------------------
+Create an offline script, for example:
+
+    tools/tag-questions.mjs
+
+It should perform these steps.
+
+Step 1: Normalize
+    Convert every JSON/HTML mock into one canonical question format.
+    Preserve: id, mock, number, section, question, options, answer,
+    solution, passage, source file.
+
+Step 2: Assign subject
+    Derive subject from the existing section field.
+    Map the four SSC sections to reasoning, ga, quant, english.
+    Do not guess the subject from question keywords.
+
+Step 3: Assign chapter and topic
+    Use layered signals in this order:
+
+    A. Source metadata
+       If the source file already has a chapter, topic or heading, normalize it
+       to the taxonomy. Trust this over generated tags.
+
+    B. Rules
+       Use the question, options and solution text. Rules should be specific
+       enough to avoid false matches.
+
+       Examples:
+
+       Quant:
+         /\b(successive|two successive)\b/i
+             -> percentage / successive percentage
+         /\b(ci|compound interest)\b/i
+             -> simple & compound interest / compound interest
+         /\b(train|platform|relative speed)\b/i
+             -> speed time distance / trains
+
+       Reasoning:
+         /\b(analogy|is related to|::)\b/i
+             -> analogy
+         /\b(code|coding|decoded)\b/i
+             -> coding-decoding
+         /\b(blood relation|father|mother|sister|brother)\b/i
+             -> blood relations
+
+       English:
+         Question stem contains "synonym"     -> vocabulary / synonym
+         Question stem contains "antonym"     -> vocabulary / antonym
+         Question stem contains "error"       -> grammar / error spotting
+         Passage present and question asks
+         about tone, purpose, inference        -> reading comprehension
+
+       GA:
+         Use entity and keyword dictionaries.
+         Example: Constitution, Article, Parliament -> polity
+         Example: river, mountain, climate         -> geography
+         Example: President, scheme, budget        -> current affairs / economy
+
+       Use the solution too. Solutions often name the concept directly, for
+       example "Successive percentage formula" or "Fundamental Rights".
+
+    C. LLM fallback
+       Only for questions that rules cannot classify confidently.
+       Give the model:
+         - the question
+         - the options
+         - the solution
+         - the allowed chapter/topic list
+       Ask for exactly one valid chapterId and topicId plus a confidence score.
+       Batch 20 to 50 questions per request to control cost.
+       Reject any answer that is not in the taxonomy.
+
+Step 4: Validate
+    Check that:
+      - subjectId exists
+      - chapterId belongs to that subject
+      - topicId belongs to that chapter
+      - no required field is empty
+      - no duplicate question IDs
+    Produce a report with counts per chapter/topic and a list of failures.
+
+Step 5: Human review
+    Review only:
+      - confidence below your chosen threshold
+      - uncategorized questions
+      - conflicts between source metadata and rules
+      - questions where the model changed the predicted chapter
+
+    Review output can be a CSV or a small screen in the app.
+    Store corrections in a separate file:
+
+        tag-overrides.json
+
+    Never overwrite manual corrections when the tagger runs again.
+
+Step 6: Build the UI index
+    Generate a compact index for the app:
+
+    {
+      "subjects": {
+        "reasoning": {
+          "analogy": {
+            "number-analogy": ["id1", "id2", "id3"],
+            "word-analogy": ["id4", "id5"]
+          }
+        }
+      }
+    }
+
+    The main app can load this index first, then load full question text,
+    options and explanations only when needed.
+
+
+6. CONFIDENCE AND REVIEW RULES
+------------------------------
+Suggested policy:
+
+    confidence >= 0.90     accept automatically
+    0.70 to 0.89            accept but include in review queue
+    below 0.70              mark uncategorized and require review
+
+Also require review when:
+
+    - the top two predicted topics are close
+    - the source chapter and predicted chapter disagree
+    - the question has almost no text (for example image-only questions)
+    - the solution is empty and the question is ambiguous
+
+Do not use confidence as proof of correctness. It is only a way to prioritize
+human review.
+
+
+7. TOPIC-LEVEL UI IN TYPE-WISE MODE
+-----------------------------------
+Change type-wise mode from two levels to three:
+
+    Subject cards
+        Reasoning
+        General Awareness
+        Quantitative Aptitude
+        English Comprehension
+
+            select subject
+
+    Chapter cards
+        Analogy
+        Series
+        Coding-Decoding
+        ...
+
+            select chapter
+
+    Topic blocks (new)
+        All Topics
+        Number Analogy
+        Word Analogy
+        Letter Analogy
+
+            select topic
+
+    Question chips
+        M12 - Q7    Number Analogy    weak
+        M18 - Q2    Number Analogy    mastered
+
+Behavior:
+
+    - Clicking a subject resets chapter and topic.
+    - Clicking a chapter shows its topic blocks.
+    - "All Topics" is selected by default.
+    - Clicking a topic filters the question list.
+    - Each question appears once under its primary subject/chapter/topic.
+    - Extra tags are for search and cross-reference only, not duplicate cards.
+    - Show a breadcrumb: Reasoning / Analogy / Number Analogy.
+    - Show counts and mastery at every level.
+    - Clicking a question opens the single-question practice drawer, not a mock.
+    - Search should search all levels and open the matching topic.
+
+Data needed by the UI:
+
+    topicsForChapter(subjectId, chapterId)
+    questionsForTopic(topicId)
+    counts and mastery for each topic
+
+Build these from the precomputed index. Do not rescan the entire bank inside
+every chapter card render.
+
+
+8. SCALING TO 120 MOCKS
+-----------------------
+At 120 full mocks:
+
+    120 mocks x 100 questions = 12,000 questions
+    Each section = 120 x 25 = 3,000 questions
+
+Remove or replace these hardcoded values in index.html:
+
+    for (let m = 1; m <= 24; m++)
+    for (let Qt = 1; Qt <= 24; Qt++)
+    qs / 600 * 100
+    qs / 24
+    "600 Qs"
+    mock status loop up to 100
+
+Use calculated values:
+
+    totalMocks
+    totalQuestions
+    questionsPerSection
+    chapters with counts from the index
+
+Performance rules:
+
+    - Build Map<chapterId, questionIds[]> once.
+    - Build Map<topicId, questionIds[]> once.
+    - Keep only metadata in the initial index.
+    - Load full question content lazily by mock file or shard.
+    - Avoid rendering thousands of question chips at once; paginate or
+      virtualize long lists.
+    - Do not run the tagger in the browser.
+
+Identity rules:
+
+    - Use source question id as the main key.
+    - Keep mockNum/qNum as display fields.
+    - Migrate old M#-Q# progress keys to question ids once.
+    - Keep a mapping table during migration.
+
+Storage rules:
+
+    - 12,000 questions with HTML solutions and image URLs can become a very
+      large single file.
+    - Split the full bank into per-mock or per-subject files.
+    - Keep taxonomy.json and the compact index separate from question content.
+
+
+9. WHAT NOT TO DO
+-----------------
+Do not:
+
+    - keep the (mock + question) % chapter fallback
+    - assign chapters in the browser on every render
+    - use question number as the chapter
+    - let an LLM invent chapter or topic names
+    - tag all 12,000 questions manually
+    - overwrite manual review results on re-import
+    - use M#-Q# as the permanent question identity
+    - duplicate a multi-tag question in several topic cards
+    - hide untagged questions; show them as "Needs tagging"
+
+Multi-concept questions:
+
+    Choose one primary topic.
+    Add secondary tags for search.
+    Show the extra tags as small badges if useful.
+    Do not create duplicate question cards in the same chapter tree.
+
+
+10. RECOMMENDED IMPLEMENTATION ORDER
+------------------------------------
+Phase 1: Taxonomy and audit
+    [ ] Create taxonomy.json with subject/chapter/topic IDs.
+    [ ] Review chapter names against the SSC CGL syllabus.
+    [ ] Decide the primary topic rule for multi-concept questions.
+
+Phase 2: One-time backfill
+    [ ] Write tools/tag-questions.mjs.
+    [ ] Normalize the existing 24 JSON/HTML mocks.
+    [ ] Run rules and inspect the report.
+    [ ] Run LLM fallback for low-confidence questions.
+    [ ] Review only the review queue.
+    [ ] Save overrides in tag-overrides.json.
+    [ ] Validate all 2,400 questions.
+    [ ] Generate the compact question index.
+
+Phase 3: UI
+    [ ] Replace the fake chapter fallback with index lookups.
+    [ ] Add the topic block under the selected chapter.
+    [ ] Add breadcrumbs, counts and mastery per topic.
+    [ ] Keep single-question click behavior.
+    [ ] Show "Needs tagging" for uncategorized questions.
+
+Phase 4: Scale
+    [ ] Replace hardcoded 24/600/100 values with calculated totals.
+    [ ] Switch progress keys to stable question IDs with migration.
+    [ ] Lazy-load large question files.
+    [ ] Test with 120 mock metadata before uploading all content.
+
+Phase 5: Future uploads
+    [ ] Run the same tagger before import.
+    [ ] Validate the taxonomy.
+    [ ] Add only reviewed overrides.
+    [ ] Rebuild the index.
+    [ ] Keep a tagging report for every upload batch.
+
+
+11. BOTTOM LINE
+---------------
+For 120 full mocks, the correct choice is not "automation or one-time
+tagging". It is:
+
+    One-time automated backfill now, using a repeatable pipeline that can also
+    tag every future upload, with human review only for uncertain cases.
+
+The pipeline, taxonomy and stored tags are the durable part. The UI topic
+block is then simple: read the index, show subject -> chapter -> topic ->
+questions, and never guess a tag from a question number.
