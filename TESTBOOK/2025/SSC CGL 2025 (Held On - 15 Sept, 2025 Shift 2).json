@@ -1208,12 +1208,12 @@
         "mockNum": 11,
         "qNum": 29,
         "subjectId": "ga",
-        "chapterId": "history",
-        "topicId": "art-culture",
-        "microTopicId": "ga-art-festivals-fairs",
-        "chapterName": "History & Culture",
-        "topicName": "Art & Culture (High Yield)",
-        "microTopicName": "Cultural Festivals, Fairs & State Celebrations",
+        "chapterId": "geography",
+        "topicId": "indian-geography",
+        "microTopicId": "ga-geo-mountains-passes",
+        "chapterName": "Geography",
+        "topicName": "Indian Geography",
+        "microTopicName": "Mountain Ranges, Himalayan Passes & Peaks",
         "format": "gk-fact",
         "exam": {
           "year": 2025,
@@ -1250,12 +1250,12 @@
         "mockNum": 11,
         "qNum": 30,
         "subjectId": "ga",
-        "chapterId": "history",
-        "topicId": "art-culture",
-        "microTopicId": "ga-art-festivals-fairs",
-        "chapterName": "History & Culture",
-        "topicName": "Art & Culture (High Yield)",
-        "microTopicName": "Cultural Festivals, Fairs & State Celebrations",
+        "chapterId": "indian-polity",
+        "topicId": "executive-legislature",
+        "microTopicId": "ga-pol-president-gov",
+        "chapterName": "Indian Polity & Constitution",
+        "topicName": "Executive, Legislature & Judiciary",
+        "microTopicName": "President & Governor (Powers, Impeachment, Ordinances)",
         "format": "gk-fact",
         "exam": {
           "year": 2025,
@@ -1334,12 +1334,12 @@
         "mockNum": 11,
         "qNum": 32,
         "subjectId": "ga",
-        "chapterId": "geography",
-        "topicId": "indian-geography",
-        "microTopicId": "ga-geo-rivers-dams",
-        "chapterName": "Geography",
-        "topicName": "Indian Geography",
-        "microTopicName": "River Systems (Himalayan vs Peninsular) & Multipurpose Dams",
+        "chapterId": "static-gk-current",
+        "topicId": "static-gk",
+        "microTopicId": "ga-gk-firsts-records",
+        "chapterName": "Static GK & Current Affairs",
+        "topicName": "Static General Knowledge",
+        "microTopicName": "First in India & World, Superlatives & Landmarks",
         "format": "gk-fact",
         "exam": {
           "year": 2025,
@@ -1349,7 +1349,7 @@
         },
         "tagging": {
           "method": "rules-engine-v2",
-          "confidence": 0.9
+          "confidence": 0.85
         }
       }
     },
@@ -1502,12 +1502,12 @@
         "mockNum": 11,
         "qNum": 36,
         "subjectId": "ga",
-        "chapterId": "history",
-        "topicId": "art-culture",
-        "microTopicId": "ga-art-festivals-fairs",
-        "chapterName": "History & Culture",
-        "topicName": "Art & Culture (High Yield)",
-        "microTopicName": "Cultural Festivals, Fairs & State Celebrations",
+        "chapterId": "indian-polity",
+        "topicId": "constitutional-framework",
+        "microTopicId": "ga-pol-amendments",
+        "chapterName": "Indian Polity & Constitution",
+        "topicName": "Constitutional Framework & Amendments",
+        "microTopicName": "Landmark Constitutional Amendments (42nd, 44th, 86th, etc.)",
         "format": "gk-fact",
         "exam": {
           "year": 2025,
@@ -1671,11 +1671,11 @@
         "qNum": 40,
         "subjectId": "ga",
         "chapterId": "indian-polity",
-        "topicId": "fundamental-rights-duties",
-        "microTopicId": "ga-pol-fr-freedom",
+        "topicId": "constitutional-framework",
+        "microTopicId": "ga-pol-sources-preamble",
         "chapterName": "Indian Polity & Constitution",
-        "topicName": "Fundamental Rights, DPSP & Duties",
-        "microTopicName": "Articles 19–22 (Right to Freedom)",
+        "topicName": "Constitutional Framework & Amendments",
+        "microTopicName": "Sources of Constitution, Preamble & Schedules",
         "format": "gk-fact",
         "exam": {
           "year": 2025,
@@ -2050,10 +2050,10 @@
         "subjectId": "ga",
         "chapterId": "static-gk-current",
         "topicId": "static-gk",
-        "microTopicId": "ga-gk-books-authors",
+        "microTopicId": "ga-gk-firsts-records",
         "chapterName": "Static GK & Current Affairs",
         "topicName": "Static General Knowledge",
-        "microTopicName": "Famous Historical Books & Personalities' Autobiographies",
+        "microTopicName": "First in India & World, Superlatives & Landmarks",
         "format": "gk-fact",
         "exam": {
           "year": 2025,
@@ -2063,7 +2063,7 @@
         },
         "tagging": {
           "method": "rules-engine-v2",
-          "confidence": 0.9
+          "confidence": 0.85
         }
       }
     },

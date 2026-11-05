@@ -460,6 +460,16 @@
                   "name": "Supreme Court, High Courts, CAG & Election Commission"
                 }
               ]
+            },
+            {
+              "id": "criminal-law-justice",
+              "name": "Criminal Law & Justice",
+              "microTopics": [
+                {
+                  "id": "ga-pol-criminal-law",
+                  "name": "BNSS, BNS, BSA, CrPC & Criminal Procedure"
+                }
+              ]
             }
           ]
         },
