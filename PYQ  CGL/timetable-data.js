@@ -1,5 +1,5 @@
 window.TIMETABLE_DATA = {
-  "generatedAt": "2026-11-07T13:34:29",
+  "generatedAt": "2026-11-09T14:41:09",
   "source": "tools/timetable.txt",
   "days": [
     {
@@ -11,132 +11,132 @@ window.TIMETABLE_DATA = {
       "sessions": [
         {
           "start": 0,
-          "end": 90,
-          "duration": 90,
-          "label": "Reasoning",
-          "subject": "reasoning",
+          "end": 75,
+          "duration": 75,
+          "label": "Mock 1 Quant & Paper Solving",
+          "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 90,
-          "end": 120,
+          "start": 75,
+          "end": 105,
           "duration": 30,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 120,
-          "end": 210,
+          "start": 105,
+          "end": 195,
           "duration": 90,
-          "label": "Reasoning",
-          "subject": "reasoning",
+          "label": "Quant Speed Drills & Question Selection",
+          "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 210,
+          "start": 195,
           "end": 240,
-          "duration": 30,
-          "label": "Break",
+          "duration": 45,
+          "label": "Lunch Break",
           "subject": null,
           "kind": "break"
         },
         {
           "start": 240,
-          "end": 330,
-          "duration": 90,
-          "label": "Reasoning",
+          "end": 315,
+          "duration": 75,
+          "label": "Mock 2 Reasoning & Paper Solving",
           "subject": "reasoning",
           "kind": "study"
         },
         {
-          "start": 330,
-          "end": 360,
+          "start": 315,
+          "end": 345,
           "duration": 30,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 360,
-          "end": 420,
-          "duration": 60,
-          "label": "English",
-          "subject": "english",
-          "kind": "study"
-        },
-        {
-          "start": 420,
-          "end": 450,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 450,
-          "end": 510,
-          "duration": 60,
-          "label": "English",
-          "subject": "english",
-          "kind": "study"
-        },
-        {
-          "start": 510,
-          "end": 540,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 540,
-          "end": 600,
-          "duration": 60,
-          "label": "English",
-          "subject": "english",
-          "kind": "study"
-        },
-        {
-          "start": 600,
-          "end": 630,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 630,
-          "end": 720,
+          "start": 345,
+          "end": 435,
           "duration": 90,
-          "label": "GA",
+          "label": "Reasoning Negative Control & Trap Drills",
+          "subject": "reasoning",
+          "kind": "study"
+        },
+        {
+          "start": 435,
+          "end": 465,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 465,
+          "end": 555,
+          "duration": 90,
+          "label": "Quant Arithmetic Speed Practice",
+          "subject": "quant",
+          "kind": "study"
+        },
+        {
+          "start": 555,
+          "end": 585,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 585,
+          "end": 660,
+          "duration": 75,
+          "label": "Mock 3 English & Full Speed Solving",
+          "subject": "english",
+          "kind": "study"
+        },
+        {
+          "start": 660,
+          "end": 690,
+          "duration": 30,
+          "label": "Dinner Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 690,
+          "end": 765,
+          "duration": 75,
+          "label": "GA High-Yield Static & Error Revision",
           "subject": "ga",
           "kind": "study"
         },
         {
-          "start": 720,
-          "end": 750,
-          "duration": 30,
+          "start": 765,
+          "end": 780,
+          "duration": 15,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 750,
+          "start": 780,
           "end": 840,
-          "duration": 90,
-          "label": "GA",
-          "subject": "ga",
+          "duration": 60,
+          "label": "English Rules & Vocab Consolidation",
+          "subject": "english",
           "kind": "study"
         }
       ],
       "studyMinutes": 630,
       "breakMinutes": 210,
       "totals": {
-        "reasoning": 270,
-        "quant": 0,
-        "english": 180,
-        "ga": 180
+        "reasoning": 165,
+        "quant": 255,
+        "english": 135,
+        "ga": 75
       },
       "unparsed": []
     },
@@ -149,132 +149,132 @@ window.TIMETABLE_DATA = {
       "sessions": [
         {
           "start": 0,
-          "end": 90,
-          "duration": 90,
-          "label": "Reasoning",
-          "subject": "reasoning",
+          "end": 75,
+          "duration": 75,
+          "label": "Mock 1 Quant & Paper Solving",
+          "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 90,
-          "end": 120,
+          "start": 75,
+          "end": 105,
           "duration": 30,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 120,
-          "end": 210,
+          "start": 105,
+          "end": 195,
           "duration": 90,
-          "label": "Reasoning",
-          "subject": "reasoning",
+          "label": "Quant Algebra & Geometry Formulas",
+          "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 210,
+          "start": 195,
           "end": 240,
-          "duration": 30,
-          "label": "Break",
+          "duration": 45,
+          "label": "Lunch Break",
           "subject": null,
           "kind": "break"
         },
         {
           "start": 240,
-          "end": 330,
-          "duration": 90,
-          "label": "Reasoning",
+          "end": 315,
+          "duration": 75,
+          "label": "Mock 2 Reasoning & Paper Solving",
           "subject": "reasoning",
           "kind": "study"
         },
         {
-          "start": 330,
-          "end": 360,
+          "start": 315,
+          "end": 345,
           "duration": 30,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 360,
-          "end": 420,
-          "duration": 60,
-          "label": "English",
-          "subject": "english",
-          "kind": "study"
-        },
-        {
-          "start": 420,
-          "end": 450,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 450,
-          "end": 510,
-          "duration": 60,
-          "label": "English",
-          "subject": "english",
-          "kind": "study"
-        },
-        {
-          "start": 510,
-          "end": 540,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 540,
-          "end": 600,
-          "duration": 60,
-          "label": "English",
-          "subject": "english",
-          "kind": "study"
-        },
-        {
-          "start": 600,
-          "end": 630,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 630,
-          "end": 720,
+          "start": 345,
+          "end": 435,
           "duration": 90,
-          "label": "GA",
+          "label": "Reasoning Series & Syllogism Drills",
+          "subject": "reasoning",
+          "kind": "study"
+        },
+        {
+          "start": 435,
+          "end": 465,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 465,
+          "end": 555,
+          "duration": 90,
+          "label": "Quant Advanced Round-2 Practice",
+          "subject": "quant",
+          "kind": "study"
+        },
+        {
+          "start": 555,
+          "end": 585,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 585,
+          "end": 660,
+          "duration": 75,
+          "label": "Mock 3 English & Full Speed Solving",
+          "subject": "english",
+          "kind": "study"
+        },
+        {
+          "start": 660,
+          "end": 690,
+          "duration": 30,
+          "label": "Dinner Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 690,
+          "end": 765,
+          "duration": 75,
+          "label": "GA Polity & Modern History Capsules",
           "subject": "ga",
           "kind": "study"
         },
         {
-          "start": 720,
-          "end": 750,
-          "duration": 30,
+          "start": 765,
+          "end": 780,
+          "duration": 15,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 750,
+          "start": 780,
           "end": 840,
-          "duration": 90,
-          "label": "GA",
-          "subject": "ga",
+          "duration": 60,
+          "label": "English Cloze Test & Reading Speed",
+          "subject": "english",
           "kind": "study"
         }
       ],
       "studyMinutes": 630,
       "breakMinutes": 210,
       "totals": {
-        "reasoning": 270,
-        "quant": 0,
-        "english": 180,
-        "ga": 180
+        "reasoning": 165,
+        "quant": 255,
+        "english": 135,
+        "ga": 75
       },
       "unparsed": []
     },
@@ -287,132 +287,132 @@ window.TIMETABLE_DATA = {
       "sessions": [
         {
           "start": 0,
-          "end": 90,
-          "duration": 90,
-          "label": "Quant",
+          "end": 75,
+          "duration": 75,
+          "label": "Mock 1 Quant & Paper Solving",
           "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 90,
-          "end": 120,
+          "start": 75,
+          "end": 105,
           "duration": 30,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 120,
-          "end": 210,
+          "start": 105,
+          "end": 195,
           "duration": 90,
-          "label": "Quant",
+          "label": "Quant Speed Drills & Question Selection",
           "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 210,
+          "start": 195,
           "end": 240,
-          "duration": 30,
-          "label": "Break",
+          "duration": 45,
+          "label": "Lunch Break",
           "subject": null,
           "kind": "break"
         },
         {
           "start": 240,
-          "end": 330,
+          "end": 315,
+          "duration": 75,
+          "label": "Mock 2 Reasoning & Paper Solving",
+          "subject": "reasoning",
+          "kind": "study"
+        },
+        {
+          "start": 315,
+          "end": 345,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 345,
+          "end": 435,
           "duration": 90,
-          "label": "Quant",
+          "label": "Reasoning Negative Control & Trap Drills",
+          "subject": "reasoning",
+          "kind": "study"
+        },
+        {
+          "start": 435,
+          "end": 465,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 465,
+          "end": 555,
+          "duration": 90,
+          "label": "Quant Arithmetic Speed Practice",
           "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 330,
-          "end": 360,
+          "start": 555,
+          "end": 585,
           "duration": 30,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 360,
-          "end": 420,
-          "duration": 60,
-          "label": "English",
+          "start": 585,
+          "end": 660,
+          "duration": 75,
+          "label": "Mock 3 English & Full Speed Solving",
           "subject": "english",
           "kind": "study"
         },
         {
-          "start": 420,
-          "end": 450,
+          "start": 660,
+          "end": 690,
           "duration": 30,
-          "label": "Break",
+          "label": "Dinner Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 450,
-          "end": 510,
-          "duration": 60,
-          "label": "English",
-          "subject": "english",
-          "kind": "study"
-        },
-        {
-          "start": 510,
-          "end": 540,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 540,
-          "end": 600,
-          "duration": 60,
-          "label": "English",
-          "subject": "english",
-          "kind": "study"
-        },
-        {
-          "start": 600,
-          "end": 630,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 630,
-          "end": 720,
-          "duration": 90,
-          "label": "GA",
+          "start": 690,
+          "end": 765,
+          "duration": 75,
+          "label": "GA Science & Geography Capsules",
           "subject": "ga",
           "kind": "study"
         },
         {
-          "start": 720,
-          "end": 750,
-          "duration": 30,
+          "start": 765,
+          "end": 780,
+          "duration": 15,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 750,
+          "start": 780,
           "end": 840,
-          "duration": 90,
-          "label": "GA",
-          "subject": "ga",
+          "duration": 60,
+          "label": "English Grammar 120 Rules Revision",
+          "subject": "english",
           "kind": "study"
         }
       ],
       "studyMinutes": 630,
       "breakMinutes": 210,
       "totals": {
-        "reasoning": 0,
-        "quant": 270,
-        "english": 180,
-        "ga": 180
+        "reasoning": 165,
+        "quant": 255,
+        "english": 135,
+        "ga": 75
       },
       "unparsed": []
     },
@@ -425,132 +425,132 @@ window.TIMETABLE_DATA = {
       "sessions": [
         {
           "start": 0,
-          "end": 90,
-          "duration": 90,
-          "label": "Quant",
+          "end": 75,
+          "duration": 75,
+          "label": "Mock 1 Quant & Paper Solving",
           "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 90,
-          "end": 120,
+          "start": 75,
+          "end": 105,
           "duration": 30,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 120,
-          "end": 210,
+          "start": 105,
+          "end": 195,
           "duration": 90,
-          "label": "Quant",
+          "label": "Quant Trigonometry & Mensuration Shortcuts",
           "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 210,
+          "start": 195,
           "end": 240,
-          "duration": 30,
-          "label": "Break",
+          "duration": 45,
+          "label": "Lunch Break",
           "subject": null,
           "kind": "break"
         },
         {
           "start": 240,
-          "end": 330,
+          "end": 315,
+          "duration": 75,
+          "label": "Mock 2 Reasoning & Paper Solving",
+          "subject": "reasoning",
+          "kind": "study"
+        },
+        {
+          "start": 315,
+          "end": 345,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 345,
+          "end": 435,
           "duration": 90,
-          "label": "Quant",
+          "label": "Reasoning Non-Verbal & Pattern Drills",
+          "subject": "reasoning",
+          "kind": "study"
+        },
+        {
+          "start": 435,
+          "end": 465,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 465,
+          "end": 555,
+          "duration": 90,
+          "label": "Quant Advanced Round-2 Practice",
           "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 330,
-          "end": 360,
+          "start": 555,
+          "end": 585,
           "duration": 30,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 360,
-          "end": 420,
-          "duration": 60,
-          "label": "English",
+          "start": 585,
+          "end": 660,
+          "duration": 75,
+          "label": "Mock 3 English & Full Speed Solving",
           "subject": "english",
           "kind": "study"
         },
         {
-          "start": 420,
-          "end": 450,
+          "start": 660,
+          "end": 690,
           "duration": 30,
-          "label": "Break",
+          "label": "Dinner Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 450,
-          "end": 510,
-          "duration": 60,
-          "label": "English",
-          "subject": "english",
-          "kind": "study"
-        },
-        {
-          "start": 510,
-          "end": 540,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 540,
-          "end": 600,
-          "duration": 60,
-          "label": "English",
-          "subject": "english",
-          "kind": "study"
-        },
-        {
-          "start": 600,
-          "end": 630,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 630,
-          "end": 720,
-          "duration": 90,
-          "label": "GA",
+          "start": 690,
+          "end": 765,
+          "duration": 75,
+          "label": "GA Current Affairs Top MCQs",
           "subject": "ga",
           "kind": "study"
         },
         {
-          "start": 720,
-          "end": 750,
-          "duration": 30,
+          "start": 765,
+          "end": 780,
+          "duration": 15,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 750,
+          "start": 780,
           "end": 840,
-          "duration": 90,
-          "label": "GA",
-          "subject": "ga",
+          "duration": 60,
+          "label": "English Idioms & One Word Substitution",
+          "subject": "english",
           "kind": "study"
         }
       ],
       "studyMinutes": 630,
       "breakMinutes": 210,
       "totals": {
-        "reasoning": 0,
-        "quant": 270,
-        "english": 180,
-        "ga": 180
+        "reasoning": 165,
+        "quant": 255,
+        "english": 135,
+        "ga": 75
       },
       "unparsed": []
     },
@@ -563,132 +563,132 @@ window.TIMETABLE_DATA = {
       "sessions": [
         {
           "start": 0,
-          "end": 90,
-          "duration": 90,
-          "label": "Quant",
+          "end": 75,
+          "duration": 75,
+          "label": "Mock 1 Quant & Paper Solving",
           "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 90,
-          "end": 120,
+          "start": 75,
+          "end": 105,
           "duration": 30,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 120,
-          "end": 210,
+          "start": 105,
+          "end": 195,
           "duration": 90,
-          "label": "Quant",
+          "label": "Quant Speed Drills & Question Selection",
           "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 210,
+          "start": 195,
           "end": 240,
-          "duration": 30,
-          "label": "Break",
+          "duration": 45,
+          "label": "Lunch Break",
           "subject": null,
           "kind": "break"
         },
         {
           "start": 240,
-          "end": 330,
+          "end": 315,
+          "duration": 75,
+          "label": "Mock 2 Reasoning & Paper Solving",
+          "subject": "reasoning",
+          "kind": "study"
+        },
+        {
+          "start": 315,
+          "end": 345,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 345,
+          "end": 435,
           "duration": 90,
-          "label": "Quant",
+          "label": "Reasoning Negative Control & Trap Drills",
+          "subject": "reasoning",
+          "kind": "study"
+        },
+        {
+          "start": 435,
+          "end": 465,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 465,
+          "end": 555,
+          "duration": 90,
+          "label": "Quant Arithmetic Speed Practice",
           "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 330,
-          "end": 360,
+          "start": 555,
+          "end": 585,
           "duration": 30,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 360,
-          "end": 420,
-          "duration": 60,
-          "label": "English",
+          "start": 585,
+          "end": 660,
+          "duration": 75,
+          "label": "Mock 3 English & Full Speed Solving",
           "subject": "english",
           "kind": "study"
         },
         {
-          "start": 420,
-          "end": 450,
+          "start": 660,
+          "end": 690,
           "duration": 30,
-          "label": "Break",
+          "label": "Dinner Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 450,
-          "end": 510,
-          "duration": 60,
-          "label": "English",
-          "subject": "english",
-          "kind": "study"
-        },
-        {
-          "start": 510,
-          "end": 540,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 540,
-          "end": 600,
-          "duration": 60,
-          "label": "English",
-          "subject": "english",
-          "kind": "study"
-        },
-        {
-          "start": 600,
-          "end": 630,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 630,
-          "end": 720,
-          "duration": 90,
-          "label": "GA",
+          "start": 690,
+          "end": 765,
+          "duration": 75,
+          "label": "GA Static GK Art & Culture Capsules",
           "subject": "ga",
           "kind": "study"
         },
         {
-          "start": 720,
-          "end": 750,
-          "duration": 30,
+          "start": 765,
+          "end": 780,
+          "duration": 15,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 750,
+          "start": 780,
           "end": 840,
-          "duration": 90,
-          "label": "GA",
-          "subject": "ga",
+          "duration": 60,
+          "label": "English Vocab & Error Spotting",
+          "subject": "english",
           "kind": "study"
         }
       ],
       "studyMinutes": 630,
       "breakMinutes": 210,
       "totals": {
-        "reasoning": 0,
-        "quant": 270,
-        "english": 180,
-        "ga": 180
+        "reasoning": 165,
+        "quant": 255,
+        "english": 135,
+        "ga": 75
       },
       "unparsed": []
     },
@@ -701,132 +701,132 @@ window.TIMETABLE_DATA = {
       "sessions": [
         {
           "start": 0,
-          "end": 90,
-          "duration": 90,
-          "label": "Quant",
+          "end": 75,
+          "duration": 75,
+          "label": "Mock 1 Quant & Paper Solving",
           "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 90,
-          "end": 120,
+          "start": 75,
+          "end": 105,
           "duration": 30,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 120,
-          "end": 210,
+          "start": 105,
+          "end": 195,
           "duration": 90,
-          "label": "Quant",
+          "label": "Quant Mixed Advance Practice",
           "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 210,
+          "start": 195,
           "end": 240,
-          "duration": 30,
-          "label": "Break",
+          "duration": 45,
+          "label": "Lunch Break",
           "subject": null,
           "kind": "break"
         },
         {
           "start": 240,
-          "end": 330,
+          "end": 315,
+          "duration": 75,
+          "label": "Mock 2 Reasoning & Paper Solving",
+          "subject": "reasoning",
+          "kind": "study"
+        },
+        {
+          "start": 315,
+          "end": 345,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 345,
+          "end": 435,
           "duration": 90,
-          "label": "Quant",
+          "label": "Reasoning Full Shift Speed Sprint",
+          "subject": "reasoning",
+          "kind": "study"
+        },
+        {
+          "start": 435,
+          "end": 465,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 465,
+          "end": 555,
+          "duration": 90,
+          "label": "Quant High-Speed Timed Drills",
           "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 330,
-          "end": 360,
+          "start": 555,
+          "end": 585,
           "duration": 30,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 360,
-          "end": 420,
-          "duration": 60,
-          "label": "English",
+          "start": 585,
+          "end": 660,
+          "duration": 75,
+          "label": "Mock 3 English & Full Speed Solving",
           "subject": "english",
           "kind": "study"
         },
         {
-          "start": 420,
-          "end": 450,
+          "start": 660,
+          "end": 690,
           "duration": 30,
-          "label": "Break",
+          "label": "Dinner Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 450,
-          "end": 510,
-          "duration": 60,
-          "label": "English",
-          "subject": "english",
-          "kind": "study"
-        },
-        {
-          "start": 510,
-          "end": 540,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 540,
-          "end": 600,
-          "duration": 60,
-          "label": "English",
-          "subject": "english",
-          "kind": "study"
-        },
-        {
-          "start": 600,
-          "end": 630,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 630,
-          "end": 720,
-          "duration": 90,
-          "label": "GA",
+          "start": 690,
+          "end": 765,
+          "duration": 75,
+          "label": "GA Weekly Revision & Elimination Practice",
           "subject": "ga",
           "kind": "study"
         },
         {
-          "start": 720,
-          "end": 750,
-          "duration": 30,
+          "start": 765,
+          "end": 780,
+          "duration": 15,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 750,
+          "start": 780,
           "end": 840,
-          "duration": 90,
-          "label": "GA",
-          "subject": "ga",
+          "duration": 60,
+          "label": "English Comprehension Mastery",
+          "subject": "english",
           "kind": "study"
         }
       ],
       "studyMinutes": 630,
       "breakMinutes": 210,
       "totals": {
-        "reasoning": 0,
-        "quant": 270,
-        "english": 180,
-        "ga": 180
+        "reasoning": 165,
+        "quant": 255,
+        "english": 135,
+        "ga": 75
       },
       "unparsed": []
     },
@@ -839,132 +839,132 @@ window.TIMETABLE_DATA = {
       "sessions": [
         {
           "start": 0,
-          "end": 90,
-          "duration": 90,
-          "label": "English",
-          "subject": "english",
+          "end": 75,
+          "duration": 75,
+          "label": "Mock 1 Quant & Paper Solving",
+          "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 90,
-          "end": 120,
+          "start": 75,
+          "end": 105,
           "duration": 30,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 120,
-          "end": 210,
+          "start": 105,
+          "end": 195,
           "duration": 90,
-          "label": "English",
-          "subject": "english",
+          "label": "Quant Weekly Mistake Re-solving",
+          "subject": "quant",
           "kind": "study"
         },
         {
-          "start": 210,
+          "start": 195,
           "end": 240,
-          "duration": 30,
-          "label": "Break",
+          "duration": 45,
+          "label": "Lunch Break",
           "subject": null,
           "kind": "break"
         },
         {
           "start": 240,
-          "end": 330,
+          "end": 315,
+          "duration": 75,
+          "label": "Mock 2 Reasoning & Paper Solving",
+          "subject": "reasoning",
+          "kind": "study"
+        },
+        {
+          "start": 315,
+          "end": 345,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 345,
+          "end": 435,
           "duration": 90,
-          "label": "English",
+          "label": "Reasoning Weak Area Elimination",
+          "subject": "reasoning",
+          "kind": "study"
+        },
+        {
+          "start": 435,
+          "end": 465,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 465,
+          "end": 555,
+          "duration": 90,
+          "label": "Quant Calculation Speed Drills",
+          "subject": "quant",
+          "kind": "study"
+        },
+        {
+          "start": 555,
+          "end": 585,
+          "duration": 30,
+          "label": "Break",
+          "subject": null,
+          "kind": "break"
+        },
+        {
+          "start": 585,
+          "end": 660,
+          "duration": 75,
+          "label": "Mock 3 English & Full Speed Solving",
           "subject": "english",
           "kind": "study"
         },
         {
-          "start": 330,
-          "end": 360,
+          "start": 660,
+          "end": 690,
           "duration": 30,
-          "label": "Break",
+          "label": "Dinner Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 360,
-          "end": 420,
-          "duration": 60,
-          "label": "Quant",
-          "subject": "quant",
-          "kind": "study"
-        },
-        {
-          "start": 420,
-          "end": 450,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 450,
-          "end": 510,
-          "duration": 60,
-          "label": "Quant",
-          "subject": "quant",
-          "kind": "study"
-        },
-        {
-          "start": 510,
-          "end": 540,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 540,
-          "end": 600,
-          "duration": 60,
-          "label": "Quant",
-          "subject": "quant",
-          "kind": "study"
-        },
-        {
-          "start": 600,
-          "end": 630,
-          "duration": 30,
-          "label": "Break",
-          "subject": null,
-          "kind": "break"
-        },
-        {
-          "start": 630,
-          "end": 720,
-          "duration": 90,
-          "label": "GA",
+          "start": 690,
+          "end": 765,
+          "duration": 75,
+          "label": "GA Mega Static Revision",
           "subject": "ga",
           "kind": "study"
         },
         {
-          "start": 720,
-          "end": 750,
-          "duration": 30,
+          "start": 765,
+          "end": 780,
+          "duration": 15,
           "label": "Break",
           "subject": null,
           "kind": "break"
         },
         {
-          "start": 750,
+          "start": 780,
           "end": 840,
-          "duration": 90,
-          "label": "GA",
-          "subject": "ga",
+          "duration": 60,
+          "label": "English Weekly Vocab & Mistake Notebook Review",
+          "subject": "english",
           "kind": "study"
         }
       ],
       "studyMinutes": 630,
       "breakMinutes": 210,
       "totals": {
-        "reasoning": 0,
-        "quant": 180,
-        "english": 270,
-        "ga": 180
+        "reasoning": 165,
+        "quant": 255,
+        "english": 135,
+        "ga": 75
       },
       "unparsed": []
     }
@@ -973,23 +973,30 @@ window.TIMETABLE_DATA = {
     "2025": {
       "reasoning": {
         "Monday": 1,
-        "Tuesday": 2
+        "Tuesday": 2,
+        "Wednesday": 3,
+        "Thursday": 4,
+        "Friday": 5,
+        "Saturday": 6,
+        "Sunday": 7
       },
       "quant": {
-        "Wednesday": 1,
-        "Thursday": 2,
-        "Friday": 3,
-        "Saturday": 4,
-        "Sunday": 5
+        "Monday": 1,
+        "Tuesday": 2,
+        "Wednesday": 3,
+        "Thursday": 4,
+        "Friday": 5,
+        "Saturday": 6,
+        "Sunday": 7
       },
       "english": {
-        "Sunday": 1,
-        "Monday": 2,
-        "Tuesday": 3,
-        "Wednesday": 4,
-        "Thursday": 5,
-        "Friday": 6,
-        "Saturday": 7
+        "Monday": 1,
+        "Tuesday": 2,
+        "Wednesday": 3,
+        "Thursday": 4,
+        "Friday": 5,
+        "Saturday": 6,
+        "Sunday": 7
       },
       "ga": {
         "Monday": 1,
@@ -1004,23 +1011,30 @@ window.TIMETABLE_DATA = {
     "2026": {
       "reasoning": {
         "Monday": 1,
-        "Tuesday": 2
+        "Tuesday": 2,
+        "Wednesday": 3,
+        "Thursday": 4,
+        "Friday": 5,
+        "Saturday": 6,
+        "Sunday": 7
       },
       "quant": {
-        "Wednesday": 1,
-        "Thursday": 2,
-        "Friday": 3,
-        "Saturday": 4,
-        "Sunday": 5
+        "Monday": 1,
+        "Tuesday": 2,
+        "Wednesday": 3,
+        "Thursday": 4,
+        "Friday": 5,
+        "Saturday": 6,
+        "Sunday": 7
       },
       "english": {
-        "Sunday": 1,
-        "Monday": 2,
-        "Tuesday": 3,
-        "Wednesday": 4,
-        "Thursday": 5,
-        "Friday": 6,
-        "Saturday": 7
+        "Monday": 1,
+        "Tuesday": 2,
+        "Wednesday": 3,
+        "Thursday": 4,
+        "Friday": 5,
+        "Saturday": 6,
+        "Sunday": 7
       },
       "ga": {
         "Monday": 1,
@@ -1036,96 +1050,78 @@ window.TIMETABLE_DATA = {
   "coverage": {
     "2025": {
       "reasoning": {
-        "daysCovered": 2,
-        "daysMissing": [
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "weeklyMinutes": 540,
-        "weeklyHours": 9.0,
-        "sessions": 6,
-        "avgMinutesPerStudyDay": 270.0
+        "daysCovered": 7,
+        "daysMissing": [],
+        "weeklyMinutes": 1155,
+        "weeklyHours": 19.25,
+        "sessions": 14,
+        "avgMinutesPerStudyDay": 165.0
       },
       "quant": {
-        "daysCovered": 5,
-        "daysMissing": [
-          "Monday",
-          "Tuesday"
-        ],
-        "weeklyMinutes": 1260,
-        "weeklyHours": 21.0,
-        "sessions": 15,
-        "avgMinutesPerStudyDay": 252.0
+        "daysCovered": 7,
+        "daysMissing": [],
+        "weeklyMinutes": 1785,
+        "weeklyHours": 29.75,
+        "sessions": 21,
+        "avgMinutesPerStudyDay": 255.0
       },
       "english": {
         "daysCovered": 7,
         "daysMissing": [],
-        "weeklyMinutes": 1350,
-        "weeklyHours": 22.5,
-        "sessions": 21,
-        "avgMinutesPerStudyDay": 192.9
+        "weeklyMinutes": 945,
+        "weeklyHours": 15.75,
+        "sessions": 14,
+        "avgMinutesPerStudyDay": 135.0
       },
       "ga": {
         "daysCovered": 7,
         "daysMissing": [],
-        "weeklyMinutes": 1260,
-        "weeklyHours": 21.0,
-        "sessions": 14,
-        "avgMinutesPerStudyDay": 180.0
+        "weeklyMinutes": 525,
+        "weeklyHours": 8.75,
+        "sessions": 7,
+        "avgMinutesPerStudyDay": 75.0
       }
     },
     "2026": {
       "reasoning": {
-        "daysCovered": 2,
-        "daysMissing": [
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "weeklyMinutes": 540,
-        "weeklyHours": 9.0,
-        "sessions": 6,
-        "avgMinutesPerStudyDay": 270.0
+        "daysCovered": 7,
+        "daysMissing": [],
+        "weeklyMinutes": 1155,
+        "weeklyHours": 19.25,
+        "sessions": 14,
+        "avgMinutesPerStudyDay": 165.0
       },
       "quant": {
-        "daysCovered": 5,
-        "daysMissing": [
-          "Monday",
-          "Tuesday"
-        ],
-        "weeklyMinutes": 1260,
-        "weeklyHours": 21.0,
-        "sessions": 15,
-        "avgMinutesPerStudyDay": 252.0
+        "daysCovered": 7,
+        "daysMissing": [],
+        "weeklyMinutes": 1785,
+        "weeklyHours": 29.75,
+        "sessions": 21,
+        "avgMinutesPerStudyDay": 255.0
       },
       "english": {
         "daysCovered": 7,
         "daysMissing": [],
-        "weeklyMinutes": 1350,
-        "weeklyHours": 22.5,
-        "sessions": 21,
-        "avgMinutesPerStudyDay": 192.9
+        "weeklyMinutes": 945,
+        "weeklyHours": 15.75,
+        "sessions": 14,
+        "avgMinutesPerStudyDay": 135.0
       },
       "ga": {
         "daysCovered": 7,
         "daysMissing": [],
-        "weeklyMinutes": 1260,
-        "weeklyHours": 21.0,
-        "sessions": 14,
-        "avgMinutesPerStudyDay": 180.0
+        "weeklyMinutes": 525,
+        "weeklyHours": 8.75,
+        "sessions": 7,
+        "avgMinutesPerStudyDay": 75.0
       }
     }
   },
   "weeklyTotals": {
-    "reasoning": 540,
-    "quant": 1260,
-    "english": 1350,
-    "ga": 1260
+    "reasoning": 1155,
+    "quant": 1785,
+    "english": 945,
+    "ga": 525
   },
   "problems": []
 };

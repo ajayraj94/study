@@ -2,7 +2,7 @@
   "app": "speed-ranker",
   "version": 2,
   "mode": "ram",
-  "exportedAt": "2026-11-05T14:18:01.104Z",
+  "exportedAt": "2026-11-09T12:07:46.966Z",
   "data": {
     "srqb_v1": {
       "progress": {
@@ -1714,6 +1714,46 @@
             "lapses": 0
           },
           "diff": "tough"
+        },
+        "9-1": {
+          "seen": 1,
+          "diff": "easy",
+          "s": "mastered"
+        },
+        "9-2": {
+          "seen": 1,
+          "s": "mastered"
+        },
+        "9-3": {
+          "seen": 1,
+          "sr": {
+            "n": 1,
+            "last": 1794225380095,
+            "due": 1794311780095,
+            "rated": "hard",
+            "lapses": 1
+          },
+          "diff": "tough"
+        },
+        "9-4": {
+          "seen": 1,
+          "sr": {
+            "n": 1,
+            "last": 1794225693572,
+            "due": 1794312093572,
+            "rated": "hard",
+            "lapses": 1
+          },
+          "diff": "tough"
+        },
+        "9-5": {
+          "seen": 1,
+          "diff": "easy",
+          "s": "mastered"
+        },
+        "9-6": {
+          "seen": 1,
+          "s": "mastered"
         }
       },
       "attempts": {
