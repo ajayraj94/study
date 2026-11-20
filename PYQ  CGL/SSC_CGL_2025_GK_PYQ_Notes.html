@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SSC CGL 2025 GK PYQ Capsule</title>
+<style>
+  :root{
+    --ink:#16241d; --muted:#5d6d64; --accent:#0a6b4d; --accent2:#8a3b12;
+    --line:#c7d5cd; --soft:#f1f6f3; --paper:#fff;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:#e6ebe8;color:var(--ink);font:8.4pt/1.33 "Segoe UI",Arial,Helvetica,sans-serif}
+  .sheet{width:210mm;margin:16px auto;background:var(--paper);padding:10mm 10mm 8mm;box-shadow:0 8px 28px rgba(0,0,0,.16)}
+  .toolbar{max-width:210mm;margin:14px auto -6px;display:flex;gap:8px;justify-content:flex-end}
+  .toolbar button{font:600 10pt "Segoe UI",Arial,sans-serif;background:var(--accent);color:#fff;border:0;border-radius:4px;padding:7px 14px;cursor:pointer}
+  .toolbar button:hover{background:#075039}
+  .masthead{border-bottom:2.5pt solid var(--accent);padding-bottom:2.6mm;margin-bottom:3mm}
+  .kicker{font-size:7.6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:24pt;line-height:1;margin:1.2mm 0 1.2mm;letter-spacing:-.02em}
+  .sub{margin:0;color:var(--muted);font-size:8.6pt;max-width:165mm}
+  .legend{display:flex;flex-wrap:wrap;gap:4mm;margin-top:1.8mm;font-size:7.4pt;color:var(--muted)}
+  .scope{margin:1.4mm 0 0;font-size:7.1pt;line-height:1.3;color:var(--muted);border-left:2pt solid var(--accent2);background:#fbf4ef;padding:.8mm 0 .8mm 2mm}
+  .scope b{color:var(--accent2)}
+  .legend b{color:var(--ink)}
+  .coverage{display:grid;grid-template-columns:repeat(6,1fr);gap:1.2mm;margin:2.4mm 0 1mm}
+  .coverage span{background:var(--soft);border:0.4pt solid var(--line);padding:1.2mm 1.4mm;font-size:7.2pt;line-height:1.2}
+  .coverage b{display:block;font-size:9.4pt;color:var(--accent)}
+  section{columns:2;column-gap:5.5mm}
+  h2{column-span:all;font-size:12.2pt;line-height:1.12;margin:3.2mm 0 1.6mm;padding:0 0 1mm;border-bottom:1.2pt solid var(--accent);color:var(--accent);break-after:avoid}
+  h2 .num{display:inline-block;background:var(--accent);color:#fff;font-size:8pt;padding:.5mm 1.6mm;border-radius:2px;margin-right:1.6mm;vertical-align:2px}
+  h2 .count{float:right;font-size:7.2pt;color:var(--muted);font-weight:400;padding-top:1.6mm}
+  h3{font-size:8.2pt;margin:2.2mm 0 .9mm;color:#084b37;text-transform:uppercase;letter-spacing:.045em;break-after:avoid}
+  p{margin:0 0 1.2mm}
+  ul{margin:0 0 1.4mm;padding-left:3.1mm}
+  li{margin:0 0 .45mm;break-inside:avoid}
+  li::marker{color:var(--accent)}
+  b{color:#073f2e}
+  table{width:100%;border-collapse:collapse;margin:0 0 1.8mm;font-size:7.5pt;line-height:1.25;table-layout:fixed}
+  th,td{border-bottom:.4pt solid var(--line);padding:.55mm .8mm;vertical-align:top;text-align:left}
+  th{background:var(--soft);font-size:7pt;letter-spacing:.04em;text-transform:uppercase;color:#084b37}
+  tr{break-inside:avoid}
+  td:first-child{width:35%;font-weight:600}
+  .t3 td:first-child{width:26%}
+  .t4 td:first-child{width:22%}
+  .box{border:.5pt solid var(--line);border-left:2pt solid var(--accent);background:var(--soft);padding:1.4mm 1.8mm;margin:0 0 1.8mm;break-inside:avoid}
+  .box p{margin:0 0 .7mm}
+  .box b{color:var(--accent2)}
+  .warn{border-left-color:var(--accent2);background:#fbf4ef}
+  .tiny{font-size:7pt;color:var(--muted)}
+  .cols2{column-count:2;column-gap:4mm}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0 4mm}
+  .nobreak{break-inside:avoid}
+  footer{column-span:all;border-top:.8pt solid var(--line);margin-top:3mm;padding-top:1.4mm;font-size:7pt;color:var(--muted);display:flex;justify-content:space-between;gap:4mm}
+  @media print{
+    @page{size:A4;margin:8mm}
+    body{background:#fff;font-size:7.65pt;line-height:1.28}
+    .sheet{width:auto;margin:0;padding:0;box-shadow:none}
+    .toolbar{display:none}
+    section{column-gap:5mm}
+    h1{font-size:21pt}
+    .coverage{gap:1mm}
+    a{color:inherit;text-decoration:none}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">Print / Save as PDF</button></div>
+<div class="sheet">
+  <header class="masthead">
+    <div class="kicker">SSC CGL 2025 &middot; General Awareness &middot; PYQ Revision Capsule</div>
+    <h1>GK PYQ Capsule</h1>
+    <p class="sub">1,125 General Awareness questions from all 45 shifts, compressed into exam-ready one-liners and the basic links needed to remember them.</p>
+    <div class="legend"><span><b>Bold</b> = term to remember</span><span>Tables = compare / confuse</span><span>Read top-to-bottom; revise tables last</span></div>
+    <p class="scope"><b>Coverage note:</b> all 1,125 questions were scanned, but this is a curated capsule, not a 1:1 question bank. Every major topic is represented; niche one-off and long statement-based questions are not reproduced individually.</p>
+  </header>
+  <div class="coverage">
+    <span>Polity<b>157 Qs</b></span>
+    <span>History &amp; Culture<b>281 Qs</b></span>
+    <span>Geography<b>131 Qs</b></span>
+    <span>Economy<b>138 Qs</b></span>
+    <span>Science<b>78 Qs</b></span>
+    <span>Static + CA<b>340 Qs</b></span>
+  </div>
+
+  <section id="polity">
+    <h2><span class="num">01</span>Polity &amp; Constitution <span class="count">157 PYQs</span></h2>
+
+    <h3>Constitutional evolution &mdash; the timeline that repeats</h3>
+    <table>
+      <tr><th>Act / year</th><th>Remember this</th></tr>
+      <tr><td>Regulating Act 1773</td><td>Governor of Bengal &rarr; <b>Governor-General of Bengal</b> + Council of 4; control over Company affairs at home and territory in India.</td></tr>
+      <tr><td>Pitt's India Act 1784</td><td>Created <b>Board of Control</b> (6 members) over civil/military affairs; Governor-General supreme over Presidencies; no war/treaty without approval.</td></tr>
+      <tr><td>Charter Act 1813</td><td>Allocated funds for <b>education</b>.</td></tr>
+      <tr><td>Charter Act 1833</td><td>First <b>Law Commission</b> for codification of Indian laws.</td></tr>
+      <tr><td>GoI Act 1858</td><td>Abolished Board of Control and Court of Directors; <b>India Council</b> to advise Secretary of State.</td></tr>
+      <tr><td>GoI Act 1919</td><td><b>Dyarchy</b> in provinces; first <b>bicameral</b> centre &mdash; Council of State + Central Legislative Assembly (Montagu-Chelmsford).</td></tr>
+      <tr><td>GoI Act 1935</td><td><b>Federal structure with provincial autonomy</b>; Federal Court established 1937.</td></tr>
+    </table>
+    <ul>
+      <li><b>Sarkaria Commission</b> (1983) &rarr; Inter-State Council constituted <b>1990</b>; Punchhi Commission later.</li>
+      <li><b>Art 263</b>: Inter-State Council &mdash; constitutional, PM-chaired, <b>recommendatory</b>; recommendations not binding.</li>
+      <li>Indian federalism is <b>Centre-biased</b>; the word &ldquo;federal&rdquo; is not used in the Constitution.</li>
+    </ul>
+
+    <h3>Articles that appeared</h3>
+    <table class="t3">
+      <tr><th>Article</th><th>Point</th></tr>
+      <tr><td>1</td><td>Defines <b>State</b> and Union Territories.</td></tr>
+      <tr><td>32</td><td>Right to constitutional remedies &mdash; <b>heart and soul</b> of the Constitution.</td></tr>
+      <tr><td>50</td><td>Separation of <b>judiciary from executive</b> (DPSP).</td></tr>
+      <tr><td>72</td><td>President's pardon; <b>Governor cannot pardon a death sentence</b>.</td></tr>
+      <tr><td>123</td><td>Ordinance when Parliament is not in session; lasts until reassembly or <b>6 weeks</b> after.</td></tr>
+      <tr><td>131</td><td>Supreme Court's <b>exclusive original</b> jurisdiction in Centre&ndash;State disputes.</td></tr>
+      <tr><td>139A</td><td>SC can transfer cases between High Courts; added by <b>42nd Amendment</b>.</td></tr>
+      <tr><td>249</td><td>Rajya Sabha resolution &rarr; Parliament can legislate on a <b>State List</b> subject.</td></tr>
+      <tr><td>250</td><td>Parliament can legislate on State List during a <b>National Emergency</b>.</td></tr>
+      <tr><td>255</td><td>Omission of prior recommendation does not invalidate a law once assent is given.</td></tr>
+      <tr><td>258A</td><td>State can take up Union functions <b>with Union consent</b>.</td></tr>
+      <tr><td>262</td><td>Inter-State water disputes: Parliament may set up tribunals; SC appellate jurisdiction barred.</td></tr>
+      <tr><td>268</td><td><b>Stamp duties</b> levied by Union but collected by States.</td></tr>
+      <tr><td>270</td><td>Sharing of taxes between Union and States (including GST proceeds).</td></tr>
+      <tr><td>275</td><td><b>Grants-in-aid</b> to States.</td></tr>
+      <tr><td>279A</td><td><b>GST Council</b>: 3/4 weighted majority; Chair = Union Finance Minister.</td></tr>
+      <tr><td>280</td><td><b>Finance Commission</b>; recommendations advisory, not legally binding.</td></tr>
+      <tr><td>286</td><td>Restrictions on taxes on <b>inter-State trade</b>.</td></tr>
+      <tr><td>300A</td><td>Right to property is a <b>constitutional legal right</b>; deprivation only by authority of law.</td></tr>
+      <tr><td>312</td><td>Parliament can create <b>All India Services</b> on a Rajya Sabha resolution.</td></tr>
+      <tr><td>343</td><td><b>Hindi in Devanagari</b> = official language of the Union.</td></tr>
+      <tr><td>352</td><td>National Emergency; Parliament can legislate on any State List matter.</td></tr>
+      <tr><td>356</td><td>President's Rule; approval within <b>2 months</b>.</td></tr>
+      <tr><td>360</td><td>Financial Emergency; <b>never declared</b>; allows salary cuts of SC judges.</td></tr>
+    </table>
+
+    <h3>Parliament &amp; legislation</h3>
+    <ul>
+      <li><b>Money Bill</b>: only Lok Sabha; <b>Speaker certifies</b>; Rajya Sabha can only recommend within <b>14 days</b>.</li>
+      <li>Every Money Bill is a Financial Bill; every Financial Bill is <b>not</b> a Money Bill.</li>
+      <li><b>Guillotine</b>: demands for grants put to vote after the time limit for discussion.</li>
+      <li>Rajya Sabha is a <b>continuing house</b>; members serve 6 years; one-third retire every 2 years.</li>
+      <li>Rajya Sabha special powers: <b>Art 249</b> (State List) and <b>Art 312</b> (new All India Service).</li>
+      <li>State Council of Ministers is collectively responsible to the Assembly &mdash; <b>Art 164</b>.</li>
+      <li>Governor can dissolve the Assembly; the President dissolves the Lok Sabha on the PM's advice.</li>
+    </ul>
+
+    <h3>Executive &amp; emergency</h3>
+    <ul>
+      <li>President: minimum age <b>35</b>; elected by electoral college; <b>Governor is appointed</b> by the President.</li>
+      <li>Governor may reserve a State Bill for the <b>President</b>; President's Rule under <b>Art 356</b>.</li>
+      <li>Financial Emergency: salaries of judges can be reduced by the <b>President</b>.</li>
+      <li><b>Art 370</b> abrogated through a Presidential Order under <b>370(3)</b>.</li>
+    </ul>
+
+    <h3>Judiciary, commissions &amp; amendments</h3>
+    <ul>
+      <li><b>Doctrine of Severability</b>: only the valid part of a law is retained.</li>
+      <li>SC: original jurisdiction <b>Art 131</b>; transfer of cases <b>Art 139A</b>.</li>
+      <li><b>Finance Commission</b> (Art 280) &mdash; advisory; <b>CAG</b> audits; <b>Election Commission</b> conducts elections.</li>
+      <li><b>42nd</b> &mdash; &ldquo;Mini-Constitution&rdquo;; education moved to <b>Concurrent List</b>; added 139A.</li>
+      <li><b>44th</b> &mdash; removed <b>Right to Property</b> from Fundamental Rights.</li>
+      <li><b>73rd</b> &mdash; Panchayati Raj institutions as units of local self-governance.</li>
+      <li><b>86th</b> &mdash; <b>Art 21A</b>: free and compulsory education, age 6&ndash;14.</li>
+      <li><b>101st</b> &mdash; GST; <b>Art 246A</b>, <b>Art 279A</b>; GST Council constitutional.</li>
+      <li><b>104th</b> &mdash; abolished <b>Anglo-Indian</b> representation in legislatures.</li>
+      <li>GST Council: Centre has 1/3 weight, States collectively 2/3; decisions by <b>3/4</b> of weighted votes present and voting.</li>
+      <li><b>Art 246A</b>: both Parliament and States can legislate on GST; States tax intra-State supply.</li>
+    </ul>
+
+    <h3>Criminal law &mdash; the new trio</h3>
+    <table class="t3">
+      <tr><th>New law</th><th>Replaced / key point</th></tr>
+      <tr><td>BNS 2023</td><td>Replaced <b>IPC 1860</b>; substantive criminal law; defines <b>organized crime</b> and petty organized crime; cyber identity theft.</td></tr>
+      <tr><td>BNSS 2023</td><td>Replaced <b>CrPC 1973</b>; police custody max <b>15 days</b>; default bail <b>60 days</b> (&lt;10 yrs) / 90 days; <b>Zero FIR</b> at any police station; e-FIR, e-summons, e-warrants; <b>Sec 105</b> video-recorded search/seizure; video conferencing for vulnerable witnesses.</td></tr>
+      <tr><td>BSA 2023</td><td>Replaced <b>Indian Evidence Act 1872</b>; electronic records as <b>primary evidence</b>; certificate needed for admissibility; digital signature; expert witnesses; oral evidence must be direct.</td></tr>
+    </table>
+
+    <h3>Rights, DPSP &amp; UCC</h3>
+    <ul>
+      <li>Fundamental Rights are <b>justiciable</b>; DPSPs are <b>not</b>.</li>
+      <li><b>Art 14</b> &mdash; reasonable classification; landmark: <i>State of West Bengal v. Anwar Ali Sarkar</i>.</li>
+      <li><b>UCC</b> is a DPSP (Art 44); <b>Uttarakhand</b> is the first State to implement it; <b>Goa Civil Code</b> applies to all communities.</li>
+      <li>Art 50: judiciary separated from executive &mdash; a DPSP.</li>
+    </ul>
+  <section id="history">
+    <h2><span class="num">02</span>History &amp; Culture <span class="count">281 PYQs</span></h2>
+
+    <h3>Ancient India &mdash; site, text, idea</h3>
+    <table class="t3">
+      <tr><th>Site / text</th><th>What was asked</th></tr>
+      <tr><td>Mohenjodaro</td><td>Every house connected to a <b>covered street drain</b>.</td></tr>
+      <tr><td>Chanhudaro</td><td>Centre for <b>bead-making</b>.</td></tr>
+      <tr><td>Kalibangan</td><td><b>Criss-cross plough marks</b> in agricultural fields.</td></tr>
+      <tr><td>Harappan seals</td><td><b>Steatite</b>; animal motifs + undeciphered script; no clear evidence of <b>Sati</b>.</td></tr>
+      <tr><td>Rigveda</td><td><b>10 Mandalas</b>; each divided into <b>Suktas</b>; &lsquo;Rik&rsquo; = sacred hymn; Samhita = compiled hymns.</td></tr>
+      <tr><td>Yajurveda</td><td>Ritual formulas and procedures for sacrifices.</td></tr>
+      <tr><td>Vedangas</td><td>Six limbs of the Veda; <b>Vaisheshika</b> is not one of them.</td></tr>
+      <tr><td>Mesolithic</td><td>Hunting with <b>barbed spears</b>.</td></tr>
+      <tr><td>Prehistoric order</td><td>Palaeolithic &rarr; Mesolithic &rarr; Neolithic &rarr; Metal Age.</td></tr>
+      <tr><td>First Buddhist Council</td><td><b>Rajagriha</b>.</td></tr>
+      <tr><td>Harmika</td><td>Symbolic <b>abode of the gods</b> at the top of a stupa; relics were not kept there.</td></tr>
+      <tr><td>Metta</td><td>Buddhist <b>fellow feeling</b>.</td></tr>
+      <tr><td>Magadha</td><td>Rose to prominence between the <b>6th&ndash;4th centuries BCE</b>.</td></tr>
+      <tr><td>Bimbisara</td><td>Marriage to a <b>Kosalan princess</b> secured peace with Kosala.</td></tr>
+      <tr><td>Jainism</td><td><b>Rishabhadev</b> = first Tirthankara.</td></tr>
+      <tr><td>Ashokan inscriptions</td><td>Predominantly <b>Brahmi</b> script.</td></tr>
+    </table>
+    <ul>
+      <li><b>Chandragupta Maurya</b> &mdash; highly centralised administration.</li>
+      <li>Mauryan pillars: lion, elephant, bull, horse &mdash; <b>no eagle</b>; Dhauli rock is an <b>elephant</b>.</li>
+      <li>Mauryan sculpture absorbed <b>Achaemenid Persian</b> influence &mdash; bold, massive realism.</li>
+      <li><b>Mathura</b> art = indigenous, Yaksha-like Buddha; <b>Gandhara</b> = Greco-Roman features (halo, curly hair).</li>
+      <li><b>Kushana</b> rulers used the title <b>Devaputra</b>; Bala Buddha of Sultanganj is not Mathura/Kushana.</li>
+      <li><b>Nalanda</b> sculptures: three-dimensional, delicately ornamented.</li>
+    </ul>
+
+    <h3>Gupta administration &mdash; officer &amp; tax terms</h3>
+    <table class="t3">
+      <tr><th>Term</th><th>Meaning</th></tr>
+      <tr><td>Sarthavaha</td><td>Head of <b>trading guilds</b>.</td></tr>
+      <tr><td>Mahasandhivigrahika</td><td>Foreign minister; worked with king and military.</td></tr>
+      <tr><td>Pustapala</td><td>Notary and keeper of <b>records</b>.</td></tr>
+      <tr><td>Gramika</td><td>Village headman.</td></tr>
+      <tr><td>Talavataks</td><td>Village accountant.</td></tr>
+      <tr><td>Adhishthanadhikarana</td><td>Board of advisors representing guilds, artisans, scribes.</td></tr>
+      <tr><td>Bhaga</td><td>King's share of produce.</td></tr>
+      <tr><td>Vaishthika</td><td><b>Forced / corv&eacute;e labour</b>.</td></tr>
+      <tr><td>Adeya</td><td>Tribute / dues to be surrendered.</td></tr>
+      <tr><td>Dasaparadha</td><td>Fines from ten offences.</td></tr>
+      <tr><td>Paramabhagavata</td><td>Gupta title showing <b>Vaishnavite</b> affiliation.</td></tr>
+    </table>
+
+    <h3>Medieval India &mdash; order, battles, buildings</h3>
+    <table class="t3">
+      <tr><th>Topic</th><th>Fact</th></tr>
+      <tr><td>Delhi Sultanate order</td><td>Qutb al-Din Aibak (1206) &rarr; Iltutmish &rarr; Razia &rarr; Balban.</td></tr>
+      <tr><td>Tomaras</td><td>Minted <b>Dehliwal</b> coins in Delhi.</td></tr>
+      <tr><td>Prithviraj Chauhan</td><td>Reign ended <b>1192 CE</b>.</td></tr>
+      <tr><td>First Battle of Panipat</td><td><b>1526</b>; Babur defeated Ibrahim Lodi.</td></tr>
+      <tr><td>Sher Shah Suri</td><td>Founded the <b>Second Afghan Empire</b>; his administration became Akbar's model; built the <b>Grand Trunk Road</b>.</td></tr>
+      <tr><td>Akbar</td><td><b>Sulh-i-Kul</b> = universal tolerance.</td></tr>
+      <tr><td>Mughal tombs</td><td><b>Humayun's Tomb</b> = first major garden tomb, inspired the Taj; <b>Akbar's Tomb</b> (Sikandra) deviates from hasht-bihisht.</td></tr>
+      <tr><td>Shah Jahan</td><td>Popularised <b>pietra dura</b> (stone inlay), double dome; built the <b>Red Fort</b>.</td></tr>
+      <tr><td>Purana Qila</td><td>Double-storeyed gates of <b>red sandstone</b>.</td></tr>
+      <tr><td>Provincial capitals</td><td><b>Bidar</b> was not a Mughal provincial capital.</td></tr>
+      <tr><td>Vijayanagara order</td><td>Harihara I &rarr; Devaraya II &rarr; Krishnadeva Raya.</td></tr>
+      <tr><td>Krishnadevaraya</td><td>Wrote <b>Amuktamalyada</b>; Lotus Mahal shows Persian influence.</td></tr>
+      <tr><td>Vijayanagara titles</td><td>Rayas = <b>Narapati</b> (lord of men); Sultans = Ashvapati.</td></tr>
+      <tr><td>Marathas</td><td><b>Baji Rao I</b> = Baji Rao Ballal; after Shivaji, <b>Chitpavan Brahmins</b> held effective power; Kunbis = peasant-pastoralists.</td></tr>
+      <tr><td>Cholas</td><td><b>Rajendra Chola I</b> built Gangaikonda Cholapuram; <b>Krishna III</b> (Rashtrakuta) defeated Parantaka I; <b>Ur</b> = village assembly.</td></tr>
+      <tr><td>Bahmani</td><td>Established by neither the Cholas nor the Cheras.</td></tr>
+    </table>
+
+    <h3>Reformers &amp; revolutionaries</h3>
+    <table class="t3">
+      <tr><th>Person / event</th><th>One-line fact</th></tr>
+      <tr><td>Raja Rammohan Roy</td><td>Campaigned against Sati through newspapers and public debate.</td></tr>
+      <tr><td>Lord William Bentinck</td><td>Abolished Sati in <b>1829</b>.</td></tr>
+      <tr><td>Age of Consent Act 1891</td><td>Raised the minimum marital age for girls from <b>10 to 12</b>.</td></tr>
+      <tr><td>Birsa Munda</td><td>Led <b>Ulgulan</b> (Great Rebellion) in Jharkhand.</td></tr>
+      <tr><td>Sidhu &amp; Kanhu Murmu</td><td>Led the <b>Santhal Rebellion, 1855</b>.</td></tr>
+      <tr><td>Budhu Bhagat</td><td>Led the <b>Kol Revolt</b> (1831&ndash;32) in Chotanagpur.</td></tr>
+      <tr><td>Alluri Sitarama Raju</td><td>Led the <b>Rampa Rebellion</b> in Andhra Pradesh.</td></tr>
+      <tr><td>Rani Gaidinliu</td><td>Led the <b>Heraka movement</b> of the Naga tribes.</td></tr>
+      <tr><td>Tana Bhagat</td><td>Oraon reform movement, Jharkhand; non-violence.</td></tr>
+      <tr><td>Thakkar Bapa</td><td>Worked for <b>tribal (Adivasi)</b> welfare.</td></tr>
+      <tr><td>Peer Ali Khan</td><td>1857 revolt leader in <b>Patna</b>.</td></tr>
+      <tr><td>Chapekar Brothers</td><td>Assassinated a British official during the plague in <b>Pune</b>.</td></tr>
+      <tr><td>Bagha Jatin</td><td>Revolutionary from <b>Bengal</b>.</td></tr>
+      <tr><td>Tikendrajit Singh</td><td>Led Manipur in the <b>Khongjom War</b> (1891).</td></tr>
+      <tr><td>Kanaklata Barua</td><td>Shot while hoisting the flag during <b>Quit India</b> in Assam.</td></tr>
+      <tr><td>Baji Raut</td><td>Young martyr from Odisha; refused to ferry British police.</td></tr>
+    </table>
+
+    <h3>Freedom movement &amp; British policy</h3>
+    <ul>
+      <li><b>Simon Commission</b> (1927) boycotted because it had <b>no Indian member</b>.</li>
+      <li><b>Salt Satyagraha</b> (1930) against the British salt monopoly.</li>
+      <li><b>Quit India</b> (1942): <b>Aruna Asaf Ali</b> hoisted the flag at Gowalia Tank, Mumbai.</li>
+      <li>Flag: <b>Pingali Venkayya</b> designed it; <b>Bhikaji Cama</b> hoisted an early version at Stuttgart (1907).</li>
+      <li><b>V.O. Chidambaram Pillai</b> &mdash; Swadeshi Steam Navigation Company.</li>
+      <li><b>Gopinath Bordoloi</b> opposed grouping Assam with Bengal (Cabinet Mission, 1946).</li>
+      <li><b>Matangini Hazra</b> &mdash; bravery in the freedom struggle; died in 1942 firing.</li>
+      <li><b>Wellesley</b> &mdash; Subsidiary Alliance; <b>Cornwallis</b> &mdash; Permanent Settlement (1793) to create loyal zamindars.</li>
+      <li><b>Curzon</b> &mdash; police reorganisation and CID; <b>Ilbert Bill</b> (1883) &mdash; Indian judges trying Europeans.</li>
+      <li><b>Wood's Despatch</b> (1854) &mdash; foundation of modern education; <b>Factory Act 1881</b> &mdash; child labour/factory regulation.</li>
+      <li>First passenger railway: <b>Bombay&ndash;Thane, 1853</b>.</li>
+    </ul>
+    <h3>Dance &mdash; state mapping</h3>
+    <table class="t3">
+      <tr><th>State</th><th>Dance / key point</th></tr>
+      <tr><td>Andhra Pradesh</td><td>Kuchipudi; <b>Vilasini Natyam</b> revived from temples/courts.</td></tr>
+      <tr><td>Assam</td><td>Sattriya; Bihu.</td></tr>
+      <tr><td>Chhattisgarh</td><td><b>Panthi</b> (Guru Ghasidas; dhoti); <b>Pandwani</b>.</td></tr>
+      <tr><td>Gujarat</td><td><b>Tippani</b> (Saurashtra women, wooden sticks); <b>Dangi</b> (Dang district).</td></tr>
+      <tr><td>Himachal Pradesh</td><td><b>Thoda</b> &mdash; martial dance + archery, Rajputs; Narsingha instrument.</td></tr>
+      <tr><td>Jammu &amp; Kashmir</td><td><b>Rouf</b> (women, Eid, toe-heel); <b>Dumhal</b> (Wattal men, banner); Hafiz Nagma (Sufiana).</td></tr>
+      <tr><td>Jharkhand</td><td><b>Jhumair</b>, <b>Jhumar</b> (harvest), <b>Domkach</b>, <b>Jawa</b> (fertility), Karma (Karam tree).</td></tr>
+      <tr><td>Karnataka</td><td><b>Dollu Kunitha</b> (drums); <b>Yakshagana</b>; Kambala (buffalo race); Puthari (Iguthappa).</td></tr>
+      <tr><td>Kerala</td><td>Kathakali, Mohiniyattam; <b>Kalaripayattu</b> uses the flexible sword <b>Urumi</b>.</td></tr>
+      <tr><td>Maharashtra</td><td><b>Lavani</b> (Dholki); <b>Tamasha</b> (Kolhati community, Shimga).</td></tr>
+      <tr><td>Manipur</td><td>Manipuri; <b>Thang-Ta</b> martial dance.</td></tr>
+      <tr><td>Mizoram</td><td><b>Cheraw</b> &mdash; bamboo dance with crossed sticks.</td></tr>
+      <tr><td>Odisha</td><td>Odissi (postures <b>Chowk</b> and <b>Tribhanga</b>); Gotipua; <b>Paika Nritya</b>.</td></tr>
+      <tr><td>Rajasthan</td><td><b>Ghoomar</b> (originally for Saraswati); <b>Kalbelia</b> (snake movement; UNESCO 2010).</td></tr>
+      <tr><td>Sikkim</td><td><b>Maruni</b> (weddings); Rumtek Monastery mask dances; Simikla Koom (Binayo).</td></tr>
+      <tr><td>Tamil Nadu</td><td>Bharatanatyam; <b>Poikkal Kuthirai Aattam</b> (dummy horse).</td></tr>
+      <tr><td>Tripura</td><td><b>Hojagiri</b> &mdash; Reang tribe; women balance bottles/lamps.</td></tr>
+      <tr><td>Uttarakhand</td><td><b>Jhora</b> (Kumaon, Hurka drum); Phool Dei; Bissu Mela (Jaunsari).</td></tr>
+      <tr><td>Arunachal Pradesh</td><td><b>Popir</b> (Mopin); Wancho war dance at <b>Oriah</b>; Pongtu (Tutsa).</td></tr>
+      <tr><td>Meghalaya</td><td><b>Wangala</b> (Garo); <b>Ka Shad Suk Mynsiem</b> (Khasi thanksgiving).</td></tr>
+      <tr><td>West Bengal</td><td>Chhau &mdash; syncretic tribal + folk + classical.</td></tr>
+      <tr><td>Punjab</td><td>Bhangra; <b>Hola Mohalla</b> (Anandpur Sahib, Nihang martial arts).</td></tr>
+    </table>
+
+    <h3>Festivals &mdash; state + signature</h3>
+    <table class="t3">
+      <tr><th>Festival</th><th>Signature fact</th></tr>
+      <tr><td>Goncha (Bastar)</td><td><b>Tupki</b> mock gun of bamboo, Goncha fruit bullets.</td></tr>
+      <tr><td>Chithirai (Madurai)</td><td>Lord <b>Kallazhagar</b> arrives on a golden horse.</td></tr>
+      <tr><td>Nyokum (Arunachal)</td><td>&lsquo;Kum&rsquo; = <b>collectiveness</b>.</td></tr>
+      <tr><td>Jawa (Jharkhand)</td><td>Girls offer green melons; <b>fertility</b> rite.</td></tr>
+      <tr><td>Kharchi (Tripura)</td><td>Worship of <b>14 deities</b>.</td></tr>
+      <tr><td>Nuakhai (Odisha)</td><td>New rice first offered to <b>Maa Samaleswari</b>.</td></tr>
+      <tr><td>Solung (Arunachal)</td><td>Adi tribe; <b>Apong</b> rice beer.</td></tr>
+      <tr><td>Bonalu (Hyderabad)</td><td>Origin traced to a <b>plague</b> outbreak.</td></tr>
+      <tr><td>Wangala (Meghalaya)</td><td><b>Garo</b> harvest festival.</td></tr>
+      <tr><td>Phool Dei (Uttarakhand)</td><td>Floral offerings in the <b>Kumaon</b> hills.</td></tr>
+      <tr><td>Pola (MP)</td><td><b>Bull worship</b> in Balaghat.</td></tr>
+      <tr><td>Karma</td><td>Honours the <b>Karam tree</b> on Bhadra Ekadashi.</td></tr>
+      <tr><td>Gangaur (MP)</td><td>Lamps in a decorated pot called <b>Ghudlia</b>.</td></tr>
+      <tr><td>Puthari (Kodava)</td><td>Harvest; chants &ldquo;Poli, Poli, Deva&rdquo;; Lord <b>Iguthappa</b>.</td></tr>
+      <tr><td>Loku (Nocte)</td><td>Prayers at Chaatam; Chamwangbong dance.</td></tr>
+      <tr><td>Fagli (Pattan Valley)</td><td><b>Punha</b> symbolic ploughing indoors with willow sticks.</td></tr>
+      <tr><td>Bhagoria</td><td>Begins seven days before <b>Holika Dahan</b>.</td></tr>
+      <tr><td>Bissu Mela</td><td>Jaunsari fair, Chakrata; Santoora Devi.</td></tr>
+      <tr><td>Mim Kut</td><td>Last harvest; survival and love.</td></tr>
+      <tr><td>Kanuma (AP)</td><td>Honours <b>cattle</b> used in agriculture.</td></tr>
+      <tr><td>Teej</td><td>Name from a <b>red insect</b> seen in the monsoon.</td></tr>
+    </table>
+
+    <h3>Music &mdash; terms, texts, gharanas</h3>
+    <ul>
+      <li><b>Sangeet Ratnakara</b> &mdash; 13th century, <b>Sharangadeva</b>; foundational musicology text.</li>
+      <li><b>72-mela</b> system &mdash; <b>Venkatamakhi</b>; ragas evolved from <b>jatis</b>.</li>
+      <li><b>Pandit Vishnu Narayan Bhatkhande</b> &mdash; modern notation; <i>Kramik Pustak Maalika</i>.</li>
+      <li><b>Teen Taal</b>: <b>Khali</b> on the <b>9th</b> matra; 16 matras.</li>
+      <li>Laghu with <b>5 beats</b> = <b>Khanda</b> jaati; six-note raga = <b>Shadav</b>; seven notes = Sampurna.</li>
+      <li><b>Dhrupad</b> &mdash; sombre, rhythm-heavy; <b>Agra Gharana</b> directly influenced by it.</li>
+      <li><b>Kriti</b> &mdash; main Carnatic concert form; <b>Bandish</b> &mdash; Hindustani composition.</li>
+      <li><b>Ghana Vadya</b> &mdash; solid, non-tunable rhythm instruments in folk music.</li>
+      <li>Kerala: <b>Timila</b> and <b>Maddalam</b>; Andhra: <b>Burrakatha</b> with Tambura.</li>
+      <li><b>Annamacharya</b> &mdash; over 32,000 devotional songs; <b>Margi Sangita</b> rooted in Vedic tradition.</li>
+      <li><b>Achal</b> swaras: Sa and Pa fixed; <b>Chal</b> swaras have Komal/Teevra variants.</li>
+    </ul>
+
+    <h3>Temple architecture &mdash; the comparison table</h3>
+    <table class="t3">
+      <tr><th>Style / feature</th><th>Remember</th></tr>
+      <tr><td>Nagara</td><td><b>Shikhara</b>, <b>amalaka</b>, <b>bhadra</b> (central offset); square base curving upward; panchayatana layout (Deogarh).</td></tr>
+      <tr><td>Dravida</td><td>Main tower = <b>vimana</b>; gateway tower = <b>gopuram</b> (Meenakshi, Madurai).</td></tr>
+      <tr><td>Vesara</td><td><b>Deccan</b>; hybrid of Nagara + Dravida.</td></tr>
+      <tr><td>Kalinga</td><td>Odisha; <b>Jagannath Temple, Puri</b>.</td></tr>
+      <tr><td>Konark Sun Temple</td><td>Chariot with <b>12 pairs of wheels</b> and <b>7 horses</b>; wheels = time divisions.</td></tr>
+      <tr><td>Ellora Kailasa</td><td>Carved from <b>one single rock</b>.</td></tr>
+      <tr><td>Elephanta</td><td><b>Shaivite</b> themes; sculptural depth through light and shadow.</td></tr>
+      <tr><td>Shore Temple</td><td>Mahabalipuram; Dravidian, carved granite blocks.</td></tr>
+      <tr><td>Modhera</td><td>Sun Temple with a <b>stepped tank</b>.</td></tr>
+      <tr><td>Ram Mandir</td><td>Pran Pratishtha at Ayodhya, January 2024 &mdash; <b>Narendra Modi</b>.</td></tr>
+    </table>
+    <ul>
+      <li>Cave formations: <b>stalactite</b> hangs from the ceiling; <b>stalagmite</b> grows from the floor; their union forms a <b>pillar</b>.</li>
+      <li><b>Gwalior Fort</b>: hilltop &gt;2 km; Jain tirthankara rock-cut carvings; Caturbhuj Mandir.</li>
+      <li><b>Chittorgarh</b>: Vijay Stambha, Kirti Stambha; originally <b>84 water bodies</b>; 19 main temples.</li>
+      <li><b>Golconda</b>: steel spikes on gates against war elephants; <b>Old Goa</b> churches = Baroque/Manueline; Puducherry = French colonial.</li>
+    </ul>
+  </section>
+
+  <section id="geography">
+    <h2><span class="num">03</span>Geography <span class="count">131 PYQs</span></h2>
+
+    <h3>Atmosphere, weather &amp; climate</h3>
+    <table class="t3">
+      <tr><th>Layer / term</th><th>Fact</th></tr>
+      <tr><td>Troposphere</td><td>All weather phenomena; temperature decreases with height.</td></tr>
+      <tr><td>Stratosphere</td><td><b>Ozone layer</b>; aircraft fly here.</td></tr>
+      <tr><td>Thermosphere</td><td>Heated by <b>UV and X-ray</b> absorption during solar storms.</td></tr>
+      <tr><td>Exosphere</td><td>Outermost layer; satellites; no tropospheric clouds.</td></tr>
+      <tr><td>K&aacute;rm&aacute;n line</td><td><b>100 km</b> &mdash; boundary of space.</td></tr>
+      <tr><td>Dry air</td><td><b>N&#8322; ~78%</b>, <b>O&#8322; ~21%</b>; two dominant gases.</td></tr>
+      <tr><td>Aurora</td><td>Solar wind interacting with Earth's <b>magnetic field</b>.</td></tr>
+      <tr><td>Weather elements</td><td>Temperature, pressure, wind, humidity, rainfall &mdash; <b>not soil pH</b>.</td></tr>
+      <tr><td>Convectional rain</td><td>Air heated at the surface rises, cools and condenses.</td></tr>
+      <tr><td>Retreating monsoon</td><td>Dry, clear weather over northern India.</td></tr>
+      <tr><td>Tamil Nadu in SW monsoon</td><td>Lies in the <b>rain-shadow</b> of the Western Ghats; main rain from the <b>NE monsoon</b>.</td></tr>
+      <tr><td>BWhw climate</td><td>Hot desert &mdash; <b>Rajasthan</b>.</td></tr>
+      <tr><td>Shola</td><td>Grasslands with tree patches in <b>valley folds</b>; Western Ghats.</td></tr>
+      <tr><td>Coral bleaching</td><td>Anthropogenic rise in <b>sea-surface temperature</b>.</td></tr>
+      <tr><td>Urban Heat Island</td><td>Concrete, low vegetation, vehicular heat.</td></tr>
+      <tr><td>Adaptation</td><td>Sea walls and elevated buildings = <b>climate adaptation</b>, not mitigation.</td></tr>
+    </table>
+
+    <h3>Landforms &mdash; one word = one process</h3>
+    <table class="t3">
+      <tr><th>Feature</th><th>Process / clue</th></tr>
+      <tr><td>Hanging valley</td><td>Glacial tributary valley opening high above the main valley.</td></tr>
+      <tr><td>Till</td><td><b>Unsorted</b> material deposited directly by ice.</td></tr>
+      <tr><td>Cirque / ar&ecirc;te</td><td>Glacial erosion; armchair-shaped hollow / sharp ridge.</td></tr>
+      <tr><td>Mushroom rock</td><td>Wind erosion &mdash; broad cap, slender base.</td></tr>
+      <tr><td>Yardang</td><td>Wind erosion of soft/hard rock in deserts.</td></tr>
+      <tr><td>Inselberg</td><td>Isolated residual hill on a plain.</td></tr>
+      <tr><td>Gorge</td><td>Develops most commonly in <b>hard rock</b>.</td></tr>
+      <tr><td>Meander</td><td><b>Lateral erosion</b> in flat terrain.</td></tr>
+      <tr><td>Natural levee</td><td>Floodplains of large rivers.</td></tr>
+      <tr><td>Slump</td><td>Landslide with <b>backward rotation</b> of the slipping mass.</td></tr>
+      <tr><td>Rockslide</td><td>Affects material to a considerable <b>depth</b>.</td></tr>
+    </table>
+
+    <h3>Rivers, groundwater &amp; projects</h3>
+    <ul>
+      <li><b>Himalayan rivers</b> &mdash; perennial (snow + rain): Indus, Ganga, Brahmaputra. <b>Peninsular rivers</b> &mdash; seasonal, rain-fed: Godavari, Krishna, Kaveri, Narmada, Tapi.</li>
+      <li><b>Lohit</b> is a tributary of the <b>Brahmaputra</b>; the <b>Indus</b> is Singi Khamban (Lion's Mouth) in Tibet.</li>
+      <li><b>Chambal ravines</b> &mdash; Rajasthan, Madhya Pradesh, Uttar Pradesh.</li>
+      <li><b>Damodar Valley</b> &mdash; coal deposits in the north-eastern plateau.</li>
+      <li><b>Kaleshwaram</b> (Telangana) &mdash; world's largest multi-stage, multi-purpose lift irrigation project.</li>
+      <li><b>Mahakali Treaty</b> with Nepal &mdash; <b>1996</b>; integrated development of the Mahakali.</li>
+      <li><b>Musi</b> added to the National River Conservation Plan in <b>2024</b>.</li>
+      <li>Largest groundwater reservoirs: <b>unconsolidated formations</b>.</li>
+    </ul>
+
+    <h3>Agriculture, minerals &amp; industries</h3>
+    <table class="t3">
+      <tr><th>Item</th><th>State / fact</th></tr>
+      <tr><td>Iron ore</td><td><b>Singhbhum &mdash; Jharkhand</b>; <b>Kudremukh &mdash; Karnataka</b>; Karnataka is a major reserve state.</td></tr>
+      <tr><td>Coal</td><td><b>Talcher</b> thermal station &mdash; Odisha; Damodar Valley &mdash; Jharkhand/West Bengal.</td></tr>
+      <tr><td>Oil</td><td><b>Digboi, Moran, Sivasagar, Naharkatiya</b> &mdash; North-East (Assam).</td></tr>
+      <tr><td>Fertiliser</td><td><b>Sindri</b> plant &mdash; Jharkhand, near coal.</td></tr>
+      <tr><td>Limestone</td><td><b>Vindhyan</b> rock system.</td></tr>
+      <tr><td>Agro-based</td><td>Cotton textiles and sugar; sugar industry is seasonal.</td></tr>
+      <tr><td>Green Revolution</td><td>Introduced in the <b>Third Plan</b>; first phase ineffective in <b>Bihar</b>; HYV seeds benefited irrigated regions.</td></tr>
+      <tr><td>RKVY</td><td>Crop diversification through <b>cluster-based</b> planning.</td></tr>
+      <tr><td>Agriculture Infrastructure Fund</td><td>Agri-logistics and <b>cold chains</b>.</td></tr>
+      <tr><td>Soil Health Card</td><td>Assess <b>nutrient status</b> of soil.</td></tr>
+    </table>
+
+    <h3>Census 2011 &mdash; only the asked numbers</h3>
+    <ul>
+      <li><b>Population density</b> = people per square kilometre.</li>
+      <li>Urban population = <b>31%</b>; <b>Uttar Pradesh</b> &asymp; <b>16%</b> of India's population.</li>
+      <li>Juvenile (0&ndash;14 years) = <b>30.76%</b> of total population.</li>
+      <li>Lowest sex ratio (2011): <b>Daman &amp; Diu</b>.</li>
+      <li><b>Nagaland</b> recorded negative population growth (2001&ndash;11).</li>
+      <li>Rate of natural increase = <b>birth rate &minus; death rate</b>; stabilisation when both are nearly equal.</li>
+      <li>Replacement level &mdash; around <b>2.1</b>; demographic transition moves from high birth/death to low birth/death.</li>
+    </ul>
+
+    <h3>Parks, wetlands &amp; environment</h3>
+    <table class="t3">
+      <tr><th>Place / scheme</th><th>Fact</th></tr>
+      <tr><td>Similipal</td><td>National Park &mdash; <b>Odisha</b>.</td></tr>
+      <tr><td>Keibul Lamjao</td><td>World's only <b>floating national park</b>; Ramsar site.</td></tr>
+      <tr><td>Sarsai Nawar</td><td>Ramsar wetland in <b>Uttar Pradesh</b>; largest Sarus Crane population.</td></tr>
+      <tr><td>Desert National Park</td><td>Great Indian Bustard reintroduction (2025).</td></tr>
+      <tr><td>Corbett</td><td>Tiger population crossed <b>150</b> (2024).</td></tr>
+      <tr><td>Odisha wetlands</td><td>First State to notify <b>all wetlands</b> under the 2017 Rules (mid-2025).</td></tr>
+      <tr><td>Mangrove Cell</td><td><b>Maharashtra</b>; Mission Mangrove Mitra links mangroves with MGNREGS.</td></tr>
+      <tr><td>Aravalli Green Wall</td><td>2023 &mdash; restore degraded forest patches in the Aravalli range.</td></tr>
+      <tr><td>Western Ghats</td><td>UNESCO significance: influences the <b>Indian monsoon</b>; biodiversity hotspot; invasive species are a major threat.</td></tr>
+      <tr><td>India's land area</td><td><b>2.4%</b> of the world's land area.</td></tr>
+      <tr><td>Maldives</td><td>Smallest Indian Ocean island nation by area.</td></tr>
+      <tr><td>Plate boundaries</td><td>Mid-ocean ridge = divergent; Mariana Trench = convergent; San Andreas = transform.</td></tr>
+    </table>
+  </section>
+
+  <section id="economy">
+    <h2><span class="num">04</span>Economy <span class="count">138 PYQs</span></h2>
+
+    <h3>Basic concepts &mdash; definition-level</h3>
+    <table class="t3">
+      <tr><th>Term</th><th>Meaning</th></tr>
+      <tr><td>Scarcity definition</td><td>Given by <b>Lionel Robbins</b>.</td></tr>
+      <tr><td>Opportunity cost</td><td>The <b>next best alternative</b> foregone.</td></tr>
+      <tr><td>PPF</td><td>Shows trade-offs and opportunity cost; points on the curve = efficient use of resources.</td></tr>
+      <tr><td>Mixed economy</td><td>Both <b>public and private</b> sectors coexist.</td></tr>
+      <tr><td>Cooperative sector</td><td>Owned by workers/suppliers; profits and losses shared.</td></tr>
+      <tr><td>Joint sector</td><td>Owned jointly by <b>public + private</b> sectors.</td></tr>
+      <tr><td>Heavy industry</td><td>Uses bulky inputs to produce heavy goods; shipbuilding, automobiles.</td></tr>
+      <tr><td>Light industry</td><td>Light materials &rarr; consumer goods; toothpaste is a consumer-goods industry.</td></tr>
+      <tr><td>Snob effect</td><td>Demand falls because others also consume the same good.</td></tr>
+      <tr><td>Elastic demand</td><td>Price +10%, quantity demanded &minus;20% &rarr; elasticity &gt;1 (elastic).</td></tr>
+      <tr><td>Law of demand</td><td>Price up &rarr; demand down, other things constant.</td></tr>
+    </table>
+
+    <h3>National income &amp; budget &mdash; formulas</h3>
+    <ul>
+      <li><b>GDP</b> excludes the value of <b>intermediate goods</b> to avoid double counting.</li>
+      <li><b>GNP</b> = GDP + net factor income from abroad; <b>NNP</b> = GNP &minus; depreciation.</li>
+      <li><b>Real GDP</b> uses constant/base-year prices; <b>nominal GDP</b> uses current prices.</li>
+      <li><b>Revenue deficit</b> = revenue expenditure &minus; revenue receipts. It signals borrowing for current spending.</li>
+      <li><b>Fiscal deficit</b> = total expenditure &minus; total receipts excluding borrowings.</li>
+      <li><b>Capital receipts</b> create a liability or reduce assets &mdash; e.g. loan from RBI, disinvestment.</li>
+      <li><b>Revenue receipts</b> create no repayment burden &mdash; taxes, dividends from PSUs.</li>
+      <li><b>Disinvestment</b> = selling government stake in PSUs; <b>minority sale</b> transfers partial ownership.</li>
+      <li><b>Navratnas</b> = public enterprises granted autonomy for better performance.</li>
+    </ul>
+
+    <h3>Planning &amp; industrial policy</h3>
+    <table class="t3">
+      <tr><th>Plan / policy</th><th>Focus</th></tr>
+      <tr><td>Planning Commission</td><td>Set up in <b>1950</b>; replaced by NITI Aayog in 2015.</td></tr>
+      <tr><td>First Plan</td><td><b>Agriculture</b>.</td></tr>
+      <tr><td>Second Plan</td><td><b>Heavy industry</b>; <b>Mahalanobis model</b>; socialist pattern; capital goods.</td></tr>
+      <tr><td>Third Plan</td><td><b>Green Revolution</b> introduced.</td></tr>
+      <tr><td>Fifth Plan</td><td><b>Minimum Needs Programme</b>.</td></tr>
+      <tr><td>Sixth Plan</td><td><b>Poverty reduction + modernisation</b> (1980&ndash;85).</td></tr>
+      <tr><td>Plan holiday</td><td>Discontinuity in Five-Year Plans (1966&ndash;69).</td></tr>
+      <tr><td>Rolling plan</td><td>Introduced during <b>Morarji Desai</b>'s tenure.</td></tr>
+      <tr><td>IPR 1956</td><td>Schedules <b>A, B, C</b>; state control of the <b>commanding heights</b>; &ldquo;growth with equity&rdquo;.</td></tr>
+      <tr><td>First Industrial Policy</td><td><b>1948</b>, independent India.</td></tr>
+      <tr><td>NITI Aayog CEO</td><td><b>B.V.R. Subrahmanyam</b> (Feb 2023).</td></tr>
+    </table>
+
+    <h3>1991 reforms &mdash; LPG</h3>
+    <ul>
+      <li><b>1991 crisis</b>: foreign-exchange shortage; approached the <b>IMF and World Bank</b>.</li>
+      <li><b>LPG</b> = Liberalisation, Privatisation, Globalisation; &ldquo;P&rdquo; = <b>Privatisation</b>.</li>
+      <li>Industrial licensing abolished for most industries; retained for <b>alcohol, cigarettes, explosives</b>.</li>
+      <li><b>Washington Consensus</b> = liberalisation, privatisation, deregulation; <b>not</b> export subsidies.</li>
+      <li><b>WTO</b> &mdash; fair trade rules; <b>globalisation</b> allowed MNCs into India.</li>
+      <li>Import substitution &mdash; protect <b>infant domestic industries</b>; replace imports with domestic production.</li>
+    </ul>
+
+    <h3>Money, banking &amp; inflation</h3>
+    <ul>
+      <li><b>Repo rate</b> &mdash; rate at which RBI lends to banks; <b>reverse repo</b> &mdash; RBI borrows from banks.</li>
+      <li><b>CRR</b> &mdash; cash reserve ratio; <b>SLR</b> &mdash; statutory liquidity ratio. Higher CRR/SLR <b>reduce</b> lending capacity.</li>
+      <li><b>Money multiplier</b> &mdash; cash held by the public is a leakage and reduces the multiplier; higher bank reserves also reduce it.</li>
+      <li><b>Lead Bank Scheme</b> &mdash; introduced in <b>1969</b>.</li>
+      <li>Modern currencies are <b>not readily convertible into gold</b>.</li>
+      <li><b>CPI</b> &mdash; retail inflation; <b>WPI</b> &mdash; wholesale inflation; <b>core inflation</b> excludes food and fuel.</li>
+      <li>2024 decline in core inflation &mdash; mainly <b>falling international commodity prices</b>.</li>
+    </ul>
+
+    <h3>Flagship schemes &mdash; one line each</h3>
+    <table class="t3">
+      <tr><th>Scheme</th><th>Objective / number</th></tr>
+      <tr><td>PM-KMY</td><td>Farmers aged <b>18&ndash;40</b>; <b>&#8377;3,000</b> monthly pension after 60.</td></tr>
+      <tr><td>UDAN</td><td>Regional air connectivity; viability-gap funding.</td></tr>
+      <tr><td>IPPB</td><td>Financial services through <b>postmen</b>.</td></tr>
+      <tr><td>MISHTI</td><td><b>Mangrove</b> plantation; Budget 2023&ndash;24.</td></tr>
+      <tr><td>Green Credit Programme</td><td>Rewards voluntary <b>eco-restoration</b> (2024).</td></tr>
+      <tr><td>National Green Hydrogen Mission</td><td>Make India a global hub; target <b>5 MMT</b> by 2030; first hub in <b>Andhra Pradesh</b>.</td></tr>
+      <tr><td>eSanjeevani</td><td>Tele-consultation: OPD + AB-HWC.</td></tr>
+      <tr><td>SVAMITVA</td><td>Property cards using <b>drones</b>; rural only.</td></tr>
+      <tr><td>Mission Amrit Sarovar</td><td><b>75 ponds per district</b>; water conservation.</td></tr>
+      <tr><td>Ek Ped Maa Ke Naam</td><td>Trees in honour of mothers; launched 2024 by <b>Narendra Modi</b>.</td></tr>
+      <tr><td>TIES</td><td><b>Export infrastructure</b> development.</td></tr>
+      <tr><td>NSWS</td><td><b>Single window</b> for industrial clearances.</td></tr>
+      <tr><td>Atal Innovation Mission</td><td><b>Atal Tinkering Labs</b>; innovation/entrepreneurship.</td></tr>
+      <tr><td>PM eVIDYA</td><td>Digital learning and literacy in schools.</td></tr>
+      <tr><td>PMGSY</td><td>Rural <b>road</b> infrastructure.</td></tr>
+      <tr><td>IGNOAPS</td><td>Old-age pension for senior citizens.</td></tr>
+      <tr><td>AMRUT</td><td>Urban water supply, sewerage, transport.</td></tr>
+      <tr><td>UMANG</td><td>Unified platform for government services.</td></tr>
+      <tr><td>PMAY-U</td><td>Affordable urban housing assistance.</td></tr>
+      <tr><td>PM-KUSUM</td><td><b>Solar pumps</b> and grid-connected solar plants for farmers.</td></tr>
+      <tr><td>Atal Pension Yojana</td><td>Social security for the <b>unorganised sector</b>.</td></tr>
+      <tr><td>Mahila Shakti Kendra</td><td>Women's skill development and entrepreneurship.</td></tr>
+      <tr><td>DAY-NRLM</td><td>Financial assistance to women <b>SHGs</b>.</td></tr>
+      <tr><td>PKVY</td><td><b>Organic farming</b> promotion.</td></tr>
+      <tr><td>PMFBY</td><td>Crop insurance.</td></tr>
+      <tr><td>Jal Jeevan Mission</td><td>Functional household <b>tap connections</b> in rural areas.</td></tr>
+      <tr><td>PLI</td><td>Boost <b>domestic manufacturing</b> and investment.</td></tr>
+      <tr><td>AIF</td><td>Agri-logistics and cold-chain infrastructure.</td></tr>
+      <tr><td>PMKSY</td><td>&ldquo;Har Khet Ko Pani&rdquo; &mdash; irrigation.</td></tr>
+    </table>
+
+    <h3>Taxes &amp; fiscal federalism</h3>
+    <ul>
+      <li><b>Art 270</b> &mdash; sharing of taxes; <b>Art 279A</b> &mdash; GST Council; <b>Art 286</b> &mdash; restrictions on inter-State trade taxes.</li>
+      <li><b>Art 268</b> &mdash; stamp duties levied by the Union, collected by States; <b>Art 280</b> &mdash; Finance Commission.</li>
+      <li><b>Direct taxes</b> &mdash; income, corporate; <b>indirect</b> &mdash; GST, customs.</li>
+      <li><b>Special Category Status</b> is not mentioned in the Constitution; granted by the <b>National Development Council</b>.</li>
+      <li>Taxes on <b>railway fares and freights</b> accrue to the <b>Union</b>.</li>
+      <li>Fertiliser subsidies supported productivity but often benefited <b>richer farmers</b>; cuts after 1991 hurt agriculture.</li>
+    </ul>
+  </section>
+
+  <section id="science">
+    <h2><span class="num">05</span>General Science <span class="count">78 PYQs</span></h2>
+
+    <h3>Biology &mdash; cell to systems</h3>
+    <table class="t3">
+      <tr><th>Term</th><th>Fact</th></tr>
+      <tr><td>Lysosome</td><td><b>Intracellular digestion</b>; &ldquo;suicide bag&rdquo;.</td></tr>
+      <tr><td>Golgi apparatus</td><td><b>Protein modification</b> and packaging.</td></tr>
+      <tr><td>Mitochondria</td><td>Aerobic respiration; <b>Krebs cycle</b> in matrix; <b>electron transport chain</b> makes the most ATP.</td></tr>
+      <tr><td>Glycolysis</td><td>Occurs in the <b>cytoplasm</b>, not mitochondria.</td></tr>
+      <tr><td>Telomerase</td><td><b>Telomere lengthening</b>.</td></tr>
+      <tr><td>Pleiotropy</td><td>One gene affects <b>multiple traits</b>.</td></tr>
+      <tr><td>Energy storage</td><td><b>Glycogen</b> in animals; starch in plants.</td></tr>
+      <tr><td>Plasma membrane</td><td><b>Phospholipids</b> are essential.</td></tr>
+      <tr><td>Micronutrient</td><td><b>Boron</b> (micronutrient); N, P, K are macronutrients.</td></tr>
+      <tr><td>Central dogma</td><td><b>DNA &rarr; RNA &rarr; Protein</b>.</td></tr>
+      <tr><td>Enzymes</td><td>Lower <b>activation energy</b>; specific to substrate; pH/temperature sensitive.</td></tr>
+      <tr><td>Cytoskeleton</td><td>Protein network supporting eukaryotic cells.</td></tr>
+      <tr><td>Antenna complex</td><td><b>Light-harvesting complex</b> in photosynthesis.</td></tr>
+      <tr><td>Beta-plus decay</td><td>Proton number <b>decreases by 1</b>; mass number unchanged.</td></tr>
+      <tr><td>Blood flow</td><td>Right atrium &rarr; right ventricle &rarr; lungs &rarr; left atrium &rarr; left ventricle.</td></tr>
+      <tr><td>Circadian rhythm</td><td><b>Hypothalamus</b>.</td></tr>
+      <tr><td>Antibodies</td><td><b>IgG</b> largest proportion; <b>IgE</b> allergies; <b>IgA</b> mucosal surfaces.</td></tr>
+      <tr><td>Connective tissue</td><td>Tendons: muscle&ndash;bone, dense regular; ligaments: bone&ndash;bone, slightly elastic.</td></tr>
+      <tr><td>Transpiration</td><td>Highest in dry/windy conditions; helps <b>ascent of sap</b> by cohesion-tension; does not always cause wilting.</td></tr>
+      <tr><td>Plant hormones</td><td><b>Ethylene</b> promotes ripening, not seed germination.</td></tr>
+      <tr><td>Plant transport</td><td><b>Xylem</b> = water/minerals; <b>phloem</b> = food.</td></tr>
+    </table>
+
+    <h3>Physics &mdash; formula + fact</h3>
+    <table class="t3">
+      <tr><th>Concept</th><th>Remember</th></tr>
+      <tr><td>Light entering a medium</td><td><b>Frequency remains constant</b>; speed and wavelength change.</td></tr>
+      <tr><td>Least distance of distinct vision</td><td><b>25 cm</b> for a normal eye.</td></tr>
+      <tr><td>Solar furnace</td><td><b>Concave mirror</b> to focus sunlight.</td></tr>
+      <tr><td>Secondary rainbow</td><td>Colour order is <b>reversed</b> compared with the primary.</td></tr>
+      <tr><td>Image by spherical mirror</td><td>Minimum <b>two rays</b>; object at centre of curvature &rarr; real, inverted, same size.</td></tr>
+      <tr><td>Myopia</td><td>Power <b>&minus;2.5 D</b> &rarr; diverging lens.</td></tr>
+      <tr><td>Audible range</td><td><b>20&ndash;20,000 Hz</b>.</td></tr>
+      <tr><td>Doppler effect</td><td>Pitch change as a train passes; no change if source and listener move together.</td></tr>
+      <tr><td>Sound air &rarr; water</td><td>Frequency constant; <b>speed and wavelength increase</b>.</td></tr>
+      <tr><td>Wavelength</td><td>&lambda; = v/f = 340/680 = <b>0.5 m</b>.</td></tr>
+      <tr><td>Inertia</td><td>Difficult to start/stop a heavy box.</td></tr>
+      <tr><td>Gravity</td><td>Radius &minus;1% (mass same) &rarr; g increases by about <b>2%</b>.</td></tr>
+      <tr><td>Bernoulli</td><td>Narrow horizontal pipe &rarr; speed up, pressure down.</td></tr>
+      <tr><td>Ideal gas</td><td>Negligible molecular volume; no strong intermolecular attraction.</td></tr>
+      <tr><td>Photoelectric effect</td><td>Particle nature of light; kinetic energy depends on frequency, not intensity.</td></tr>
+      <tr><td>Heat engine</td><td>Ideal efficiency depends only on source/sink temperatures.</td></tr>
+      <tr><td>Walking on sand</td><td>Sand displaces, reducing pushback.</td></tr>
+      <tr><td>Projectile</td><td>u = 10 m/s &rarr; maximum height <b>5.10 m</b> (g = 9.8).</td></tr>
+      <tr><td>Steam vs boiling water</td><td>Steam has more <b>latent heat of vaporisation</b>.</td></tr>
+      <tr><td>Resistance</td><td>Double R at constant V &rarr; current <b>halves</b>.</td></tr>
+      <tr><td>Heater element</td><td><b>Nichrome</b>: high resistivity, high melting point.</td></tr>
+      <tr><td>Bohr model</td><td>Energy difference between successive levels <b>decreases</b> as n increases.</td></tr>
+      <tr><td>Nuclear fission</td><td>Total mass of products is <b>less</b> than reactants (mass defect).</td></tr>
+      <tr><td>Radioactive decay</td><td><b>Beta-minus</b>: atomic number +1, mass number unchanged; <b>alpha</b> = helium nucleus.</td></tr>
+      <tr><td>Parallel resistors</td><td>2 &Omega; and 4 &Omega; at 6 V &rarr; total current <b>4.5 A</b>.</td></tr>
+      <tr><td>Energy units</td><td>60 W &times; 5 h &times; 30 days = 9,000 Wh = <b>9 units</b>.</td></tr>
+      <tr><td>Argon</td><td>Produced in Earth's crust by decay of <b>K-40</b>.</td></tr>
+      <tr><td>High jump bar</td><td><b>Fibreglass</b> &mdash; light, flexible, safer than metal.</td></tr>
+    </table>
+
+    <h3>Chemistry &mdash; everyday compounds</h3>
+    <table class="t3">
+      <tr><th>Name</th><th>Formula / use</th></tr>
+      <tr><td>Washing soda</td><td>Na&#8322;CO&#8323;&middot;10H&#8322;O</td></tr>
+      <tr><td>Baking soda</td><td>NaHCO&#8323;</td></tr>
+      <tr><td>Plaster of Paris</td><td>CaSO&#8324;&middot;&frac12;H&#8322;O</td></tr>
+      <tr><td>Bleaching powder</td><td>Ca(OCl)Cl</td></tr>
+      <tr><td>Quicklime</td><td>CaO</td></tr>
+      <tr><td>Slaked lime</td><td>Ca(OH)&#8322;</td></tr>
+      <tr><td>Common salt</td><td>NaCl</td></tr>
+      <tr><td>Vinegar</td><td>Acetic acid</td></tr>
+      <tr><td>Lemon</td><td>Citric acid</td></tr>
+      <tr><td>Tamarind</td><td>Tartaric acid</td></tr>
+      <tr><td>pH</td><td>&lt;7 acid; 7 neutral; &gt;7 base. Acid turns blue litmus red; base turns red litmus blue.</td></tr>
+      <tr><td>Argon</td><td>Noble gas; from <b>K-40</b> decay.</td></tr>
+    </table>
+
+    <h3>SI units &amp; instruments</h3>
+    <ul>
+      <li>Force &mdash; <b>newton</b>; pressure &mdash; <b>pascal</b>; power &mdash; <b>watt</b>; energy &mdash; <b>joule</b>.</li>
+      <li>Frequency &mdash; <b>hertz</b>; resistance &mdash; <b>ohm</b>; current &mdash; <b>ampere</b>; voltage &mdash; <b>volt</b>.</li>
+      <li>Watt measures <b>power</b>; pascal measures <b>pressure</b>.</li>
+    </ul>
+  </section>
+
+  <section id="static">
+    <h2><span class="num">06</span>Static GK &amp; Sports <span class="count">sports &middot; books &middot; awards</span></h2>
+
+    <h3>Sports &mdash; firsts, medals, records</h3>
+    <table class="t3">
+      <tr><th>Fact</th><th>Answer</th></tr>
+      <tr><td>India's first Olympic medallist</td><td><b>Norman Pritchard</b>, 1900 Paris &mdash; silver in 200m and 200m hurdles.</td></tr>
+      <tr><td>First hockey gold as independent nation</td><td><b>London 1948</b>.</td></tr>
+      <tr><td>First individual Olympic gold</td><td><b>Abhinav Bindra</b>, Beijing 2008 (shooting).</td></tr>
+      <tr><td>First Indian woman Olympic medal</td><td><b>Karnam Malleswari</b>, weightlifting, Sydney 2000.</td></tr>
+      <tr><td>First Paralympic medallist</td><td><b>Murlikant Petkar</b> &mdash; gold, 50m freestyle, Heidelberg 1972.</td></tr>
+      <tr><td>First Paralympic archery gold</td><td><b>Harvinder Singh</b>, Paris 2024.</td></tr>
+      <tr><td>Paris 2024 youngest Indian medallist</td><td><b>Aman Sehrawat</b> &mdash; bronze, wrestling.</td></tr>
+      <tr><td>IOA founded</td><td><b>1927</b>; Sir Dorabji Tata first President.</td></tr>
+      <tr><td>National Games began</td><td><b>1924, Lahore</b>; renamed National Games later.</td></tr>
+      <tr><td>Asian Games</td><td>First in <b>1951, New Delhi</b>; India hosted <b>twice</b> (1951, 1982).</td></tr>
+      <tr><td>First Test series win vs England</td><td><b>1952, Chennai</b>.</td></tr>
+      <tr><td>Neeraj Chopra &mdash; World Championships</td><td>Gold at <b>Budapest 2023</b>; Paris Diamond League 2025 &mdash; <b>88.16 m</b> opening throw.</td></tr>
+      <tr><td>Milkha Singh</td><td>1960 Rome, 4th in 400m, <b>45.6 s</b>.</td></tr>
+      <tr><td>P.T. Usha</td><td>1984 Olympics &mdash; missed bronze by <b>one-hundredth</b> of a second.</td></tr>
+      <tr><td>Sushil Kumar</td><td>2008 bronze via <b>three repechage bouts</b>.</td></tr>
+      <tr><td>Vijender Singh</td><td>2008 boxing bronze; beat <b>Carlos G&oacute;ngora</b> in the quarter-final.</td></tr>
+      <tr><td>Mary Kom</td><td>Most recent international gold &mdash; <b>President's Cup, Indonesia</b>.</td></tr>
+      <tr><td>2022 Commonwealth Games</td><td>India won <b>22 gold</b>.</td></tr>
+      <tr><td>2026 Commonwealth Games</td><td><b>Glasgow</b> (after Australia withdrew).</td></tr>
+    </table>
+
+    <h3>2025 &mdash; venue + winner</h3>
+    <table class="t3">
+      <tr><th>Event</th><th>Answer</th></tr>
+      <tr><td>59th National Cross Country</td><td><b>12 Jan 2025, Meerut</b> (UP).</td></tr>
+      <tr><td>38th National Games</td><td><b>Uttarakhand</b>; SSCB topped with <b>121 medals</b>; Yogasana and Mallakhamb were first announced as demonstration events, then made medal events.</td></tr>
+      <tr><td>National Games athletics</td><td><b>Parul Chaudhary</b> &mdash; 3000m steeplechase; <b>Jyothi Yarraji</b> &mdash; 100m hurdles.</td></tr>
+      <tr><td>National Games hockey</td><td><b>Karnataka</b> beat Uttar Pradesh 3&ndash;2 in the final.</td></tr>
+      <tr><td>Khelo India University Games 2025</td><td><b>Rajasthan</b>, November; announced by <b>Mansukh Mandaviya</b>.</td></tr>
+      <tr><td>2nd Khelo India Para Games</td><td><b>6 disciplines</b>.</td></tr>
+      <tr><td>KIYG 2025 table tennis</td><td><b>Kavya Bhatt</b> (Maharashtra) beat <b>M. Hansini</b>.</td></tr>
+      <tr><td>Asian Athletics Championships 2025</td><td><b>Gumi, South Korea</b>; 60+ Indian athletes.</td></tr>
+      <tr><td>India Open 2025 (badminton)</td><td>K.D. Jadhav Indoor Hall, New Delhi, <b>14&ndash;19 Jan</b>; BWF Super 750.</td></tr>
+      <tr><td>4th KIO National Karate</td><td><b>Hyderabad</b>, 26&ndash;29 March 2025.</td></tr>
+      <tr><td>U21 Water Polo League</td><td><b>Mayo College, Ajmer</b>.</td></tr>
+      <tr><td>2nd Para Table Tennis National Ranking</td><td><b>Vadodara</b>, Gujarat.</td></tr>
+      <tr><td>61st National Chess</td><td><b>Karthik Venkataraman</b>, Gurgaon, &#8377;6 lakh.</td></tr>
+      <tr><td>56th National Kho Kho</td><td><b>Maharashtra</b> won both men's and women's titles.</td></tr>
+      <tr><td>Women's Hockey India League 2024&ndash;25</td><td>Ranchi &amp; Rourkela, 12&ndash;26 Jan; <b>Odisha Warriors</b> beat JSW Soorma.</td></tr>
+      <tr><td>133rd Durand Cup</td><td><b>Mohun Bagan SG</b> vs Northeast United (2024 final).</td></tr>
+      <tr><td>Santosh Trophy 2022&ndash;23</td><td>Final in <b>Riyadh</b>; Karnataka beat Meghalaya after 54 years.</td></tr>
+      <tr><td>Khelo India Winter Games 2024 mascot</td><td>Snow leopard <b>Sheen-e She</b>.</td></tr>
+    </table>
+
+    <h3>Rules, trophies &amp; terms</h3>
+    <table class="t3">
+      <tr><th>Sport</th><th>Fact</th></tr>
+      <tr><td>Judo</td><td>Introduced <b>1882</b> by <b>Jigoro Kano</b>, Japan; ippon/hansoku-make ends the match; contest area 8&times;8 m + 3 m safety; red-white belt = 6th&ndash;8th dan.</td></tr>
+      <tr><td>Football</td><td>Goal height <b>2.44 m</b>; &ldquo;brace&rdquo; = two goals; &ldquo;own goal&rdquo; = into own net.</td></tr>
+      <tr><td>Basketball</td><td><b>5 players</b> per side; <b>24-second</b> shot clock; &ldquo;swish&rdquo; = clean shot; personal foul = illegal physical contact.</td></tr>
+      <tr><td>Badminton</td><td>Singles court width <b>5.18 m</b>; server stepping on the boundary while serving = fault.</td></tr>
+      <tr><td>Table tennis</td><td>Ball diameter <b>40 mm</b>; at 10&ndash;10, service alternates <b>every point</b>.</td></tr>
+      <tr><td>Athletics relay</td><td>Exchange zone <b>20 m</b>; team of 6, four run.</td></tr>
+      <tr><td>High jump</td><td>Runway minimum <b>15 m</b>; <b>Fosbury Flop</b> = backward crossing, shoulder landing.</td></tr>
+      <tr><td>Pole vault</td><td><b>3</b> consecutive failed attempts = disqualification.</td></tr>
+      <tr><td>Javelin</td><td>Landing area called the <b>sector</b>.</td></tr>
+      <tr><td>Chess</td><td>&ldquo;En passant&rdquo; must be played immediately; pawn promotes to any piece except king/pawn; &ldquo;zugzwang&rdquo; = forced to move at a disadvantage.</td></tr>
+      <tr><td>Kabaddi</td><td><b>Golden raid</b>; fresh toss if still tied after 5&ndash;5 raids.</td></tr>
+      <tr><td>Kho-Kho</td><td>Pole height <b>1.20&ndash;1.25 m</b>, diameter 9 cm.</td></tr>
+      <tr><td>Hockey</td><td>Only the <b>flat left side</b> of the stick may touch the ball.</td></tr>
+      <tr><td>Swimming</td><td>Sculling maintains balance by moving hands underwater.</td></tr>
+      <tr><td>Santosh Trophy</td><td>Named after <b>Sir Manmatha Nath Roy Chowdhury</b>; launched 1941.</td></tr>
+      <tr><td>Subroto Cup</td><td>Inter-school football, <b>New Delhi</b>.</td></tr>
+      <tr><td>David Dixon Award</td><td>Best athlete at the <b>Commonwealth Games</b>.</td></tr>
+      <tr><td>National Institute of Sports</td><td>Patiala; renamed NSNIS on <b>23 January 1973</b>.</td></tr>
+      <tr><td>AAFI</td><td>Established <b>1946</b>.</td></tr>
+      <tr><td>NADA</td><td>Formed in <b>2005</b>.</td></tr>
+    </table>
+    <h3>Books &amp; authors &mdash; asked directly</h3>
+    <table class="t3">
+      <tr><th>Book</th><th>Author</th></tr>
+      <tr><td>The White Tiger</td><td><b>Aravind Adiga</b> (Booker 2008).</td></tr>
+      <tr><td>The Inheritance of Loss</td><td><b>Kiran Desai</b> (Booker 2006).</td></tr>
+      <tr><td>A Fine Balance</td><td><b>Rohinton Mistry</b> &mdash; Emergency-era social injustice.</td></tr>
+      <tr><td>The Namesake</td><td><b>Jhumpa Lahiri</b>.</td></tr>
+      <tr><td>The Argumentative Indian</td><td><b>Amartya Sen</b>.</td></tr>
+      <tr><td>An Era of Darkness</td><td><b>Shashi Tharoor</b>.</td></tr>
+      <tr><td>Why I am a Hindu</td><td><b>Shashi Tharoor</b>.</td></tr>
+      <tr><td>The Great Indian Novel</td><td><b>Shashi Tharoor</b>.</td></tr>
+      <tr><td>The Ocean of Churn</td><td><b>Sanjeev Sanyal</b>.</td></tr>
+      <tr><td>India for Indians</td><td><b>Chitta Ranjan Das</b> &mdash; self-rule.</td></tr>
+      <tr><td>Indica</td><td><b>Pranay Lal</b> &mdash; natural history of the subcontinent.</td></tr>
+      <tr><td>Being Indian</td><td><b>Pavan K. Varma</b>.</td></tr>
+      <tr><td>The Elephant Paradigm</td><td><b>Gurcharan Das</b>.</td></tr>
+      <tr><td>The Tatas</td><td><b>Girish Kuber &amp; Vikrant Pande</b>.</td></tr>
+      <tr><td>Why Nations Fail</td><td><b>Daron Acemoglu &amp; James Robinson</b>.</td></tr>
+      <tr><td>The Silk Roads</td><td><b>Peter Frankopan</b>.</td></tr>
+      <tr><td>An Area of Darkness</td><td><b>V.S. Naipaul</b>.</td></tr>
+      <tr><td>Burnt Sugar</td><td><b>Avni Doshi</b> &mdash; mother-daughter bond.</td></tr>
+      <tr><td>Sleeping on Jupiter</td><td><b>Anuradha Roy</b>.</td></tr>
+      <tr><td>Half the Night is Gone</td><td><b>Amitabha Bagchi</b>.</td></tr>
+      <tr><td>Sahela Re</td><td><b>Mrinal Pande</b>.</td></tr>
+      <tr><td>The Golden Gate</td><td><b>Vikram Seth</b> &mdash; novel in verse.</td></tr>
+      <tr><td>One Hundred Years of Solitude</td><td><b>Gabriel Garc&iacute;a M&aacute;rquez</b> &mdash; magical realism.</td></tr>
+      <tr><td>Beloved</td><td><b>Toni Morrison</b> &mdash; Pulitzer; Nobel 1993.</td></tr>
+      <tr><td>Jinnah</td><td><b>Ishtiaq Ahmed</b>.</td></tr>
+      <tr><td>The Winner's Mindset</td><td><b>Shane Watson</b>.</td></tr>
+    </table>
+
+    <h3>Awards &amp; literature prizes</h3>
+    <ul>
+      <li><b>Bharat Ratna</b> &mdash; highest civilian award; <b>Padma Vibhushan</b> &gt; <b>Padma Bhushan</b> &gt; <b>Padma Shri</b>.</li>
+      <li><b>Param Vir Chakra</b> &mdash; highest wartime military award; <b>Ashoka Chakra</b> &mdash; highest peacetime gallantry.</li>
+      <li><b>Jnanpith</b> &mdash; highest literary award; <b>Dronacharya</b> &mdash; coaching; <b>Khel Ratna</b> &mdash; highest sporting honour.</li>
+      <li><b>International Booker 2025</b> &mdash; <b>Banu Mushtaq &amp; Deepa Bhasthi</b> for <i>Heart Lamp</i> (Kannada).</li>
+      <li><b>International Booker 2021</b> &mdash; <b>David Diop</b>.</li>
+      <li><b>Nobel Literature 2022</b> &mdash; <b>Annie Ernaux</b> (France).</li>
+      <li><b>Padma Shri 2025</b> &mdash; <b>Lavjibhai Parmar</b> (Tanglia weaving, Gujarat); <b>Gokul Chandra Das</b> (Bengali folk percussion).</li>
+      <li><b>Dronacharya</b> &mdash; first recipient <b>O.M. Nambiar</b>.</li>
+      <li><b>Kiran Mazumdar-Shaw</b> &mdash; first woman to head a top Indian biotech company; <b>Verghese Kurien</b> &mdash; Operation Flood.</li>
+    </ul>
+
+    <h3>International organisations &mdash; HQ</h3>
+    <table class="t3">
+      <tr><th>Organisation</th><th>Headquarters</th></tr>
+      <tr><td>United Nations</td><td><b>New York</b>.</td></tr>
+      <tr><td>WHO / ILO / WMO</td><td><b>Geneva</b>.</td></tr>
+      <tr><td>UNESCO</td><td><b>Paris</b>.</td></tr>
+      <tr><td>IMF / World Bank</td><td><b>Washington DC</b>.</td></tr>
+      <tr><td>WTO</td><td><b>Geneva</b>.</td></tr>
+      <tr><td>ICJ / ICC</td><td><b>The Hague</b>.</td></tr>
+      <tr><td>SAARC</td><td><b>Kathmandu</b>.</td></tr>
+      <tr><td>BIMSTEC</td><td><b>Dhaka</b>.</td></tr>
+      <tr><td>New Development Bank</td><td><b>Shanghai</b>.</td></tr>
+      <tr><td>ADB</td><td><b>Manila</b>.</td></tr>
+      <tr><td>OPEC / IAEA</td><td><b>Vienna</b>.</td></tr>
+      <tr><td>WEF</td><td><b>Geneva</b>.</td></tr>
+      <tr><td>Transparency International</td><td><b>Berlin</b>.</td></tr>
+      <tr><td>Amnesty International</td><td><b>London</b>.</td></tr>
+      <tr><td>Interpol</td><td><b>Lyon</b>.</td></tr>
+      <tr><td>FAO</td><td><b>Rome</b>.</td></tr>
+    </table>
+
+    <h3>Superlatives &amp; nicknames</h3>
+    <ul>
+      <li><b>Bhutan</b> &mdash; Land of the Thunder Dragon.</li>
+      <li><b>Chennai</b> &mdash; Detroit of India (automobile hub).</li>
+      <li><b>P.C. Mahalanobis</b> &mdash; architect of India's Five-Year Plans.</li>
+      <li><b>1991 reforms</b> &mdash; New Economic Policy.</li>
+      <li><b>Dr. Tessy Thomas</b> &mdash; &ldquo;Missile Woman of India&rdquo;; led Agni-V.</li>
+      <li><b>M.S. Swaminathan</b> &mdash; father of the Green Revolution in India (basic).</li>
+    </ul>
+  </section>
+
+  <section id="current">
+    <h2><span class="num">07</span>Current Affairs 2024&ndash;25 <span class="count">appointments &middot; space &middot; reports</span></h2>
+
+    <h3>Appointments &mdash; who holds what</h3>
+    <table class="t3">
+      <tr><th>Post</th><th>Name</th></tr>
+      <tr><td>ISRO Chairman</td><td><b>V. Narayanan</b> (January 2025).</td></tr>
+      <tr><td>Comptroller &amp; Auditor General</td><td><b>K. Sanjay Murthy</b> (November 2024).</td></tr>
+      <tr><td>Chief Justice of India</td><td><b>Justice Sanjiv Khanna</b> &mdash; 51st CJI; succeeded D.Y. Chandrachud.</td></tr>
+      <tr><td>Solicitor General</td><td><b>Tushar Mehta</b>.</td></tr>
+      <tr><td>National Security Adviser</td><td><b>Ajit Doval</b> &mdash; reappointed June 2024; Cabinet rank.</td></tr>
+      <tr><td>Railway Board Chairperson</td><td><b>Satish Kumar</b> (September 2024).</td></tr>
+      <tr><td>National Statistical Commission</td><td><b>Rajeeva Laxman Karandikar</b> (2022).</td></tr>
+      <tr><td>MNRE Secretary</td><td><b>Santosh Kumar Sarangi</b> (April 2025).</td></tr>
+      <tr><td>Union Law Secretary</td><td><b>Anju Rathi Rana</b> &mdash; first woman (March 2025).</td></tr>
+      <tr><td>GeM CEO</td><td><b>Ajay Bhadoo</b> (March 2025).</td></tr>
+      <tr><td>National Commission for Minorities</td><td><b>Iqbal Singh Lalpura</b> (2025).</td></tr>
+      <tr><td>Governor of Uttar Pradesh</td><td><b>Anandiben Patel</b> (since 2019; 20th Governor).</td></tr>
+      <tr><td>Chief Justice, J&amp;K and Ladakh HC</td><td><b>Justice Arun Palli</b> (April 2025).</td></tr>
+      <tr><td>DG, NDRF</td><td><b>Piyush Anand</b> (2024).</td></tr>
+      <tr><td>NITI Aayog CEO</td><td><b>B.V.R. Subrahmanyam</b> (February 2023).</td></tr>
+    </table>
+
+    <h3>Space &amp; sci-tech</h3>
+    <table class="t3">
+      <tr><th>Mission / term</th><th>Fact</th></tr>
+      <tr><td>SpaDeX</td><td>Docking completed <b>16 January 2025</b>.</td></tr>
+      <tr><td>Bharatiya Antariksh Station</td><td>First module <b>2028</b>; station <b>2035</b>; Indian on Moon <b>2040</b> (Space Vision 2047).</td></tr>
+      <tr><td>NISAR</td><td>NASA&ndash;ISRO radar; <b>12-day</b> revisit; <b>polar sun-synchronous</b> orbit.</td></tr>
+      <tr><td>Gaganyaan</td><td>Orbit ~<b>400 km</b>; <b>HLVM3</b> = Human LVM3; <b>Crew Escape System</b> ejects the crew module in an emergency.</td></tr>
+      <tr><td>Aditya-L1</td><td>Halo orbit around <b>L1</b>; studies the solar <b>corona</b>; took <b>127 days</b> to reach L1.</td></tr>
+      <tr><td>Chandrayaan-3</td><td>Laser Retroreflector Array from <b>NASA</b>; hazard detection and avoidance camera for landing.</td></tr>
+      <tr><td>XPoSat</td><td><b>POLIX</b> measures X-ray polarisation (8&ndash;30 keV) to study black holes.</td></tr>
+      <tr><td>NGLV</td><td>Next Generation Launch Vehicle; <b>30 tonnes</b> to LEO.</td></tr>
+      <tr><td>SSLV</td><td>On-demand, low-cost small-satellite launcher.</td></tr>
+      <tr><td>PSLV</td><td>ISRO's <b>workhorse</b> launch vehicle.</td></tr>
+      <tr><td>RLV-LEX3</td><td><b>23 June 2024</b> &mdash; autonomous high-speed landing in tough wind/cross-range.</td></tr>
+      <tr><td>Shukrayaan-1</td><td>Proposed Venus mission &mdash; surface and atmosphere.</td></tr>
+      <tr><td>NVS-02</td><td>Launched on <b>GSLV-F15</b>; boosts navigation/positioning.</td></tr>
+      <tr><td>Mangalyaan</td><td>India's first interplanetary mission; <b>MCC</b> captured full-disk colour images.</td></tr>
+      <tr><td>Chandrayaan-1</td><td>First discovered <b>lunar hydration</b>.</td></tr>
+    </table>
+
+    <h3>Defence exercises</h3>
+    <table class="t3">
+      <tr><th>Exercise</th><th>Partner / venue</th></tr>
+      <tr><td>SAMPRITI-XI</td><td>India&ndash;<b>Bangladesh</b>; Umroi, Meghalaya (2023).</td></tr>
+      <tr><td>Nomadic Elephant (17th)</td><td>India&ndash;<b>Mongolia</b>; Ulaanbaatar (2025).</td></tr>
+      <tr><td>Mitra Shakti (10th)</td><td>India&ndash;<b>Sri Lanka</b>; counter-insurgency (August 2024).</td></tr>
+      <tr><td>Maitri</td><td>India&ndash;<b>Thailand</b>.</td></tr>
+      <tr><td>Tiger Triumph 2025</td><td>India&ndash;<b>USA</b>; HADR + logistics via <b>LEMOA</b>.</td></tr>
+    </table>
+
+    <h3>Summits, groupings &amp; connectivity</h3>
+    <ul>
+      <li><b>BRICS</b> &mdash; Startup Knowledge Hub (2025); Startup Forum (2021); Alliance for Green Tourism (2021); NDB Americas office in <b>S&atilde;o Paulo</b>.</li>
+      <li><b>BIMSTEC</b> &mdash; 5th Summit, Colombo; Technology Transfer Facility; India leads the <b>Energy</b> priority area.</li>
+      <li><b>Quad</b> &mdash; focus <b>Indo-Pacific</b>; proposed 2007; USA is the largest economy in the group.</li>
+      <li><b>Chabahar</b> &mdash; India&ndash;Iran; gateway to Central Asia via the <b>North&ndash;South Transport Corridor</b>.</li>
+      <li><b>Kaladan</b> multimodal project &mdash; links India with <b>Myanmar</b>; <b>Trilateral Highway</b> &mdash; Myanmar and Thailand.</li>
+      <li><b>India&ndash;UAE BIT 2024</b> &mdash; post-establishment national treatment and investor confidence.</li>
+      <li><b>India&ndash;Australia ECTA</b> &mdash; 14% export growth (2022&ndash;24); new items like air-liquefaction machinery.</li>
+      <li><b>Republic Day 2025</b> chief guest &mdash; <b>Prabowo Subianto</b> (Indonesia).</li>
+    </ul>
+
+    <h3>Reports &amp; indices &mdash; publisher + one fact</h3>
+    <table class="t3">
+      <tr><th>Index / report</th><th>Fact</th></tr>
+      <tr><td>Global Firepower 2025</td><td>Military strength; assesses <b>defence budget</b>; 60+ factors; PowerIndex.</td></tr>
+      <tr><td>Global Cities Index 2025</td><td>Oxford Economics; <b>London &amp; New York</b> top.</td></tr>
+      <tr><td>IMD World Competitiveness 2025</td><td>IMD Business School; <b>Switzerland</b> 1st in Infrastructure.</td></tr>
+      <tr><td>Global Peace Index</td><td>Iceland most peaceful; gradual <b>downward</b> trend; Positive Peace.</td></tr>
+      <tr><td>Global Gender Gap 2025</td><td>WEF; politics, economy, health, education; <b>North America</b> leads.</td></tr>
+      <tr><td>Energy Transition Index 2025</td><td><b>WEF</b>; grids/storage; demand up due to electrification and cooling.</td></tr>
+      <tr><td>Corruption Perceptions Index 2024</td><td><b>Transparency International</b>; lower score = more corruption.</td></tr>
+      <tr><td>Travel &amp; Tourism Development Index</td><td>Top 30 mostly high-income Europe/Asia-Pacific.</td></tr>
+      <tr><td>Logistics Performance Index</td><td><b>World Bank</b>; trade/transport logistics; big-data trade speed.</td></tr>
+      <tr><td>Environmental Performance Index</td><td><b>Yale &amp; Columbia</b>.</td></tr>
+      <tr><td>World Press Freedom Index</td><td>Higher rank = <b>greater</b> journalistic freedom.</td></tr>
+      <tr><td>Index of Economic Freedom 2025</td><td><b>Heritage Foundation</b>; government spending.</td></tr>
+      <tr><td>Human Development Index</td><td><b>UNDP</b>; can rise even if income falls (health/education).</td></tr>
+      <tr><td>Ease of Doing Business</td><td>World Bank; <b>discontinued 2021</b> after data-manipulation allegations.</td></tr>
+      <tr><td>Swachh Vayu Sarvekshan 2024</td><td><b>Indore</b> topped cities above 10 lakh population.</td></tr>
+    </table>
+
+    <h3>Environment &amp; governance 2024&ndash;25</h3>
+    <ul>
+      <li><b>COP30</b> &mdash; Bel&eacute;m, Brazil (November 2025); Modi addressed a special session on environment, COP30 and global health.</li>
+      <li><b>State Action Plan on Climate Change 2025</b> &mdash; highest allocation to <b>agriculture and water resources</b>.</li>
+      <li><b>Green Credit Programme</b> &mdash; rewards voluntary tree planting/ecosystem restoration; <b>MISHTI</b> &mdash; mangroves; <b>Mission Mangrove Mitra</b> &mdash; mangroves + MGNREGS.</li>
+      <li><b>Eco-Tourism Policy 2025</b> &mdash; balance conservation with livelihoods.</li>
+      <li><b>Great Indian Bustard</b> reintroduced in <b>Desert National Park</b> (2025); <b>Corbett</b> crossed 150 tigers.</li>
+      <li><b>Odisha</b> first State to notify all wetlands (mid-2025); <b>Sarsai Nawar</b> (UP) &mdash; largest Sarus Crane population.</li>
+      <li><b>Aravalli Green Wall</b> (2023); <b>International Big Cat Alliance</b> &mdash; India lead, <b>7</b> big-cat species.</li>
+      <li><b>PRITHvi Vigyan Mission</b> &mdash; ocean, weather and geoscience observations; tsunami/cyclone early warning.</li>
+      <li><b>NFCS 2024</b> &mdash; sector-specific climate information services.</li>
+      <li><b>Green Hydrogen</b> &mdash; 5 MMT by 2030; first hub in <b>Andhra Pradesh</b>; first Li-ion plant in <b>Tirupati</b> (2022).</li>
+      <li><b>Bharatpol</b> portal &mdash; launched by <b>Amit Shah</b>; <b>e-Civil List 2025</b> &mdash; Jitendra Singh.</li>
+      <li><b>TIES</b> &mdash; export infrastructure; <b>NSWS</b> &mdash; single-window clearances; <b>India Industrial Land Bank</b> &mdash; GIS-based, not Ministry of Mines.</li>
+      <li><b>Katihar&ndash;Parbotipur&ndash;Bornagar</b> &mdash; 765 kV India&ndash;Bangladesh transmission link.</li>
+      <li><b>All-Abilities Park</b> &mdash; Visakhapatnam; <b>Suraksha Shakti</b> &mdash; electrical safety mascot (2025).</li>
+      <li><b>Ek Ped Maa Ke Naam 2.0</b> &mdash; promoted by Dharmendra Pradhan on World Environment Day 2025; <b>Musi</b> added to NRCP 2024.</li>
+    </ul>
+  </section>
+
+
+  </section>
+
+  <footer><span>SSC CGL 2025 &middot; GK PYQ Capsule</span><span>Source: 1,125 GA questions, 45 shifts &middot; curated high-yield capsule</span></footer>
+</div>
+</body>
+</html>
