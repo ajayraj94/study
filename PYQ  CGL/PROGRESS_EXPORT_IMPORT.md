@@ -31,6 +31,5 @@ days without a page reload.
 ## Notes
 
 - A full export contains all 4,500 question records, so importing it on a
-  device with existing progress effectively overwrites each record's fields.
-- The exported file is the only permanent save. Keep it somewhere safe until
-  the next export.
+  device with existing progress effectively overwrites each record's fields.- The exported file is the only permanent save. Keep it somewhere safe until the
+  next export.

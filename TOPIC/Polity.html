@@ -1,0 +1,2302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="tool">
+  <meta name="design-style" content="briefing">
+  <title>Indian Polity Syllabus Tracker — 19 Chapters (Parmar GK Book)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+
+      /* Page and surfaces: warm stone-white paper (Briefing) */
+      --background: #faf9f5;
+      --surface-container-low: #ffffff;
+      --surface-container: #f1efe8;
+      --surface-container-high: #e6e2d6;
+
+      /* Ink */
+      --on-surface: #17181a;
+      --on-surface-variant: #56585c;
+
+      /* Rules */
+      --outline: #17181a;
+      --outline-variant: #dedad0;
+      --border-subtle: #c8c4b8;
+
+      /* Accents */
+      --primary: #17181a;
+      --on-primary: #faf9f5;
+      --primary-container: #f2b705;
+      --on-primary-container: #17181a;
+      --secondary: #1f4e5f;
+      --secondary-tint: #eaf1f4;
+      --secondary-border: #b8cfd8;
+      --tertiary: #785008;
+      --error: #b42318;
+      --on-error: #ffffff;
+      --error-bg: #fdeceb;
+      --error-border: #f5b8b3;
+
+      /* Data series */
+      --data-1: #1f4e5f;
+      --data-2: #d99000;
+      --data-3: #2b6e52;
+      --data-4: #b84a39;
+      --data-context: #c4bfb2;
+
+      /* Semantic tokens */
+      --positive: #2b6e52;
+      --positive-bg: #e7f2ec;
+      --positive-border: #b3d5c3;
+      --warning: #785008;
+      --warning-bg: #fbf1d6;
+      --warning-border: #e6cb85;
+      --progress-track: #e6e2d6;
+      --focus: #1f4e5f;
+
+      /* Fonts */
+      --font-headline: 'Source Serif 4', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-label: 'Geist Mono', monospace;
+
+      /* Type scale (Focused Tool) */
+      --display-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+      --headline-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+      --subhead-size: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+      --body-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+      --label-size: 0.75rem;
+
+      /* Shape */
+      --rounded: 0.25rem;
+      --rounded-lg: 0.375rem;
+      --rounded-full: 0.25rem;
+
+      /* Style effects */
+      --section-rule: 1.5px solid var(--outline);
+      --card-border: 1px solid var(--outline-variant);
+      --badge-radius: 2px;
+      --heading-tracking: -0.02em;
+      --label-tracking: 0.08em;
+
+      /* Spacing scale (4pt base) */
+      --space-2xs: 0.125rem;
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+      --dur-long: 420ms;
+    }
+
+    /* Base reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    header { position: static !important; }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .app-container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: var(--space-lg);
+      display: grid;
+      gap: var(--space-lg);
+    }
+    .app-container * { min-width: 0; }
+
+    /* Masthead & Dossier Bar */
+    .masthead {
+      display: grid;
+      gap: var(--space-sm);
+    }
+
+    .dossier-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      border-bottom: var(--section-rule);
+      padding-bottom: var(--space-sm);
+    }
+
+    .dossier-left {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .dossier-pill {
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.6875rem;
+      letter-spacing: var(--label-tracking);
+      text-transform: uppercase;
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--badge-radius);
+      white-space: nowrap;
+    }
+
+    .dossier-meta {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: var(--space-md);
+      padding-top: var(--space-xs);
+    }
+
+    .title-block h1 {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: var(--display-size);
+      letter-spacing: var(--heading-tracking);
+      line-height: 1.08;
+      margin: 0;
+      color: var(--on-surface);
+    }
+
+    .standfirst {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: var(--subhead-size);
+      color: var(--secondary);
+      margin: var(--space-xs) 0 0;
+      max-width: 68ch;
+      line-height: 1.4;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
+      min-height: 44px;
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded);
+      font-weight: 600;
+      font-size: 0.875rem;
+      cursor: pointer;
+      border: 1px solid var(--border-subtle);
+      background-color: var(--surface-container-low);
+      color: var(--on-surface);
+      transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+    }
+    .btn:hover:not(:disabled) {
+      background-color: var(--surface-container);
+      border-color: var(--outline);
+    }
+    .btn:active:not(:disabled) {
+      background-color: var(--surface-container-high);
+    }
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+    }
+    .btn-primary:hover:not(:disabled) {
+      background-color: var(--secondary);
+      border-color: var(--secondary);
+    }
+
+    .btn-warning-armed {
+      background-color: var(--error-bg);
+      color: var(--error);
+      border-color: var(--error-border);
+    }
+    .btn-warning-armed:hover:not(:disabled) {
+      background-color: var(--error-bg);
+      border-color: var(--error);
+    }
+
+    .btn-sm {
+      min-height: 36px;
+      padding: var(--space-xs) var(--space-sm);
+      font-size: 0.8125rem;
+    }
+
+    /* Inline status feedback banner */
+    .inline-notice {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      color: var(--secondary);
+      min-height: 1.2em;
+    }
+
+    /* Summary KPI Strip */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) minmax(0, 1.25fr);
+      gap: var(--space-md);
+    }
+
+    .figure-card {
+      background-color: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+    }
+
+    .card-kicker {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      letter-spacing: var(--label-tracking);
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+      margin-bottom: var(--space-sm);
+    }
+
+    .hero-stat-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .hero-percent {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: clamp(2.125rem, 1.8rem + 1.2vw, 2.75rem);
+      line-height: 1;
+      font-variant-numeric: tabular-nums lining-nums;
+      color: var(--on-surface);
+    }
+
+    .hero-fraction {
+      font-family: var(--font-label);
+      font-size: 0.8125rem;
+      color: var(--secondary);
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Progress bars */
+    .progress-track {
+      width: 100%;
+      height: 10px;
+      background-color: var(--progress-track);
+      border-radius: var(--rounded);
+      overflow: hidden;
+      margin-top: var(--space-sm);
+    }
+    .progress-track.thin {
+      height: 6px;
+      margin-top: var(--space-xs);
+    }
+    .progress-fill {
+      height: 100%;
+      background-color: var(--secondary);
+      border-radius: var(--rounded);
+      transition: width var(--dur-long) var(--ease-out);
+    }
+    .progress-fill.complete {
+      background-color: var(--positive);
+    }
+
+    /* 19-chapter segmented bar */
+    .segment-strip {
+      display: grid;
+      grid-template-columns: repeat(19, minmax(0, 1fr));
+      gap: 3px;
+      margin-top: var(--space-md);
+    }
+
+    .segment-cell {
+      height: 16px;
+      border-radius: 2px;
+      border: 1px solid var(--outline-variant);
+      background-color: var(--surface-container);
+      cursor: pointer;
+      padding: 0;
+      position: relative;
+      transition: transform var(--dur-micro) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+    }
+    .segment-cell.done {
+      background-color: var(--positive);
+      border-color: var(--positive);
+    }
+    .segment-cell.active {
+      outline: 2px solid var(--primary);
+      outline-offset: 1px;
+    }
+    .segment-cell:hover {
+      transform: translateY(-1px);
+    }
+
+    .segment-legend {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: var(--space-xs);
+      font-family: var(--font-label);
+      font-size: 0.6875rem;
+      color: var(--on-surface-variant);
+    }
+
+    /* Unit summary rows */
+    .unit-mini-list {
+      display: grid;
+      gap: var(--space-sm);
+    }
+    .unit-mini-row {
+      display: grid;
+      gap: 3px;
+      cursor: pointer;
+      padding: var(--space-xs);
+      margin: calc(-1 * var(--space-xs));
+      border-radius: var(--rounded);
+      transition: background-color var(--dur-micro) var(--ease-out);
+    }
+    .unit-mini-row:hover {
+      background-color: var(--surface-container);
+    }
+    .unit-mini-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: 0.8125rem;
+    }
+    .unit-mini-name {
+      font-weight: 600;
+      color: var(--on-surface);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .unit-mini-count {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    /* Main two-column shell: Side panel + Workspace */
+    .tracker-shell {
+      display: grid;
+      grid-template-columns: minmax(320px, 380px) minmax(0, 1fr);
+      gap: var(--space-lg);
+      align-items: start;
+    }
+
+    /* Side Panel */
+    .side-panel {
+      background-color: var(--surface-container);
+      border-top: var(--section-rule);
+      border-right: var(--card-border);
+      border-bottom: var(--card-border);
+      border-left: var(--card-border);
+      border-radius: 0 0 var(--rounded-lg) var(--rounded-lg);
+      padding: var(--space-md);
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .side-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      border-bottom: 1px solid var(--outline-variant);
+      padding-bottom: var(--space-sm);
+    }
+
+    .side-panel-title {
+      display: grid;
+      gap: 2px;
+    }
+
+    .side-panel-title h2 {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: var(--headline-size);
+      margin: 0;
+      letter-spacing: var(--heading-tracking);
+    }
+
+    .side-panel-sub {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      text-transform: uppercase;
+    }
+
+    .mobile-panel-toggle {
+      display: none;
+    }
+
+    /* Filter & Search Controls */
+    .filter-controls {
+      display: grid;
+      gap: var(--space-sm);
+    }
+
+    .field-group {
+      display: grid;
+      gap: var(--space-xs);
+    }
+
+    .field-label {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--on-surface-variant);
+    }
+
+    .text-input, .text-area {
+      width: 100%;
+      background-color: var(--surface-container-low);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--rounded);
+      padding: var(--space-sm) var(--space-md);
+      color: var(--on-surface);
+      font-size: 0.875rem;
+      transition: border-color var(--dur-micro) var(--ease-out);
+    }
+    .text-input:focus, .text-area:focus {
+      border-color: var(--secondary);
+    }
+    .text-area {
+      min-height: 92px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+    }
+
+    .filter-tab {
+      flex: 1 1 auto;
+      min-height: 38px;
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--rounded);
+      border: 1px solid var(--border-subtle);
+      background-color: var(--surface-container-low);
+      color: var(--on-surface-variant);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+    }
+    .filter-tab:hover {
+      background-color: var(--surface-container-high);
+      color: var(--on-surface);
+    }
+    .filter-tab.active {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+    }
+
+    /* Unit Accordion Groups in Side Panel */
+    .units-stack {
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .unit-group {
+      background-color: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      overflow: hidden;
+    }
+
+    .unit-header-btn {
+      width: 100%;
+      background-color: var(--surface-container-low);
+      border: none;
+      border-bottom: 1px solid var(--outline-variant);
+      padding: var(--space-sm) var(--space-md);
+      display: grid;
+      gap: var(--space-xs);
+      text-align: left;
+      cursor: pointer;
+      transition: background-color var(--dur-micro) var(--ease-out);
+    }
+    .unit-header-btn:hover {
+      background-color: var(--surface-container);
+    }
+    .unit-header-btn[aria-expanded="false"] {
+      border-bottom-color: transparent;
+    }
+
+    .unit-header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    .unit-code {
+      font-family: var(--font-label);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: var(--label-tracking);
+      text-transform: uppercase;
+      color: var(--secondary);
+    }
+
+    .unit-badge {
+      font-family: var(--font-label);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: var(--badge-radius);
+      font-variant-numeric: tabular-nums;
+    }
+    .unit-badge.done {
+      background-color: var(--positive-bg);
+      color: var(--positive);
+      border: 1px solid var(--positive-border);
+    }
+    .unit-badge.partial {
+      background-color: var(--secondary-tint);
+      color: var(--secondary);
+      border: 1px solid var(--secondary-border);
+    }
+    .unit-badge.pending {
+      background-color: var(--warning-bg);
+      color: var(--warning);
+      border: 1px solid var(--warning-border);
+    }
+
+    .unit-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    .unit-title {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--on-surface);
+      line-height: 1.25;
+    }
+
+    .chevron-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      color: var(--on-surface-variant);
+      transition: transform var(--dur-short) var(--ease-in-out);
+    }
+    .unit-header-btn[aria-expanded="false"] .chevron-icon {
+      transform: rotate(-90deg);
+    }
+
+    /* Chapter rows inside side panel */
+    .chapter-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+    }
+    .chapter-list.collapsed {
+      display: none;
+    }
+
+    .chapter-item {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: var(--space-xs) var(--space-sm);
+      border-bottom: 1px solid var(--outline-variant);
+      transition: background-color var(--dur-micro) var(--ease-out);
+    }
+    .chapter-item:last-child {
+      border-bottom: none;
+    }
+    .chapter-item:hover {
+      background-color: var(--background);
+    }
+    .chapter-item.selected {
+      background-color: var(--secondary-tint);
+      box-shadow: inset 3px 0 0 var(--secondary);
+    }
+
+    /* Accessible 44px Checkbox Wrapper */
+    .check-hit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      cursor: pointer;
+      border-radius: var(--rounded);
+    }
+    .check-hit input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+      pointer-events: none;
+    }
+    .check-box-visual {
+      width: 20px;
+      height: 20px;
+      border-radius: 3px;
+      border: 1.5px solid var(--border-subtle);
+      background-color: var(--surface-container-low);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--on-primary);
+      transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+    }
+    .check-hit input[type="checkbox"]:checked + .check-box-visual {
+      background-color: var(--positive);
+      border-color: var(--positive);
+    }
+    .check-hit input[type="checkbox"]:focus-visible + .check-box-visual {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
+    .check-hit:hover .check-box-visual {
+      border-color: var(--outline);
+    }
+
+    .chapter-select-btn {
+      background: none;
+      border: none;
+      padding: var(--space-xs) var(--space-xs);
+      min-height: 44px;
+      text-align: left;
+      cursor: pointer;
+      display: grid;
+      gap: 2px;
+      align-content: center;
+    }
+    .chapter-select-top {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-xs);
+    }
+    .index-num {
+      font-family: var(--font-label);
+      font-weight: 600;
+      font-size: var(--label-size);
+      color: var(--secondary);
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+    }
+    .chapter-name {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--on-surface);
+      line-height: 1.3;
+    }
+    .chapter-item.completed .chapter-name {
+      color: var(--on-surface-variant);
+    }
+    .chapter-submeta {
+      font-family: var(--font-label);
+      font-size: 0.6875rem;
+      color: var(--on-surface-variant);
+    }
+
+    /* Interactive Status Badge */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      min-height: 30px;
+      padding: 3px 8px;
+      border-radius: var(--badge-radius);
+      font-family: var(--font-label);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      white-space: nowrap;
+      border: 1px solid transparent;
+      transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+    }
+    .status-badge.completed {
+      background-color: var(--positive-bg);
+      color: var(--positive);
+      border-color: var(--positive-border);
+    }
+    .status-badge.completed:hover {
+      border-color: var(--positive);
+    }
+    .status-badge.pending {
+      background-color: var(--warning-bg);
+      color: var(--warning);
+      border-color: var(--warning-border);
+    }
+    .status-badge.pending:hover {
+      border-color: var(--warning);
+    }
+
+    /* Main Workspace */
+    .main-workspace {
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    .detail-card {
+      background-color: var(--surface-container-low);
+      border: var(--card-border);
+      border-top: 2px solid var(--outline);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    .detail-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--space-md);
+      border-bottom: 1px solid var(--outline-variant);
+      padding-bottom: var(--space-md);
+    }
+
+    .detail-heading {
+      display: grid;
+      gap: var(--space-xs);
+    }
+
+    .detail-kicker {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      color: var(--secondary);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+
+    .detail-heading h2 {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: clamp(1.375rem, 1.15rem + 0.7vw, 1.75rem);
+      line-height: 1.15;
+      letter-spacing: var(--heading-tracking);
+      margin: 0;
+    }
+
+    .detail-scope {
+      font-size: 0.9375rem;
+      color: var(--on-surface-variant);
+      margin: 0;
+    }
+
+    .detail-status-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .detail-progress-band {
+      background-color: var(--background);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      display: grid;
+      gap: var(--space-xs);
+    }
+
+    .detail-progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      text-transform: uppercase;
+    }
+
+    /* Subtopic Checklist */
+    .topics-section {
+      display: grid;
+      gap: var(--space-sm);
+    }
+
+    .section-subhead {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: var(--label-tracking);
+      color: var(--on-surface-variant);
+      margin: 0;
+    }
+
+    .topic-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: var(--space-xs);
+    }
+
+    .topic-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded);
+      padding: var(--space-xs) var(--space-sm);
+      background-color: var(--surface-container-low);
+      transition: background-color var(--dur-micro) var(--ease-out);
+    }
+    .topic-row:hover {
+      background-color: var(--background);
+    }
+    .topic-row.checked {
+      background-color: var(--positive-bg);
+      border-color: var(--positive-border);
+    }
+    .topic-label {
+      flex: 1;
+      font-size: 0.9375rem;
+      color: var(--on-surface);
+      cursor: pointer;
+      padding: var(--space-xs) 0;
+    }
+    .topic-row.checked .topic-label {
+      color: var(--positive);
+      font-weight: 500;
+    }
+
+    /* Notes & Revision Grid */
+    .notes-revision-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--space-md);
+      align-items: end;
+    }
+
+    .revision-box {
+      background-color: var(--surface-container);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      display: grid;
+      gap: var(--space-sm);
+      min-width: 190px;
+    }
+
+    .revision-value {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: 1.5rem;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .revision-actions {
+      display: flex;
+      gap: var(--space-xs);
+    }
+
+    .detail-footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      border-top: 1px solid var(--outline-variant);
+      padding-top: var(--space-md);
+    }
+
+    /* Full 19-Chapter Syllabus Matrix Table */
+    .matrix-card {
+      background-color: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .matrix-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      border-bottom: var(--section-rule);
+      padding-bottom: var(--space-sm);
+    }
+
+    .matrix-header h2 {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: var(--headline-size);
+      letter-spacing: var(--heading-tracking);
+      margin: 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    .syllabus-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    .syllabus-table th {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--on-surface-variant);
+      text-align: left;
+      padding: var(--space-sm) var(--space-sm);
+      border-bottom: var(--section-rule);
+      white-space: nowrap;
+    }
+
+    .syllabus-table td {
+      padding: var(--space-xs) var(--space-sm);
+      border-bottom: 1px solid var(--outline-variant);
+      vertical-align: middle;
+    }
+
+    .syllabus-table tr.matrix-row {
+      cursor: pointer;
+      transition: background-color var(--dur-micro) var(--ease-out);
+    }
+    .syllabus-table tr.matrix-row:hover {
+      background-color: var(--background);
+    }
+    .syllabus-table tr.matrix-row.selected {
+      background-color: var(--secondary-tint);
+    }
+
+    .table-unit-pill {
+      font-family: var(--font-label);
+      font-size: 0.6875rem;
+      color: var(--on-surface-variant);
+      background-color: var(--surface-container);
+      padding: 2px 6px;
+      border-radius: var(--badge-radius);
+      white-space: nowrap;
+    }
+
+    .table-progress-cell {
+      min-width: 110px;
+    }
+    .table-progress-text {
+      font-family: var(--font-label);
+      font-size: 0.6875rem;
+      color: var(--on-surface-variant);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .empty-state {
+      padding: var(--space-xl) var(--space-md);
+      text-align: center;
+      color: var(--on-surface-variant);
+      display: grid;
+      gap: var(--space-sm);
+      justify-items: center;
+    }
+
+    .source-footer {
+      border-top: 1px solid var(--outline-variant);
+      padding-top: var(--space-md);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    /* Utility spacing helpers */
+    .next-pending-copy {
+      margin: var(--space-md) 0 0;
+    }
+    .units-stack-spaced {
+      margin-top: var(--space-md);
+    }
+    .matrix-title-strong {
+      font-weight: 600;
+    }
+    .rev-count-muted {
+      color: var(--on-surface-variant);
+    }
+    .empty-copy {
+      margin: 0;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1080px) {
+      .summary-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+      .summary-grid .figure-card:first-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .tracker-shell {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .mobile-panel-toggle {
+        display: inline-flex;
+      }
+      .side-panel-body.mobile-collapsed {
+        display: none;
+      }
+      .notes-revision-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .app-container {
+        padding: var(--space-md) var(--space-sm);
+      }
+      .summary-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .figure-card, .detail-card, .matrix-card {
+        padding: var(--space-md);
+      }
+      .segment-strip {
+        gap: 2px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Masthead -->
+    <header class="masthead">
+      <div class="dossier-bar">
+        <div class="dossier-left">
+          <span class="dossier-pill">Syllabus Tracker</span>
+          <span class="dossier-meta">Indian Polity · 4 Units · 19 Chapters · English Edition</span>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="btn btn-sm" onclick="exportProgressCsv()">Export CSV</button>
+          <button type="button" class="btn btn-sm" id="reset-default-btn" onclick="handleResetDefault(this)">Reset to Default (47%)</button>
+        </div>
+      </div>
+
+      <div class="title-row">
+        <div class="title-block">
+          <h1>Indian Polity Syllabus Tracker</h1>
+          <p class="standfirst">Structured chapter-by-chapter preparation tracker covering Constitutional Framework, Union Executive &amp; Legislature, State &amp; Judiciary, and Federal &amp; Constitutional Bodies.</p>
+        </div>
+        <div class="inline-notice" id="status-notice" aria-live="polite"></div>
+      </div>
+    </header>
+
+    <!-- Summary Progress Strip -->
+    <section class="summary-grid" aria-label="Overall Progress Overview">
+      <div class="figure-card">
+        <div class="card-kicker">
+          <span>Overall Syllabus Completion</span>
+          <span id="overall-badge" class="status-badge pending">In Progress</span>
+        </div>
+        <div class="hero-stat-row">
+          <span class="hero-percent" id="overall-percent">47%</span>
+          <span class="hero-fraction" id="overall-fraction">9 of 19 chapters completed · 10 pending</span>
+        </div>
+        <div class="progress-track" role="progressbar" id="overall-progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="47" aria-label="Overall syllabus completion percentage">
+          <div class="progress-fill" id="overall-progress-fill" style="width: 47%;"></div>
+        </div>
+        <div class="segment-strip" id="segment-strip" aria-label="19-chapter progress map"></div>
+        <div class="segment-legend">
+          <span>Ch. 01</span>
+          <span>Click any segment to inspect chapter</span>
+          <span>Ch. 19</span>
+        </div>
+      </div>
+
+      <div class="figure-card">
+        <div class="card-kicker">
+          <span>Sub-Topic Mastery &amp; Revisions</span>
+          <span id="revision-total-badge" class="unit-badge partial">0 Revisions</span>
+        </div>
+        <div class="hero-stat-row">
+          <span class="hero-percent" id="topics-percent">47%</span>
+          <span class="hero-fraction" id="topics-fraction">36 of 76 key topics checked</span>
+        </div>
+        <div class="progress-track" role="progressbar" id="topics-progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="47" aria-label="Key topics completion percentage">
+          <div class="progress-fill" id="topics-progress-fill" style="width: 47%;"></div>
+        </div>
+        <p class="chapter-submeta next-pending-copy" id="next-pending-hint">Next pending chapter: Ch. 10 — State Executive (Governor &amp; CM)</p>
+      </div>
+
+      <div class="figure-card">
+        <div class="card-kicker">
+          <span>Progress Across 4 Units</span>
+          <span>Ch. 01–19</span>
+        </div>
+        <div class="unit-mini-list" id="unit-mini-list"></div>
+      </div>
+    </section>
+
+    <!-- Main Split Shell: Side Panel + Main Workspace -->
+    <div class="tracker-shell">
+      <!-- Side Panel: All 19 Chapters Across 4 Units -->
+      <aside class="side-panel" aria-label="Syllabus Chapters Side Panel">
+        <div class="side-panel-header">
+          <div class="side-panel-title">
+            <h2>Chapters Index</h2>
+            <span class="side-panel-sub" id="side-panel-summary">4 Units · 9 Completed · 10 Pending</span>
+          </div>
+          <button type="button" class="btn btn-sm mobile-panel-toggle" id="mobile-panel-toggle" onclick="toggleMobileSidePanel()" aria-expanded="true">
+            Hide List
+          </button>
+        </div>
+
+        <div class="side-panel-body" id="side-panel-body">
+          <div class="filter-controls">
+            <div class="field-group">
+              <label class="field-label" for="chapter-search">Search chapters or articles</label>
+              <input type="search" id="chapter-search" class="text-input" oninput="handleSearchInput(this.value)" autocomplete="off">
+            </div>
+
+            <div class="field-group">
+              <span class="field-label">Filter by status</span>
+              <div class="filter-tabs" role="group" aria-label="Filter chapters by status">
+                <button type="button" class="filter-tab active" data-filter="all" onclick="setStatusFilter('all')">All (19)</button>
+                <button type="button" class="filter-tab" data-filter="completed" onclick="setStatusFilter('completed')">Completed (9)</button>
+                <button type="button" class="filter-tab" data-filter="pending" onclick="setStatusFilter('pending')">Pending (10)</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="units-stack units-stack-spaced" id="side-units-container"></div>
+        </div>
+      </aside>
+
+      <!-- Main Workspace -->
+      <main class="main-workspace">
+        <!-- Active Chapter Detail Card -->
+        <section class="detail-card" aria-label="Selected Chapter Workspace" id="chapter-detail-card">
+          <div class="detail-top">
+            <div class="detail-heading">
+              <div class="detail-kicker" id="detail-kicker">UNIT III · CHAPTER 10 OF 19 · PART VI (ARTICLES 153–167)</div>
+              <h2 id="detail-title">State Executive (Governor &amp; CM)</h2>
+              <p class="detail-scope" id="detail-scope">Appointment, powers, and constitutional discretion of the Governor, Chief Minister, State Council of Ministers, and Advocate General.</p>
+            </div>
+            <div class="detail-status-actions">
+              <button type="button" class="status-badge pending" id="detail-status-badge" onclick="toggleSelectedChapterStatus()">Pending</button>
+              <button type="button" class="btn btn-primary" id="detail-toggle-btn" onclick="toggleSelectedChapterStatus()">Mark as Completed</button>
+            </div>
+          </div>
+
+          <div class="detail-progress-band">
+            <div class="detail-progress-meta">
+              <span>Chapter Sub-Topic Progress</span>
+              <span id="detail-topic-count">0 of 4 topics checked (0%)</span>
+            </div>
+            <div class="progress-track thin">
+              <div class="progress-fill" id="detail-topic-bar" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="topics-section">
+            <h3 class="section-subhead">High-Yield Syllabus Sub-Topics</h3>
+            <ul class="topic-list" id="detail-topics-list"></ul>
+          </div>
+
+          <div class="notes-revision-grid">
+            <div class="field-group">
+              <label class="field-label" for="chapter-notes">Personal study notes &amp; key articles</label>
+              <textarea id="chapter-notes" class="text-area" oninput="handleNotesInput(this.value)"></textarea>
+            </div>
+
+            <div class="revision-box">
+              <span class="field-label">Revision Passes</span>
+              <span class="revision-value" id="detail-revision-count">0</span>
+              <div class="revision-actions">
+                <button type="button" class="btn btn-sm" onclick="adjustRevisions(-1)" aria-label="Decrease revision count">-1</button>
+                <button type="button" class="btn btn-sm btn-primary" onclick="adjustRevisions(1)">+1 Revision</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-footer-nav">
+            <button type="button" class="btn btn-sm" id="prev-chapter-btn" onclick="stepChapter(-1)">Previous Chapter</button>
+            <button type="button" class="btn btn-sm" id="jump-next-pending-btn" onclick="jumpToNextPending()">Jump to Next Pending</button>
+            <button type="button" class="btn btn-sm" id="next-chapter-btn" onclick="stepChapter(1)">Next Chapter</button>
+          </div>
+        </section>
+
+        <!-- Full 19-Chapter Matrix Table -->
+        <section class="matrix-card" aria-label="All 19 Chapters Overview Table">
+          <div class="matrix-header">
+            <h2>Complete 19-Chapter Syllabus Matrix</h2>
+            <span class="dossier-meta" id="matrix-filter-label">Showing all 19 chapters</span>
+          </div>
+          <div class="table-wrap">
+            <table class="syllabus-table">
+              <thead>
+                <tr>
+                  <th scope="col">Done</th>
+                  <th scope="col">No.</th>
+                  <th scope="col">Chapter &amp; Constitutional Scope</th>
+                  <th scope="col">Unit</th>
+                  <th scope="col">Topics</th>
+                  <th scope="col">Rev.</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="matrix-tbody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="source-footer">
+      <span>Reference Syllabus: Indian Polity (19-Chapter Structured Sequence based on Parmar GK Book)</span>
+      <span>Progress automatically saved in workspace state</span>
+    </footer>
+  </div>
+
+  <api-shim></api-shim>
+  <script>
+    const SYLLABUS_UNITS = [
+      { id: `unit-1`, code: `Unit I`, title: `Constitutional Framework` },
+      { id: `unit-2`, code: `Unit II`, title: `Union Executive & Legislature` },
+      { id: `unit-3`, code: `Unit III`, title: `State, Judiciary & Local Governance` },
+      { id: `unit-4`, code: `Unit IV`, title: `Federal Relations & Constitutional Bodies` }
+    ];
+
+    const SYLLABUS_CHAPTERS = [
+      {
+        id: 1,
+        unitId: `unit-1`,
+        title: `Making of the Constitution`,
+        scope: `Historical Background & Constituent Assembly (1773–1950)`,
+        summary: `Evolution from Company and Crown Acts to the Cabinet Mission Plan, Constituent Assembly committees, and adoption on 26 November 1949.`,
+        defaultCompleted: true,
+        topics: [
+          `Regulating Act 1773 to Government of India Act 1935`,
+          `Cabinet Mission Plan (1946) & Constituent Assembly Composition`,
+          `Objectives Resolution & Drafting Committee (Dr. B.R. Ambedkar)`,
+          `Enactment, Enforcement (26 Jan 1950) & Borrowed Constitutional Sources`
+        ]
+      },
+      {
+        id: 2,
+        unitId: `unit-1`,
+        title: `Salient Features & Schedules`,
+        scope: `Parts I–XXII & Schedules 1 to 12`,
+        summary: `Core structural features of the Indian Constitution alongside all 12 Schedules covering states, oaths, lists, languages, and local governance.`,
+        defaultCompleted: true,
+        topics: [
+          `Lengthiest Written Constitution, Blend of Rigidity & Flexibility`,
+          `Schedules 1–6: States/UTs, Emoluments, Oaths, Rajya Sabha & Tribal Areas`,
+          `Schedules 7–12: Three Lists, 22 Languages, Anti-Defection & Local Bodies`,
+          `Parliamentary Sovereignty vs Judicial Supremacy Balance`
+        ]
+      },
+      {
+        id: 3,
+        unitId: `unit-1`,
+        title: `Preamble`,
+        scope: `Philosophy, Core Objectives & 42nd Amendment`,
+        summary: `Identity card of the Constitution defining sovereign, socialist, secular, democratic, republic ideals and its amendability as part of Basic Structure.`,
+        defaultCompleted: true,
+        topics: [
+          `Source of Authority & Nature of the State (5 Key Terms)`,
+          `Objectives: Justice, Liberty, Equality & Fraternity`,
+          `42nd Amendment Act (1976): Addition of Socialist, Secular & Integrity`,
+          `Berubari Union (1960), Kesavananda Bharati (1973) & LIC Case (1995)`
+        ]
+      },
+      {
+        id: 4,
+        unitId: `unit-1`,
+        title: `Part 1 & 2`,
+        scope: `Part I (Arts. 1–4) & Part II (Arts. 5–11)`,
+        summary: `The Union and its Territory, parliamentary power to reorganize states, and constitutional plus statutory provisions governing Indian citizenship.`,
+        defaultCompleted: true,
+        topics: [
+          `Articles 1–4: India as Union of States & Reorganization Authority`,
+          `States Reorganization: Dhar, JVP & Fazl Ali Commissions (1956 Act)`,
+          `Articles 5–11: Citizenship Rights at Commencement of Constitution`,
+          `Citizenship Act 1955: Five Modes of Acquisition & Three Modes of Loss`
+        ]
+      },
+      {
+        id: 5,
+        unitId: `unit-1`,
+        title: `Fundamental Rights`,
+        scope: `Part III · Articles 12–35`,
+        summary: `Six enforceable Fundamental Rights protecting equality, freedom, exploitation safeguards, religious freedom, minority culture, and writ remedies.`,
+        defaultCompleted: true,
+        topics: [
+          `Articles 12–13: Definition of State & Doctrine of Judicial Review`,
+          `Right to Equality (Arts. 14–18) & Right to Freedom (Arts. 19–22)`,
+          `Against Exploitation (Arts. 23–24) & Freedom of Religion (Arts. 25–28)`,
+          `Cultural Rights (Arts. 29–30) & Constitutional Remedies (Art. 32 Writs)`
+        ]
+      },
+      {
+        id: 6,
+        unitId: `unit-1`,
+        title: `DPSP & Fundamental Duties`,
+        scope: `Part IV (Arts. 36–51) & Part IV-A (Art. 51A)`,
+        summary: `Directive Principles guiding socio-economic governance alongside the 11 Fundamental Duties added via the 42nd and 86th Amendments.`,
+        defaultCompleted: true,
+        topics: [
+          `Classification of DPSPs: Socialistic, Gandhian & Liberal-Intellectual`,
+          `Key Amendments to DPSPs: 42nd, 44th, 86th & 97th Acts`,
+          `Harmony Between Fundamental Rights & DPSPs (Minerva Mills Case)`,
+          `Fundamental Duties (Art. 51A): Swaran Singh Committee & 11 Duties`
+        ]
+      },
+      {
+        id: 7,
+        unitId: `unit-2`,
+        title: `President & Vice President`,
+        scope: `Part V · Articles 52–73`,
+        summary: `Electoral college, impeachment procedure, ordinance and pardoning powers of the President, and role of the Vice President.`,
+        defaultCompleted: true,
+        topics: [
+          `Election of President: Electoral College & Proportional Representation`,
+          `Term, Impeachment (Art. 61) & Ordinance-Making Power (Art. 123)`,
+          `Executive, Legislative, Veto, Financial & Pardoning Powers (Art. 72)`,
+          `Vice President (Arts. 63–71): Election, Removal & Rajya Sabha Chairmanship`
+        ]
+      },
+      {
+        id: 8,
+        unitId: `unit-2`,
+        title: `PM & Council of Ministers`,
+        scope: `Part V · Articles 74–78 & 88`,
+        summary: `Real executive authority of the Prime Minister, collective and individual ministerial responsibility, Cabinet committees, and Attorney General.`,
+        defaultCompleted: true,
+        topics: [
+          `Appointment of Prime Minister & Role as Head of Government`,
+          `Articles 74–75: Aid & Advice, Collective & Individual Responsibility`,
+          `Categories of Ministers: Cabinet, Ministers of State & Deputy Ministers`,
+          `Duties of Prime Minister (Art. 78) & Attorney General of India (Art. 76)`
+        ]
+      },
+      {
+        id: 9,
+        unitId: `unit-2`,
+        title: `Parliament`,
+        scope: `Part V · Articles 79–122`,
+        summary: `Bicameral structure of Rajya Sabha and Lok Sabha, presiding officers, legislative and budgetary processes, and parliamentary committees.`,
+        defaultCompleted: true,
+        topics: [
+          `Rajya Sabha & Lok Sabha Composition, Tenure & Anti-Defection (10th Sch.)`,
+          `Presiding Officers: Speaker, Deputy Speaker, Chairman & Panel`,
+          `Parliamentary Devices: Question Hour, Zero Hour, Motions & Bills`,
+          `Annual Financial Statement (Art. 112), Funds & Parliamentary Committees`
+        ]
+      },
+      {
+        id: 10,
+        unitId: `unit-3`,
+        title: `State Executive (Governor & CM)`,
+        scope: `Part VI · Articles 153–167`,
+        summary: `Appointment, powers, and constitutional discretion of the Governor, Chief Minister, State Council of Ministers, and Advocate General.`,
+        defaultCompleted: false,
+        topics: [
+          `Governor: Appointment, Qualifications, Tenure & Discretionary Powers`,
+          `Reservation of Bills (Arts. 200–201) & Pardoning Power (Art. 161)`,
+          `Chief Minister & State Council of Ministers: Duties (Art. 167)`,
+          `Advocate General of the State (Art. 165)`
+        ]
+      },
+      {
+        id: 11,
+        unitId: `unit-3`,
+        title: `State Legislature`,
+        scope: `Part VI · Articles 168–212`,
+        summary: `Unicameral and bicameral state legislatures, creation and abolition of Legislative Councils, legislative procedure, and privileges.`,
+        defaultCompleted: false,
+        topics: [
+          `Legislative Assembly & Legislative Council (Creation/Abolition: Art. 169)`,
+          `Composition, Election, Qualifications & Presiding Officers`,
+          `Legislative Procedure: Comparison Between Assembly & Council`,
+          `Privileges of State Legislature & Governor Ordinance Power (Art. 213)`
+        ]
+      },
+      {
+        id: 12,
+        unitId: `unit-3`,
+        title: `Judiciary (SC, HC & Subordinate Courts)`,
+        scope: `Parts V & VI · Articles 124–147 & 214–237`,
+        summary: `Integrated judicial hierarchy covering Supreme Court jurisdictions, High Court writ authority, judicial review, PIL, and subordinate courts.`,
+        defaultCompleted: false,
+        topics: [
+          `Supreme Court: Collegium Appointment, Tenure, Removal & Independence`,
+          `SC Jurisdiction: Original (Art. 131), Writ (Art. 32), Appellate & Advisory`,
+          `High Courts (Arts. 214–231): Writ Jurisdiction (Art. 226) & Control`,
+          `Judicial Review, Judicial Activism, PIL & Subordinate Courts / Lok Adalats`
+        ]
+      },
+      {
+        id: 13,
+        unitId: `unit-3`,
+        title: `Panchayati Raj & Municipalities`,
+        scope: `Parts IX & IX-A · Articles 243–243ZG`,
+        summary: `Grassroots democratic decentralization established through the 73rd and 74th Constitutional Amendment Acts and the 11th and 12th Schedules.`,
+        defaultCompleted: false,
+        topics: [
+          `Committees: Balwant Rai Mehta, Ashok Mehta, GVK Rao & LM Singhvi`,
+          `73rd Amendment (1992): Three-Tier Panchayats, Gram Sabha & 11th Schedule`,
+          `74th Amendment (1992): Urban Local Bodies & 12th Schedule (18 Items)`,
+          `State Election Commission (Art. 243K), Finance Commission & PESA (1996)`
+        ]
+      },
+      {
+        id: 14,
+        unitId: `unit-3`,
+        title: `Union Territories & Scheduled Areas`,
+        scope: `Parts VIII, X & XXI · Articles 239–244A & 371`,
+        summary: `Governance framework for Union Territories including Delhi and Puducherry, Fifth and Sixth Schedule tribal regions, and special state provisions.`,
+        defaultCompleted: false,
+        topics: [
+          `Administration of Union Territories (Arts. 239–241) & Administrators`,
+          `Special Provisions for NCT of Delhi (Art. 239AA) & Puducherry`,
+          `Fifth Schedule (Scheduled Areas) vs Sixth Schedule (Tribal Areas)`,
+          `Special State Provisions Under Part XXI (Articles 371 to 371J)`
+        ]
+      },
+      {
+        id: 15,
+        unitId: `unit-4`,
+        title: `Centre–State & Inter-State Relations`,
+        scope: `Parts XI & XII · Articles 245–293`,
+        summary: `Legislative, administrative, and fiscal distribution between Union and States, GST Council, Sarkaria/Punchhi reports, and inter-state councils.`,
+        defaultCompleted: false,
+        topics: [
+          `Legislative Relations: Territorial Extent & 7th Schedule Lists`,
+          `Administrative & Financial Relations: GST Council (Art. 279A) & Grants`,
+          `Sarkaria Commission & Punchhi Commission Key Recommendations`,
+          `Inter-State Water Disputes (Art. 262), Council (Art. 263) & Zonal Councils`
+        ]
+      },
+      {
+        id: 16,
+        unitId: `unit-4`,
+        title: `Emergency Provisions`,
+        scope: `Part XVIII · Articles 352–360`,
+        summary: `Grounds, parliamentary approval timelines, constitutional effects, and 44th Amendment safeguards for National, State, and Financial Emergencies.`,
+        defaultCompleted: false,
+        topics: [
+          `National Emergency (Art. 352): Grounds, Approval & Impact on Rights`,
+          `President's Rule (Art. 356): Constitutional Failure & S.R. Bommai Case`,
+          `Financial Emergency (Art. 360): Proclamation & Fiscal Directives`,
+          `44th Constitutional Amendment Safeguards on Emergency Powers`
+        ]
+      },
+      {
+        id: 17,
+        unitId: `unit-4`,
+        title: `Constitutional Bodies`,
+        scope: `ECI, CAG, UPSC, Finance Commission & Commissions`,
+        summary: `Composition, appointment, removal, and powers of independent constitutional institutions safeguarding elections, audits, merit, and federalism.`,
+        defaultCompleted: false,
+        topics: [
+          `Election Commission of India (Art. 324) & UPSC / SPSC (Arts. 315–323)`,
+          `Comptroller & Auditor General (Art. 148) & Finance Commission (Art. 280)`,
+          `National Commissions for SCs (Art. 338), STs (338A) & BCs (338B)`,
+          `Special Officer for Linguistic Minorities (Art. 350B)`
+        ]
+      },
+      {
+        id: 18,
+        unitId: `unit-4`,
+        title: `Non-Constitutional & Statutory Bodies`,
+        scope: `NITI Aayog, NHRC, CVC, CBI, Lokpal & CIC`,
+        summary: `Executive and statutory bodies driving cooperative federalism, human rights protection, anti-corruption oversight, and transparency.`,
+        defaultCompleted: false,
+        topics: [
+          `NITI Aayog: Structure, Governing Council & Cooperative Federalism`,
+          `National & State Human Rights Commissions (NHRC / SHRC)`,
+          `Central Vigilance Commission (CVC), CBI & Lokpal and Lokayuktas`,
+          `Central Information Commission (RTI Act 2005) & National Green Tribunal`
+        ]
+      },
+      {
+        id: 19,
+        unitId: `unit-4`,
+        title: `Constitutional Amendments & Key Articles`,
+        scope: `Part XX (Art. 368), Part XVII & Major Amendments`,
+        summary: `Amendment procedures, Basic Structure evolution, landmark constitutional amendments from 1st to 106th, and essential article revision.`,
+        defaultCompleted: false,
+        topics: [
+          `Amendment Procedure (Art. 368): Simple, Special & State Ratification`,
+          `Basic Structure Doctrine: Shankari Prasad to Kesavananda Bharati`,
+          `Landmark Amendments: 1st, 7th, 24th, 42nd, 44th, 52nd, 61st, 86th, 101st–106th`,
+          `Official Languages (Part XVII) & High-Frequency Articles Consolidation`
+        ]
+      }
+    ];
+
+    // App State
+    let appState = buildDefaultState();
+    let uiFilter = `all`;
+    let uiSearch = ``;
+    let mobilePanelOpen = true;
+    let collapsedUnits = {};
+
+    function buildDefaultState() {
+      const chapters = {};
+      SYLLABUS_CHAPTERS.forEach(function (ch) {
+        const isDone = Boolean(ch.defaultCompleted);
+        chapters[ch.id] = {
+          completed: isDone,
+          topicsChecked: ch.topics.map(function () { return isDone; }),
+          revisions: 0,
+          notes: ``
+        };
+      });
+      return {
+        selectedChapterId: 10,
+        chapters: chapters
+      };
+    }
+
+    function sanitizeLoadedState(raw) {
+      const fallback = buildDefaultState();
+      if (!raw || typeof raw !== `object` || !raw.chapters || typeof raw.chapters !== `object`) {
+        return fallback;
+      }
+      const cleanChapters = {};
+      SYLLABUS_CHAPTERS.forEach(function (ch) {
+        const saved = raw.chapters[ch.id] || raw.chapters[String(ch.id)];
+        if (!saved || typeof saved !== `object`) {
+          cleanChapters[ch.id] = fallback.chapters[ch.id];
+          return;
+        }
+        const topicCount = ch.topics.length;
+        const savedTopics = Array.isArray(saved.topicsChecked) ? saved.topicsChecked : [];
+        const normalizedTopics = ch.topics.map(function (_, idx) {
+          return typeof savedTopics[idx] === `boolean` ? savedTopics[idx] : Boolean(saved.completed);
+        });
+        cleanChapters[ch.id] = {
+          completed: Boolean(saved.completed),
+          topicsChecked: normalizedTopics.slice(0, topicCount),
+          revisions: typeof saved.revisions === `number` && saved.revisions >= 0 ? Math.floor(saved.revisions) : 0,
+          notes: typeof saved.notes === `string` ? saved.notes : ``
+        };
+      });
+      const selId = typeof raw.selectedChapterId === `number` && cleanChapters[raw.selectedChapterId]
+        ? raw.selectedChapterId
+        : 10;
+      return {
+        selectedChapterId: selId,
+        chapters: cleanChapters
+      };
+    }
+
+    async function persistState() {
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === `function`) {
+          await window.notebookAppApi.setAppState(appState);
+        }
+      } catch (err) {
+        showNotice(`Could not sync state: ` + (err && err.message ? err.message : `unknown error`));
+      }
+    }
+
+    function showNotice(msg) {
+      const el = document.getElementById(`status-notice`);
+      if (!el) return;
+      el.textContent = msg;
+    }
+
+    function formatPad(num) {
+      return num < 10 ? `0` + String(num) : String(num);
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, `&amp;`)
+        .replace(/</g, `&lt;`)
+        .replace(/>/g, `&gt;`)
+        .replace(/"/g, `&quot;`);
+    }
+
+    function getCheckSvg() {
+      return `<svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    }
+
+    function getChevronSvg() {
+      return `<svg class="chevron-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    }
+
+    function computeStats() {
+      let completedCount = 0;
+      let totalTopics = 0;
+      let checkedTopics = 0;
+      let totalRevisions = 0;
+      let firstPendingId = null;
+
+      SYLLABUS_CHAPTERS.forEach(function (ch) {
+        const st = appState.chapters[ch.id];
+        if (st.completed) {
+          completedCount += 1;
+        } else if (firstPendingId === null) {
+          firstPendingId = ch.id;
+        }
+        totalTopics += ch.topics.length;
+        st.topicsChecked.forEach(function (checked) {
+          if (checked) checkedTopics += 1;
+        });
+        totalRevisions += st.revisions;
+      });
+
+      const pendingCount = SYLLABUS_CHAPTERS.length - completedCount;
+      const overallPct = Math.round((completedCount / SYLLABUS_CHAPTERS.length) * 100);
+      const topicsPct = totalTopics > 0 ? Math.round((checkedTopics / totalTopics) * 100) : 0;
+
+      const unitStats = SYLLABUS_UNITS.map(function (unit) {
+        const unitChapters = SYLLABUS_CHAPTERS.filter(function (c) { return c.unitId === unit.id; });
+        const done = unitChapters.filter(function (c) { return appState.chapters[c.id].completed; }).length;
+        const total = unitChapters.length;
+        const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+        return {
+          id: unit.id,
+          code: unit.code,
+          title: unit.title,
+          done: done,
+          total: total,
+          pct: pct
+        };
+      });
+
+      return {
+        completedCount: completedCount,
+        pendingCount: pendingCount,
+        totalChapters: SYLLABUS_CHAPTERS.length,
+        overallPct: overallPct,
+        checkedTopics: checkedTopics,
+        totalTopics: totalTopics,
+        topicsPct: topicsPct,
+        totalRevisions: totalRevisions,
+        firstPendingId: firstPendingId,
+        unitStats: unitStats
+      };
+    }
+
+    function matchesFilters(ch) {
+      const st = appState.chapters[ch.id];
+      if (uiFilter === `completed` && !st.completed) return false;
+      if (uiFilter === `pending` && st.completed) return false;
+      if (uiSearch.trim() !== ``) {
+        const q = uiSearch.trim().toLowerCase();
+        const hay = (
+          `ch ` + formatPad(ch.id) + ` ` +
+          ch.title + ` ` +
+          ch.scope + ` ` +
+          ch.topics.join(` `)
+        ).toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    }
+
+    function renderAll() {
+      const stats = computeStats();
+      renderSummary(stats);
+      renderFilterTabs(stats);
+      renderSidePanel(stats);
+      renderDetailCard(stats);
+      renderMatrixTable();
+    }
+
+    function renderSummary(stats) {
+      const overallPctEl = document.getElementById(`overall-percent`);
+      const overallFracEl = document.getElementById(`overall-fraction`);
+      const overallBarEl = document.getElementById(`overall-progressbar`);
+      const overallFillEl = document.getElementById(`overall-progress-fill`);
+      const overallBadgeEl = document.getElementById(`overall-badge`);
+
+      if (overallPctEl) overallPctEl.textContent = stats.overallPct + `%`;
+      if (overallFracEl) {
+        overallFracEl.textContent = stats.completedCount + ` of ` + stats.totalChapters + ` chapters completed · ` + stats.pendingCount + ` pending`;
+      }
+      if (overallBarEl) overallBarEl.setAttribute(`aria-valuenow`, String(stats.overallPct));
+      if (overallFillEl) {
+        overallFillEl.style.width = stats.overallPct + `%`;
+        overallFillEl.classList.toggle(`complete`, stats.overallPct === 100);
+      }
+      if (overallBadgeEl) {
+        if (stats.overallPct === 100) {
+          overallBadgeEl.textContent = `Completed`;
+          overallBadgeEl.className = `status-badge completed`;
+        } else {
+          overallBadgeEl.textContent = `In Progress`;
+          overallBadgeEl.className = `status-badge pending`;
+        }
+      }
+
+      const segmentStrip = document.getElementById(`segment-strip`);
+      if (segmentStrip) {
+        let segHtml = ``;
+        SYLLABUS_CHAPTERS.forEach(function (ch) {
+          const isDone = appState.chapters[ch.id].completed;
+          const isSelected = appState.selectedChapterId === ch.id;
+          const cls = `segment-cell` + (isDone ? ` done` : ``) + (isSelected ? ` active` : ``);
+          const label = `Chapter ` + ch.id + `: ` + ch.title + ` (` + (isDone ? `Completed` : `Pending`) + `)`;
+          segHtml += `<button type="button" class="` + cls + `" title="` + escapeHtml(label) + `" aria-label="` + escapeHtml(label) + `" onclick="selectChapter(` + ch.id + `)"></button>`;
+        });
+        segmentStrip.innerHTML = segHtml;
+      }
+
+      const topicsPctEl = document.getElementById(`topics-percent`);
+      const topicsFracEl = document.getElementById(`topics-fraction`);
+      const topicsBarEl = document.getElementById(`topics-progressbar`);
+      const topicsFillEl = document.getElementById(`topics-progress-fill`);
+      const revTotalBadge = document.getElementById(`revision-total-badge`);
+      const nextPendingHint = document.getElementById(`next-pending-hint`);
+
+      if (topicsPctEl) topicsPctEl.textContent = stats.topicsPct + `%`;
+      if (topicsFracEl) topicsFracEl.textContent = stats.checkedTopics + ` of ` + stats.totalTopics + ` key topics checked`;
+      if (topicsBarEl) topicsBarEl.setAttribute(`aria-valuenow`, String(stats.topicsPct));
+      if (topicsFillEl) {
+        topicsFillEl.style.width = stats.topicsPct + `%`;
+        topicsFillEl.classList.toggle(`complete`, stats.topicsPct === 100);
+      }
+      if (revTotalBadge) {
+        revTotalBadge.textContent = stats.totalRevisions + (stats.totalRevisions === 1 ? ` Revision` : ` Revisions`);
+      }
+      if (nextPendingHint) {
+        if (stats.firstPendingId !== null) {
+          const nextCh = SYLLABUS_CHAPTERS.find(function (c) { return c.id === stats.firstPendingId; });
+          nextPendingHint.textContent = `Next pending chapter: Ch. ` + formatPad(nextCh.id) + ` — ` + nextCh.title;
+        } else {
+          nextPendingHint.textContent = `All 19 chapters completed — ready for full revision passes.`;
+        }
+      }
+
+      const unitMiniList = document.getElementById(`unit-mini-list`);
+      if (unitMiniList) {
+        let html = ``;
+        stats.unitStats.forEach(function (u) {
+          html += `<div class="unit-mini-row" role="button" tabindex="0" onclick="focusUnit('` + u.id + `')" onkeydown="handleUnitRowKey(event, '` + u.id + `')">` +
+            `<div class="unit-mini-head">` +
+              `<span class="unit-mini-name">` + escapeHtml(u.code) + `: ` + escapeHtml(u.title) + `</span>` +
+              `<span class="unit-mini-count">` + u.done + `/` + u.total + ` (` + u.pct + `%)</span>` +
+            `</div>` +
+            `<div class="progress-track thin">` +
+              `<div class="progress-fill` + (u.pct === 100 ? ` complete` : ``) + `" style="width: ` + u.pct + `%;"></div>` +
+            `</div>` +
+          `</div>`;
+        });
+        unitMiniList.innerHTML = html;
+      }
+    }
+
+    function renderFilterTabs(stats) {
+      const buttons = document.querySelectorAll(`.filter-tab`);
+      buttons.forEach(function (btn) {
+        const f = btn.getAttribute(`data-filter`);
+        btn.classList.toggle(`active`, f === uiFilter);
+        if (f === `all`) btn.textContent = `All (` + stats.totalChapters + `)`;
+        if (f === `completed`) btn.textContent = `Completed (` + stats.completedCount + `)`;
+        if (f === `pending`) btn.textContent = `Pending (` + stats.pendingCount + `)`;
+      });
+    }
+
+    function renderSidePanel(stats) {
+      const summaryEl = document.getElementById(`side-panel-summary`);
+      if (summaryEl) {
+        summaryEl.textContent = `4 Units · ` + stats.completedCount + ` Completed · ` + stats.pendingCount + ` Pending`;
+      }
+
+      const container = document.getElementById(`side-units-container`);
+      if (!container) return;
+
+      let html = ``;
+      let totalMatched = 0;
+
+      SYLLABUS_UNITS.forEach(function (unit) {
+        const unitChapters = SYLLABUS_CHAPTERS.filter(function (c) { return c.unitId === unit.id; });
+        const visibleChapters = unitChapters.filter(matchesFilters);
+        if (visibleChapters.length === 0) return;
+        totalMatched += visibleChapters.length;
+
+        const doneCount = unitChapters.filter(function (c) { return appState.chapters[c.id].completed; }).length;
+        const totalCount = unitChapters.length;
+        const unitPct = Math.round((doneCount / totalCount) * 100);
+        const isCollapsed = Boolean(collapsedUnits[unit.id]) && uiSearch.trim() === ``;
+
+        let badgeClass = `pending`;
+        if (doneCount === totalCount) badgeClass = `done`;
+        else if (doneCount > 0) badgeClass = `partial`;
+
+        html += `<div class="unit-group" id="side-` + unit.id + `">` +
+          `<button type="button" class="unit-header-btn" aria-expanded="` + (!isCollapsed ? `true` : `false`) + `" onclick="toggleUnitCollapse('` + unit.id + `')">` +
+            `<div class="unit-header-top">` +
+              `<span class="unit-code">` + escapeHtml(unit.code) + `</span>` +
+              `<span class="unit-badge ` + badgeClass + `">` + doneCount + `/` + totalCount + ` · ` + unitPct + `%</span>` +
+            `</div>` +
+            `<div class="unit-title-row">` +
+              `<span class="unit-title">` + escapeHtml(unit.title) + `</span>` +
+              getChevronSvg() +
+            `</div>` +
+            `<div class="progress-track thin">` +
+              `<div class="progress-fill` + (unitPct === 100 ? ` complete` : ``) + `" style="width: ` + unitPct + `%;"></div>` +
+            `</div>` +
+          `</button>` +
+          `<ul class="chapter-list` + (isCollapsed ? ` collapsed` : ``) + `">`;
+
+        visibleChapters.forEach(function (ch) {
+          const st = appState.chapters[ch.id];
+          const isSelected = appState.selectedChapterId === ch.id;
+          const badgeCls = st.completed ? `completed` : `pending`;
+          const badgeText = st.completed ? `Completed` : `Pending`;
+          const liCls = `chapter-item` + (st.completed ? ` completed` : ``) + (isSelected ? ` selected` : ``);
+
+          html += `<li class="` + liCls + `">` +
+            `<label class="check-hit" title="Toggle chapter ` + ch.id + ` completion">` +
+              `<input type="checkbox"` + (st.completed ? ` checked` : ``) + ` onchange="toggleChapterCompletion(` + ch.id + `)" aria-label="Mark Chapter ` + ch.id + ` ` + escapeHtml(ch.title) + ` as completed">` +
+              `<span class="check-box-visual">` + (st.completed ? getCheckSvg() : ``) + `</span>` +
+            `</label>` +
+            `<button type="button" class="chapter-select-btn" onclick="selectChapter(` + ch.id + `)">` +
+              `<div class="chapter-select-top">` +
+                `<span class="index-num">` + formatPad(ch.id) + `</span>` +
+                `<span class="chapter-name">` + escapeHtml(ch.title) + `</span>` +
+              `</div>` +
+              `<span class="chapter-submeta">` + escapeHtml(ch.scope) + `</span>` +
+            `</button>` +
+            `<button type="button" class="status-badge ` + badgeCls + `" onclick="toggleChapterCompletion(` + ch.id + `)" aria-label="Status ` + badgeText + ` for Chapter ` + ch.id + `. Click to toggle">` +
+              badgeText +
+            `</button>` +
+          `</li>`;
+        });
+
+        html += `</ul></div>`;
+      });
+
+      if (totalMatched === 0) {
+        html = `<div class="empty-state">` +
+          `<p class="empty-copy">No chapters match your current filter or search term.</p>` +
+          `<button type="button" class="btn btn-sm" onclick="clearFilters()">Reset Filters</button>` +
+        `</div>`;
+      }
+
+      container.innerHTML = html;
+    }
+
+    function renderDetailCard(stats) {
+      const ch = SYLLABUS_CHAPTERS.find(function (c) { return c.id === appState.selectedChapterId; }) || SYLLABUS_CHAPTERS[0];
+      const unit = SYLLABUS_UNITS.find(function (u) { return u.id === ch.unitId; });
+      const st = appState.chapters[ch.id];
+
+      const kickerEl = document.getElementById(`detail-kicker`);
+      const titleEl = document.getElementById(`detail-title`);
+      const scopeEl = document.getElementById(`detail-scope`);
+      const badgeEl = document.getElementById(`detail-status-badge`);
+      const toggleBtn = document.getElementById(`detail-toggle-btn`);
+      const topicCountEl = document.getElementById(`detail-topic-count`);
+      const topicBarEl = document.getElementById(`detail-topic-bar`);
+      const topicsListEl = document.getElementById(`detail-topics-list`);
+      const notesEl = document.getElementById(`chapter-notes`);
+      const revEl = document.getElementById(`detail-revision-count`);
+      const prevBtn = document.getElementById(`prev-chapter-btn`);
+      const nextBtn = document.getElementById(`next-chapter-btn`);
+      const nextPendingBtn = document.getElementById(`jump-next-pending-btn`);
+
+      if (kickerEl) kickerEl.textContent = unit.code.toUpperCase() + ` · CHAPTER ` + formatPad(ch.id) + ` OF 19 · ` + ch.scope.toUpperCase();
+      if (titleEl) titleEl.textContent = ch.title;
+      if (scopeEl) scopeEl.textContent = ch.summary;
+
+      if (badgeEl) {
+        badgeEl.textContent = st.completed ? `Completed` : `Pending`;
+        badgeEl.className = `status-badge ` + (st.completed ? `completed` : `pending`);
+      }
+      if (toggleBtn) {
+        toggleBtn.textContent = st.completed ? `Mark as Pending` : `Mark as Completed`;
+        toggleBtn.className = st.completed ? `btn` : `btn btn-primary`;
+      }
+
+      const checkedCount = st.topicsChecked.filter(Boolean).length;
+      const totalCount = ch.topics.length;
+      const topicPct = totalCount > 0 ? Math.round((checkedCount / totalCount) * 100) : 0;
+
+      if (topicCountEl) topicCountEl.textContent = checkedCount + ` of ` + totalCount + ` topics checked (` + topicPct + `%)`;
+      if (topicBarEl) {
+        topicBarEl.style.width = topicPct + `%`;
+        topicBarEl.classList.toggle(`complete`, topicPct === 100);
+      }
+
+      if (topicsListEl) {
+        let tHtml = ``;
+        ch.topics.forEach(function (topic, idx) {
+          const isChecked = Boolean(st.topicsChecked[idx]);
+          const inputId = `topic-chk-` + ch.id + `-` + idx;
+          tHtml += `<li class="topic-row` + (isChecked ? ` checked` : ``) + `">` +
+            `<label class="check-hit" for="` + inputId + `">` +
+              `<input type="checkbox" id="` + inputId + `"` + (isChecked ? ` checked` : ``) + ` onchange="toggleSubtopic(` + ch.id + `, ` + idx + `)">` +
+              `<span class="check-box-visual">` + (isChecked ? getCheckSvg() : ``) + `</span>` +
+            `</label>` +
+            `<label class="topic-label" for="` + inputId + `">` + escapeHtml(topic) + `</label>` +
+          `</li>`;
+        });
+        topicsListEl.innerHTML = tHtml;
+      }
+
+      if (notesEl && notesEl.value !== st.notes) {
+        notesEl.value = st.notes;
+      }
+      if (revEl) revEl.textContent = String(st.revisions);
+
+      if (prevBtn) prevBtn.disabled = ch.id <= 1;
+      if (nextBtn) nextBtn.disabled = ch.id >= SYLLABUS_CHAPTERS.length;
+      if (nextPendingBtn) nextPendingBtn.disabled = stats.firstPendingId === null;
+    }
+
+    function renderMatrixTable() {
+      const tbody = document.getElementById(`matrix-tbody`);
+      const filterLabel = document.getElementById(`matrix-filter-label`);
+      if (!tbody) return;
+
+      const matched = SYLLABUS_CHAPTERS.filter(matchesFilters);
+      if (filterLabel) {
+        filterLabel.textContent = `Showing ` + matched.length + ` of 19 chapters`;
+      }
+
+      if (matched.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><p class="empty-copy">No chapters match your filter.</p><button type="button" class="btn btn-sm" onclick="clearFilters()">Show All 19 Chapters</button></div></td></tr>`;
+        return;
+      }
+
+      let html = ``;
+      matched.forEach(function (ch) {
+        const unit = SYLLABUS_UNITS.find(function (u) { return u.id === ch.unitId; });
+        const st = appState.chapters[ch.id];
+        const checkedCount = st.topicsChecked.filter(Boolean).length;
+        const totalCount = ch.topics.length;
+        const pct = totalCount > 0 ? Math.round((checkedCount / totalCount) * 100) : 0;
+        const isSelected = appState.selectedChapterId === ch.id;
+        const badgeCls = st.completed ? `completed` : `pending`;
+        const badgeText = st.completed ? `Completed` : `Pending`;
+
+        html += `<tr class="matrix-row` + (isSelected ? ` selected` : ``) + `" onclick="selectChapter(` + ch.id + `)">` +
+          `<td onclick="event.stopPropagation()">` +
+            `<label class="check-hit">` +
+              `<input type="checkbox"` + (st.completed ? ` checked` : ``) + ` onchange="toggleChapterCompletion(` + ch.id + `)" aria-label="Complete Chapter ` + ch.id + `">` +
+              `<span class="check-box-visual">` + (st.completed ? getCheckSvg() : ``) + `</span>` +
+            `</label>` +
+          `</td>` +
+          `<td><span class="index-num">` + formatPad(ch.id) + `</span></td>` +
+          `<td>` +
+            `<div class="matrix-title-strong">` + escapeHtml(ch.title) + `</div>` +
+            `<div class="chapter-submeta">` + escapeHtml(ch.scope) + `</div>` +
+          `</td>` +
+          `<td><span class="table-unit-pill">` + escapeHtml(unit.code) + `</span></td>` +
+          `<td class="table-progress-cell">` +
+            `<div class="table-progress-text">` + checkedCount + `/` + totalCount + ` topics</div>` +
+            `<div class="progress-track thin"><div class="progress-fill` + (pct === 100 ? ` complete` : ``) + `" style="width: ` + pct + `%;"></div></div>` +
+          `</td>` +
+          `<td><span class="index-num rev-count-muted">` + st.revisions + `</span></td>` +
+          `<td onclick="event.stopPropagation()">` +
+            `<button type="button" class="status-badge ` + badgeCls + `" onclick="toggleChapterCompletion(` + ch.id + `)">` + badgeText + `</button>` +
+          `</td>` +
+        `</tr>`;
+      });
+
+      tbody.innerHTML = html;
+    }
+
+    /* Interactive Handlers (hoisted function declarations) */
+    function selectChapter(chapterId) {
+      if (!appState.chapters[chapterId]) return;
+      appState.selectedChapterId = chapterId;
+      const ch = SYLLABUS_CHAPTERS.find(function (c) { return c.id === chapterId; });
+      if (ch && collapsedUnits[ch.unitId]) {
+        collapsedUnits[ch.unitId] = false;
+      }
+      renderAll();
+      persistState();
+    }
+
+    function toggleChapterCompletion(chapterId) {
+      const st = appState.chapters[chapterId];
+      if (!st) return;
+      const nextCompleted = !st.completed;
+      st.completed = nextCompleted;
+      st.topicsChecked = st.topicsChecked.map(function () { return nextCompleted; });
+      const ch = SYLLABUS_CHAPTERS.find(function (c) { return c.id === chapterId; });
+      showNotice(`Ch. ` + formatPad(chapterId) + ` (` + ch.title + `) marked as ` + (nextCompleted ? `Completed` : `Pending`) + `.`);
+      renderAll();
+      persistState();
+    }
+
+    function toggleSelectedChapterStatus() {
+      toggleChapterCompletion(appState.selectedChapterId);
+    }
+
+    function toggleSubtopic(chapterId, topicIdx) {
+      const st = appState.chapters[chapterId];
+      if (!st || typeof st.topicsChecked[topicIdx] !== `boolean`) return;
+      st.topicsChecked[topicIdx] = !st.topicsChecked[topicIdx];
+      const allDone = st.topicsChecked.every(Boolean);
+      const noneDone = st.topicsChecked.every(function (v) { return !v; });
+      if (allDone) {
+        st.completed = true;
+      } else if (noneDone) {
+        st.completed = false;
+      }
+      renderAll();
+      persistState();
+    }
+
+    function handleNotesInput(val) {
+      const st = appState.chapters[appState.selectedChapterId];
+      if (!st) return;
+      st.notes = val;
+      persistState();
+    }
+
+    function adjustRevisions(delta) {
+      const st = appState.chapters[appState.selectedChapterId];
+      if (!st) return;
+      st.revisions = Math.max(0, st.revisions + delta);
+      renderAll();
+      persistState();
+    }
+
+    function stepChapter(delta) {
+      const nextId = appState.selectedChapterId + delta;
+      if (nextId >= 1 && nextId <= SYLLABUS_CHAPTERS.length) {
+        selectChapter(nextId);
+      }
+    }
+
+    function jumpToNextPending() {
+      const stats = computeStats();
+      if (stats.firstPendingId !== null) {
+        selectChapter(stats.firstPendingId);
+        showNotice(`Jumped to next pending chapter: Ch. ` + formatPad(stats.firstPendingId) + `.`);
+      }
+    }
+
+    function setStatusFilter(filterVal) {
+      uiFilter = filterVal;
+      renderAll();
+    }
+
+    function handleSearchInput(val) {
+      uiSearch = val;
+      renderSidePanel(computeStats());
+      renderMatrixTable();
+    }
+
+    function clearFilters() {
+      uiFilter = `all`;
+      uiSearch = ``;
+      const searchEl = document.getElementById(`chapter-search`);
+      if (searchEl) searchEl.value = ``;
+      renderAll();
+    }
+
+    function toggleUnitCollapse(unitId) {
+      collapsedUnits[unitId] = !collapsedUnits[unitId];
+      renderSidePanel(computeStats());
+    }
+
+    function focusUnit(unitId) {
+      collapsedUnits[unitId] = false;
+      const firstInUnit = SYLLABUS_CHAPTERS.find(function (c) { return c.unitId === unitId; });
+      if (firstInUnit) {
+        appState.selectedChapterId = firstInUnit.id;
+      }
+      renderAll();
+      persistState();
+      const target = document.getElementById(`side-` + unitId);
+      if (target && typeof target.scrollIntoView === `function`) {
+        target.scrollIntoView({ behavior: `smooth`, block: `nearest` });
+      }
+    }
+
+    function handleUnitRowKey(evt, unitId) {
+      if (evt.key === `Enter` || evt.key === ` `) {
+        evt.preventDefault();
+        focusUnit(unitId);
+      }
+    }
+
+    function toggleMobileSidePanel() {
+      mobilePanelOpen = !mobilePanelOpen;
+      const bodyEl = document.getElementById(`side-panel-body`);
+      const btnEl = document.getElementById(`mobile-panel-toggle`);
+      if (bodyEl) bodyEl.classList.toggle(`mobile-collapsed`, !mobilePanelOpen);
+      if (btnEl) {
+        btnEl.setAttribute(`aria-expanded`, mobilePanelOpen ? `true` : `false`);
+        btnEl.textContent = mobilePanelOpen ? `Hide List` : `Show List (19)`;
+      }
+    }
+
+    function handleResetDefault(btn) {
+      if (!btn) return;
+      if (btn.dataset.armed !== `true`) {
+        btn.dataset.armed = `true`;
+        btn.textContent = `Confirm Reset (47%)`;
+        btn.classList.add(`btn-warning-armed`);
+        showNotice(`Click "Confirm Reset (47%)" again to restore Ch. 1–9 Completed & Ch. 10–19 Pending.`);
+        return;
+      }
+      btn.dataset.armed = `false`;
+      btn.textContent = `Reset to Default (47%)`;
+      btn.classList.remove(`btn-warning-armed`);
+      appState = buildDefaultState();
+      uiFilter = `all`;
+      uiSearch = ``;
+      collapsedUnits = {};
+      const searchEl = document.getElementById(`chapter-search`);
+      if (searchEl) searchEl.value = ``;
+      renderAll();
+      persistState();
+      showNotice(`Syllabus tracker restored to default state (47% complete: Ch. 1–9 Completed, Ch. 10–19 Pending).`);
+    }
+
+    function exportProgressCsv() {
+      const headers = [`Chapter No`, `Unit`, `Chapter Title`, `Scope`, `Status`, `Topics Checked`, `Total Topics`, `Revisions`, `Notes`];
+      const rows = [headers.join(`,`)];
+      SYLLABUS_CHAPTERS.forEach(function (ch) {
+        const unit = SYLLABUS_UNITS.find(function (u) { return u.id === ch.unitId; });
+        const st = appState.chapters[ch.id];
+        const checkedTopics = st.topicsChecked.filter(Boolean).length;
+        const cols = [
+          formatPad(ch.id),
+          `"` + unit.code + `: ` + unit.title.replace(/"/g, `""`) + `"`,
+          `"` + ch.title.replace(/"/g, `""`) + `"`,
+          `"` + ch.scope.replace(/"/g, `""`) + `"`,
+          st.completed ? `COMPLETED` : `PENDING`,
+          String(checkedTopics),
+          String(ch.topics.length),
+          String(st.revisions),
+          `"` + (st.notes || ``).replace(/"/g, `""`).replace(/\r?\n/g, ` `) + `"`
+        ];
+        rows.push(cols.join(`,`));
+      });
+      const csvContent = rows.join(`\n`);
+      if (window.notebookAppApi && typeof window.notebookAppApi.triggerFileDownload === `function`) {
+        window.notebookAppApi.triggerFileDownload({
+          content: csvContent,
+          contentType: `text/csv`,
+          encoding: `UTF-8`,
+          filename: `indian-polity-syllabus-progress.csv`
+        });
+        showNotice(`Exported 19-chapter progress report as CSV.`);
+      } else {
+        showNotice(`Export ready (download API unavailable in preview).`);
+      }
+    }
+
+    async function initApp() {
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === `function`) {
+          const saved = await window.notebookAppApi.getAppState();
+          if (saved) {
+            appState = sanitizeLoadedState(saved);
+          }
+        }
+      } catch (err) {
+        appState = buildDefaultState();
+      }
+      renderAll();
+      if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === `function`) {
+        window.notebookAppApi.notifyAppReady();
+      }
+    }
+
+    document.addEventListener(`DOMContentLoaded`, initApp);
+  </script>
+</body>
+</html>

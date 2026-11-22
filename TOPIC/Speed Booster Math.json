@@ -2,7 +2,7 @@
   "app": "speed-ranker",
   "version": 2,
   "mode": "ram",
-  "exportedAt": "2026-11-20T08:15:09.669Z",
+  "exportedAt": "2026-11-22T11:17:31.365Z",
   "data": {
     "srqb_v1": {
       "progress": {
@@ -2095,6 +2095,351 @@
             "due": 1796541537226,
             "rated": "good",
             "lapses": 0
+          },
+          "diff": "moderate"
+        },
+        "13-1": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1795319604957,
+            "due": 1796702004957,
+            "rated": "good",
+            "lapses": 0
+          },
+          "diff": "moderate"
+        },
+        "13-2": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1795319730127,
+            "due": 1796702130127,
+            "rated": "good",
+            "lapses": 0
+          },
+          "diff": "moderate"
+        },
+        "13-4": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1795319945185,
+            "due": 1796702345185,
+            "rated": "good",
+            "lapses": 0
+          },
+          "diff": "moderate",
+          "bm": 1
+        },
+        "13-5": {
+          "seen": 1,
+          "s": "mastered"
+        },
+        "13-6": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1795320178968,
+            "due": 1796702578968,
+            "rated": "good",
+            "lapses": 1
+          },
+          "diff": "moderate"
+        },
+        "13-8": {
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1795320499830,
+            "due": 1795925299830,
+            "lapses": 0
+          },
+          "bm": 1
+        },
+        "13-9": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1795320584180,
+            "due": 1796702984180,
+            "rated": "good",
+            "lapses": 0
+          },
+          "diff": "moderate"
+        },
+        "13-11": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1795320660459,
+            "due": 1796703060459,
+            "rated": "good",
+            "lapses": 0
+          },
+          "diff": "moderate"
+        },
+        "13-13": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1795320846447,
+            "due": 1796703246446,
+            "rated": "good",
+            "lapses": 0
+          },
+          "diff": "moderate"
+        },
+        "13-14": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1795320883979,
+            "due": 1796703283979,
+            "rated": "good",
+            "lapses": 0
+          },
+          "diff": "moderate"
+        },
+        "13-17": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1795321268145,
+            "due": 1796703668145,
+            "rated": "good",
+            "lapses": 0
+          },
+          "diff": "moderate"
+        },
+        "13-18": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1795321428476,
+            "due": 1796703828476,
+            "rated": "good",
+            "lapses": 0
+          },
+          "diff": "moderate"
+        },
+        "13-19": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1795321590365,
+            "due": 1796703990365,
+            "rated": "good",
+            "lapses": 0
+          },
+          "diff": "moderate"
+        },
+        "13-21": {
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1795321810960,
+            "due": 1795408210960,
+            "rated": "hard",
+            "lapses": 1
+          },
+          "diff": "tough"
+        },
+        "13-22": {
+          "seen": 1,
+          "sr": {
+            "n": 1,
+            "last": 1795322096183,
+            "due": 1795408496183,
+            "rated": "hard",
+            "lapses": 2
+          },
+          "diff": "tough",
+          "bm": 1
+        },
+        "13-23": {
+          "seen": 1,
+          "diff": "moderate",
+          "s": "mastered"
+        },
+        "13-24": {
+          "seen": 1,
+          "diff": "easy",
+          "s": "mastered"
+        },
+        "13-25": {
+          "seen": 1,
+          "sr": {
+            "n": 1,
+            "last": 1795322408139,
+            "due": 1795408808139,
+            "rated": "hard",
+            "lapses": 1
+          },
+          "diff": "tough",
+          "bm": 1
+        },
+        "14-2": {
+          "seen": 1,
+          "sr": {
+            "n": 1,
+            "last": 1795336915273,
+            "due": 1795423315273,
+            "rated": "hard",
+            "lapses": 1
+          },
+          "diff": "tough"
+        },
+        "14-4": {
+          "seen": 1,
+          "s": "mastered"
+        },
+        "14-5": {
+          "seen": 1,
+          "bm": 1,
+          "s": "mastered"
+        },
+        "14-6": {
+          "seen": 1,
+          "sr": {
+            "n": 1,
+            "last": 1795337212132,
+            "due": 1795423612132,
+            "rated": "hard",
+            "lapses": 3
+          },
+          "diff": "tough"
+        },
+        "14-7": {
+          "bm": 0,
+          "doubt": 1,
+          "diff": "tough",
+          "seen": 1,
+          "sr": {
+            "n": 1,
+            "last": 1795337404332,
+            "due": 1795423804332,
+            "rated": "hard",
+            "lapses": 1
+          }
+        },
+        "14-22": {
+          "seen": 1,
+          "bm": 1,
+          "s": "mastered",
+          "diff": "moderate"
+        },
+        "14-25": {
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1795336346557,
+            "due": 1795941146557,
+            "rated": "good",
+            "lapses": 1
+          },
+          "diff": "moderate"
+        },
+        "14-1": {
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1795336665550,
+            "due": 1795423065550,
+            "rated": "hard",
+            "lapses": 0
+          },
+          "diff": "tough",
+          "bm": 1
+        },
+        "14-3": {
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1795337040908,
+            "due": 1795423440908,
+            "rated": "hard",
+            "lapses": 0
+          },
+          "diff": "tough",
+          "bm": 1
+        },
+        "14-8": {
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1795337501949,
+            "due": 1795423901949,
+            "rated": "hard",
+            "lapses": 0
+          },
+          "diff": "tough"
+        },
+        "14-9": {
+          "bm": 1,
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1795337742725,
+            "due": 1795424142725,
+            "rated": "hard",
+            "lapses": 0
+          },
+          "diff": "tough"
+        },
+        "14-10": {
+          "seen": 1,
+          "s": "mastered"
+        },
+        "14-11": {
+          "seen": 1,
+          "s": "mastered"
+        },
+        "14-12": {
+          "seen": 1,
+          "s": "mastered"
+        },
+        "14-13": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1795338392630,
+            "due": 1796720792630,
+            "rated": "good",
+            "lapses": 0
+          },
+          "diff": "moderate"
+        },
+        "14-14": {
+          "seen": 1,
+          "diff": "moderate",
+          "sr": {
+            "n": 3,
+            "last": 1795338732753,
+            "due": 1795943532753,
+            "rated": "good",
+            "lapses": 1
+          }
+        },
+        "14-15": {
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1795339229957,
+            "due": 1795425629957,
+            "rated": "hard",
+            "lapses": 0
+          },
+          "diff": "tough"
+        },
+        "14-16": {
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1795339437501,
+            "due": 1795944237501,
+            "rated": "good",
+            "lapses": 1
           },
           "diff": "moderate"
         }

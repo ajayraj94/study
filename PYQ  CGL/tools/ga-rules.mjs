@@ -232,9 +232,12 @@ const GA_RULES = [
   {
     id: "ga-art-festivals-fairs",
     pats: [
-      [wb("festival", "festivals", "mela", "fair", "fairs", "celebrated", "celebration", "pongal",
-        "onam", "bihu", "hornbill festival", "hola mohalla", "chithirai", "nyokum", "pongtu", "goncha",
-        "jawa festival", "kambala", "parab", "sammakka"), 6]
+      [wb("festival", "festivals", "mela", "pongal", "onam", "bihu", "hornbill festival",
+        "hola mohalla", "chithirai", "nyokum", "pongtu", "goncha", "jawa festival", "kambala",
+        "parab", "sammakka"), 6],
+      // Ambiguous words: "fair wages", "celebrated singer" and "Republic Day
+      // celebration" in an explanation must not look like a cultural festival.
+      [wb("fair", "fairs", "celebrated", "celebration"), 6, { primaryOnly: true }]
     ]
   },
   {
@@ -624,14 +627,19 @@ const EXTRA_TERMS = {
   ],
   "ga-hist-freedom-movements": [
     [5, ["raja rammohan roy", "sati", "rani gaidinliu", "khongjom war", "thakkar bapa", "social worker",
-      "tribal uprising", "heraka"]]
+      "tribal uprising", "heraka"]],
+    [5, ["kisan sabha", "sahajanand", "zamindari"]]
   ],
   "ga-art-classical-folk-dance": [
     [5, ["tippani", "thoda", "folk dance", "martial dance", "tribal dance", "perini", "jhora",
       "shivatandavam"]]
   ],
+  "ga-art-music-gharanas": [
+    [5, ["bhupen hazarika", "manna dey"]]
+  ],
   "ga-art-festivals-fairs": [
-    [4, ["procession", "jhanki", "rath yatra", "sawari", "chhabina", "dharnath"]]
+    [4, ["procession", "jhanki", "rath yatra", "sawari", "chhabina", "dharnath"]],
+    [6, ["chhath", "gangaur", "karam tree", "kharchi", "teej"]]
   ],
   "ga-geo-earth-solar": [
     [4, ["black hole", "pulsar", "neutron star", "supernova", "telescope", "james webb", "jwst",
@@ -707,10 +715,10 @@ function rank(primary, secondary) {
   for (let i = 0; i < GA_RULES.length; i++) {
     const rule = GA_RULES[i];
     let score = 0;
-    for (const [regexes, weight] of rule.pats) {
+    for (const [regexes, weight, opts] of rule.pats) {
       for (const re of regexes) {
         if (re.test(primary)) score += weight * 2;
-        else if (secondary && re.test(secondary)) score += weight;
+        else if (!opts?.primaryOnly && secondary && re.test(secondary)) score += weight;
       }
     }
     if (score > 0) scored.push({ id: rule.id, score, order: i });

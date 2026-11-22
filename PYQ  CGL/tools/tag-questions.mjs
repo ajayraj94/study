@@ -5,18 +5,25 @@ import { classifyQuestion } from "./taxonomy-rules.mjs";
 const taxonomyRaw = await fs.readFile("taxonomy.json", "utf8");
 const TAXONOMY = JSON.parse(taxonomyRaw);
 
-const dir2025 = path.resolve("2025");
-const files = (await fs.readdir(dir2025))
-  .filter(f => f.endsWith(".json"))
-  .sort((a, b) => {
-    const numA = parseInt(a.match(/Shift\s*(\d+)/i)?.[1] || "0", 10);
-    const numB = parseInt(b.match(/Shift\s*(\d+)/i)?.[1] || "0", 10);
-    return a.localeCompare(b, undefined, { numeric: true });
-  });
+const ROOT = path.resolve("year wise folder");
+// Newest year first so the already-tagged 2025 mock IDs (M1–M45) stay stable.
+// New years are appended at the end; never reorder this list.
+const YEARS = ["2025", "2024"];
 
-console.log(`Discovered ${files.length} paper JSON files in 2025 directory.`);
+const papers = [];
+for (const year of YEARS) {
+  const dir = path.join(ROOT, year);
+  const files = (await fs.readdir(dir))
+    .filter(f => f.endsWith(".json"))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+  files.forEach(fileName => papers.push({ year, fileName, filePath: path.join(dir, fileName) }));
+}
+
+console.log(`Discovered ${papers.length} paper JSON files across ${YEARS.join(", ")}.`);
 
 let grandTotalQuestions = 0;
+const yearShiftCounts = new Map();
+const yearQuestionCounts = new Map();
 const shiftRegistry = [];
 const microTopicStats = new Map();
 const flatQuestionMap = {};
@@ -36,7 +43,7 @@ TAXONOMY.subjects.forEach(sub => {
           topicName: top.name,
           microTopicName: micro.name,
           questionCount: 0,
-          shiftOccurrences: new Set(),
+          shiftOccurrencesByYear: new Map(),
           questionRefs: []
         });
       });
@@ -44,26 +51,28 @@ TAXONOMY.subjects.forEach(sub => {
   });
 });
 
-for (let mockIndex = 0; mockIndex < files.length; mockIndex++) {
-  const fileName = files[mockIndex];
-  const filePath = path.join(dir2025, fileName);
+for (let mockIndex = 0; mockIndex < papers.length; mockIndex++) {
+  const { year: examYear, fileName, filePath } = papers[mockIndex];
   const rawText = await fs.readFile(filePath, "utf8");
   const data = JSON.parse(rawText);
 
   const mockNum = mockIndex + 1;
   const mockId = `M${mockNum}`;
 
+  yearShiftCounts.set(examYear, (yearShiftCounts.get(examYear) || 0) + 1);
+
   // Extract shift metadata
   const title = data.test_title || fileName;
   const dateMatch = title.match(/(\d{1,2}\s+[A-Za-z]+,?\s+\d{4})/i) || title.match(/(\d{1,2}\s+[A-Za-z]+)/i);
   const shiftMatch = title.match(/Shift\s*(\d+)/i);
-  const dateStr = dateMatch ? dateMatch[1].replace(",", "").trim() : "Sept 2025";
+  const dateStr = dateMatch ? dateMatch[1].replace(",", "").trim() : `Sept ${examYear}`;
   const shiftStr = shiftMatch ? `Shift ${shiftMatch[1]}` : "Shift 1";
   const shiftLabel = `${dateStr} · ${shiftStr}`;
 
   shiftRegistry.push({
     mockId,
     mockNum,
+    year: examYear,
     fileName,
     title,
     shiftLabel,
@@ -73,6 +82,7 @@ for (let mockIndex = 0; mockIndex < files.length; mockIndex++) {
   if (Array.isArray(data.questions)) {
     data.questions.forEach((q, qIdx) => {
       grandTotalQuestions++;
+      yearQuestionCounts.set(examYear, (yearQuestionCounts.get(examYear) || 0) + 1);
       const qNum = q.number || qIdx + 1;
       const key = `${mockId}-Q${qNum}`;
 
@@ -91,14 +101,17 @@ for (let mockIndex = 0; mockIndex < files.length; mockIndex++) {
           topicName: tagInfo.topicName,
           microTopicName: tagInfo.microTopicName,
           questionCount: 0,
-          shiftOccurrences: new Set(),
+          shiftOccurrencesByYear: new Map(),
           questionRefs: []
         };
         microTopicStats.set(tagInfo.microTopicId, stat);
       }
 
       stat.questionCount++;
-      stat.shiftOccurrences.add(mockId);
+      if (!stat.shiftOccurrencesByYear.has(examYear)) {
+        stat.shiftOccurrencesByYear.set(examYear, new Set());
+      }
+      stat.shiftOccurrencesByYear.get(examYear).add(mockId);
       stat.questionRefs.push({
         id: q.id,
         key,
@@ -124,7 +137,7 @@ for (let mockIndex = 0; mockIndex < files.length; mockIndex++) {
         microTopicName: tagInfo.microTopicName,
         format: tagInfo.format,
         exam: {
-          year: 2025,
+          year: Number(examYear),
           shiftLabel,
           date: dateStr,
           shift: shiftStr
@@ -140,6 +153,7 @@ for (let mockIndex = 0; mockIndex < files.length; mockIndex++) {
         key,
         mockNum,
         qNum,
+        year: examYear,
         subjectId: tagInfo.subjectId,
         chapterId: tagInfo.chapterId,
         topicId: tagInfo.topicId,
@@ -148,7 +162,8 @@ for (let mockIndex = 0; mockIndex < files.length; mockIndex++) {
         topicName: tagInfo.topicName,
         microTopicName: tagInfo.microTopicName,
         format: tagInfo.format,
-        shiftLabel
+        shiftLabel,
+        year: examYear
       };
       if (q.id) {
         flatQuestionMap[q.id] = flatQuestionMap[key];
@@ -161,7 +176,7 @@ for (let mockIndex = 0; mockIndex < files.length; mockIndex++) {
 }
 
 // Build hierarchical index
-const totalShifts = files.length;
+const totalShifts = papers.length;
 const hierarchy = {};
 
 TAXONOMY.subjects.forEach(sub => {
@@ -194,8 +209,23 @@ TAXONOMY.subjects.forEach(sub => {
       top.microTopics.forEach(micro => {
         const stat = microTopicStats.get(micro.id);
         const count = stat ? stat.questionCount : 0;
-        const shiftsPresent = stat ? stat.shiftOccurrences.size : 0;
-        const shiftFrequencyPct = Math.round((shiftsPresent / totalShifts) * 1000) / 10;
+        // A topic's frequency is its best single-year appearance rate. Combining
+        // years in one denominator would wrongly demote topics that are staple in
+        // one year but absent in the other.
+        let shiftsPresent = 0;
+        let bestYear = null;
+        let bestYearShifts = 0;
+        if (stat) {
+          for (const [year, shifts] of stat.shiftOccurrencesByYear) {
+            if (shifts.size > bestYearShifts) {
+              bestYearShifts = shifts.size;
+              bestYear = year;
+            }
+          }
+          shiftsPresent = bestYearShifts;
+        }
+        const bestYearTotal = bestYear ? (yearShiftCounts.get(bestYear) || 1) : 1;
+        const shiftFrequencyPct = bestYear ? Math.round((shiftsPresent / bestYearTotal) * 1000) / 10 : 0;
         const isHighYield = shiftFrequencyPct >= 65.0;
 
         hierarchy[sub.id].totalQuestions += count;
@@ -207,6 +237,7 @@ TAXONOMY.subjects.forEach(sub => {
           name: micro.name,
           questionCount: count,
           shiftsPresent,
+          bestYear,
           shiftFrequencyPct,
           isHighYield,
           questionRefs: stat ? stat.questionRefs : []
@@ -234,7 +265,13 @@ let reportMd = `# SSC CGL Granular Tagging Audit Report\n\n`;
 reportMd += `**Total Papers Processed**: ${totalShifts}\n`;
 reportMd += `**Total Questions Tagged**: ${grandTotalQuestions}\n`;
 reportMd += `**Tagging Granularity**: 4-Tier (Subject > Chapter > Topic > Micro-Topic)\n\n`;
-reportMd += `## Subject Distribution\n\n`;
+reportMd += `## Papers By Year\n\n`;
+reportMd += `| Year | Papers | Questions |\n`;
+reportMd += `| :--- | :--- | :--- |\n`;
+for (const year of YEARS) {
+  reportMd += `| ${year} | ${yearShiftCounts.get(year) || 0} | ${yearQuestionCounts.get(year) || 0} |\n`;
+}
+reportMd += `\n## Subject Distribution\n\n`;
 reportMd += `| Subject | Total Questions | Chapters | Topics | Micro-Topics |\n`;
 reportMd += `| :--- | :--- | :--- | :--- | :--- |\n`;
 
@@ -253,9 +290,10 @@ TAXONOMY.subjects.forEach(sub => {
   reportMd += `| ${sData.name} | ${sData.totalQuestions} | ${chCount} | ${topCount} | ${microCount} |\n`;
 });
 
-reportMd += `\n## Top High-Yield Exam Micro-Topics (Appeared in ≥ 65% of Shifts)\n\n`;
-reportMd += `| Subject | Chapter | Topic | Micro-Topic | Shift % | Total Qs |\n`;
-reportMd += `| :--- | :--- | :--- | :--- | :--- | :--- |\n`;
+reportMd += `\n## Top High-Yield Exam Micro-Topics (Appeared in ≥ 65% of a Year's Shifts)\n\n`;
+reportMd += `Shift % is the topic's best single-year appearance rate; Total Qs covers all years.\n\n`;
+reportMd += `| Subject | Chapter | Topic | Micro-Topic | Year | Shift % | Total Qs |\n`;
+reportMd += `| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n`;
 
 const allMicros = [];
 TAXONOMY.subjects.forEach(sub => {
@@ -267,6 +305,7 @@ TAXONOMY.subjects.forEach(sub => {
           ch: ch.name,
           top: top.name,
           micro: m.name,
+          year: m.bestYear || "-",
           pct: m.shiftFrequencyPct,
           count: m.questionCount
         });
@@ -277,7 +316,7 @@ TAXONOMY.subjects.forEach(sub => {
 
 allMicros.sort((a, b) => b.pct - a.pct || b.count - a.count);
 allMicros.filter(m => m.pct >= 65).forEach(m => {
-  reportMd += `| ${m.sub} | ${m.ch} | ${m.top} | **${m.micro}** | **${m.pct}%** | ${m.count} |\n`;
+  reportMd += `| ${m.sub} | ${m.ch} | ${m.top} | **${m.micro}** | ${m.year} | **${m.pct}%** | ${m.count} |\n`;
 });
 
 await fs.writeFile("tagging-report.md", reportMd, "utf8");

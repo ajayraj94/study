@@ -15,7 +15,8 @@ for (const [k, v] of Object.entries(d.byKey)) {
       tn: v.topicName,
       mn: v.microTopicName,
       fmt: v.format,
-      sl: v.shiftLabel
+      sl: v.shiftLabel,
+      yr: v.year
     };
   }
 }
