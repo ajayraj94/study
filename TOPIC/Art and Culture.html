@@ -471,7 +471,20 @@
       display: flex;
       flex-direction: column;
       gap: var(--space-sm);
+      /* Sticky side panel: stays put while the study canvas scrolls */
+      position: sticky;
+      top: var(--space-lg);
+      max-height: calc(100vh - (var(--space-lg) * 2));
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
     }
+    .syllabus-sidebar::-webkit-scrollbar { width: 8px; }
+    .syllabus-sidebar::-webkit-scrollbar-thumb {
+      background: var(--outline-variant);
+      border-radius: var(--rounded-full);
+    }
+    .syllabus-sidebar::-webkit-scrollbar-track { background: transparent; }
     .sidebar-header {
       display: flex;
       justify-content: space-between;
@@ -627,6 +640,20 @@
     .side-check-row.is-checked .side-topic-jump {
       color: var(--on-surface-variant);
       text-decoration: line-through;
+    }
+    /* Sub-topic currently open in the study canvas */
+    .side-check-row.is-focused {
+      background: var(--primary-container);
+      box-shadow: inset 3px 0 0 var(--primary);
+    }
+    .side-check-row.is-focused .side-topic-jump {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .side-check-row.is-focused .side-topic-jump:hover {
+      color: var(--primary);
+      text-decoration: underline;
     }
 
     /* Main Study Canvas */
@@ -1122,6 +1149,12 @@
       .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .workspace { grid-template-columns: minmax(0, 1fr); }
       .filter-band { grid-template-columns: minmax(0, 1fr); }
+      /* Single column: let the panel scroll with the page instead of sticking */
+      .syllabus-sidebar {
+        position: static;
+        max-height: none;
+        overflow-y: visible;
+      }
     }
     @media (max-width: 640px) {
       .page-grid { padding: var(--space-sm); gap: var(--space-md); }
@@ -2403,6 +2436,7 @@
       expandedSidebarUnits: { u1: true },
       collapsedDrawers: {},
       activeUnitId: `u1`,
+      focusedTopicId: null,
       statusFilter: `all`,
       searchQuery: ``,
       studioTab: `quiz`,
@@ -2622,14 +2656,15 @@
 
         const subHtml = unit.subtopics.map(st => {
           const checked = Boolean(appState.checkedTopics[st.id]);
+          const isFocused = appState.focusedTopicId === st.id;
           const matches = topicMatchesFilter(unit, st);
           if (!matches && (appState.searchQuery.trim() || appState.statusFilter !== `all`)) {
             return ``;
           }
           return `
-            <div class="side-check-row ${checked ? `is-checked` : ``}">
+            <div class="side-check-row ${checked ? `is-checked` : ``} ${isFocused ? `is-focused` : ``}">
               <input type="checkbox" class="topic-checkbox" id="side_chk_${st.id}" ${checked ? `checked` : ``} onchange="toggleTopic('${st.id}', this.checked)" aria-label="Mark ${st.title} complete">
-              <button type="button" class="side-topic-jump" onclick="jumpToTopic('${unit.id}', '${st.id}')">${st.title}</button>
+              <button type="button" class="side-topic-jump" onclick="jumpToTopic('${unit.id}', '${st.id}')" ${isFocused ? `aria-current="true"` : ``}>${st.title}</button>
             </div>
           `;
         }).join(``);
@@ -2658,6 +2693,18 @@
           </div>
         `;
       }).join(``);
+
+      // The panel is re-rendered on every click, which resets its internal
+      // scroll. Keep the highlighted sub-topic visible inside the panel.
+      const scroller = list.closest(`.syllabus-sidebar`);
+      const focusedRow = list.querySelector(`.side-check-row.is-focused`);
+      if (scroller && focusedRow) {
+        const panelBox = scroller.getBoundingClientRect();
+        const rowBox = focusedRow.getBoundingClientRect();
+        if (rowBox.top < panelBox.top || rowBox.bottom > panelBox.bottom) {
+          scroller.scrollTop += rowBox.top - panelBox.top - 12;
+        }
+      }
     }
 
     function renderStudyCanvas() {
@@ -2682,7 +2729,13 @@
         return;
       }
 
-      const drawersHtml = unit.subtopics.map(st => renderDrawer(unit, st, false)).join(``);
+      // Clicking a sub-topic in the side panel opens only that sub-topic.
+      const focusedTopic = appState.focusedTopicId
+        ? unit.subtopics.find(st => st.id === appState.focusedTopicId)
+        : null;
+      const focusIndex = focusedTopic ? unit.subtopics.indexOf(focusedTopic) : -1;
+      const shownSubtopics = focusedTopic ? [focusedTopic] : unit.subtopics;
+      const drawersHtml = shownSubtopics.map(st => renderDrawer(unit, st, false)).join(``);
 
       canvas.innerHTML = `
         <div class="canvas-header-card">
@@ -2690,11 +2743,13 @@
             <div>
               <div class="kicker-row">
                 <span class="kicker-label">Unit ${unit.num} · ${unit.category}</span>
+                ${focusedTopic ? `<span class="badge-brass">Sub-topic ${focusIndex + 1} of ${stats.total}</span>` : ``}
                 ${isComplete ? `<span class="badge-emerald">Unit Mastered</span>` : `<span class="badge-brass">${stats.done} of ${stats.total} Complete</span>`}
               </div>
-              <h2 class="canvas-title">${unit.title}</h2>
+              <h2 class="canvas-title">${focusedTopic ? focusedTopic.title : unit.title}</h2>
             </div>
             <div class="canvas-actions">
+              ${focusedTopic ? `<button type="button" class="btn btn-ghost btn-sm" onclick="showUnitOverview('${unit.id}')">← All ${stats.total} Sub-topics of Unit ${unit.num}</button>` : ``}
               <button type="button" class="btn btn-secondary btn-sm" onclick="markUnitComplete('${unit.id}', ${!isComplete})">
                 ${isComplete ? `Unmark All` : `Mark Unit Complete`}
               </button>
@@ -2998,9 +3053,27 @@
       saveAppState();
     }
 
-    function toggleSidebarModule(unitId) {
-      appState.expandedSidebarUnits[unitId] = !appState.expandedSidebarUnits[unitId];
+    function expandUnitDrawers(unitId) {
+      const unit = SYLLABUS_UNITS.find(u => u.id === unitId);
+      if (!unit) return;
+      for (const st of unit.subtopics) delete appState.collapsedDrawers[st.id];
+    }
+
+    function showWholeUnitInCanvas(unitId) {
+      // Selecting a unit must always show every sub-topic of that unit on the
+      // right, so drop any lingering search/filter (which would only keep the
+      // matching topics) and re-open all of the unit's note drawers.
       appState.activeUnitId = unitId;
+      appState.focusedTopicId = null;
+      appState.searchQuery = ``;
+      appState.statusFilter = `all`;
+      expandUnitDrawers(unitId);
+    }
+
+    function toggleSidebarModule(unitId) {
+      const willExpand = !appState.expandedSidebarUnits[unitId];
+      appState.expandedSidebarUnits[unitId] = willExpand;
+      showWholeUnitInCanvas(unitId);
       renderAll();
       saveAppState();
     }
@@ -3014,10 +3087,8 @@
     }
 
     function selectUnit(unitId) {
-      appState.activeUnitId = unitId;
       appState.expandedSidebarUnits[unitId] = true;
-      appState.searchQuery = ``;
-      appState.statusFilter = `all`;
+      showWholeUnitInCanvas(unitId);
       renderAll();
       saveAppState();
       const canvas = document.getElementById(`study-canvas`);
@@ -3025,17 +3096,24 @@
     }
 
     function jumpToTopic(unitId, topicId) {
-      appState.activeUnitId = unitId;
       appState.expandedSidebarUnits[unitId] = true;
+      appState.activeUnitId = unitId;
       appState.searchQuery = ``;
       appState.statusFilter = `all`;
+      // Focus mode: the right pane shows this sub-topic only.
+      appState.focusedTopicId = topicId;
       delete appState.collapsedDrawers[topicId];
       renderAll();
       saveAppState();
-      setTimeout(() => {
-        const el = document.getElementById(`drawer_${topicId}`);
-        if (el) el.scrollIntoView({ behavior: `smooth`, block: `start` });
-      }, 40);
+      const canvas = document.getElementById(`study-canvas`);
+      if (canvas) canvas.scrollIntoView({ behavior: `smooth`, block: `start` });
+    }
+
+    function showUnitOverview(unitId) {
+      appState.focusedTopicId = null;
+      appState.activeUnitId = unitId;
+      renderAll();
+      saveAppState();
     }
 
     function toggleDrawer(topicId) {
