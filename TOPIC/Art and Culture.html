@@ -1,0 +1,3238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="dashboard">
+  <meta name="design-style" content="terracotta">
+  <title>Indian Art &amp; Culture — Master Syllabus Tracker &amp; Study Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+
+      /* Page and surfaces (Terracotta) */
+      --background: #f9f3eb;
+      --surface-container-low: #f3e9dc;
+      --surface-container: #ede0d0;
+      --surface-container-high: #e4d4c0;
+      --surface-elevated: #fcf8f2;
+
+      /* Ink */
+      --on-surface: #261b15;
+      --on-surface-variant: #57483f;
+
+      /* Borders */
+      --outline: #9e8a78;
+      --outline-variant: #dfd0be;
+      --primary-border: #c98a6b;
+      --secondary-border: #c4b29e;
+      --tertiary-border: #b5d6c9;
+
+      /* Accents */
+      --primary: #b84a24;
+      --primary-hover: #9c3c1b;
+      --on-primary: #ffffff;
+      --primary-container: #f7ebe0;
+      --on-primary-container: #7d2e12;
+      --secondary: #8f6524;
+      --secondary-container: #f5ebd8;
+      --tertiary: #1d6356;
+      --tertiary-container: #e1efe9;
+      --on-tertiary-container: #13473d;
+      --error: #b82929;
+      --error-container: #fbe8e8;
+      --on-error: #ffffff;
+
+      /* Semantic & Focus */
+      --positive: #1d6356;
+      --warning: #8f6524;
+      --focus: #b84a24;
+
+      /* Data series */
+      --data-1: #b84a24;
+      --data-2: #1d6356;
+      --data-3: #b5893e;
+      --data-4: #8c3838;
+      --data-context: #a39384;
+
+      /* Fonts */
+      --font-headline: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-label: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+      /* Shape */
+      --rounded: 0.375rem;
+      --rounded-lg: 0.75rem;
+      --rounded-arch: 28px 28px 6px 6px;
+      --rounded-full: 9999px;
+
+      /* Effects */
+      --soft-shadow: 0 4px 18px rgb(38 27 21 / 0.04);
+      --soft-shadow-raised: 0 8px 28px rgb(38 27 21 / 0.08);
+      --warm-hairline: 1px solid var(--outline-variant);
+      --brass-light: #d8c3b0;
+      --brass-mid: #b5893e;
+      --brass-gradient: linear-gradient(90deg, var(--brass-light), var(--brass-mid), var(--brass-light));
+
+      /* Type scale (Dashboard) */
+      --display-size: clamp(2rem, 1.5rem + 2.2vw, 3.1rem);
+      --headline-size: clamp(1.375rem, 1.15rem + 0.7vw, 1.75rem);
+      --subhead-size: clamp(1.0625rem, 1rem + 0.25vw, 1.25rem);
+      --body-size: clamp(0.9375rem, 0.91rem + 0.12vw, 1rem);
+      --label-size: 0.75rem;
+
+      /* Spacing scale (4pt base) */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+      --dur-long: 420ms;
+    }
+
+    /* Base reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    header { position: static !important; }
+    button, input, select, textarea { font-family: inherit; }
+
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    /* Page Grid */
+    .page-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-lg);
+      padding: var(--space-lg);
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+    .page-grid * { min-width: 0; }
+
+    /* Masthead */
+    .masthead {
+      padding-top: var(--space-sm);
+    }
+    .masthead-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: var(--space-md);
+    }
+    .kicker-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-xs);
+    }
+    .kicker-label {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+    .badge-emerald {
+      background: var(--tertiary-container);
+      color: var(--on-tertiary-container);
+      border: 1px solid var(--tertiary-border);
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+    .badge-brass {
+      background: var(--secondary-container);
+      color: var(--secondary);
+      border: 1px solid var(--outline-variant);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--rounded-full);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+    .title {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: var(--display-size);
+      line-height: 1.06;
+      letter-spacing: -0.01em;
+      color: var(--on-surface);
+      margin: 0;
+    }
+    .title em {
+      font-style: italic;
+      color: var(--primary);
+    }
+    .subtitle {
+      margin: var(--space-xs) 0 0;
+      color: var(--on-surface-variant);
+      font-size: var(--subhead-size);
+      max-width: 65ch;
+    }
+    .masthead-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      align-items: center;
+    }
+
+    /* Brass Diamond Rule */
+    .ornament-rule {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-block: var(--space-md) var(--space-xs);
+      color: var(--secondary);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .ornament-rule::before,
+    .ornament-rule::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--brass-gradient);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      min-height: 44px;
+      padding: 0 var(--space-lg);
+      border-radius: var(--rounded-full);
+      font-family: var(--font-label);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: background-color var(--dur-short) var(--ease-out),
+                  box-shadow var(--dur-short) var(--ease-out),
+                  transform var(--dur-micro) var(--ease-out);
+      white-space: nowrap;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--on-primary);
+    }
+    .btn-primary:hover:not(:disabled) {
+      background-color: var(--primary-hover);
+      box-shadow: var(--soft-shadow-raised);
+    }
+    .btn-secondary {
+      background-color: var(--surface-container-low);
+      color: var(--on-surface);
+      border-color: var(--secondary-border);
+    }
+    .btn-secondary:hover:not(:disabled) {
+      background-color: var(--surface-container);
+    }
+    .btn-ghost {
+      background-color: transparent;
+      color: var(--on-surface-variant);
+      border-color: var(--outline-variant);
+    }
+    .btn-ghost:hover:not(:disabled) {
+      background-color: var(--surface-container-low);
+      color: var(--on-surface);
+    }
+    .btn-sm {
+      min-height: 38px;
+      padding: 0 var(--space-md);
+      font-size: var(--label-size);
+    }
+    .btn-danger-armed {
+      background-color: var(--error);
+      color: var(--on-error);
+      border-color: var(--error);
+    }
+
+    /* KPI Strip (Arch Cards) */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-md);
+    }
+    .arch-card {
+      background: var(--surface-container-low);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded-arch);
+      padding: var(--space-lg) var(--space-md) var(--space-md);
+      text-align: center;
+      box-shadow: var(--soft-shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-xs);
+      transition: box-shadow var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+    }
+    .arch-card:hover {
+      box-shadow: var(--soft-shadow-raised);
+      transform: translateY(-2px);
+    }
+    .arch-card.is-featured {
+      background: var(--primary-container);
+      border-color: var(--primary-border);
+    }
+    .arch-label {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+    }
+    .arch-value {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: clamp(1.85rem, 1.5rem + 1.2vw, 2.5rem);
+      line-height: 1.05;
+      color: var(--on-surface);
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    .arch-value.is-text {
+      font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.55rem);
+      line-height: 1.2;
+    }
+    .arch-caption {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--tertiary);
+    }
+
+    /* Progress Meter */
+    .progress-track {
+      width: 100%;
+      height: 8px;
+      background-color: var(--surface-container-high);
+      border-radius: var(--rounded-full);
+      overflow: hidden;
+    }
+    .progress-track.thin { height: 5px; }
+    .progress-fill {
+      height: 100%;
+      background-color: var(--primary);
+      border-radius: var(--rounded-full);
+      transition: width var(--dur-short) var(--ease-out);
+    }
+    .progress-fill.is-emerald {
+      background-color: var(--tertiary);
+    }
+
+    /* Search & Filter Control Band */
+    .filter-band {
+      background: var(--surface-container);
+      border: var(--warm-hairline);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+      display: grid;
+      grid-template-columns: minmax(220px, 1.5fr) minmax(160px, 0.7fr) auto;
+      gap: var(--space-md);
+      align-items: end;
+    }
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .field-label {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+    }
+    .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .text-input, .select-input {
+      width: 100%;
+      min-height: 44px;
+      background-color: var(--surface-elevated);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded);
+      color: var(--on-surface);
+      font-size: var(--body-size);
+      padding: var(--space-sm) var(--space-md);
+      transition: border-color var(--dur-micro) var(--ease-out), box-shadow var(--dur-micro) var(--ease-out);
+    }
+    .text-input.has-clear { padding-right: 2.5rem; }
+    .select-input { padding-right: 2.25rem; cursor: pointer; }
+    .text-input:focus, .select-input:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px var(--primary-container);
+    }
+    .clear-btn {
+      position: absolute;
+      right: var(--space-xs);
+      background: transparent;
+      border: none;
+      color: var(--on-surface-variant);
+      cursor: pointer;
+      min-width: 36px;
+      min-height: 36px;
+      border-radius: var(--rounded);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .clear-btn:hover { background-color: var(--surface-container); color: var(--on-surface); }
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      align-items: center;
+    }
+    .pill-toggle {
+      min-height: 44px;
+      padding: 0 var(--space-md);
+      border-radius: var(--rounded-full);
+      border: 1px solid var(--outline-variant);
+      background: var(--surface-elevated);
+      color: var(--on-surface-variant);
+      font-family: var(--font-label);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out);
+    }
+    .pill-toggle:hover { background: var(--surface-container-low); color: var(--on-surface); }
+    .pill-toggle.is-active {
+      background: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+    }
+
+    /* Main Workspace Layout: Side Panel + Main Study Canvas */
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(300px, 370px) minmax(0, 1fr);
+      gap: var(--space-lg);
+      align-items: start;
+    }
+
+    /* Interactive Side Panel */
+    .syllabus-sidebar {
+      background: var(--surface-container-low);
+      border: var(--warm-hairline);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md);
+      box-shadow: var(--soft-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: var(--space-sm);
+      border-bottom: var(--warm-hairline);
+      gap: var(--space-sm);
+    }
+    .sidebar-title {
+      font-family: var(--font-headline);
+      font-size: var(--headline-size);
+      font-weight: 600;
+      margin: 0;
+      color: var(--on-surface);
+    }
+    .sidebar-controls {
+      display: flex;
+      gap: var(--space-xs);
+    }
+    .unit-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    /* Expandable Module in Side Panel */
+    .side-module {
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded);
+      background: var(--surface-elevated);
+      overflow: hidden;
+      transition: border-color var(--dur-micro) var(--ease-out), box-shadow var(--dur-micro) var(--ease-out);
+    }
+    .side-module.is-selected {
+      border-color: var(--primary-border);
+      box-shadow: var(--soft-shadow);
+    }
+    .side-module-head {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: var(--space-sm);
+      align-items: center;
+      padding: var(--space-sm) var(--space-md);
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      width: 100%;
+      text-align: left;
+      min-height: 52px;
+      color: var(--on-surface);
+    }
+    .side-module.is-selected .side-module-head {
+      background: var(--primary-container);
+    }
+    .side-module-head:hover {
+      background: var(--surface-container-low);
+    }
+    .side-module.is-selected .side-module-head:hover {
+      background: var(--primary-container);
+    }
+    .unit-num-pill {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--rounded);
+      background: var(--surface-container);
+      color: var(--secondary);
+      font-variant-numeric: tabular-nums;
+    }
+    .side-module.is-selected .unit-num-pill {
+      background: var(--primary);
+      color: var(--on-primary);
+    }
+    .side-module.is-complete .unit-num-pill {
+      background: var(--tertiary-container);
+      color: var(--on-tertiary-container);
+    }
+    .side-module-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .side-module-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      line-height: 1.25;
+      color: var(--on-surface);
+    }
+    .side-module-sub {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: 0.75rem;
+      color: var(--on-surface-variant);
+      font-variant-numeric: tabular-nums;
+    }
+    .chevron-icon {
+      transition: transform var(--dur-short) var(--ease-out);
+      color: var(--on-surface-variant);
+      flex-shrink: 0;
+    }
+    .side-module.is-expanded .chevron-icon {
+      transform: rotate(180deg);
+    }
+
+    .side-checklist {
+      border-top: 1px solid var(--outline-variant);
+      padding: var(--space-xs) var(--space-sm) var(--space-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      background: var(--surface-elevated);
+    }
+    .side-checklist[hidden] { display: none; }
+    .side-check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      padding: var(--space-xs) var(--space-xs);
+      border-radius: var(--rounded);
+      transition: background-color var(--dur-micro) var(--ease-out);
+    }
+    .side-check-row:hover {
+      background: var(--surface-container-low);
+    }
+    .topic-checkbox {
+      width: 20px;
+      height: 20px;
+      margin: 2px 0 0;
+      accent-color: var(--tertiary);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .side-topic-jump {
+      background: none;
+      border: none;
+      padding: 0;
+      text-align: left;
+      cursor: pointer;
+      font-size: 0.84rem;
+      line-height: 1.35;
+      color: var(--on-surface);
+      flex: 1;
+      min-height: 28px;
+      display: flex;
+      align-items: center;
+    }
+    .side-topic-jump:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+    .side-check-row.is-checked .side-topic-jump {
+      color: var(--on-surface-variant);
+      text-decoration: line-through;
+    }
+
+    /* Main Study Canvas */
+    .study-canvas {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .canvas-header-card {
+      background: var(--surface-container-low);
+      border: var(--warm-hairline);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      box-shadow: var(--soft-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .canvas-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-md);
+    }
+    .canvas-title {
+      font-family: var(--font-headline);
+      font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.35rem);
+      font-weight: 600;
+      line-height: 1.12;
+      margin: var(--space-xs) 0 0;
+      color: var(--on-surface);
+    }
+    .canvas-overview {
+      margin: 0;
+      color: var(--on-surface-variant);
+      max-width: 72ch;
+    }
+    .canvas-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      align-items: center;
+    }
+    .unit-progress-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--space-md);
+      align-items: center;
+      padding-top: var(--space-sm);
+      border-top: var(--warm-hairline);
+    }
+    .unit-progress-label {
+      font-family: var(--font-label);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--tertiary);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    /* Click-to-View Study Drawers */
+    .drawers-stack {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .study-drawer {
+      background: var(--surface-elevated);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--soft-shadow);
+      overflow: hidden;
+      transition: box-shadow var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+    }
+    .study-drawer.is-completed {
+      border-color: var(--tertiary-border);
+    }
+    .drawer-header {
+      background: var(--surface-container-low);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+      border-bottom: 1px solid transparent;
+    }
+    .study-drawer.is-open .drawer-header {
+      border-bottom-color: var(--outline-variant);
+    }
+    .drawer-left {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-md);
+      flex: 1;
+    }
+    .drawer-check-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      margin: -10px 0 -10px -10px;
+      cursor: pointer;
+    }
+    .drawer-check-wrap input {
+      width: 22px;
+      height: 22px;
+      accent-color: var(--tertiary);
+      cursor: pointer;
+    }
+    .drawer-title-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      text-align: left;
+      cursor: pointer;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .drawer-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .drawer-title {
+      font-family: var(--font-headline);
+      font-size: var(--headline-size);
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--on-surface);
+      margin: 0;
+    }
+    .drawer-summary {
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+      margin: 0;
+    }
+    .drawer-toggle-btn {
+      background: var(--surface-elevated);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded-full);
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0 var(--space-md);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      cursor: pointer;
+      color: var(--on-surface);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .drawer-toggle-btn:hover { background: var(--surface-container); }
+    .drawer-body {
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .drawer-body[hidden] { display: none; }
+
+    /* Study Content Typography & Components */
+    .note-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+    .note-card {
+      background: var(--surface-container-low);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+    }
+    .note-card h4 {
+      font-family: var(--font-headline);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 var(--space-xs);
+      color: var(--primary);
+    }
+    .note-card p, .note-card ul {
+      margin: 0;
+      font-size: 0.92rem;
+    }
+    .note-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .note-list li { line-height: 1.55; }
+    .callout-box {
+      background: var(--primary-container);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      font-size: 0.93rem;
+    }
+    .callout-box.is-emerald {
+      background: var(--tertiary-container);
+      border-left-color: var(--tertiary);
+    }
+    .callout-title {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--on-primary-container);
+      margin-bottom: var(--space-xs);
+      display: block;
+    }
+    .callout-box.is-emerald .callout-title {
+      color: var(--on-tertiary-container);
+    }
+
+    /* Tables */
+    .table-scroll {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded);
+      background: var(--surface-elevated);
+    }
+    .study-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+    .study-table thead th {
+      background: var(--surface-container);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+      padding: var(--space-sm) var(--space-md);
+      border-bottom: 1px solid var(--outline-variant);
+      white-space: nowrap;
+    }
+    .study-table tbody td {
+      padding: var(--space-sm) var(--space-md);
+      border-bottom: 1px solid var(--outline-variant);
+      vertical-align: top;
+    }
+    .study-table tbody tr:last-child td { border-bottom: none; }
+    .study-table tbody tr:hover td { background: var(--surface-container-low); }
+
+    /* SVG Diagram Card */
+    .diagram-frame {
+      background: var(--surface-container-low);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md);
+    }
+    .diagram-caption {
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+      margin-top: var(--space-xs);
+      text-align: center;
+    }
+
+    /* Search Highlight */
+    mark.hl {
+      background: var(--secondary-container);
+      color: var(--on-surface);
+      padding: 0 2px;
+      border-radius: 2px;
+      font-weight: 600;
+    }
+
+    /* Unit 11: Quiz & Flashcards Studio */
+    .studio-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      border-bottom: var(--warm-hairline);
+      padding-bottom: var(--space-md);
+    }
+    .quiz-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      align-items: end;
+      background: var(--surface-container-low);
+      padding: var(--space-md);
+      border-radius: var(--rounded);
+      border: var(--warm-hairline);
+    }
+    .quiz-card {
+      background: var(--surface-elevated);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      box-shadow: var(--soft-shadow);
+    }
+    .quiz-q-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+    .quiz-question {
+      font-family: var(--font-headline);
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.25;
+      margin: 0;
+    }
+    .quiz-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+      gap: var(--space-sm);
+    }
+    .quiz-opt-btn {
+      min-height: 46px;
+      padding: var(--space-sm) var(--space-md);
+      text-align: left;
+      background: var(--surface-container-low);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded);
+      color: var(--on-surface);
+      font-size: 0.92rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+    }
+    .quiz-opt-btn:hover:not(:disabled) {
+      background: var(--surface-container);
+      border-color: var(--outline);
+    }
+    .quiz-opt-btn.is-correct {
+      background: var(--tertiary-container);
+      border-color: var(--tertiary);
+      color: var(--on-tertiary-container);
+      font-weight: 600;
+    }
+    .quiz-opt-btn.is-wrong {
+      background: var(--error-container);
+      border-color: var(--error);
+      color: var(--error);
+      font-weight: 600;
+    }
+    .quiz-explanation {
+      background: var(--surface-container-low);
+      border-left: 4px solid var(--tertiary);
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--rounded);
+      font-size: 0.9rem;
+    }
+    .quiz-explanation.is-wrong {
+      border-left-color: var(--error);
+    }
+
+    /* Flashcard Component */
+    .flashcard-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    .flashcard-box {
+      width: 100%;
+      max-width: 680px;
+      min-height: 240px;
+      background: var(--surface-container-low);
+      border: 1px solid var(--primary-border);
+      border-radius: var(--rounded-arch);
+      padding: var(--space-xl) var(--space-lg);
+      box-shadow: var(--soft-shadow-raised);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: var(--space-md);
+      cursor: pointer;
+      transition: transform var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+    }
+    .flashcard-box.is-flipped {
+      background: var(--primary-container);
+    }
+    .flashcard-box:hover { transform: translateY(-2px); }
+    .flashcard-prompt {
+      font-family: var(--font-headline);
+      font-size: clamp(1.4rem, 1.15rem + 0.8vw, 1.9rem);
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--on-surface);
+    }
+    .flashcard-answer {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--on-surface);
+      max-width: 55ch;
+    }
+    .flashcard-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Mastery Breakdown Chart (SVG / CSS Bars) */
+    .mastery-bars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+      gap: var(--space-sm);
+      background: var(--surface-container-low);
+      border: var(--warm-hairline);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md);
+    }
+    .mini-bar-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--rounded);
+      cursor: pointer;
+      background: transparent;
+      border: 1px solid transparent;
+      text-align: left;
+    }
+    .mini-bar-item:hover {
+      background: var(--surface-elevated);
+      border-color: var(--outline-variant);
+    }
+    .mini-bar-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--on-surface);
+    }
+
+    /* Empty State & Toast */
+    .empty-state {
+      background: var(--surface-container-low);
+      border: 1px dashed var(--outline);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-xl);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    .status-banner {
+      background: var(--tertiary-container);
+      color: var(--on-tertiary-container);
+      border: 1px solid var(--tertiary-border);
+      border-radius: var(--rounded);
+      padding: var(--space-sm) var(--space-md);
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .status-banner[hidden] { display: none; }
+
+    .source-footer {
+      border-top: var(--warm-hairline);
+      padding-top: var(--space-md);
+      color: var(--on-surface-variant);
+      font-size: 0.8125rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1024px) {
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .workspace { grid-template-columns: minmax(0, 1fr); }
+      .filter-band { grid-template-columns: minmax(0, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .page-grid { padding: var(--space-sm); gap: var(--space-md); }
+      .kpi-grid { grid-template-columns: minmax(0, 1fr); }
+      .drawer-header { flex-direction: column; align-items: stretch; }
+      .drawer-toggle-btn { align-self: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-grid">
+    <!-- Editorial Masthead -->
+    <header class="masthead">
+      <div class="masthead-top">
+        <div>
+          <div class="kicker-row">
+            <span class="kicker-label">UPSC · SSC · Railway Master Syllabus</span>
+            <span class="badge-emerald">11 Units · Complete Study Notes</span>
+          </div>
+          <h1 class="title">Indian Art &amp; <em>Culture</em></h1>
+          <p class="subtitle">Comprehensive Syllabus Tracker, Expandable Study Drawers &amp; Self-Assessment Dashboard</p>
+        </div>
+        <div class="masthead-actions">
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-export" onclick="exportStudyProgress()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export Progress
+          </button>
+          <button type="button" class="btn btn-ghost btn-sm" id="btn-reset" onclick="handleResetProgress(this)">
+            Reset Progress
+          </button>
+        </div>
+      </div>
+      <div class="ornament-rule" aria-hidden="true"><span>◆</span></div>
+    </header>
+
+    <!-- Status Notification Banner (replaces alerts) -->
+    <div class="status-banner" id="status-banner" hidden role="status" aria-live="polite">
+      <span id="status-banner-text"></span>
+      <button type="button" class="btn btn-ghost btn-sm" onclick="hideStatusBanner()">Dismiss</button>
+    </div>
+
+    <!-- Top KPI Strip (4 Riad Arch Cards) -->
+    <section class="kpi-grid" aria-label="Study progress metrics">
+      <div class="arch-card is-featured">
+        <span class="arch-label">Total Syllabus Mastery</span>
+        <span class="arch-value" id="kpi-total-pct">0%</span>
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-fill" id="kpi-total-bar" style="width: 0%;"></div>
+        </div>
+        <span class="arch-caption" id="kpi-total-count">0 / 0 sub-topics checked</span>
+      </div>
+      <div class="arch-card">
+        <span class="arch-label">Units Completed</span>
+        <span class="arch-value" id="kpi-units-done">0 / 11</span>
+        <span class="arch-caption" id="kpi-units-caption">11 modules tracked</span>
+      </div>
+      <div class="arch-card">
+        <span class="arch-label">Current Focus Unit</span>
+        <span class="arch-value is-text" id="kpi-active-unit">01 · Architecture</span>
+        <span class="arch-caption" id="kpi-active-progress">0% unit complete</span>
+      </div>
+      <div class="arch-card">
+        <span class="arch-label">Quiz Accuracy</span>
+        <span class="arch-value" id="kpi-quiz-score">0%</span>
+        <span class="arch-caption" id="kpi-quiz-count">0 / 0 questions answered</span>
+      </div>
+    </section>
+
+    <!-- Search & Dynamic Filter Band -->
+    <section class="filter-band" aria-label="Search and filter syllabus">
+      <div class="field-group">
+        <label class="field-label" for="search-input">Search Topics, Artists, Temples, Instruments &amp; Festivals</label>
+        <div class="input-wrap">
+          <input type="search" id="search-input" class="text-input has-clear" placeholder="Try: Brihadeeswara, Sattriya, Santoor, 92nd Amendment, Hornbill…" oninput="handleSearchInput(this.value)">
+          <button type="button" class="clear-btn" id="btn-clear-search" onclick="clearSearch()" title="Clear search" aria-label="Clear search" hidden>✕</button>
+        </div>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="unit-jump-select">Quick Jump to Unit</label>
+        <select id="unit-jump-select" class="select-input" onchange="selectUnit(this.value)">
+          <option value="u1">01. Architecture, Temples &amp; Caves</option>
+          <option value="u2">02. Classical Dances &amp; Performers</option>
+          <option value="u3">03. Folk Dances &amp; Folk Theatre</option>
+          <option value="u4">04. Indian Music &amp; Instruments</option>
+          <option value="u5">05. Indian Paintings &amp; Artists</option>
+          <option value="u6">06. Indian Martial Arts</option>
+          <option value="u7">07. Calendars &amp; Regional New Years</option>
+          <option value="u8">08. Fairs, Festivals &amp; UNESCO</option>
+          <option value="u9">09. Indian Languages</option>
+          <option value="u10">10. Institutions &amp; National Awards</option>
+          <option value="u11">11. Practice Quizzes &amp; Flashcards</option>
+        </select>
+      </div>
+      <div class="filter-pills" role="group" aria-label="Completion status filter">
+        <button type="button" class="pill-toggle is-active" id="filter-all" onclick="setStatusFilter('all')">All Topics</button>
+        <button type="button" class="pill-toggle" id="filter-pending" onclick="setStatusFilter('pending')">Pending</button>
+        <button type="button" class="pill-toggle" id="filter-done" onclick="setStatusFilter('done')">Completed</button>
+      </div>
+    </section>
+
+    <!-- All-Units Mini Progress Overview Strip -->
+    <section aria-label="Unit-by-unit mastery breakdown">
+      <div class="mastery-bars" id="mastery-bars-grid"></div>
+    </section>
+
+    <!-- Main Dashboard Workspace: Interactive Side Panel + Study Canvas -->
+    <main class="workspace">
+      <!-- Interactive Side Panel with 11 Expandable Modules -->
+      <aside class="syllabus-sidebar" aria-label="Syllabus modules navigation">
+        <div class="sidebar-header">
+          <h2 class="sidebar-title">Syllabus Modules</h2>
+          <div class="sidebar-controls">
+            <button type="button" class="btn btn-ghost btn-sm" onclick="toggleAllSidebarModules(true)">Expand</button>
+            <button type="button" class="btn btn-ghost btn-sm" onclick="toggleAllSidebarModules(false)">Collapse</button>
+          </div>
+        </div>
+        <div class="unit-list" id="sidebar-unit-list"></div>
+      </aside>
+
+      <!-- Main Study Canvas -->
+      <section class="study-canvas" id="study-canvas" aria-label="Active unit study notes and interactive drawers">
+        <!-- Rendered dynamically by JS -->
+      </section>
+    </main>
+
+    <footer class="source-footer">
+      <span>Compiled from Indian Art &amp; Culture Exam Compendiums (UPSC, SSC, Railway), Constitutional 8th Schedule Records &amp; UNESCO Heritage Listings.</span>
+      <span>Progress and quiz scores persist automatically in your workspace.</span>
+    </footer>
+  </div>
+
+  <api-shim></api-shim>
+  <script>
+    // =========================================================================
+    // DATA: ALL 11 INDIAN ART & CULTURE UNITS (100% COMPLETE STUDY NOTES)
+    // =========================================================================
+    const SYLLABUS_UNITS = [
+      {
+        id: `u1`,
+        num: `01`,
+        shortTitle: `Architecture & Caves`,
+        title: `Indian Architecture, Temples & Cave Art`,
+        category: `Architecture & Sculpture`,
+        overview: `Evolution of Hindu, Buddhist, and Jain sacred architecture across India—from Mauryan rock-cut Barabar caves and grand Stupas to Nagara, Dravida, Vesara, Kalinga, Solanki, Pallava, Chola, and Hoysala temple traditions.`,
+        subtopics: [
+          {
+            id: `u1_nagara_dravida`,
+            title: `Nagara, Dravida & Vesara Temple Orders`,
+            badge: `Core Comparison`,
+            summary: `Architectural anatomy of North Indian (Shikhara), South Indian (Vimana & Gopuram), and Deccan hybrid (Vesara) temples.`,
+            contentHtml: `
+              <div class="diagram-frame">
+                <svg viewBox="0 0 760 270" width="100%" role="img" aria-label="Labeled comparison diagram of Nagara Shikhara and Dravida Vimana temple architecture">
+                  <rect x="0" y="0" width="760" height="270" rx="8" fill="var(--surface-container-low)"/>
+                  <!-- NAGARA (LEFT) -->
+                  <text x="190" y="26" text-anchor="middle" font-family="var(--font-headline)" font-size="18" font-weight="700" fill="var(--on-surface)">Nagara Style (North India)</text>
+                  <line x1="40" y1="225" x2="340" y2="225" stroke="var(--on-surface-variant)" stroke-width="2"/>
+                  <!-- Jagati platform -->
+                  <rect x="65" y="205" width="250" height="20" fill="var(--surface-container-high)" stroke="var(--outline)"/>
+                  <text x="190" y="219" text-anchor="middle" font-size="10" font-weight="700" fill="var(--on-surface)">Jagati (Raised Platform)</text>
+                  <!-- Mandapa -->
+                  <polygon points="85,205 85,155 125,130 165,155 165,205" fill="var(--primary-container)" stroke="var(--primary)" stroke-width="1.5"/>
+                  <text x="125" y="182" text-anchor="middle" font-size="10" font-weight="600" fill="var(--on-surface)">Mandapa</text>
+                  <!-- Curvilinear Shikhara -->
+                  <path d="M170,205 L170,150 Q180,95 215,58 Q250,95 260,150 L260,205 Z" fill="var(--primary-container)" stroke="var(--primary)" stroke-width="2"/>
+                  <rect x="192" y="160" width="46" height="45" fill="var(--surface-container)" stroke="var(--secondary)"/>
+                  <text x="215" y="185" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--on-primary-container)">Garbhagriha</text>
+                  <!-- Amalaka & Kalasha -->
+                  <ellipse cx="215" cy="54" rx="16" ry="5" fill="var(--data-3)" stroke="var(--on-surface)" stroke-width="1"/>
+                  <polygon points="215,36 210,49 220,49" fill="var(--primary)"/>
+                  <line x1="215" y1="54" x2="292" y2="54" stroke="var(--on-surface-variant)" stroke-dasharray="3 2"/>
+                  <text x="296" y="57" font-size="10" font-weight="600" fill="var(--on-surface)">Amalaka</text>
+                  <line x1="217" y1="42" x2="292" y2="42" stroke="var(--on-surface-variant)" stroke-dasharray="3 2"/>
+                  <text x="296" y="45" font-size="10" font-weight="600" fill="var(--primary)">Kalasha (Finial)</text>
+                  <line x1="242" y1="105" x2="292" y2="105" stroke="var(--on-surface-variant)" stroke-dasharray="3 2"/>
+                  <text x="296" y="108" font-size="10" font-weight="600" fill="var(--on-surface)">Curvilinear Shikhara</text>
+
+                  <!-- Divider -->
+                  <line x1="380" y1="20" x2="380" y2="250" stroke="var(--outline-variant)" stroke-width="1.5"/>
+
+                  <!-- DRAVIDA (RIGHT) -->
+                  <text x="570" y="26" text-anchor="middle" font-family="var(--font-headline)" font-size="18" font-weight="700" fill="var(--on-surface)">Dravida Style (South India)</text>
+                  <line x1="410" y1="225" x2="725" y2="225" stroke="var(--on-surface-variant)" stroke-width="2"/>
+                  <!-- Prakara Boundary & Gopuram -->
+                  <rect x="425" y="135" width="42" height="90" fill="var(--tertiary-container)" stroke="var(--tertiary)" stroke-width="1.5"/>
+                  <polygon points="422,135 446,105 470,135" fill="var(--tertiary)"/>
+                  <text x="446" y="185" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--on-tertiary-container)">Gopuram</text>
+                  <!-- Mandapa -->
+                  <rect x="490" y="170" width="70" height="55" fill="var(--primary-container)" stroke="var(--tertiary)" stroke-width="1.5"/>
+                  <text x="525" y="200" text-anchor="middle" font-size="10" font-weight="600" fill="var(--on-surface)">Mandapa</text>
+                  <!-- Stepped Pyramidal Vimana -->
+                  <rect x="565" y="155" width="90" height="70" fill="var(--tertiary-container)" stroke="var(--tertiary)" stroke-width="2"/>
+                  <rect x="575" y="130" width="70" height="25" fill="var(--tertiary-container)" stroke="var(--tertiary)" stroke-width="1.5"/>
+                  <rect x="585" y="107" width="50" height="23" fill="var(--tertiary-container)" stroke="var(--tertiary)" stroke-width="1.5"/>
+                  <rect x="595" y="87" width="30" height="20" fill="var(--tertiary-container)" stroke="var(--tertiary)" stroke-width="1.5"/>
+                  <!-- Octagonal Shikhara & Stupika -->
+                  <path d="M598,87 Q610,64 622,87 Z" fill="var(--data-3)" stroke="var(--on-surface)"/>
+                  <line x1="610" y1="60" x2="610" y2="70" stroke="var(--on-surface)" stroke-width="2"/>
+                  <text x="610" y="195" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--on-tertiary-container)">Garbhagriha</text>
+                  <line x1="622" y1="75" x2="672" y2="75" stroke="var(--on-surface-variant)" stroke-dasharray="3 2"/>
+                  <text x="676" y="78" font-size="10" font-weight="600" fill="var(--tertiary)">Shikhara / Stupika</text>
+                  <line x1="646" y1="120" x2="672" y2="120" stroke="var(--on-surface-variant)" stroke-dasharray="3 2"/>
+                  <text x="676" y="123" font-size="10" font-weight="600" fill="var(--on-surface)">Pyramidal Vimana</text>
+                  <text x="570" y="246" text-anchor="middle" font-size="10" font-weight="600" fill="var(--on-surface-variant)">Enclosed Compound Wall (Prakara) + Temple Tank (Kalyani)</text>
+                </svg>
+                <p class="diagram-caption">Structural anatomy: Nagara features a curvilinear Shikhara crowned by Amalaka &amp; Kalasha; Dravida features a stepped pyramidal Vimana and monumental Gopuram gateway.</p>
+              </div>
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Feature</th>
+                      <th>Nagara (North India)</th>
+                      <th>Dravida (South India)</th>
+                      <th>Vesara (Deccan Hybrid)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Superstructure</strong></td>
+                      <td>Curvilinear <strong>Shikhara</strong> (Rekha-prasada, Phamsana, Valabhi subtypes)</td>
+                      <td>Stepped pyramidal <strong>Vimana</strong> rising in tiers (<em>talas</em>)</td>
+                      <td>Hybrid: stepped storeys softened into a curvilinear profile</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Crowning Element</strong></td>
+                      <td>Ribbed stone <strong>Amalaka</strong> topped by <strong>Kalasha</strong></td>
+                      <td>Octagonal dome-shaped <strong>Shikhara</strong> &amp; <strong>Stupika</strong></td>
+                      <td>Combination of Amalaka-like &amp; octagonal Dravida dome</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Compound &amp; Gate</strong></td>
+                      <td>Usually open without tall boundary walls or gopurams; built on raised <strong>Jagati</strong></td>
+                      <td>Enclosed by high <strong>Prakara</strong> walls with towering <strong>Gopurams</strong> &amp; water tank</td>
+                      <td>Open or low-walled plans; stellate or rectangular layouts</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Sanctum Guard</strong></td>
+                      <td>Ganga and Yamuna river goddesses flank the doorway</td>
+                      <td>Fierce <strong>Dvarapalas</strong> (doorkeepers) guard the sanctum</td>
+                      <td>Mixed Chalukyan &amp; Rashtrakuta sculptural motifs</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Key Examples</strong></td>
+                      <td>Kandariya Mahadeva (Khajuraho), Dashavatara (Deogarh), Modhera</td>
+                      <td>Brihadeeswara (Thanjavur), Shore Temple, Meenakshi (Madurai)</td>
+                      <td>Virupaksha &amp; Papanatha (Pattadakal), Lad Khan (Aihole), Kailashanatha</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          },
+          {
+            id: `u1_kalinga_solanki`,
+            title: `Regional Nagara Sub-Schools: Kalinga & Solanki`,
+            badge: `Regional Styles`,
+            summary: `Odisha's Rekha, Pidha & Khakhara Deulas alongside Gujarat-Rajasthan's Maru-Gurjara marble & stepwell craftsmanship.`,
+            contentHtml: `
+              <div class="note-grid">
+                <div class="note-card">
+                  <h4>Kalinga Style (Odisha)</h4>
+                  <ul class="note-list">
+                    <li><strong>Exterior vs. Interior:</strong> Lavishly carved exterior walls, plain unadorned interior sanctum; no pillars in main hall (iron girders used).</li>
+                    <li><strong>Rekha Deula:</strong> Tall curvilinear tower over the sanctum (<em>Garbhagriha</em>). Examples: <strong>Lingaraja Temple</strong> (Bhubaneswar), <strong>Jagannath Temple</strong> (Puri).</li>
+                    <li><strong>Pidha Deula:</strong> Square hall (<em>Jagamohana</em>) with a tiered pyramidal roof of horizontal platforms. Example: <strong>Konark Sun Temple</strong> (13th c., Narasimhadeva I).</li>
+                    <li><strong>Khakhara Deula:</strong> Rectangular base with semi-cylindrical/barrel-vaulted roof, dedicated to Shakti shrines. Example: <strong>Vaital Deula</strong> (Bhubaneswar).</li>
+                  </ul>
+                </div>
+                <div class="note-card">
+                  <h4>Solanki / Maru-Gurjara Style (Gujarat &amp; Rajasthan)</h4>
+                  <ul class="note-list">
+                    <li><strong>Patronage:</strong> Solanki (Chalukya) rulers of Gujarat (11th–13th c. CE).</li>
+                    <li><strong>Signature Features:</strong> <strong>Surya Kund</strong> (stepped water tank with miniature shrines), ornamental <strong>Torana</strong> archway, intricate lacy carvings in sandstone &amp; white marble.</li>
+                    <li><strong>Garbhagriha &amp; Mandapa:</strong> Connected internally and externally; walls devoid of heavy exterior niches on older layers, star-like recessed plans.</li>
+                    <li><strong>Key Monuments:</strong> <strong>Modhera Sun Temple</strong> (1026 CE, Bhima I), <strong>Dilwara Jain Temples</strong> (Mount Abu — Vimal Vasahi &amp; Luna Vasahi), <strong>Rani ki Vav</strong> (Patan).</li>
+                  </ul>
+                </div>
+              </div>
+            `
+          },
+          {
+            id: `u1_pallava_chola_hoysala`,
+            title: `Pallava, Chola & Hoysala Masterpieces`,
+            badge: `Dynastic Peaks`,
+            summary: `From Pallava rock-cut rathas to the colossal Chola Brihadeeswara Vimana and star-planned Hoysala soapstone shrines.`,
+            contentHtml: `
+              <div class="note-grid">
+                <div class="note-card">
+                  <h4>Pallava Architecture (4 Stages)</h4>
+                  <ul class="note-list">
+                    <li><strong>Mahendra Group:</strong> Rock-cut pillared halls (<em>Mandapas</em>), e.g., Mandagapattu.</li>
+                    <li><strong>Narasimha (Mamalla) Group:</strong> Monolithic <strong>Pancha Rathas</strong> at Mahabalipuram (Dharmaraja, Bhima, Arjuna, Nakula-Sahadeva, Draupadi) &amp; Descent of the Ganges relief.</li>
+                    <li><strong>Rajasimha Group:</strong> Early structural stone temples — <strong>Shore Temple</strong> (Mahabalipuram) &amp; <strong>Kailashnath Temple</strong> (Kanchipuram).</li>
+                    <li><strong>Nandivarman Group:</strong> Smaller structural shrines like Vaikuntha Perumal &amp; Mukteshwara.</li>
+                  </ul>
+                </div>
+                <div class="note-card">
+                  <h4>Chola &amp; Brihadeeswara Temple</h4>
+                  <ul class="note-list">
+                    <li><strong>Brihadeeswara (Rajarajeshwaram), Thanjavur:</strong> Built 1010 CE by <strong>Rajaraja I</strong>; ~66 m granite <em>Vimana</em> topped by an 80-tonne monolithic cupola; famous Chola frescoes inside circumambulatory passage.</li>
+                    <li><strong>Gangaikonda Cholapuram:</strong> Built by <strong>Rajendra I</strong>; softer, concave-curved Vimana profile.</li>
+                    <li><strong>Airavatesvara, Darasuram:</strong> Built by Rajaraja II; chariot-shaped <em>Mandapa</em> drawn by stone horses.</li>
+                    <li>Together designated UNESCO <strong>Great Living Chola Temples</strong>.</li>
+                  </ul>
+                </div>
+                <div class="note-card">
+                  <h4>Hoysala Architecture (Karnataka)</h4>
+                  <ul class="note-list">
+                    <li><strong>Stellate Plan:</strong> Star-shaped ground plans sitting on a raised, open circumambulatory platform (<strong>Jagati</strong>).</li>
+                    <li><strong>Medium:</strong> Soft <strong>chloritic schist (soapstone)</strong> enabling lathe-turned pillars and intricate jewelry-like carvings.</li>
+                    <li><strong>Madanikas &amp; Multi-Shrines:</strong> Bracket figures (<em>Salabhanjika</em>); Ekakuta (1), Dvikuta (2), Trikuta (3) sanctums.</li>
+                    <li><strong>UNESCO Sacred Ensembles (2023):</strong> Chennakesava (Belur), Hoysaleswara (Halebidu), Keshava (Somanathapura).</li>
+                  </ul>
+                </div>
+              </div>
+            `
+          },
+          {
+            id: `u1_caves`,
+            title: `Cave Art: Barabar, Ajanta, Ellora & Elephanta`,
+            badge: `Rock-Cut Heritage`,
+            summary: `Chronology, religious patronage, and sculptural/architectural landmarks across India's major cave complexes.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Cave Complex</th>
+                      <th>Period &amp; Patronage</th>
+                      <th>Religion / Sect</th>
+                      <th>Iconic Features &amp; Exam Facts</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Barabar Caves</strong><br>(Jehanabad, Bihar)</td>
+                      <td>3rd c. BCE<br>Mauryan (Ashoka &amp; Dasharatha)</td>
+                      <td><strong>Ajivika</strong> sect</td>
+                      <td>Oldest surviving rock-cut caves in India; famed for mirror-like Mauryan polish. <strong>Lomas Rishi</strong> cave features the earliest carved Chaitya arch facade; also Sudama, Karan Chaupar, Vishvakarma.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Ajanta Caves</strong><br>(Aurangabad, Maharashtra)</td>
+                      <td>2nd c. BCE – 6th c. CE<br>Satavahana &amp; Vakataka</td>
+                      <td><strong>Buddhism</strong> (Hinayana &amp; Mahayana)</td>
+                      <td>29–30 horseshoe-shaped caves along Waghora river gorge; 5 Chaityas &amp; Viharas; exquisite tempera/fresco <strong>Jataka murals</strong> (Bodhisattva Padmapani, Vajrapani, Dying Princess).</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Ellora Caves</strong><br>(Aurangabad, Maharashtra)</td>
+                      <td>6th – 11th c. CE<br>Kalachuri, Chalukya, Rashtrakuta</td>
+                      <td><strong>Brahmanical, Buddhist &amp; Jain</strong></td>
+                      <td>34 caves: 1–12 Buddhist (Vishvakarma), 13–29 Hindu, 30–34 Jain (Indra Sabha). Cave 16 is monolithic <strong>Kailashanatha Temple</strong> carved top-down by Rashtrakuta king <strong>Krishna I</strong>.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Elephanta Caves</strong><br>(Gharapuri Island, Mumbai)</td>
+                      <td>5th – 7th c. CE<br>Kalachuri / Rashtrakuta</td>
+                      <td>Mainly <strong>Shaivite</strong> (5 Hindu, 2 Buddhist)</td>
+                      <td>Iconic 6 m colossal <strong>Trimurti / Sadashiva</strong> (three-faced Shiva: Aghora, Tatpurusha, Vamadeva), Nataraja, Ardhanarishvara, and Ravana shaking Kailasha.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          },
+          {
+            id: `u1_stupas`,
+            title: `Buddhist Stupas: Sanchi, Dhamek & Kesariya`,
+            badge: `Buddhist Monuments`,
+            summary: `Symbolic stupa anatomy (Anda, Harmika, Yashti, Torana) and the three landmark stupas of Madhya Pradesh and the Gangetic plains.`,
+            contentHtml: `
+              <div class="callout-box">
+                <span class="callout-title">Anatomy of a Classical Stupa</span>
+                <strong>Medhi</strong> (circular terrace) → <strong>Anda</strong> (hemispherical dome housing relics) → <strong>Harmika</strong> (square railing atop dome symbolizing heaven) → <strong>Yashti</strong> (central pillar) crowned by <strong>Chhatras</strong> (triple umbrellas) → surrounded by <strong>Pradakshina Patha</strong>, <strong>Vedika</strong> (stone railing), and 4 carved <strong>Toranas</strong> (gateways).
+              </div>
+              <div class="note-grid">
+                <div class="note-card">
+                  <h4>Sanchi Stupa (Raisen, MP)</h4>
+                  <p>Originally built in brick by <strong>Ashoka</strong> (3rd c. BCE); enlarged and cased in stone during the <strong>Shunga</strong> period. Four intricately carved <strong>Toranas</strong> depicting Jataka tales and Buddhist symbols (aniconic phase — lotus, wheel, footprints) were added by the <strong>Satavahanas</strong>.</p>
+                </div>
+                <div class="note-card">
+                  <h4>Dhamek Stupa (Sarnath, UP)</h4>
+                  <p>Marks the Deer Park site where Gautama Buddha delivered his <strong>first sermon</strong> (<em>Dharmachakrapravartana</em>) to five disciples. Rebuilt in the <strong>Gupta</strong> period (500 CE) as a solid 43.6 m stone-and-brick cylinder adorned with Gupta geometric and floral scrolls.</p>
+                </div>
+                <div class="note-card">
+                  <h4>Kesariya Stupa (East Champaran, Bihar)</h4>
+                  <p>Among the largest excavated Buddhist stupas in the world (~104 ft surviving height) with a multi-terraced polygonal/circular base. Commemorates the place where Buddha donated his begging bowl to the Licchavis on his final journey to Kushinagar.</p>
+                </div>
+              </div>
+            `
+          }
+        ]
+      },
+      {
+        id: `u2`,
+        num: `02`,
+        shortTitle: `Classical Dances`,
+        title: `Classical Dances & Legendary Performers`,
+        category: `Performing Arts`,
+        overview: `All 8 classical dance forms recognized by the Sangeet Natak Akademi and the Ministry of Culture, rooted in Bharata Muni's Natyashastra—complete with origins, instruments, and iconic gurus/exponents.`,
+        subtopics: [
+          {
+            id: `u2_foundations`,
+            title: `Foundations: Natyashastra & Sangeet Natak Akademi`,
+            badge: `Principles`,
+            summary: `Theoretical bedrock (Tandava, Lasya, Nritta, Nritya, Natya) and the 8 officially conferred classical dance traditions.`,
+            contentHtml: `
+              <div class="callout-box is-emerald">
+                <span class="callout-title">Core Principles from Natyashastra</span>
+                The principles of Indian classical dance derive from the <strong>Natyashastra</strong> by <strong>Bharata Muni</strong> (and later <em>Abhinaya Darpana</em> by Nandikeshvara). Classical dance combines <strong>Nritta</strong> (pure rhythmic movement), <strong>Nritya</strong> (expressive dance with bhava/rasa), and <strong>Natya</strong> (dramatic storytelling), balanced across masculine vigor (<strong>Tandava</strong>) and feminine grace (<strong>Lasya</strong>). The <strong>Sangeet Natak Akademi</strong> and Ministry of Culture recognize <strong>8 classical dance forms</strong>.
+              </div>
+            `
+          },
+          {
+            id: `u2_south_dances`,
+            title: `South Indian Classical Dances: Bharatanatyam, Kathakali, Mohiniyattam & Kuchipudi`,
+            badge: `4 Forms`,
+            summary: `Origins, musical accompaniment, signature instruments, and celebrated exponents of Tamil Nadu, Kerala, and Andhra Pradesh.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Dance Form</th>
+                      <th>State &amp; Heritage</th>
+                      <th>Instruments Used</th>
+                      <th>Famous Dancers &amp; Gurus</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Bharatanatyam</strong></td>
+                      <td><strong>Tamil Nadu</strong>; earlier known as <em>Daasi Attam</em> (temple devadasi solo tradition revived as modern stage art)</td>
+                      <td>Mridangam, flute, violin, veena, <strong>nattuvangam</strong> (cymbals)</td>
+                      <td>Rukmini Devi Arundale, Yamini Krishnamurthy, Padma Subrahmanyam, Alarmel Valli, Mrinalini Sarabhai, Mallika Sarabhai</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Kathakali</strong></td>
+                      <td><strong>Kerala</strong>; elaborate dance-drama with codified <em>Aharya</em> makeup (Pacha, Kathi, Kari, Minukku) &amp; towering crowns</td>
+                      <td><strong>Chenda</strong>, <strong>madalam</strong>, chengila, idakka, shankhu (conch)</td>
+                      <td>Vazhenkada Kunchu Nair, Kottakkal Sivaraman, Kalamandalam Gopi, Kalamandalam Ramankutty Nair, Kalamandalam Vasu Pisharody</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Mohiniyattam</strong></td>
+                      <td><strong>Kerala</strong>; classical solo dance named after <strong>Mohini</strong> (celestial enchantress of Hindu mythology); pure <em>Lasya</em> sway</td>
+                      <td>Mridangam or Madhalam, <strong>idakka</strong>, flute, veena, kuzhitalam</td>
+                      <td>Kalamandalam Kalyanikutty Amma, Kalamandalam Hymavathy, Sunanda Nair, Gopika Varma, Neena Prasad</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Kuchipudi</strong></td>
+                      <td><strong>Andhra Pradesh</strong> (Kuchipudi village); accompanied by <strong>Carnatic music</strong>; famous for <em>Tarangam</em> (brass-plate rim); <em>Natya Tarangini</em> school</td>
+                      <td>Mridangam, violin, flute, tambura</td>
+                      <td>Vempati Chinna Satyam, Uma Rama Sarma, Shobha Naidu, Vyjayanthi Kashi, Sreelakshmy Govardhanan, Raja &amp; Radha Reddy</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          },
+          {
+            id: `u2_north_east_dances`,
+            title: `North & East Classical Dances: Kathak, Odissi, Manipuri & Sattriya`,
+            badge: `4 Forms`,
+            summary: `Temple and monastic origins, Hindu-Muslim synthesis, instruments, and legendary performers across northern and eastern India.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Dance Form</th>
+                      <th>State &amp; Heritage</th>
+                      <th>Instruments Used</th>
+                      <th>Famous Dancers &amp; Gurus</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Manipuri</strong></td>
+                      <td><strong>Manipur</strong>; rooted in Vaishnavite <em>Raslila</em> &amp; <em>Lai Haraoba</em>; graceful curved movements (<em>Jagoi</em>) and drum-acrobatics (<em>Cholom</em>)</td>
+                      <td><strong>Pung</strong> (barrel drum), cymbals (kartals)</td>
+                      <td>Guru Bipin Singh, Rajkumar Singhajit Singh, Darshana Jhaveri (Jhaveri Sisters), Sohini Ray</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Odissi</strong></td>
+                      <td><strong>Odisha</strong>; temple origin (<em>Mahari</em> &amp; <em>Gotipua</em>); hallmark <strong>Tribhanga</strong> (three-bend) &amp; square <em>Chowk</em> postures</td>
+                      <td><strong>Mardala</strong>, harmonium, flute, sitar, violin, cymbals</td>
+                      <td>Kelucharan Mohapatra, Pankaj Charan Das, Sanjukta Panigrahi, Priyambada Hejmadi, Minati Mishra, Kumkum Mohanty, Oopalie Oparajita, Sangeeta Das</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Kathak</strong></td>
+                      <td><strong>North India</strong>; evolved from ancient travelling storytellers (<em>Kathakars</em>) under Hindu-Muslim court synthesis (Lucknow, Jaipur, Banaras Gharanas)</td>
+                      <td><strong>Tabla</strong>, sarangi or harmonium with manjira (and ghungroos)</td>
+                      <td>Shambhu Maharaj, Sitara Devi, Pandit Birju Maharaj, Roshan Kumari, Saswati Sen, Rohini Bhate, Shovana Narayan</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Sattriya</strong></td>
+                      <td><strong>Assam</strong>; originated in Vaishnava monasteries (<strong>Sattras</strong>) by Srimanta Sankardev; recognized by Sangeet Natak Akademi in <strong>2000</strong></td>
+                      <td><strong>Khols</strong>, talas (cymbals), flute</td>
+                      <td>Ghanakanta Bora, Ananda Mohan Bhagawati, Sharodi Saikia, Bhabananda Barbayan, Jatin Goswami</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          }
+        ]
+      },
+      {
+        id: `u3`,
+        num: `03`,
+        shortTitle: `Folk Dances & Theatre`,
+        title: `Folk Dances & Traditional Folk Theatre`,
+        category: `Regional Traditions`,
+        overview: `Complete state-by-state folk dance directory across 29 Indian states and union territories, spotlighting key festival dances and 12 major regional folk theatre traditions.`,
+        subtopics: [
+          {
+            id: `u3_featured_folk`,
+            title: `Signature Folk Dances: Bihu, Bhangra, Garba, Kummi, Cheraw & Thullal`,
+            badge: `High-Yield Spotlight`,
+            summary: `Deep dive into seasonal, harvest, martial, and community folk dances frequently tested in competitive exams.`,
+            contentHtml: `
+              <div class="note-grid">
+                <div class="note-card">
+                  <h4>Bihu (Assam)</h4>
+                  <p>Performed by both men and women in colourful Assamese silk (<em>Muga</em>) during Bihu. Three Bihus exist: <strong>Bhogali / Magh Bihu</strong> (Jan), <strong>Rongali / Bohag Bihu</strong> (April — most vibrant spring New Year), and <strong>Kongali / Kati Bihu</strong> (Oct).</p>
+                </div>
+                <div class="note-card">
+                  <h4>Bhangra &amp; Ghoomar</h4>
+                  <p><strong>Bhangra (Punjab):</strong> High-energy harvest dance performed by Punjabi farmers to celebrate Baisakhi.<br><strong>Ghoomar (Rajasthan):</strong> Traditional women's swirling circular dance performed during Diwali, Holi, and a bride's arrival at her marital home.</p>
+                </div>
+                <div class="note-card">
+                  <h4>Garba &amp; Dandiya Raas (Gujarat)</h4>
+                  <p><strong>Garba:</strong> Performed around a perforated earthen lamp (<em>Garbha Deep</em>) for nine nights during <strong>Navratri</strong>.<br><strong>Dandiya Raas:</strong> Energetic stick dance enacted during Navratri representing the mock fight between Goddess Durga and Mahishasura.</p>
+                </div>
+                <div class="note-card">
+                  <h4>Kummi &amp; Kolattam (South India)</h4>
+                  <p><strong>Kummi (Tamil Nadu):</strong> Women's circular folk dance performed without musical instruments, keeping rhythm solely through synchronized hand-clapping.<br><strong>Kolattam (TN &amp; Andhra Pradesh):</strong> Colourful stick-clapping dance performed in pairs.</p>
+                </div>
+                <div class="note-card">
+                  <h4>Cheraw / Bamboo Dance (Mizoram)</h4>
+                  <p>Signature Mizo dance where seated performers rhythmically clap pairs of long <strong>bamboo staves</strong> horizontally on the ground while dancers step nimbly between them.</p>
+                </div>
+                <div class="note-card">
+                  <h4>Ottam Thullal &amp; Chatkora</h4>
+                  <p><strong>Ottam Thullal (Kerala):</strong> Solo satiric dance-recital introduced in the 18th century by poet <strong>Kunchan Nambiar</strong>.<br><strong>Chatkora (Madhya Pradesh):</strong> Traditional folk dance of the <strong>Korku tribe</strong> using bamboo clappers (<em>chatkora</em>).</p>
+                </div>
+              </div>
+            `
+          },
+          {
+            id: `u3_state_directory`,
+            title: `Complete State-by-State Folk Dance Directory (29 Regions)`,
+            badge: `Master Reference`,
+            summary: `Exhaustive state-wise mapping of India's folk dances from Andhra Pradesh to Lakshadweep.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>State / UT</th>
+                      <th>Folk Dances</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>Andhra Pradesh</strong></td><td>Vilasini Natyam, Andhra Natyam, Bhamakalpam, Veeranatyam, Dappu, Tappeta Gullu, Lambadi, Dhimsa, Kolattam, Butta Bommalu</td></tr>
+                    <tr><td><strong>Arunachal Pradesh</strong></td><td>Aji Lamu, Chalo, Hiirii Khaniing, Popir, Ponung, Pasi Kongki, Rekham Pada, Roppi</td></tr>
+                    <tr><td><strong>Assam</strong></td><td>Bihu, Bichhua, Natpuja, Maharas, Kaligopal, Bagurumba, Naga dance, Khel Gopal, Tabal Chongli, Canoe, Jhumura Hobjanai</td></tr>
+                    <tr><td><strong>Bihar</strong></td><td>Jata-Jatin, Bakho-Bakhain, Panwariya, Sama Chakwa, Bidesia</td></tr>
+                    <tr><td><strong>Chhattisgarh</strong></td><td>Gaur Maria, Panthi, Raut Nacha, Pandwani, Vedamati, Kapalik, Bharthari Charit, Chandaini</td></tr>
+                    <tr><td><strong>Goa</strong></td><td>Modni, Jhagor, Khol, Dakni, Shigmo, Ghode (Ghode Modni)</td></tr>
+                    <tr><td><strong>Gujarat</strong></td><td>Garba, Dandiya Raas, Tippani Juriun, Bhavai</td></tr>
+                    <tr><td><strong>Haryana</strong></td><td>Jhumar, Phag, Daph, Dhamal, Loor, Gugga, Khor, Gagor</td></tr>
+                    <tr><td><strong>Himachal Pradesh</strong></td><td>Jhora, Jhali, Chharhi, Dhaman, Chhapeli, Mahasu, Nati, Dangi</td></tr>
+                    <tr><td><strong>Jammu &amp; Kashmir</strong></td><td>Rauf, Hikat, Mandjas, Kud Dandi Nach, Damali, Dumhal</td></tr>
+                    <tr><td><strong>Jharkhand</strong></td><td>Bidesia, Danga, Karma, Sarahul, Sohrai, Alkap, Paika, Barao, Jhitka</td></tr>
+                    <tr><td><strong>Karnataka</strong></td><td>Yakshagana, Huttari, Suggi, Kunitha, Karga, Lambi</td></tr>
+                    <tr><td><strong>Kerala</strong></td><td>Ottam Thullal, Kaikottikali, Tappatikkali</td></tr>
+                    <tr><td><strong>Lakshadweep</strong></td><td>Lava, Kolkali, Parichakali</td></tr>
+                    <tr><td><strong>Madhya Pradesh</strong></td><td>Jawara, Matki, Aada, Khada Nach, Phulpati, Grida Dance, Selalarki, Selabhadoni, Maanch, Chatkora</td></tr>
+                    <tr><td><strong>Maharashtra</strong></td><td>Lavani, Nakata, Koli, Lezim, Gafa, Dahikala Dasavtar or Bohada</td></tr>
+                    <tr><td><strong>Manipur</strong></td><td>Dol Cholam, Thang-Ta, Lai Haraoba, Pung Cholom, Nat Rash, Rakhal, Raukhat</td></tr>
+                    <tr><td><strong>Meghalaya</strong></td><td>Ka Shad Suk Mynsiem, Baala, Nongkrem, Laho</td></tr>
+                    <tr><td><strong>Mizoram</strong></td><td>Cheraw Dance (Bamboo Dance), Khuallam, Chailam, Sawlakin, Chawnglaizawn, Zangtalam, Par Lam, Tlanglam, Cherokan, Khanatm</td></tr>
+                    <tr><td><strong>Nagaland</strong></td><td>Chong, Khaiva, Lim, Nuralim</td></tr>
+                    <tr><td><strong>Odisha</strong></td><td>Savari, Ghumara, Painka, Munari, Chhau (Mayurbhanj)</td></tr>
+                    <tr><td><strong>Punjab</strong></td><td>Bhangra, Giddha, Daff, Dhaman, Bhand, Naqual, Kikli, Jhoomar</td></tr>
+                    <tr><td><strong>Rajasthan</strong></td><td>Ghoomar, Chakri, Ganagor, Jhulan Leela, Jhuma, Suisini, Ghapal, Kalbeliya</td></tr>
+                    <tr><td><strong>Sikkim</strong></td><td>Singhi Chham, Chu Faat, Gayley-Yang, Ghantu, Kinchum-Chu-Bomsa, Maarooni, Nyongri-Nyot, Shelo, Sherpa Dance, Tamang Selo, Yak Chham</td></tr>
+                    <tr><td><strong>Tamil Nadu</strong></td><td>Kummi, Kolattam, Kavadi, Karagam</td></tr>
+                    <tr><td><strong>Tripura</strong></td><td>Bizu, Cheraw, Dailo Nritya, Gajan, Galamuchamo, Garia, Hai Hak, Hozagiri, Jhum, Lebang Boomani, Sangrai-Mog, Wya</td></tr>
+                    <tr><td><strong>Uttar Pradesh</strong></td><td>Nautanki, Raslila, Kajri, Jhora, Chappeli, Jaita</td></tr>
+                    <tr><td><strong>Uttarakhand</strong></td><td>Garhwali, Kumayuni, Kajari, Jhora, Raslila, Chappeli</td></tr>
+                    <tr><td><strong>West Bengal</strong></td><td>Kathi, Gambhira, Dhali, Jatra, Baul, Marasia, Mahal, Keertan</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          },
+          {
+            id: `u3_folk_theatre`,
+            title: `Traditional Folk Theatre Forms of India`,
+            badge: `Regional Drama`,
+            summary: `Bhand Pather, Yakshagana, Krishnattam, Swang, Nautanki, Rasleela, Jatra, Bhavai, Dashavatar, Bhaona, Tamasha & Therukoothu.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Theatre Form</th>
+                      <th>Region</th>
+                      <th>Key Themes &amp; Distinctive Features</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>Bhand Pather</strong></td><td>Jammu &amp; Kashmir</td><td>Traditional street theatre blending mythological stories with sharp contemporary social satire, acting, dance, and music (<em>surnai</em>, <em>dhol</em>).</td></tr>
+                    <tr><td><strong>Yakshagana</strong></td><td>Karnataka</td><td>Elaborate coastal dance-drama based on Puranas and epics; prominent styles include <em>Badagutittu</em> &amp; <em>Tenkutittu</em>.</td></tr>
+                    <tr><td><strong>Krishnattam</strong></td><td>Kerala</td><td>Dance-oriented folk theatre structured as a cycle of <strong>8 plays</strong> performed over <strong>8 consecutive days</strong> telling the story of Lord Krishna.</td></tr>
+                    <tr><td><strong>Swang</strong></td><td>Haryana, UP, Rajasthan</td><td>Verse-and-dialogue folk musical drama (<em>Rohtak</em> &amp; <em>Hathras</em> akharas) accompanied by Ektara, Harmonium, Sarangi, and Dholak.</td></tr>
+                    <tr><td><strong>Nautanki</strong></td><td>Uttar Pradesh (North India)</td><td>Operatic folk drama offshoot of Swang (<em>Kanpur</em> &amp; <em>Hathras</em> schools) featuring vigorous <em>Nagara</em> drumming and heroic/romantic tales.</td></tr>
+                    <tr><td><strong>Rasleela</strong></td><td>Uttar Pradesh (Braj)</td><td>Sacred theatrical enactment of young Krishna's episodes and divine love with Radha and the Gopis; popularized by Bhakti saints.</td></tr>
+                    <tr><td><strong>Jatra</strong></td><td>West Bengal &amp; Odisha</td><td>Open-air travelling musical theatre rooted in 16th-century Chaitanya Mahaprabhu's Bhakti processions; dramatic dialogue and live orchestra.</td></tr>
+                    <tr><td><strong>Bhavai</strong></td><td>Gujarat</td><td>Traditional folk theatre performed in reverence to <strong>Goddess Amba</strong>; blends social humour, devotion, and acrobatic balancing acts.</td></tr>
+                    <tr><td><strong>Dashavatar</strong></td><td>Southern Konkan (Maharashtra) &amp; N. Goa</td><td>Open-air night performance portraying the 10 incarnations of Lord Vishnu; performers famously wear painted <strong>wooden masks</strong>.</td></tr>
+                    <tr><td><strong>Bhaona</strong></td><td>Assam</td><td>Vaishnavite religious theatre (presenting <em>Ankia Naat</em> plays) originated by Srimanta Sankardev in Assamese Sattras.</td></tr>
+                    <tr><td><strong>Tamasha</strong></td><td>Maharashtra</td><td>Evolved from Gondhal, Jagran &amp; Kirtan; features female dancer (<em>Murki</em>), Lavani songs, and Krishna/witty social themes.</td></tr>
+                    <tr><td><strong>Therukoothu</strong></td><td>Tamil Nadu</td><td>Vibrant street drama (often during temple festivals) where <em>Kattiakaran</em> introduces Mahabharata episodes such as Draupadi Amman worship.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          }
+        ]
+      },
+      {
+        id: `u4`,
+        num: `04`,
+        shortTitle: `Music & Instruments`,
+        title: `Indian Music Systems & Instrumental Maestros`,
+        category: `Classical Music`,
+        overview: `Vedic roots in Samaveda, core grammar (Svara, Sruti, Raga, Taal), comparative study of Hindustani and Carnatic traditions, and a comprehensive maestro directory across 10 classical instruments.`,
+        subtopics: [
+          {
+            id: `u4_grammar`,
+            title: `Musicology: Samaveda, 7 Svaras, 22 Srutis, Ragas & Taals`,
+            badge: `Foundations`,
+            summary: `Bharata Muni's triad of music, the heptatonic svara scale, microtonal srutis, and rhythmic taal cycles.`,
+            contentHtml: `
+              <div class="note-grid">
+                <div class="note-card">
+                  <h4>Origins &amp; Pillars</h4>
+                  <ul class="note-list">
+                    <li><strong>Bharata Muni</strong> defined <em>Sangita</em> as the unity of <strong>Nritya</strong> (dance), <strong>Gayan</strong> (vocal), and <strong>Vadan</strong> (instrumental).</li>
+                    <li>Oldest textual roots lie in the <strong>Samaveda</strong> (chanted hymns).</li>
+                    <li><strong>Three Pillars:</strong> <strong>Swara</strong> (pitch/note), <strong>Raga</strong> (melodic framework/mood), and <strong>Taal</strong> (cyclic rhythm measured in <em>matras</em>).</li>
+                  </ul>
+                </div>
+                <div class="note-card">
+                  <h4>Svaras &amp; Srutis</h4>
+                  <ul class="note-list">
+                    <li><strong>Heptatonic Scale (Grama):</strong> 7 Svaras — <strong>Sadja (Sa), Rishabha (Ri), Gandhara (Ga), Madhyama (Ma), Panchama (Pa), Dhaivata (Dha), Nishada (Ni)</strong>.</li>
+                    <li><strong>Srutis:</strong> Theoretical microtonal intervals; an octave contains <strong>22 Srutis</strong>.</li>
+                    <li><strong>Raga Time Theory:</strong> Hindustani ragas align with specific times of day/seasons (<em>Prahar</em>) and emotional states (<em>Rasa</em>).</li>
+                  </ul>
+                </div>
+              </div>
+            `
+          },
+          {
+            id: `u4_hindustani_carnatic`,
+            title: `Hindustani vs. Carnatic Music, Trinity & Amir Khusrau`,
+            badge: `Comparative System`,
+            summary: `Structural divergences, Amir Khusrau's innovations, the Trinity of Carnatic Music, and iconic vocalists.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Dimension</th>
+                      <th>Hindustani Music (North India)</th>
+                      <th>Carnatic Music (South India)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Cultural Influence</strong></td>
+                      <td>Absorbed Persian, Central Asian &amp; Sufi influences alongside Vedic roots; <strong>Amir Khusrau</strong> credited with <em>Khayal, Tarana, Qawwali</em> ("Father of Qawwali") &amp; Sitar/Tabla evolution.</td>
+                      <td>Purely indigenous Bhakti tradition; flourished under <strong>Krishnadevaraya</strong> in Vijayanagara; minimal external influence.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Raga Classification</strong></td>
+                      <td><strong>10 Thaats</strong> (systematized by Pt. Vishnu Narayan Bhatkhande)</td>
+                      <td><strong>72 Melakarta</strong> ragas (systematized by Venkatamakhin)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Gharana &amp; Focus</strong></td>
+                      <td><strong>Gharana</strong> lineage system (Gwalior, Agra, Kirana, Patiala); heavy focus on improvisation (<em>Alap</em>)</td>
+                      <td>Uniform style; composition-centric (<em>Sahitya</em> lyrics &amp; <em>Kritin</em> structure)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Major Forms</strong></td>
+                      <td>Dhrupad, Khayal, Thumri, Tappa, Tarana, Dhamar</td>
+                      <td>Varnam, Kriti, Pallavi, Ragam-Tanam-Pallavi, Tillana</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Key Icons</strong></td>
+                      <td>Pt. Bhimsen Joshi, Bade Ghulam Ali Khan, Begum Akhtar, Girija Devi, Kishori Amonkar, Pt. Jasraj, Shubha Mudgal, Mallikarjun Mansoor, Ustad Amir Khan, Abdul Rashid Khan</td>
+                      <td><strong>Trinity of Carnatic Music (Golden Period):</strong> <strong>Tyagaraja, Muthuswami Dikshitar, Syama Sastri</strong>. Also M.S. Subbulakshmi, M. Balamurali Krishna, Semmangudi Srinivasa Iyer, Chembai Vaidyanatha Bhagavatar, D.K. Pattammal, M.L. Vasanthakumari</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          },
+          {
+            id: `u4_instruments`,
+            title: `Musical Instruments & Top Maestros Directory`,
+            badge: `10 Instruments`,
+            summary: `Classification (Tat, Sushira, Avanaddha, Ghana) and top maestros for Santoor, Flute, Tabla, Sarod, Shehnai, Sitar, Sarangi, Violin, Veena & Mridangam.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Instrument</th>
+                      <th>Vadya Class</th>
+                      <th>Legendary Maestros &amp; Exponents</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>Santoor</strong></td><td>Tat Vadya (struck string)</td><td><strong>Pt. Shivkumar Sharma</strong>, Bhajan Sopori, Rahul Sharma</td></tr>
+                    <tr><td><strong>Flute (Bansuri / Venu)</strong></td><td>Sushira Vadya (wind)</td><td><strong>Pt. Hariprasad Chaurasia</strong>, Pannalal Ghosh, T.R. Mahalingam (Mali), N. Ramani</td></tr>
+                    <tr><td><strong>Tabla</strong></td><td>Avanaddha Vadya (percussion)</td><td><strong>Ustad Alla Rakha</strong>, <strong>Ustad Zakir Hussain</strong>, Pt. Kishan Maharaj, Samta Prasad, Anindo Chatterjee</td></tr>
+                    <tr><td><strong>Sarod</strong></td><td>Tat Vadya (fretless plucked)</td><td><strong>Ustad Amjad Ali Khan</strong>, Ustad Ali Akbar Khan, Baba Allauddin Khan, Sharan Rani</td></tr>
+                    <tr><td><strong>Shehnai</strong></td><td>Sushira Vadya (double-reed wind)</td><td><strong>Ustad Bismillah Khan</strong> (Bharat Ratna 2001), Ali Ahmed Hussain Khan, Daya Shankar</td></tr>
+                    <tr><td><strong>Sitar</strong></td><td>Tat Vadya (fretted plucked)</td><td><strong>Pt. Ravi Shankar</strong> (Bharat Ratna 1999), Ustad Vilayat Khan, Nikhil Banerjee, Shahid Parvez, Anoushka Shankar</td></tr>
+                    <tr><td><strong>Sarangi</strong></td><td>Tat Vadya (bowed string)</td><td><strong>Pt. Ram Narayan</strong>, Ustad Sultan Khan, Sabri Khan, Bundu Khan</td></tr>
+                    <tr><td><strong>Violin</strong></td><td>Tat Vadya (bowed string)</td><td>L. Subramaniam, T.N. Krishnan, M.S. Gopalakrishnan, Kunnakudi Vaidyanathan, Dr. N. Rajam (Hindustani)</td></tr>
+                    <tr><td><strong>Veena</strong> (Rudra / Saraswati)</td><td>Tat Vadya (plucked string)</td><td>Ustad Asad Ali Khan, Zia Mohiuddin Dagar, S. Balachander, Emani Sankara Sastri, Chittibabu</td></tr>
+                    <tr><td><strong>Mridangam</strong></td><td>Avanaddha Vadya (barrel drum)</td><td><strong>Palghat Mani Iyer</strong>, Umayalpuram K. Sivaraman, T.K. Murthy, Karaikudi Mani</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          }
+        ]
+      },
+      {
+        id: `u5`,
+        num: `05`,
+        shortTitle: `Paintings & Artists`,
+        title: `Indian Paintings & Master Artists`,
+        category: `Visual Arts`,
+        overview: `Classification of Indian paintings into ancient rock-cut Murals, Pala/Mughal/Rajasthani Miniatures, 9 iconic regional Folk painting styles, and a master index of modern & classical painters.`,
+        subtopics: [
+          {
+            id: `u5_murals_miniatures`,
+            title: `Mural & Miniature Painting Traditions`,
+            badge: `Classical Visuals`,
+            summary: `Ajanta, Ellora, Sittanavasal, and Chola murals alongside Pala, Jain, Mughal, and Rajasthani miniature schools.`,
+            contentHtml: `
+              <div class="note-grid">
+                <div class="note-card">
+                  <h4>Mural Paintings (Cave &amp; Temple Walls)</h4>
+                  <ul class="note-list">
+                    <li><strong>Major Themes:</strong> Hinduism, Buddhism, and Jainism; executed on prepared plaster (tempera/fresco-secco).</li>
+                    <li><strong>Ajanta (Maharashtra):</strong> Earliest masterpieces in Buddhist <em>viharas</em> &amp; <em>chaityas</em> — Padmapani, Vajrapani, Flying Apsara.</li>
+                    <li><strong>Ellora (Maharashtra):</strong> Kailashanatha temple &amp; Jain cave ceiling murals.</li>
+                    <li><strong>Sittanavasal (Tamil Nadu):</strong> Pandya-period Jain cave murals featuring a serene lotus pond (<em>Samavasarana</em>).</li>
+                    <li><strong>Temple Murals:</strong> <strong>Kailashnath Temple</strong> (Kanchipuram), <strong>Brihadeeswara Temple</strong> (Thanjavur — Chola murals), plus Bagh Caves (MP) &amp; Lepakshi (AP).</li>
+                  </ul>
+                </div>
+                <div class="note-card">
+                  <h4>Miniature Paintings</h4>
+                  <ul class="note-list">
+                    <li><strong>Characteristics:</strong> Executed on small, perishable surfaces (palm leaf, paper, cloth) with ultra-fine brushwork.</li>
+                    <li><strong>Earliest Examples:</strong> Buddhist religious texts under the <strong>Palas</strong> of Eastern India (palm leaf) &amp; <strong>Jain texts</strong> in Western India (Apabhramsa style).</li>
+                    <li><strong>Peak Synthesis:</strong> <strong>Mughal Miniatures</strong> (Akbar's <em>Hamzanama</em>, Jahangir's naturalism) and <strong>Rajasthani / Pahari Schools</strong> (Mewar, Kishangarh, Bundi, Kangra, Basholi).</li>
+                  </ul>
+                </div>
+              </div>
+            `
+          },
+          {
+            id: `u5_folk_paintings`,
+            title: `Folk & Tribal Paintings: Madhubani, Pattachitra, Warli, Thangka & More`,
+            badge: `9 Traditions`,
+            summary: `Distinctive regional techniques, materials, motifs, and GI-tagged folk painting schools across India.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Painting Style</th>
+                      <th>Origin / Tribe</th>
+                      <th>Medium, Motifs &amp; Key Facts</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>Madhubani (Mithila)</strong></td><td>Mithila region, <strong>Bihar</strong></td><td>Traditionally done by women; <strong>no space left empty</strong> (gaps filled with flowers, birds, geometric patterns); 5 styles: <em>Bharni, Katchni, Tantrik, Godna, Kohbar</em>. Famous artist: <strong>Mahasundari Devi</strong>, Sita Devi.</td></tr>
+                    <tr><td><strong>Pattachitra</strong></td><td><strong>Odisha</strong> (Raghurajpur)</td><td>Ancient cloth-scroll painting (<em>Patta</em>) using natural mineral/vegetable dyes; themes of <strong>Lord Jagannath, Balarama, Subhadra, Dashavatara</strong> &amp; Krishna.</td></tr>
+                    <tr><td><strong>Kalamkari</strong></td><td><strong>Andhra Pradesh</strong> (Srikalahasti &amp; Machilipatnam)</td><td>Hand-painted with bamboo pen (<em>kalam</em> in Srikalahasti) or block-printed (Machilipatnam) on cotton using tamarind/indigo/myrobalan dyes.</td></tr>
+                    <tr><td><strong>Pithora</strong></td><td><strong>Gujarat &amp; MP</strong> (Rathva &amp; Bhilala tribes)</td><td>Sacred ritual wall painting invoking Baba Pithora (God of food/prosperity) featuring colourful rows of stylized <strong>horses</strong>.</td></tr>
+                    <tr><td><strong>Kolam</strong></td><td><strong>Tamil Nadu</strong> (South India)</td><td>Auspicious geometric floor art drawn daily at thresholds with rice flour/chalk around dot grids (<em>pulli</em>).</td></tr>
+                    <tr><td><strong>Warli</strong></td><td><strong>Maharashtra</strong> (Warli tribe)</td><td>White rice-paste pigment on red ochre mud walls; strictly geometric (circles = sun/moon, triangles = mountains/trees, squares = sacred enclosure); depicts <em>Tarpa</em> dance; Jivya Soma Mashe.</td></tr>
+                    <tr><td><strong>Kalighat</strong></td><td><strong>Kolkata, West Bengal</strong></td><td>19th-century watercolour scrolls sold around Kalighat Kali temple; bold sweeping contours satirizing Babu society &amp; depicting deities.</td></tr>
+                    <tr><td><strong>Thangka</strong></td><td><strong>Tibetan / Himalayan</strong> (Sikkim, Ladakh, HP, Arunachal)</td><td>Buddhist devotional paintings on cotton or silk depicting Buddha, Mandalas, and the Wheel of Life (<em>Bhavachakra</em>).</td></tr>
+                    <tr><td><strong>Patna Kalam</strong></td><td><strong>Bihar</strong> (18th–19th c.)</td><td>Offshoot of Mughal painting ("Company Painting"); portrays everyday artisans, bazaars, birds &amp; commoners with minimal backgrounds (<em>Kajli Seahi</em> technique).</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          },
+          {
+            id: `u5_famous_artists`,
+            title: `Famous Indian Artists & Their Iconic Works`,
+            badge: `Exam Must-Know`,
+            summary: `Direct artist-to-masterpiece pairing from Raja Ravi Varma and Nihal Chand to the Bengal School and Progressive Artists.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Painter / Artist</th>
+                      <th>School / Era</th>
+                      <th>Famous Works</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>Raja Ravi Varma</strong></td><td>Travancore (Academic Realism)</td><td><em>Hamsa Damayanti</em>, <em>Shakuntala</em>, <em>Arjuna and Subhadra</em></td></tr>
+                    <tr><td><strong>Nihal Chand</strong></td><td>Kishangarh School (Rajasthani)</td><td><em>Bani Thani</em> ("Indian Monalisa"), <em>Dipavalika</em></td></tr>
+                    <tr><td><strong>Abanindranath Tagore</strong></td><td>Bengal School Founder</td><td><em>Bharat Mata</em>, <em>Ganesh Janani</em>, <em>Asoka's Queen</em></td></tr>
+                    <tr><td><strong>Rabindranath Tagore</strong></td><td>Modernist Expressionism</td><td><em>Landscape</em>, <em>Dancing Woman</em>, <em>Woman's Face</em>, <em>Head Study (Geometric)</em></td></tr>
+                    <tr><td><strong>Jamini Roy</strong></td><td>Folk Modernist (Kalighat-inspired)</td><td><em>Mother and Child</em>, <em>Krishna and Balarama</em>, <em>Warrior King</em></td></tr>
+                    <tr><td><strong>Binod Behari Mukherjee</strong></td><td>Santiniketan School</td><td><em>Villagers</em> (Medieval Saints murals)</td></tr>
+                    <tr><td><strong>Syed Haider Raza (S.H. Raza)</strong></td><td>Progressive Artists' Group</td><td><em>Saurashtra</em> (Bindu motif)</td></tr>
+                    <tr><td><strong>Tyeb Mehta</strong></td><td>Progressive Artists' Group</td><td><em>Mahishasura</em>, <em>Diagonal</em> series</td></tr>
+                    <tr><td><strong>Arpita Singh</strong></td><td>Contemporary Figurative</td><td><em>Wish Dream</em></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          }
+        ]
+      },
+      {
+        id: `u6`,
+        num: `06`,
+        shortTitle: `Martial Arts`,
+        title: `Indian Martial Arts & Regional Origins`,
+        category: `Traditional Combat`,
+        overview: `India's living martial heritage spanning Kalaripayattu, Silambam, Thang-ta, Gatka, Musti Yuddha, Pari-Khanda, Inbuan, and Mardani Khel—mapped to states, weapons, and historical lineages.`,
+        subtopics: [
+          {
+            id: `u6_martial_table`,
+            title: `Master Directory of 14 Indian Martial Arts`,
+            badge: `Complete Matrix`,
+            summary: `Origins, weapon systems, and distinctive rules of all major Indian martial traditions.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Martial Art</th>
+                      <th>Originated From</th>
+                      <th>Weapons, Mechanics &amp; Key Exam Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>Kalaripayattu</strong></td><td><strong>Kerala</strong></td><td>Oldest surviving Indian martial art; practised in a sunken mud arena (<em>Kalari</em>); stages: <em>Meipayattu</em> (body control), <em>Kolthari</em> (wooden weapons), <em>Ankathari</em> (metal weapons like <em>Urumi</em> flexible sword), <em>Verumkai</em> (bare-hand).</td></tr>
+                    <tr><td><strong>Silambam</strong></td><td><strong>Tamil Nadu</strong></td><td>Ancient bamboo-staff fencing; referenced in Sangam text <em>Silappadikaram</em>; emphasizes footwork and whirlwind staff strikes.</td></tr>
+                    <tr><td><strong>Thoda</strong></td><td><strong>Himachal Pradesh</strong></td><td>Martial archery game played during <strong>Baisakhi</strong>; teams (<em>Pashi</em> &amp; <em>Saathi</em>) shoot wooden bows with blunt arrows below the knee.</td></tr>
+                    <tr><td><strong>Thang-ta &amp; Sarit Sarak</strong></td><td><strong>Manipur</strong></td><td>Part of <em>Huyen Langlon</em>: <strong>Thang</strong> (sword) and <strong>Ta</strong> (spear) armed combat; <strong>Sarit Sarak</strong> is the unarmed hand-to-hand counterpart.</td></tr>
+                    <tr><td><strong>Cheibi Gadga</strong></td><td><strong>Manipur</strong></td><td>Ancient Manipuri sword-and-shield art now played with a leather-encased stick (<em>Cheibi</em>) and leather shield inside a 7 m circle.</td></tr>
+                    <tr><td><strong>Gatka</strong></td><td><strong>Punjab</strong></td><td>Sikh martial tradition popularized by Guru Hargobind Sahib; uses wooden sticks (<em>Soti</em>) and small shield (<em>Farri</em>) as training analogues for swords.</td></tr>
+                    <tr><td><strong>Lathi</strong></td><td><strong>Punjab &amp; Bengal</strong></td><td>Traditional bamboo/wood stick-fighting martial art practised by rural <em>Lathials</em>.</td></tr>
+                    <tr><td><strong>Musti Yuddha</strong></td><td><strong>Varanasi (Uttar Pradesh)</strong></td><td>Ancient unarmed kick-and-punch boxing; classified into 4 styles (<em>Jambuvanti, Hanumanti, Bhimaseni, Jarasandhi</em>).</td></tr>
+                    <tr><td><strong>Pari-Khanda</strong></td><td><strong>Bihar</strong></td><td>Created by Rajputs; <em>Pari</em> (shield) &amp; <em>Khanda</em> (sword); its stylized steps and postures form the choreographic foundation of <strong>Chhau dance</strong>.</td></tr>
+                    <tr><td><strong>Kathi Samu &amp; Karra Samu</strong></td><td><strong>Andhra Pradesh</strong></td><td>Sword-fighting (<em>Kathi</em>) and stick-fighting (<em>Karra</em>) martial arts patronized by coastal Andhra royal armies.</td></tr>
+                    <tr><td><strong>Mukna</strong></td><td><strong>Manipur</strong></td><td>Folk wrestling where combatants grip each other's waistbands (<em>Ningri</em>) and try to pin the opponent's back to the ground.</td></tr>
+                    <tr><td><strong>Inbuan Wrestling</strong></td><td><strong>Mizoram</strong></td><td>Strict-rule wrestling inside a 15-ft circle: lifting the opponent off their feet wins; stepping out, kicking, or bending knees is barred.</td></tr>
+                    <tr><td><strong>Mardani Khel</strong></td><td><strong>Kolhapur, Maharashtra</strong></td><td>Maratha weapon-based martial art utilizing the double-edged gauntlet sword (<em>Dandpatta</em>) and corded lance (<em>Vita</em>).</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          }
+        ]
+      },
+      {
+        id: `u7`,
+        num: `07`,
+        shortTitle: `Calendars & New Years`,
+        title: `Calendars of India & Regional New Year Festivals`,
+        category: `Time & Chronology`,
+        overview: `The four major calendar systems followed in India (Saka, Vikram, Hijri, Gregorian) paired with 13 regional New Year celebrations from Ugadi and Gudi Padwa to Losoong and Jude Sheetal.`,
+        subtopics: [
+          {
+            id: `u7_calendars`,
+            title: `Four Major Calendars in India (Saka, Vikram, Hijri & Gregorian)`,
+            badge: `Chronology`,
+            summary: `Epoch years, solar vs. lunar structures, starting months, and official adoption dates.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Calendar</th>
+                      <th>Epoch / Origin</th>
+                      <th>Type &amp; First Month</th>
+                      <th>Key Civil &amp; Exam Facts</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>Saka Calendar</strong><br>(Indian National Calendar)</td><td><strong>78 CE</strong> (Kushana King Kanishka / Satavahana era)</td><td>Solar-lunisolar framework; starts with <strong>Chaitra</strong></td><td>Adopted as India's official civil calendar on <strong>22 March 1957</strong> (1 Chaitra 1879 Saka); 365 days; 1 Chaitra falls on <strong>22 March</strong> (21 March in leap years).</td></tr>
+                    <tr><td><strong>Vikram Samvat</strong></td><td><strong>57 BCE</strong> (King Vikramaditya of Ujjain)</td><td>Lunisolar; starts with <strong>Chaitra Shukla Pratipada</strong></td><td>Runs <strong>56.7 years ahead</strong> of the Gregorian calendar; adds an extra intercalary month (<em>Adhik Maas</em>) every ~3 years to stay synchronized with seasons.</td></tr>
+                    <tr><td><strong>Hijri Calendar</strong></td><td><strong>622 CE</strong> (<em>Hijra</em> — migration from Mecca to Medina)</td><td>Purely Lunar (354/355 days); starts with <strong>Muharram</strong></td><td>12 lunar months; because it has ~11 fewer days than the solar year, Islamic festivals rotate backwards across Gregorian seasons.</td></tr>
+                    <tr><td><strong>Gregorian Calendar</strong></td><td><strong>1582 CE</strong> (Pope Gregory XIII)</td><td>Solar (365.2425 days); starts with <strong>January</strong></td><td>International civil standard; leap day added every 4 years (except century years not divisible by 400).</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          },
+          {
+            id: `u7_new_years`,
+            title: `Regional New Year Festivals Across India (13 Celebrations)`,
+            badge: `Festival Matrix`,
+            summary: `Ugadi, Gudi Padwa, Baisakhi, Puthandu, Bohag Bihu, Pohela Boishakh, Bestu Varas, Vishu, Losoong, Pana Sankranti, Navreh, Losar & Jude Sheetal.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>New Year Festival</th>
+                      <th>State / Region</th>
+                      <th>Timing &amp; Cultural Traditions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>Ugadi</strong></td><td>Andhra Pradesh, Telangana, Karnataka</td><td>Chaitra Shukla Pratipada (Mar–Apr); tasting <em>Ugadi Pachadi / Bevu-Bella</em> (six tastes including neem &amp; jaggery symbolizing life's joys and sorrows).</td></tr>
+                    <tr><td><strong>Gudi Padwa</strong></td><td>Maharashtra &amp; Goa</td><td>Chaitra Shukla Pratipada; hoisting a silk-draped bamboo pole (<em>Gudi</em>) topped with an inverted copper pot, mango &amp; neem leaves.</td></tr>
+                    <tr><td><strong>Navreh</strong></td><td>Kashmir</td><td>Chaitra Shukla Pratipada; Kashmiri Hindu New Year viewing a <em>Thali</em> filled with unhusked rice, bread, silver coin, walnut, and almanac.</td></tr>
+                    <tr><td><strong>Baisakhi (Vaisakhi)</strong></td><td>Punjab &amp; Haryana</td><td>Mid-April (13/14 Apr, <em>Mesha Sankranti</em>); spring harvest festival &amp; anniversary of Guru Gobind Singh founding the <strong>Khalsa Panth (1699)</strong>.</td></tr>
+                    <tr><td><strong>Puthandu</strong></td><td>Tamil Nadu</td><td>1st of Tamil month <em>Chithirai</em> (Apr 14); morning viewing of <em>Kanni</em> auspicious tray &amp; preparing sweet-sour-bitter <em>Mangai Pachadi</em>.</td></tr>
+                    <tr><td><strong>Vishu</strong></td><td>Kerala</td><td>1st of <em>Medam</em> (Apr 14/15); waking to <strong>Vishukkani</strong> (auspicious arrangement of golden <em>kanikonna</em> flowers, mirror, rice, Krishna idol) &amp; <em>Vishukkaineettam</em> gifts.</td></tr>
+                    <tr><td><strong>Bohag Bihu (Rongali)</strong></td><td>Assam</td><td>Mid-April (7-day celebration: <em>Goru Bihu</em> for cattle, <em>Manuh Bihu</em> for humans); Bihu songs, dances, and gifting <em>Gamosa</em>.</td></tr>
+                    <tr><td><strong>Pohela Boishakh</strong></td><td>West Bengal &amp; Tripura</td><td>1st of <em>Boishakh</em> (Apr 14/15); traders open new red account books (<strong>Haal Khata</strong>) and processions (<em>Mongol Shobhajatra</em>).</td></tr>
+                    <tr><td><strong>Pana Sankranti</strong></td><td>Odisha</td><td>Maha Vishuva Sankranti (mid-April); preparing sweet spiced <strong>Pana</strong> drink and hanging a dripping earthen pot (<em>Basundhara Theki</em>) over Tulsi plants.</td></tr>
+                    <tr><td><strong>Jude Sheetal (Jur Sital)</strong></td><td>Mithila (Bihar) &amp; Terai</td><td>Mid-April Maithil New Year; elders bless juniors by sprinkling cool water on their heads; cleaning wells and eating stale/cooled food (<em>Basi Bhaat</em>).</td></tr>
+                    <tr><td><strong>Bestu Varas</strong></td><td>Gujarat</td><td><em>Kartik Shukla Pratipada</em> (the day immediately after Diwali); merchants perform <strong>Chopda Pujan</strong> (worshipping new ledgers).</td></tr>
+                    <tr><td><strong>Losoong (Namsoong)</strong></td><td>Sikkim (Bhutia &amp; Lepcha)</td><td>December (10th Tibetan month) post-harvest New Year; monastic <strong>Chaam</strong> mask dances at Rumtek and Phodong monasteries.</td></tr>
+                    <tr><td><strong>Losar</strong></td><td>Ladakh, Arunachal (Monpa), Sikkim, HP</td><td>Tibetan Buddhist New Year (Feb–Mar; Dec in Ladakh); <em>Metho</em> torchlight parades to drive away evil spirits &amp; monastery dances.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          }
+        ]
+      },
+      {
+        id: `u8`,
+        num: `08`,
+        shortTitle: `Fairs & UNESCO`,
+        title: `Fairs, Festivals & UNESCO Heritage Additions`,
+        category: `Living Heritage`,
+        overview: `Signature cultural fairs across Northeast and peninsular India alongside India's latest UNESCO World Heritage Sites and Intangible Cultural Heritage (ICH) inscriptions.`,
+        subtopics: [
+          {
+            id: `u8_fairs_festivals`,
+            title: `Iconic Indian Fairs & Festivals`,
+            badge: `Regional Culture`,
+            summary: `Hornbill, Sangai, Chapchar Kut, Kumbh Mela, Jonbeel Mela, and Aadi Perukku.`,
+            contentHtml: `
+              <div class="note-grid">
+                <div class="note-card">
+                  <h4>Hornbill Festival (Nagaland)</h4>
+                  <p>Dubbed the <strong>"Festival of Festivals"</strong>; held annually Dec 1–10 at <strong>Kisama Heritage Village</strong> near Kohima to showcase the culture, crafts, and war dances of all Naga tribes.</p>
+                </div>
+                <div class="note-card">
+                  <h4>Sangai Festival (Manipur)</h4>
+                  <p>Annual cultural extravaganza in November named after the state animal, the endangered <strong>Sangai</strong> (brow-antlered deer) found exclusively in Keibul Lamjao National Park (Loktak Lake).</p>
+                </div>
+                <div class="note-card">
+                  <h4>Chapchar Kut (Mizoram)</h4>
+                  <p>Mizoram's grandest spring festival held in March after completing the labour-intensive clearing of forests for <em>Jhum</em> (shifting) cultivation; highlights <strong>Cheraw</strong> bamboo dance.</p>
+                </div>
+                <div class="note-card">
+                  <h4>Kumbh Mela (4 Sacred Sites)</h4>
+                  <p>World's largest peaceful gathering held on a 12-year cycle (Ardh Kumbh every 6 years) rotating across <strong>Prayagraj</strong> (Triveni Sangam), <strong>Haridwar</strong> (Ganga), <strong>Ujjain</strong> (Shipra), and <strong>Nashik</strong> (Godavari). Inscribed in UNESCO ICH (2017).</p>
+                </div>
+                <div class="note-card">
+                  <h4>Jonbeel Mela (Morigaon, Assam)</h4>
+                  <p>Unique 3-day fair held after Magh Bihu where the traditional <strong>barter system</strong> is still alive—hill tribes (Tiwa, Karbi, Khasi, Jaintia) exchange ginger, turmeric, and herbs for plains rice and dry fish.</p>
+                </div>
+                <div class="note-card">
+                  <h4>Aadi Perukku (Tamil Nadu)</h4>
+                  <p>Monsoon thanksgiving festival observed on the 18th day of Tamil month <em>Aadi</em> (July–Aug) along riverbanks to honour the swollen, life-giving <strong>Cauvery River</strong>.</p>
+                </div>
+              </div>
+            `
+          },
+          {
+            id: `u8_unesco`,
+            title: `Recent UNESCO World Heritage & Intangible Heritage Additions`,
+            badge: `2023–2024 Updates`,
+            summary: `Garba of Gujarat (ICH 2023), Sacred Ensembles of the Hoysalas (2023), Santiniketan (2023), and Moidams of Assam (2024).`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Heritage Element / Site</th>
+                      <th>UNESCO List &amp; Year</th>
+                      <th>Location &amp; Significance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>Garba of Gujarat</strong></td><td>Intangible Cultural Heritage (<strong>Dec 2023</strong>)</td><td>15th Indian element on UNESCO's Representative List of ICH; ritual devotional dance celebrating feminine divinity (<em>Shakti</em>) during Navratri.</td></tr>
+                    <tr><td><strong>Sacred Ensembles of the Hoysalas</strong></td><td>World Heritage Site #42 (<strong>Sept 2023</strong>)</td><td>12th–13th c. temples at <strong>Belur</strong> (Chennakesava), <strong>Halebidu</strong> (Hoysaleswara), and <strong>Somanathapura</strong> (Keshava), Karnataka; famed for stellate soapstone carving.</td></tr>
+                    <tr><td><strong>Santiniketan</strong></td><td>World Heritage Site #41 (<strong>Sept 2023</strong>)</td><td>Birbhum, West Bengal; founded by Maharshi Devendranath Tagore &amp; transformed into <strong>Visva-Bharati</strong> university town by <strong>Rabindranath Tagore</strong> based on pan-Asian open-air gurukul ideals.</td></tr>
+                    <tr><td><strong>Moidams (Ahom Mound-Burials)</strong></td><td>World Heritage Site #43 (<strong>July 2024</strong>)</td><td>Charaideo, Assam; 600-year royal earthen vaulted mound-burial system of the Tai-Ahom dynasty.</td></tr>
+                    <tr><td><strong>Prior Key ICH Elements</strong></td><td>UNESCO ICH (2008–2021)</td><td><strong>Durga Puja in Kolkata (2021)</strong>, <strong>Kumbh Mela (2017)</strong>, Yoga (2016), Sankirtana (2013), Buddhist Chanting of Ladakh (2012), Chhau, Kalbeliya &amp; Mudiyettu (2010), Ramman (2009), Kutiyattam, Ramlila &amp; Vedic Chanting (2008).</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          }
+        ]
+      },
+      {
+        id: `u9`,
+        num: `09`,
+        shortTitle: `Indian Languages`,
+        title: `Indian Languages, 8th Schedule & Classical Status`,
+        category: `Linguistic Heritage`,
+        overview: `Constitutional framework of the 8th Schedule (Articles 344 & 351), the 21st, 71st, and 92nd Amendments expanding the list from 14 to 22 languages, Classical Language criteria & 2024 expansion to 11 languages, plus major language families.`,
+        subtopics: [
+          {
+            id: `u9_eighth_schedule`,
+            title: `8th Schedule: 22 Official Languages & Constitutional Amendments`,
+            badge: `Constitutional Core`,
+            summary: `From 14 original languages (1950) to 22 via the 21st, 71st, and 92nd Constitutional Amendments.`,
+            contentHtml: `
+              <div class="callout-box">
+                <span class="callout-title">Expansion Timeline: 14 → 22 Scheduled Languages (Articles 344(1) &amp; 351)</span>
+                <ul class="note-list">
+                  <li><strong>Original (1950):</strong> <strong>14 Languages</strong> included at commencement of the Constitution.</li>
+                  <li><strong>21st Amendment Act, 1967:</strong> Added <strong>Sindhi</strong> (15th language).</li>
+                  <li><strong>71st Amendment Act, 1992:</strong> Added <strong>Konkani, Manipuri, Nepali</strong> (16th–18th; mnemonic: <em>KMN</em>).</li>
+                  <li><strong>92nd Amendment Act, 2003 (effective 2004):</strong> Added <strong>Bodo, Dogri, Maithili, Santhali</strong> (19th–22nd; mnemonic: <em>BDMS</em>).</li>
+                  <li><strong>96th Amendment Act, 2011:</strong> Changed the spelling of "Oriya" to <strong>"Odia"</strong>.</li>
+                </ul>
+              </div>
+              <div class="note-card">
+                <h4>All 22 Scheduled Languages (Alphabetical)</h4>
+                <p>Assamese, Bengali, Bodo, Dogri, Gujarati, Hindi, Kannada, Kashmiri, Konkani, Maithili, Malayalam, Manipuri (Meitei), Marathi, Nepali, Odia, Punjabi, Sanskrit, Santhali, Sindhi, Tamil, Telugu, Urdu. <strong>Exam Trap:</strong> <em>English</em> and <em>Rajasthani</em> are <strong>NOT</strong> in the 8th Schedule (though Sahitya Akademi recognizes both).</p>
+              </div>
+            `
+          },
+          {
+            id: `u9_classical_families`,
+            title: `Classical Languages (11 Total) & Language Families`,
+            badge: `2024 Expansion`,
+            summary: `Criteria for Classical status, the 6 foundational Classical Languages, the 5 additions of October 2024, and India's 4 language families.`,
+            contentHtml: `
+              <div class="note-grid">
+                <div class="note-card">
+                  <h4>Classical Languages of India (11)</h4>
+                  <ul class="note-list">
+                    <li><strong>Original 6:</strong> <strong>Tamil</strong> (2004 — first), <strong>Sanskrit</strong> (2005), <strong>Kannada</strong> (2008), <strong>Telugu</strong> (2008), <strong>Malayalam</strong> (2013), <strong>Odia</strong> (2014).</li>
+                    <li><strong>October 2024 Additions (+5):</strong> <strong>Marathi, Pali, Prakrit, Assamese, Bengali</strong> — bringing the total to <strong>11 Classical Languages</strong>.</li>
+                    <li><strong>Core Criteria:</strong> High antiquity of early texts (1,500–2,000 years), valuable ancient literature heritage, original literary tradition not borrowed from another speech community.</li>
+                  </ul>
+                </div>
+                <div class="note-card">
+                  <h4>4 Major Language Families &amp; Scripts</h4>
+                  <ul class="note-list">
+                    <li><strong>Indo-Aryan (~74%):</strong> Hindi, Bengali, Marathi, Gujarati, Punjabi, Assamese, Odia, Kashmiri, Urdu, Sanskrit.</li>
+                    <li><strong>Dravidian (~24%):</strong> Tamil, Telugu, Kannada, Malayalam, Tulu, Gondi, Brahui.</li>
+                    <li><strong>Austro-Asiatic (Munda &amp; Mon-Khmer):</strong> Santhali (Ol Chiki script), Khasi, Mundari, Ho.</li>
+                    <li><strong>Sino-Tibetan / Tibeto-Burman:</strong> Manipuri (Meitei Mayek), Bodo, Mizo, Naga &amp; Himalayan languages.</li>
+                  </ul>
+                </div>
+              </div>
+            `
+          }
+        ]
+      },
+      {
+        id: `u10`,
+        num: `10`,
+        shortTitle: `Institutions & Awards`,
+        title: `Arts & Cultural Institutions & National Awards`,
+        category: `Governance & Honours`,
+        overview: `Mandates and founding histories of India's premier cultural academies and surveys (ASI, AnSI, Sahitya, Sangeet Natak, Lalit Kala) plus top national honours (Bharat Ratna, Padma Awards, Khel Ratna, Dronacharya).`,
+        subtopics: [
+          {
+            id: `u10_institutions`,
+            title: `Premier Cultural Institutions & Akademis`,
+            badge: `Ministry of Culture`,
+            summary: `Founding years, headquarters, founders, and mandates of ASI, Anthropological Survey, and the three National Akademis.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Institution</th>
+                      <th>Founded / HQ</th>
+                      <th>Founder / Key Mandate &amp; Exam Facts</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>Archaeological Survey of India (ASI)</strong></td><td><strong>1861</strong><br>New Delhi</td><td>Founded by <strong>Alexander Cunningham</strong> (1st Director-General, "Father of Indian Archaeology"). Conserves monuments of national importance under <em>AMASR Act 1958</em>.</td></tr>
+                    <tr><td><strong>Anthropological Survey of India (AnSI)</strong></td><td><strong>1945</strong><br>Kolkata (shifted from Varanasi 1948)</td><td>First Director: <strong>Dr. B.S. Guha</strong>. Conducts bio-cultural research on Indian populations; famed for the monumental <em>People of India</em> survey.</td></tr>
+                    <tr><td><strong>Sangeet Natak Akademi</strong></td><td><strong>1952 / Jan 1953</strong><br>New Delhi</td><td>First Chairman: P.V. Rajamannar. National Academy for Music, Dance &amp; Drama; recognizes India's 8 classical dances &amp; oversees Kathak Kendra, Jawaharlal Nehru Manipur Dance Academy.</td></tr>
+                    <tr><td><strong>Sahitya Akademi</strong></td><td><strong>1954</strong><br>New Delhi</td><td>National Academy of Letters; promotes literature and confers annual awards across <strong>24 languages</strong> (22 8th Schedule languages + <strong>English &amp; Rajasthani</strong>).</td></tr>
+                    <tr><td><strong>Lalit Kala Akademi</strong></td><td><strong>1954</strong><br>New Delhi</td><td>National Academy of Fine Arts (painting, sculpture, graphics, architecture); organizes the prestigious <em>Triennale India</em> international exhibition.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          },
+          {
+            id: `u10_awards`,
+            title: `National Civilian, Sports & Cultural Awards`,
+            badge: `Honours & Medals`,
+            summary: `Bharat Ratna, Padma Awards (Vibhushan, Bhushan, Shri), Major Dhyan Chand Khel Ratna, and Dronacharya Award.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Award</th>
+                      <th>Instituted</th>
+                      <th>Eligibility, Design &amp; Notable Recipients</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>Bharat Ratna</strong></td><td><strong>1954</strong></td><td>Highest civilian honour of India; peepal-leaf bronze medallion with Sun &amp; Devanagari script. 1st recipients (1954): <strong>C. Rajagopalachari, S. Radhakrishnan, C.V. Raman</strong>. Recent 2024 recipients: Karpoori Thakur, L.K. Advani, P.V. Narasimha Rao, Charan Singh, M.S. Swaminathan.</td></tr>
+                    <tr><td><strong>Padma Awards</strong></td><td><strong>1954</strong></td><td>Announced annually on Republic Day eve in 3 tiers: <strong>Padma Vibhushan</strong> (exceptional/distinguished service), <strong>Padma Bhushan</strong> (distinguished service of high order), <strong>Padma Shri</strong> (distinguished service). Cap: max 120 awards/year (excl. posthumous &amp; foreign).</td></tr>
+                    <tr><td><strong>Major Dhyan Chand Khel Ratna</strong></td><td><strong>1991–92</strong><br>(renamed 2021)</td><td>Highest sporting honour of India; awarded for spectacular performance over the preceding <strong>4 years</strong>. First recipient: <strong>Viswanathan Anand</strong> (Chess).</td></tr>
+                    <tr><td><strong>Dronacharya Award</strong></td><td><strong>1985</strong></td><td>Honours outstanding sports <strong>coaches</strong> (Regular &amp; Lifetime categories) for consistently training athletes to international medal finishes. First recipients (1985): Bhalachandra Bhaskar Bhagwat, Om Prakash Bhardwaj, O.M. Nambiar.</td></tr>
+                    <tr><td><strong>Related Cultural Honours</strong></td><td>1961–1969</td><td><strong>Arjuna Award (1961):</strong> Sports excellence. <strong>Jnanpith Award (1961/1965):</strong> Highest literary honour (1st: G. Sankara Kurup). <strong>Dadasaheb Phalke Award (1969):</strong> Highest cinema honour (1st: Devika Rani).</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          }
+        ]
+      },
+      {
+        id: `u11`,
+        num: `11`,
+        shortTitle: `Quizzes & Flashcards`,
+        title: `Practice Quizzes & Active-Recall Flashcards`,
+        category: `Self-Assessment Studio`,
+        overview: `Interactive self-assessment quizzes covering all 10 content units plus an active-recall flashcard deck to verify mastery before exam day.`,
+        subtopics: [
+          { id: `u11_quiz_arch`, title: `Unit 01 Quiz: Architecture, Temples & Caves`, badge: `Quiz Module`, summary: `Test your mastery of Nagara, Dravida, Kalinga, Hoysala, Caves & Stupas.` },
+          { id: `u11_quiz_dance`, title: `Units 02–03 Quiz: Classical & Folk Dances / Theatre`, badge: `Quiz Module`, summary: `Test your recall of all 8 classical dances, state folk dances & regional theatres.` },
+          { id: `u11_quiz_music_art`, title: `Units 04–05 Quiz: Music Maestros & Paintings`, badge: `Quiz Module`, summary: `Test Hindustani vs. Carnatic grammar, instruments, folk paintings & artists.` },
+          { id: `u11_quiz_martial_cal`, title: `Units 06–08 Quiz: Martial Arts, Calendars & UNESCO`, badge: `Quiz Module`, summary: `Test martial arts origins, regional New Years, fairs & 2023–24 UNESCO additions.` },
+          { id: `u11_quiz_lang_awards`, title: `Units 09–10 Quiz: Languages, Institutions & Awards`, badge: `Quiz Module`, summary: `Test 8th Schedule amendments, Classical languages, Akademis & National Awards.` },
+          { id: `u11_flashcards`, title: `Active-Recall Flashcard Deck (All Units)`, badge: `Flashcards`, summary: `Flip high-yield exam cards and mark them mastered to complete Unit 11.` }
+        ]
+      }
+    ];
+
+    // =========================================================================
+    // QUIZ QUESTION BANK (COVERING UNITS 01 - 10)
+    // =========================================================================
+    const QUIZ_BANK = [
+      // Unit 1
+      { id: `q_u1_1`, unitId: `u1`, question: `Which crowning architectural element sits directly atop the ribbed Amalaka in a North Indian Nagara temple?`, options: [`Stupika`, `Kalasha`, `Gopuram`, `Harmika`], correctIndex: 1, explanation: `In Nagara temples, the curvilinear Shikhara is topped by a ribbed disc called the Amalaka, which is crowned by a pot-like finial called the Kalasha.` },
+      { id: `q_u1_2`, unitId: `u1`, question: `In Kalinga temple architecture of Odisha, which type of Deula features a rectangular barrel-vaulted roof typically dedicated to Shakti shrines like Vaital Deula?`, options: [`Rekha Deula`, `Pidha Deula`, `Khakhara Deula`, `Phamsana Deula`], correctIndex: 2, explanation: `Kalinga architecture has three orders: Rekha Deula (curvilinear tower), Pidha Deula (pyramidal tiered hall), and Khakhara Deula (barrel-vaulted rectangular roof, e.g. Vaital Deula).` },
+      { id: `q_u1_3`, unitId: `u1`, question: `The famous stepped water tank known as Surya Kund is a hallmark of which Solanki (Maru-Gurjara) monument?`, options: [`Modhera Sun Temple`, `Konark Sun Temple`, `Brihadeeswara Temple`, `Martand Sun Temple`], correctIndex: 0, explanation: `Built in 1026 CE under Bhima I of the Solanki dynasty, the Modhera Sun Temple in Gujarat features the iconic Surya Kund stepped tank lined with miniature shrines.` },
+      { id: `q_u1_4`, unitId: `u1`, question: `Which Barabar cave of the Mauryan period features the earliest surviving carved Chaitya arch facade and was dedicated to the Ajivika sect?`, options: [`Karle Cave`, `Lomas Rishi Cave`, `Udayagiri Cave`, `Bhaja Cave`], correctIndex: 1, explanation: `Lomas Rishi Cave in the Barabar Hills (Bihar) was carved during Ashoka's reign for the Ajivikas and displays the oldest rock-cut Chaitya arch facade.` },
+      { id: `q_u1_5`, unitId: `u1`, question: `Cave 16 at Ellora—the monolithic Kailashanatha Temple excavated from top to bottom—was commissioned by which Rashtrakuta ruler?`, options: [`Amoghavarsha I`, `Dantidurga`, `Krishna I`, `Dhruva`], correctIndex: 2, explanation: `Rashtrakuta king Krishna I (8th century CE) commissioned the monolithic Kailashanatha Temple (Cave 16) at Ellora.` },
+      { id: `q_u1_6`, unitId: `u1`, question: `Which Buddhist stupa marks the exact Deer Park site in Sarnath where Buddha delivered his first sermon (Dharmachakrapravartana)?`, options: [`Sanchi Stupa`, `Kesariya Stupa`, `Dhamek Stupa`, `Bharhut Stupa`], correctIndex: 2, explanation: `Dhamek Stupa at Sarnath (Uttar Pradesh) commemorates Buddha's first sermon; its present cylindrical form dates largely to the Gupta era.` },
+
+      // Unit 2
+      { id: `q_u2_1`, unitId: `u2`, question: `Which classical dance form of Tamil Nadu was earlier known as 'Daasi Attam'?`, options: [`Mohiniyattam`, `Bharatanatyam`, `Kuchipudi`, `Odissi`], correctIndex: 1, explanation: `Bharatanatyam evolved from the temple tradition of Tamil Nadu formerly known as Daasi Attam or Sadir.` },
+      { id: `q_u2_2`, unitId: `u2`, question: `In which year did the Sangeet Natak Akademi officially recognize Sattriya of Assam as a classical dance form?`, options: [`1958`, `1982`, `2000`, `2004`], correctIndex: 2, explanation: `Sattriya, rooted in the 15th-century Vaishnava monasteries (Sattras) of Assam, was recognized as the 8th classical dance in 2000.` },
+      { id: `q_u2_3`, unitId: `u2`, question: `Chenda, Maddalam, Chengila, Idakka, and Shankhu are the traditional instruments accompanying which classical dance?`, options: [`Kathakali`, `Manipuri`, `Kuchipudi`, `Kathak`], correctIndex: 0, explanation: `Kathakali of Kerala relies on the resonant percussion of Chenda, Maddalam, Chengila, Idakka, and the conch (Shankhu).` },
+      { id: `q_u2_4`, unitId: `u2`, question: `Guru Bipin Singh, Rajkumar Singhajit Singh, and Darshana Jhaveri are celebrated exponents of which classical dance?`, options: [`Odissi`, `Manipuri`, `Sattriya`, `Mohiniyattam`], correctIndex: 1, explanation: `Guru Bipin Singh, Rajkumar Singhajit Singh, and the Jhaveri Sisters (including Darshana Jhaveri) are pioneers of Manipuri dance.` },
+      { id: `q_u2_5`, unitId: `u2`, question: `Which classical dance form features the iconic 'Tribhanga' (three-bend) posture and uses the Mardala drum?`, options: [`Kuchipudi`, `Kathak`, `Odissi`, `Bharatanatyam`], correctIndex: 2, explanation: `Odissi from Odisha is characterized by the sculptural Tribhanga and Chowk stances, accompanied by the Mardala drum.` },
+
+      // Unit 3
+      { id: `q_u3_1`, unitId: `u3`, question: `Who introduced the solo satiric folk dance 'Ottam Thullal' in Kerala during the 18th century?`, options: [`Vallathol Narayana Menon`, `Kunchan Nambiar`, `Irayimman Thampi`, `Swathi Thirunal`], correctIndex: 1, explanation: `Poet Kunchan Nambiar created Ottam Thullal in 18th-century Kerala as an accessible, witty performance art for the common people.` },
+      { id: `q_u3_2`, unitId: `u3`, question: `Which traditional folk theatre of Kerala consists of a cycle of eight plays performed over eight consecutive days depicting Lord Krishna?`, options: [`Koodiyattam`, `Krishnattam`, `Theyyam`, `Chavittu Nadakam`], correctIndex: 1, explanation: `Krishnattam is a dance-oriented temple theatre of Kerala performing 8 consecutive plays on Lord Krishna's life.` },
+      { id: `q_u3_3`, unitId: `u3`, question: `Performers wearing painted wooden masks in open-air performances is a hallmark of which Konkan & Goa folk theatre?`, options: [`Bhavai`, `Dashavatar`, `Bhand Pather`, `Bhaona`], correctIndex: 1, explanation: `Dashavatar (Southern Konkan of Maharashtra & Northern Goa) uses wooden masks in open-air enactments of Vishnu's 10 incarnations.` },
+      { id: `q_u3_4`, unitId: `u3`, question: `The folk dance 'Cheraw' (Bamboo Dance) belongs primarily to which northeastern state?`, options: [`Nagaland`, `Mizoram`, `Meghalaya`, `Arunachal Pradesh`], correctIndex: 1, explanation: `Cheraw is the iconic bamboo dance of Mizoram, where dancers step between rhythmically clapped bamboo staves.` },
+      { id: `q_u3_5`, unitId: `u3`, question: `Bhavai, a traditional folk theatre of Gujarat, is performed primarily to revere which deity?`, options: [`Lord Shiva`, `Goddess Amba`, `Lord Jagannath`, `Goddess Kali`], correctIndex: 1, explanation: `Bhavai in Gujarat is traditionally dedicated to Goddess Amba, blending devotion with sharp social satire.` },
+
+      // Unit 4
+      { id: `q_u4_1`, unitId: `u4`, question: `How many microtonal intervals (Srutis) are recognized in the theoretical octave of Indian classical music?`, options: [`7`, `12`, `22`, `72`], correctIndex: 2, explanation: `Indian classical music features 7 Svaras (notes) and 22 theoretical microtonal intervals called Srutis within an octave.` },
+      { id: `q_u4_2`, unitId: `u4`, question: `Who among the following is NOT part of the celebrated 'Trinity of Carnatic Music'?`, options: [`Tyagaraja`, `Muthuswami Dikshitar`, `Syama Sastri`, `Purandara Dasa`], correctIndex: 3, explanation: `The 18th-century Trinity of Carnatic Music comprises Tyagaraja, Muthuswami Dikshitar, and Syama Sastri (Purandara Dasa is revered as Pitamaha of Carnatic music from an earlier era).` },
+      { id: `q_u4_3`, unitId: `u4`, question: `Pt. Shivkumar Sharma and Bhajan Sopori brought international concert status to which Kashmir-rooted instrument?`, options: [`Sarod`, `Sarangi`, `Santoor`, `Rudra Veena`], correctIndex: 2, explanation: `Pt. Shivkumar Sharma and Bhajan Sopori are the foremost maestros of the Santoor (a 100-stringed hammered dulcimer).` },
+      { id: `q_u4_4`, unitId: `u4`, question: `Which prolific medieval musician is credited with developing the Khayal, Tarana, and Qawwali styles?`, options: [`Tansen`, `Amir Khusrau`, `Baiju Bawra`, `Swami Haridas`], correctIndex: 1, explanation: `Amir Khusrau (13th–14th c.) pioneered Khayal, Tarana, and Qawwali, earning the title "Father of Qawwali".` },
+      { id: `q_u4_5`, unitId: `u4`, question: `Match the maestro correctly: Pt. Ram Narayan is a legendary virtuoso of which bowed string instrument?`, options: [`Violin`, `Sarangi`, `Sitar`, `Mridangam`], correctIndex: 1, explanation: `Pt. Ram Narayan (alongside Ustad Sultan Khan) popularized the Sarangi as a solo concert instrument.` },
+
+      // Unit 5
+      { id: `q_u5_1`, unitId: `u5`, question: `In which folk painting style of Bihar is no space left empty, with gaps filled by flowers, birds, and geometric motifs in Bharni, Katchni, and Kohbar sub-styles?`, options: [`Patna Kalam`, `Madhubani`, `Pattachitra`, `Kalamkari`], correctIndex: 1, explanation: `Madhubani (Mithila) painting of Bihar leaves no blank space and features Bharni, Katchni, Tantrik, Godna, and Kohbar styles.` },
+      { id: `q_u5_2`, unitId: `u5`, question: `Which master artist of the Kishangarh School painted the iconic 'Bani Thani' and 'Dipavalika'?`, options: [`Raja Ravi Varma`, `Nihal Chand`, `Abanindranath Tagore`, `Jamini Roy`], correctIndex: 1, explanation: `Nihal Chand painted Bani Thani (often called the Indian Mona Lisa) under Raja Savant Singh of Kishangarh.` },
+      { id: `q_u5_3`, unitId: `u5`, question: `Pithora is a ritual wall painting tradition practised primarily by which tribal communities of Gujarat and Madhya Pradesh?`, options: [`Warli & Gond`, `Rathva & Bhilala`, `Santhal & Munda`, `Toda & Irula`], correctIndex: 1, explanation: `Pithora paintings featuring ritual rows of horses are created by the Rathva and Bhilala tribes of Gujarat and MP.` },
+      { id: `q_u5_4`, unitId: `u5`, question: `The famous painting 'Bharat Mata' (1905) and 'Asoka's Queen' were created by which founder of the Bengal School of Art?`, options: [`Rabindranath Tagore`, `Abanindranath Tagore`, `Nandalal Bose`, `Binod Behari Mukherjee`], correctIndex: 1, explanation: `Abanindranath Tagore painted Bharat Mata, Ganesh Janani, and Asoka's Queen, pioneering the nationalist Bengal School.` },
+      { id: `q_u5_5`, unitId: `u5`, question: `Sittanavasal cave murals in Tamil Nadu belong predominantly to which religious tradition?`, options: [`Buddhism`, `Jainism`, `Vaishnavism`, `Ajivika`], correctIndex: 1, explanation: `Sittanavasal is a Pandya-period Jain cave rock-cut temple famed for its lotus-pond fresco.` },
+
+      // Unit 6
+      { id: `q_u6_1`, unitId: `u6`, question: `Which Rajput martial art from Bihar involves a shield (Pari) and sword (Khanda) and forms the choreographic base of Chhau dance?`, options: [`Mardani Khel`, `Pari-Khanda`, `Thang-ta`, `Kathi Samu`], correctIndex: 1, explanation: `Pari-Khanda originated in Bihar among Rajputs and directly influenced the steps and movements of Seraikella & Purulia Chhau.` },
+      { id: `q_u6_2`, unitId: `u6`, question: `Inbuan Wrestling, where lifting the opponent off their feet inside a circle wins without kicking, belongs to which state?`, options: [`Manipur`, `Mizoram`, `Nagaland`, `Tripura`], correctIndex: 1, explanation: `Inbuan is a traditional strict-rule wrestling sport indigenous to Mizoram.` },
+      { id: `q_u6_3`, unitId: `u6`, question: `Musti Yuddha, an ancient unarmed kick-and-punch boxing martial art, is native to which city?`, options: [`Kolhapur`, `Varanasi`, `Madurai`, `Patiala`], correctIndex: 1, explanation: `Musti Yuddha has survived continuously in Varanasi (Uttar Pradesh), divided into Jambuvanti, Hanumanti, Bhimaseni, and Jarasandhi styles.` },
+      { id: `q_u6_4`, unitId: `u6`, question: `Which weapon-based martial art from Kolhapur (Maharashtra) utilizes the Dandpatta (gauntlet sword) and Vita (corded lance)?`, options: [`Mardani Khel`, `Gatka`, `Silambam`, `Cheibi Gadga`], correctIndex: 0, explanation: `Mardani Khel is the armed Maratha martial tradition centered in Kolhapur, Maharashtra.` },
+
+      // Unit 7
+      { id: `q_u7_1`, unitId: `u7`, question: `When was the Saka Calendar officially adopted as the National Calendar of India?`, options: [`26 January 1950`, `15 August 1947`, `22 March 1957`, `1 April 1956`], correctIndex: 2, explanation: `The Saka Calendar (beginning 78 CE, starting with Chaitra) was adopted as India's official civil calendar on 22 March 1957.` },
+      { id: `q_u7_2`, unitId: `u7`, question: `Which regional New Year festival is celebrated on Kartik Shukla Pratipada (the day after Diwali) with Chopda Pujan?`, options: [`Ugadi`, `Bestu Varas`, `Vishu`, `Puthandu`], correctIndex: 1, explanation: `Bestu Varas (Gujarati New Year) falls on Kartik Shukla Pratipada, the day after Diwali, unlike spring New Years like Ugadi or Vishu.` },
+      { id: `q_u7_3`, unitId: `u7`, question: `Jude Sheetal (Jur Sital), where elders bless younger family members by sprinkling cool water in mid-April, is the New Year of which region?`, options: [`Kashmir`, `Mithila (Bihar)`, `Sikkim`, `Odisha`], correctIndex: 1, explanation: `Jude Sheetal is the traditional Maithil New Year celebrated across Mithila (Bihar) and Nepal's Terai.` },
+      { id: `q_u7_4`, unitId: `u7`, question: `Vishukkani—viewing auspicious golden blooms, rice, mirror, and coins at dawn—is the central ritual of New Year in which state?`, options: [`Tamil Nadu`, `Odisha`, `Kerala`, `Karnataka`], correctIndex: 2, explanation: `Vishu in Kerala begins on 1 Medam (mid-April) with the auspicious dawn ritual of Vishukkani.` },
+
+      // Unit 8
+      { id: `q_u8_1`, unitId: `u8`, question: `Which traditional fair in Morigaon, Assam still preserves a live barter system among hill and plains tribes after Magh Bihu?`, options: [`Ambubachi Mela`, `Jonbeel Mela`, `Pushkar Fair`, `Sonepur Mela`], correctIndex: 1, explanation: `Jonbeel Mela in Assam's Morigaon district is famed for its centuries-old barter exchange among Tiwa, Karbi, Khasi, and Jaintia communities.` },
+      { id: `q_u8_2`, unitId: `u8`, question: `In December 2023, which cultural dance form became India's 15th inscription on UNESCO's Intangible Cultural Heritage list?`, options: [`Bihu of Assam`, `Garba of Gujarat`, `Yakshagana of Karnataka`, `Ghoomar of Rajasthan`], correctIndex: 1, explanation: `Garba of Gujarat was inscribed onto the UNESCO Representative List of Intangible Cultural Heritage of Humanity in December 2023.` },
+      { id: `q_u8_3`, unitId: `u8`, question: `Which pair of Indian sites became UNESCO World Heritage Sites #41 and #42 respectively in September 2023?`, options: [`Dholavira & Ramappa Temple`, `Santiniketan & Sacred Ensembles of the Hoysalas`, `Kumbh Mela & Konark`, `Moidams & Elephanta`], correctIndex: 1, explanation: `Santiniketan (West Bengal, #41) and the Sacred Ensembles of the Hoysalas (Karnataka, #42) were inscribed in Sept 2023, followed by Assam's Moidams (#43) in July 2024.` },
+      { id: `q_u8_4`, unitId: `u8`, question: `Aadi Perukku is a monsoon festival in Tamil Nadu specifically honouring which river?`, options: [`Vaigai`, `Cauvery`, `Godavari`, `Tamiraparani`], correctIndex: 1, explanation: `Aadi Perukku falls on the 18th day of Aadi to express gratitude to the life-sustaining Cauvery River.` },
+
+      // Unit 9
+      { id: `q_u9_1`, unitId: `u9`, question: `Which Constitutional Amendment Act added Bodo, Dogri, Maithili, and Santhali to the 8th Schedule, bringing the total to 22 languages?`, options: [`21st Amendment (1967)`, `71st Amendment (1992)`, `92nd Amendment (2003)`, `96th Amendment (2011)`], correctIndex: 2, explanation: `The 21st Amendment added Sindhi; the 71st added Konkani, Manipuri, Nepali; and the 92nd Amendment (2003) added Bodo, Dogri, Maithili, and Santhali.` },
+      { id: `q_u9_2`, unitId: `u9`, question: `Which of the following languages is recognized by the Sahitya Akademi for literary awards but is NOT listed in the 8th Schedule of the Constitution?`, options: [`Santhali`, `English`, `Dogri`, `Konkani`], correctIndex: 1, explanation: `Sahitya Akademi awards cover 24 languages: the 22 languages of the 8th Schedule plus English and Rajasthani.` },
+      { id: `q_u9_3`, unitId: `u9`, question: `With the October 2024 inclusion of Marathi, Pali, Prakrit, Assamese, and Bengali, how many Classical Languages does India now officially recognize?`, options: [`6`, `8`, `11`, `14`], correctIndex: 2, explanation: `Adding 5 languages in October 2024 to the original 6 (Tamil, Sanskrit, Kannada, Telugu, Malayalam, Odia) raised the total to 11 Classical Languages.` },
+
+      // Unit 10
+      { id: `q_u10_1`, unitId: `u10`, question: `Who founded the Archaeological Survey of India (ASI) in 1861 and served as its first Director-General?`, options: [`John Marshall`, `Mortimer Wheeler`, `Alexander Cunningham`, `James Prinsep`], correctIndex: 2, explanation: `Alexander Cunningham founded the ASI in 1861 and is widely regarded as the Father of Indian Archaeology.` },
+      { id: `q_u10_2`, unitId: `u10`, question: `Which top Indian sporting award evaluates an athlete's spectacular performance over the preceding four years and was first awarded to Viswanathan Anand?`, options: [`Dronacharya Award`, `Arjuna Award`, `Major Dhyan Chand Khel Ratna`, `Maulana Abul Kalam Azad Trophy`], correctIndex: 2, explanation: `Instituted in 1991–92 (first awarded to Viswanathan Anand), the Major Dhyan Chand Khel Ratna is India's highest sporting honour.` },
+      { id: `q_u10_3`, unitId: `u10`, question: `Which institution among the following was established first (January 1953 inaugural) as the National Academy of Music, Dance and Drama?`, options: [`Sahitya Akademi`, `Lalit Kala Akademi`, `Sangeet Natak Akademi`, `National School of Drama`], correctIndex: 2, explanation: `Sangeet Natak Akademi was set up in 1952 and inaugurated in January 1953, followed by Sahitya Akademi and Lalit Kala Akademi in 1954.` },
+      { id: `q_u10_4`, unitId: `u10`, question: `Which national award instituted in 1985 exclusively honours outstanding sports coaches?`, options: [`Arjuna Award`, `Dronacharya Award`, `Dhyan Chand Lifetime Award`, `Tenzing Norgay Award`], correctIndex: 1, explanation: `The Dronacharya Award (1985) recognizes excellence in sports coaching.` }
+    ];
+
+    // =========================================================================
+    // FLASHCARDS BANK (ACTIVE RECALL ACROSS ALL UNITS)
+    // =========================================================================
+    const FLASHCARDS = [
+      { id: `fc1`, unitId: `u1`, front: `Nagara vs. Dravida crowning elements?`, back: `Nagara: Ribbed stone Amalaka topped by Kalasha on a curvilinear Shikhara. Dravida: Octagonal dome Shikhara & Stupika atop a stepped pyramidal Vimana.` },
+      { id: `fc2`, unitId: `u1`, front: `Three types of Kalinga (Odisha) temples?`, back: `Rekha Deula (curvilinear tower — Lingaraja), Pidha Deula (tiered pyramidal hall — Konark Jagamohana), and Khakhara Deula (barrel-vaulted Shakti shrine — Vaital Deula).` },
+      { id: `fc3`, unitId: `u1`, front: `Oldest rock-cut caves in India & their sect?`, back: `Barabar Caves (Bihar), 3rd c. BCE Mauryan (Ashoka), carved for the Ajivika sect with mirror-like polish; Lomas Rishi has the earliest Chaitya arch.` },
+      { id: `fc4`, unitId: `u1`, front: `Brihadeeswara Temple patron & key stats?`, back: `Built 1010 CE at Thanjavur by Chola king Rajaraja I; 66m granite Vimana, 80-tonne monolithic cupola, Chola frescoes inside.` },
+      { id: `fc5`, unitId: `u2`, front: `Sangeet Natak Akademi's 8 Classical Dances?`, back: `Bharatanatyam (TN), Kathakali (Kerala), Mohiniyattam (Kerala), Kuchipudi (AP), Manipuri (Manipur), Kathak (North India), Odissi (Odisha), Sattriya (Assam, 2000).` },
+      { id: `fc6`, unitId: `u2`, front: `Sattriya origin & recognition year?`, back: `Vaishnava monasteries (Sattras) of Assam founded by Srimanta Sankardev; recognized as a classical dance in 2000; instruments: Khols, Talas, Flute.` },
+      { id: `fc7`, unitId: `u2`, front: `Kelucharan Mohapatra & Sanjukta Panigrahi are legends of?`, back: `Odissi (Odisha) — characterized by Tribhanga & Chowk postures and Mardala accompaniment.` },
+      { id: `fc8`, unitId: `u3`, front: `Three Bihu festivals of Assam & their months?`, back: `Bhogali/Magh Bihu (January), Rongali/Bohag Bihu (April — most vibrant spring New Year), Kongali/Kati Bihu (October).` },
+      { id: `fc9`, unitId: `u3`, front: `Krishnattam vs. Dashavatar key distinction?`, back: `Krishnattam (Kerala): 8 plays over 8 consecutive nights on Krishna. Dashavatar (Konkan/Goa): open-air mask theatre of Vishnu's 10 avatars.` },
+      { id: `fc10`, unitId: `u3`, front: `What is Kummi & where is it performed?`, back: `Women's circular folk dance of Tamil Nadu performed without musical instruments—rhythm is kept solely by hand-clapping.` },
+      { id: `fc11`, unitId: `u4`, front: `Three Pillars & 7 Svaras of Indian Music?`, back: `Pillars: Swara, Raga, Taal. 7 Svaras: Sadja (Sa), Rishabha (Ri), Gandhara (Ga), Madhyama (Ma), Panchama (Pa), Dhaivata (Dha), Nishada (Ni) across 22 Srutis.` },
+      { id: `fc12`, unitId: `u4`, front: `Who is the Trinity of Carnatic Music?`, back: `Tyagaraja, Muthuswami Dikshitar, and Syama Sastri (18th century Golden Period).` },
+      { id: `fc13`, unitId: `u4`, front: `Maestros for Santoor, Shehnai, Sarod & Sarangi?`, back: `Santoor: Pt. Shivkumar Sharma | Shehnai: Ustad Bismillah Khan | Sarod: Ustad Amjad Ali Khan | Sarangi: Pt. Ram Narayan.` },
+      { id: `fc14`, unitId: `u5`, front: `Five sub-styles of Madhubani (Mithila) Painting?`, back: `Bharni, Katchni, Tantrik, Godna, and Kohbar; traditionally done by women with zero empty space left; Mahasundari Devi is a famous exponent.` },
+      { id: `fc15`, unitId: `u5`, front: `Match Paintings: Bani Thani, Bharat Mata, Mahishasura?`, back: `Bani Thani -> Nihal Chand (Kishangarh) | Bharat Mata -> Abanindranath Tagore | Mahishasura -> Tyeb Mehta.` },
+      { id: `fc16`, unitId: `u6`, front: `Origins of Thoda, Pari-Khanda, Inbuan & Mardani Khel?`, back: `Thoda -> Himachal Pradesh | Pari-Khanda -> Bihar | Inbuan -> Mizoram | Mardani Khel -> Kolhapur, Maharashtra.` },
+      { id: `fc17`, unitId: `u7`, front: `Epoch years of Saka, Vikram Samvat & Hijri?`, back: `Saka: 78 CE (National Calendar, adopted 22 Mar 1957) | Vikram Samvat: 57 BCE (56.7 yrs ahead) | Hijri: 622 CE (purely lunar, 354 days).` },
+      { id: `fc18`, unitId: `u7`, front: `Match New Years: Bestu Varas, Pana Sankranti, Losoong, Jude Sheetal?`, back: `Bestu Varas -> Gujarat (post-Diwali) | Pana Sankranti -> Odisha | Losoong -> Sikkim | Jude Sheetal -> Mithila, Bihar.` },
+      { id: `fc19`, unitId: `u8`, front: `2023–2024 UNESCO Additions from India?`, back: `2023: Santiniketan (#41), Hoysala Sacred Ensembles (#42), Garba of Gujarat (ICH #15). 2024: Moidams of Charaideo, Assam (#43).` },
+      { id: `fc20`, unitId: `u9`, front: `Mnemonic for 8th Schedule Amendments (21st, 71st, 92nd)?`, back: `21st (1967): Sindhi | 71st (1992): Konkani, Manipuri, Nepali (KMN) | 92nd (2003): Bodo, Dogri, Maithili, Santhali (BDMS) -> 22 total.` },
+      { id: `fc21`, unitId: `u9`, front: `11 Classical Languages of India?`, back: `Tamil (2004), Sanskrit (2005), Kannada & Telugu (2008), Malayalam (2013), Odia (2014), plus Oct 2024 additions: Marathi, Pali, Prakrit, Assamese, Bengali.` },
+      { id: `fc22`, unitId: `u10`, front: `Founding years of ASI, AnSI, Sangeet Natak, Sahitya & Lalit Kala?`, back: `ASI: 1861 (Cunningham) | AnSI: 1945 (B.S. Guha) | Sangeet Natak: 1952/53 | Sahitya Akademi: 1954 (24 langs) | Lalit Kala: 1954.` },
+      { id: `fc23`, unitId: `u10`, front: `First recipients of Bharat Ratna (1954), Khel Ratna (1991-92) & Dronacharya (1985)?`, back: `Bharat Ratna: C. Rajagopalachari, S. Radhakrishnan, C.V. Raman | Khel Ratna: Viswanathan Anand | Dronacharya: B.B. Bhagwat, O.P. Bhardwaj, O.M. Nambiar.` }
+    ];
+
+    // =========================================================================
+    // APPLICATION STATE
+    // =========================================================================
+    const DEFAULT_STATE = {
+      checkedTopics: {},
+      expandedSidebarUnits: { u1: true },
+      collapsedDrawers: {},
+      activeUnitId: `u1`,
+      statusFilter: `all`,
+      searchQuery: ``,
+      studioTab: `quiz`,
+      quizFilterUnit: `all`,
+      quizAnswers: {},
+      flashcardFilterUnit: `all`,
+      flashcardIndex: 0,
+      flashcardFlipped: false,
+      flashcardMastered: {}
+    };
+
+    let appState = JSON.parse(JSON.stringify(DEFAULT_STATE));
+
+    // =========================================================================
+    // STATE PERSISTENCE HELPERS (notebookAppApi)
+    // =========================================================================
+    async function saveAppState() {
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === `function`) {
+          await window.notebookAppApi.setAppState({
+            checkedTopics: appState.checkedTopics,
+            expandedSidebarUnits: appState.expandedSidebarUnits,
+            collapsedDrawers: appState.collapsedDrawers,
+            activeUnitId: appState.activeUnitId,
+            quizAnswers: appState.quizAnswers,
+            flashcardMastered: appState.flashcardMastered,
+            studioTab: appState.studioTab,
+            quizFilterUnit: appState.quizFilterUnit,
+            flashcardFilterUnit: appState.flashcardFilterUnit
+          });
+        }
+      } catch (err) {
+        // Non-fatal persistence error inside preview
+      }
+    }
+
+    async function loadAppState() {
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === `function`) {
+          const saved = await window.notebookAppApi.getAppState();
+          if (saved && typeof saved === `object`) {
+            if (saved.checkedTopics) appState.checkedTopics = saved.checkedTopics;
+            if (saved.expandedSidebarUnits) appState.expandedSidebarUnits = saved.expandedSidebarUnits;
+            if (saved.collapsedDrawers) appState.collapsedDrawers = saved.collapsedDrawers;
+            if (saved.activeUnitId) appState.activeUnitId = saved.activeUnitId;
+            if (saved.quizAnswers) appState.quizAnswers = saved.quizAnswers;
+            if (saved.flashcardMastered) appState.flashcardMastered = saved.flashcardMastered;
+            if (saved.studioTab) appState.studioTab = saved.studioTab;
+            if (saved.quizFilterUnit) appState.quizFilterUnit = saved.quizFilterUnit;
+            if (saved.flashcardFilterUnit) appState.flashcardFilterUnit = saved.flashcardFilterUnit;
+          }
+        }
+      } catch (err) {
+        // Fallback cleanly to default state
+      }
+    }
+
+    // =========================================================================
+    // COMPUTED STATS
+    // =========================================================================
+    function getTotalSubtopics() {
+      let count = 0;
+      for (const u of SYLLABUS_UNITS) count += u.subtopics.length;
+      return count;
+    }
+
+    function getUnitStats(unit) {
+      const total = unit.subtopics.length;
+      let done = 0;
+      for (const st of unit.subtopics) {
+        if (appState.checkedTopics[st.id]) done++;
+      }
+      const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+      return { done, total, pct };
+    }
+
+    function getOverallStats() {
+      let total = 0;
+      let done = 0;
+      let unitsCompleted = 0;
+      for (const u of SYLLABUS_UNITS) {
+        const s = getUnitStats(u);
+        total += s.total;
+        done += s.done;
+        if (s.total > 0 && s.done === s.total) unitsCompleted++;
+      }
+      const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+
+      let quizAnswered = 0;
+      let quizCorrect = 0;
+      for (const q of QUIZ_BANK) {
+        if (appState.quizAnswers[q.id] !== undefined) {
+          quizAnswered++;
+          if (appState.quizAnswers[q.id] === q.correctIndex) quizCorrect++;
+        }
+      }
+      const quizPct = quizAnswered > 0 ? Math.round((quizCorrect / quizAnswered) * 100) : 0;
+
+      return { total, done, pct, unitsCompleted, quizAnswered, quizCorrect, quizPct };
+    }
+
+    // =========================================================================
+    // SEARCH & FILTER MATCHING
+    // =========================================================================
+    function stripHtml(html) {
+      const div = document.createElement(`div`);
+      div.innerHTML = html || ``;
+      return div.textContent || div.innerText || ``;
+    }
+
+    function topicMatchesFilter(unit, subtopic) {
+      const isDone = Boolean(appState.checkedTopics[subtopic.id]);
+      if (appState.statusFilter === `pending` && isDone) return false;
+      if (appState.statusFilter === `done` && !isDone) return false;
+
+      const q = appState.searchQuery.trim().toLowerCase();
+      if (!q) return true;
+
+      const haystack = `${unit.title} ${unit.shortTitle} ${subtopic.title} ${subtopic.summary} ${stripHtml(subtopic.contentHtml || ``)}`.toLowerCase();
+      return haystack.includes(q);
+    }
+
+    function escapeRegExp(str) {
+      return str.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
+    }
+
+    function highlightText(text, query) {
+      if (!query) return text;
+      const re = new RegExp(`(${escapeRegExp(query)})`, `gi`);
+      return text.replace(re, `<mark class="hl">$1</mark>`);
+    }
+
+    // =========================================================================
+    // RENDERING: KPIs, MINI BREAKDOWN, SIDEBAR, MAIN CANVAS
+    // =========================================================================
+    function renderAll() {
+      renderKPIs();
+      renderMasteryBars();
+      renderSidebar();
+      renderStudyCanvas();
+      syncControls();
+    }
+
+    function syncControls() {
+      const selectEl = document.getElementById(`unit-jump-select`);
+      if (selectEl) selectEl.value = appState.activeUnitId;
+
+      const searchEl = document.getElementById(`search-input`);
+      if (searchEl && searchEl.value !== appState.searchQuery) {
+        searchEl.value = appState.searchQuery;
+      }
+      const clearBtn = document.getElementById(`btn-clear-search`);
+      if (clearBtn) clearBtn.hidden = appState.searchQuery.trim().length === 0;
+
+      const fAll = document.getElementById(`filter-all`);
+      const fPen = document.getElementById(`filter-pending`);
+      const fDone = document.getElementById(`filter-done`);
+      if (fAll) fAll.classList.toggle(`is-active`, appState.statusFilter === `all`);
+      if (fPen) fPen.classList.toggle(`is-active`, appState.statusFilter === `pending`);
+      if (fDone) fDone.classList.toggle(`is-active`, appState.statusFilter === `done`);
+    }
+
+    function renderKPIs() {
+      const stats = getOverallStats();
+      const activeUnit = SYLLABUS_UNITS.find(u => u.id === appState.activeUnitId) || SYLLABUS_UNITS[0];
+      const activeStats = getUnitStats(activeUnit);
+
+      const elPct = document.getElementById(`kpi-total-pct`);
+      const elBar = document.getElementById(`kpi-total-bar`);
+      const elCnt = document.getElementById(`kpi-total-count`);
+      const elUnits = document.getElementById(`kpi-units-done`);
+      const elActive = document.getElementById(`kpi-active-unit`);
+      const elActiveProg = document.getElementById(`kpi-active-progress`);
+      const elQuizScore = document.getElementById(`kpi-quiz-score`);
+      const elQuizCount = document.getElementById(`kpi-quiz-count`);
+
+      if (elPct) elPct.textContent = `${stats.pct}%`;
+      if (elBar) elBar.style.width = `${stats.pct}%`;
+      if (elCnt) elCnt.textContent = `${stats.done} / ${stats.total} sub-topics checked`;
+      if (elUnits) elUnits.textContent = `${stats.unitsCompleted} / ${SYLLABUS_UNITS.length}`;
+      if (elActive) elActive.textContent = `${activeUnit.num} · ${activeUnit.shortTitle}`;
+      if (elActiveProg) elActiveProg.textContent = `${activeStats.done} / ${activeStats.total} (${activeStats.pct}%) complete`;
+      if (elQuizScore) elQuizScore.textContent = `${stats.quizPct}%`;
+      if (elQuizCount) elQuizCount.textContent = `${stats.quizCorrect} / ${stats.quizAnswered} correct (${QUIZ_BANK.length} total)`;
+    }
+
+    function renderMasteryBars() {
+      const container = document.getElementById(`mastery-bars-grid`);
+      if (!container) return;
+
+      container.innerHTML = SYLLABUS_UNITS.map(u => {
+        const s = getUnitStats(u);
+        const isDone = s.done === s.total && s.total > 0;
+        return `
+          <button type="button" class="mini-bar-item" onclick="selectUnit('${u.id}')">
+            <div class="mini-bar-top">
+              <span>${u.num}. ${u.shortTitle}</span>
+              <span>${s.pct}%</span>
+            </div>
+            <div class="progress-track thin" aria-hidden="true">
+              <div class="progress-fill ${isDone ? `is-emerald` : ``}" style="width: ${s.pct}%;"></div>
+            </div>
+          </button>
+        `;
+      }).join(``);
+    }
+
+    function renderSidebar() {
+      const list = document.getElementById(`sidebar-unit-list`);
+      if (!list) return;
+
+      list.innerHTML = SYLLABUS_UNITS.map(unit => {
+        const stats = getUnitStats(unit);
+        const isSelected = appState.activeUnitId === unit.id;
+        const isExpanded = Boolean(appState.expandedSidebarUnits[unit.id]);
+        const isComplete = stats.total > 0 && stats.done === stats.total;
+
+        const subHtml = unit.subtopics.map(st => {
+          const checked = Boolean(appState.checkedTopics[st.id]);
+          const matches = topicMatchesFilter(unit, st);
+          if (!matches && (appState.searchQuery.trim() || appState.statusFilter !== `all`)) {
+            return ``;
+          }
+          return `
+            <div class="side-check-row ${checked ? `is-checked` : ``}">
+              <input type="checkbox" class="topic-checkbox" id="side_chk_${st.id}" ${checked ? `checked` : ``} onchange="toggleTopic('${st.id}', this.checked)" aria-label="Mark ${st.title} complete">
+              <button type="button" class="side-topic-jump" onclick="jumpToTopic('${unit.id}', '${st.id}')">${st.title}</button>
+            </div>
+          `;
+        }).join(``);
+
+        const visibleCount = unit.subtopics.filter(st => topicMatchesFilter(unit, st)).length;
+        const checklistContent = subHtml || `<div class="side-check-row"><span style="font-size:0.8rem;color:var(--on-surface-variant);">No matching sub-topics (${visibleCount})</span></div>`;
+
+        return `
+          <div class="side-module ${isSelected ? `is-selected` : ``} ${isExpanded ? `is-expanded` : ``} ${isComplete ? `is-complete` : ``}">
+            <button type="button" class="side-module-head" onclick="toggleSidebarModule('${unit.id}')" aria-expanded="${isExpanded}">
+              <span class="unit-num-pill">${unit.num}</span>
+              <span class="side-module-meta">
+                <span class="side-module-name">${unit.shortTitle}</span>
+                <span class="side-module-sub">
+                  <span>${stats.done}/${stats.total}</span>
+                  <span class="progress-track thin" style="max-width:90px;" aria-hidden="true">
+                    <span class="progress-fill ${isComplete ? `is-emerald` : ``}" style="display:block;width:${stats.pct}%;"></span>
+                  </span>
+                </span>
+              </span>
+              <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="side-checklist" ${isExpanded ? `` : `hidden`}>
+              ${checklistContent}
+            </div>
+          </div>
+        `;
+      }).join(``);
+    }
+
+    function renderStudyCanvas() {
+      const canvas = document.getElementById(`study-canvas`);
+      if (!canvas) return;
+
+      const hasSearchOrFilter = appState.searchQuery.trim().length > 0 || appState.statusFilter !== `all`;
+
+      // If searching or filtering across all units, display filtered results across ALL 11 units!
+      if (hasSearchOrFilter) {
+        renderFilteredCanvas(canvas);
+        return;
+      }
+
+      const unit = SYLLABUS_UNITS.find(u => u.id === appState.activeUnitId) || SYLLABUS_UNITS[0];
+      const stats = getUnitStats(unit);
+      const isComplete = stats.done === stats.total && stats.total > 0;
+
+      // Unit 11 is the dedicated Quiz & Flashcards Studio
+      if (unit.id === `u11`) {
+        renderUnit11Studio(canvas, unit, stats);
+        return;
+      }
+
+      const drawersHtml = unit.subtopics.map(st => renderDrawer(unit, st, false)).join(``);
+
+      canvas.innerHTML = `
+        <div class="canvas-header-card">
+          <div class="canvas-title-row">
+            <div>
+              <div class="kicker-row">
+                <span class="kicker-label">Unit ${unit.num} · ${unit.category}</span>
+                ${isComplete ? `<span class="badge-emerald">Unit Mastered</span>` : `<span class="badge-brass">${stats.done} of ${stats.total} Complete</span>`}
+              </div>
+              <h2 class="canvas-title">${unit.title}</h2>
+            </div>
+            <div class="canvas-actions">
+              <button type="button" class="btn btn-secondary btn-sm" onclick="markUnitComplete('${unit.id}', ${!isComplete})">
+                ${isComplete ? `Unmark All` : `Mark Unit Complete`}
+              </button>
+              <button type="button" class="btn btn-primary btn-sm" onclick="launchUnitQuiz('${unit.id}')">
+                Test Unit ${unit.num} (Quiz)
+              </button>
+            </div>
+          </div>
+          <p class="canvas-overview">${unit.overview}</p>
+          <div class="unit-progress-row">
+            <div class="progress-track" aria-hidden="true">
+              <div class="progress-fill ${isComplete ? `is-emerald` : ``}" style="width: ${stats.pct}%;"></div>
+            </div>
+            <span class="unit-progress-label">${stats.pct}% Mastered</span>
+          </div>
+        </div>
+        <div class="drawers-stack">
+          ${drawersHtml}
+        </div>
+      `;
+    }
+
+    function renderFilteredCanvas(canvas) {
+      const q = appState.searchQuery.trim();
+      const matchedItems = [];
+      for (const unit of SYLLABUS_UNITS) {
+        for (const st of unit.subtopics) {
+          if (topicMatchesFilter(unit, st)) {
+            matchedItems.push({ unit, st });
+          }
+        }
+      }
+
+      const headerHtml = `
+        <div class="canvas-header-card">
+          <div class="canvas-title-row">
+            <div>
+              <div class="kicker-row">
+                <span class="kicker-label">Cross-Syllabus Filter Active</span>
+                <span class="badge-emerald">${matchedItems.length} Matching Sub-Topics</span>
+              </div>
+              <h2 class="canvas-title">${q ? `Search Results for “${q}”` : `Filtered Syllabus View (${appState.statusFilter === `done` ? `Completed` : `Pending`})`}</h2>
+            </div>
+            <div class="canvas-actions">
+              <button type="button" class="btn btn-secondary btn-sm" onclick="resetFilters()">Clear Search &amp; Filters</button>
+            </div>
+          </div>
+          <p class="canvas-overview">Displaying matching study drawers across all 11 Art &amp; Culture units. Checking any item updates your total progress automatically.</p>
+        </div>
+      `;
+
+      if (matchedItems.length === 0) {
+        canvas.innerHTML = headerHtml + `
+          <div class="empty-state">
+            <h3 class="drawer-title">No matching syllabus topics found</h3>
+            <p class="canvas-overview">Try clearing your search query or switching back to “All Topics” to browse the full 11-unit syllabus.</p>
+            <button type="button" class="btn btn-primary" onclick="resetFilters()">Show All 11 Units</button>
+          </div>
+        `;
+        return;
+      }
+
+      const drawersHtml = matchedItems.map(({ unit, st }) => {
+        if (unit.id === `u11`) {
+          return `
+            <div class="study-drawer ${appState.checkedTopics[st.id] ? `is-completed` : ``}">
+              <div class="drawer-header">
+                <div class="drawer-left">
+                  <label class="drawer-check-wrap" title="Mark complete">
+                    <input type="checkbox" ${appState.checkedTopics[st.id] ? `checked` : ``} onchange="toggleTopic('${st.id}', this.checked)">
+                  </label>
+                  <div class="drawer-title-btn" onclick="selectUnit('u11')">
+                    <div class="drawer-title-row">
+                      <span class="unit-num-pill">Unit ${unit.num}</span>
+                      <h3 class="drawer-title">${highlightText(st.title, q)}</h3>
+                    </div>
+                    <p class="drawer-summary">${highlightText(st.summary, q)}</p>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="selectUnit('u11')">Open Studio</button>
+              </div>
+            </div>
+          `;
+        }
+        return renderDrawer(unit, st, true, q);
+      }).join(``);
+
+      canvas.innerHTML = headerHtml + `<div class="drawers-stack">${drawersHtml}</div>`;
+    }
+
+    function renderDrawer(unit, st, showUnitPill, query) {
+      const checked = Boolean(appState.checkedTopics[st.id]);
+      const isOpen = !appState.collapsedDrawers[st.id];
+      const titleHtml = query ? highlightText(st.title, query) : st.title;
+      const summaryHtml = query ? highlightText(st.summary, query) : st.summary;
+
+      return `
+        <article class="study-drawer ${checked ? `is-completed` : ``} ${isOpen ? `is-open` : ``}" id="drawer_${st.id}">
+          <div class="drawer-header">
+            <div class="drawer-left">
+              <label class="drawer-check-wrap" title="Mark ${st.title} complete">
+                <input type="checkbox" id="chk_${st.id}" ${checked ? `checked` : ``} onchange="toggleTopic('${st.id}', this.checked)">
+              </label>
+              <button type="button" class="drawer-title-btn" onclick="toggleDrawer('${st.id}')" aria-expanded="${isOpen}">
+                <div class="drawer-title-row">
+                  ${showUnitPill ? `<span class="unit-num-pill">Unit ${unit.num}</span>` : ``}
+                  <h3 class="drawer-title">${titleHtml}</h3>
+                  <span class="badge-brass">${st.badge}</span>
+                  ${checked ? `<span class="badge-emerald">Mastered</span>` : ``}
+                </div>
+                <p class="drawer-summary">${summaryHtml}</p>
+              </button>
+            </div>
+            <button type="button" class="drawer-toggle-btn" onclick="toggleDrawer('${st.id}')" aria-expanded="${isOpen}">
+              <span>${isOpen ? `Hide Notes` : `View Notes`}</span>
+              <svg class="chevron-icon" style="transform: ${isOpen ? `rotate(180deg)` : `rotate(0deg)`};" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
+          <div class="drawer-body" ${isOpen ? `` : `hidden`}>
+            ${st.contentHtml || ``}
+          </div>
+        </article>
+      `;
+    }
+
+    // =========================================================================
+    // UNIT 11: PRACTICE QUIZZES & FLASHCARD STUDIO
+    // =========================================================================
+    function renderUnit11Studio(canvas, unit, stats) {
+      const isComplete = stats.done === stats.total && stats.total > 0;
+      const quizQuestions = appState.quizFilterUnit === `all`
+        ? QUIZ_BANK
+        : QUIZ_BANK.filter(q => q.unitId === appState.quizFilterUnit);
+
+      let answeredInView = 0;
+      let correctInView = 0;
+      for (const q of quizQuestions) {
+        if (appState.quizAnswers[q.id] !== undefined) {
+          answeredInView++;
+          if (appState.quizAnswers[q.id] === q.correctIndex) correctInView++;
+        }
+      }
+
+      const cards = appState.flashcardFilterUnit === `all`
+        ? FLASHCARDS
+        : FLASHCARDS.filter(c => c.unitId === appState.flashcardFilterUnit);
+      const safeIndex = cards.length > 0 ? Math.min(appState.flashcardIndex, cards.length - 1) : 0;
+      const currentCard = cards[safeIndex];
+      const masteredCount = Object.keys(appState.flashcardMastered).filter(k => appState.flashcardMastered[k]).length;
+
+      const quizHtml = quizQuestions.map((q, idx) => {
+        const chosen = appState.quizAnswers[q.id];
+        const isAnswered = chosen !== undefined;
+        const unitMeta = SYLLABUS_UNITS.find(u => u.id === q.unitId);
+        const optLetters = [`A`, `B`, `C`, `D`];
+
+        return `
+          <div class="quiz-card">
+            <div class="quiz-q-meta">
+              <span class="badge-brass">Q${idx + 1} · Unit ${unitMeta ? unitMeta.num : ``} (${unitMeta ? unitMeta.shortTitle : ``})</span>
+              ${isAnswered ? `<span class="badge-emerald">${chosen === q.correctIndex ? `Correct` : `Review Answer`}</span>` : ``}
+            </div>
+            <h3 class="quiz-question">${q.question}</h3>
+            <div class="quiz-options">
+              ${q.options.map((opt, optIdx) => {
+                let cls = ``;
+                if (isAnswered) {
+                  if (optIdx === q.correctIndex) cls = `is-correct`;
+                  else if (optIdx === chosen) cls = `is-wrong`;
+                }
+                return `
+                  <button type="button" class="quiz-opt-btn ${cls}" ${isAnswered ? `disabled` : ``} onclick="answerQuizQuestion('${q.id}', ${optIdx})">
+                    <strong>${optLetters[optIdx]}.</strong> <span>${opt}</span>
+                  </button>
+                `;
+              }).join(``)}
+            </div>
+            ${isAnswered ? `
+              <div class="quiz-explanation ${chosen === q.correctIndex ? `` : `is-wrong`}">
+                <strong>${chosen === q.correctIndex ? `Correct:` : `Explanation:`}</strong> ${q.explanation}
+              </div>
+            ` : ``}
+          </div>
+        `;
+      }).join(``);
+
+      const flashcardHtml = currentCard ? `
+        <div class="quiz-controls">
+          <div class="field-group" style="flex:1;min-width:200px;">
+            <label class="field-label" for="fc-unit-select">Filter Flashcard Deck by Unit</label>
+            <select id="fc-unit-select" class="select-input" onchange="setFlashcardFilter(this.value)">
+              <option value="all" ${appState.flashcardFilterUnit === `all` ? `selected` : ``}>All Units (${FLASHCARDS.length} Cards)</option>
+              ${SYLLABUS_UNITS.slice(0, 10).map(u => `<option value="${u.id}" ${appState.flashcardFilterUnit === u.id ? `selected` : ``}>Unit ${u.num}: ${u.shortTitle}</option>`).join(``)}
+            </select>
+          </div>
+          <div class="badge-emerald">${masteredCount} / ${FLASHCARDS.length} Cards Mastered</div>
+        </div>
+        <div class="flashcard-stage">
+          <button type="button" class="flashcard-box ${appState.flashcardFlipped ? `is-flipped` : ``}" onclick="flipFlashcard()" aria-label="Flip flashcard">
+            <span class="kicker-label">${appState.flashcardFlipped ? `Answer &amp; Key Exam Fact` : `Active Recall Prompt · Card ${safeIndex + 1} of ${cards.length}`}</span>
+            ${appState.flashcardFlipped
+              ? `<div class="flashcard-answer">${currentCard.back}</div>`
+              : `<div class="flashcard-prompt">${currentCard.front}</div>`}
+            <span class="arch-caption">${appState.flashcardFlipped ? `Click card to view prompt` : `Click card to reveal answer`}</span>
+          </button>
+          <div class="flashcard-nav">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="stepFlashcard(-1)">← Previous</button>
+            <button type="button" class="btn ${appState.flashcardMastered[currentCard.id] ? `btn-secondary` : `btn-primary`} btn-sm" onclick="toggleFlashcardMastered('${currentCard.id}')">
+              ${appState.flashcardMastered[currentCard.id] ? `✓ Mastered (Undo)` : `Mark Card Mastered`}
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="stepFlashcard(1)">Next →</button>
+          </div>
+        </div>
+      ` : ``;
+
+      const checklistHtml = unit.subtopics.map(st => {
+        const checked = Boolean(appState.checkedTopics[st.id]);
+        return `
+          <div class="side-check-row ${checked ? `is-checked` : ``}" style="background:var(--surface-elevated);padding:var(--space-sm) var(--space-md);border:1px solid var(--outline-variant);">
+            <input type="checkbox" class="topic-checkbox" ${checked ? `checked` : ``} onchange="toggleTopic('${st.id}', this.checked)" aria-label="Mark ${st.title} complete">
+            <span style="flex:1;font-weight:600;font-size:0.92rem;">${st.title}</span>
+            <span class="badge-brass">${st.badge}</span>
+          </div>
+        `;
+      }).join(``);
+
+      canvas.innerHTML = `
+        <div class="canvas-header-card">
+          <div class="canvas-title-row">
+            <div>
+              <div class="kicker-row">
+                <span class="kicker-label">Unit 11 · Self-Assessment Studio</span>
+                ${isComplete ? `<span class="badge-emerald">Studio Completed</span>` : `<span class="badge-brass">${stats.done} of ${stats.total} Milestones</span>`}
+              </div>
+              <h2 class="canvas-title">${unit.title}</h2>
+            </div>
+            <div class="studio-tabs" role="tablist" aria-label="Self-assessment mode" style="border-bottom:none;padding-bottom:0;">
+              <button type="button" role="tab" aria-selected="${appState.studioTab === `quiz`}" class="pill-toggle ${appState.studioTab === `quiz` ? `is-active` : ``}" onclick="setStudioTab('quiz')">Practice Quizzes (${QUIZ_BANK.length} Qs)</button>
+              <button type="button" role="tab" aria-selected="${appState.studioTab === `flashcards`}" class="pill-toggle ${appState.studioTab === `flashcards` ? `is-active` : ``}" onclick="setStudioTab('flashcards')">Flashcards (${FLASHCARDS.length})</button>
+              <button type="button" role="tab" aria-selected="${appState.studioTab === `checklist`}" class="pill-toggle ${appState.studioTab === `checklist` ? `is-active` : ``}" onclick="setStudioTab('checklist')">Unit 11 Checklist</button>
+            </div>
+          </div>
+          <p class="canvas-overview">${unit.overview}</p>
+          <div class="unit-progress-row">
+            <div class="progress-track" aria-hidden="true">
+              <div class="progress-fill ${isComplete ? `is-emerald` : ``}" style="width: ${stats.pct}%;"></div>
+            </div>
+            <span class="unit-progress-label">${stats.pct}% Mastered</span>
+          </div>
+        </div>
+
+        ${appState.studioTab === `quiz` ? `
+          <div class="quiz-controls">
+            <div class="field-group" style="flex:1;min-width:220px;">
+              <label class="field-label" for="quiz-unit-select">Select Quiz Scope</label>
+              <select id="quiz-unit-select" class="select-input" onchange="setQuizFilter(this.value)">
+                <option value="all" ${appState.quizFilterUnit === `all` ? `selected` : ``}>All Units Combined (${QUIZ_BANK.length} Questions)</option>
+                ${SYLLABUS_UNITS.slice(0, 10).map(u => `<option value="${u.id}" ${appState.quizFilterUnit === u.id ? `selected` : ``}>Unit ${u.num}: ${u.shortTitle}</option>`).join(``)}
+              </select>
+            </div>
+            <div class="badge-emerald">Score: ${correctInView} / ${answeredInView} answered (${quizQuestions.length} total)</div>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="resetQuizScope()">Reset Scope Answers</button>
+          </div>
+          <div class="drawers-stack">${quizHtml}</div>
+        ` : ``}
+
+        ${appState.studioTab === `flashcards` ? flashcardHtml : ``}
+
+        ${appState.studioTab === `checklist` ? `
+          <div class="study-drawer is-open">
+            <div class="drawer-header">
+              <h3 class="drawer-title">Unit 11 Self-Assessment Milestones</h3>
+            </div>
+            <div class="drawer-body">${checklistHtml}</div>
+          </div>
+        ` : ``}
+      `;
+    }
+
+    // =========================================================================
+    // INTERACTIVE HANDLERS (ALL HOISTED FUNCTION DECLARATIONS)
+    // =========================================================================
+    function toggleTopic(topicId, isChecked) {
+      if (isChecked) {
+        appState.checkedTopics[topicId] = true;
+      } else {
+        delete appState.checkedTopics[topicId];
+      }
+      renderAll();
+      saveAppState();
+    }
+
+    function markUnitComplete(unitId, markDone) {
+      const unit = SYLLABUS_UNITS.find(u => u.id === unitId);
+      if (!unit) return;
+      for (const st of unit.subtopics) {
+        if (markDone) appState.checkedTopics[st.id] = true;
+        else delete appState.checkedTopics[st.id];
+      }
+      renderAll();
+      saveAppState();
+    }
+
+    function toggleSidebarModule(unitId) {
+      appState.expandedSidebarUnits[unitId] = !appState.expandedSidebarUnits[unitId];
+      appState.activeUnitId = unitId;
+      renderAll();
+      saveAppState();
+    }
+
+    function toggleAllSidebarModules(expand) {
+      for (const u of SYLLABUS_UNITS) {
+        appState.expandedSidebarUnits[u.id] = Boolean(expand);
+      }
+      renderSidebar();
+      saveAppState();
+    }
+
+    function selectUnit(unitId) {
+      appState.activeUnitId = unitId;
+      appState.expandedSidebarUnits[unitId] = true;
+      appState.searchQuery = ``;
+      appState.statusFilter = `all`;
+      renderAll();
+      saveAppState();
+      const canvas = document.getElementById(`study-canvas`);
+      if (canvas) canvas.scrollIntoView({ behavior: `smooth`, block: `nearest` });
+    }
+
+    function jumpToTopic(unitId, topicId) {
+      appState.activeUnitId = unitId;
+      appState.expandedSidebarUnits[unitId] = true;
+      appState.searchQuery = ``;
+      appState.statusFilter = `all`;
+      delete appState.collapsedDrawers[topicId];
+      renderAll();
+      saveAppState();
+      setTimeout(() => {
+        const el = document.getElementById(`drawer_${topicId}`);
+        if (el) el.scrollIntoView({ behavior: `smooth`, block: `start` });
+      }, 40);
+    }
+
+    function toggleDrawer(topicId) {
+      appState.collapsedDrawers[topicId] = !appState.collapsedDrawers[topicId];
+      renderStudyCanvas();
+      saveAppState();
+    }
+
+    function handleSearchInput(val) {
+      appState.searchQuery = val || ``;
+      renderAll();
+    }
+
+    function clearSearch() {
+      appState.searchQuery = ``;
+      renderAll();
+    }
+
+    function setStatusFilter(mode) {
+      appState.statusFilter = mode;
+      renderAll();
+    }
+
+    function resetFilters() {
+      appState.searchQuery = ``;
+      appState.statusFilter = `all`;
+      renderAll();
+    }
+
+    function launchUnitQuiz(unitId) {
+      appState.activeUnitId = `u11`;
+      appState.expandedSidebarUnits[`u11`] = true;
+      appState.studioTab = `quiz`;
+      appState.quizFilterUnit = unitId;
+      renderAll();
+      saveAppState();
+    }
+
+    function setStudioTab(tab) {
+      appState.studioTab = tab;
+      renderStudyCanvas();
+      saveAppState();
+    }
+
+    function setQuizFilter(unitId) {
+      appState.quizFilterUnit = unitId;
+      renderStudyCanvas();
+      saveAppState();
+    }
+
+    function answerQuizQuestion(qId, optIdx) {
+      appState.quizAnswers[qId] = optIdx;
+      autoUpdateQuizMilestones();
+      renderAll();
+      saveAppState();
+    }
+
+    function autoUpdateQuizMilestones() {
+      const checkGroup = (unitIds, milestoneId) => {
+        const qs = QUIZ_BANK.filter(q => unitIds.includes(q.unitId));
+        if (qs.length > 0 && qs.every(q => appState.quizAnswers[q.id] !== undefined)) {
+          appState.checkedTopics[milestoneId] = true;
+        }
+      };
+      checkGroup([`u1`], `u11_quiz_arch`);
+      checkGroup([`u2`, `u3`], `u11_quiz_dance`);
+      checkGroup([`u4`, `u5`], `u11_quiz_music_art`);
+      checkGroup([`u6`, `u7`, `u8`], `u11_quiz_martial_cal`);
+      checkGroup([`u9`, `u10`], `u11_quiz_lang_awards`);
+    }
+
+    function resetQuizScope() {
+      const qs = appState.quizFilterUnit === `all`
+        ? QUIZ_BANK
+        : QUIZ_BANK.filter(q => q.unitId === appState.quizFilterUnit);
+      for (const q of qs) {
+        delete appState.quizAnswers[q.id];
+      }
+      renderAll();
+      saveAppState();
+    }
+
+    function setFlashcardFilter(unitId) {
+      appState.flashcardFilterUnit = unitId;
+      appState.flashcardIndex = 0;
+      appState.flashcardFlipped = false;
+      renderStudyCanvas();
+      saveAppState();
+    }
+
+    function flipFlashcard() {
+      appState.flashcardFlipped = !appState.flashcardFlipped;
+      renderStudyCanvas();
+    }
+
+    function stepFlashcard(delta) {
+      const cards = appState.flashcardFilterUnit === `all`
+        ? FLASHCARDS
+        : FLASHCARDS.filter(c => c.unitId === appState.flashcardFilterUnit);
+      if (cards.length === 0) return;
+      appState.flashcardIndex = (appState.flashcardIndex + delta + cards.length) % cards.length;
+      appState.flashcardFlipped = false;
+      renderStudyCanvas();
+    }
+
+    function toggleFlashcardMastered(cardId) {
+      if (appState.flashcardMastered[cardId]) {
+        delete appState.flashcardMastered[cardId];
+      } else {
+        appState.flashcardMastered[cardId] = true;
+      }
+      const masteredCount = Object.keys(appState.flashcardMastered).filter(k => appState.flashcardMastered[k]).length;
+      if (masteredCount >= 15) {
+        appState.checkedTopics[`u11_flashcards`] = true;
+      }
+      renderAll();
+      saveAppState();
+    }
+
+    function showStatusBanner(msg) {
+      const banner = document.getElementById(`status-banner`);
+      const text = document.getElementById(`status-banner-text`);
+      if (banner && text) {
+        text.textContent = msg;
+        banner.hidden = false;
+      }
+    }
+
+    function hideStatusBanner() {
+      const banner = document.getElementById(`status-banner`);
+      if (banner) banner.hidden = true;
+    }
+
+    function handleResetProgress(btn) {
+      if (!btn) return;
+      if (btn.dataset.armed !== `true`) {
+        btn.dataset.armed = `true`;
+        btn.textContent = `Click again to confirm reset`;
+        btn.classList.add(`btn-danger-armed`);
+        setTimeout(() => {
+          if (btn.dataset.armed === `true`) {
+            btn.dataset.armed = `false`;
+            btn.textContent = `Reset Progress`;
+            btn.classList.remove(`btn-danger-armed`);
+          }
+        }, 4000);
+        return;
+      }
+      btn.dataset.armed = `false`;
+      btn.textContent = `Reset Progress`;
+      btn.classList.remove(`btn-danger-armed`);
+
+      appState.checkedTopics = {};
+      appState.quizAnswers = {};
+      appState.flashcardMastered = {};
+      renderAll();
+      saveAppState();
+      showStatusBanner(`All syllabus checkboxes, quiz responses, and flashcard mastery records have been reset.`);
+    }
+
+    function exportStudyProgress() {
+      const stats = getOverallStats();
+      const lines = [`Unit Number,Unit Title,Completed Subtopics,Total Subtopics,Completion %`];
+      for (const u of SYLLABUS_UNITS) {
+        const s = getUnitStats(u);
+        lines.push(`"${u.num}","${u.title}",${s.done},${s.total},${s.pct}%`);
+      }
+      lines.push(``);
+      lines.push(`"TOTAL","",${stats.done},${stats.total},${stats.pct}%`);
+      lines.push(`"QUIZ ACCURACY","${stats.quizCorrect} / ${stats.quizAnswered}",,,${stats.quizPct}%`);
+      const csvContent = lines.join(`\n`);
+
+      if (window.notebookAppApi && typeof window.notebookAppApi.triggerFileDownload === `function`) {
+        window.notebookAppApi.triggerFileDownload({
+          content: csvContent,
+          contentType: `text/csv`,
+          encoding: `UTF-8`,
+          filename: `indian-art-culture-progress.csv`
+        });
+        showStatusBanner(`Exported your 11-unit syllabus progress summary as CSV.`);
+      } else {
+        showStatusBanner(`Summary ready: ${stats.done}/${stats.total} sub-topics mastered (${stats.pct}%), Quiz Accuracy: ${stats.quizPct}%.`);
+      }
+    }
+
+    // =========================================================================
+    // INITIALIZATION
+    // =========================================================================
+    async function initDashboard() {
+      await loadAppState();
+      renderAll();
+      if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === `function`) {
+        window.notebookAppApi.notifyAppReady();
+      }
+    }
+
+    document.addEventListener(`DOMContentLoaded`, initDashboard);
+  </script>
+</body>
+</html>
