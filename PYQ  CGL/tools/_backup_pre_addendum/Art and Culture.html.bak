@@ -934,6 +934,16 @@
       font-weight: 600;
     }
 
+    /* Exam High-Yield Highlight */
+    mark.exam-hl {
+      background: #fde68a;
+      color: var(--on-surface);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 600;
+      box-shadow: inset 0 -2px 0 rgba(184, 74, 36, 0.28);
+    }
+
     /* Unit 11: Quiz & Flashcards Studio */
     .studio-tabs {
       display: flex;
@@ -1383,36 +1393,63 @@
                   <tbody>
                     <tr>
                       <td><strong>Superstructure</strong></td>
-                      <td>Curvilinear <strong>Shikhara</strong> (Rekha-prasada, Phamsana, Valabhi subtypes)</td>
-                      <td>Stepped pyramidal <strong>Vimana</strong> rising in tiers (<em>talas</em>)</td>
+                      <td>Curvilinear <mark class="exam-hl">Shikhara</mark> (Rekha-prasada, Phamsana, Valabhi subtypes)</td>
+                      <td>Stepped pyramidal <mark class="exam-hl">Vimana</mark> rising in tiers (<em>talas</em>)</td>
                       <td>Hybrid: stepped storeys softened into a curvilinear profile</td>
                     </tr>
                     <tr>
                       <td><strong>Crowning Element</strong></td>
-                      <td>Ribbed stone <strong>Amalaka</strong> topped by <strong>Kalasha</strong></td>
-                      <td>Octagonal dome-shaped <strong>Shikhara</strong> &amp; <strong>Stupika</strong></td>
+                      <td>Ribbed stone <mark class="exam-hl">Amalaka</mark> topped by <mark class="exam-hl">Kalasha</mark></td>
+                      <td>Octagonal dome-shaped <strong>Shikhara</strong> &amp; <mark class="exam-hl">Stupika</mark></td>
                       <td>Combination of Amalaka-like &amp; octagonal Dravida dome</td>
                     </tr>
                     <tr>
                       <td><strong>Compound &amp; Gate</strong></td>
-                      <td>Usually open without tall boundary walls or gopurams; built on raised <strong>Jagati</strong></td>
-                      <td>Enclosed by high <strong>Prakara</strong> walls with towering <strong>Gopurams</strong> &amp; water tank</td>
+                      <td>Usually open without tall boundary walls or gopurams; built on raised <mark class="exam-hl">Jagati</mark></td>
+                      <td>Enclosed by high <mark class="exam-hl">Prakara</mark> walls with towering <mark class="exam-hl">Gopurams</mark> &amp; water tank</td>
                       <td>Open or low-walled plans; stellate or rectangular layouts</td>
                     </tr>
                     <tr>
                       <td><strong>Sanctum Guard</strong></td>
-                      <td>Ganga and Yamuna river goddesses flank the doorway</td>
-                      <td>Fierce <strong>Dvarapalas</strong> (doorkeepers) guard the sanctum</td>
+                      <td><mark class="exam-hl">Ganga and Yamuna</mark> river goddesses flank the doorway</td>
+                      <td>Fierce <mark class="exam-hl">Dvarapalas</mark> (doorkeepers) guard the sanctum</td>
                       <td>Mixed Chalukyan &amp; Rashtrakuta sculptural motifs</td>
                     </tr>
                     <tr>
                       <td><strong>Key Examples</strong></td>
-                      <td>Kandariya Mahadeva (Khajuraho), Dashavatara (Deogarh), Modhera</td>
-                      <td>Brihadeeswara (Thanjavur), Shore Temple, Meenakshi (Madurai)</td>
-                      <td>Virupaksha &amp; Papanatha (Pattadakal), Lad Khan (Aihole), Kailashanatha</td>
+                      <td><mark class="exam-hl">Kandariya Mahadeva</mark> (Khajuraho), Dashavatara (Deogarh), Modhera</td>
+                      <td><mark class="exam-hl">Brihadeeswara</mark> (Thanjavur), Shore Temple, Meenakshi (Madurai)</td>
+                      <td><mark class="exam-hl">Virupaksha &amp; Papanatha</mark> (Pattadakal), Lad Khan (Aihole), Kailashanatha</td>
                     </tr>
                   </tbody>
                 </table>
+              </div>
+              <div class="callout-box" style="margin-top:14px;">
+                <span class="callout-title">High-Yield SSC Repeat Matrix: Temple, Dynasty &amp; Builder Cheat Sheet</span>
+                <div class="table-scroll">
+                  <table class="study-table" style="margin-top:8px;">
+                    <thead>
+                      <tr>
+                        <th>Temple Monument</th>
+                        <th>Dynasty / Patron</th>
+                        <th>Specific Builder / Ruler</th>
+                        <th>Location &amp; Style</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td><mark class="exam-hl">Konark Sun Temple (Black Pagoda)</mark></td><td>Eastern Ganga Dynasty</td><td><mark class="exam-hl">King Narasimhadeva I</mark> (13th c. CE)</td><td>Puri, Odisha (Kalinga style; 24 carved wheels, 7 horses)</td></tr>
+                      <tr><td><mark class="exam-hl">Modhera Sun Temple</mark></td><td>Solanki (Chalukya) Dynasty</td><td><mark class="exam-hl">King Bhima I (1026 CE)</mark></td><td>Mehsana, Gujarat (Maru-Gurjara; <mark class="exam-hl">Surya Kund</mark> step-tank)</td></tr>
+                      <tr><td><mark class="exam-hl">Kailasanatha Temple (Cave 16)</mark></td><td>Rashtrakuta Dynasty</td><td><mark class="exam-hl">King Krishna I</mark> (8th c. CE)</td><td>Ellora, Maharashtra (<mark class="exam-hl">Monolithic top-down</mark> excavation)</td></tr>
+                      <tr><td><mark class="exam-hl">Brihadeeswara Temple (Peruvudaiyar)</mark></td><td>Chola Dynasty</td><td><mark class="exam-hl">King Rajaraja I (1010 CE)</mark></td><td>Thanjavur, Tamil Nadu (Dravida 66m granite Vimana)</td></tr>
+                      <tr><td><mark class="exam-hl">Gangaikonda Cholapuram</mark></td><td>Chola Dynasty</td><td><mark class="exam-hl">King Rajendra I</mark> (1035 CE)</td><td>Ariyalur, Tamil Nadu (Curved Dravida Vimana)</td></tr>
+                      <tr><td><mark class="exam-hl">Shore Temple &amp; Pancha Rathas</mark></td><td>Pallava Dynasty</td><td><mark class="exam-hl">Narasimhavarman I &amp; II</mark> (7th–8th c.)</td><td>Mahabalipuram, Tamil Nadu (Granite structural/monolith)</td></tr>
+                      <tr><td><mark class="exam-hl">Kandariya Mahadeva Temple</mark></td><td>Chandela Dynasty</td><td><mark class="exam-hl">King Dhangadeva</mark> (c. 999 CE)</td><td>Khajuraho, Madhya Pradesh (Nagara Panchayatana plan)</td></tr>
+                      <tr><td><mark class="exam-hl">Dilwara Jain Temples</mark></td><td>Solanki / Chaulukya era</td><td><mark class="exam-hl">Vimal Shah &amp; Vastupala-Tejpala</mark></td><td>Mount Abu, Rajasthan (White marble lacy ceilings)</td></tr>
+                      <tr><td><mark class="exam-hl">Martand Sun Temple</mark></td><td>Karkota Dynasty</td><td><mark class="exam-hl">King Lalitaditya Muktapida</mark> (8th c.)</td><td>Anantnag, Jammu &amp; Kashmir (Kashmir classical style)</td></tr>
+                      <tr><td><mark class="exam-hl">Hoysaleswara Temple</mark></td><td>Hoysala Dynasty</td><td><mark class="exam-hl">King Vishnuvardhana</mark> (12th c.)</td><td>Halebidu, Karnataka (Stellate soapstone, twin shrine)</td></tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             `
           },
@@ -1427,18 +1464,18 @@
                   <h4>Kalinga Style (Odisha)</h4>
                   <ul class="note-list">
                     <li><strong>Exterior vs. Interior:</strong> Lavishly carved exterior walls, plain unadorned interior sanctum; no pillars in main hall (iron girders used).</li>
-                    <li><strong>Rekha Deula:</strong> Tall curvilinear tower over the sanctum (<em>Garbhagriha</em>). Examples: <strong>Lingaraja Temple</strong> (Bhubaneswar), <strong>Jagannath Temple</strong> (Puri).</li>
-                    <li><strong>Pidha Deula:</strong> Square hall (<em>Jagamohana</em>) with a tiered pyramidal roof of horizontal platforms. Example: <strong>Konark Sun Temple</strong> (13th c., Narasimhadeva I).</li>
-                    <li><strong>Khakhara Deula:</strong> Rectangular base with semi-cylindrical/barrel-vaulted roof, dedicated to Shakti shrines. Example: <strong>Vaital Deula</strong> (Bhubaneswar).</li>
+                    <li><mark class="exam-hl">Rekha Deula</mark>: Tall curvilinear tower over the sanctum (<em>Garbhagriha</em>). Examples: <mark class="exam-hl">Lingaraja Temple</mark> (Bhubaneswar), <mark class="exam-hl">Jagannath Temple</mark> (Puri).</li>
+                    <li><mark class="exam-hl">Pidha Deula</mark>: Square hall (<em>Jagamohana</em>) with a tiered pyramidal roof of horizontal platforms. Example: <mark class="exam-hl">Konark Sun Temple</mark> (13th c., Narasimhadeva I).</li>
+                    <li><mark class="exam-hl">Khakhara Deula</mark>: Rectangular base with semi-cylindrical/barrel-vaulted roof, dedicated to Shakti shrines. Example: <mark class="exam-hl">Vaital Deula</mark> (Bhubaneswar).</li>
                   </ul>
                 </div>
                 <div class="note-card">
                   <h4>Solanki / Maru-Gurjara Style (Gujarat &amp; Rajasthan)</h4>
                   <ul class="note-list">
                     <li><strong>Patronage:</strong> Solanki (Chalukya) rulers of Gujarat (11th–13th c. CE).</li>
-                    <li><strong>Signature Features:</strong> <strong>Surya Kund</strong> (stepped water tank with miniature shrines), ornamental <strong>Torana</strong> archway, intricate lacy carvings in sandstone &amp; white marble.</li>
+                    <li><strong>Signature Features:</strong> <mark class="exam-hl">Surya Kund</mark> (stepped water tank with miniature shrines), ornamental <mark class="exam-hl">Torana</mark> archway, intricate lacy carvings in sandstone &amp; white marble.</li>
                     <li><strong>Garbhagriha &amp; Mandapa:</strong> Connected internally and externally; walls devoid of heavy exterior niches on older layers, star-like recessed plans.</li>
-                    <li><strong>Key Monuments:</strong> <strong>Modhera Sun Temple</strong> (1026 CE, Bhima I), <strong>Dilwara Jain Temples</strong> (Mount Abu — Vimal Vasahi &amp; Luna Vasahi), <strong>Rani ki Vav</strong> (Patan).</li>
+                    <li><strong>Key Monuments:</strong> <mark class="exam-hl">Modhera Sun Temple</mark> (1026 CE, Bhima I), <mark class="exam-hl">Dilwara Jain Temples</mark> (Mount Abu — Vimal Vasahi &amp; Luna Vasahi), <mark class="exam-hl">Rani ki Vav</mark> (Patan).</li>
                   </ul>
                 </div>
               </div>
@@ -1455,27 +1492,27 @@
                   <h4>Pallava Architecture (4 Stages)</h4>
                   <ul class="note-list">
                     <li><strong>Mahendra Group:</strong> Rock-cut pillared halls (<em>Mandapas</em>), e.g., Mandagapattu.</li>
-                    <li><strong>Narasimha (Mamalla) Group:</strong> Monolithic <strong>Pancha Rathas</strong> at Mahabalipuram (Dharmaraja, Bhima, Arjuna, Nakula-Sahadeva, Draupadi) &amp; Descent of the Ganges relief.</li>
-                    <li><strong>Rajasimha Group:</strong> Early structural stone temples — <strong>Shore Temple</strong> (Mahabalipuram) &amp; <strong>Kailashnath Temple</strong> (Kanchipuram).</li>
+                    <li><strong>Narasimha (Mamalla) Group:</strong> Monolithic <mark class="exam-hl">Pancha Rathas</mark> at Mahabalipuram (Dharmaraja, Bhima, Arjuna, Nakula-Sahadeva, Draupadi) &amp; Descent of the Ganges relief.</li>
+                    <li><strong>Rajasimha Group:</strong> Early structural stone temples — <mark class="exam-hl">Shore Temple</mark> (Mahabalipuram) &amp; <mark class="exam-hl">Kailashnath Temple</mark> (Kanchipuram).</li>
                     <li><strong>Nandivarman Group:</strong> Smaller structural shrines like Vaikuntha Perumal &amp; Mukteshwara.</li>
                   </ul>
                 </div>
                 <div class="note-card">
                   <h4>Chola &amp; Brihadeeswara Temple</h4>
                   <ul class="note-list">
-                    <li><strong>Brihadeeswara (Rajarajeshwaram), Thanjavur:</strong> Built 1010 CE by <strong>Rajaraja I</strong>; ~66 m granite <em>Vimana</em> topped by an 80-tonne monolithic cupola; famous Chola frescoes inside circumambulatory passage.</li>
-                    <li><strong>Gangaikonda Cholapuram:</strong> Built by <strong>Rajendra I</strong>; softer, concave-curved Vimana profile.</li>
-                    <li><strong>Airavatesvara, Darasuram:</strong> Built by Rajaraja II; chariot-shaped <em>Mandapa</em> drawn by stone horses.</li>
-                    <li>Together designated UNESCO <strong>Great Living Chola Temples</strong>.</li>
+                    <li><mark class="exam-hl">Brihadeeswara (Rajarajeshwaram), Thanjavur</mark>: Built 1010 CE by <mark class="exam-hl">Rajaraja I</mark>; ~66 m granite <em>Vimana</em> topped by an <mark class="exam-hl">80-tonne monolithic cupola</mark>; famous Chola frescoes inside circumambulatory passage.</li>
+                    <li><mark class="exam-hl">Gangaikonda Cholapuram</mark>: Built by <mark class="exam-hl">Rajendra I</mark>; softer, concave-curved Vimana profile.</li>
+                    <li><mark class="exam-hl">Airavatesvara, Darasuram</mark>: Built by Rajaraja II; chariot-shaped <em>Mandapa</em> drawn by stone horses.</li>
+                    <li>Together designated UNESCO <mark class="exam-hl">Great Living Chola Temples</mark>.</li>
                   </ul>
                 </div>
                 <div class="note-card">
                   <h4>Hoysala Architecture (Karnataka)</h4>
                   <ul class="note-list">
-                    <li><strong>Stellate Plan:</strong> Star-shaped ground plans sitting on a raised, open circumambulatory platform (<strong>Jagati</strong>).</li>
-                    <li><strong>Medium:</strong> Soft <strong>chloritic schist (soapstone)</strong> enabling lathe-turned pillars and intricate jewelry-like carvings.</li>
-                    <li><strong>Madanikas &amp; Multi-Shrines:</strong> Bracket figures (<em>Salabhanjika</em>); Ekakuta (1), Dvikuta (2), Trikuta (3) sanctums.</li>
-                    <li><strong>UNESCO Sacred Ensembles (2023):</strong> Chennakesava (Belur), Hoysaleswara (Halebidu), Keshava (Somanathapura).</li>
+                    <li><mark class="exam-hl">Stellate Plan</mark>: Star-shaped ground plans sitting on a raised, open circumambulatory platform (<strong>Jagati</strong>).</li>
+                    <li><strong>Medium:</strong> Soft <mark class="exam-hl">chloritic schist (soapstone)</mark> enabling lathe-turned pillars and intricate jewelry-like carvings.</li>
+                    <li><mark class="exam-hl">Madanikas &amp; Multi-Shrines</mark>: Bracket figures (<em>Salabhanjika</em>); Ekakuta (1), Dvikuta (2), Trikuta (3) sanctums.</li>
+                    <li><mark class="exam-hl">UNESCO Sacred Ensembles (2023)</mark>: Chennakesava (Belur), Hoysaleswara (Halebidu), Keshava (Somanathapura).</li>
                   </ul>
                 </div>
               </div>
@@ -1499,28 +1536,28 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td><strong>Barabar Caves</strong><br>(Jehanabad, Bihar)</td>
+                      <td><mark class="exam-hl">Barabar Caves</mark><br>(Jehanabad, Bihar)</td>
                       <td>3rd c. BCE<br>Mauryan (Ashoka &amp; Dasharatha)</td>
-                      <td><strong>Ajivika</strong> sect</td>
-                      <td>Oldest surviving rock-cut caves in India; famed for mirror-like Mauryan polish. <strong>Lomas Rishi</strong> cave features the earliest carved Chaitya arch facade; also Sudama, Karan Chaupar, Vishvakarma.</td>
+                      <td><mark class="exam-hl">Ajivika</mark> sect</td>
+                      <td>Oldest surviving rock-cut caves in India; famed for mirror-like Mauryan polish. <mark class="exam-hl">Lomas Rishi</mark> cave features the earliest carved Chaitya arch facade; also Sudama, Karan Chaupar, Vishvakarma.</td>
                     </tr>
                     <tr>
-                      <td><strong>Ajanta Caves</strong><br>(Aurangabad, Maharashtra)</td>
-                      <td>2nd c. BCE – 6th c. CE<br>Satavahana &amp; Vakataka</td>
-                      <td><strong>Buddhism</strong> (Hinayana &amp; Mahayana)</td>
-                      <td>29–30 horseshoe-shaped caves along Waghora river gorge; 5 Chaityas &amp; Viharas; exquisite tempera/fresco <strong>Jataka murals</strong> (Bodhisattva Padmapani, Vajrapani, Dying Princess).</td>
+                      <td><mark class="exam-hl">Ajanta Caves</mark><br>(Aurangabad, Maharashtra)</td>
+                      <td>2nd c. BCE – 6th c. CE<br><mark class="exam-hl">Satavahana &amp; Vakataka</mark></td>
+                      <td><mark class="exam-hl">Buddhism</mark> (Hinayana &amp; Mahayana)</td>
+                      <td>29–30 horseshoe-shaped caves along Waghora river gorge; 5 Chaityas &amp; Viharas; exquisite tempera/fresco <mark class="exam-hl">Jataka murals</mark> (<mark class="exam-hl">Bodhisattva Padmapani</mark>, Vajrapani, Dying Princess).</td>
                     </tr>
                     <tr>
-                      <td><strong>Ellora Caves</strong><br>(Aurangabad, Maharashtra)</td>
+                      <td><mark class="exam-hl">Ellora Caves</mark><br>(Aurangabad, Maharashtra)</td>
                       <td>6th – 11th c. CE<br>Kalachuri, Chalukya, Rashtrakuta</td>
-                      <td><strong>Brahmanical, Buddhist &amp; Jain</strong></td>
-                      <td>34 caves: 1–12 Buddhist (Vishvakarma), 13–29 Hindu, 30–34 Jain (Indra Sabha). Cave 16 is monolithic <strong>Kailashanatha Temple</strong> carved top-down by Rashtrakuta king <strong>Krishna I</strong>.</td>
+                      <td><mark class="exam-hl">Brahmanical, Buddhist &amp; Jain</mark></td>
+                      <td><mark class="exam-hl">34 caves</mark>: 1–12 Buddhist (Vishvakarma), 13–29 Hindu, 30–34 Jain (Indra Sabha). Cave 16 is monolithic <mark class="exam-hl">Kailashanatha Temple</mark> carved top-down by Rashtrakuta king <mark class="exam-hl">Krishna I</mark>.</td>
                     </tr>
                     <tr>
-                      <td><strong>Elephanta Caves</strong><br>(Gharapuri Island, Mumbai)</td>
+                      <td><mark class="exam-hl">Elephanta Caves</mark><br>(Gharapuri Island, Mumbai)</td>
                       <td>5th – 7th c. CE<br>Kalachuri / Rashtrakuta</td>
-                      <td>Mainly <strong>Shaivite</strong> (5 Hindu, 2 Buddhist)</td>
-                      <td>Iconic 6 m colossal <strong>Trimurti / Sadashiva</strong> (three-faced Shiva: Aghora, Tatpurusha, Vamadeva), Nataraja, Ardhanarishvara, and Ravana shaking Kailasha.</td>
+                      <td>Mainly <mark class="exam-hl">Shaivite</mark> (5 Hindu, 2 Buddhist)</td>
+                      <td>Iconic 6 m colossal <mark class="exam-hl">Trimurti / Sadashiva</mark> (three-faced Shiva: Aghora, Tatpurusha, Vamadeva), Nataraja, Ardhanarishvara, and Ravana shaking Kailasha.</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1535,20 +1572,20 @@
             contentHtml: `
               <div class="callout-box">
                 <span class="callout-title">Anatomy of a Classical Stupa</span>
-                <strong>Medhi</strong> (circular terrace) → <strong>Anda</strong> (hemispherical dome housing relics) → <strong>Harmika</strong> (square railing atop dome symbolizing heaven) → <strong>Yashti</strong> (central pillar) crowned by <strong>Chhatras</strong> (triple umbrellas) → surrounded by <strong>Pradakshina Patha</strong>, <strong>Vedika</strong> (stone railing), and 4 carved <strong>Toranas</strong> (gateways).
+                <mark class="exam-hl">Medhi</mark> (circular terrace) → <mark class="exam-hl">Anda</mark> (hemispherical dome housing relics) → <mark class="exam-hl">Harmika</mark> (square railing atop dome symbolizing heaven) → <mark class="exam-hl">Yashti</mark> (central pillar) crowned by <mark class="exam-hl">Chhatras</mark> (triple umbrellas) → surrounded by <strong>Pradakshina Patha</strong>, <strong>Vedika</strong> (stone railing), and 4 carved <mark class="exam-hl">Toranas</mark> (gateways).
               </div>
               <div class="note-grid">
                 <div class="note-card">
                   <h4>Sanchi Stupa (Raisen, MP)</h4>
-                  <p>Originally built in brick by <strong>Ashoka</strong> (3rd c. BCE); enlarged and cased in stone during the <strong>Shunga</strong> period. Four intricately carved <strong>Toranas</strong> depicting Jataka tales and Buddhist symbols (aniconic phase — lotus, wheel, footprints) were added by the <strong>Satavahanas</strong>.</p>
+                  <p>Originally built in brick by <mark class="exam-hl">Ashoka</mark> (3rd c. BCE); enlarged and cased in stone during the <mark class="exam-hl">Shunga</mark> period. Four intricately carved <strong>Toranas</strong> depicting Jataka tales and Buddhist symbols (aniconic phase — lotus, wheel, footprints) were added by the <mark class="exam-hl">Satavahanas</mark>.</p>
                 </div>
                 <div class="note-card">
                   <h4>Dhamek Stupa (Sarnath, UP)</h4>
-                  <p>Marks the Deer Park site where Gautama Buddha delivered his <strong>first sermon</strong> (<em>Dharmachakrapravartana</em>) to five disciples. Rebuilt in the <strong>Gupta</strong> period (500 CE) as a solid 43.6 m stone-and-brick cylinder adorned with Gupta geometric and floral scrolls.</p>
+                  <p>Marks the Deer Park site where Gautama Buddha delivered his <mark class="exam-hl">first sermon (Dharmachakrapravartana)</mark> to five disciples. Rebuilt in the <mark class="exam-hl">Gupta</mark> period (500 CE) as a solid 43.6 m stone-and-brick cylinder adorned with Gupta geometric and floral scrolls.</p>
                 </div>
                 <div class="note-card">
                   <h4>Kesariya Stupa (East Champaran, Bihar)</h4>
-                  <p>Among the largest excavated Buddhist stupas in the world (~104 ft surviving height) with a multi-terraced polygonal/circular base. Commemorates the place where Buddha donated his begging bowl to the Licchavis on his final journey to Kushinagar.</p>
+                  <p>Among the largest excavated Buddhist stupas in the world (~104 ft surviving height) with a multi-terraced polygonal/circular base. Commemorates the place where Buddha donated his begging bowl to the <mark class="exam-hl">Licchavis</mark> on his final journey to Kushinagar.</p>
                 </div>
               </div>
             `
@@ -1565,13 +1602,62 @@
         subtopics: [
           {
             id: `u2_foundations`,
-            title: `Foundations: Natyashastra & Sangeet Natak Akademi`,
-            badge: `Principles`,
-            summary: `Theoretical bedrock (Tandava, Lasya, Nritta, Nritya, Natya) and the 8 officially conferred classical dance traditions.`,
+            title: `Foundations: Natyashastra, Repertoire & Official Classification`,
+            badge: `Principles & Sequences`,
+            summary: `Theoretical bedrock (Tandava vs. Lasya, Nritta, Nritya, Natya), Sangeet Natak Akademi (8) vs. Ministry of Culture (9), and codified performance sequences.`,
             contentHtml: `
               <div class="callout-box is-emerald">
-                <span class="callout-title">Core Principles from Natyashastra</span>
-                The principles of Indian classical dance derive from the <strong>Natyashastra</strong> by <strong>Bharata Muni</strong> (and later <em>Abhinaya Darpana</em> by Nandikeshvara). Classical dance combines <strong>Nritta</strong> (pure rhythmic movement), <strong>Nritya</strong> (expressive dance with bhava/rasa), and <strong>Natya</strong> (dramatic storytelling), balanced across masculine vigor (<strong>Tandava</strong>) and feminine grace (<strong>Lasya</strong>). The <strong>Sangeet Natak Akademi</strong> and Ministry of Culture recognize <strong>8 classical dance forms</strong>.
+                <span class="callout-title">Core Principles from Natyashastra &amp; Official Lists</span>
+                The principles of Indian classical dance derive from the <mark class="exam-hl">Natyashastra</mark> by <mark class="exam-hl">Bharata Muni</mark> (and later <mark class="exam-hl"><em>Abhinaya Darpana</em></mark> by Nandikeshvara). Classical dance balances <mark class="exam-hl">Tandava</mark> (masculine, vigorous, Shiva's cosmic dance) and <mark class="exam-hl">Lasya</mark> (feminine, lyrical, Parvati's graceful dance), expressed through:
+                <ul class="note-list" style="margin-top:6px;">
+                  <li><mark class="exam-hl">Nritta</mark>: Pure abstract rhythmic movement without storytelling or mood.</li>
+                  <li><mark class="exam-hl">Nritya</mark>: Expressive dance conveying emotional theme (<em>Bhava</em>) and evoking sentiment (<em>Rasa</em>) through hand mudras and facial expressions.</li>
+                  <li><mark class="exam-hl">Natya</mark>: Dramatic storytelling element with codified dialogues and character roles.</li>
+                </ul>
+                <p style="margin-top:6px;"><strong>SSC Exam Key Distinction:</strong> The <strong>Sangeet Natak Akademi</strong> recognizes exactly <mark class="exam-hl">8 Classical Dances</mark> (Bharatanatyam, Kathakali, Mohiniyattam, Kuchipudi, Kathak, Odissi, Manipuri, Sattriya). The <strong>Ministry of Culture</strong> includes <mark class="exam-hl">Chhau</mark> (semi-classical martial/folk dance of Eastern India) as the <mark class="exam-hl">9th</mark> classical dance.</p>
+              </div>
+
+              <div class="table-scroll" style="margin-top:14px;">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Dance Tradition</th>
+                      <th>Codified Performance Sequence &amp; Repertoire Elements</th>
+                      <th>Key Architectural / Ritual Meaning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Bharatanatyam</strong></td>
+                      <td><mark class="exam-hl">Alarippu</mark> (invocatory rhythmic warm-up) → <strong>Jatiswaram</strong> (pure Nritta with swara syllables) → <strong>Shabdam</strong> (first entry of lyrics/abhinaya praising deity) → <mark class="exam-hl">Varnam</mark> (central centerpiece combining pure nritta &amp; deep abhinaya) → <strong>Padam</strong> (slow, lyrical abhinaya exploring divine love) → <mark class="exam-hl">Tillana</mark> (climactic fast rhythmic pure dance with statuesque poses) → <strong>Mangalam</strong> (benedictory concluding prayer).</td>
+                      <td>Resembles the architectural progression of entering a Dravidian temple—from the outer gopuram to the innermost sanctum sanctorum.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Kuchipudi</strong></td>
+                      <td><strong>Purvaranga</strong> (stage consecration with holy water, incense &amp; Ganesh Vandana) → <strong>Dharavu</strong> (dramatic entrance song introducing character) → <mark class="exam-hl">Manduka Shabdam</mark> (the story of the frog queen saved by Lord Vishnu / Gajendra Moksha) → <mark class="exam-hl">Tarangam</mark> (famous climax: dancing on the raised rim of a brass plate while balancing a brass pitcher of water on the head).</td>
+                      <td>Preserves the theatrical <em>Natya Mela</em> village tradition of Andhra Pradesh with spoken dialogue and brass-plate acrobatics.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Odissi</strong></td>
+                      <td><mark class="exam-hl">Mangalacharan</mark> (invocation to Lord Jagannath, offering flowers / <em>Pushpanjali</em>) → <strong>Batu Nrutya / Sthayi</strong> (pure abstract dance celebrating Shiva with sculpturesque poses) → <strong>Pallavi</strong> (musical elaboration with lyrical eye, torso, and neck movements) → <strong>Abhinaya</strong> (expressive storytelling, predominantly Jayadeva's <em>Gita Govinda</em> Ashtapadis) → <mark class="exam-hl">Moksha</mark> (ecstatic rhythmic finale seeking spiritual liberation).</td>
+                      <td>Visual reflection of the carved temple dancers (<em>Alasa Kanyas</em>) of Konark and Jagannath Puri temples; grounded in <mark class="exam-hl">Chowk</mark> and <mark class="exam-hl">Tribhanga</mark> postures.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Kathak</strong></td>
+                      <td><strong>Amad</strong> (graceful formal entrance set to percussion bol) → <strong>Thaat</strong> (slow, regal, statuesque stance with micro-movements of eyebrows, wrists, and neck) → <strong>Tukra / Tora</strong> (short, crisp rhythmic compositions) → <strong>Paran</strong> (heavy, forceful compositions derived from Pakhawaj) → <mark class="exam-hl">Tatkar</mark> (intricate, lightning-fast footwork controlling individual ghungroo bells) → <mark class="exam-hl">Chakkars</mark> (dazzling multi-pirouette spins) → <strong>Padant</strong> (verbal recitation of syllables before execution).</td>
+                      <td>Synthesizes Vaishnava temple storytelling with the refined court elegance of the Mughal and Awadh royal courts (Lucknow, Jaipur, Banaras Gharanas).</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Sattriya</strong></td>
+                      <td><strong>Chali</strong> (graceful, gliding pure dance) and <strong>Jhumura</strong> → <strong>Ramdani</strong> (rhythmic sequence) → <strong>Geetor Nach</strong> (dance choreographed to <mark class="exam-hl"><em>Borgeets</em></mark> composed by <mark class="exam-hl">Srimanta Sankardev</mark>) → <strong>Ojapali root</strong> (incorporating narrative singing and mudras from Assam's pre-Sankardev choral traditions).</td>
+                      <td>Conceived by 15th-century saint Srimanta Sankardev as an offering in the monastic prayer halls (<mark class="exam-hl"><em>Namghars</em></mark>) of Assam's Vaishnavite Sattras.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="callout-box" style="margin-top:14px;">
+                <span class="callout-title">Recent Padma Honors in Classical Dance (2024–2025)</span>
+                <strong>Padma Vibhushan:</strong> <mark class="exam-hl">Vyjayanthimala Bali &amp; Padma Subrahmanyam (2024</mark>, Bharatanatyam); <mark class="exam-hl">Kumudini Lakhia (2025</mark>, Kathak pioneer). <strong>Padma Bhushan:</strong> <mark class="exam-hl">Shobana Chandrakumar (2025</mark>, Bharatanatyam).
               </div>
             `
           },
@@ -1593,28 +1679,28 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td><strong>Bharatanatyam</strong></td>
-                      <td><strong>Tamil Nadu</strong>; earlier known as <em>Daasi Attam</em> (temple devadasi solo tradition revived as modern stage art)</td>
-                      <td>Mridangam, flute, violin, veena, <strong>nattuvangam</strong> (cymbals)</td>
-                      <td>Rukmini Devi Arundale, Yamini Krishnamurthy, Padma Subrahmanyam, Alarmel Valli, Mrinalini Sarabhai, Mallika Sarabhai</td>
+                      <td><mark class="exam-hl">Bharatanatyam</mark></td>
+                      <td><mark class="exam-hl">Tamil Nadu</mark>; earlier known as <mark class="exam-hl"><em>Daasi Attam</em></mark> (temple devadasi solo tradition revived as modern stage art)</td>
+                      <td>Mridangam, flute, violin, veena, <mark class="exam-hl">nattuvangam</mark> (cymbals)</td>
+                      <td><mark class="exam-hl">Rukmini Devi Arundale</mark>, <mark class="exam-hl">Yamini Krishnamurthy</mark>, Padma Subrahmanyam, Alarmel Valli, Mrinalini Sarabhai, Mallika Sarabhai</td>
                     </tr>
                     <tr>
-                      <td><strong>Kathakali</strong></td>
-                      <td><strong>Kerala</strong>; elaborate dance-drama with codified <em>Aharya</em> makeup (Pacha, Kathi, Kari, Minukku) &amp; towering crowns</td>
-                      <td><strong>Chenda</strong>, <strong>madalam</strong>, chengila, idakka, shankhu (conch)</td>
-                      <td>Vazhenkada Kunchu Nair, Kottakkal Sivaraman, Kalamandalam Gopi, Kalamandalam Ramankutty Nair, Kalamandalam Vasu Pisharody</td>
+                      <td><mark class="exam-hl">Kathakali</mark></td>
+                      <td><mark class="exam-hl">Kerala</mark>; elaborate dance-drama with codified <mark class="exam-hl"><em>Aharya</em> makeup</mark> (Pacha, Kathi, Kari, Minukku) &amp; towering crowns</td>
+                      <td><mark class="exam-hl">Chenda</mark>, <mark class="exam-hl">madalam</mark>, chengila, idakka, shankhu (conch)</td>
+                      <td>Vazhenkada Kunchu Nair, Kottakkal Sivaraman, <mark class="exam-hl">Kalamandalam Gopi</mark>, Kalamandalam Ramankutty Nair, Kalamandalam Vasu Pisharody</td>
                     </tr>
                     <tr>
-                      <td><strong>Mohiniyattam</strong></td>
-                      <td><strong>Kerala</strong>; classical solo dance named after <strong>Mohini</strong> (celestial enchantress of Hindu mythology); pure <em>Lasya</em> sway</td>
-                      <td>Mridangam or Madhalam, <strong>idakka</strong>, flute, veena, kuzhitalam</td>
-                      <td>Kalamandalam Kalyanikutty Amma, Kalamandalam Hymavathy, Sunanda Nair, Gopika Varma, Neena Prasad</td>
+                      <td><mark class="exam-hl">Mohiniyattam</mark></td>
+                      <td><mark class="exam-hl">Kerala</mark>; classical solo dance named after <mark class="exam-hl">Mohini</mark> (celestial enchantress of Hindu mythology); pure <em>Lasya</em> sway</td>
+                      <td>Mridangam or Madhalam, <mark class="exam-hl">idakka</mark>, flute, veena, kuzhitalam</td>
+                      <td><mark class="exam-hl">Kalamandalam Kalyanikutty Amma</mark>, Kalamandalam Hymavathy, Sunanda Nair, Gopika Varma, Neena Prasad</td>
                     </tr>
                     <tr>
-                      <td><strong>Kuchipudi</strong></td>
-                      <td><strong>Andhra Pradesh</strong> (Kuchipudi village); accompanied by <strong>Carnatic music</strong>; famous for <em>Tarangam</em> (brass-plate rim); <em>Natya Tarangini</em> school</td>
+                      <td><mark class="exam-hl">Kuchipudi</mark></td>
+                      <td><mark class="exam-hl">Andhra Pradesh</mark> (Kuchipudi village); accompanied by <strong>Carnatic music</strong>; famous for <mark class="exam-hl"><em>Tarangam</em></mark> (brass-plate rim); <em>Natya Tarangini</em> school</td>
                       <td>Mridangam, violin, flute, tambura</td>
-                      <td>Vempati Chinna Satyam, Uma Rama Sarma, Shobha Naidu, Vyjayanthi Kashi, Sreelakshmy Govardhanan, Raja &amp; Radha Reddy</td>
+                      <td><mark class="exam-hl">Vempati Chinna Satyam</mark>, Uma Rama Sarma, Shobha Naidu, Vyjayanthi Kashi, Sreelakshmy Govardhanan, <mark class="exam-hl">Raja &amp; Radha Reddy</mark></td>
                     </tr>
                   </tbody>
                 </table>
@@ -1639,28 +1725,28 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td><strong>Manipuri</strong></td>
-                      <td><strong>Manipur</strong>; rooted in Vaishnavite <em>Raslila</em> &amp; <em>Lai Haraoba</em>; graceful curved movements (<em>Jagoi</em>) and drum-acrobatics (<em>Cholom</em>)</td>
-                      <td><strong>Pung</strong> (barrel drum), cymbals (kartals)</td>
-                      <td>Guru Bipin Singh, Rajkumar Singhajit Singh, Darshana Jhaveri (Jhaveri Sisters), Sohini Ray</td>
+                      <td><mark class="exam-hl">Manipuri</mark></td>
+                      <td><mark class="exam-hl">Manipur</mark>; rooted in Vaishnavite <em>Raslila</em> &amp; <em>Lai Haraoba</em>; graceful curved movements (<em>Jagoi</em>) and drum-acrobatics (<em>Cholom</em>)</td>
+                      <td><mark class="exam-hl">Pung</mark> (barrel drum), cymbals (kartals)</td>
+                      <td><mark class="exam-hl">Guru Bipin Singh</mark>, Rajkumar Singhajit Singh, <mark class="exam-hl">Darshana Jhaveri (Jhaveri Sisters)</mark>, Sohini Ray</td>
                     </tr>
                     <tr>
-                      <td><strong>Odissi</strong></td>
-                      <td><strong>Odisha</strong>; temple origin (<em>Mahari</em> &amp; <em>Gotipua</em>); hallmark <strong>Tribhanga</strong> (three-bend) &amp; square <em>Chowk</em> postures</td>
-                      <td><strong>Mardala</strong>, harmonium, flute, sitar, violin, cymbals</td>
-                      <td>Kelucharan Mohapatra, Pankaj Charan Das, Sanjukta Panigrahi, Priyambada Hejmadi, Minati Mishra, Kumkum Mohanty, Oopalie Oparajita, Sangeeta Das</td>
+                      <td><mark class="exam-hl">Odissi</mark></td>
+                      <td><mark class="exam-hl">Odisha</mark>; temple origin (<mark class="exam-hl"><em>Mahari</em> &amp; <em>Gotipua</em></mark>); hallmark <mark class="exam-hl">Tribhanga</mark> (three-bend) &amp; square <em>Chowk</em> postures</td>
+                      <td><mark class="exam-hl">Mardala</mark>, harmonium, flute, sitar, violin, cymbals</td>
+                      <td><mark class="exam-hl">Kelucharan Mohapatra</mark>, Pankaj Charan Das, <mark class="exam-hl">Sanjukta Panigrahi</mark>, Priyambada Hejmadi, Minati Mishra, Kumkum Mohanty, Oopalie Oparajita, Sangeeta Das</td>
                     </tr>
                     <tr>
-                      <td><strong>Kathak</strong></td>
-                      <td><strong>North India</strong>; evolved from ancient travelling storytellers (<em>Kathakars</em>) under Hindu-Muslim court synthesis (Lucknow, Jaipur, Banaras Gharanas)</td>
-                      <td><strong>Tabla</strong>, sarangi or harmonium with manjira (and ghungroos)</td>
-                      <td>Shambhu Maharaj, Sitara Devi, Pandit Birju Maharaj, Roshan Kumari, Saswati Sen, Rohini Bhate, Shovana Narayan</td>
+                      <td><mark class="exam-hl">Kathak</mark></td>
+                      <td><mark class="exam-hl">North India</mark>; evolved from ancient travelling storytellers (<mark class="exam-hl"><em>Kathakars</em></mark>) under Hindu-Muslim court synthesis (Lucknow, Jaipur, Banaras Gharanas)</td>
+                      <td><mark class="exam-hl">Tabla</mark>, sarangi or harmonium with manjira (and ghungroos)</td>
+                      <td>Shambhu Maharaj, <mark class="exam-hl">Sitara Devi</mark>, <mark class="exam-hl">Pandit Birju Maharaj</mark>, Roshan Kumari, Saswati Sen, Rohini Bhate, Shovana Narayan</td>
                     </tr>
                     <tr>
-                      <td><strong>Sattriya</strong></td>
-                      <td><strong>Assam</strong>; originated in Vaishnava monasteries (<strong>Sattras</strong>) by Srimanta Sankardev; recognized by Sangeet Natak Akademi in <strong>2000</strong></td>
-                      <td><strong>Khols</strong>, talas (cymbals), flute</td>
-                      <td>Ghanakanta Bora, Ananda Mohan Bhagawati, Sharodi Saikia, Bhabananda Barbayan, Jatin Goswami</td>
+                      <td><mark class="exam-hl">Sattriya</mark></td>
+                      <td><mark class="exam-hl">Assam</mark>; originated in Vaishnava monasteries (<mark class="exam-hl">Sattras</mark>) by <mark class="exam-hl">Srimanta Sankardev</mark>; recognized by Sangeet Natak Akademi in <mark class="exam-hl">2000</mark></td>
+                      <td><mark class="exam-hl">Khols</mark>, talas (cymbals), flute</td>
+                      <td>Ghanakanta Bora, Ananda Mohan Bhagawati, Sharodi Saikia, Bhabananda Barbayan, <mark class="exam-hl">Jatin Goswami</mark></td>
                     </tr>
                   </tbody>
                 </table>
@@ -1679,34 +1765,42 @@
         subtopics: [
           {
             id: `u3_featured_folk`,
-            title: `Signature Folk Dances: Bihu, Bhangra, Garba, Kummi, Cheraw & Thullal`,
-            badge: `High-Yield Spotlight`,
-            summary: `Deep dive into seasonal, harvest, martial, and community folk dances frequently tested in competitive exams.`,
+            title: `Signature & Tribal Folk Dances: High-Frequency SSC Exam Matrix`,
+            badge: `Tribal & Harvest Focus`,
+            summary: `Deep dive into seasonal, harvest, tribal, and community dances: Hojagiri, Cheraw, Wangala, Fugdi, Kalbelia, Bhavai, Matki, Rouf, and Bihu.`,
             contentHtml: `
               <div class="note-grid">
                 <div class="note-card">
                   <h4>Bihu (Assam)</h4>
-                  <p>Performed by both men and women in colourful Assamese silk (<em>Muga</em>) during Bihu. Three Bihus exist: <strong>Bhogali / Magh Bihu</strong> (Jan), <strong>Rongali / Bohag Bihu</strong> (April — most vibrant spring New Year), and <strong>Kongali / Kati Bihu</strong> (Oct).</p>
+                  <p>Performed by both men and women in colourful Assamese silk (<mark class="exam-hl"><em>Muga</em></mark>) during Bihu. Three Bihus exist: <mark class="exam-hl">Bhogali / Magh Bihu</mark> (Jan harvest feast), <mark class="exam-hl">Rongali / Bohag Bihu</mark> (April — most vibrant spring New Year), and <mark class="exam-hl">Kongali / Kati Bihu</mark> (Oct — solemn lighting of earthen lamps near Tulsi).</p>
                 </div>
                 <div class="note-card">
-                  <h4>Bhangra &amp; Ghoomar</h4>
-                  <p><strong>Bhangra (Punjab):</strong> High-energy harvest dance performed by Punjabi farmers to celebrate Baisakhi.<br><strong>Ghoomar (Rajasthan):</strong> Traditional women's swirling circular dance performed during Diwali, Holi, and a bride's arrival at her marital home.</p>
+                  <h4>Cheraw &amp; Khuallam (Mizoram)</h4>
+                  <p><mark class="exam-hl">Cheraw (Bamboo Dance)</mark>: Performed by Mizo women stepping gracefully between pairs of rhythmically clapped bamboo poles on the ground.<br><strong>Khuallam:</strong> "Dance of the guests" performed wearing traditional handwoven <mark class="exam-hl"><em>Puandum</em></mark> striped shawls during the <em>Khuangchawi</em> ceremony.</p>
                 </div>
                 <div class="note-card">
-                  <h4>Garba &amp; Dandiya Raas (Gujarat)</h4>
-                  <p><strong>Garba:</strong> Performed around a perforated earthen lamp (<em>Garbha Deep</em>) for nine nights during <strong>Navratri</strong>.<br><strong>Dandiya Raas:</strong> Energetic stick dance enacted during Navratri representing the mock fight between Goddess Durga and Mahishasura.</p>
+                  <h4>Hojagiri (Tripura)</h4>
+                  <p>Performed exclusively by women and young girls of the <mark class="exam-hl">Reang (Bru) tribe</mark> during the <em>Hojagiri</em> festival. Dancers balance a pitcher or bottle on their heads with a burning lamp on their hands, maneuvering across earthen pitchers while moving strictly the <mark class="exam-hl">lower half of their bodies</mark>.</p>
                 </div>
                 <div class="note-card">
-                  <h4>Kummi &amp; Kolattam (South India)</h4>
-                  <p><strong>Kummi (Tamil Nadu):</strong> Women's circular folk dance performed without musical instruments, keeping rhythm solely through synchronized hand-clapping.<br><strong>Kolattam (TN &amp; Andhra Pradesh):</strong> Colourful stick-clapping dance performed in pairs.</p>
+                  <h4>Wangala &amp; Nongkrem (Meghalaya)</h4>
+                  <p><mark class="exam-hl">Wangala (100 Drums Festival)</mark>: Post-harvest festival of the <mark class="exam-hl">Garo tribe</mark> honoring the Sun God <mark class="exam-hl"><em>Misi Saljong</em></mark> with synchronized drumming of 100 long cylindrical drums.<br><mark class="exam-hl">Nongkrem</mark>: 5-day religious thanksgiving festival of the <mark class="exam-hl">Khasi tribe</mark> featuring the <em>Pomblang</em> goat-sacrifice ceremony.</p>
                 </div>
                 <div class="note-card">
-                  <h4>Cheraw / Bamboo Dance (Mizoram)</h4>
-                  <p>Signature Mizo dance where seated performers rhythmically clap pairs of long <strong>bamboo staves</strong> horizontally on the ground while dancers step nimbly between them.</p>
+                  <h4>Rajasthan: Kalbelia, Bhavai &amp; Ghoomar</h4>
+                  <p><mark class="exam-hl">Kalbelia</mark>: Sensuous dance of Rajasthan's snake-charmer community performing to the <mark class="exam-hl"><em>Poongi</em></mark> in flowing black embroidered skirts (inscribed in <mark class="exam-hl">UNESCO ICH 2010</mark>).<br><mark class="exam-hl">Bhavai</mark>: High-skill balancing act where women balance <mark class="exam-hl">7 to 9 brass or earthen pots</mark> on their heads while balancing on the edge of a sword, brass plate, or broken glass.<br><mark class="exam-hl">Ghoomar</mark>: Originally developed by the <mark class="exam-hl">Bhil tribe</mark> and later embraced by Rajput royalty.</p>
                 </div>
                 <div class="note-card">
-                  <h4>Ottam Thullal &amp; Chatkora</h4>
-                  <p><strong>Ottam Thullal (Kerala):</strong> Solo satiric dance-recital introduced in the 18th century by poet <strong>Kunchan Nambiar</strong>.<br><strong>Chatkora (Madhya Pradesh):</strong> Traditional folk dance of the <strong>Korku tribe</strong> using bamboo clappers (<em>chatkora</em>).</p>
+                  <h4>Madhya Pradesh: Matki, Jawara &amp; Bhagoria</h4>
+                  <p><mark class="exam-hl">Matki</mark>: Women of the <mark class="exam-hl">Malwa region</mark> dance solo or in groups balancing earthen pitchers on their heads to the rhythm of the <em>Dhol</em>.<br><mark class="exam-hl">Jawara</mark>: Celebrated harvest dance of <mark class="exam-hl">Bundelkhand</mark> where women balance tall baskets of jawara (sprouted green barley) on their heads.<br><mark class="exam-hl">Bhagoria</mark>: Celebrated by the <mark class="exam-hl">Bhil &amp; Bhilala tribes</mark> during pre-Holi weekly haats (fairs).</p>
+                </div>
+                <div class="note-card">
+                  <h4>Goa: Fugdi, Dhalo &amp; Dekhni</h4>
+                  <p><mark class="exam-hl">Fugdi</mark>: Konkani women's fast circular clapping dance performed during Ganesh Chaturthi and Vrata festivals.<br><mark class="exam-hl">Dekhni</mark>: Semi-classical song and dance performed to Indo-Western melodies accompanied by the earthen <mark class="exam-hl">Ghumat</mark> drum.<br><mark class="exam-hl">Dhalo</mark>: Sacred 12-day harvest ritual dance exclusively performed by women on winter nights.</p>
+                </div>
+                <div class="note-card">
+                  <h4>J&amp;K / Ladakh: Rouf, Kud &amp; Spao</h4>
+                  <p><mark class="exam-hl">Rouf (J&amp;K)</mark>: Women in two facing rows with arms linked around each other's waists, swaying forward and backward to lyrical <mark class="exam-hl"><em>Chakri</em></mark> poetry during Eid and Ramzan.<br><mark class="exam-hl">Kud (J&amp;K)</mark>: Night folk dance around a bonfire celebrating the monsoon crop and appeasing Gramdevatas.<br><mark class="exam-hl">Spao / Shondol (Ladakh)</mark>: Traditional royal and warrior sword dance performed during Monlam and monastery festivals.</p>
                 </div>
               </div>
             `
@@ -1717,6 +1811,10 @@
             badge: `Master Reference`,
             summary: `Exhaustive state-wise mapping of India's folk dances from Andhra Pradesh to Lakshadweep.`,
             contentHtml: `
+              <div class="callout-box is-emerald" style="margin-bottom:12px;">
+                <span class="callout-title">Exam Focus Legend</span>
+                <p style="margin:0;">Items in <mark class="exam-hl">highlighted amber</mark> are the highest-frequency SSC / Eduquity exam repeats across all 29 regions.</p>
+              </div>
               <div class="table-scroll">
                 <table class="study-table">
                   <thead>
@@ -1726,35 +1824,35 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td><strong>Andhra Pradesh</strong></td><td>Vilasini Natyam, Andhra Natyam, Bhamakalpam, Veeranatyam, Dappu, Tappeta Gullu, Lambadi, Dhimsa, Kolattam, Butta Bommalu</td></tr>
-                    <tr><td><strong>Arunachal Pradesh</strong></td><td>Aji Lamu, Chalo, Hiirii Khaniing, Popir, Ponung, Pasi Kongki, Rekham Pada, Roppi</td></tr>
-                    <tr><td><strong>Assam</strong></td><td>Bihu, Bichhua, Natpuja, Maharas, Kaligopal, Bagurumba, Naga dance, Khel Gopal, Tabal Chongli, Canoe, Jhumura Hobjanai</td></tr>
-                    <tr><td><strong>Bihar</strong></td><td>Jata-Jatin, Bakho-Bakhain, Panwariya, Sama Chakwa, Bidesia</td></tr>
-                    <tr><td><strong>Chhattisgarh</strong></td><td>Gaur Maria, Panthi, Raut Nacha, Pandwani, Vedamati, Kapalik, Bharthari Charit, Chandaini</td></tr>
-                    <tr><td><strong>Goa</strong></td><td>Modni, Jhagor, Khol, Dakni, Shigmo, Ghode (Ghode Modni)</td></tr>
-                    <tr><td><strong>Gujarat</strong></td><td>Garba, Dandiya Raas, Tippani Juriun, Bhavai</td></tr>
-                    <tr><td><strong>Haryana</strong></td><td>Jhumar, Phag, Daph, Dhamal, Loor, Gugga, Khor, Gagor</td></tr>
-                    <tr><td><strong>Himachal Pradesh</strong></td><td>Jhora, Jhali, Chharhi, Dhaman, Chhapeli, Mahasu, Nati, Dangi</td></tr>
-                    <tr><td><strong>Jammu &amp; Kashmir</strong></td><td>Rauf, Hikat, Mandjas, Kud Dandi Nach, Damali, Dumhal</td></tr>
-                    <tr><td><strong>Jharkhand</strong></td><td>Bidesia, Danga, Karma, Sarahul, Sohrai, Alkap, Paika, Barao, Jhitka</td></tr>
-                    <tr><td><strong>Karnataka</strong></td><td>Yakshagana, Huttari, Suggi, Kunitha, Karga, Lambi</td></tr>
-                    <tr><td><strong>Kerala</strong></td><td>Ottam Thullal, Kaikottikali, Tappatikkali</td></tr>
-                    <tr><td><strong>Lakshadweep</strong></td><td>Lava, Kolkali, Parichakali</td></tr>
-                    <tr><td><strong>Madhya Pradesh</strong></td><td>Jawara, Matki, Aada, Khada Nach, Phulpati, Grida Dance, Selalarki, Selabhadoni, Maanch, Chatkora</td></tr>
-                    <tr><td><strong>Maharashtra</strong></td><td>Lavani, Nakata, Koli, Lezim, Gafa, Dahikala Dasavtar or Bohada</td></tr>
-                    <tr><td><strong>Manipur</strong></td><td>Dol Cholam, Thang-Ta, Lai Haraoba, Pung Cholom, Nat Rash, Rakhal, Raukhat</td></tr>
-                    <tr><td><strong>Meghalaya</strong></td><td>Ka Shad Suk Mynsiem, Baala, Nongkrem, Laho</td></tr>
-                    <tr><td><strong>Mizoram</strong></td><td>Cheraw Dance (Bamboo Dance), Khuallam, Chailam, Sawlakin, Chawnglaizawn, Zangtalam, Par Lam, Tlanglam, Cherokan, Khanatm</td></tr>
-                    <tr><td><strong>Nagaland</strong></td><td>Chong, Khaiva, Lim, Nuralim</td></tr>
-                    <tr><td><strong>Odisha</strong></td><td>Savari, Ghumara, Painka, Munari, Chhau (Mayurbhanj)</td></tr>
-                    <tr><td><strong>Punjab</strong></td><td>Bhangra, Giddha, Daff, Dhaman, Bhand, Naqual, Kikli, Jhoomar</td></tr>
-                    <tr><td><strong>Rajasthan</strong></td><td>Ghoomar, Chakri, Ganagor, Jhulan Leela, Jhuma, Suisini, Ghapal, Kalbeliya</td></tr>
-                    <tr><td><strong>Sikkim</strong></td><td>Singhi Chham, Chu Faat, Gayley-Yang, Ghantu, Kinchum-Chu-Bomsa, Maarooni, Nyongri-Nyot, Shelo, Sherpa Dance, Tamang Selo, Yak Chham</td></tr>
-                    <tr><td><strong>Tamil Nadu</strong></td><td>Kummi, Kolattam, Kavadi, Karagam</td></tr>
-                    <tr><td><strong>Tripura</strong></td><td>Bizu, Cheraw, Dailo Nritya, Gajan, Galamuchamo, Garia, Hai Hak, Hozagiri, Jhum, Lebang Boomani, Sangrai-Mog, Wya</td></tr>
-                    <tr><td><strong>Uttar Pradesh</strong></td><td>Nautanki, Raslila, Kajri, Jhora, Chappeli, Jaita</td></tr>
-                    <tr><td><strong>Uttarakhand</strong></td><td>Garhwali, Kumayuni, Kajari, Jhora, Raslila, Chappeli</td></tr>
-                    <tr><td><strong>West Bengal</strong></td><td>Kathi, Gambhira, Dhali, Jatra, Baul, Marasia, Mahal, Keertan</td></tr>
+                    <tr><td><strong>Andhra Pradesh</strong></td><td><mark class="exam-hl">Vilasini Natyam</mark>, Andhra Natyam, <mark class="exam-hl">Bhamakalpam</mark>, Veeranatyam, Dappu, Tappeta Gullu, Lambadi, <mark class="exam-hl">Dhimsa</mark>, <mark class="exam-hl">Kolattam</mark>, <mark class="exam-hl">Butta Bommalu</mark></td></tr>
+                    <tr><td><strong>Arunachal Pradesh</strong></td><td><mark class="exam-hl">Aji Lamu</mark>, Chalo, Hiirii Khaniing, <mark class="exam-hl">Popir</mark>, <mark class="exam-hl">Ponung</mark>, Pasi Kongki, Rekham Pada, Roppi</td></tr>
+                    <tr><td><strong>Assam</strong></td><td><mark class="exam-hl">Bihu</mark>, Bichhua, Natpuja, Maharas, Kaligopal, <mark class="exam-hl">Bagurumba</mark>, Naga dance, Khel Gopal, Tabal Chongli, Canoe, <mark class="exam-hl">Jhumura Hobjanai</mark></td></tr>
+                    <tr><td><strong>Bihar</strong></td><td><mark class="exam-hl">Jata-Jatin</mark>, Bakho-Bakhain, Panwariya, <mark class="exam-hl">Sama Chakwa</mark>, <mark class="exam-hl">Bidesia</mark></td></tr>
+                    <tr><td><strong>Chhattisgarh</strong></td><td><mark class="exam-hl">Gaur Maria</mark>, <mark class="exam-hl">Panthi</mark>, <mark class="exam-hl">Raut Nacha</mark>, <mark class="exam-hl">Pandwani</mark>, Vedamati, Kapalik, <mark class="exam-hl">Bharthari Charit</mark>, Chandaini</td></tr>
+                    <tr><td><strong>Goa</strong></td><td>Modni, Jhagor, Khol, <mark class="exam-hl">Dakni</mark>, <mark class="exam-hl">Shigmo</mark>, <mark class="exam-hl">Ghode (Ghode Modni)</mark></td></tr>
+                    <tr><td><strong>Gujarat</strong></td><td><mark class="exam-hl">Garba</mark>, <mark class="exam-hl">Dandiya Raas</mark>, <mark class="exam-hl">Tippani Juriun</mark>, <mark class="exam-hl">Bhavai</mark></td></tr>
+                    <tr><td><strong>Haryana</strong></td><td><mark class="exam-hl">Jhumar</mark>, <mark class="exam-hl">Phag</mark>, Daph, <mark class="exam-hl">Dhamal</mark>, <mark class="exam-hl">Loor</mark>, <mark class="exam-hl">Gugga</mark>, Khor, Gagor</td></tr>
+                    <tr><td><strong>Himachal Pradesh</strong></td><td>Jhora, Jhali, Chharhi, <mark class="exam-hl">Dhaman</mark>, <mark class="exam-hl">Chhapeli</mark>, Mahasu, <mark class="exam-hl">Nati</mark>, Dangi</td></tr>
+                    <tr><td><strong>Jammu &amp; Kashmir</strong></td><td><mark class="exam-hl">Rauf</mark>, <mark class="exam-hl">Hikat</mark>, Mandjas, <mark class="exam-hl">Kud Dandi Nach</mark>, Damali, <mark class="exam-hl">Dumhal</mark></td></tr>
+                    <tr><td><strong>Jharkhand</strong></td><td>Bidesia, Danga, <mark class="exam-hl">Karma</mark>, <mark class="exam-hl">Sarahul</mark>, <mark class="exam-hl">Sohrai</mark>, Alkap, <mark class="exam-hl">Paika</mark>, Barao, Jhitka</td></tr>
+                    <tr><td><strong>Karnataka</strong></td><td><mark class="exam-hl">Yakshagana</mark>, <mark class="exam-hl">Huttari</mark>, Suggi, <mark class="exam-hl">Kunitha</mark>, Karga, Lambi</td></tr>
+                    <tr><td><strong>Kerala</strong></td><td><mark class="exam-hl">Ottam Thullal</mark>, <mark class="exam-hl">Kaikottikali</mark>, Tappatikkali</td></tr>
+                    <tr><td><strong>Lakshadweep</strong></td><td><mark class="exam-hl">Lava</mark>, <mark class="exam-hl">Kolkali</mark>, <mark class="exam-hl">Parichakali</mark></td></tr>
+                    <tr><td><strong>Madhya Pradesh</strong></td><td><mark class="exam-hl">Jawara</mark>, <mark class="exam-hl">Matki</mark>, Aada, Khada Nach, <mark class="exam-hl">Phulpati</mark>, Grida Dance, Selalarki, Selabhadoni, <mark class="exam-hl">Maanch</mark>, Chatkora</td></tr>
+                    <tr><td><strong>Maharashtra</strong></td><td><mark class="exam-hl">Lavani</mark>, Nakata, <mark class="exam-hl">Koli</mark>, <mark class="exam-hl">Lezim</mark>, Gafa, <mark class="exam-hl">Dahikala Dasavtar</mark> or Bohada</td></tr>
+                    <tr><td><strong>Manipur</strong></td><td><mark class="exam-hl">Dol Cholom</mark>, <mark class="exam-hl">Thang-Ta</mark>, <mark class="exam-hl">Lai Haraoba</mark>, <mark class="exam-hl">Pung Cholom</mark>, Nat Rash, Rakhal, Raukhat</td></tr>
+                    <tr><td><strong>Meghalaya</strong></td><td><mark class="exam-hl">Ka Shad Suk Mynsiem</mark>, Baala, <mark class="exam-hl">Nongkrem</mark>, <mark class="exam-hl">Laho</mark></td></tr>
+                    <tr><td><strong>Mizoram</strong></td><td><mark class="exam-hl">Cheraw Dance (Bamboo Dance)</mark>, <mark class="exam-hl">Khuallam</mark>, <mark class="exam-hl">Chailam</mark>, Sawlakin, Chawnglaizawn, Zangtalam, Par Lam, Tlanglam, Cherokan, Khanatm</td></tr>
+                    <tr><td><strong>Nagaland</strong></td><td><mark class="exam-hl">Chong</mark>, Khaiva, <mark class="exam-hl">Lim</mark>, Nuralim</td></tr>
+                    <tr><td><strong>Odisha</strong></td><td>Savari, <mark class="exam-hl">Ghumara</mark>, <mark class="exam-hl">Painka</mark>, Munari, <mark class="exam-hl">Chhau (Mayurbhanj)</mark></td></tr>
+                    <tr><td><strong>Punjab</strong></td><td><mark class="exam-hl">Bhangra</mark>, <mark class="exam-hl">Giddha</mark>, Daff, Dhaman, Bhand, Naqual, <mark class="exam-hl">Kikli</mark>, <mark class="exam-hl">Jhoomar</mark></td></tr>
+                    <tr><td><strong>Rajasthan</strong></td><td><mark class="exam-hl">Ghoomar</mark>, <mark class="exam-hl">Chakri</mark>, <mark class="exam-hl">Ganagor</mark>, Jhulan Leela, Jhuma, Suisini, Ghapal, <mark class="exam-hl">Kalbeliya</mark></td></tr>
+                    <tr><td><strong>Sikkim</strong></td><td><mark class="exam-hl">Singhi Chham</mark>, <mark class="exam-hl">Chu Faat</mark>, Gayley-Yang, Ghantu, Kinchum-Chu-Bomsa, <mark class="exam-hl">Maarooni</mark>, Nyongri-Nyot, Shelo, Sherpa Dance, <mark class="exam-hl">Tamang Selo</mark>, <mark class="exam-hl">Yak Chham</mark></td></tr>
+                    <tr><td><strong>Tamil Nadu</strong></td><td><mark class="exam-hl">Kummi</mark>, <mark class="exam-hl">Kolattam</mark>, <mark class="exam-hl">Kavadi</mark>, <mark class="exam-hl">Karagam</mark></td></tr>
+                    <tr><td><strong>Tripura</strong></td><td>Bizu, Cheraw, Dailo Nritya, Gajan, Galamuchamo, <mark class="exam-hl">Garia</mark>, Hai Hak, <mark class="exam-hl">Hojagiri</mark>, Jhum, <mark class="exam-hl">Lebang Boomani</mark>, Sangrai-Mog, Wya</td></tr>
+                    <tr><td><strong>Uttar Pradesh</strong></td><td><mark class="exam-hl">Nautanki</mark>, <mark class="exam-hl">Raslila</mark>, <mark class="exam-hl">Kajri</mark>, Jhora, <mark class="exam-hl">Chappeli</mark>, Jaita</td></tr>
+                    <tr><td><strong>Uttarakhand</strong></td><td><mark class="exam-hl">Garhwali</mark>, <mark class="exam-hl">Kumayuni</mark>, Kajari, <mark class="exam-hl">Jhora</mark>, Raslila, <mark class="exam-hl">Chappeli</mark></td></tr>
+                    <tr><td><strong>West Bengal</strong></td><td>Kathi, <mark class="exam-hl">Gambhira</mark>, <mark class="exam-hl">Dhali</mark>, <mark class="exam-hl">Jatra</mark>, <mark class="exam-hl">Baul</mark>, Marasia, Mahal, Keertan</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -1776,20 +1874,29 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td><strong>Bhand Pather</strong></td><td>Jammu &amp; Kashmir</td><td>Traditional street theatre blending mythological stories with sharp contemporary social satire, acting, dance, and music (<em>surnai</em>, <em>dhol</em>).</td></tr>
-                    <tr><td><strong>Yakshagana</strong></td><td>Karnataka</td><td>Elaborate coastal dance-drama based on Puranas and epics; prominent styles include <em>Badagutittu</em> &amp; <em>Tenkutittu</em>.</td></tr>
-                    <tr><td><strong>Krishnattam</strong></td><td>Kerala</td><td>Dance-oriented folk theatre structured as a cycle of <strong>8 plays</strong> performed over <strong>8 consecutive days</strong> telling the story of Lord Krishna.</td></tr>
-                    <tr><td><strong>Swang</strong></td><td>Haryana, UP, Rajasthan</td><td>Verse-and-dialogue folk musical drama (<em>Rohtak</em> &amp; <em>Hathras</em> akharas) accompanied by Ektara, Harmonium, Sarangi, and Dholak.</td></tr>
-                    <tr><td><strong>Nautanki</strong></td><td>Uttar Pradesh (North India)</td><td>Operatic folk drama offshoot of Swang (<em>Kanpur</em> &amp; <em>Hathras</em> schools) featuring vigorous <em>Nagara</em> drumming and heroic/romantic tales.</td></tr>
-                    <tr><td><strong>Rasleela</strong></td><td>Uttar Pradesh (Braj)</td><td>Sacred theatrical enactment of young Krishna's episodes and divine love with Radha and the Gopis; popularized by Bhakti saints.</td></tr>
-                    <tr><td><strong>Jatra</strong></td><td>West Bengal &amp; Odisha</td><td>Open-air travelling musical theatre rooted in 16th-century Chaitanya Mahaprabhu's Bhakti processions; dramatic dialogue and live orchestra.</td></tr>
-                    <tr><td><strong>Bhavai</strong></td><td>Gujarat</td><td>Traditional folk theatre performed in reverence to <strong>Goddess Amba</strong>; blends social humour, devotion, and acrobatic balancing acts.</td></tr>
-                    <tr><td><strong>Dashavatar</strong></td><td>Southern Konkan (Maharashtra) &amp; N. Goa</td><td>Open-air night performance portraying the 10 incarnations of Lord Vishnu; performers famously wear painted <strong>wooden masks</strong>.</td></tr>
-                    <tr><td><strong>Bhaona</strong></td><td>Assam</td><td>Vaishnavite religious theatre (presenting <em>Ankia Naat</em> plays) originated by Srimanta Sankardev in Assamese Sattras.</td></tr>
-                    <tr><td><strong>Tamasha</strong></td><td>Maharashtra</td><td>Evolved from Gondhal, Jagran &amp; Kirtan; features female dancer (<em>Murki</em>), Lavani songs, and Krishna/witty social themes.</td></tr>
-                    <tr><td><strong>Therukoothu</strong></td><td>Tamil Nadu</td><td>Vibrant street drama (often during temple festivals) where <em>Kattiakaran</em> introduces Mahabharata episodes such as Draupadi Amman worship.</td></tr>
+                    <tr><td><mark class="exam-hl">Bhand Pather</mark></td><td><mark class="exam-hl">Jammu &amp; Kashmir</mark></td><td>Traditional street theatre blending mythological stories with sharp <mark class="exam-hl">social satire</mark>, acting, dance, and music (<mark class="exam-hl"><em>surnai</em>, <em>dhol</em></mark>).</td></tr>
+                    <tr><td><mark class="exam-hl">Yakshagana</mark></td><td><mark class="exam-hl">Karnataka</mark></td><td>Elaborate coastal dance-drama based on <mark class="exam-hl">Puranas and epics</mark>; prominent styles include <mark class="exam-hl"><em>Badagutittu</em> &amp; <em>Tenkutittu</em></mark>.</td></tr>
+                    <tr><td><mark class="exam-hl">Krishnattam</mark></td><td><mark class="exam-hl">Kerala</mark></td><td>Dance-oriented folk theatre structured as a cycle of <mark class="exam-hl">8 plays</mark> performed over <mark class="exam-hl">8 consecutive days</mark> telling the story of <mark class="exam-hl">Lord Krishna</mark>.</td></tr>
+                    <tr><td><mark class="exam-hl">Swang</mark></td><td><mark class="exam-hl">Haryana, UP, Rajasthan</mark></td><td>Verse-and-dialogue folk musical drama (<mark class="exam-hl"><em>Rohtak</em> &amp; <em>Hathras</em> akharas</mark>) accompanied by <mark class="exam-hl">Ektara, Harmonium, Sarangi, and Dholak</mark>.</td></tr>
+                    <tr><td><mark class="exam-hl">Nautanki</mark></td><td><mark class="exam-hl">Uttar Pradesh (North India)</mark></td><td>Operatic folk drama <mark class="exam-hl">offshoot of Swang</mark> (<mark class="exam-hl"><em>Kanpur</em> &amp; <em>Hathras</em> schools</mark>) featuring vigorous <mark class="exam-hl"><em>Nagara</em> drumming</mark> and heroic/romantic tales.</td></tr>
+                    <tr><td><mark class="exam-hl">Rasleela</mark></td><td><mark class="exam-hl">Uttar Pradesh (Braj)</mark></td><td>Sacred theatrical enactment of <mark class="exam-hl">young Krishna's episodes</mark> and divine love with <mark class="exam-hl">Radha and the Gopis</mark>; popularized by <mark class="exam-hl">Bhakti saints</mark>.</td></tr>
+                    <tr><td><mark class="exam-hl">Jatra</mark></td><td><mark class="exam-hl">West Bengal &amp; Odisha</mark></td><td><mark class="exam-hl">Open-air travelling musical theatre</mark> rooted in <mark class="exam-hl">16th-century Chaitanya Mahaprabhu's</mark> Bhakti processions; dramatic dialogue and live orchestra.</td></tr>
+                    <tr><td><mark class="exam-hl">Bhavai</mark></td><td><mark class="exam-hl">Gujarat</mark></td><td>Traditional folk theatre performed in reverence to <mark class="exam-hl">Goddess Amba</mark>; blends social humour, devotion, and <mark class="exam-hl">acrobatic balancing acts</mark>.</td></tr>
+                    <tr><td><mark class="exam-hl">Dashavatar</mark></td><td><mark class="exam-hl">Southern Konkan (Maharashtra) &amp; N. Goa</mark></td><td>Open-air night performance portraying the <mark class="exam-hl">10 incarnations of Lord Vishnu</mark>; performers famously wear painted <mark class="exam-hl">wooden masks</mark>.</td></tr>
+                    <tr><td><mark class="exam-hl">Bhaona</mark></td><td><mark class="exam-hl">Assam</mark></td><td>Vaishnavite religious theatre (presenting <mark class="exam-hl"><em>Ankia Naat</em></mark> plays) originated by <mark class="exam-hl">Srimanta Sankardev</mark> in <mark class="exam-hl">Assamese Sattras</mark>.</td></tr>
+                    <tr><td><mark class="exam-hl">Tamasha</mark></td><td><mark class="exam-hl">Maharashtra</mark></td><td>Evolved from <mark class="exam-hl">Gondhal, Jagran &amp; Kirtan</mark>; features female dancer (<mark class="exam-hl"><em>Murki</em></mark>), <mark class="exam-hl">Lavani songs</mark>, and Krishna/witty social themes.</td></tr>
+                    <tr><td><mark class="exam-hl">Therukoothu</mark></td><td><mark class="exam-hl">Tamil Nadu</mark></td><td>Vibrant street drama (often during temple festivals) where <mark class="exam-hl"><em>Kattiakaran</em></mark> introduces <mark class="exam-hl">Mahabharata episodes</mark> such as <mark class="exam-hl">Draupadi Amman</mark> worship.</td></tr>
                   </tbody>
                 </table>
+              </div>
+              <div class="callout-box" style="margin-top:14px;">
+                <span class="callout-title">High-Yield Exam Traps: Folk Theatre vs. Folk Dance</span>
+                <ul class="note-list" style="margin:4px 0 0;">
+                  <li><strong>Bhavai:</strong> Folk <em>theatre</em> of <strong>Gujarat</strong> (Goddess Amba) vs. pot-balancing folk <em>dance</em> of <strong>Rajasthan</strong>.</li>
+                  <li><strong>Bhaona / Ankia Naat:</strong> Created by <strong>Srimanta Sankardev</strong> (Assam); <strong>Jatra</strong> rooted in <strong>Chaitanya Mahaprabhu</strong> (Bengal &amp; Odisha).</li>
+                  <li><strong>Nautanki vs. Swang:</strong> Nautanki is an offshoot of Swang; both share the <strong>Hathras</strong> school.</li>
+                  <li><strong>Krishnattam (Kerala):</strong> 8-play cycle over 8 nights; <strong>Dashavatar (Konkan/Goa):</strong> wooden masks &amp; 10 avatars of Vishnu.</li>
+                </ul>
               </div>
             `
           }
@@ -1813,17 +1920,17 @@
                 <div class="note-card">
                   <h4>Origins &amp; Pillars</h4>
                   <ul class="note-list">
-                    <li><strong>Bharata Muni</strong> defined <em>Sangita</em> as the unity of <strong>Nritya</strong> (dance), <strong>Gayan</strong> (vocal), and <strong>Vadan</strong> (instrumental).</li>
-                    <li>Oldest textual roots lie in the <strong>Samaveda</strong> (chanted hymns).</li>
-                    <li><strong>Three Pillars:</strong> <strong>Swara</strong> (pitch/note), <strong>Raga</strong> (melodic framework/mood), and <strong>Taal</strong> (cyclic rhythm measured in <em>matras</em>).</li>
+                    <li><mark class="exam-hl">Bharata Muni</mark> defined <em>Sangita</em> as the unity of <strong>Nritya</strong> (dance), <strong>Gayan</strong> (vocal), and <strong>Vadan</strong> (instrumental).</li>
+                    <li>Oldest textual roots lie in the <mark class="exam-hl">Samaveda</mark> (chanted hymns).</li>
+                    <li><strong>Three Pillars:</strong> <mark class="exam-hl">Swara</mark> (pitch/note), <mark class="exam-hl">Raga</mark> (melodic framework/mood), and <mark class="exam-hl">Taal</mark> (cyclic rhythm measured in <em>matras</em>).</li>
                   </ul>
                 </div>
                 <div class="note-card">
                   <h4>Svaras &amp; Srutis</h4>
                   <ul class="note-list">
-                    <li><strong>Heptatonic Scale (Grama):</strong> 7 Svaras — <strong>Sadja (Sa), Rishabha (Ri), Gandhara (Ga), Madhyama (Ma), Panchama (Pa), Dhaivata (Dha), Nishada (Ni)</strong>.</li>
-                    <li><strong>Srutis:</strong> Theoretical microtonal intervals; an octave contains <strong>22 Srutis</strong>.</li>
-                    <li><strong>Raga Time Theory:</strong> Hindustani ragas align with specific times of day/seasons (<em>Prahar</em>) and emotional states (<em>Rasa</em>).</li>
+                    <li><strong>Heptatonic Scale (Grama):</strong> <mark class="exam-hl">7 Svaras</mark> — <strong>Sadja (Sa), Rishabha (Ri), Gandhara (Ga), Madhyama (Ma), Panchama (Pa), Dhaivata (Dha), Nishada (Ni)</strong>.</li>
+                    <li><strong>Srutis:</strong> Theoretical microtonal intervals; an octave contains <mark class="exam-hl">22 Srutis</mark>.</li>
+                    <li><strong>Raga Time Theory:</strong> Hindustani ragas align with specific times of day/seasons (<mark class="exam-hl"><em>Prahar</em></mark>) and emotional states (<em>Rasa</em>).</li>
                   </ul>
                 </div>
               </div>
@@ -1847,17 +1954,17 @@
                   <tbody>
                     <tr>
                       <td><strong>Cultural Influence</strong></td>
-                      <td>Absorbed Persian, Central Asian &amp; Sufi influences alongside Vedic roots; <strong>Amir Khusrau</strong> credited with <em>Khayal, Tarana, Qawwali</em> ("Father of Qawwali") &amp; Sitar/Tabla evolution.</td>
-                      <td>Purely indigenous Bhakti tradition; flourished under <strong>Krishnadevaraya</strong> in Vijayanagara; minimal external influence.</td>
+                      <td>Absorbed Persian, Central Asian &amp; Sufi influences alongside Vedic roots; <mark class="exam-hl">Amir Khusrau</mark> credited with <em>Khayal, Tarana, Qawwali</em> (<mark class="exam-hl">"Father of Qawwali"</mark>) &amp; Sitar/Tabla evolution.</td>
+                      <td>Purely indigenous Bhakti tradition; flourished under <mark class="exam-hl">Krishnadevaraya</mark> in Vijayanagara; minimal external influence.</td>
                     </tr>
                     <tr>
                       <td><strong>Raga Classification</strong></td>
-                      <td><strong>10 Thaats</strong> (systematized by Pt. Vishnu Narayan Bhatkhande)</td>
-                      <td><strong>72 Melakarta</strong> ragas (systematized by Venkatamakhin)</td>
+                      <td><mark class="exam-hl">10 Thaats</mark> (systematized by <mark class="exam-hl">Pt. Vishnu Narayan Bhatkhande</mark>)</td>
+                      <td><mark class="exam-hl">72 Melakarta</mark> ragas (systematized by <mark class="exam-hl">Venkatamakhin</mark>)</td>
                     </tr>
                     <tr>
                       <td><strong>Gharana &amp; Focus</strong></td>
-                      <td><strong>Gharana</strong> lineage system (Gwalior, Agra, Kirana, Patiala); heavy focus on improvisation (<em>Alap</em>)</td>
+                      <td><mark class="exam-hl">Gharana</mark> lineage system (Gwalior, Agra, Kirana, Patiala); heavy focus on improvisation (<em>Alap</em>)</td>
                       <td>Uniform style; composition-centric (<em>Sahitya</em> lyrics &amp; <em>Kritin</em> structure)</td>
                     </tr>
                     <tr>
@@ -1868,10 +1975,33 @@
                     <tr>
                       <td><strong>Key Icons</strong></td>
                       <td>Pt. Bhimsen Joshi, Bade Ghulam Ali Khan, Begum Akhtar, Girija Devi, Kishori Amonkar, Pt. Jasraj, Shubha Mudgal, Mallikarjun Mansoor, Ustad Amir Khan, Abdul Rashid Khan</td>
-                      <td><strong>Trinity of Carnatic Music (Golden Period):</strong> <strong>Tyagaraja, Muthuswami Dikshitar, Syama Sastri</strong>. Also M.S. Subbulakshmi, M. Balamurali Krishna, Semmangudi Srinivasa Iyer, Chembai Vaidyanatha Bhagavatar, D.K. Pattammal, M.L. Vasanthakumari</td>
+                      <td><mark class="exam-hl">Trinity of Carnatic Music</mark> (Golden Period): <mark class="exam-hl">Tyagaraja, Muthuswami Dikshitar, Syama Sastri</mark>. Also <mark class="exam-hl">M.S. Subbulakshmi</mark>, M. Balamurali Krishna, Semmangudi Srinivasa Iyer, Chembai Vaidyanatha Bhagavatar, D.K. Pattammal, M.L. Vasanthakumari</td>
                     </tr>
                   </tbody>
                 </table>
+              </div>
+              <div class="callout-box" style="margin-top:14px;">
+                <span class="callout-title">High-Yield Hindustani Gharanas Master Table</span>
+                <div class="table-scroll">
+                  <table class="study-table" style="margin-top:8px;">
+                    <thead>
+                      <tr>
+                        <th>Gharana</th>
+                        <th>Founders / Pioneers</th>
+                        <th>Signature Maestros &amp; Hallmarks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td><strong>Gwalior</strong></td><td><mark class="exam-hl">Nathan Peer Baksh, Haddu &amp; Hassu Khan</mark></td><td><mark class="exam-hl">Oldest Khayal gharana</mark>; open-throated voice, simple <em>bandish</em>, Meend &amp; Behlava.</td></tr>
+                      <tr><td><strong>Kirana</strong></td><td>Ustad Abdul Karim Khan &amp; Abdul Wahid Khan</td><td><mark class="exam-hl">Pt. Bhimsen Joshi</mark>, <mark class="exam-hl">Gangubai Hangal</mark>, Prabha Atre; slow-tempo <em>Alap</em> &amp; emotional intonation (<em>Swara</em> focus).</td></tr>
+                      <tr><td><strong>Agra</strong></td><td>Haji Sujan Khan / Ghagge Khuda Baksh</td><td><mark class="exam-hl">Ustad Faiyaz Khan</mark> (Aftab-e-Mausiqi); vigorous <em>Nom-Tom</em> Alap &amp; rhythmic <em>Layakari</em>.</td></tr>
+                      <tr><td><strong>Patiala</strong></td><td>Ustad Fateh Ali Khan &amp; Ali Baksh</td><td><mark class="exam-hl">Ustad Bade Ghulam Ali Khan</mark>, Begum Akhtar; rapid cascading <em>Taans</em> &amp; Thumri mastery.</td></tr>
+                      <tr><td><strong>Banaras</strong></td><td>Pt. Gopal Mishra / Ram Sahai (Tabla)</td><td><mark class="exam-hl">Girija Devi ("Queen of Thumri")</mark>, Siddheshwari Devi, Rasoolan Bai; Purab-ang Thumri, Kajri &amp; Dadra.</td></tr>
+                      <tr><td><strong>Mewati</strong></td><td>Ustad Ghagge Nazir Khan</td><td><mark class="exam-hl">Pt. Jasraj</mark>, Sanjeev Abhyankar; Bhakti-centric Bhajan &amp; <em>Jugalbandi</em> clarity.</td></tr>
+                      <tr><td><strong>Jaipur-Atrauli</strong></td><td>Ustad Alladiya Khan</td><td><mark class="exam-hl">Kishori Amonkar</mark>, <mark class="exam-hl">Mallikarjun Mansoor</mark>, Kesarbai Kerkar; complex rhythmic <em>vakra</em> (curved) ragas.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             `
           },
@@ -1881,6 +2011,15 @@
             badge: `10 Instruments`,
             summary: `Classification (Tat, Sushira, Avanaddha, Ghana) and top maestros for Santoor, Flute, Tabla, Sarod, Shehnai, Sitar, Sarangi, Violin, Veena & Mridangam.`,
             contentHtml: `
+              <div class="callout-box is-emerald" style="margin-bottom:14px;">
+                <span class="callout-title">Natyashastra 4-Fold Instrument Classification (Bharata Muni)</span>
+                <ul class="note-list" style="margin-top:6px;">
+                  <li><mark class="exam-hl">Tata Vadya (Chordophones / Stringed)</mark>: Sound via plucked or bowed strings — Sitar, Sarod, Santoor, Sarangi, Veena, Violin.</li>
+                  <li><mark class="exam-hl">Sushira Vadya (Aerophones / Wind)</mark>: Sound via blown air column — Flute (Bansuri), Shehnai, Nadaswaram, Shankha.</li>
+                  <li><mark class="exam-hl">Avanaddha Vadya (Membranophones / Percussion)</mark>: Sound via stretched animal-skin membrane — Tabla, Mridangam, Pakhawaj, Dholak, Chenda.</li>
+                  <li><mark class="exam-hl">Ghana Vadya (Idiophones / Solid)</mark>: Solid instruments struck together without tuning membrane — Manjira, Ghatam, Jal Tarang, Kartal, Morsing.</li>
+                </ul>
+              </div>
               <div class="table-scroll">
                 <table class="study-table">
                   <thead>
@@ -1891,16 +2030,17 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td><strong>Santoor</strong></td><td>Tat Vadya (struck string)</td><td><strong>Pt. Shivkumar Sharma</strong>, Bhajan Sopori, Rahul Sharma</td></tr>
-                    <tr><td><strong>Flute (Bansuri / Venu)</strong></td><td>Sushira Vadya (wind)</td><td><strong>Pt. Hariprasad Chaurasia</strong>, Pannalal Ghosh, T.R. Mahalingam (Mali), N. Ramani</td></tr>
-                    <tr><td><strong>Tabla</strong></td><td>Avanaddha Vadya (percussion)</td><td><strong>Ustad Alla Rakha</strong>, <strong>Ustad Zakir Hussain</strong>, Pt. Kishan Maharaj, Samta Prasad, Anindo Chatterjee</td></tr>
-                    <tr><td><strong>Sarod</strong></td><td>Tat Vadya (fretless plucked)</td><td><strong>Ustad Amjad Ali Khan</strong>, Ustad Ali Akbar Khan, Baba Allauddin Khan, Sharan Rani</td></tr>
-                    <tr><td><strong>Shehnai</strong></td><td>Sushira Vadya (double-reed wind)</td><td><strong>Ustad Bismillah Khan</strong> (Bharat Ratna 2001), Ali Ahmed Hussain Khan, Daya Shankar</td></tr>
-                    <tr><td><strong>Sitar</strong></td><td>Tat Vadya (fretted plucked)</td><td><strong>Pt. Ravi Shankar</strong> (Bharat Ratna 1999), Ustad Vilayat Khan, Nikhil Banerjee, Shahid Parvez, Anoushka Shankar</td></tr>
-                    <tr><td><strong>Sarangi</strong></td><td>Tat Vadya (bowed string)</td><td><strong>Pt. Ram Narayan</strong>, Ustad Sultan Khan, Sabri Khan, Bundu Khan</td></tr>
-                    <tr><td><strong>Violin</strong></td><td>Tat Vadya (bowed string)</td><td>L. Subramaniam, T.N. Krishnan, M.S. Gopalakrishnan, Kunnakudi Vaidyanathan, Dr. N. Rajam (Hindustani)</td></tr>
-                    <tr><td><strong>Veena</strong> (Rudra / Saraswati)</td><td>Tat Vadya (plucked string)</td><td>Ustad Asad Ali Khan, Zia Mohiuddin Dagar, S. Balachander, Emani Sankara Sastri, Chittibabu</td></tr>
-                    <tr><td><strong>Mridangam</strong></td><td>Avanaddha Vadya (barrel drum)</td><td><strong>Palghat Mani Iyer</strong>, Umayalpuram K. Sivaraman, T.K. Murthy, Karaikudi Mani</td></tr>
+                    <tr><td><strong>Santoor</strong></td><td>Tat Vadya (struck string)</td><td><mark class="exam-hl">Pt. Shivkumar Sharma</mark>, Bhajan Sopori, Rahul Sharma</td></tr>
+                    <tr><td><strong>Flute (Bansuri / Venu)</strong></td><td>Sushira Vadya (wind)</td><td><mark class="exam-hl">Pt. Hariprasad Chaurasia</mark>, <mark class="exam-hl">Pannalal Ghosh</mark>, T.R. Mahalingam (Mali), N. Ramani</td></tr>
+                    <tr><td><strong>Tabla</strong></td><td>Avanaddha Vadya (percussion)</td><td><mark class="exam-hl">Ustad Alla Rakha</mark>, <mark class="exam-hl">Ustad Zakir Hussain</mark>, Pt. Kishan Maharaj, Samta Prasad, Anindo Chatterjee</td></tr>
+                    <tr><td><strong>Sarod</strong></td><td>Tat Vadya (fretless plucked)</td><td><mark class="exam-hl">Ustad Amjad Ali Khan</mark>, Ustad Ali Akbar Khan, Baba Allauddin Khan, Sharan Rani</td></tr>
+                    <tr><td><strong>Shehnai</strong></td><td>Sushira Vadya (double-reed wind)</td><td><mark class="exam-hl">Ustad Bismillah Khan (Bharat Ratna 2001)</mark>, Ali Ahmed Hussain Khan, Daya Shankar</td></tr>
+                    <tr><td><strong>Sitar</strong></td><td>Tat Vadya (fretted plucked)</td><td><mark class="exam-hl">Pt. Ravi Shankar (Bharat Ratna 1999)</mark>, Ustad Vilayat Khan, Nikhil Banerjee, Shahid Parvez, Anoushka Shankar</td></tr>
+                    <tr><td><strong>Sarangi</strong></td><td>Tat Vadya (bowed string)</td><td><mark class="exam-hl">Pt. Ram Narayan</mark>, Ustad Sultan Khan, Sabri Khan, Bundu Khan</td></tr>
+                    <tr><td><strong>Violin</strong></td><td>Tat Vadya (bowed string)</td><td>L. Subramaniam, T.N. Krishnan, M.S. Gopalakrishnan, Kunnakudi Vaidyanathan, <mark class="exam-hl">Dr. N. Rajam</mark> (Hindustani)</td></tr>
+                    <tr><td><strong>Veena</strong> (Rudra / Saraswati)</td><td>Tat Vadya (plucked string)</td><td>Ustad Asad Ali Khan, Zia Mohiuddin Dagar, <mark class="exam-hl">S. Balachander</mark>, Emani Sankara Sastri, Chittibabu</td></tr>
+                    <tr><td><strong>Mridangam</strong></td><td>Avanaddha Vadya (barrel drum)</td><td><mark class="exam-hl">Palghat Mani Iyer</mark>, Umayalpuram K. Sivaraman, T.K. Murthy, Karaikudi Mani</td></tr>
+                    <tr><td><strong>Ghatam &amp; Ghana Percussion</strong></td><td>Ghana Vadya (clay pot / solid)</td><td><mark class="exam-hl">T.H. (Vikku) Vinayakram</mark> (Padma Bhushan &amp; Grammy), E.M. Subramaniam; <em>Jal Tarang</em>, <em>Manjira</em>, <em>Morsing</em></td></tr>
                   </tbody>
                 </table>
               </div>
@@ -1911,10 +2051,10 @@
       {
         id: `u5`,
         num: `05`,
-        shortTitle: `Paintings & Artists`,
-        title: `Indian Paintings & Master Artists`,
+        shortTitle: `Paintings & Textiles`,
+        title: `Indian Paintings, Master Artists & Handloom Textiles`,
         category: `Visual Arts`,
-        overview: `Classification of Indian paintings into ancient rock-cut Murals, Pala/Mughal/Rajasthani Miniatures, 9 iconic regional Folk painting styles, and a master index of modern & classical painters.`,
+        overview: `Classification of Indian paintings into ancient rock-cut Murals, Pala/Mughal/Rajasthani Miniatures, 9 iconic regional Folk painting styles, a master index of painters, and GI-tagged Indian handlooms & embroideries.`,
         subtopics: [
           {
             id: `u5_murals_miniatures`,
@@ -1927,18 +2067,18 @@
                   <h4>Mural Paintings (Cave &amp; Temple Walls)</h4>
                   <ul class="note-list">
                     <li><strong>Major Themes:</strong> Hinduism, Buddhism, and Jainism; executed on prepared plaster (tempera/fresco-secco).</li>
-                    <li><strong>Ajanta (Maharashtra):</strong> Earliest masterpieces in Buddhist <em>viharas</em> &amp; <em>chaityas</em> — Padmapani, Vajrapani, Flying Apsara.</li>
+                    <li><mark class="exam-hl">Ajanta (Maharashtra)</mark>: Earliest masterpieces in Buddhist <em>viharas</em> &amp; <em>chaityas</em> — <mark class="exam-hl">Padmapani, Vajrapani, Flying Apsara</mark>.</li>
                     <li><strong>Ellora (Maharashtra):</strong> Kailashanatha temple &amp; Jain cave ceiling murals.</li>
-                    <li><strong>Sittanavasal (Tamil Nadu):</strong> Pandya-period Jain cave murals featuring a serene lotus pond (<em>Samavasarana</em>).</li>
-                    <li><strong>Temple Murals:</strong> <strong>Kailashnath Temple</strong> (Kanchipuram), <strong>Brihadeeswara Temple</strong> (Thanjavur — Chola murals), plus Bagh Caves (MP) &amp; Lepakshi (AP).</li>
+                    <li><mark class="exam-hl">Sittanavasal (Tamil Nadu)</mark>: Pandya-period Jain cave murals featuring a serene lotus pond (<mark class="exam-hl"><em>Samavasarana</em></mark>).</li>
+                    <li><strong>Temple Murals:</strong> <strong>Kailashnath Temple</strong> (Kanchipuram), <mark class="exam-hl">Brihadeeswara Temple</mark> (Thanjavur — Chola murals), plus Bagh Caves (MP) &amp; Lepakshi (AP).</li>
                   </ul>
                 </div>
                 <div class="note-card">
                   <h4>Miniature Paintings</h4>
                   <ul class="note-list">
                     <li><strong>Characteristics:</strong> Executed on small, perishable surfaces (palm leaf, paper, cloth) with ultra-fine brushwork.</li>
-                    <li><strong>Earliest Examples:</strong> Buddhist religious texts under the <strong>Palas</strong> of Eastern India (palm leaf) &amp; <strong>Jain texts</strong> in Western India (Apabhramsa style).</li>
-                    <li><strong>Peak Synthesis:</strong> <strong>Mughal Miniatures</strong> (Akbar's <em>Hamzanama</em>, Jahangir's naturalism) and <strong>Rajasthani / Pahari Schools</strong> (Mewar, Kishangarh, Bundi, Kangra, Basholi).</li>
+                    <li><strong>Earliest Examples:</strong> Buddhist religious texts under the <mark class="exam-hl">Palas</mark> of Eastern India (palm leaf) &amp; <mark class="exam-hl">Jain texts</mark> in Western India (Apabhramsa style).</li>
+                    <li><strong>Peak Synthesis:</strong> <mark class="exam-hl">Mughal Miniatures</mark> (Akbar's <mark class="exam-hl"><em>Hamzanama</em></mark>, Jahangir's naturalism) and <strong>Rajasthani / Pahari Schools</strong> (Mewar, <mark class="exam-hl">Kishangarh</mark>, Bundi, Kangra, Basholi).</li>
                   </ul>
                 </div>
               </div>
@@ -1960,15 +2100,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td><strong>Madhubani (Mithila)</strong></td><td>Mithila region, <strong>Bihar</strong></td><td>Traditionally done by women; <strong>no space left empty</strong> (gaps filled with flowers, birds, geometric patterns); 5 styles: <em>Bharni, Katchni, Tantrik, Godna, Kohbar</em>. Famous artist: <strong>Mahasundari Devi</strong>, Sita Devi.</td></tr>
-                    <tr><td><strong>Pattachitra</strong></td><td><strong>Odisha</strong> (Raghurajpur)</td><td>Ancient cloth-scroll painting (<em>Patta</em>) using natural mineral/vegetable dyes; themes of <strong>Lord Jagannath, Balarama, Subhadra, Dashavatara</strong> &amp; Krishna.</td></tr>
-                    <tr><td><strong>Kalamkari</strong></td><td><strong>Andhra Pradesh</strong> (Srikalahasti &amp; Machilipatnam)</td><td>Hand-painted with bamboo pen (<em>kalam</em> in Srikalahasti) or block-printed (Machilipatnam) on cotton using tamarind/indigo/myrobalan dyes.</td></tr>
-                    <tr><td><strong>Pithora</strong></td><td><strong>Gujarat &amp; MP</strong> (Rathva &amp; Bhilala tribes)</td><td>Sacred ritual wall painting invoking Baba Pithora (God of food/prosperity) featuring colourful rows of stylized <strong>horses</strong>.</td></tr>
-                    <tr><td><strong>Kolam</strong></td><td><strong>Tamil Nadu</strong> (South India)</td><td>Auspicious geometric floor art drawn daily at thresholds with rice flour/chalk around dot grids (<em>pulli</em>).</td></tr>
-                    <tr><td><strong>Warli</strong></td><td><strong>Maharashtra</strong> (Warli tribe)</td><td>White rice-paste pigment on red ochre mud walls; strictly geometric (circles = sun/moon, triangles = mountains/trees, squares = sacred enclosure); depicts <em>Tarpa</em> dance; Jivya Soma Mashe.</td></tr>
-                    <tr><td><strong>Kalighat</strong></td><td><strong>Kolkata, West Bengal</strong></td><td>19th-century watercolour scrolls sold around Kalighat Kali temple; bold sweeping contours satirizing Babu society &amp; depicting deities.</td></tr>
-                    <tr><td><strong>Thangka</strong></td><td><strong>Tibetan / Himalayan</strong> (Sikkim, Ladakh, HP, Arunachal)</td><td>Buddhist devotional paintings on cotton or silk depicting Buddha, Mandalas, and the Wheel of Life (<em>Bhavachakra</em>).</td></tr>
-                    <tr><td><strong>Patna Kalam</strong></td><td><strong>Bihar</strong> (18th–19th c.)</td><td>Offshoot of Mughal painting ("Company Painting"); portrays everyday artisans, bazaars, birds &amp; commoners with minimal backgrounds (<em>Kajli Seahi</em> technique).</td></tr>
+                    <tr><td><mark class="exam-hl">Madhubani (Mithila)</mark></td><td>Mithila region, <mark class="exam-hl">Bihar</mark></td><td>Traditionally done by women; <mark class="exam-hl">no space left empty</mark> (gaps filled with flowers, birds, geometric patterns); 5 styles: <em>Bharni, Katchni, Tantrik, Godna, Kohbar</em>. Famous artist: <mark class="exam-hl">Mahasundari Devi</mark>, Sita Devi.</td></tr>
+                    <tr><td><mark class="exam-hl">Pattachitra</mark></td><td><mark class="exam-hl">Odisha</mark> (Raghurajpur)</td><td>Ancient cloth-scroll painting (<em>Patta</em>) using natural mineral/vegetable dyes; themes of <mark class="exam-hl">Lord Jagannath, Balarama, Subhadra, Dashavatara</mark> &amp; Krishna.</td></tr>
+                    <tr><td><mark class="exam-hl">Kalamkari</mark></td><td><mark class="exam-hl">Andhra Pradesh</mark> (<mark class="exam-hl">Srikalahasti &amp; Machilipatnam</mark>)</td><td>Hand-painted with bamboo pen (<em>kalam</em> in Srikalahasti) or block-printed (Machilipatnam) on cotton using tamarind/indigo/myrobalan dyes.</td></tr>
+                    <tr><td><mark class="exam-hl">Pithora</mark></td><td><mark class="exam-hl">Gujarat &amp; MP</mark> (<mark class="exam-hl">Rathva &amp; Bhilala tribes</mark>)</td><td>Sacred ritual wall painting invoking Baba Pithora (God of food/prosperity) featuring colourful rows of stylized <mark class="exam-hl">horses</mark>.</td></tr>
+                    <tr><td><mark class="exam-hl">Kolam</mark></td><td><mark class="exam-hl">Tamil Nadu</mark> (South India)</td><td>Auspicious geometric floor art drawn daily at thresholds with rice flour/chalk around dot grids (<em>pulli</em>).</td></tr>
+                    <tr><td><mark class="exam-hl">Warli</mark></td><td><mark class="exam-hl">Maharashtra (Warli tribe)</mark></td><td><mark class="exam-hl">White rice-paste pigment</mark> on red ochre mud walls; strictly geometric (circles = sun/moon, triangles = mountains/trees, squares = sacred enclosure); depicts <em>Tarpa</em> dance; Jivya Soma Mashe.</td></tr>
+                    <tr><td><mark class="exam-hl">Kalighat</mark></td><td><mark class="exam-hl">Kolkata, West Bengal</mark></td><td>19th-century watercolour scrolls sold around Kalighat Kali temple; bold sweeping contours satirizing Babu society &amp; depicting deities.</td></tr>
+                    <tr><td><mark class="exam-hl">Thangka</mark></td><td><mark class="exam-hl">Tibetan / Himalayan</mark> (Sikkim, Ladakh, HP, Arunachal)</td><td>Buddhist devotional paintings on cotton or silk depicting Buddha, Mandalas, and the Wheel of Life (<mark class="exam-hl"><em>Bhavachakra</em></mark>).</td></tr>
+                    <tr><td><mark class="exam-hl">Patna Kalam</mark></td><td><mark class="exam-hl">Bihar</mark> (18th–19th c.)</td><td>Offshoot of Mughal painting (<mark class="exam-hl">"Company Painting"</mark>); portrays everyday artisans, bazaars, birds &amp; commoners with minimal backgrounds (<mark class="exam-hl"><em>Kajli Seahi</em></mark> technique).</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -1990,15 +2130,47 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td><strong>Raja Ravi Varma</strong></td><td>Travancore (Academic Realism)</td><td><em>Hamsa Damayanti</em>, <em>Shakuntala</em>, <em>Arjuna and Subhadra</em></td></tr>
-                    <tr><td><strong>Nihal Chand</strong></td><td>Kishangarh School (Rajasthani)</td><td><em>Bani Thani</em> ("Indian Monalisa"), <em>Dipavalika</em></td></tr>
-                    <tr><td><strong>Abanindranath Tagore</strong></td><td>Bengal School Founder</td><td><em>Bharat Mata</em>, <em>Ganesh Janani</em>, <em>Asoka's Queen</em></td></tr>
+                    <tr><td><mark class="exam-hl">Raja Ravi Varma</mark></td><td>Travancore (Academic Realism)</td><td><mark class="exam-hl"><em>Hamsa Damayanti</em></mark>, <em>Shakuntala</em>, <em>Arjuna and Subhadra</em></td></tr>
+                    <tr><td><mark class="exam-hl">Nihal Chand</mark></td><td><mark class="exam-hl">Kishangarh School</mark> (Rajasthani)</td><td><mark class="exam-hl"><em>Bani Thani</em> ("Indian Monalisa")</mark>, <em>Dipavalika</em></td></tr>
+                    <tr><td><mark class="exam-hl">Abanindranath Tagore</mark></td><td><mark class="exam-hl">Bengal School Founder</mark></td><td><mark class="exam-hl"><em>Bharat Mata</em></mark>, <em>Ganesh Janani</em>, <em>Asoka's Queen</em></td></tr>
                     <tr><td><strong>Rabindranath Tagore</strong></td><td>Modernist Expressionism</td><td><em>Landscape</em>, <em>Dancing Woman</em>, <em>Woman's Face</em>, <em>Head Study (Geometric)</em></td></tr>
-                    <tr><td><strong>Jamini Roy</strong></td><td>Folk Modernist (Kalighat-inspired)</td><td><em>Mother and Child</em>, <em>Krishna and Balarama</em>, <em>Warrior King</em></td></tr>
+                    <tr><td><mark class="exam-hl">Jamini Roy</mark></td><td>Folk Modernist (Kalighat-inspired)</td><td><mark class="exam-hl"><em>Mother and Child</em></mark>, <em>Krishna and Balarama</em>, <em>Warrior King</em></td></tr>
                     <tr><td><strong>Binod Behari Mukherjee</strong></td><td>Santiniketan School</td><td><em>Villagers</em> (Medieval Saints murals)</td></tr>
-                    <tr><td><strong>Syed Haider Raza (S.H. Raza)</strong></td><td>Progressive Artists' Group</td><td><em>Saurashtra</em> (Bindu motif)</td></tr>
-                    <tr><td><strong>Tyeb Mehta</strong></td><td>Progressive Artists' Group</td><td><em>Mahishasura</em>, <em>Diagonal</em> series</td></tr>
+                    <tr><td><mark class="exam-hl">Syed Haider Raza (S.H. Raza)</mark></td><td>Progressive Artists' Group</td><td><em>Saurashtra</em> (<mark class="exam-hl">Bindu motif</mark>)</td></tr>
+                    <tr><td><mark class="exam-hl">Tyeb Mehta</mark></td><td>Progressive Artists' Group</td><td><mark class="exam-hl"><em>Mahishasura</em></mark>, <em>Diagonal</em> series</td></tr>
                     <tr><td><strong>Arpita Singh</strong></td><td>Contemporary Figurative</td><td><em>Wish Dream</em></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            `
+          },
+          {
+            id: `u5_textiles_crafts`,
+            title: `Traditional Indian Handlooms, Textiles & GI Crafts`,
+            badge: `GI & Embroidery`,
+            summary: `High-frequency SSC handlooms and embroidery traditions: Chikankari, Phulkari, Kantha, Kasuti, Kalamkari, Patola, Pochampally, Bandhani & Muga Silk.`,
+            contentHtml: `
+              <div class="table-scroll">
+                <table class="study-table">
+                  <thead>
+                    <tr>
+                      <th>Textile / Craft</th>
+                      <th>State / GI Hub</th>
+                      <th>Distinctive Technique &amp; Exam Facts</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><mark class="exam-hl">Chikankari</mark></td><td><mark class="exam-hl">Lucknow, Uttar Pradesh</mark></td><td>Delicate white-thread shadow-work embroidery traditionally worked on fine muslin/cotton.</td></tr>
+                    <tr><td><mark class="exam-hl">Phulkari</mark></td><td><mark class="exam-hl">Punjab</mark></td><td>"Flower work" — vibrant geometric floral embroidery using untwisted silk floss (<em>pat</em>) on coarse handspun cotton (<em>khaddar</em>).</td></tr>
+                    <tr><td><mark class="exam-hl">Kantha</mark></td><td><mark class="exam-hl">West Bengal &amp; Bihar</mark></td><td>Running-stitch embroidery on layered recycled saris/dhotis creating rippled motifs; <mark class="exam-hl"><em>Nakshi Kantha</em></mark> is famous in Bengal.</td></tr>
+                    <tr><td><mark class="exam-hl">Kasuti</mark></td><td><mark class="exam-hl">Karnataka</mark> (Dharwad)</td><td>Intricate count-thread geometric embroidery (Gavanti, Murgi, Negi, Menthi stitches) with identical patterns on both sides.</td></tr>
+                    <tr><td><mark class="exam-hl">Patola</mark></td><td><mark class="exam-hl">Patan, Gujarat</mark></td><td>Luxury <mark class="exam-hl">double-ikat</mark> silk saree where both warp and weft threads are resist-dyed before weaving.</td></tr>
+                    <tr><td><mark class="exam-hl">Bandhani / Bandhej</mark></td><td><mark class="exam-hl">Gujarat &amp; Rajasthan</mark></td><td>Ancient tie-and-dye (plucked-knot) resist technique producing dotted patterns on silk/muslin.</td></tr>
+                    <tr><td><mark class="exam-hl">Pochampally Ikat &amp; Gadwal</mark></td><td><mark class="exam-hl">Telangana</mark></td><td>Pochampally features geometric tie-dyed <mark class="exam-hl">Ikat</mark> weave (GI-tagged); Gadwal pairs cotton body with rich silk-zari border.</td></tr>
+                    <tr><td><mark class="exam-hl">Kanjeevaram &amp; Banarasi</mark></td><td><mark class="exam-hl">Tamil Nadu &amp; Varanasi (UP)</mark></td><td><strong>Kanjeevaram:</strong> Heavy mulberry silk with temple borders &amp; <em>Korvai</em> join. <strong>Banarasi:</strong> Mughal-inspired gold/silver <em>zari</em> brocade (<em>Kinkhwab</em>).</td></tr>
+                    <tr><td><mark class="exam-hl">Chanderi &amp; Maheshwari</mark></td><td><mark class="exam-hl">Madhya Pradesh</mark></td><td>Featherweight sheer silk-cotton weaves; Maheshwari is famed for reversible borders (<em>Bugdi</em>) inspired by Narmada/Maheshwar fort.</td></tr>
+                    <tr><td><mark class="exam-hl">Muga Silk</mark></td><td><mark class="exam-hl">Assam</mark></td><td>Rare GI-tagged <mark class="exam-hl">Golden Silk</mark> produced exclusively in Assam by the <mark class="exam-hl"><em>Antheraea assamensis</em></mark> silkworm; lustre deepens with washing.</td></tr>
+                    <tr><td><mark class="exam-hl">Pashmina &amp; Kani Shawl</mark></td><td><mark class="exam-hl">Jammu &amp; Kashmir</mark></td><td>Ultra-fine cashmere wool from Ladakhi <mark class="exam-hl">Changthangi goat</mark>; Kani shawls use small wooden bobbins (<em>kanis</em>) instead of embroidery.</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -2030,19 +2202,19 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td><strong>Kalaripayattu</strong></td><td><strong>Kerala</strong></td><td>Oldest surviving Indian martial art; practised in a sunken mud arena (<em>Kalari</em>); stages: <em>Meipayattu</em> (body control), <em>Kolthari</em> (wooden weapons), <em>Ankathari</em> (metal weapons like <em>Urumi</em> flexible sword), <em>Verumkai</em> (bare-hand).</td></tr>
-                    <tr><td><strong>Silambam</strong></td><td><strong>Tamil Nadu</strong></td><td>Ancient bamboo-staff fencing; referenced in Sangam text <em>Silappadikaram</em>; emphasizes footwork and whirlwind staff strikes.</td></tr>
-                    <tr><td><strong>Thoda</strong></td><td><strong>Himachal Pradesh</strong></td><td>Martial archery game played during <strong>Baisakhi</strong>; teams (<em>Pashi</em> &amp; <em>Saathi</em>) shoot wooden bows with blunt arrows below the knee.</td></tr>
-                    <tr><td><strong>Thang-ta &amp; Sarit Sarak</strong></td><td><strong>Manipur</strong></td><td>Part of <em>Huyen Langlon</em>: <strong>Thang</strong> (sword) and <strong>Ta</strong> (spear) armed combat; <strong>Sarit Sarak</strong> is the unarmed hand-to-hand counterpart.</td></tr>
-                    <tr><td><strong>Cheibi Gadga</strong></td><td><strong>Manipur</strong></td><td>Ancient Manipuri sword-and-shield art now played with a leather-encased stick (<em>Cheibi</em>) and leather shield inside a 7 m circle.</td></tr>
-                    <tr><td><strong>Gatka</strong></td><td><strong>Punjab</strong></td><td>Sikh martial tradition popularized by Guru Hargobind Sahib; uses wooden sticks (<em>Soti</em>) and small shield (<em>Farri</em>) as training analogues for swords.</td></tr>
+                    <tr><td><mark class="exam-hl">Kalaripayattu</mark></td><td><mark class="exam-hl">Kerala</mark></td><td>Oldest surviving Indian martial art; practised in a sunken mud arena (<em>Kalari</em>); stages: <em>Meipayattu</em> (body control), <em>Kolthari</em> (wooden weapons), <em>Ankathari</em> (metal weapons like <mark class="exam-hl"><em>Urumi</em></mark> flexible sword), <em>Verumkai</em> (bare-hand).</td></tr>
+                    <tr><td><mark class="exam-hl">Silambam</mark></td><td><mark class="exam-hl">Tamil Nadu</mark></td><td>Ancient bamboo-staff fencing; referenced in Sangam text <mark class="exam-hl"><em>Silappadikaram</em></mark>; emphasizes footwork and whirlwind staff strikes.</td></tr>
+                    <tr><td><mark class="exam-hl">Thoda</mark></td><td><mark class="exam-hl">Himachal Pradesh</mark></td><td>Martial archery game played during <strong>Baisakhi</strong>; teams (<em>Pashi</em> &amp; <em>Saathi</em>) shoot wooden bows with blunt arrows below the knee.</td></tr>
+                    <tr><td><mark class="exam-hl">Thang-ta &amp; Sarit Sarak</mark></td><td><mark class="exam-hl">Manipur</mark></td><td>Part of <em>Huyen Langlon</em>: <strong>Thang</strong> (sword) and <strong>Ta</strong> (spear) armed combat; <strong>Sarit Sarak</strong> is the unarmed hand-to-hand counterpart.</td></tr>
+                    <tr><td><mark class="exam-hl">Cheibi Gadga</mark></td><td><mark class="exam-hl">Manipur</mark></td><td>Ancient Manipuri sword-and-shield art now played with a leather-encased stick (<em>Cheibi</em>) and leather shield inside a 7 m circle.</td></tr>
+                    <tr><td><mark class="exam-hl">Gatka</mark></td><td><mark class="exam-hl">Punjab</mark></td><td>Sikh martial tradition popularized by <mark class="exam-hl">Guru Hargobind Sahib</mark>; uses wooden sticks (<em>Soti</em>) and small shield (<em>Farri</em>) as training analogues for swords.</td></tr>
                     <tr><td><strong>Lathi</strong></td><td><strong>Punjab &amp; Bengal</strong></td><td>Traditional bamboo/wood stick-fighting martial art practised by rural <em>Lathials</em>.</td></tr>
-                    <tr><td><strong>Musti Yuddha</strong></td><td><strong>Varanasi (Uttar Pradesh)</strong></td><td>Ancient unarmed kick-and-punch boxing; classified into 4 styles (<em>Jambuvanti, Hanumanti, Bhimaseni, Jarasandhi</em>).</td></tr>
-                    <tr><td><strong>Pari-Khanda</strong></td><td><strong>Bihar</strong></td><td>Created by Rajputs; <em>Pari</em> (shield) &amp; <em>Khanda</em> (sword); its stylized steps and postures form the choreographic foundation of <strong>Chhau dance</strong>.</td></tr>
+                    <tr><td><mark class="exam-hl">Musti Yuddha</mark></td><td><mark class="exam-hl">Varanasi (Uttar Pradesh)</mark></td><td>Ancient unarmed kick-and-punch boxing; classified into 4 styles (<em>Jambuvanti, Hanumanti, Bhimaseni, Jarasandhi</em>).</td></tr>
+                    <tr><td><mark class="exam-hl">Pari-Khanda</mark></td><td><mark class="exam-hl">Bihar</mark></td><td>Created by Rajputs; <em>Pari</em> (shield) &amp; <em>Khanda</em> (sword); its stylized steps and postures form the choreographic foundation of <mark class="exam-hl">Chhau dance</mark>.</td></tr>
                     <tr><td><strong>Kathi Samu &amp; Karra Samu</strong></td><td><strong>Andhra Pradesh</strong></td><td>Sword-fighting (<em>Kathi</em>) and stick-fighting (<em>Karra</em>) martial arts patronized by coastal Andhra royal armies.</td></tr>
                     <tr><td><strong>Mukna</strong></td><td><strong>Manipur</strong></td><td>Folk wrestling where combatants grip each other's waistbands (<em>Ningri</em>) and try to pin the opponent's back to the ground.</td></tr>
-                    <tr><td><strong>Inbuan Wrestling</strong></td><td><strong>Mizoram</strong></td><td>Strict-rule wrestling inside a 15-ft circle: lifting the opponent off their feet wins; stepping out, kicking, or bending knees is barred.</td></tr>
-                    <tr><td><strong>Mardani Khel</strong></td><td><strong>Kolhapur, Maharashtra</strong></td><td>Maratha weapon-based martial art utilizing the double-edged gauntlet sword (<em>Dandpatta</em>) and corded lance (<em>Vita</em>).</td></tr>
+                    <tr><td><mark class="exam-hl">Inbuan Wrestling</mark></td><td><mark class="exam-hl">Mizoram</mark></td><td>Strict-rule wrestling inside a 15-ft circle: lifting the opponent off their feet wins; stepping out, kicking, or bending knees is barred.</td></tr>
+                    <tr><td><mark class="exam-hl">Mardani Khel</mark></td><td><mark class="exam-hl">Kolhapur, Maharashtra</mark></td><td>Maratha weapon-based martial art utilizing the double-edged gauntlet sword (<mark class="exam-hl"><em>Dandpatta</em></mark>) and corded lance (<em>Vita</em>).</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -2075,10 +2247,10 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td><strong>Saka Calendar</strong><br>(Indian National Calendar)</td><td><strong>78 CE</strong> (Kushana King Kanishka / Satavahana era)</td><td>Solar-lunisolar framework; starts with <strong>Chaitra</strong></td><td>Adopted as India's official civil calendar on <strong>22 March 1957</strong> (1 Chaitra 1879 Saka); 365 days; 1 Chaitra falls on <strong>22 March</strong> (21 March in leap years).</td></tr>
-                    <tr><td><strong>Vikram Samvat</strong></td><td><strong>57 BCE</strong> (King Vikramaditya of Ujjain)</td><td>Lunisolar; starts with <strong>Chaitra Shukla Pratipada</strong></td><td>Runs <strong>56.7 years ahead</strong> of the Gregorian calendar; adds an extra intercalary month (<em>Adhik Maas</em>) every ~3 years to stay synchronized with seasons.</td></tr>
-                    <tr><td><strong>Hijri Calendar</strong></td><td><strong>622 CE</strong> (<em>Hijra</em> — migration from Mecca to Medina)</td><td>Purely Lunar (354/355 days); starts with <strong>Muharram</strong></td><td>12 lunar months; because it has ~11 fewer days than the solar year, Islamic festivals rotate backwards across Gregorian seasons.</td></tr>
-                    <tr><td><strong>Gregorian Calendar</strong></td><td><strong>1582 CE</strong> (Pope Gregory XIII)</td><td>Solar (365.2425 days); starts with <strong>January</strong></td><td>International civil standard; leap day added every 4 years (except century years not divisible by 400).</td></tr>
+                    <tr><td><mark class="exam-hl">Saka Calendar</mark><br>(Indian National Calendar)</td><td><mark class="exam-hl">78 CE</mark> (Kushana King Kanishka / Satavahana era)</td><td>Solar-lunisolar framework; starts with <mark class="exam-hl">Chaitra</mark></td><td>Adopted as India's official civil calendar on <mark class="exam-hl">22 March 1957</mark> (1 Chaitra 1879 Saka); 365 days; 1 Chaitra falls on <mark class="exam-hl">22 March</mark> (21 March in leap years).</td></tr>
+                    <tr><td><mark class="exam-hl">Vikram Samvat</mark></td><td><mark class="exam-hl">57 BCE</mark> (King Vikramaditya of Ujjain)</td><td>Lunisolar; starts with <strong>Chaitra Shukla Pratipada</strong></td><td>Runs <mark class="exam-hl">56.7 years ahead</mark> of the Gregorian calendar; adds an extra intercalary month (<mark class="exam-hl"><em>Adhik Maas</em></mark>) every ~3 years to stay synchronized with seasons.</td></tr>
+                    <tr><td><mark class="exam-hl">Hijri Calendar</mark></td><td><mark class="exam-hl">622 CE</mark> (<em>Hijra</em> — migration from Mecca to Medina)</td><td>Purely Lunar (354/355 days); starts with <mark class="exam-hl">Muharram</mark></td><td>12 lunar months; because it has ~11 fewer days than the solar year, Islamic festivals rotate backwards across Gregorian seasons.</td></tr>
+                    <tr><td><strong>Gregorian Calendar</strong></td><td><mark class="exam-hl">1582 CE</mark> (Pope Gregory XIII)</td><td>Solar (365.2425 days); starts with <strong>January</strong></td><td>International civil standard; leap day added every 4 years (except century years not divisible by 400).</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -2100,19 +2272,19 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td><strong>Ugadi</strong></td><td>Andhra Pradesh, Telangana, Karnataka</td><td>Chaitra Shukla Pratipada (Mar–Apr); tasting <em>Ugadi Pachadi / Bevu-Bella</em> (six tastes including neem &amp; jaggery symbolizing life's joys and sorrows).</td></tr>
-                    <tr><td><strong>Gudi Padwa</strong></td><td>Maharashtra &amp; Goa</td><td>Chaitra Shukla Pratipada; hoisting a silk-draped bamboo pole (<em>Gudi</em>) topped with an inverted copper pot, mango &amp; neem leaves.</td></tr>
-                    <tr><td><strong>Navreh</strong></td><td>Kashmir</td><td>Chaitra Shukla Pratipada; Kashmiri Hindu New Year viewing a <em>Thali</em> filled with unhusked rice, bread, silver coin, walnut, and almanac.</td></tr>
-                    <tr><td><strong>Baisakhi (Vaisakhi)</strong></td><td>Punjab &amp; Haryana</td><td>Mid-April (13/14 Apr, <em>Mesha Sankranti</em>); spring harvest festival &amp; anniversary of Guru Gobind Singh founding the <strong>Khalsa Panth (1699)</strong>.</td></tr>
-                    <tr><td><strong>Puthandu</strong></td><td>Tamil Nadu</td><td>1st of Tamil month <em>Chithirai</em> (Apr 14); morning viewing of <em>Kanni</em> auspicious tray &amp; preparing sweet-sour-bitter <em>Mangai Pachadi</em>.</td></tr>
-                    <tr><td><strong>Vishu</strong></td><td>Kerala</td><td>1st of <em>Medam</em> (Apr 14/15); waking to <strong>Vishukkani</strong> (auspicious arrangement of golden <em>kanikonna</em> flowers, mirror, rice, Krishna idol) &amp; <em>Vishukkaineettam</em> gifts.</td></tr>
-                    <tr><td><strong>Bohag Bihu (Rongali)</strong></td><td>Assam</td><td>Mid-April (7-day celebration: <em>Goru Bihu</em> for cattle, <em>Manuh Bihu</em> for humans); Bihu songs, dances, and gifting <em>Gamosa</em>.</td></tr>
-                    <tr><td><strong>Pohela Boishakh</strong></td><td>West Bengal &amp; Tripura</td><td>1st of <em>Boishakh</em> (Apr 14/15); traders open new red account books (<strong>Haal Khata</strong>) and processions (<em>Mongol Shobhajatra</em>).</td></tr>
-                    <tr><td><strong>Pana Sankranti</strong></td><td>Odisha</td><td>Maha Vishuva Sankranti (mid-April); preparing sweet spiced <strong>Pana</strong> drink and hanging a dripping earthen pot (<em>Basundhara Theki</em>) over Tulsi plants.</td></tr>
-                    <tr><td><strong>Jude Sheetal (Jur Sital)</strong></td><td>Mithila (Bihar) &amp; Terai</td><td>Mid-April Maithil New Year; elders bless juniors by sprinkling cool water on their heads; cleaning wells and eating stale/cooled food (<em>Basi Bhaat</em>).</td></tr>
-                    <tr><td><strong>Bestu Varas</strong></td><td>Gujarat</td><td><em>Kartik Shukla Pratipada</em> (the day immediately after Diwali); merchants perform <strong>Chopda Pujan</strong> (worshipping new ledgers).</td></tr>
-                    <tr><td><strong>Losoong (Namsoong)</strong></td><td>Sikkim (Bhutia &amp; Lepcha)</td><td>December (10th Tibetan month) post-harvest New Year; monastic <strong>Chaam</strong> mask dances at Rumtek and Phodong monasteries.</td></tr>
-                    <tr><td><strong>Losar</strong></td><td>Ladakh, Arunachal (Monpa), Sikkim, HP</td><td>Tibetan Buddhist New Year (Feb–Mar; Dec in Ladakh); <em>Metho</em> torchlight parades to drive away evil spirits &amp; monastery dances.</td></tr>
+                    <tr><td><mark class="exam-hl">Ugadi</mark></td><td><mark class="exam-hl">Andhra Pradesh, Telangana, Karnataka</mark></td><td>Chaitra Shukla Pratipada (Mar–Apr); tasting <em>Ugadi Pachadi / Bevu-Bella</em> (six tastes including neem &amp; jaggery symbolizing life's joys and sorrows).</td></tr>
+                    <tr><td><mark class="exam-hl">Gudi Padwa</mark></td><td><mark class="exam-hl">Maharashtra &amp; Goa</mark></td><td>Chaitra Shukla Pratipada; hoisting a silk-draped bamboo pole (<em>Gudi</em>) topped with an inverted copper pot, mango &amp; neem leaves.</td></tr>
+                    <tr><td><mark class="exam-hl">Navreh</mark></td><td><mark class="exam-hl">Kashmir</mark></td><td>Chaitra Shukla Pratipada; Kashmiri Hindu New Year viewing a <em>Thali</em> filled with unhusked rice, bread, silver coin, walnut, and almanac.</td></tr>
+                    <tr><td><mark class="exam-hl">Baisakhi (Vaisakhi)</mark></td><td><mark class="exam-hl">Punjab &amp; Haryana</mark></td><td>Mid-April (13/14 Apr, <em>Mesha Sankranti</em>); spring harvest festival &amp; anniversary of Guru Gobind Singh founding the <mark class="exam-hl">Khalsa Panth (1699)</mark>.</td></tr>
+                    <tr><td><mark class="exam-hl">Puthandu</mark></td><td><mark class="exam-hl">Tamil Nadu</mark></td><td>1st of Tamil month <em>Chithirai</em> (Apr 14); morning viewing of <em>Kanni</em> auspicious tray &amp; preparing sweet-sour-bitter <em>Mangai Pachadi</em>.</td></tr>
+                    <tr><td><mark class="exam-hl">Vishu</mark></td><td><mark class="exam-hl">Kerala</mark></td><td>1st of <em>Medam</em> (Apr 14/15); waking to <mark class="exam-hl">Vishukkani</mark> (auspicious arrangement of golden <em>kanikonna</em> flowers, mirror, rice, Krishna idol) &amp; <em>Vishukkaineettam</em> gifts.</td></tr>
+                    <tr><td><mark class="exam-hl">Bohag Bihu (Rongali)</mark></td><td><mark class="exam-hl">Assam</mark></td><td>Mid-April (7-day celebration: <em>Goru Bihu</em> for cattle, <em>Manuh Bihu</em> for humans); Bihu songs, dances, and gifting <em>Gamosa</em>.</td></tr>
+                    <tr><td><mark class="exam-hl">Pohela Boishakh</mark></td><td><mark class="exam-hl">West Bengal &amp; Tripura</mark></td><td>1st of <em>Boishakh</em> (Apr 14/15); traders open new red account books (<mark class="exam-hl">Haal Khata</mark>) and processions (<em>Mongol Shobhajatra</em>).</td></tr>
+                    <tr><td><mark class="exam-hl">Pana Sankranti</mark></td><td><mark class="exam-hl">Odisha</mark></td><td>Maha Vishuva Sankranti (mid-April); preparing sweet spiced <strong>Pana</strong> drink and hanging a dripping earthen pot (<em>Basundhara Theki</em>) over Tulsi plants.</td></tr>
+                    <tr><td><mark class="exam-hl">Jude Sheetal (Jur Sital)</mark></td><td><mark class="exam-hl">Mithila (Bihar)</mark> &amp; Terai</td><td>Mid-April Maithil New Year; elders bless juniors by sprinkling cool water on their heads; cleaning wells and eating stale/cooled food (<em>Basi Bhaat</em>).</td></tr>
+                    <tr><td><mark class="exam-hl">Bestu Varas</mark></td><td><mark class="exam-hl">Gujarat</mark></td><td><em>Kartik Shukla Pratipada</em> (the day immediately after Diwali); merchants perform <mark class="exam-hl">Chopda Pujan</mark> (worshipping new ledgers).</td></tr>
+                    <tr><td><mark class="exam-hl">Losoong (Namsoong)</mark></td><td><mark class="exam-hl">Sikkim</mark> (Bhutia &amp; Lepcha)</td><td>December (10th Tibetan month) post-harvest New Year; monastic <strong>Chaam</strong> mask dances at Rumtek and Phodong monasteries.</td></tr>
+                    <tr><td><mark class="exam-hl">Losar</mark></td><td><mark class="exam-hl">Ladakh, Arunachal (Monpa), Sikkim, HP</mark></td><td>Tibetan Buddhist New Year (Feb–Mar; Dec in Ladakh); <em>Metho</em> torchlight parades to drive away evil spirits &amp; monastery dances.</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -2137,27 +2309,47 @@
               <div class="note-grid">
                 <div class="note-card">
                   <h4>Hornbill Festival (Nagaland)</h4>
-                  <p>Dubbed the <strong>"Festival of Festivals"</strong>; held annually Dec 1–10 at <strong>Kisama Heritage Village</strong> near Kohima to showcase the culture, crafts, and war dances of all Naga tribes.</p>
+                  <p>Dubbed the <mark class="exam-hl">"Festival of Festivals"</mark>; held annually Dec 1–10 at <mark class="exam-hl">Kisama Heritage Village</mark> near Kohima to showcase the culture, crafts, and war dances of all Naga tribes.</p>
                 </div>
                 <div class="note-card">
                   <h4>Sangai Festival (Manipur)</h4>
-                  <p>Annual cultural extravaganza in November named after the state animal, the endangered <strong>Sangai</strong> (brow-antlered deer) found exclusively in Keibul Lamjao National Park (Loktak Lake).</p>
+                  <p>Annual cultural extravaganza in November named after the state animal, the endangered <mark class="exam-hl">Sangai</mark> (brow-antlered deer) found exclusively in <mark class="exam-hl">Keibul Lamjao National Park</mark> (Loktak Lake).</p>
                 </div>
                 <div class="note-card">
                   <h4>Chapchar Kut (Mizoram)</h4>
-                  <p>Mizoram's grandest spring festival held in March after completing the labour-intensive clearing of forests for <em>Jhum</em> (shifting) cultivation; highlights <strong>Cheraw</strong> bamboo dance.</p>
+                  <p>Mizoram's grandest spring festival held in March after completing the labour-intensive clearing of forests for <mark class="exam-hl"><em>Jhum</em> (shifting) cultivation</mark>; highlights <mark class="exam-hl">Cheraw</mark> bamboo dance.</p>
                 </div>
                 <div class="note-card">
                   <h4>Kumbh Mela (4 Sacred Sites)</h4>
-                  <p>World's largest peaceful gathering held on a 12-year cycle (Ardh Kumbh every 6 years) rotating across <strong>Prayagraj</strong> (Triveni Sangam), <strong>Haridwar</strong> (Ganga), <strong>Ujjain</strong> (Shipra), and <strong>Nashik</strong> (Godavari). Inscribed in UNESCO ICH (2017).</p>
+                  <p>World's largest peaceful gathering held on a 12-year cycle (Ardh Kumbh every 6 years) rotating across <mark class="exam-hl">Prayagraj</mark> (Triveni Sangam), <mark class="exam-hl">Haridwar</mark> (Ganga), <mark class="exam-hl">Ujjain</mark> (Shipra), and <mark class="exam-hl">Nashik</mark> (Godavari). Inscribed in UNESCO ICH (2017).</p>
                 </div>
                 <div class="note-card">
                   <h4>Jonbeel Mela (Morigaon, Assam)</h4>
-                  <p>Unique 3-day fair held after Magh Bihu where the traditional <strong>barter system</strong> is still alive—hill tribes (Tiwa, Karbi, Khasi, Jaintia) exchange ginger, turmeric, and herbs for plains rice and dry fish.</p>
+                  <p>Unique 3-day fair held after Magh Bihu where the traditional <mark class="exam-hl">barter system</mark> is still alive—hill tribes (Tiwa, Karbi, Khasi, Jaintia) exchange ginger, turmeric, and herbs for plains rice and dry fish.</p>
                 </div>
                 <div class="note-card">
                   <h4>Aadi Perukku (Tamil Nadu)</h4>
-                  <p>Monsoon thanksgiving festival observed on the 18th day of Tamil month <em>Aadi</em> (July–Aug) along riverbanks to honour the swollen, life-giving <strong>Cauvery River</strong>.</p>
+                  <p>Monsoon thanksgiving festival observed on the 18th day of Tamil month <em>Aadi</em> (July–Aug) along riverbanks to honour the swollen, life-giving <mark class="exam-hl">Cauvery River</mark>.</p>
+                </div>
+                <div class="note-card">
+                  <h4>Ambubachi Mela (Guwahati, Assam)</h4>
+                  <p>Annual June fertility festival held at the <mark class="exam-hl">Kamakhya Temple</mark> atop Nilachal Hill, marking the annual menstrual cycle of Goddess Kamakhya (<mark class="exam-hl">"Mahakumbh of the East"</mark>).</p>
+                </div>
+                <div class="note-card">
+                  <h4>Medaram Jathara (Telangana)</h4>
+                  <p>Biennial <mark class="exam-hl">Sammakka Saralamma Jathara</mark> in Mulugu district celebrated by the <mark class="exam-hl">Koya tribe</mark>; <mark class="exam-hl">Asia's largest tribal religious gathering</mark>.</p>
+                </div>
+                <div class="note-card">
+                  <h4>Nuakhai &amp; Dhanu Jatra (Odisha)</h4>
+                  <p><mark class="exam-hl">Nuakhai</mark>: Western Odisha's agrarian harvest festival welcoming the first rice of the season.<br><mark class="exam-hl">Dhanu Jatra (Bargarh)</mark>: World's largest open-air theatre enacting Krishna and Kansa's tale.</p>
+                </div>
+                <div class="note-card">
+                  <h4>Hemis &amp; Thrissur Pooram</h4>
+                  <p><mark class="exam-hl">Hemis Festival (Ladakh)</mark>: 2-day Tibetan Buddhist festival at Hemis Monastery honouring Guru Padmasambhava with <em>Cham</em> mask dances.<br><mark class="exam-hl">Thrissur Pooram (Kerala)</mark>: Spectacular temple festival at Vadakkunnathan Temple featuring caparisoned elephants &amp; <mark class="exam-hl"><em>Kudamattam</em></mark>.</p>
+                </div>
+                <div class="note-card">
+                  <h4>Pushkar, Baneshwar &amp; Khajuraho</h4>
+                  <p><mark class="exam-hl">Pushkar &amp; Baneshwar Mela (Rajasthan)</mark>: Pushkar is famed for its camel fair on Kartik Purnima; Baneshwar (Dungarpur) is the <mark class="exam-hl">"Kumbh of Tribals"</mark> (Bhils).<br><mark class="exam-hl">Khajuraho Dance Festival (MP)</mark>: Annual February classical dance showcase against the Chandela temples.</p>
                 </div>
               </div>
             `
@@ -2178,11 +2370,11 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td><strong>Garba of Gujarat</strong></td><td>Intangible Cultural Heritage (<strong>Dec 2023</strong>)</td><td>15th Indian element on UNESCO's Representative List of ICH; ritual devotional dance celebrating feminine divinity (<em>Shakti</em>) during Navratri.</td></tr>
-                    <tr><td><strong>Sacred Ensembles of the Hoysalas</strong></td><td>World Heritage Site #42 (<strong>Sept 2023</strong>)</td><td>12th–13th c. temples at <strong>Belur</strong> (Chennakesava), <strong>Halebidu</strong> (Hoysaleswara), and <strong>Somanathapura</strong> (Keshava), Karnataka; famed for stellate soapstone carving.</td></tr>
-                    <tr><td><strong>Santiniketan</strong></td><td>World Heritage Site #41 (<strong>Sept 2023</strong>)</td><td>Birbhum, West Bengal; founded by Maharshi Devendranath Tagore &amp; transformed into <strong>Visva-Bharati</strong> university town by <strong>Rabindranath Tagore</strong> based on pan-Asian open-air gurukul ideals.</td></tr>
-                    <tr><td><strong>Moidams (Ahom Mound-Burials)</strong></td><td>World Heritage Site #43 (<strong>July 2024</strong>)</td><td>Charaideo, Assam; 600-year royal earthen vaulted mound-burial system of the Tai-Ahom dynasty.</td></tr>
-                    <tr><td><strong>Prior Key ICH Elements</strong></td><td>UNESCO ICH (2008–2021)</td><td><strong>Durga Puja in Kolkata (2021)</strong>, <strong>Kumbh Mela (2017)</strong>, Yoga (2016), Sankirtana (2013), Buddhist Chanting of Ladakh (2012), Chhau, Kalbeliya &amp; Mudiyettu (2010), Ramman (2009), Kutiyattam, Ramlila &amp; Vedic Chanting (2008).</td></tr>
+                    <tr><td><mark class="exam-hl">Garba of Gujarat</mark></td><td>Intangible Cultural Heritage (<mark class="exam-hl">Dec 2023</mark>)</td><td><mark class="exam-hl">15th Indian element</mark> on UNESCO's Representative List of ICH; ritual devotional dance celebrating feminine divinity (<em>Shakti</em>) during Navratri.</td></tr>
+                    <tr><td><mark class="exam-hl">Sacred Ensembles of the Hoysalas</mark></td><td><mark class="exam-hl">World Heritage Site #42 (Sept 2023)</mark></td><td>12th–13th c. temples at <mark class="exam-hl">Belur</mark> (Chennakesava), <mark class="exam-hl">Halebidu</mark> (Hoysaleswara), and <mark class="exam-hl">Somanathapura</mark> (Keshava), Karnataka; famed for stellate soapstone carving.</td></tr>
+                    <tr><td><mark class="exam-hl">Santiniketan</mark></td><td><mark class="exam-hl">World Heritage Site #41 (Sept 2023)</mark></td><td>Birbhum, West Bengal; founded by Maharshi Devendranath Tagore &amp; transformed into <strong>Visva-Bharati</strong> university town by <mark class="exam-hl">Rabindranath Tagore</mark> based on pan-Asian open-air gurukul ideals.</td></tr>
+                    <tr><td><mark class="exam-hl">Moidams (Ahom Mound-Burials)</mark></td><td><mark class="exam-hl">World Heritage Site #43 (July 2024)</mark></td><td>Charaideo, Assam; 600-year royal earthen vaulted mound-burial system of the <mark class="exam-hl">Tai-Ahom dynasty</mark>.</td></tr>
+                    <tr><td><strong>Prior Key ICH Elements</strong></td><td>UNESCO ICH (2008–2021)</td><td><mark class="exam-hl">Durga Puja in Kolkata (2021)</mark>, <mark class="exam-hl">Kumbh Mela (2017)</mark>, Yoga (2016), Sankirtana (2013), Buddhist Chanting of Ladakh (2012), Chhau, Kalbeliya &amp; Mudiyettu (2010), Ramman (2009), Kutiyattam, Ramlila &amp; Vedic Chanting (2008).</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -2207,16 +2399,16 @@
               <div class="callout-box">
                 <span class="callout-title">Expansion Timeline: 14 → 22 Scheduled Languages (Articles 344(1) &amp; 351)</span>
                 <ul class="note-list">
-                  <li><strong>Original (1950):</strong> <strong>14 Languages</strong> included at commencement of the Constitution.</li>
-                  <li><strong>21st Amendment Act, 1967:</strong> Added <strong>Sindhi</strong> (15th language).</li>
-                  <li><strong>71st Amendment Act, 1992:</strong> Added <strong>Konkani, Manipuri, Nepali</strong> (16th–18th; mnemonic: <em>KMN</em>).</li>
-                  <li><strong>92nd Amendment Act, 2003 (effective 2004):</strong> Added <strong>Bodo, Dogri, Maithili, Santhali</strong> (19th–22nd; mnemonic: <em>BDMS</em>).</li>
-                  <li><strong>96th Amendment Act, 2011:</strong> Changed the spelling of "Oriya" to <strong>"Odia"</strong>.</li>
+                  <li><strong>Original (1950):</strong> <mark class="exam-hl">14 Languages</mark> included at commencement of the Constitution.</li>
+                  <li><mark class="exam-hl">21st Amendment Act, 1967</mark>: Added <mark class="exam-hl">Sindhi</mark> (15th language).</li>
+                  <li><mark class="exam-hl">71st Amendment Act, 1992</mark>: Added <mark class="exam-hl">Konkani, Manipuri, Nepali</mark> (16th–18th; mnemonic: <em>KMN</em>).</li>
+                  <li><mark class="exam-hl">92nd Amendment Act, 2003</mark> (effective 2004): Added <mark class="exam-hl">Bodo, Dogri, Maithili, Santhali</mark> (19th–22nd; mnemonic: <em>BDMS</em>).</li>
+                  <li><mark class="exam-hl">96th Amendment Act, 2011</mark>: Changed the spelling of "Oriya" to <mark class="exam-hl">"Odia"</mark>.</li>
                 </ul>
               </div>
               <div class="note-card">
                 <h4>All 22 Scheduled Languages (Alphabetical)</h4>
-                <p>Assamese, Bengali, Bodo, Dogri, Gujarati, Hindi, Kannada, Kashmiri, Konkani, Maithili, Malayalam, Manipuri (Meitei), Marathi, Nepali, Odia, Punjabi, Sanskrit, Santhali, Sindhi, Tamil, Telugu, Urdu. <strong>Exam Trap:</strong> <em>English</em> and <em>Rajasthani</em> are <strong>NOT</strong> in the 8th Schedule (though Sahitya Akademi recognizes both).</p>
+                <p>Assamese, Bengali, Bodo, Dogri, Gujarati, Hindi, Kannada, Kashmiri, Konkani, Maithili, Malayalam, Manipuri (Meitei), Marathi, Nepali, Odia, Punjabi, Sanskrit, Santhali, Sindhi, Tamil, Telugu, Urdu. <strong>Exam Trap:</strong> <mark class="exam-hl"><em>English</em> and <em>Rajasthani</em> are NOT in the 8th Schedule</mark> (though Sahitya Akademi recognizes both).</p>
               </div>
             `
           },
@@ -2230,18 +2422,18 @@
                 <div class="note-card">
                   <h4>Classical Languages of India (11)</h4>
                   <ul class="note-list">
-                    <li><strong>Original 6:</strong> <strong>Tamil</strong> (2004 — first), <strong>Sanskrit</strong> (2005), <strong>Kannada</strong> (2008), <strong>Telugu</strong> (2008), <strong>Malayalam</strong> (2013), <strong>Odia</strong> (2014).</li>
-                    <li><strong>October 2024 Additions (+5):</strong> <strong>Marathi, Pali, Prakrit, Assamese, Bengali</strong> — bringing the total to <strong>11 Classical Languages</strong>.</li>
-                    <li><strong>Core Criteria:</strong> High antiquity of early texts (1,500–2,000 years), valuable ancient literature heritage, original literary tradition not borrowed from another speech community.</li>
+                    <li><strong>Original 6:</strong> <mark class="exam-hl">Tamil (2004 — first)</mark>, <mark class="exam-hl">Sanskrit (2005)</mark>, <mark class="exam-hl">Kannada (2008)</mark>, <mark class="exam-hl">Telugu (2008)</mark>, <mark class="exam-hl">Malayalam (2013)</mark>, <mark class="exam-hl">Odia (2014)</mark>.</li>
+                    <li><mark class="exam-hl">October 2024 Additions (+5)</mark>: <mark class="exam-hl">Marathi, Pali, Prakrit, Assamese, Bengali</mark> — bringing the total to <mark class="exam-hl">11 Classical Languages</mark>.</li>
+                    <li><strong>Core Criteria:</strong> High antiquity of early texts (<mark class="exam-hl">1,500–2,000 years</mark>), valuable ancient literature heritage, original literary tradition not borrowed from another speech community.</li>
                   </ul>
                 </div>
                 <div class="note-card">
                   <h4>4 Major Language Families &amp; Scripts</h4>
                   <ul class="note-list">
-                    <li><strong>Indo-Aryan (~74%):</strong> Hindi, Bengali, Marathi, Gujarati, Punjabi, Assamese, Odia, Kashmiri, Urdu, Sanskrit.</li>
-                    <li><strong>Dravidian (~24%):</strong> Tamil, Telugu, Kannada, Malayalam, Tulu, Gondi, Brahui.</li>
-                    <li><strong>Austro-Asiatic (Munda &amp; Mon-Khmer):</strong> Santhali (Ol Chiki script), Khasi, Mundari, Ho.</li>
-                    <li><strong>Sino-Tibetan / Tibeto-Burman:</strong> Manipuri (Meitei Mayek), Bodo, Mizo, Naga &amp; Himalayan languages.</li>
+                    <li><mark class="exam-hl">Indo-Aryan (~74%)</mark>: Hindi, Bengali, Marathi, Gujarati, Punjabi, Assamese, Odia, Kashmiri, Urdu, Sanskrit.</li>
+                    <li><mark class="exam-hl">Dravidian (~24%)</mark>: Tamil, Telugu, Kannada, Malayalam, Tulu, Gondi, Brahui.</li>
+                    <li><strong>Austro-Asiatic (Munda &amp; Mon-Khmer):</strong> Santhali (<mark class="exam-hl">Ol Chiki script</mark>), Khasi, Mundari, Ho.</li>
+                    <li><strong>Sino-Tibetan / Tibeto-Burman:</strong> Manipuri (<mark class="exam-hl">Meitei Mayek</mark>), Bodo, Mizo, Naga &amp; Himalayan languages.</li>
                   </ul>
                 </div>
               </div>
@@ -2273,11 +2465,11 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td><strong>Archaeological Survey of India (ASI)</strong></td><td><strong>1861</strong><br>New Delhi</td><td>Founded by <strong>Alexander Cunningham</strong> (1st Director-General, "Father of Indian Archaeology"). Conserves monuments of national importance under <em>AMASR Act 1958</em>.</td></tr>
-                    <tr><td><strong>Anthropological Survey of India (AnSI)</strong></td><td><strong>1945</strong><br>Kolkata (shifted from Varanasi 1948)</td><td>First Director: <strong>Dr. B.S. Guha</strong>. Conducts bio-cultural research on Indian populations; famed for the monumental <em>People of India</em> survey.</td></tr>
-                    <tr><td><strong>Sangeet Natak Akademi</strong></td><td><strong>1952 / Jan 1953</strong><br>New Delhi</td><td>First Chairman: P.V. Rajamannar. National Academy for Music, Dance &amp; Drama; recognizes India's 8 classical dances &amp; oversees Kathak Kendra, Jawaharlal Nehru Manipur Dance Academy.</td></tr>
-                    <tr><td><strong>Sahitya Akademi</strong></td><td><strong>1954</strong><br>New Delhi</td><td>National Academy of Letters; promotes literature and confers annual awards across <strong>24 languages</strong> (22 8th Schedule languages + <strong>English &amp; Rajasthani</strong>).</td></tr>
-                    <tr><td><strong>Lalit Kala Akademi</strong></td><td><strong>1954</strong><br>New Delhi</td><td>National Academy of Fine Arts (painting, sculpture, graphics, architecture); organizes the prestigious <em>Triennale India</em> international exhibition.</td></tr>
+                    <tr><td><mark class="exam-hl">Archaeological Survey of India (ASI)</mark></td><td><mark class="exam-hl">1861</mark><br>New Delhi</td><td>Founded by <mark class="exam-hl">Alexander Cunningham</mark> (1st Director-General, "Father of Indian Archaeology"). Conserves monuments of national importance under <mark class="exam-hl"><em>AMASR Act 1958</em></mark>.</td></tr>
+                    <tr><td><mark class="exam-hl">Anthropological Survey of India (AnSI)</mark></td><td><mark class="exam-hl">1945</mark><br>Kolkata (shifted from Varanasi 1948)</td><td>First Director: <mark class="exam-hl">Dr. B.S. Guha</mark>. Conducts bio-cultural research on Indian populations; famed for the monumental <em>People of India</em> survey.</td></tr>
+                    <tr><td><mark class="exam-hl">Sangeet Natak Akademi</mark></td><td><mark class="exam-hl">1952 / Jan 1953</mark><br>New Delhi</td><td>First Chairman: P.V. Rajamannar. National Academy for Music, Dance &amp; Drama; recognizes India's <mark class="exam-hl">8 classical dances</mark> &amp; oversees Kathak Kendra, Jawaharlal Nehru Manipur Dance Academy.</td></tr>
+                    <tr><td><mark class="exam-hl">Sahitya Akademi</mark></td><td><mark class="exam-hl">1954</mark><br>New Delhi</td><td>National Academy of Letters; promotes literature and confers annual awards across <mark class="exam-hl">24 languages</mark> (22 8th Schedule languages + <mark class="exam-hl">English &amp; Rajasthani</mark>).</td></tr>
+                    <tr><td><mark class="exam-hl">Lalit Kala Akademi</mark></td><td><mark class="exam-hl">1954</mark><br>New Delhi</td><td>National Academy of Fine Arts (painting, sculpture, graphics, architecture); organizes the prestigious <mark class="exam-hl"><em>Triennale India</em></mark> international exhibition.</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -2299,11 +2491,11 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td><strong>Bharat Ratna</strong></td><td><strong>1954</strong></td><td>Highest civilian honour of India; peepal-leaf bronze medallion with Sun &amp; Devanagari script. 1st recipients (1954): <strong>C. Rajagopalachari, S. Radhakrishnan, C.V. Raman</strong>. Recent 2024 recipients: Karpoori Thakur, L.K. Advani, P.V. Narasimha Rao, Charan Singh, M.S. Swaminathan.</td></tr>
-                    <tr><td><strong>Padma Awards</strong></td><td><strong>1954</strong></td><td>Announced annually on Republic Day eve in 3 tiers: <strong>Padma Vibhushan</strong> (exceptional/distinguished service), <strong>Padma Bhushan</strong> (distinguished service of high order), <strong>Padma Shri</strong> (distinguished service). Cap: max 120 awards/year (excl. posthumous &amp; foreign).</td></tr>
-                    <tr><td><strong>Major Dhyan Chand Khel Ratna</strong></td><td><strong>1991–92</strong><br>(renamed 2021)</td><td>Highest sporting honour of India; awarded for spectacular performance over the preceding <strong>4 years</strong>. First recipient: <strong>Viswanathan Anand</strong> (Chess).</td></tr>
-                    <tr><td><strong>Dronacharya Award</strong></td><td><strong>1985</strong></td><td>Honours outstanding sports <strong>coaches</strong> (Regular &amp; Lifetime categories) for consistently training athletes to international medal finishes. First recipients (1985): Bhalachandra Bhaskar Bhagwat, Om Prakash Bhardwaj, O.M. Nambiar.</td></tr>
-                    <tr><td><strong>Related Cultural Honours</strong></td><td>1961–1969</td><td><strong>Arjuna Award (1961):</strong> Sports excellence. <strong>Jnanpith Award (1961/1965):</strong> Highest literary honour (1st: G. Sankara Kurup). <strong>Dadasaheb Phalke Award (1969):</strong> Highest cinema honour (1st: Devika Rani).</td></tr>
+                    <tr><td><mark class="exam-hl">Bharat Ratna</mark></td><td><mark class="exam-hl">1954</mark></td><td>Highest civilian honour of India; peepal-leaf bronze medallion with Sun &amp; Devanagari script. 1st recipients (1954): <mark class="exam-hl">C. Rajagopalachari, S. Radhakrishnan, C.V. Raman</mark>. Recent <mark class="exam-hl">2024 recipients</mark>: Karpoori Thakur, L.K. Advani, P.V. Narasimha Rao, Charan Singh, M.S. Swaminathan.</td></tr>
+                    <tr><td><mark class="exam-hl">Padma Awards</mark></td><td><mark class="exam-hl">1954</mark></td><td>Announced annually on Republic Day eve in 3 tiers: <strong>Padma Vibhushan</strong> (exceptional/distinguished service), <strong>Padma Bhushan</strong> (distinguished service of high order), <strong>Padma Shri</strong> (distinguished service). Cap: <mark class="exam-hl">max 120 awards/year</mark> (excl. posthumous &amp; foreign).</td></tr>
+                    <tr><td><mark class="exam-hl">Major Dhyan Chand Khel Ratna</mark></td><td><mark class="exam-hl">1991–92</mark><br>(renamed 2021)</td><td>Highest sporting honour of India; awarded for spectacular performance over the preceding <mark class="exam-hl">4 years</mark>. First recipient: <mark class="exam-hl">Viswanathan Anand</mark> (Chess).</td></tr>
+                    <tr><td><mark class="exam-hl">Dronacharya Award</mark></td><td><mark class="exam-hl">1985</mark></td><td>Honours outstanding sports <mark class="exam-hl">coaches</mark> (Regular &amp; Lifetime categories) for consistently training athletes to international medal finishes. First recipients (1985): Bhalachandra Bhaskar Bhagwat, Om Prakash Bhardwaj, O.M. Nambiar.</td></tr>
+                    <tr><td><strong>Related Cultural Honours</strong></td><td>1961–1969</td><td><mark class="exam-hl">Arjuna Award (1961)</mark>: Sports excellence. <mark class="exam-hl">Jnanpith Award (1961/1965)</mark>: Highest literary honour (1st: <mark class="exam-hl">G. Sankara Kurup</mark>). <mark class="exam-hl">Dadasaheb Phalke Award (1969)</mark>: Highest cinema honour (1st: <mark class="exam-hl">Devika Rani</mark>).</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -2396,7 +2588,36 @@
       { id: `q_u10_1`, unitId: `u10`, question: `Who founded the Archaeological Survey of India (ASI) in 1861 and served as its first Director-General?`, options: [`John Marshall`, `Mortimer Wheeler`, `Alexander Cunningham`, `James Prinsep`], correctIndex: 2, explanation: `Alexander Cunningham founded the ASI in 1861 and is widely regarded as the Father of Indian Archaeology.` },
       { id: `q_u10_2`, unitId: `u10`, question: `Which top Indian sporting award evaluates an athlete's spectacular performance over the preceding four years and was first awarded to Viswanathan Anand?`, options: [`Dronacharya Award`, `Arjuna Award`, `Major Dhyan Chand Khel Ratna`, `Maulana Abul Kalam Azad Trophy`], correctIndex: 2, explanation: `Instituted in 1991–92 (first awarded to Viswanathan Anand), the Major Dhyan Chand Khel Ratna is India's highest sporting honour.` },
       { id: `q_u10_3`, unitId: `u10`, question: `Which institution among the following was established first (January 1953 inaugural) as the National Academy of Music, Dance and Drama?`, options: [`Sahitya Akademi`, `Lalit Kala Akademi`, `Sangeet Natak Akademi`, `National School of Drama`], correctIndex: 2, explanation: `Sangeet Natak Akademi was set up in 1952 and inaugurated in January 1953, followed by Sahitya Akademi and Lalit Kala Akademi in 1954.` },
-      { id: `q_u10_4`, unitId: `u10`, question: `Which national award instituted in 1985 exclusively honours outstanding sports coaches?`, options: [`Arjuna Award`, `Dronacharya Award`, `Dhyan Chand Lifetime Award`, `Tenzing Norgay Award`], correctIndex: 1, explanation: `The Dronacharya Award (1985) recognizes excellence in sports coaching.` }
+      { id: `q_u10_4`, unitId: `u10`, question: `Which national award instituted in 1985 exclusively honours outstanding sports coaches?`, options: [`Arjuna Award`, `Dronacharya Award`, `Dhyan Chand Lifetime Award`, `Tenzing Norgay Award`], correctIndex: 1, explanation: `The Dronacharya Award (1985) recognizes excellence in sports coaching.` },
+
+      // Eduquity High-Yield Expansion (Units 01–10)
+      { id: `q_u1_7`, unitId: `u1`, question: `Who built the Konark Sun Temple (Black Pagoda) in Odisha during the 13th century CE?`, options: [`Rajaraja I`, `Narasimhadeva I`, `Anantavarman Chodaganga`, `Dhangadeva`], correctIndex: 1, explanation: `King Narasimhadeva I of the Eastern Ganga dynasty built the Konark Sun Temple in Kalinga style with 24 carved chariot wheels.` },
+      { id: `q_u1_8`, unitId: `u1`, question: `The Kandariya Mahadeva Temple at Khajuraho (built c. 999 CE) was commissioned by which Chandela king?`, options: [`Yashovarman`, `Vidyadhara`, `Dhangadeva`, `Paramardi`], correctIndex: 2, explanation: `Chandela king Dhangadeva built the Kandariya Mahadeva Temple, the grandest Panchayatana-plan Nagara temple at Khajuraho.` },
+      { id: `q_u1_9`, unitId: `u1`, question: `Which architectural component of a Buddhist Stupa is the square railing atop the hemispherical Anda dome symbolizing heaven?`, options: [`Medhi`, `Harmika`, `Torana`, `Vedika`], correctIndex: 1, explanation: `Harmika is the square balcony-like railing crowning the Anda dome, from which rises the central Yashti pillar holding the Chhatras.` },
+
+      { id: `q_u2_6`, unitId: `u2`, question: `In a traditional Bharatanatyam Margam repertoire, which pure rhythmic opening piece serves as the invocatory warm-up before Jatiswaram?`, options: [`Tillana`, `Varnam`, `Alarippu`, `Padam`], correctIndex: 2, explanation: `The Bharatanatyam repertoire progresses as Alarippu → Jatiswaram → Shabdam → Varnam → Padam → Tillana → Mangalam.` },
+      { id: `q_u2_7`, unitId: `u2`, question: `Which Kuchipudi item features the dancer balancing on the raised rim of a brass plate while carrying a water pitcher on the head?`, options: [`Manduka Shabdam`, `Tarangam`, `Chali`, `Pallavi`], correctIndex: 1, explanation: `Tarangam is the signature Kuchipudi climax on a brass plate rim; Manduka Shabdam depicts the story of the frog queen.` },
+      { id: `q_u2_8`, unitId: `u2`, question: `While Sangeet Natak Akademi recognizes 8 classical dances, which 9th form is included by the Ministry of Culture?`, options: [`Yakshagana`, `Chhau`, `Lavani`, `Kalbelia`], correctIndex: 1, explanation: `The Ministry of Culture includes Chhau (Seraikella, Purulia, Mayurbhanj) as the 9th classical dance form alongside SNA's 8.` },
+      { id: `q_u2_9`, unitId: `u2`, question: `Which Kathak pioneer and Padma Vibhushan (2025) awardee founded the Kadamb Centre for Dance in Ahmedabad?`, options: [`Sitara Devi`, `Kumudini Lakhia`, `Shovana Narayan`, `Saswati Sen`], correctIndex: 1, explanation: `Kumudini Lakhia, renowned Kathak choreographer and founder of Kadamb, was honoured with the Padma Vibhushan in 2025.` },
+
+      { id: `q_u3_6`, unitId: `u3`, question: `Hojagiri, where women balance earthen pitchers and lamps while moving only their lower bodies, is performed by which tribe of Tripura?`, options: [`Garo`, `Reang (Bru)`, `Khasi`, `Koya`], correctIndex: 1, explanation: `Hojagiri is the signature folk dance of the Reang (Bru) tribe of Tripura.` },
+      { id: `q_u3_7`, unitId: `u3`, question: `The '100 Drums Festival' known as Wangala is a post-harvest thanksgiving festival of which Meghalaya tribe?`, options: [`Khasi`, `Jaintia`, `Garo`, `Mizo`], correctIndex: 2, explanation: `Wangala (100 Drums Festival) is celebrated by the Garo tribe of Meghalaya in honour of the Sun God Misi Saljong.` },
+      { id: `q_u3_8`, unitId: `u3`, question: `Matki (Malwa) and Jawara (Bundelkhand) are prominent folk dances of which Indian state?`, options: [`Rajasthan`, `Madhya Pradesh`, `Chhattisgarh`, `Maharashtra`], correctIndex: 1, explanation: `Matki (balancing earthen pitchers) and Jawara (sprouted barley baskets) are signature folk dances of Madhya Pradesh.` },
+      { id: `q_u3_9`, unitId: `u3`, question: `Fugdi, Dhalo, and Dekhni (accompanied by the earthen Ghumat drum) are traditional folk dances of which state?`, options: [`Goa`, `Kerala`, `Karnataka`, `Gujarat`], correctIndex: 0, explanation: `Fugdi, Dhalo, and Dekhni are iconic women's and Konkani folk dances of Goa.` },
+
+      { id: `q_u4_6`, unitId: `u4`, question: `According to Bharata Muni's Natyashastra, solid idiophone instruments like Manjira, Ghatam, and Jal Tarang belong to which category?`, options: [`Tata Vadya`, `Sushira Vadya`, `Avanaddha Vadya`, `Ghana Vadya`], correctIndex: 3, explanation: `Ghana Vadya are solid instruments struck without a membrane; Tata = stringed, Sushira = wind, Avanaddha = membrane percussion.` },
+      { id: `q_u4_7`, unitId: `u4`, question: `Pt. Bhimsen Joshi and Gangubai Hangal are stalwarts of which Hindustani vocal Gharana?`, options: [`Gwalior Gharana`, `Kirana Gharana`, `Agra Gharana`, `Patiala Gharana`], correctIndex: 1, explanation: `Kirana Gharana (founded by Ustad Abdul Karim Khan) is famed for slow Alap and swara focus, exemplified by Pt. Bhimsen Joshi and Gangubai Hangal.` },
+      { id: `q_u4_8`, unitId: `u4`, question: `Which is the oldest Khayal Gharana of Hindustani classical music, associated with Nathan Peer Baksh and Haddu-Hassu Khan?`, options: [`Mewati`, `Gwalior`, `Banaras`, `Jaipur-Atrauli`], correctIndex: 1, explanation: `Gwalior Gharana is the oldest Khayal gharana, known for open-throated singing and straightforward bandish structure.` },
+
+      { id: `q_u5_6`, unitId: `u5`, question: `Patola, the luxury double-ikat silk saree where both warp and weft are resist-dyed before weaving, is a GI craft of which place?`, options: [`Pochampally, Telangana`, `Patan, Gujarat`, `Chanderi, MP`, `Kanchipuram, TN`], correctIndex: 1, explanation: `Patan Patola of Gujarat is famous for its intricate double-ikat weaving; Pochampally is Telangana's Ikat hub.` },
+      { id: `q_u5_7`, unitId: `u5`, question: `Kasuti, a traditional count-thread geometric embroidery with identical patterns on both sides, originates from which state?`, options: [`Punjab`, `West Bengal`, `Karnataka`, `Uttar Pradesh`], correctIndex: 2, explanation: `Kasuti is the GI-tagged traditional embroidery of Dharwad, Karnataka; Phulkari is Punjab, Kantha is Bengal, Chikankari is Lucknow.` },
+      { id: `q_u5_8`, unitId: `u5`, question: `Muga Silk, renowned as India's GI-tagged 'Golden Silk' produced by Antheraea assamensis, is exclusive to which state?`, options: [`Manipur`, `Assam`, `Odisha`, `Sikkim`], correctIndex: 1, explanation: `Muga Silk is exclusively produced in Assam and is prized for its natural golden lustre that deepens with washing.` },
+
+      { id: `q_u8_5`, unitId: `u8`, question: `Medaram Jathara (Sammakka Saralamma Jathara), Asia's largest tribal gathering, is celebrated in Telangana primarily by which tribe?`, options: [`Gond`, `Koya`, `Bhil`, `Reang`], correctIndex: 1, explanation: `Medaram Jathara in Mulugu district, Telangana is a biennial festival celebrated by the Koya tribe.` },
+      { id: `q_u8_6`, unitId: `u8`, question: `Ambubachi Mela, often called the 'Mahakumbh of the East', is held annually at which temple?`, options: [`Jagannath Temple, Puri`, `Kamakhya Temple, Guwahati`, `Lingaraja Temple, Bhubaneswar`, `Meenakshi Temple, Madurai`], correctIndex: 1, explanation: `Ambubachi Mela is held every June at the Kamakhya Temple atop Nilachal Hill in Guwahati, Assam.` },
+      { id: `q_u8_7`, unitId: `u8`, question: `Which 11-day festival in Bargarh, Odisha is recognized as the world's largest open-air theatre enacting the story of Krishna and Kansa?`, options: [`Nuakhai`, `Dhanu Jatra`, `Thrissur Pooram`, `Chapchar Kut`], correctIndex: 1, explanation: `Dhanu Jatra in Bargarh (Odisha) transforms the entire town into Mathura and Gopapura for 11 days.` },
+
+      { id: `q_u9_4`, unitId: `u9`, question: `Which Constitutional Amendment Act of 1967 added Sindhi as the 15th language to the 8th Schedule?`, options: [`21st Amendment`, `42nd Amendment`, `71st Amendment`, `92nd Amendment`], correctIndex: 0, explanation: `The 21st Amendment (1967) added Sindhi; the 71st (1992) added Konkani, Manipuri, Nepali; the 92nd (2003) added Bodo, Dogri, Maithili, Santhali.` }
     ];
 
     // =========================================================================
@@ -2425,7 +2646,34 @@
       { id: `fc20`, unitId: `u9`, front: `Mnemonic for 8th Schedule Amendments (21st, 71st, 92nd)?`, back: `21st (1967): Sindhi | 71st (1992): Konkani, Manipuri, Nepali (KMN) | 92nd (2003): Bodo, Dogri, Maithili, Santhali (BDMS) -> 22 total.` },
       { id: `fc21`, unitId: `u9`, front: `11 Classical Languages of India?`, back: `Tamil (2004), Sanskrit (2005), Kannada & Telugu (2008), Malayalam (2013), Odia (2014), plus Oct 2024 additions: Marathi, Pali, Prakrit, Assamese, Bengali.` },
       { id: `fc22`, unitId: `u10`, front: `Founding years of ASI, AnSI, Sangeet Natak, Sahitya & Lalit Kala?`, back: `ASI: 1861 (Cunningham) | AnSI: 1945 (B.S. Guha) | Sangeet Natak: 1952/53 | Sahitya Akademi: 1954 (24 langs) | Lalit Kala: 1954.` },
-      { id: `fc23`, unitId: `u10`, front: `First recipients of Bharat Ratna (1954), Khel Ratna (1991-92) & Dronacharya (1985)?`, back: `Bharat Ratna: C. Rajagopalachari, S. Radhakrishnan, C.V. Raman | Khel Ratna: Viswanathan Anand | Dronacharya: B.B. Bhagwat, O.P. Bhardwaj, O.M. Nambiar.` }
+      { id: `fc23`, unitId: `u10`, front: `First recipients of Bharat Ratna (1954), Khel Ratna (1991-92) & Dronacharya (1985)?`, back: `Bharat Ratna: C. Rajagopalachari, S. Radhakrishnan, C.V. Raman | Khel Ratna: Viswanathan Anand | Dronacharya: B.B. Bhagwat, O.P. Bhardwaj, O.M. Nambiar.` },
+      { id: `fc24`, unitId: `u1`, front: `Builders of Konark, Modhera, Kailasa (Ellora) & Kandariya Mahadeva?`, back: `Konark: Narasimhadeva I (Eastern Ganga) | Modhera: Bhima I (Solanki) | Kailasa Cave 16: Krishna I (Rashtrakuta) | Kandariya Mahadeva: Dhangadeva (Chandela).` },
+      { id: `fc25`, unitId: `u1`, front: `Stupa anatomy from bottom to top?`, back: `Medhi (terrace) → Anda (dome) → Harmika (square railing) → Yashti (pillar) → Chhatras (triple umbrellas), surrounded by Pradakshina Patha, Vedika & 4 Toranas.` },
+      { id: `fc26`, unitId: `u1`, front: `Hoysala UNESCO Sacred Ensembles (3 temples, 2023)?`, back: `Chennakesava (Belur), Hoysaleswara (Halebidu), and Keshava (Somanathapura) in Karnataka — stellate soapstone plans.` },
+      { id: `fc27`, unitId: `u2`, front: `Bharatanatyam Margam repertoire sequence?`, back: `Alarippu → Jatiswaram → Shabdam → Varnam → Padam → Tillana → Mangalam.` },
+      { id: `fc28`, unitId: `u2`, front: `8 SNA Classical Dances vs. 9 Ministry of Culture Dances?`, back: `Sangeet Natak Akademi recognizes 8 classical dances; the Ministry of Culture includes Chhau (Eastern India) as the 9th.` },
+      { id: `fc29`, unitId: `u2`, front: `What are Manduka Shabdam & Tarangam in Kuchipudi?`, back: `Manduka Shabdam: story of the frog queen. Tarangam: dancing on the raised rim of a brass plate while balancing a water pitcher.` },
+      { id: `fc30`, unitId: `u2`, front: `Recent Padma Vibhushan dance awardees (2024–2025)?`, back: `2024: Vyjayanthimala Bali & Padma Subrahmanyam (Bharatanatyam). 2025: Kumudini Lakhia (Kathak).` },
+      { id: `fc31`, unitId: `u3`, front: `Hojagiri dance: State & Tribe?`, back: `Tripura — performed by women of the Reang (Bru) tribe balancing pitchers/lamps while moving only the lower body.` },
+      { id: `fc32`, unitId: `u3`, front: `Wangala (100 Drums) vs. Nongkrem: State & Tribes?`, back: `Both in Meghalaya: Wangala is Garo tribe (Sun God Misi Saljong); Nongkrem is Khasi tribe.` },
+      { id: `fc33`, unitId: `u3`, front: `Goa's signature folk dances?`, back: `Fugdi (fast circular clapping), Dhalo (12-day winter harvest), Dekhni (with earthen Ghumat drum), and Ghode Modni.` },
+      { id: `fc34`, unitId: `u3`, front: `Madhya Pradesh's Matki, Jawara & Bhagoria?`, back: `Matki (Malwa pitcher dance), Jawara (Bundelkhand sprouted barley), Bhagoria (Bhil & Bhilala pre-Holi fair dance).` },
+      { id: `fc35`, unitId: `u3`, front: `Rajasthan's Kalbelia vs. Bhavai?`, back: `Kalbelia: snake-charmer community (UNESCO ICH 2010). Bhavai: balancing 7–9 brass/earthen pots on the head.` },
+      { id: `fc36`, unitId: `u4`, front: `Natyashastra 4-Fold Instrument Classification?`, back: `Tata (Stringed: Sitar/Santoor), Sushira (Wind: Flute/Shehnai), Avanaddha (Membrane: Tabla/Mridangam), Ghana (Solid: Manjira/Ghatam/Jal Tarang).` },
+      { id: `fc37`, unitId: `u4`, front: `Maestros of Kirana, Patiala, Banaras & Mewati Gharanas?`, back: `Kirana: Pt. Bhimsen Joshi, Gangubai Hangal | Patiala: Bade Ghulam Ali Khan | Banaras: Girija Devi | Mewati: Pt. Jasraj.` },
+      { id: `fc38`, unitId: `u4`, front: `Oldest Khayal Gharana & its founders?`, back: `Gwalior Gharana — Nathan Peer Baksh, Haddu & Hassu Khan.` },
+      { id: `fc39`, unitId: `u4`, front: `Who is Vikku Vinayakram?`, back: `T.H. (Vikku) Vinayakram — legendary Carnatic Ghatam (Ghana Vadya clay pot) maestro, Padma Bhushan & Grammy winner.` },
+      { id: `fc40`, unitId: `u5`, front: `Match Embroiders: Chikankari, Phulkari, Kantha, Kasuti?`, back: `Chikankari → Lucknow (UP) | Phulkari → Punjab | Kantha → West Bengal/Bihar | Kasuti → Karnataka.` },
+      { id: `fc41`, unitId: `u5`, front: `Patola (Gujarat) vs. Pochampally (Telangana)?`, back: `Patan Patola is luxury double-ikat silk; Pochampally is Telangana's GI-tagged geometric Ikat weave.` },
+      { id: `fc42`, unitId: `u5`, front: `What is Muga Silk & where is it produced?`, back: `Assam's GI-tagged Golden Silk produced by Antheraea assamensis; its golden lustre deepens with washing.` },
+      { id: `fc43`, unitId: `u5`, front: `Warli vs. Pithora tribal paintings?`, back: `Warli (Maharashtra): white rice-paste geometric shapes on ochre walls. Pithora (Gujarat/MP, Rathva & Bhilala): colourful ritual horses.` },
+      { id: `fc44`, unitId: `u6`, front: `Kalaripayattu stages & Silambam weapon?`, back: `Kalaripayattu (Kerala): Meipayattu, Kolthari, Ankathari (Urumi sword), Verumkai. Silambam (TN): bamboo-staff fencing.` },
+      { id: `fc45`, unitId: `u7`, front: `Match New Years: Ugadi, Gudi Padwa, Puthandu, Navreh?`, back: `Ugadi → AP/Telangana/Karnataka | Gudi Padwa → Maharashtra | Puthandu → Tamil Nadu | Navreh → Kashmir.` },
+      { id: `fc46`, unitId: `u8`, front: `Hornbill, Ambubachi & Medaram Jathara locations?`, back: `Hornbill → Nagaland (Kisama) | Ambubachi Mela → Kamakhya Temple, Assam | Medaram Jathara → Telangana (Koya tribe).` },
+      { id: `fc47`, unitId: `u8`, front: `Nuakhai, Dhanu Jatra & Thrissur Pooram states?`, back: `Nuakhai & Dhanu Jatra → Odisha | Thrissur Pooram → Kerala (caparisoned elephants & Kudamattam).` },
+      { id: `fc48`, unitId: `u8`, front: `41st, 42nd & 43rd UNESCO World Heritage Sites of India?`, back: `41st: Santiniketan (WB, 2023) | 42nd: Hoysala Sacred Ensembles (Karnataka, 2023) | 43rd: Moidams of Charaideo (Assam, July 2024).` },
+      { id: `fc49`, unitId: `u9`, front: `5 Classical Languages added in October 2024?`, back: `Marathi, Pali, Prakrit, Assamese, and Bengali — raising India's total from 6 to 11 Classical Languages.` },
+      { id: `fc50`, unitId: `u10`, front: `Sahitya Akademi awards cover how many languages?`, back: `24 languages: all 22 languages of the 8th Schedule plus English and Rajasthani.` }
     ];
 
     // =========================================================================

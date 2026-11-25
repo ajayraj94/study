@@ -2,7 +2,7 @@
   "app": "speed-ranker",
   "version": 2,
   "mode": "ram",
-  "exportedAt": "2026-11-24T13:25:00.775Z",
+  "exportedAt": "2026-11-25T04:01:12.590Z",
   "data": {
     "srqb_v1": {
       "progress": {
@@ -2831,6 +2831,75 @@
         "16-25": {
           "seen": 1,
           "s": "mastered"
+        },
+        "16-1": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1795575007842,
+            "due": 1796957407842,
+            "rated": "good",
+            "lapses": 0
+          },
+          "diff": "moderate"
+        },
+        "16-3": {
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1795575807726,
+            "due": 1795662207726,
+            "rated": "hard",
+            "lapses": 0
+          },
+          "diff": "tough"
+        },
+        "16-6": {
+          "seen": 1,
+          "sr": {
+            "n": 1,
+            "last": 1795577104468,
+            "due": 1795663504468,
+            "rated": "hard",
+            "lapses": 1
+          },
+          "diff": "tough",
+          "bm": 1
+        },
+        "16-7": {
+          "seen": 1,
+          "sr": {
+            "n": 4,
+            "last": 1795577290165,
+            "due": 1796959690165,
+            "rated": "good",
+            "lapses": 0
+          },
+          "diff": "moderate"
+        },
+        "16-8": {
+          "bm": 1,
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1795577468611,
+            "due": 1795663868611,
+            "rated": "hard",
+            "lapses": 0
+          },
+          "diff": "tough"
+        },
+        "16-9": {
+          "seen": 1,
+          "sr": {
+            "n": 3,
+            "last": 1795579259236,
+            "due": 1795665659236,
+            "rated": "hard",
+            "lapses": 0
+          },
+          "diff": "tough",
+          "bm": 1
         }
       },
       "attempts": {
