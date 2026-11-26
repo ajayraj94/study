@@ -943,6 +943,35 @@
       font-weight: 600;
       box-shadow: inset 0 -2px 0 rgba(184, 74, 36, 0.28);
     }
+    /* PYQ Addendum: concept-first anchors above the answer drill */
+    .concept-anchors {
+      background: var(--secondary-container);
+      border: 1px solid var(--outline-variant);
+      border-left: 3px solid var(--secondary);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      display: grid;
+      gap: var(--space-sm);
+    }
+    .concept-anchors-head {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--secondary);
+    }
+    .concept-anchors ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      display: grid;
+      gap: 0.4rem;
+      max-width: 80ch;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+    }
+    .concept-anchors li strong { color: var(--on-surface); }
+
 
     /* Unit 11: Quiz & Flashcards Studio */
     .studio-tabs {
@@ -2534,6 +2563,16 @@
             badge: `PYQ Drill · 65 Qs`,
             summary: `65 Art & Culture PYQs from the 2024–25 SSC CGL shifts whose answer was missing from the main units.`,
             contentHtml: `
+<div class="concept-anchors">
+  <div class="concept-anchors-head">Concept Anchors &mdash; Understand, Don't Memorise</div>
+  <ul>
+    <li><strong>State comes from the community, not the language:</strong> every folk form is tied to an ecology or tribe — Kalbelia to Rajasthan's snake-handler community (its movement imitates snakes), Tippani to Saurashtra women tamping lime floors, Panthi to Chhattisgarh's Satnami followers of Guru Ghasidas, Koli to Maharashtra's fisherfolk, Elakkakadi to Kerala's Irular tribe.</li>
+    <li><strong>Region clusters worth grouping:</strong> Kashmir — Rauf (Eid, toe-heel footwork called ras) and Dumhal (Wattal men around a banner planted in the ground); Jharkhand — Jhumar/Jhumair, Domkach and Jawa; the Northeast — Chu-Faat and Maruni (Sikkim), Kuki (Nagaland per the key), Ka Shad Suk Mynsiem (Khasi, Meghalaya), Popir (Mopin), the Wancho war dance (Oriah); the South — Padayani (Kerala, for Bhadrakali), Poikkal Kuthirai Aattam (Tamil Nadu) and Perini Shivatandavam (Telangana, Kakatiya, revived).</li>
+    <li><strong>Eight classical forms, one exponent each:</strong> Bharatanatyam (Tamil Nadu) — Yamini Krishnamurthy; Kathak (Uttar Pradesh) — Rohini Bhate, with Ishwari Prasad linked to the Lucknow gharana; Odissi (Odisha) — Ranjana Gauhar, built on the Chowk and Tribhanga postures; Kuchipudi (Andhra Pradesh) — Vempati Chinna Satyam; Kathakali and Mohiniyattam (Kerala); Manipuri (Manipur); Sattriya (Assam). Geetanjali Lal is the Kathak name planted in "NOT related to Odissi" options.</li>
+    <li><strong>Institutions answer a whole cluster of rows:</strong> Nrityagram (Karnataka, Odissi), Govindji Nartanalaya (Manipur), Jawaharlal Nehru Manipur Dance Academy (Imphal, 1954), Kathak Kendra (1964), Darpana Academy (Mrinalini Sarabhai), Gandharva Mahavidyalaya (New Delhi) and the Sangeet Natak Akademi as India's national academy of dance, music and drama.</li>
+    <li><strong>Chhau and UNESCO:</strong> Chhau is the textbook syncretic form — tribal, folk and classical Hindu layers, mask-based, with Seraikella, Purulia and Mayurbhanj variants. Kalbelia entered the UNESCO Representative List in 2010 and Ghoomar was noticed globally in 2013, so keep each year glued to its form because the options swap them.</li>
+  </ul>
+</div>
 <div class="table-scroll">
   <table class="study-table">
     <thead>
@@ -2616,6 +2655,16 @@
             badge: `PYQ Drill · 60 Qs`,
             summary: `60 Art & Culture PYQs from the 2024–25 SSC CGL shifts whose answer was missing from the main units.`,
             contentHtml: `
+<div class="concept-anchors">
+  <div class="concept-anchors-head">Concept Anchors &mdash; Understand, Don't Memorise</div>
+  <ul>
+    <li><strong>Anchor every festival on a triad — state, community, one identifying ritual:</strong> that triad is exactly what the options shuffle. Harela (Uttarakhand, greenery and harvest), Nuakhai (Odisha, new rice first offered to Maa Samaleswari), Puthari (Kodava, "Poli Poli Deva"), Solung (Adi, Arunachal, apong shared), Mim Kut (Mizo, last harvest).</li>
+    <li><strong>Solar, lunar and harvest are three different questions:</strong> Makar Sankranti and Chhath are solar (Surya, with Usha worshipped in Chhath); Navratri is lunar (Durga); Kanuma honours agricultural cattle and Kambala is buffalo racing, so these follow the farming calendar rather than the moon.</li>
+    <li><strong>Religion-to-festival map:</strong> Sangken (Buddhist, Arunachal Pradesh), Paryushana (Jain), Shab-e-Barat (Muslim), Easter (Christian), Gurpurab and Hola Mohalla (Sikh — Anandpur Sahib, Nihang martial displays), Doljatra (Vaishnavite, Assam), Me-dam-me-phi (Ahom ancestor worship, Assam).</li>
+    <li><strong>State-locked names:</strong> Lathmar Holi (Barsana, Uttar Pradesh), Poush Mela (West Bengal), Hemis (Ladakh, guardian divinities of the Drugpa lineage), Raja Parba (Odisha), Kajari Mahotsav (Mirzapur, Uttar Pradesh), Bissu Mela (Chakrata, Jaunsari), Bhagoria (Madhya Pradesh, seven days before Holika Dahan), Kharchi Puja (Tripura, fourteen deities), Tusu and Jawa (Jharkhand), Rottela Panduga and Atla Taddi (Andhra Pradesh), the Sardhana fair (Uttar Pradesh).</li>
+    <li><strong>Detail questions hide in one ritual object:</strong> Goncha of Bastar (bamboo tupki firing Goncha fruit), Chithirai of Madurai (Kallazhagar on a golden horse), Fagli of the Pattan Valley (indoor symbolic ploughing with willow sticks), Baran's Dol Mela (Jaljhulani Gyaras processions), and the Hornbill, whose bird stands for grandeur in Naga folklore.</li>
+  </ul>
+</div>
 <div class="table-scroll">
   <table class="study-table">
     <thead>
@@ -2693,6 +2742,16 @@
             badge: `PYQ Drill · 64 Qs`,
             summary: `64 Art & Culture PYQs from the 2024–25 SSC CGL shifts whose answer was missing from the main units.`,
             contentHtml: `
+<div class="concept-anchors">
+  <div class="concept-anchors-head">Concept Anchors &mdash; Understand, Don't Memorise</div>
+  <ul>
+    <li><strong>Instrument-to-maestro chains:</strong> sitar — Ravi Shankar (founder of the National Orchestra of India) and Vilayat Khan; sarod — Amjad Ali Khan ("Sarod Samrat") and Buddhadev Dasgupta; santoor — Shivkumar Sharma and Tarun Bhattacharya; flute — Hariprasad Chaurasia; tabla — Zakir Hussain and Alla Rakha; mridangam — Umayalpuram K. Sivaraman; rudra veena — Zia Mohiuddin Dagar; surbahar — Annapurna Devi; sarangi — Sabri Khan; Mohan veena — Vishwa Mohan Bhatt.</li>
+    <li><strong>Gharana is a voice-and-lineage question:</strong> Kirana is Gangubai Hangal's school, and the same naming logic runs through the Lucknow gharana of Kathak that Ishwari Prasad is credited with introducing. Match the art first, then the family.</li>
+    <li><strong>Keep the three award layers apart:</strong> national (Bharat Ratna 2001 Lata Mangeshkar; Padma Vibhushan — Zakir Hussain 2023, Hariprasad Chaurasia 2000, Amjad Ali Khan 2001; Padma Bhushan 2002 for the youngest percussionist Zakir Hussain; Padma Shri 2016 Tulsidas Borkar), institutional (Sangeet Natak Akademi — Shivkumar Sharma 1986, Bickram Ghosh 2021; Sangeetha Kalanidhi from the Music Academy), and state (Tansen Samman from Madhya Pradesh since 1980, Kalidas Samman, Maharashtra Bhushan, Karnataka Ratna, MS Subbulakshmi Award from Tamil Nadu, Harivarasanam from Kerala, Banga Vibhushan from West Bengal, MG Music Awards from Nagaland, IMMIES from MTV).</li>
+    <li><strong>Numbers of the theory rows:</strong> seven notes and twenty-two shrutis; raga jaatis — Audav five, Shadav six, Sampurna seven; Achal (Sa and Pa) stay fixed while Chal notes take Komal and Teevra variants; Teen Taal has sixteen matras with khali on the ninth; bandish is the Hindustani composition and kriti the Carnatic concert form; seventy-two melakarta by Venkatamakhi; Sangeet Ratnakara by Sharangadeva (13th century); Kramik Pustak Maalika by V. N. Bhatkhande; Raag Sarita by C. Raman Raghunath Vyas.</li>
+    <li><strong>Folk instruments follow material and occasion:</strong> Narsingha (Himachal Pradesh, curved ceremonial horn), Simikla Koom or Binayo (Sikkim), Timila and Maddalam (Kerala, already named in the Silappadikaram), Tambura for Burrakatha (Andhra Pradesh), and Ghana vadya for solid, non-tunable rhythmic instruments. In a raga question, a Western form such as the sonata is the odd one out.</li>
+  </ul>
+</div>
 <div class="table-scroll">
   <table class="study-table">
     <thead>
@@ -2716,7 +2775,7 @@
       <tr><td>15</td><td>Ustad Zia Mohiuddin Dagar was a ________ player of profound depth, favouring sparse and slow realisations of ragas.</td><td><mark class="exam-hl">Rudra veena</mark></td></tr>
       <tr><td>16</td><td>Tabla maestro, Bickram Ghosh, was awarded with which of the following awards in 2021 in the Contemporary Category?</td><td><mark class="exam-hl">Sangeet Natak Akademi</mark></td></tr>
       <tr><td>17</td><td>Which state government honoured Vani Jairam with the MS Subbulakshmi Award for 2019?</td><td><mark class="exam-hl">Tamil Nadu</mark></td></tr>
-      <tr><td>18</td><td>Which Indian singer wrote ‘Raag Sarita’?</td><td><mark class="exam-hl">C📌 hint aman Raghunath Vyas</mark></td></tr>
+      <tr><td>18</td><td>Which Indian singer wrote ‘Raag Sarita’?</td><td><mark class="exam-hl">C. Raman Raghunath Vyas</mark></td></tr>
       <tr><td>19</td><td>Bhupen Hazarika was one of the most well-known personalities from the state of ______.</td><td><mark class="exam-hl">Assam</mark></td></tr>
       <tr><td>20</td><td>Who among the following is a Sarod player popularly known as 'Sarod Samrat'?</td><td><mark class="exam-hl">Ustad Amjad Ali Khan Bangash</mark></td></tr>
       <tr><td>21</td><td>The Maharashtra Bhushan was conferred upon ______________ in the year 2002.</td><td><mark class="exam-hl">Pandit Bhimsen Joshi</mark></td></tr>
@@ -2774,6 +2833,16 @@
             badge: `PYQ Drill · 52 Qs`,
             summary: `52 Art & Culture PYQs from the 2024–25 SSC CGL shifts whose answer was missing from the main units.`,
             contentHtml: `
+<div class="concept-anchors">
+  <div class="concept-anchors-head">Concept Anchors &mdash; Understand, Don't Memorise</div>
+  <ul>
+    <li><strong>Style grammar solves most rows:</strong> Nagara — curvilinear shikhara with amalaka and kalasha, Ganga-Yamuna at the doorway, panchayatana plan and bhadra as the projecting central offset; Dravida — stepped pyramidal vimana with the gopuram as the gateway, prakara walls and dvarapalas; Vesara the Deccan hybrid; Kalinga the Odisha rekha-deul; Bhumija Malwa; Phamsana a straight-inclined slab roof rising to a point.</li>
+    <li><strong>Dynasty-to-monument chains:</strong> Pallava — Mahabalipuram under Mahendravarman I (Shore Temple, Pancha Rathas); Chola — Brihadeeswara by Rajaraja I (1010) and Gangaikonda Cholapuram by Rajendra I; Rashtrakuta — Kailasa, Cave 16 at Ellora, cut from one rock; Chandela — Kandariya Mahadeva; Solanki — Modhera with its Surya Kund; Eastern Ganga — Konark under Narasimhadeva I (24 wheels in 12 pairs, 7 horses); Sisodia — Mewar and Chittorgarh with its 84 water bodies.</li>
+    <li><strong>Three art schools, three signatures:</strong> Gandhara — Hellenistic halo and curly hair, the Bimaran reliquary, the Begram ivories; Mathura — the indigenous Yaksha-like Buddha of the Kushana period, carved for Indian and foreign patrons alike; Mauryan — the chauri-bearing Yakshini, the Dhauli elephant and pillar sites such as Lauriya Nandangarh in Bihar.</li>
+    <li><strong>Chronology follows form, not fame:</strong> Bharhut, then Sanchi Stupa-1, then Mathura for Buddhist sculpture; Deogarh is an early sixth-century panchayatana Nagara temple; Elephanta is Shaivite, its sculptural depth made by light and shadow; Old Goa's churches are Baroque and Manueline; in Mumbai the Victorian Gothic and Art Deco ensembles are separated by the Oval Maidan, with Art Deco a twentieth-century layer rather than nineteenth-century colonial work.</li>
+    <li><strong>Cave vocabulary:</strong> a stalactite grows down from the ceiling, a stalagmite rises from the floor and a pillar is their union — while "monolithic" (Ellora Cave 16, the Pancha Rathas) means carved top-down from a single rock, which is the exact phrase these options test.</li>
+  </ul>
+</div>
 <div class="table-scroll">
   <table class="study-table">
     <thead>
@@ -2843,6 +2912,16 @@
             badge: `PYQ Drill · 32 Qs`,
             summary: `32 Art & Culture PYQs from the 2024–25 SSC CGL shifts whose answer was missing from the main units.`,
             contentHtml: `
+<div class="concept-anchors">
+  <div class="concept-anchors-head">Concept Anchors &mdash; Understand, Don't Memorise</div>
+  <ul>
+    <li><strong>Order the civilian ladder once:</strong> Bharat Ratna, then Padma Vibhushan, Padma Bhushan, Padma Shri. National awards are expressly outside Article 18's ban on titles, so "Bharat Ratna violates the right to equality" is always a false option.</li>
+    <li><strong>Art recipients in this block:</strong> Lata Mangeshkar (Bharat Ratna 2001), Zakir Hussain (Padma Bhushan 2002 as the youngest percussionist, Padma Vibhushan 2023), Ranjana Gauhar (Padma Shri 2003, Odissi), Sabri Khan (Padma Bhushan, sarangi), and Madhuri Barthwal of Uttarakhand with Ajita Srivastava of Uttar Pradesh as folk-singer Padma Shri awardees.</li>
+    <li><strong>Institutional awards:</strong> the Sangeet Natak Akademi for the performing arts, the Sahitya and Lalit Kala Akademis for letters and art, and the sports family — Major Dhyan Chand Khel Ratna, Arjuna, Dronacharya and the National Sports Awards presented at Rashtrapati Bhavan.</li>
+    <li><strong>Global and state awards:</strong> Tagore won the Nobel for Literature in 1913 and founded Shantiniketan in 1901; Vishwa Mohan Bhatt won the Grammy in 1994; Tansen Samman belongs to Madhya Pradesh, Maharashtra Bhushan and Karnataka Ratna to their own states, the MS Subbulakshmi Award to Tamil Nadu, Harivarasanam to Kerala, Banga Vibhushan to West Bengal, while the Deenanath Mangeshkar Award comes from a Maharashtra-based trust rather than a state government.</li>
+    <li><strong>Read "presented by which state" as "who gives it":</strong> the Tansen Samman, the MG Music Awards (Nagaland) and the IMMIES (MTV) are answered by giver plus field, never by the recipient — so store each award as giver, field and one famous recipient.</li>
+  </ul>
+</div>
 <div class="table-scroll">
   <table class="study-table">
     <thead>
